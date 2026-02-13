@@ -697,35 +697,35 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
           backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - Overview
 
-Welcome to **Neighborhood Expansion**, our third graph-based retrieval technique. If node-level retrieval is about precision and edge-weighted retrieval adds ranking sophistication, neighborhood expansion is about **context richness**.
+[conversational] Welcome to **Neighborhood Expansion**, our third graph-based retrieval technique. [lecture] If node-level retrieval is about precision and edge-weighted retrieval adds ranking sophistication, neighborhood expansion is about **context richness**.
 
 #### What Is Neighborhood Expansion?
-Think back to our node-level retrieval example. When someone asks "What is Python?" you return the Python node and its content. That's precise, but often **incomplete**. Users might need to know about Python's key libraries, its relationship to other programming languages, common use cases, or learning resources. Neighborhood expansion solves this by saying: "Don't just give me the node, give me **the node plus its immediate neighbors**." It's like asking for a book and getting the entire shelf section around it.
+[storytelling] Think back to our node-level retrieval example. When someone asks "What is Python?" you return the Python node and its content. [reassuringly] That's precise, but often **incomplete**. Users might need to know about Python's key libraries, its relationship to other programming languages, common use cases, or learning resources. [confidently] Neighborhood expansion solves this by saying: "Don't just give me the node, give me **the node plus its immediate neighbors**." [playfully] It's like asking for a book and getting the entire shelf section around it.
 
 #### The 1-Hop Context Window
-Neighborhood expansion typically focuses on **1-hop neighbors**—nodes directly connected to your seed node. If "Python" is connected to "NumPy 👉 'num-pie'," "Pandas," "Data Science," "Web Development," and "Django 👉 'jang-oh'," you retrieve all of them in a single query. This **1-hop context** provides a comprehensive picture without the complexity of multi-hop traversal.
+[lecture] Neighborhood expansion typically focuses on **1-hop neighbors**—nodes directly connected to your seed node. If "Python" is connected to "NumPy 👉 'num-pie'," "Pandas," "Data Science," "Web Development," and "Django 👉 'jang-oh'," you retrieve all of them in a single query. [pleased] This **1-hop context** provides a comprehensive picture without the complexity of multi-hop traversal.
 
 #### Goals: Context Without Complexity
-The primary goal is **contextual richness**. Users often need surrounding information to fully understand a concept. In API documentation, knowing about a function isn't enough—you need its parameters, return types, exceptions, and usage examples. In knowledge graphs, understanding an entity requires knowing its relationships, properties, and connected concepts. Neighborhood expansion delivers this context efficiently.
+[confidently] The primary goal is **contextual richness**. Users often need surrounding information to fully understand a concept. [lecture] In API documentation, knowing about a function isn't enough—you need its parameters, return types, exceptions, and usage examples. In knowledge graphs, understanding an entity requires knowing its relationships, properties, and connected concepts. [enthusiastically] Neighborhood expansion delivers this context efficiently.
 
-Another goal is **simplicity**. Unlike path-based retrieval or community detection, neighborhood expansion is straightforward: find a node, get its neighbors, done. This simplicity translates to **low latency**. Most graph databases can execute 1-hop queries extremely fast, making this suitable for real-time applications.
+[reassuringly] Another goal is **simplicity**. Unlike path-based retrieval or community detection, neighborhood expansion is straightforward: find a node, get its neighbors, done. [pleased] This simplicity translates to **low latency**. Most graph databases can execute 1-hop queries extremely fast, making this suitable for real-time applications.
 
 #### Benefits That Matter
-**Richer responses** improve user experience significantly. Instead of multiple back-and-forth queries, users get comprehensive information upfront. In a technical support chatbot, asking about an error code might return the error definition plus common causes, solutions, and related error codes—all in one response.
+[warmly] **Richer responses** improve user experience significantly. Instead of multiple back-and-forth queries, users get comprehensive information upfront. [storytelling] In a technical support chatbot, asking about an error code might return the error definition plus common causes, solutions, and related error codes—all in one response.
 
-**Low implementation complexity** means you can deploy this quickly. If you already have node-level retrieval working, adding neighborhood expansion is a small step. You're just extending your graph query to include adjacent nodes.
+[confidently] **Low implementation complexity** means you can deploy this quickly. If you already have node-level retrieval working, adding neighborhood expansion is a small step. You're just extending your graph query to include adjacent nodes.
 
-**Fast query performance** is maintained because you're limiting expansion to 1 hop. Unlike deep traversal that might explore thousands of nodes, 1-hop queries are predictable and fast, typically under 100ms even for well-connected nodes.
+[pleased] **Fast query performance** is maintained because you're limiting expansion to 1 hop. [lecture] Unlike deep traversal that might explore thousands of nodes, 1-hop queries are predictable and fast, typically under 100ms even for well-connected nodes.
 
 #### When to Use Neighborhood Expansion
-This technique shines in **structured documentation systems**. API documentation where functions have parameter nodes, return type nodes, and example nodes. Product catalogs where items have category nodes, specification nodes, and related product nodes. Ontologies and taxonomies where concepts have is-a relationships, part-of relationships, and attribute nodes.
+[conversational] This technique shines in **structured documentation systems**. API documentation where functions have parameter nodes, return type nodes, and example nodes. Product catalogs where items have category nodes, specification nodes, and related product nodes. Ontologies and taxonomies where concepts have is-a relationships, part-of relationships, and attribute nodes.
 
-It's perfect for **exploratory queries** where users are learning about a topic and need context. Medical knowledge bases where a disease node connects to symptom nodes, treatment nodes, and related condition nodes. Educational systems where a concept connects to prerequisite concepts, example problems, and further reading.
+[enthusiastically] It's perfect for **exploratory queries** where users are learning about a topic and need context. Medical knowledge bases where a disease node connects to symptom nodes, treatment nodes, and related condition nodes. Educational systems where a concept connects to prerequisite concepts, example problems, and further reading.
 
 #### Scenario: API Documentation Assistant
-Imagine a developer asks "How do I use the authenticate function?" Node-level retrieval returns the function definition. Neighborhood expansion returns the definition **plus** parameter nodes (username, password, token), return type node (AuthResult), exception nodes (InvalidCredentials, NetworkError), and usage example nodes. The developer gets everything needed to use the function successfully in one query.
+[storytelling] Imagine a developer asks "How do I use the authenticate function?" Node-level retrieval returns the function definition. [pleased] Neighborhood expansion returns the definition **plus** parameter nodes (username, password, token), return type node (AuthResult), exception nodes (InvalidCredentials, NetworkError), and usage example nodes. [delighted] The developer gets everything needed to use the function successfully in one query.
 
-Now let's see exactly how this technique works!`
+[energetic] Now let's see exactly how this technique works!`
         },
         {
           id: 12,
@@ -789,35 +789,35 @@ Return A + context from neighbors`}
           backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - How It Works
 
-Let's explore the mechanics of neighborhood expansion. Understanding the process will help you implement it effectively and optimize for your specific use cases.
+[lecture] Let's explore the mechanics of neighborhood expansion. [reassuringly] Understanding the process will help you implement it effectively and optimize for your specific use cases.
 
 #### The Expansion Process
-Neighborhood expansion follows a clear workflow. First, **identify the seed node** just like in node-level retrieval. Use embedding similarity or exact matching to find the central node that best represents the query. For "Python authentication," you might find the seed node "authenticate() function."
+[conversational] Neighborhood expansion follows a clear workflow. [confidently] First, **identify the seed node** just like in node-level retrieval. Use embedding similarity or exact matching to find the central node that best represents the query. For "Python authentication," you might find the seed node "authenticate() function."
 
-Next comes the expansion step: **retrieve all 1-hop neighbors**. This is a standard graph traversal operation. In graph databases, it's typically a single query. In Neo4j, you might write: \`MATCH (seed {id: 'authenticate'})-[r]-(neighbor) RETURN neighbor, r, labels(neighbor)\`. This gives you all directly connected nodes along with their relationship types and node types.
+[lecture] Next comes the expansion step: **retrieve all 1-hop neighbors**. This is a standard graph traversal operation. In graph databases, it's typically a single query. In Neo4j, you might write: \`MATCH (seed {id: 'authenticate'})-[r]-(neighbor) RETURN neighbor, r, labels(neighbor)\`. [pleased] This gives you all directly connected nodes along with their relationship types and node types.
 
 
 #### Filtering and Pruning
-Raw neighbor retrieval might return too many nodes. You need **filtering strategies** to keep results manageable and relevant. **Type-based filtering** is common: if you only want parameter and return type nodes, filter by node type. **Edge-type filtering** lets you include specific relationships: "has_parameter," "returns," "throws," but exclude "mentioned_in" or "similar_to."
+[cautiously] Raw neighbor retrieval might return too many nodes. You need **filtering strategies** to keep results manageable and relevant. [lecture] **Type-based filtering** is common: if you only want parameter and return type nodes, filter by node type. **Edge-type filtering** lets you include specific relationships: "has_parameter," "returns," "throws," but exclude "mentioned_in" or "similar_to."
 
-**Relevance filtering** prunes low-value neighbors. You might compute relevance scores based on query similarity and exclude neighbors below a threshold. If the query mentions "authentication errors," you prioritize exception nodes related to authentication over unrelated ones.
+[conversational] **Relevance filtering** prunes low-value neighbors. You might compute relevance scores based on query similarity and exclude neighbors below a threshold. If the query mentions "authentication errors," you prioritize exception nodes related to authentication over unrelated ones.
 
-**Capacity limits** prevent overwhelming users with information. Set **caps per neighbor type**: maximum 5 parameters, 3 examples, 2 related functions. This keeps context rich but focused.
+[confidently] **Capacity limits** prevent overwhelming users with information. Set **caps per neighbor type**: maximum 5 parameters, 3 examples, 2 related functions. This keeps context rich but focused.
 
 #### Traversal Strategy: BFS vs DFS
-For 1-hop expansion, **BFS 👉 'bee-eff-ess'** (Breadth-First Search) and **DFS 👉 'dee-eff-ess'** (Depth-First Search) are equivalent—you're not going deep anyway. But understanding traversal matters if you extend to 1.5-hop or selective 2-hop scenarios. BFS explores all immediate neighbors before going deeper, ensuring you get comprehensive 1-hop coverage. DFS goes deep on one branch before exploring others, useful if you want to follow specific relationship chains selectively.
+[lecture] For 1-hop expansion, **BFS 👉 'bee-eff-ess'** (Breadth-First Search) and **DFS 👉 'dee-eff-ess'** (Depth-First Search) are equivalent—you're not going deep anyway. [reassuringly] But understanding traversal matters if you extend to 1.5-hop or selective 2-hop scenarios. BFS explores all immediate neighbors before going deeper, ensuring you get comprehensive 1-hop coverage. DFS goes deep on one branch before exploring others, useful if you want to follow specific relationship chains selectively.
 
-Most implementations use **BFS for neighborhood expansion** because it naturally aligns with the "get all immediate context" goal. You pop the seed node, expand to all neighbors, apply filters, and you're done.
+[conversational] Most implementations use **BFS for neighborhood expansion** because it naturally aligns with the "get all immediate context" goal. [playfully] You pop the seed node, expand to all neighbors, apply filters, and you're done.
 
 #### Aggregation and Return
-Once you have filtered neighbors, **aggregate their content** with the seed node. You might structure the response as: seed node content at the top, followed by grouped neighbor content (Parameters section, Return Types section, Examples section). This structured format helps downstream systems (LLMs or user interfaces) present information clearly.
+[lecture] Once you have filtered neighbors, **aggregate their content** with the seed node. You might structure the response as: seed node content at the top, followed by grouped neighbor content (Parameters section, Return Types section, Examples section). [pleased] This structured format helps downstream systems (LLMs or user interfaces) present information clearly.
 
-**Deduplication** is important if neighbors might be reached through multiple relationship types. If a "related function" node is also returned as an "example" node, you want to include it only once.
+[cautiously] **Deduplication** is important if neighbors might be reached through multiple relationship types. If a "related function" node is also returned as an "example" node, you want to include it only once.
 
 #### Data Requirements in Detail
-**Adjacency lists** or efficient neighbor lookup structures are essential. Graph databases provide this natively. If using a different storage system, precompute and index adjacency for fast retrieval. **Node types and edge types** should be stored as metadata on every node and relationship, enabling type-based filtering. **Neighbor caps** can be configuration values or learned from user behavior. **Relevance scoring infrastructure** (embedding similarities, weights) helps prioritize which neighbors to include when you hit capacity limits.
+[confidently] **Adjacency lists** or efficient neighbor lookup structures are essential. Graph databases provide this natively. If using a different storage system, precompute and index adjacency for fast retrieval. [lecture] **Node types and edge types** should be stored as metadata on every node and relationship, enabling type-based filtering. **Neighbor caps** can be configuration values or learned from user behavior. **Relevance scoring infrastructure** (embedding similarities, weights) helps prioritize which neighbors to include when you hit capacity limits.
 
-Let's look at implementation steps and real-world examples!`
+[energetic] Let's look at implementation steps and real-world examples!`
         },
         {
           id: 13,
@@ -855,26 +855,26 @@ Let's look at implementation steps and real-world examples!`
           backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - Implementation
 
-Time to get practical. Let's walk through implementing neighborhood expansion with concrete steps, code patterns, and real-world examples.
+[conversational] Time to get practical. Let's walk through implementing neighborhood expansion with concrete steps, code patterns, and real-world examples.
 
 #### Step 1: Seed Node Discovery
-Start with your standard seed node identification. **Embed the query** and **search your node index** for the best matching node. For a query like "Python logging configuration," you might find the seed node "logging.config" with high similarity. Store the seed node ID and its content for later aggregation.
+[lecture] Start with your standard seed node identification. **Embed the query** and **search your node index** for the best matching node. For a query like "Python logging configuration," you might find the seed node "logging.config" with high similarity. Store the seed node ID and its content for later aggregation.
 
 #### Step 2: 1-Hop Neighbor Retrieval
-Execute your **graph traversal query**. The exact syntax depends on your graph database. In **Neo4j**, you'd write: \`MATCH (seed {id: $seedId})-[r]-(neighbor) WHERE type(r) IN $allowedRelationships RETURN neighbor, type(r), labels(neighbor)\`. This retrieves all neighbors connected via specified relationship types.
+[confidently] Execute your **graph traversal query**. The exact syntax depends on your graph database. In **Neo4j**, you'd write: \`MATCH (seed {id: $seedId})-[r]-(neighbor) WHERE type(r) IN $allowedRelationships RETURN neighbor, type(r), labels(neighbor)\`. This retrieves all neighbors connected via specified relationship types.
 
-In **property graph databases**, you can filter directly in the query. In **RDF 👉 'are-dee-eff' triple stores**, you'd query for all triples where the seed is subject or object. In **Python with NetworkX 👉 'network-ex'**, you'd use \`G.neighbors(seed_node)\`. Retrieve not just node IDs but also **node content, types, and relationship metadata**.
+[lecture] In **property graph databases**, you can filter directly in the query. In **RDF 👉 'are-dee-eff' triple stores**, you'd query for all triples where the seed is subject or object. In **Python with NetworkX 👉 'network-ex'**, you'd use \`G.neighbors(seed_node)\`. [pleased] Retrieve not just node IDs but also **node content, types, and relationship metadata**.
 
 #### Step 3: Filtering and Capacity Management
-Now apply your filters. **Type filtering** first: if you only want certain node types (Parameter, ReturnType, Example), filter the neighbor list. **Edge-type filtering**: include "has_parameter" and "returns" relationships but exclude "mentioned_in." Compute **relevance scores** for each neighbor by comparing its content embedding to the query. Sort neighbors by relevance within each type category.
+[conversational] Now apply your filters. **Type filtering** first: if you only want certain node types (Parameter, ReturnType, Example), filter the neighbor list. **Edge-type filtering**: include "has_parameter" and "returns" relationships but exclude "mentioned_in." [lecture] Compute **relevance scores** for each neighbor by comparing its content embedding to the query. Sort neighbors by relevance within each type category.
 
-Apply **capacity caps** per type. If you have 20 example nodes but only want the top 5, select the 5 with highest relevance scores. This keeps your context window manageable. Typical caps: 5-10 for list-type neighbors (parameters, examples), 1-3 for singular relationships (return type, parent category).
+[confidently] Apply **capacity caps** per type. If you have 20 example nodes but only want the top 5, select the 5 with highest relevance scores. [reassuringly] This keeps your context window manageable. Typical caps: 5-10 for list-type neighbors (parameters, examples), 1-3 for singular relationships (return type, parent category).
 
 #### Step 4: Deduplication
-Check for **duplicate neighbors** that might appear through multiple relationship paths. Use node IDs to identify duplicates. When duplicates occur, either keep the one with the highest relevance score or merge their relationship information (e.g., "connected via has_parameter AND appears_in_example").
+[cautiously] Check for **duplicate neighbors** that might appear through multiple relationship paths. Use node IDs to identify duplicates. [conversational] When duplicates occur, either keep the one with the highest relevance score or merge their relationship information (e.g., "connected via has_parameter AND appears_in_example").
 
 #### Step 5: Aggregation and Structuring
-**Aggregate** the seed node content with neighbor content. A good structure: 
+[lecture] **Aggregate** the seed node content with neighbor content. A good structure: 
 \`\`\`
 {
   "seed": {seed_node_content},
@@ -886,22 +886,22 @@ Check for **duplicate neighbors** that might appear through multiple relationshi
 }
 \`\`\`
 
-This structured format makes it easy for downstream systems to use the context appropriately. An LLM can prioritize the seed content and reference neighbor content as supporting detail. A UI can display sections clearly.
+[pleased] This structured format makes it easy for downstream systems to use the context appropriately. An LLM can prioritize the seed content and reference neighbor content as supporting detail. A UI can display sections clearly.
 
 #### Real-World Example: Medical Knowledge Base
-Imagine a medical assistant system. A doctor asks "What are the treatments for Type 2 Diabetes?" Your system identifies "Type 2 Diabetes" as the seed node. Neighborhood expansion retrieves:
+[storytelling] Imagine a medical assistant system. A doctor asks "What are the treatments for Type 2 Diabetes?" Your system identifies "Type 2 Diabetes" as the seed node. [enthusiastically] Neighborhood expansion retrieves:
 - **Treatment nodes**: Metformin, Insulin therapy, Lifestyle modification
 - **Symptom nodes**: Increased thirst, Frequent urination, Fatigue
 - **Related condition nodes**: Prediabetes, Type 1 Diabetes, Metabolic Syndrome
 - **Risk factor nodes**: Obesity, Sedentary lifestyle, Family history
 - **Diagnostic criteria nodes**: HbA1c 👉 'H-b-A-one-C' levels, Fasting glucose
 
-The doctor receives comprehensive context: the condition definition plus all immediately relevant clinical information. They can make informed decisions without multiple queries.
+[delighted] The doctor receives comprehensive context: the condition definition plus all immediately relevant clinical information. They can make informed decisions without multiple queries.
 
 #### Implementation Tips and Optimizations
-**Precompute adjacency lists** for frequently accessed nodes. If certain nodes (popular API functions, common medical conditions) are queried often, cache their 1-hop neighborhoods. **Use database indexes** on node types and edge types for fast filtering. Implement **query batching**: if you have multiple seed nodes, retrieve all their neighborhoods in a single database query. **Monitor expansion sizes**: if some nodes have hundreds of neighbors, consider tighter capacity caps or smarter filtering. **A/B test** different capacity limits to find the sweet spot between comprehensive context and information overload.
+[confidently] **Precompute adjacency lists** for frequently accessed nodes. If certain nodes (popular API functions, common medical conditions) are queried often, cache their 1-hop neighborhoods. [lecture] **Use database indexes** on node types and edge types for fast filtering. Implement **query batching**: if you have multiple seed nodes, retrieve all their neighborhoods in a single database query. [cautiously] **Monitor expansion sizes**: if some nodes have hundreds of neighbors, consider tighter capacity caps or smarter filtering. [playfully] **A/B test** different capacity limits to find the sweet spot between comprehensive context and information overload.
 
-Now let's consider the benefits and limitations!`
+[energetic] Now let's consider the benefits and limitations!`
         },
         {
           id: 14,
@@ -933,36 +933,36 @@ Now let's consider the benefits and limitations!`
           backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - Considerations
 
-Let's discuss the strengths and weaknesses of neighborhood expansion. Understanding these trade-offs helps you decide when this technique is the right choice and when you need something more sophisticated.
+[conversational] Let's discuss the strengths and weaknesses of neighborhood expansion. [reassuringly] Understanding these trade-offs helps you decide when this technique is the right choice and when you need something more sophisticated.
 
 #### Benefits: Context-Rich Retrieval Made Simple
-**Rich contextual information** is the standout benefit. Users get comprehensive answers in a **single retrieval operation** instead of requiring multiple back-and-forth queries. This dramatically improves user experience. In technical documentation, developers get functions with their parameters, return types, exceptions, and examples all at once. In knowledge bases, users get entities with their properties, relationships, and related concepts immediately.
+[pleased] **Rich contextual information** is the standout benefit. Users get comprehensive answers in a **single retrieval operation** instead of requiring multiple back-and-forth queries. [delighted] This dramatically improves user experience. In technical documentation, developers get functions with their parameters, return types, exceptions, and examples all at once. In knowledge bases, users get entities with their properties, relationships, and related concepts immediately.
 
-**Implementation simplicity** makes this technique accessible. If you have node-level retrieval working, adding neighborhood expansion is straightforward—you're just extending the graph query by one hop. No complex algorithms, no sophisticated ranking models, no multi-hop path finding. Just: find seed, get neighbors, filter, return. This simplicity means **faster development** and **easier debugging**.
+[confidently] **Implementation simplicity** makes this technique accessible. If you have node-level retrieval working, adding neighborhood expansion is straightforward—you're just extending the graph query by one hop. [reassuringly] No complex algorithms, no sophisticated ranking models, no multi-hop path finding. Just: find seed, get neighbors, filter, return. [pleased] This simplicity means **faster development** and **easier debugging**.
 
-**Query performance** remains excellent because you're limited to 1-hop traversal. Even nodes with dozens of neighbors can be retrieved in **milliseconds** with proper database indexing. Compare this to multi-hop traversal that might explore thousands of nodes—1-hop expansion is predictable and fast, making it suitable for **real-time applications** like chatbots and interactive search.
+[lecture] **Query performance** remains excellent because you're limited to 1-hop traversal. Even nodes with dozens of neighbors can be retrieved in **milliseconds** with proper database indexing. Compare this to multi-hop traversal that might explore thousands of nodes—1-hop expansion is predictable and fast, making it suitable for **real-time applications** like chatbots and interactive search.
 
-**Better answers** result from the contextual richness. LLMs can generate more accurate, complete responses when given surrounding context. Instead of answering based solely on a node definition, they can reference examples, explain parameters, mention related concepts, and provide nuanced explanations. This reduces hallucination and improves answer quality.
+[enthusiastically] **Better answers** result from the contextual richness. LLMs can generate more accurate, complete responses when given surrounding context. [conversational] Instead of answering based solely on a node definition, they can reference examples, explain parameters, mention related concepts, and provide nuanced explanations. [pleased] This reduces hallucination and improves answer quality.
 
 #### Limitations: When Context Becomes Clutter
-The biggest challenge is **noise from irrelevant neighbors**. Not all neighbors are equally valuable for every query. A function might be connected to dozens of related functions, but only a few are relevant to the user's specific question. Without careful filtering, you might overwhelm users (and LLM context windows) with marginally useful information. **Filtering strategies are critical** but can be tricky to get right. Too aggressive, and you miss important context. Too lenient, and you introduce noise.
+[cautiously] The biggest challenge is **noise from irrelevant neighbors**. Not all neighbors are equally valuable for every query. [concerned] A function might be connected to dozens of related functions, but only a few are relevant to the user's specific question. Without careful filtering, you might overwhelm users (and LLM context windows) with marginally useful information. [seriously] **Filtering strategies are critical** but can be tricky to get right. Too aggressive, and you miss important context. Too lenient, and you introduce noise.
 
-**Missing longer reasoning chains** is an inherent limitation of 1-hop expansion. If understanding requires connecting multiple concepts across 2-3 hops, neighborhood expansion won't capture it. For example, "How does vitamin D affect bone health?" might require: vitamin D → calcium absorption → bone mineralization → bone density. A 1-hop expansion from "vitamin D" won't reach "bone density." You'd need **path-based retrieval** or **multi-hop traversal** for that.
+[lecture] **Missing longer reasoning chains** is an inherent limitation of 1-hop expansion. If understanding requires connecting multiple concepts across 2-3 hops, neighborhood expansion won't capture it. [storytelling] For example, "How does vitamin D affect bone health?" might require: vitamin D → calcium absorption → bone mineralization → bone density. [reassuringly] A 1-hop expansion from "vitamin D" won't reach "bone density." You'd need **path-based retrieval** or **multi-hop traversal** for that.
 
-**Context size management** becomes tricky for highly connected nodes. Popular entities might have hundreds of neighbors. Even with capacity caps, deciding which neighbors to include is challenging. Do you prioritize by relevance? By neighbor type? By edge weight? Each strategy has trade-offs. **Popular nodes** (hub nodes in your graph) require more aggressive filtering than sparse nodes.
+[cautiously] **Context size management** becomes tricky for highly connected nodes. Popular entities might have hundreds of neighbors. [puzzled] Even with capacity caps, deciding which neighbors to include is challenging. Do you prioritize by relevance? By neighbor type? By edge weight? [seriously] Each strategy has trade-offs. **Popular nodes** (hub nodes in your graph) require more aggressive filtering than sparse nodes.
 
-**Balancing comprehensiveness and focus** is an ongoing challenge. Users want enough context to understand fully but not so much that they're overwhelmed. This balance varies by domain, query type, and user expertise. A domain expert might want minimal context, while a novice needs extensive explanation. **Personalization** can help but adds complexity.
+[conversational] **Balancing comprehensiveness and focus** is an ongoing challenge. Users want enough context to understand fully but not so much that they're overwhelmed. [cautiously] This balance varies by domain, query type, and user expertise. A domain expert might want minimal context, while a novice needs extensive explanation. **Personalization** can help but adds complexity.
 
 #### When Neighborhood Expansion Shines
-Use this technique when **local context is sufficient** to answer queries. API documentation, product specifications, concept definitions with related terms, entity profiles with immediate properties and relationships—all are excellent use cases. It works best when your **graph structure is well-designed** with meaningful relationship types and appropriate granularity.
+[confidently] Use this technique when **local context is sufficient** to answer queries. API documentation, product specifications, concept definitions with related terms, entity profiles with immediate properties and relationships—all are excellent use cases. [pleased] It works best when your **graph structure is well-designed** with meaningful relationship types and appropriate granularity.
 
 #### When to Move Beyond This Technique
-If users ask questions requiring **multi-hop reasoning** ("What's the connection between X and Y?"), you need **path-based retrieval**. If queries are broad and exploratory ("Tell me everything about machine learning"), consider **community/cluster retrieval**. If you need to rank neighbors by importance beyond simple relevance, combine with **edge-weighted retrieval**. If you need to handle both graph structure and semantic similarity, look at the **hybrid techniques** coming later.
+[seriously] If users ask questions requiring **multi-hop reasoning** ("What's the connection between X and Y?"), you need **path-based retrieval**. If queries are broad and exploratory ("Tell me everything about machine learning"), consider **community/cluster retrieval**. [lecture] If you need to rank neighbors by importance beyond simple relevance, combine with **edge-weighted retrieval**. If you need to handle both graph structure and semantic similarity, look at the **hybrid techniques** coming later.
 
 #### Combining Techniques
-Neighborhood expansion works well **in combination with other techniques**. Use **edge-weighted retrieval** to rank neighbors by importance. Apply **semantic filtering** to ensure neighbors are query-relevant. Extend selectively to **1.5-hop** for specific relationship types (e.g., always include examples of examples). Combine with **path-based retrieval** for queries that need both local context and reasoning chains.
+[enthusiastically] Neighborhood expansion works well **in combination with other techniques**. [conversational] Use **edge-weighted retrieval** to rank neighbors by importance. Apply **semantic filtering** to ensure neighbors are query-relevant. [playfully] Extend selectively to **1.5-hop** for specific relationship types (e.g., always include examples of examples). [lecture] Combine with **path-based retrieval** for queries that need both local context and reasoning chains.
 
-Ready for our next technique? Let's explore Path-Based Retrieval and multi-hop reasoning!`
+[energetic] Ready for our next technique? Let's explore Path-Based Retrieval and multi-hop reasoning!`
         },
       ]
     },
@@ -998,39 +998,39 @@ Ready for our next technique? Let's explore Path-Based Retrieval and multi-hop r
           backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - Overview
 
-Welcome to **Path-Based Retrieval**, our fourth technique and the first that truly embraces **multi-hop reasoning**. While previous techniques focused on individual nodes or immediate neighbors, path-based retrieval explores how concepts connect across multiple steps.
+[energetic] Welcome to **Path-Based Retrieval**, our fourth technique and the first that truly embraces **multi-hop reasoning**. [lecture] While previous techniques focused on individual nodes or immediate neighbors, path-based retrieval explores how concepts connect across multiple steps.
 
 #### What Is Path-Based Retrieval?
-Imagine someone asks "How does vitamin D affect bone health?" The answer isn't a direct connection—it's a **chain of relationships**: vitamin D → enhances calcium absorption → calcium → strengthens bone mineralization → bone mineralization → increases bone density → bone density → improves bone health. That's a **4-hop path** connecting the query concepts. Path-based retrieval finds and returns these meaningful sequences of connections, enabling your system to explain **how** and **why** things are related.
+[storytelling] Imagine someone asks "How does vitamin D affect bone health?" The answer isn't a direct connection—it's a **chain of relationships**: vitamin D → enhances calcium absorption → calcium → strengthens bone mineralization → bone mineralization → increases bone density → bone density → improves bone health. [pleased] That's a **4-hop path** connecting the query concepts. [confidently] Path-based retrieval finds and returns these meaningful sequences of connections, enabling your system to explain **how** and **why** things are related.
 
 #### The Power of Multi-Hop Reasoning
-Many real-world questions require understanding **indirect relationships**. In knowledge graphs, two concepts might not be directly connected, but there's a meaningful path between them. Path-based retrieval discovers these paths, turning implicit knowledge into explicit reasoning chains. It's like asking "How am I connected to this person?" on LinkedIn 👉 'linked-in' and finding "You → colleague → college friend → this person."
+[lecture] Many real-world questions require understanding **indirect relationships**. In knowledge graphs, two concepts might not be directly connected, but there's a meaningful path between them. [enthusiastically] Path-based retrieval discovers these paths, turning implicit knowledge into explicit reasoning chains. [playfully] It's like asking "How am I connected to this person?" on LinkedIn 👉 'linked-in' and finding "You → colleague → college friend → this person."
 
 #### Goals: Reasoning and Evidence
-The primary goal is **supporting complex reasoning**. Questions like "Why does this regulation require that practice?" or "What's the connection between these two research findings?" or "How does this component affect system performance?" all benefit from path-based retrieval. The paths themselves become **reasoning chains** that LLMs can verbalize into coherent explanations.
+[confidently] The primary goal is **supporting complex reasoning**. Questions like "Why does this regulation require that practice?" or "What's the connection between these two research findings?" or "How does this component affect system performance?" all benefit from path-based retrieval. [pleased] The paths themselves become **reasoning chains** that LLMs can verbalize into coherent explanations.
 
-Another critical goal is **traceable evidence**. When your system claims "A affects B," path-based retrieval provides the **evidence chain**: "A influences C, which regulates D, which determines B." This traceability is essential for high-stakes domains like healthcare, legal compliance, and scientific research. Users can verify the reasoning, understand the logic, and trust the conclusions.
+[seriously] Another critical goal is **traceable evidence**. When your system claims "A affects B," path-based retrieval provides the **evidence chain**: "A influences C, which regulates D, which determines B." [warmly] This traceability is essential for high-stakes domains like healthcare, legal compliance, and scientific research. Users can verify the reasoning, understand the logic, and trust the conclusions.
 
 #### Benefits That Matter
-**Explainable reasoning** becomes possible. Instead of black-box predictions, you have **interpretable paths** showing exactly how conclusions were reached. In medical diagnosis, a path from symptoms through physiological mechanisms to conditions provides doctors with reasoning they can verify against their expertise.
+[enthusiastically] **Explainable reasoning** becomes possible. Instead of black-box predictions, you have **interpretable paths** showing exactly how conclusions were reached. [storytelling] In medical diagnosis, a path from symptoms through physiological mechanisms to conditions provides doctors with reasoning they can verify against their expertise.
 
-**Discovery of indirect connections** expands what your system can answer. Many interesting insights exist in indirect relationships. Path-based retrieval surfaces these connections automatically, enabling discovery that wouldn't be possible with single-node or neighborhood-only approaches.
+[delighted] **Discovery of indirect connections** expands what your system can answer. Many interesting insights exist in indirect relationships. [pleased] Path-based retrieval surfaces these connections automatically, enabling discovery that wouldn't be possible with single-node or neighborhood-only approaches.
 
-**Rich context for LLMs** improves answer quality. When you provide paths rather than isolated nodes, LLMs can generate responses that explain relationships, describe processes, and connect concepts coherently. "A leads to B because C happens, which triggers D" is much better than "A and B are related."
+[lecture] **Rich context for LLMs** improves answer quality. When you provide paths rather than isolated nodes, LLMs can generate responses that explain relationships, describe processes, and connect concepts coherently. [conversational] "A leads to B because C happens, which triggers D" is much better than "A and B are related."
 
 #### When to Use Path-Based Retrieval
-This technique shines for **explanatory queries** that ask "why," "how," or "what's the connection." It's perfect for **causal reasoning**: understanding cause-and-effect chains in scientific domains, medical diagnosis, system troubleshooting. **Compliance and regulatory domains** where requirements reference other requirements in complex dependency chains. **Research and discovery** where finding connections between disparate concepts leads to insights.
+[confidently] This technique shines for **explanatory queries** that ask "why," "how," or "what's the connection." It's perfect for **causal reasoning**: understanding cause-and-effect chains in scientific domains, medical diagnosis, system troubleshooting. [lecture] **Compliance and regulatory domains** where requirements reference other requirements in complex dependency chains. **Research and discovery** where finding connections between disparate concepts leads to insights.
 
 #### Use Cases That Benefit
-**Medical knowledge bases**: "Why does this medication help with that condition?" The path traces: medication → inhibits enzyme X → reduces inflammation → alleviates symptoms of condition.
+[storytelling] **Medical knowledge bases**: "Why does this medication help with that condition?" The path traces: medication → inhibits enzyme X → reduces inflammation → alleviates symptoms of condition.
 
-**Regulatory compliance**: "What regulations require this security control?" The path shows: Control → mandated by Standard A → referenced in Regulation B → required for Industry C.
+[lecture] **Regulatory compliance**: "What regulations require this security control?" The path shows: Control → mandated by Standard A → referenced in Regulation B → required for Industry C.
 
-**Scientific literature**: "How are these two research areas connected?" The path reveals: Topic A → influenced by Paper X → cites Study Y → foundational to Topic B.
+[conversational] **Scientific literature**: "How are these two research areas connected?" The path reveals: Topic A → influenced by Paper X → cites Study Y → foundational to Topic B.
 
-**Troubleshooting systems**: "Why is this component failing?" The path explains: Component → depends on Service → requires Configuration → broken by recent Update.
+[cautiously] **Troubleshooting systems**: "Why is this component failing?" The path explains: Component → depends on Service → requires Configuration → broken by recent Update.
 
-Now let's see exactly how path-based retrieval works!`
+[energetic] Now let's see exactly how path-based retrieval works!`
         },
         {
           id: 16,
@@ -1090,33 +1090,33 @@ Multi-hop reasoning chain`}
           backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - How It Works
 
-Let's dive into the mechanics of path-based retrieval. This is more complex than previous techniques, but understanding the process will help you implement it effectively.
+[lecture] Let's dive into the mechanics of path-based retrieval. [reassuringly] This is more complex than previous techniques, but understanding the process will help you implement it effectively.
 
 #### The Path Discovery Process
-Path-based retrieval starts by **identifying endpoints**. Unlike node-level retrieval where you find a single node, here you need to identify **source and target concepts** from the query. For "How does vitamin D affect bone health?" you extract two endpoints: "vitamin D" (source) and "bone health" (target). You find the nodes in your graph that best represent these concepts using embedding similarity or entity linking.
+[conversational] Path-based retrieval starts by **identifying endpoints**. Unlike node-level retrieval where you find a single node, here you need to identify **source and target concepts** from the query. [storytelling] For "How does vitamin D affect bone health?" you extract two endpoints: "vitamin D" (source) and "bone health" (target). You find the nodes in your graph that best represent these concepts using embedding similarity or entity linking.
 
-Next comes **pathfinding**—discovering sequences of edges that connect source to target. This is classic graph traversal. Common algorithms include **BFS 👉 'bee-eff-ess'** (Breadth-First Search) which explores all paths systematically, **Dijkstra's algorithm** which finds shortest weighted paths, or **A-star** which uses heuristics to guide search efficiently.
+[lecture] Next comes **pathfinding**—discovering sequences of edges that connect source to target. This is classic graph traversal. [confidently] Common algorithms include **BFS 👉 'bee-eff-ess'** (Breadth-First Search) which explores all paths systematically, **Dijkstra's algorithm** which finds shortest weighted paths, or **A-star** which uses heuristics to guide search efficiently.
 
 
 #### Path Constraints and Pruning
-Without constraints, pathfinding can explode combinatorially. A node with 10 neighbors at each hop means 10^3 = 1,000 possible 3-hop paths. You need **constraints** to keep search tractable. **Maximum path length** (e.g., max 4 hops) limits how far you explore. **Edge type constraints** specify which relationship types are allowed; in a medical graph, you might allow "treats," "causes," "prevents" but exclude "mentioned_in." **Semantic constraints** use embedding similarity to prune paths where intermediate nodes are semantically unrelated to the query.
+[cautiously] Without constraints, pathfinding can explode combinatorially. A node with 10 neighbors at each hop means 10^3 = 1,000 possible 3-hop paths. [seriously] You need **constraints** to keep search tractable. [lecture] **Maximum path length** (e.g., max 4 hops) limits how far you explore. **Edge type constraints** specify which relationship types are allowed; in a medical graph, you might allow "treats," "causes," "prevents" but exclude "mentioned_in." [conversational] **Semantic constraints** use embedding similarity to prune paths where intermediate nodes are semantically unrelated to the query.
 
-**Early stopping** helps performance. If you've found 10 high-quality paths, stop searching. If current paths are much lower quality than the best path found, abandon that search branch.
+[confidently] **Early stopping** helps performance. If you've found 10 high-quality paths, stop searching. If current paths are much lower quality than the best path found, abandon that search branch.
 
 #### Path Scoring and Ranking
-Once you have candidate paths, **score them** to identify the best ones. Scoring typically combines multiple factors. **Path length**: shorter paths are often better (fewer inference steps), but not always—sometimes a longer path is more informative. **Edge weights**: if your edges have weights (confidence, strength), sum or multiply along the path. **Semantic relevance**: compute how well each intermediate node relates to the query. **Path coherence**: do the relationships form a logical chain?
+[lecture] Once you have candidate paths, **score them** to identify the best ones. Scoring typically combines multiple factors. **Path length**: shorter paths are often better (fewer inference steps), but not always—sometimes a longer path is more informative. **Edge weights**: if your edges have weights (confidence, strength), sum or multiply along the path. **Semantic relevance**: compute how well each intermediate node relates to the query. **Path coherence**: do the relationships form a logical chain?
 
-A common scoring formula: \`score = α×(1/length) + β×(avg_edge_weight) + γ×(semantic_relevance)\` where α, β, γ are weights you tune. Higher scores indicate better paths. **Rank all candidate paths** by score and select the top k, typically k=1-5.
+[conversational] A common scoring formula: \`score = α×(1/length) + β×(avg_edge_weight) + γ×(semantic_relevance)\` where α, β, γ are weights you tune. [pleased] Higher scores indicate better paths. **Rank all candidate paths** by score and select the top k, typically k=1-5.
 
 #### Data Requirements in Detail
-You need **edge types** stored on every relationship, enabling type-based path constraints. **Edge weights** (if available) inform path scoring. Define **path constraints** as configuration: maximum length (3-5 hops common), allowed/forbidden edge types, minimum edge weight thresholds. Implement an **efficient scoring function** that balances the factors mentioned above. Maintain **graph indexes** that accelerate traversal; most graph databases provide this, but for large-scale systems, consider specialized path-finding indexes or bidirectional search.
+[lecture] You need **edge types** stored on every relationship, enabling type-based path constraints. **Edge weights** (if available) inform path scoring. [confidently] Define **path constraints** as configuration: maximum length (3-5 hops common), allowed/forbidden edge types, minimum edge weight thresholds. Implement an **efficient scoring function** that balances the factors mentioned above. [reassuringly] Maintain **graph indexes** that accelerate traversal; most graph databases provide this, but for large-scale systems, consider specialized path-finding indexes or bidirectional search.
 
 #### Pathfinding Algorithms Deep Dive
-**BFS** explores all paths of length 1, then length 2, then length 3, etc. It's exhaustive and guarantees finding all paths up to your length limit, but can be slow for large graphs. **Dijkstra's algorithm** finds the shortest weighted path efficiently by exploring paths in order of increasing weight. It's faster than BFS but only returns one path. **A-star** adds a heuristic (e.g., embedding similarity to target) to guide search toward promising paths, dramatically reducing exploration for large graphs. **Bidirectional search** starts from both source and target, meeting in the middle, cutting search space significantly.
+[lecture] **BFS** explores all paths of length 1, then length 2, then length 3, etc. [cautiously] It's exhaustive and guarantees finding all paths up to your length limit, but can be slow for large graphs. [conversational] **Dijkstra's algorithm** finds the shortest weighted path efficiently by exploring paths in order of increasing weight. It's faster than BFS but only returns one path. [pleased] **A-star** adds a heuristic (e.g., embedding similarity to target) to guide search toward promising paths, dramatically reducing exploration for large graphs. [confidently] **Bidirectional search** starts from both source and target, meeting in the middle, cutting search space significantly.
 
-Choose based on your needs: BFS for comprehensive path discovery, Dijkstra for single best path, A-star for large graphs, bidirectional for performance.
+[conversational] Choose based on your needs: BFS for comprehensive path discovery, Dijkstra for single best path, A-star for large graphs, bidirectional for performance.
 
-Let's look at implementation steps!`
+[energetic] Let's look at implementation steps!`
         },
         {
           id: 17,
@@ -1154,16 +1154,16 @@ Let's look at implementation steps!`
           backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - Implementation
 
-Time to implement path-based retrieval. We'll walk through practical steps, code patterns, and real-world examples to help you build this powerful technique.
+[conversational] Time to implement path-based retrieval. We'll walk through practical steps, code patterns, and real-world examples to help you build this powerful technique.
 
 #### Step 1: Concept Extraction
-Start by **analyzing the query** to identify source and target concepts. For "How does vitamin D affect bone health?" you need to extract "vitamin D" and "bone health" as key concepts. Use **named entity recognition** or **embedding-based span extraction** to identify these phrases. Alternatively, for simpler queries, use keyword extraction or dependency parsing to find the main concepts.
+[lecture] Start by **analyzing the query** to identify source and target concepts. For "How does vitamin D affect bone health?" you need to extract "vitamin D" and "bone health" as key concepts. [confidently] Use **named entity recognition** or **embedding-based span extraction** to identify these phrases. [conversational] Alternatively, for simpler queries, use keyword extraction or dependency parsing to find the main concepts.
 
 #### Step 2: Node Mapping
-Map extracted concepts to **nodes in your graph**. For each concept, query your node index to find the best matching node. Use embedding similarity: embed "vitamin D" and find the node with the highest cosine similarity, likely "Vitamin D" or "Cholecalciferol." Do the same for "bone health," mapping to a node like "Bone Health" or "Skeletal Health." If multiple nodes match well (e.g., "vitamin D2" and "vitamin D3"), consider each as a potential source and explore paths from all of them.
+[lecture] Map extracted concepts to **nodes in your graph**. For each concept, query your node index to find the best matching node. [storytelling] Use embedding similarity: embed "vitamin D" and find the node with the highest cosine similarity, likely "Vitamin D" or "Cholecalciferol." Do the same for "bone health," mapping to a node like "Bone Health" or "Skeletal Health." [reassuringly] If multiple nodes match well (e.g., "vitamin D2" and "vitamin D3"), consider each as a potential source and explore paths from all of them.
 
 #### Step 3: Pathfinding Execution
-Now run your **pathfinding algorithm**. Let's say you choose **BFS** for comprehensive path discovery up to 4 hops. Initialize a queue with the source node and a path object tracking visited nodes. For each node, expand to neighbors, checking your **constraints**: is the path length under the limit? Is the edge type allowed? Is the intermediate node semantically relevant enough? If a neighbor is the target node, you've found a complete path—add it to your results. Continue until you've explored all possibilities within constraints or hit a maximum number of paths.
+[conversational] Now run your **pathfinding algorithm**. Let's say you choose **BFS** for comprehensive path discovery up to 4 hops. [lecture] Initialize a queue with the source node and a path object tracking visited nodes. For each node, expand to neighbors, checking your **constraints**: is the path length under the limit? Is the edge type allowed? Is the intermediate node semantically relevant enough? [pleased] If a neighbor is the target node, you've found a complete path—add it to your results. Continue until you've explored all possibilities within constraints or hit a maximum number of paths.
 
 **Example BFS pseudocode**:
 \`\`\`
@@ -1184,10 +1184,10 @@ while queue and len(found_paths) < max_paths:
 return found_paths
 \`\`\`
 
-For **weighted paths**, use **Dijkstra's algorithm** to find the highest-weighted (or lowest-cost) path. For **large graphs**, use **A-star** with a heuristic like embedding similarity to the target, dramatically reducing nodes explored.
+[conversational] For **weighted paths**, use **Dijkstra's algorithm** to find the highest-weighted (or lowest-cost) path. [pleased] For **large graphs**, use **A-star** with a heuristic like embedding similarity to the target, dramatically reducing nodes explored.
 
 #### Step 4: Path Scoring
-For each discovered path, **compute a score**. Combine multiple factors with learned or tuned weights. Here's a common approach:
+[lecture] For each discovered path, **compute a score**. Combine multiple factors with learned or tuned weights. Here's a common approach:
 
 **Length score**: \`1 / path_length\` (shorter is better, usually)
 **Weight score**: \`average_edge_weight\` or \`min_edge_weight\` along the path
@@ -1195,10 +1195,10 @@ For each discovered path, **compute a score**. Combine multiple factors with lea
 
 **Combined score**: \`score = 0.3×length_score + 0.4×weight_score + 0.3×semantic_score\`
 
-Tune these weights based on your domain. In some cases, longer paths are more informative (comprehensive explanations). In others, shorter paths are better (direct evidence).
+[cautiously] Tune these weights based on your domain. In some cases, longer paths are more informative (comprehensive explanations). In others, shorter paths are better (direct evidence).
 
 #### Step 5: Ranking and Return
-**Sort paths** by score in descending order. Select the **top k paths**, typically k=1-5. For each path, retrieve **node content** for every node along the path and **relationship types** for every edge. Structure the output to show the path clearly:
+[confidently] **Sort paths** by score in descending order. Select the **top k paths**, typically k=1-5. [lecture] For each path, retrieve **node content** for every node along the path and **relationship types** for every edge. Structure the output to show the path clearly:
 
 \`\`\`
 Path 1 (score: 0.87):
@@ -1211,10 +1211,10 @@ Path 1 (score: 0.87):
   - Bone Health: [content]
 \`\`\`
 
-This structured format helps LLMs generate clear explanations: "Vitamin D enhances calcium absorption, which increases bone mineralization, ultimately improving bone health."
+[pleased] This structured format helps LLMs generate clear explanations: "Vitamin D enhances calcium absorption, which increases bone mineralization, ultimately improving bone health."
 
 #### Real-World Example: Compliance Knowledge Graph
-Imagine a compliance system. A legal team asks: "Why do we need multi-factor authentication?" Your system extracts "multi-factor authentication" (source) and "requirement" (target). Pathfinding discovers several paths:
+[storytelling] Imagine a compliance system. A legal team asks: "Why do we need multi-factor authentication?" Your system extracts "multi-factor authentication" (source) and "requirement" (target). [enthusiastically] Pathfinding discovers several paths:
 
 **Path 1** (score 0.91):
 Multi-Factor Authentication → mandated by → NIST 👉 'nist' SP 800-63B → referenced by → SOC 2 Type II → required for → Enterprise Customers
@@ -1225,14 +1225,14 @@ Multi-Factor Authentication → required by → PCI DSS 3.2.1 → applies to →
 **Path 3** (score 0.78):
 Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelines → adopted in → Security Policy → enforced for → All Systems
 
-The system returns these ranked paths. An LLM generates: "Multi-factor authentication is required for multiple reasons. Primarily, it's mandated by NIST SP 800-63B, which is referenced by SOC 2 Type II compliance necessary for enterprise customers. Additionally, PCI DSS 3.2.1 requires it for payment processing, critical for our e-commerce platform."
+[delighted] The system returns these ranked paths. An LLM generates: "Multi-factor authentication is required for multiple reasons. Primarily, it's mandated by NIST SP 800-63B, which is referenced by SOC 2 Type II compliance necessary for enterprise customers. Additionally, PCI DSS 3.2.1 requires it for payment processing, critical for our e-commerce platform."
 
-The compliance team now has **traceable evidence** with specific standard references and clear reasoning chains.
+[pleased] The compliance team now has **traceable evidence** with specific standard references and clear reasoning chains.
 
 #### Implementation Tips
-**Cache frequent paths** between common concept pairs. **Precompute paths** for anticipated queries if your graph is relatively static. **Implement timeout mechanisms** to prevent pathfinding from running too long on complex queries. **Log path quality metrics** to tune your scoring function. Use **graph database native pathfinding** (Neo4j's shortestPath, Dijkstra implementations) when possible—they're highly optimized. For very large graphs, consider **approximate pathfinding** or **landmark-based methods** that trade some accuracy for significant speed improvements.
+[confidently] **Cache frequent paths** between common concept pairs. **Precompute paths** for anticipated queries if your graph is relatively static. [cautiously] **Implement timeout mechanisms** to prevent pathfinding from running too long on complex queries. [conversational] **Log path quality metrics** to tune your scoring function. [lecture] Use **graph database native pathfinding** (Neo4j's shortestPath, Dijkstra implementations) when possible—they're highly optimized. [reassuringly] For very large graphs, consider **approximate pathfinding** or **landmark-based methods** that trade some accuracy for significant speed improvements.
 
-Now let's examine the benefits and limitations!`
+[energetic] Now let's examine the benefits and limitations!`
         },
         {
           id: 18,
@@ -1264,44 +1264,44 @@ Now let's examine the benefits and limitations!`
           backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - Considerations
 
-Path-based retrieval is powerful but comes with significant trade-offs. Let's honestly assess its strengths and weaknesses so you can make informed decisions about when to use this technique.
+[seriously] Path-based retrieval is powerful but comes with significant trade-offs. [reassuringly] Let's honestly assess its strengths and weaknesses so you can make informed decisions about when to use this technique.
 
 #### Benefits: The Power of Multi-Hop Reasoning
-**Multi-hop reasoning** is the transformative benefit. Questions that previous techniques couldn't answer become possible. "How does X influence Y?" "What's the connection between A and B?" "Why does this regulation require that control?" Path-based retrieval finds the **chains of inference** needed to answer these questions. This unlocks entirely new use cases—causal reasoning, indirect relationship discovery, complex explanatory queries.
+[enthusiastically] **Multi-hop reasoning** is the transformative benefit. Questions that previous techniques couldn't answer become possible. [conversational] "How does X influence Y?" "What's the connection between A and B?" "Why does this regulation require that control?" [pleased] Path-based retrieval finds the **chains of inference** needed to answer these questions. [delighted] This unlocks entirely new use cases—causal reasoning, indirect relationship discovery, complex explanatory queries.
 
-**Traceable evidence chains** provide transparency and trust. In high-stakes domains, being able to show **exactly how** a conclusion was reached is critical. Medical professionals can verify reasoning paths against their knowledge. Compliance officers can cite specific regulatory chains. Researchers can validate connections with references at each step. This **explainability** is increasingly important as AI systems are deployed in sensitive areas.
+[warmly] **Traceable evidence chains** provide transparency and trust. [seriously] In high-stakes domains, being able to show **exactly how** a conclusion was reached is critical. [storytelling] Medical professionals can verify reasoning paths against their knowledge. Compliance officers can cite specific regulatory chains. Researchers can validate connections with references at each step. [confidently] This **explainability** is increasingly important as AI systems are deployed in sensitive areas.
 
-**Discovery of indirect connections** enables insights that wouldn't emerge from direct queries. Researchers might discover unexpected connections between fields. Analysts might find hidden dependencies in complex systems. Recommendation systems might suggest non-obvious but valuable products or content. Path-based retrieval **surfaces these hidden relationships** automatically.
+[enthusiastically] **Discovery of indirect connections** enables insights that wouldn't emerge from direct queries. [playfully] Researchers might discover unexpected connections between fields. Analysts might find hidden dependencies in complex systems. Recommendation systems might suggest non-obvious but valuable products or content. [pleased] Path-based retrieval **surfaces these hidden relationships** automatically.
 
-**Better LLM prompts** result from providing reasoning chains. Instead of isolated facts, you give the LLM a **narrative structure**: "A leads to B, which causes C, resulting in D." This structured context helps LLMs generate more coherent, accurate, and convincing explanations. Answer quality improves significantly for complex queries.
+[lecture] **Better LLM prompts** result from providing reasoning chains. Instead of isolated facts, you give the LLM a **narrative structure**: "A leads to B, which causes C, resulting in D." [delighted] This structured context helps LLMs generate more coherent, accurate, and convincing explanations. Answer quality improves significantly for complex queries.
 
 #### Limitations: Computational Cost and Complexity
-**Computational expense** is the biggest challenge. Pathfinding in large graphs is **inherently expensive**. A node with 20 neighbors, explored to 3 hops, means potentially 20^3 = 8,000 paths to consider. Even with constraints and pruning, you might evaluate hundreds or thousands of paths per query. This translates to **higher latency** (seconds instead of milliseconds) and **greater computational cost** than simpler techniques.
+[cautiously] **Computational expense** is the biggest challenge. [seriously] Pathfinding in large graphs is **inherently expensive**. A node with 20 neighbors, explored to 3 hops, means potentially 20^3 = 8,000 paths to consider. [concerned] Even with constraints and pruning, you might evaluate hundreds or thousands of paths per query. [cautiously] This translates to **higher latency** (seconds instead of milliseconds) and **greater computational cost** than simpler techniques.
 
-**Path explosion** happens quickly without careful constraints. In dense graphs, the number of possible paths grows exponentially with path length. You **must** implement aggressive constraints: maximum path length (typically 3-4 hops), edge type restrictions, semantic filtering, early stopping. Even then, some queries might trigger massive path exploration. You need **timeout mechanisms** and **fallback strategies** for when pathfinding takes too long.
+[concerned] **Path explosion** happens quickly without careful constraints. In dense graphs, the number of possible paths grows exponentially with path length. [seriously] You **must** implement aggressive constraints: maximum path length (typically 3-4 hops), edge type restrictions, semantic filtering, early stopping. [cautiously] Even then, some queries might trigger massive path exploration. [reassuringly] You need **timeout mechanisms** and **fallback strategies** for when pathfinding takes too long.
 
-**Scoring complexity** increases dramatically. With multiple paths, how do you rank them? Length matters, but so do edge weights, semantic relevance, path coherence, and domain-specific factors. The **scoring function** often requires significant tuning and domain expertise. What works for citation networks doesn't work for medical knowledge graphs or compliance systems. Expect to **iterate and refine** your scoring approach based on user feedback and evaluation metrics.
+[puzzled] **Scoring complexity** increases dramatically. With multiple paths, how do you rank them? [lecture] Length matters, but so do edge weights, semantic relevance, path coherence, and domain-specific factors. [cautiously] The **scoring function** often requires significant tuning and domain expertise. What works for citation networks doesn't work for medical knowledge graphs or compliance systems. [reassuringly] Expect to **iterate and refine** your scoring approach based on user feedback and evaluation metrics.
 
-**Spurious paths** are a real problem. Not every path that exists in your graph is meaningful. Some paths might be technically valid but semantically nonsensical: A mentions B, B mentioned in C, C tangentially related to D. Without good **path quality filtering**, you'll surface noise alongside signal. This requires **semantic validation** at each hop and **coherence checking** across the entire path.
+[concerned] **Spurious paths** are a real problem. Not every path that exists in your graph is meaningful. [storytelling] Some paths might be technically valid but semantically nonsensical: A mentions B, B mentioned in C, C tangentially related to D. [seriously] Without good **path quality filtering**, you'll surface noise alongside signal. [cautiously] This requires **semantic validation** at each hop and **coherence checking** across the entire path.
 
 #### Performance Considerations
-**Query latency** can be problematic for real-time applications. If users expect sub-second responses, path-based retrieval might not meet that expectation, especially for complex queries. Consider **asynchronous processing** where you return quick preliminary results and then enrich with paths. Or use **path caching** for common query patterns, precomputing paths between frequently queried concept pairs.
+[cautiously] **Query latency** can be problematic for real-time applications. If users expect sub-second responses, path-based retrieval might not meet that expectation, especially for complex queries. [reassuringly] Consider **asynchronous processing** where you return quick preliminary results and then enrich with paths. [conversational] Or use **path caching** for common query patterns, precomputing paths between frequently queried concept pairs.
 
-**Scalability** becomes challenging with graph size. A graph with millions of nodes and edges can make pathfinding prohibitively slow. You need **optimizations**: bidirectional search (start from both ends), A-star with good heuristics, path indexes for common patterns, or graph partitioning to reduce search space. For very large graphs, consider **approximate pathfinding** that trades completeness for speed.
+[seriously] **Scalability** becomes challenging with graph size. A graph with millions of nodes and edges can make pathfinding prohibitively slow. [confidently] You need **optimizations**: bidirectional search (start from both ends), A-star with good heuristics, path indexes for common patterns, or graph partitioning to reduce search space. [reassuringly] For very large graphs, consider **approximate pathfinding** that trades completeness for speed.
 
 #### When to Use Path-Based Retrieval
-Use this technique when **reasoning chains matter**. Explanatory queries (why, how), causal inference, regulatory/compliance traceability, research connection discovery, troubleshooting and root cause analysis—all benefit enormously. Use it when **query frequency is moderate** and you can accept higher latency. Use it when your **graph is well-structured** with meaningful edge types and not too dense.
+[confidently] Use this technique when **reasoning chains matter**. Explanatory queries (why, how), causal inference, regulatory/compliance traceability, research connection discovery, troubleshooting and root cause analysis—all benefit enormously. [conversational] Use it when **query frequency is moderate** and you can accept higher latency. [reassuringly] Use it when your **graph is well-structured** with meaningful edge types and not too dense.
 
 #### When to Avoid or Modify
-**Avoid** path-based retrieval for simple lookup queries where node-level retrieval suffices. Avoid it for **real-time, high-frequency** applications unless you have aggressive caching and optimization. Avoid it for **extremely large, dense graphs** without significant infrastructure investment in optimization. **Modify** the approach by limiting path length aggressively (2-3 hops max), using approximate pathfinding, or precomputing paths for common query patterns.
+[cautiously] **Avoid** path-based retrieval for simple lookup queries where node-level retrieval suffices. [seriously] Avoid it for **real-time, high-frequency** applications unless you have aggressive caching and optimization. Avoid it for **extremely large, dense graphs** without significant infrastructure investment in optimization. [conversational] **Modify** the approach by limiting path length aggressively (2-3 hops max), using approximate pathfinding, or precomputing paths for common query patterns.
 
 #### Combining with Other Techniques
-Path-based retrieval **complements** other techniques beautifully. Use it alongside **node-level retrieval**: return the direct node plus reasoning paths to related concepts. Combine with **neighborhood expansion**: for each node in the path, include its immediate context. Apply **edge-weighted retrieval** within pathfinding to prioritize high-weight edges. Use it selectively: detect when a query needs reasoning (presence of "why," "how," causal keywords) and only then invoke path-based retrieval, falling back to faster techniques otherwise.
+[enthusiastically] Path-based retrieval **complements** other techniques beautifully. [conversational] Use it alongside **node-level retrieval**: return the direct node plus reasoning paths to related concepts. Combine with **neighborhood expansion**: for each node in the path, include its immediate context. [lecture] Apply **edge-weighted retrieval** within pathfinding to prioritize high-weight edges. [playfully] Use it selectively: detect when a query needs reasoning (presence of "why," "how," causal keywords) and only then invoke path-based retrieval, falling back to faster techniques otherwise.
 
 #### The Bottom Line
-Path-based retrieval is a **powerful but expensive** technique. It enables capabilities impossible with simpler methods but requires careful implementation, optimization, and constraint management. Use it strategically for queries that truly benefit from multi-hop reasoning, and combine it with faster techniques for comprehensive coverage.
+[seriously] Path-based retrieval is a **powerful but expensive** technique. [warmly] It enables capabilities impossible with simpler methods but requires careful implementation, optimization, and constraint management. [confidently] Use it strategically for queries that truly benefit from multi-hop reasoning, and combine it with faster techniques for comprehensive coverage.
 
-Ready to continue? We've covered four foundational techniques. The remaining nine build on these foundations with increasing sophistication!`
+[energetic] Ready to continue? We've covered four foundational techniques. The remaining nine build on these foundations with increasing sophistication!`
         },
       ]
     },
@@ -1337,29 +1337,29 @@ Ready to continue? We've covered four foundational techniques. The remaining nin
           backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - Overview
 
-Welcome to **Community or Cluster Retrieval**, a technique that takes us beyond individual nodes and edges to understand the **natural groupings** within your knowledge graph. This is where graph structure reveals thematic organization.
+[conversational] Welcome to **Community or Cluster Retrieval**, a technique that takes us beyond individual nodes and edges to understand the **natural groupings** within your knowledge graph. [pleased] This is where graph structure reveals thematic organization.
 
 #### What Is Community/Cluster Retrieval?
-Think of your knowledge graph as a social network at a conference. People naturally form clusters—machine learning researchers gather in one corner, database experts in another, front-end developers in a third. Community retrieval identifies these **densely connected groups** of nodes that share strong internal connections. In a knowledge graph about technology, you might have a "machine learning" community with nodes like neural networks, training data, backpropagation, and gradient descent all tightly interconnected. You might have a separate "web development" community with HTML, CSS, JavaScript, and React.
+[storytelling] Think of your knowledge graph as a social network at a conference. People naturally form clusters—machine learning researchers gather in one corner, database experts in another, front-end developers in a third. [lecture] Community retrieval identifies these **densely connected groups** of nodes that share strong internal connections. [conversational] In a knowledge graph about technology, you might have a "machine learning" community with nodes like neural networks, training data, backpropagation, and gradient descent all tightly interconnected. You might have a separate "web development" community with HTML, CSS, JavaScript, and React.
 
-The key insight is that **nodes within a community tend to be thematically related**. They're connected because they appear together in documents, reference each other, or share common attributes. By retrieving entire communities rather than individual nodes, you get comprehensive, coherent coverage of a topic.
+[confidently] The key insight is that **nodes within a community tend to be thematically related**. They're connected because they appear together in documents, reference each other, or share common attributes. [pleased] By retrieving entire communities rather than individual nodes, you get comprehensive, coherent coverage of a topic.
 
 #### The Goal: Comprehensive Topic Coverage
-Traditional retrieval methods might return the single most relevant node or document. But what if the user's question requires understanding a **whole topic area**? What if they ask "Explain machine learning" or "What should I know about cloud security?" These queries benefit from breadth, not just precision. Community retrieval aims to provide **thematic coverage** that gives users a complete picture of a subject domain.
+[lecture] Traditional retrieval methods might return the single most relevant node or document. [reassuringly] But what if the user's question requires understanding a **whole topic area**? What if they ask "Explain machine learning" or "What should I know about cloud security?" [enthusiastically] These queries benefit from breadth, not just precision. Community retrieval aims to provide **thematic coverage** that gives users a complete picture of a subject domain.
 
-Another critical goal is **reducing narrow bias**. If you only return the top-ranked node, you might miss important perspectives or subtopics. By retrieving a community, you ensure diversity within the thematic boundary. You get supervised learning **and** unsupervised learning, not just one approach.
+[confidently] Another critical goal is **reducing narrow bias**. If you only return the top-ranked node, you might miss important perspectives or subtopics. [pleased] By retrieving a community, you ensure diversity within the thematic boundary. You get supervised learning **and** unsupervised learning, not just one approach.
 
 #### Benefits That Stand Out
-**Broad coverage** is the primary benefit. You're returning multiple related nodes that together paint a complete picture. This is particularly valuable for **exploratory queries** where users don't know exactly what they're looking for but want to understand a topic area. It also **handles broad queries naturally**—questions that are intentionally open-ended rather than precisely targeted.
+[delighted] **Broad coverage** is the primary benefit. You're returning multiple related nodes that together paint a complete picture. [warmly] This is particularly valuable for **exploratory queries** where users don't know exactly what they're looking for but want to understand a topic area. [conversational] It also **handles broad queries naturally**—questions that are intentionally open-ended rather than precisely targeted.
 
-Community retrieval also respects **semantic coherence**. Unlike returning random diverse results, you're returning nodes that naturally belong together based on graph structure. This coherence makes the results more useful and easier to understand.
+[pleased] Community retrieval also respects **semantic coherence**. Unlike returning random diverse results, you're returning nodes that naturally belong together based on graph structure. [reassuringly] This coherence makes the results more useful and easier to understand.
 
 #### When to Use This Technique
-Use community retrieval for **topic exploration and learning**. When someone is researching a new area and needs overview coverage. For **broad, open-ended queries** like "tell me about quantum computing" or "what are the trends in renewable energy." When building **thematic summaries or reports** that need to cover multiple aspects of a subject. In **question-answering systems** where completeness matters more than brevity.
+[confidently] Use community retrieval for **topic exploration and learning**. When someone is researching a new area and needs overview coverage. [lecture] For **broad, open-ended queries** like "tell me about quantum computing" or "what are the trends in renewable energy." When building **thematic summaries or reports** that need to cover multiple aspects of a subject. [conversational] In **question-answering systems** where completeness matters more than brevity.
 
-It's particularly effective when your graph has **natural topic structure**—domains like academic papers, technical documentation, product catalogs, or news articles tend to form clear communities around subjects.
+[pleased] It's particularly effective when your graph has **natural topic structure**—domains like academic papers, technical documentation, product catalogs, or news articles tend to form clear communities around subjects.
 
-Now let's see how this technique works under the hood!`
+[energetic] Now let's see how this technique works under the hood!`
         },
         {
           id: 20,
@@ -1423,28 +1423,28 @@ Now let's see how this technique works under the hood!`
           backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - How It Works
 
-Let's dive into the mechanics of community detection and retrieval. This technique involves two main phases: **identifying communities** and **retrieving relevant nodes** from those communities.
+[lecture] Let's dive into the mechanics of community detection and retrieval. [confidently] This technique involves two main phases: **identifying communities** and **retrieving relevant nodes** from those communities.
 
 #### Phase 1: Community Detection
-Before you can retrieve communities, you need to detect them. This is typically done during graph construction or as a preprocessing step. Several algorithms exist for community detection, each with different characteristics.
+[reassuringly] Before you can retrieve communities, you need to detect them. This is typically done during graph construction or as a preprocessing step. [conversational] Several algorithms exist for community detection, each with different characteristics.
 
-**Louvain Algorithm** (pronounced 'loo-VANE') is one of the most popular. It's a greedy optimization method that maximizes modularity—a measure of how densely connected nodes within communities are compared to connections between communities. Louvain is fast and works well on large graphs, making it a practical choice for most applications. It assigns each node to the community that maximizes local modularity gain, then aggregates communities into super-nodes and repeats the process hierarchically.
+[lecture] **Louvain Algorithm** (pronounced 'loo-VANE') is one of the most popular. It's a greedy optimization method that maximizes modularity—a measure of how densely connected nodes within communities are compared to connections between communities. [pleased] Louvain is fast and works well on large graphs, making it a practical choice for most applications. [conversational] It assigns each node to the community that maximizes local modularity gain, then aggregates communities into super-nodes and repeats the process hierarchically.
 
-**Leiden Algorithm** (pronounced 'LIE-den') is an improvement on Louvain that guarantees well-connected communities. Louvain can sometimes produce communities with internal disconnections; Leiden fixes this by refining partitions and ensuring each community is connected. It's slightly slower but produces higher quality clusters.
+[lecture] **Leiden Algorithm** (pronounced 'LIE-den') is an improvement on Louvain that guarantees well-connected communities. [cautiously] Louvain can sometimes produce communities with internal disconnections; Leiden fixes this by refining partitions and ensuring each community is connected. [conversational] It's slightly slower but produces higher quality clusters.
 
-**Semantic Clustering** uses node embeddings rather than pure graph structure. You embed each node into a vector space, then apply clustering algorithms like K-means or DBSCAN 👉 'dee-bee-scan'. This approach captures semantic similarity and works well when graph connectivity alone doesn't reflect thematic relationships.
+[lecture] **Semantic Clustering** uses node embeddings rather than pure graph structure. You embed each node into a vector space, then apply clustering algorithms like K-means or DBSCAN 👉 'dee-bee-scan'. [pleased] This approach captures semantic similarity and works well when graph connectivity alone doesn't reflect thematic relationships.
 
 
 #### Phase 2: Query-to-Community Mapping
-When a query arrives, you need to determine which community or communities are most relevant. One approach is **community-level embeddings**: compute an aggregate embedding for each community (perhaps by averaging node embeddings) and compare query embeddings to community embeddings. Another approach is **seed node mapping**: find the most relevant individual node first, then return its entire community. You can also use **keyword matching** on community metadata if you've labeled communities with topic names.
+[conversational] When a query arrives, you need to determine which community or communities are most relevant. [lecture] One approach is **community-level embeddings**: compute an aggregate embedding for each community (perhaps by averaging node embeddings) and compare query embeddings to community embeddings. [conversational] Another approach is **seed node mapping**: find the most relevant individual node first, then return its entire community. You can also use **keyword matching** on community metadata if you've labeled communities with topic names.
 
 #### Phase 3: Intra-Community Ranking
-Once you've identified the relevant community, you typically don't return all nodes—some communities contain hundreds of members. Instead, rank nodes within the community by **centrality measures** like degree centrality, betweenness, or PageRank 👉 'page-rank' within the community. Alternatively, rank by **semantic similarity** between the query and each node's content. Return the top-k most central or relevant nodes.
+[reassuringly] Once you've identified the relevant community, you typically don't return all nodes—some communities contain hundreds of members. [lecture] Instead, rank nodes within the community by **centrality measures** like degree centrality, betweenness, or PageRank 👉 'page-rank' within the community. [conversational] Alternatively, rank by **semantic similarity** between the query and each node's content. Return the top-k most central or relevant nodes.
 
 #### Data Infrastructure Needed
-You'll need to store **cluster assignments** for each node (which community it belongs to), **membership scores** if using soft clustering where nodes can partially belong to multiple communities, **centrality rankings** within each community for fast retrieval, and **community metadata** like size, density, and representative keywords.
+[lecture] You'll need to store **cluster assignments** for each node (which community it belongs to), **membership scores** if using soft clustering where nodes can partially belong to multiple communities, **centrality rankings** within each community for fast retrieval, and **community metadata** like size, density, and representative keywords.
 
-Now let's look at practical implementation!`
+[energetic] Now let's look at practical implementation!`
         },
         {
           id: 21,
@@ -1479,35 +1479,35 @@ Now let's look at practical implementation!`
           backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - Implementation
 
-Let's walk through building a community-based retrieval system. This involves both offline preparation and online query-time processing.
+[conversational] Let's walk through building a community-based retrieval system. [lecture] This involves both offline preparation and online query-time processing.
 
 #### Step 1: Offline Community Detection
-Community detection is computationally intensive, so it's done as a **preprocessing step** rather than at query time. Start by running your chosen algorithm on the full graph. If you're using **Louvain**, libraries like NetworkX in Python or igraph make this straightforward. For a graph with millions of nodes, Louvain typically completes in minutes to hours depending on density.
+[cautiously] Community detection is computationally intensive, so it's done as a **preprocessing step** rather than at query time. [lecture] Start by running your chosen algorithm on the full graph. If you're using **Louvain**, libraries like NetworkX in Python or igraph make this straightforward. [reassuringly] For a graph with millions of nodes, Louvain typically completes in minutes to hours depending on density.
 
-Here's the workflow: load your graph with all nodes and edges, run the community detection algorithm which assigns each node a community ID, compute **community metadata** like size (number of nodes), density (internal edge ratio), and representative keywords. Store these assignments in your database with indexes on community ID for fast lookup.
+[conversational] Here's the workflow: load your graph with all nodes and edges, run the community detection algorithm which assigns each node a community ID, compute **community metadata** like size (number of nodes), density (internal edge ratio), and representative keywords. [confidently] Store these assignments in your database with indexes on community ID for fast lookup.
 
-For **semantic clustering**, embed all nodes using your embedding model, then run K-means or HDBSCAN 👉 'H-D-B-scan' on the embedding vectors. Choose k based on your domain knowledge or use elbow method analysis. The result is a partition where nodes with similar embeddings are grouped together.
+[lecture] For **semantic clustering**, embed all nodes using your embedding model, then run K-means or HDBSCAN 👉 'H-D-B-scan' on the embedding vectors. [reassuringly] Choose k based on your domain knowledge or use elbow method analysis. The result is a partition where nodes with similar embeddings are grouped together.
 
 #### Step 2: Query-to-Community Mapping
-At query time, you need to quickly identify relevant communities. The most effective approach is **community-level embeddings**. For each community, compute an aggregate embedding by averaging the embeddings of its member nodes, or use the embedding of the most central node as a representative. When a query arrives, embed it and compute cosine similarity against all community embeddings. Rank communities by similarity and select the top match.
+[conversational] At query time, you need to quickly identify relevant communities. [pleased] The most effective approach is **community-level embeddings**. For each community, compute an aggregate embedding by averaging the embeddings of its member nodes, or use the embedding of the most central node as a representative. [lecture] When a query arrives, embed it and compute cosine similarity against all community embeddings. Rank communities by similarity and select the top match.
 
-An alternative is **seed node lookup**: use node-level retrieval to find the best-matching node, then return its entire community. This works well when queries mention specific entities that map cleanly to nodes.
+[conversational] An alternative is **seed node lookup**: use node-level retrieval to find the best-matching node, then return its entire community. [pleased] This works well when queries mention specific entities that map cleanly to nodes.
 
 #### Step 3: Intra-Community Ranking
-You've identified the relevant community, but it might contain 50 or 200 nodes. You can't return them all. Instead, **rank within the community**. Compute **centrality scores**: degree centrality (how many connections), betweenness centrality (how often the node bridges other nodes), or PageRank within the community subgraph. These metrics identify the most important or representative nodes.
+[reassuringly] You've identified the relevant community, but it might contain 50 or 200 nodes. You can't return them all. [lecture] Instead, **rank within the community**. Compute **centrality scores**: degree centrality (how many connections), betweenness centrality (how often the node bridges other nodes), or PageRank within the community subgraph. [pleased] These metrics identify the most important or representative nodes.
 
-Alternatively, rank by **semantic relevance**: compute similarity between the query embedding and each community member's embedding. Return the top-k by similarity. You can also **combine** structural centrality and semantic similarity with a weighted formula: \`score = 0.4 * centrality + 0.6 * similarity\`.
+[conversational] Alternatively, rank by **semantic relevance**: compute similarity between the query embedding and each community member's embedding. Return the top-k by similarity. [playfully] You can also **combine** structural centrality and semantic similarity with a weighted formula: \`score = 0.4 * centrality + 0.6 * similarity\`.
 
 #### Step 4: Content Aggregation
-Once you have your top-k nodes, retrieve their associated content chunks. If you're generating a summary, you might pass all chunks to an LLM 👉 'el-el-em' with instructions to synthesize a comprehensive overview. If you're displaying results to users, show each node with its content in a structured list or card layout.
+[lecture] Once you have your top-k nodes, retrieve their associated content chunks. If you're generating a summary, you might pass all chunks to an LLM 👉 'el-el-em' with instructions to synthesize a comprehensive overview. [conversational] If you're displaying results to users, show each node with its content in a structured list or card layout.
 
 #### Real-World Example
-Imagine building a research assistant for a company's internal knowledge base. An employee asks "What do we know about cloud security?" Your system embeds the query, compares it to community embeddings, and identifies the "Cloud Security" community with high confidence. Within this community, you rank by centrality and find the top nodes: "Identity and Access Management," "Encryption at Rest," "Network Security," "Compliance Frameworks," and "Incident Response." You retrieve content for all five, aggregate them, and present a comprehensive overview covering multiple aspects of cloud security. The employee gets breadth and depth without having to issue multiple queries.
+[storytelling] Imagine building a research assistant for a company's internal knowledge base. An employee asks "What do we know about cloud security?" [enthusiastically] Your system embeds the query, compares it to community embeddings, and identifies the "Cloud Security" community with high confidence. [pleased] Within this community, you rank by centrality and find the top nodes: "Identity and Access Management," "Encryption at Rest," "Network Security," "Compliance Frameworks," and "Incident Response." [delighted] You retrieve content for all five, aggregate them, and present a comprehensive overview covering multiple aspects of cloud security. The employee gets breadth and depth without having to issue multiple queries.
 
 #### Implementation Tips
-**Cache community assignments** and embeddings for fast lookup. **Monitor community quality** by tracking query satisfaction and coverage. If many queries map poorly to communities, your detection algorithm might need tuning. Consider **hierarchical communities** for very large graphs, where communities themselves form super-communities at higher levels. Use **soft clustering** if nodes naturally belong to multiple topics, storing membership probabilities rather than hard assignments.
+[confidently] **Cache community assignments** and embeddings for fast lookup. [conversational] **Monitor community quality** by tracking query satisfaction and coverage. [cautiously] If many queries map poorly to communities, your detection algorithm might need tuning. [reassuringly] Consider **hierarchical communities** for very large graphs, where communities themselves form super-communities at higher levels. [playfully] Use **soft clustering** if nodes naturally belong to multiple topics, storing membership probabilities rather than hard assignments.
 
-Now let's evaluate the benefits and limitations!`
+[energetic] Now let's evaluate the benefits and limitations!`
         },
         {
           id: 22,
@@ -1539,37 +1539,37 @@ Now let's evaluate the benefits and limitations!`
           backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - Considerations
 
-Let's be honest about what community retrieval does well and where it struggles. Understanding these trade-offs helps you decide when to use this technique.
+[conversational] Let's be honest about what community retrieval does well and where it struggles. [reassuringly] Understanding these trade-offs helps you decide when to use this technique.
 
 #### Benefits: Comprehensive Coverage
-The standout benefit is **broad, coherent coverage**. Instead of returning a single precise answer, you return a thematic collection of related information. This is invaluable for **exploratory learning**. When someone is researching a new topic and doesn't yet know what questions to ask, community retrieval provides a guided tour of the subject area. They discover subtopics and connections they might not have thought to search for.
+[pleased] The standout benefit is **broad, coherent coverage**. Instead of returning a single precise answer, you return a thematic collection of related information. [warmly] This is invaluable for **exploratory learning**. [storytelling] When someone is researching a new topic and doesn't yet know what questions to ask, community retrieval provides a guided tour of the subject area. [delighted] They discover subtopics and connections they might not have thought to search for.
 
-**Semantic coherence** is another major advantage. The nodes you return aren't randomly diverse; they're structurally and semantically related. They form a natural group that makes sense together. This coherence makes results easier to understand and more useful for synthesis or summarization tasks.
+[confidently] **Semantic coherence** is another major advantage. The nodes you return aren't randomly diverse; they're structurally and semantically related. [pleased] They form a natural group that makes sense together. This coherence makes results easier to understand and more useful for synthesis or summarization tasks.
 
-Community retrieval **reduces narrow bias**. If you only return the top-ranked node, you might overemphasize one perspective or approach. By returning a community, you capture diversity within a thematic boundary. In a machine learning community, you might get supervised learning, unsupervised learning, reinforcement learning, and evaluation metrics—multiple facets of the topic rather than just one dominant perspective.
+[enthusiastically] Community retrieval **reduces narrow bias**. If you only return the top-ranked node, you might overemphasize one perspective or approach. [conversational] By returning a community, you capture diversity within a thematic boundary. [playfully] In a machine learning community, you might get supervised learning, unsupervised learning, reinforcement learning, and evaluation metrics—multiple facets of the topic rather than just one dominant perspective.
 
-It also **handles ambiguous or broad queries naturally**. Questions like "Tell me about X" or "What should I know about Y" don't have a single right answer—they need comprehensive responses. Community retrieval is designed for exactly these scenarios.
+[pleased] It also **handles ambiguous or broad queries naturally**. [conversational] Questions like "Tell me about X" or "What should I know about Y" don't have a single right answer—they need comprehensive responses. [confidently] Community retrieval is designed for exactly these scenarios.
 
 #### Limitations: The Precision Trade-Off
-The flip side of broad coverage is **lower precision**. You're returning multiple nodes, and not all of them will be directly relevant to every query. Some nodes in a community might be tangentially related or address subtopics the user doesn't care about. This can lead to **information overload**, especially if communities are large and you return too many nodes.
+[cautiously] The flip side of broad coverage is **lower precision**. You're returning multiple nodes, and not all of them will be directly relevant to every query. [concerned] Some nodes in a community might be tangentially related or address subtopics the user doesn't care about. This can lead to **information overload**, especially if communities are large and you return too many nodes.
 
-**Clustering quality is critical** and often problematic. Community detection algorithms aren't perfect. They can produce clusters that don't align with human intuition about topics. Nodes that should be separate might get grouped together, or related nodes might be split across communities. Poor clustering leads directly to poor retrieval quality. You need **domain expertise** to validate that your communities make sense, and you may need to tune algorithm parameters or manually adjust boundaries.
+[seriously] **Clustering quality is critical** and often problematic. Community detection algorithms aren't perfect. [cautiously] They can produce clusters that don't align with human intuition about topics. Nodes that should be separate might get grouped together, or related nodes might be split across communities. [concerned] Poor clustering leads directly to poor retrieval quality. [reassuringly] You need **domain expertise** to validate that your communities make sense, and you may need to tune algorithm parameters or manually adjust boundaries.
 
-Another challenge is **graph structure dependency**. Community detection relies on dense, well-connected regions. If your graph is sparse or has uniform connectivity, communities might be artificial or meaningless. Some domains naturally form clear clusters; others don't. Academic papers organized by field work well, but a general knowledge graph covering diverse topics might not have clear community structure.
+[lecture] Another challenge is **graph structure dependency**. Community detection relies on dense, well-connected regions. [cautiously] If your graph is sparse or has uniform connectivity, communities might be artificial or meaningless. [conversational] Some domains naturally form clear clusters; others don't. Academic papers organized by field work well, but a general knowledge graph covering diverse topics might not have clear community structure.
 
 #### Practical Considerations
-**Size variability** is a real issue. Communities can range from 10 nodes to 1,000 nodes. Small communities might lack diversity; large ones might be too broad. You'll need **dynamic sizing strategies**, perhaps returning more nodes from small communities and fewer from large ones, or splitting very large communities into sub-communities.
+[puzzled] **Size variability** is a real issue. Communities can range from 10 nodes to 1,000 nodes. [cautiously] Small communities might lack diversity; large ones might be too broad. [reassuringly] You'll need **dynamic sizing strategies**, perhaps returning more nodes from small communities and fewer from large ones, or splitting very large communities into sub-communities.
 
-**Cross-community information** can be lost. Many real-world queries require information spanning multiple communities. If "machine learning" and "healthcare" are separate communities, a query about "ML 👉 'em-el' in medical diagnosis" might retrieve only one community and miss cross-cutting content. Consider **multi-community retrieval** for complex queries.
+[concerned] **Cross-community information** can be lost. Many real-world queries require information spanning multiple communities. [storytelling] If "machine learning" and "healthcare" are separate communities, a query about "ML 👉 'em-el' in medical diagnosis" might retrieve only one community and miss cross-cutting content. [conversational] Consider **multi-community retrieval** for complex queries.
 
-**Computational cost** matters. Running community detection on large graphs is expensive. You'll do it offline, but re-detecting communities as your graph evolves adds maintenance overhead. Dynamic graphs where nodes and edges change frequently pose particular challenges.
+[cautiously] **Computational cost** matters. Running community detection on large graphs is expensive. [reassuringly] You'll do it offline, but re-detecting communities as your graph evolves adds maintenance overhead. Dynamic graphs where nodes and edges change frequently pose particular challenges.
 
 #### When to Choose This Technique
-Use community retrieval when **breadth matters more than precision**. When users ask exploratory questions, need topic overviews, or want to understand a domain holistically. When your graph has **natural topic structure** with clear communities. When you have the resources to **invest in high-quality clustering** and can validate that communities align with domain semantics.
+[confidently] Use community retrieval when **breadth matters more than precision**. When users ask exploratory questions, need topic overviews, or want to understand a domain holistically. [pleased] When your graph has **natural topic structure** with clear communities. [seriously] When you have the resources to **invest in high-quality clustering** and can validate that communities align with domain semantics.
 
-Avoid it when users need **precise, targeted answers** to specific questions. When your graph is **sparse or lacks clear structure**. When **query latency is critical** and you can't afford to retrieve and process large node sets.
+[cautiously] Avoid it when users need **precise, targeted answers** to specific questions. When your graph is **sparse or lacks clear structure**. When **query latency is critical** and you can't afford to retrieve and process large node sets.
 
-Ready for our next technique? Let's explore Hierarchical Graph Retrieval!`
+[energetic] Ready for our next technique? Let's explore Hierarchical Graph Retrieval!`
         }
       ]
     },
@@ -1605,31 +1605,31 @@ Ready for our next technique? Let's explore Hierarchical Graph Retrieval!`
           backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - Overview
 
-Welcome to **Hierarchical Graph Retrieval**, a technique designed for information organized in tree-like or multi-level structures. This approach leverages the natural organization many knowledge bases already have.
+[conversational] Welcome to **Hierarchical Graph Retrieval**, a technique designed for information organized in tree-like or multi-level structures. [pleased] This approach leverages the natural organization many knowledge bases already have.
 
 #### What Is Hierarchical Retrieval?
-Think about how information is naturally organized. Books have chapters, sections, and subsections. Product catalogs have categories, subcategories, and individual products. Corporate wikis have departments, teams, and specific pages. These are all **hierarchies**—structures where information flows from general (parent) to specific (child). Hierarchical graph retrieval navigates these structures intelligently, retrieving at the appropriate level of detail for each query.
+[storytelling] Think about how information is naturally organized. Books have chapters, sections, and subsections. Product catalogs have categories, subcategories, and individual products. Corporate wikis have departments, teams, and specific pages. [lecture] These are all **hierarchies**—structures where information flows from general (parent) to specific (child). [confidently] Hierarchical graph retrieval navigates these structures intelligently, retrieving at the appropriate level of detail for each query.
 
-In a traditional knowledge graph, all nodes might seem equal. But in a hierarchy, nodes have **levels**: high-level topic nodes at the top, mid-level subtopic nodes in the middle, and detailed leaf nodes at the bottom. Your software development knowledge graph might have "Programming Languages" at the top, "Python" as a child, and "List Comprehensions" as a grandchild. Hierarchical retrieval uses these parent-child relationships to match query specificity with content granularity.
+[conversational] In a traditional knowledge graph, all nodes might seem equal. But in a hierarchy, nodes have **levels**: high-level topic nodes at the top, mid-level subtopic nodes in the middle, and detailed leaf nodes at the bottom. [storytelling] Your software development knowledge graph might have "Programming Languages" at the top, "Python" as a child, and "List Comprehensions" as a grandchild. [pleased] Hierarchical retrieval uses these parent-child relationships to match query specificity with content granularity.
 
 #### The Core Concept: Granularity Matching
-The key insight is that **different queries need different levels of detail**. If someone asks "What are programming languages?" they want a high-level overview. If they ask "How do Python list comprehensions work?" they need specific, detailed information. Hierarchical retrieval automatically determines whether to return parent nodes (broad overview), leaf nodes (specific details), or intermediate levels.
+[confidently] The key insight is that **different queries need different levels of detail**. [storytelling] If someone asks "What are programming languages?" they want a high-level overview. If they ask "How do Python list comprehensions work?" they need specific, detailed information. [pleased] Hierarchical retrieval automatically determines whether to return parent nodes (broad overview), leaf nodes (specific details), or intermediate levels.
 
-This is more sophisticated than keyword matching or semantic similarity alone. You're using **structural information** about how concepts nest within each other to determine relevance. A query about "machine learning algorithms" should retrieve at the category level, returning nodes for supervised learning, unsupervised learning, and reinforcement learning. A query about "gradient descent optimization" should drill down to that specific leaf node.
+[lecture] This is more sophisticated than keyword matching or semantic similarity alone. You're using **structural information** about how concepts nest within each other to determine relevance. [conversational] A query about "machine learning algorithms" should retrieve at the category level, returning nodes for supervised learning, unsupervised learning, and reinforcement learning. [confidently] A query about "gradient descent optimization" should drill down to that specific leaf node.
 
 #### Goals: Organization and Scalability
-The primary goal is **granularity control**. Users get exactly the level of detail they need without being overwhelmed by too much information or frustrated by too little. This is particularly important for **educational content** where learners progress from basic to advanced understanding, or **product catalogs** where customers navigate from categories to specific items.
+[confidently] The primary goal is **granularity control**. Users get exactly the level of detail they need without being overwhelmed by too much information or frustrated by too little. [warmly] This is particularly important for **educational content** where learners progress from basic to advanced understanding, or **product catalogs** where customers navigate from categories to specific items.
 
-Another key benefit is **structured summaries**. Because you're following hierarchical organization, results naturally have structure. You can present "Python → Functions → Lambda Functions" as a breadcrumb trail showing the user where they are in the hierarchy. This makes results more interpretable and helps users understand context.
+[pleased] Another key benefit is **structured summaries**. Because you're following hierarchical organization, results naturally have structure. [conversational] You can present "Python → Functions → Lambda Functions" as a breadcrumb trail showing the user where they are in the hierarchy. [reassuringly] This makes results more interpretable and helps users understand context.
 
-**Scalability** is also a major advantage. In very large knowledge bases with millions of nodes, you can't traverse the entire graph. Hierarchies let you **prune** entire branches that aren't relevant, dramatically reducing search space. If a query is about programming and you're at a root node with children for "Programming," "Biology," and "History," you can immediately ignore the Biology and History subtrees.
+[enthusiastically] **Scalability** is also a major advantage. In very large knowledge bases with millions of nodes, you can't traverse the entire graph. [pleased] Hierarchies let you **prune** entire branches that aren't relevant, dramatically reducing search space. [storytelling] If a query is about programming and you're at a root node with children for "Programming," "Biology," and "History," you can immediately ignore the Biology and History subtrees.
 
 #### When to Use This Technique
-Hierarchical retrieval is ideal for **structured documentation** with explicit section hierarchies. Technical documentation, educational materials, textbooks, legal documents, policy manuals—all naturally organized hierarchically. It works well for **product catalogs** where products roll up into categories and departments. **Organizational knowledge bases** where information is organized by team, project, or function. Any domain with **taxonomies or ontologies** (pronounced 'on-TAH-luh-jeez') that formalize hierarchical relationships.
+[confidently] Hierarchical retrieval is ideal for **structured documentation** with explicit section hierarchies. Technical documentation, educational materials, textbooks, legal documents, policy manuals—all naturally organized hierarchically. [lecture] It works well for **product catalogs** where products roll up into categories and departments. **Organizational knowledge bases** where information is organized by team, project, or function. [conversational] Any domain with **taxonomies or ontologies** (pronounced 'on-TAH-luh-jeez') that formalize hierarchical relationships.
 
-It's particularly powerful when combined with **query classification**: determine if the query is high-level ("tell me about X") or specific ("how do I configure Y in Z"), then retrieve at the appropriate level.
+[pleased] It's particularly powerful when combined with **query classification**: determine if the query is high-level ("tell me about X") or specific ("how do I configure Y in Z"), then retrieve at the appropriate level.
 
-Now let's see how this technique works in practice!`
+[energetic] Now let's see how this technique works in practice!`
         },
         {
           id: 24,
@@ -1693,35 +1693,35 @@ Now let's see how this technique works in practice!`
           backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - How It Works
 
-Let's break down how hierarchical retrieval navigates multi-level structures to find information at the right granularity. This process involves query classification, level selection, and intelligent traversal.
+[lecture] Let's break down how hierarchical retrieval navigates multi-level structures to find information at the right granularity. [conversational] This process involves query classification, level selection, and intelligent traversal.
 
 #### Step 1: Query Classification
-The first challenge is determining **what level of detail the query requests**. This typically involves analyzing query characteristics. **Broad queries** use general terms like "overview," "introduction," "basics," or ask about high-level categories ("tell me about machine learning"). **Specific queries** include technical terms, specific version numbers, detailed parameters, or ask "how do I" questions ("how do I configure SSL 👉 'ess-ess-el' certificates in Apache").
+[reassuringly] The first challenge is determining **what level of detail the query requests**. [lecture] This typically involves analyzing query characteristics. **Broad queries** use general terms like "overview," "introduction," "basics," or ask about high-level categories ("tell me about machine learning"). [conversational] **Specific queries** include technical terms, specific version numbers, detailed parameters, or ask "how do I" questions ("how do I configure SSL 👉 'ess-ess-el' certificates in Apache").
 
-You can use **heuristics** based on query length and specificity, or train a **classifier** that categorizes queries into levels (high-level, mid-level, detailed). Some systems use **embedding similarity** at each level: compute embeddings for high-level concepts, mid-level subtopics, and detailed leaves, then see which level matches the query best.
+[lecture] You can use **heuristics** based on query length and specificity, or train a **classifier** that categorizes queries into levels (high-level, mid-level, detailed). [conversational] Some systems use **embedding similarity** at each level: compute embeddings for high-level concepts, mid-level subtopics, and detailed leaves, then see which level matches the query best.
 
 #### Step 2: Finding the Entry Point
-Once you know the desired granularity, find the best-matching node at or near that level. If the query is high-level about "Python programming," you might match the "Python" node at level 2 of your hierarchy. If it's specific about "list comprehensions," you match a leaf node at level 4.
+[confidently] Once you know the desired granularity, find the best-matching node at or near that level. [storytelling] If the query is high-level about "Python programming," you might match the "Python" node at level 2 of your hierarchy. If it's specific about "list comprehensions," you match a leaf node at level 4.
 
-You can use **node-level retrieval** techniques: embed nodes at each level and find the best semantic match, or use exact title matching with aliases. The key is that you're **searching within a level** rather than across the entire graph indiscriminately.
+[lecture] You can use **node-level retrieval** techniques: embed nodes at each level and find the best semantic match, or use exact title matching with aliases. [pleased] The key is that you're **searching within a level** rather than across the entire graph indiscriminately.
 
 
 #### Step 3: Hierarchical Expansion
-Once you have an entry node, you might need to **expand** to provide complete context. Several expansion strategies exist:
+[conversational] Once you have an entry node, you might need to **expand** to provide complete context. Several expansion strategies exist:
 
-**Downward expansion**: If you matched a high-level node but the query suggests needing details, traverse down to children. For "Python programming" you might return "Python" plus its main children (Lists, Functions, Classes, Modules) to give an overview of subtopics.
+[lecture] **Downward expansion**: If you matched a high-level node but the query suggests needing details, traverse down to children. [conversational] For "Python programming" you might return "Python" plus its main children (Lists, Functions, Classes, Modules) to give an overview of subtopics.
 
-**Upward expansion for context**: If you matched a very specific leaf, traverse up to include parent context. For "list comprehensions," you might include the parent "Lists" node to provide context about where this feature fits within Python's list capabilities.
+[reassuringly] **Upward expansion for context**: If you matched a very specific leaf, traverse up to include parent context. [storytelling] For "list comprehensions," you might include the parent "Lists" node to provide context about where this feature fits within Python's list capabilities.
 
-**Sibling inclusion**: Sometimes queries benefit from seeing siblings. If someone asks about "supervised learning," showing siblings like "unsupervised learning" and "reinforcement learning" provides helpful comparison context.
+[conversational] **Sibling inclusion**: Sometimes queries benefit from seeing siblings. [playfully] If someone asks about "supervised learning," showing siblings like "unsupervised learning" and "reinforcement learning" provides helpful comparison context.
 
 #### Step 4: Pruning for Efficiency
-The major advantage of hierarchies is **pruning entire branches**. If your query is about Python and you're at the root "Programming Languages" node, you can immediately skip the Java, JavaScript, C++, and Rust subtrees. This **reduces search space exponentially** in large hierarchies. Pruning decisions are based on relevance scores at each level: if a child's score is below a threshold, don't traverse it.
+[pleased] The major advantage of hierarchies is **pruning entire branches**. [enthusiastically] If your query is about Python and you're at the root "Programming Languages" node, you can immediately skip the Java, JavaScript, C++, and Rust subtrees. [delighted] This **reduces search space exponentially** in large hierarchies. [lecture] Pruning decisions are based on relevance scores at each level: if a child's score is below a threshold, don't traverse it.
 
 #### Data Infrastructure Needed
-You need **explicit parent-child edges** labeled as hierarchical relationships, **level or depth metadata** for each node (root=0, first children=1, etc.), **content chunks attached to appropriate levels** (summaries at high levels, details at leaves), and optionally **level-specific embeddings** that capture information appropriate to each granularity, plus **breadcrumb paths** showing the full path from root to each node for display purposes.
+[lecture] You need **explicit parent-child edges** labeled as hierarchical relationships, **level or depth metadata** for each node (root=0, first children=1, etc.), **content chunks attached to appropriate levels** (summaries at high levels, details at leaves), and optionally **level-specific embeddings** that capture information appropriate to each granularity, plus **breadcrumb paths** showing the full path from root to each node for display purposes.
 
-Now let's look at practical implementation!`
+[energetic] Now let's look at practical implementation!`
         },
         {
           id: 25,
@@ -1756,41 +1756,41 @@ Now let's look at practical implementation!`
           backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - Implementation
 
-Let's walk through building a hierarchical retrieval system from scratch. This involves graph construction, query processing, and intelligent traversal logic.
+[conversational] Let's walk through building a hierarchical retrieval system from scratch. [lecture] This involves graph construction, query processing, and intelligent traversal logic.
 
 #### Step 1: Building the Hierarchy
-Your first task is constructing the hierarchical graph with proper structure. This might come from existing document structure (chapters and sections), manual curation, or automated extraction. The key is establishing **parent-child relationships** explicitly.
+[reassuringly] Your first task is constructing the hierarchical graph with proper structure. [conversational] This might come from existing document structure (chapters and sections), manual curation, or automated extraction. [confidently] The key is establishing **parent-child relationships** explicitly.
 
-In your graph database, use a specific edge type like "HAS_CHILD" or "PARENT_OF" to distinguish hierarchical relationships from other connections. Assign each node a **depth or level** attribute: root nodes are level 0, their children are level 1, grandchildren are level 2, and so on. Store the **path from root** for each node, like "Programming → Python → Lists → List Comprehensions." This enables breadcrumb display and quick ancestor lookups.
+[lecture] In your graph database, use a specific edge type like "HAS_CHILD" or "PARENT_OF" to distinguish hierarchical relationships from other connections. Assign each node a **depth or level** attribute: root nodes are level 0, their children are level 1, grandchildren are level 2, and so on. [pleased] Store the **path from root** for each node, like "Programming → Python → Lists → List Comprehensions." This enables breadcrumb display and quick ancestor lookups.
 
-Attach **appropriate content** at each level. High-level nodes get **summary content** that overviews the entire subtopic. Mid-level nodes get **moderate detail** about specific aspects. Leaf nodes get **full detail** with examples, code snippets, specifications, or comprehensive explanations. This level-appropriate content is critical for providing the right granularity.
+[lecture] Attach **appropriate content** at each level. High-level nodes get **summary content** that overviews the entire subtopic. Mid-level nodes get **moderate detail** about specific aspects. Leaf nodes get **full detail** with examples, code snippets, specifications, or comprehensive explanations. [seriously] This level-appropriate content is critical for providing the right granularity.
 
 #### Step 2: Query Classification at Runtime
-When a query arrives, determine its desired granularity. Use **linguistic analysis** to detect specificity markers. Words like "overview," "introduction," "basics," "general" suggest high-level queries. Technical jargon, specific version numbers, "how to," "configure," "troubleshoot" suggest detailed queries.
+[conversational] When a query arrives, determine its desired granularity. [lecture] Use **linguistic analysis** to detect specificity markers. Words like "overview," "introduction," "basics," "general" suggest high-level queries. [conversational] Technical jargon, specific version numbers, "how to," "configure," "troubleshoot" suggest detailed queries.
 
-You can build a **simple classifier** based on these heuristics, or train a **machine learning classifier** on labeled examples if you have training data. Another approach is **multi-level matching**: embed the query and compute similarity to nodes at each level separately. If level-2 nodes score highest, retrieve at that level. If leaf nodes score highest, retrieve detailed content.
+[reassuringly] You can build a **simple classifier** based on these heuristics, or train a **machine learning classifier** on labeled examples if you have training data. [conversational] Another approach is **multi-level matching**: embed the query and compute similarity to nodes at each level separately. [pleased] If level-2 nodes score highest, retrieve at that level. If leaf nodes score highest, retrieve detailed content.
 
 #### Step 3: Level-Aware Retrieval and Expansion
-Once you know the target level, perform retrieval within that level's nodes. Use embedding similarity or keyword matching scoped to nodes at the appropriate depth. Let's say you identify "Python → Lists" as the best match at level 2.
+[confidently] Once you know the target level, perform retrieval within that level's nodes. [lecture] Use embedding similarity or keyword matching scoped to nodes at the appropriate depth. [conversational] Let's say you identify "Python → Lists" as the best match at level 2.
 
-Now decide whether to **expand**. For broad queries, expand downward: return the matched node plus a summary of its main children. "Lists" might return with children "List Operations," "List Comprehensions," and "List Methods." For very specific queries that matched high in the hierarchy, expand downward more aggressively to reach the specific information.
+[reassuringly] Now decide whether to **expand**. For broad queries, expand downward: return the matched node plus a summary of its main children. [storytelling] "Lists" might return with children "List Operations," "List Comprehensions," and "List Methods." [conversational] For very specific queries that matched high in the hierarchy, expand downward more aggressively to reach the specific information.
 
-For specific queries that matched a leaf node, consider expanding **upward** to include parent context. If someone asks about "list comprehensions" and you match the leaf node, include the parent "Lists" content to explain where this feature fits within Python's data structures.
+[lecture] For specific queries that matched a leaf node, consider expanding **upward** to include parent context. [storytelling] If someone asks about "list comprehensions" and you match the leaf node, include the parent "Lists" content to explain where this feature fits within Python's data structures.
 
-**Pruning** is crucial for efficiency. As you traverse, maintain relevance scores. If a child's score drops below a threshold (say, cosine similarity < 0.5), don't traverse that branch. In a large hierarchy, this can eliminate 90% of nodes from consideration.
+[pleased] **Pruning** is crucial for efficiency. As you traverse, maintain relevance scores. [cautiously] If a child's score drops below a threshold (say, cosine similarity < 0.5), don't traverse that branch. [delighted] In a large hierarchy, this can eliminate 90% of nodes from consideration.
 
 #### Step 4: Structured Result Presentation
-Return results with **hierarchical context**. For each retrieved node, include its breadcrumb path ("Programming → Python → Lists → List Comprehensions") so users understand where they are in the structure. Display **parent summaries** at the top, followed by the main content, with **child summaries** or links at the bottom for further exploration.
+[lecture] Return results with **hierarchical context**. For each retrieved node, include its breadcrumb path ("Programming → Python → Lists → List Comprehensions") so users understand where they are in the structure. [conversational] Display **parent summaries** at the top, followed by the main content, with **child summaries** or links at the bottom for further exploration.
 
-For UI purposes, you might return a **tree structure** that can be rendered as an expandable outline or navigation menu. This allows interactive drill-down where users click to expand subtopics.
+[pleased] For UI purposes, you might return a **tree structure** that can be rendered as an expandable outline or navigation menu. [playfully] This allows interactive drill-down where users click to expand subtopics.
 
 #### Real-World Example
-Imagine building a technical documentation assistant for a large software platform. A user asks "How does authentication work?" Your system classifies this as a mid-level query (not asking for an overview of the entire platform, not asking about a specific API 👉 'ay-pee-eye' call). You match it to the "Authentication" node at level 2 under "Security." You expand to include its children: "OAuth 👉 'oh-auth'," "API Keys," "JWT 👉 'jot' Tokens," and "Session Management." You return the Authentication overview plus one-paragraph summaries of each child topic. The user gets comprehensive coverage without overwhelming detail. If they want more about JWT tokens, they can drill down in a follow-up query.
+[storytelling] Imagine building a technical documentation assistant for a large software platform. A user asks "How does authentication work?" [conversational] Your system classifies this as a mid-level query (not asking for an overview of the entire platform, not asking about a specific API 👉 'ay-pee-eye' call). [pleased] You match it to the "Authentication" node at level 2 under "Security." [enthusiastically] You expand to include its children: "OAuth 👉 'oh-auth'," "API Keys," "JWT 👉 'jot' Tokens," and "Session Management." [delighted] You return the Authentication overview plus one-paragraph summaries of each child topic. The user gets comprehensive coverage without overwhelming detail. [conversational] If they want more about JWT tokens, they can drill down in a follow-up query.
 
 #### Implementation Tips
-Use a **graph database** like Neo4j that supports hierarchical queries efficiently. Create **indexes on level** and parent-child edges for fast traversal. **Pre-compute level-specific embeddings** during graph construction rather than at query time. Implement **caching** for frequently accessed subtrees. Use **BFS 👉 'bee-eff-ess'** (breadth-first search) for expansion to ensure you get nodes at the same level before going deeper. **Monitor** which levels get queried most and optimize those paths.
+[confidently] Use a **graph database** like Neo4j that supports hierarchical queries efficiently. [lecture] Create **indexes on level** and parent-child edges for fast traversal. **Pre-compute level-specific embeddings** during graph construction rather than at query time. [pleased] Implement **caching** for frequently accessed subtrees. [conversational] Use **BFS 👉 'bee-eff-ess'** (breadth-first search) for expansion to ensure you get nodes at the same level before going deeper. [reassuringly] **Monitor** which levels get queried most and optimize those paths.
 
-Now let's evaluate the benefits and limitations!`
+[energetic] Now let's evaluate the benefits and limitations!`
         },
         {
           id: 26,
@@ -1822,39 +1822,39 @@ Now let's evaluate the benefits and limitations!`
           backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - Considerations
 
-Let's examine what makes hierarchical retrieval powerful and where it faces challenges. Understanding these factors will help you decide if this technique fits your use case.
+[conversational] Let's examine what makes hierarchical retrieval powerful and where it faces challenges. [reassuringly] Understanding these factors will help you decide if this technique fits your use case.
 
 #### Benefits: Structure and Scalability
-**Granularity control** is the defining advantage. Users get information at exactly the right level of detail. Beginners can get high-level overviews without being overwhelmed by technical minutiae. Experts can drill directly to specific details without wading through introductory content. This **adaptive depth** makes systems feel intelligent and user-aware.
+[enthusiastically] **Granularity control** is the defining advantage. Users get information at exactly the right level of detail. [warmly] Beginners can get high-level overviews without being overwhelmed by technical minutiae. Experts can drill directly to specific details without wading through introductory content. [delighted] This **adaptive depth** makes systems feel intelligent and user-aware.
 
-**Structured, interpretable results** are another major benefit. Because you're following a well-defined hierarchy, results naturally come with context. You can display breadcrumb trails like "Software → Development → Python → Data Structures → Lists" that show users exactly where information sits within the knowledge structure. This **spatial understanding** helps users navigate and builds mental models of the domain.
+[pleased] **Structured, interpretable results** are another major benefit. Because you're following a well-defined hierarchy, results naturally come with context. [storytelling] You can display breadcrumb trails like "Software → Development → Python → Data Structures → Lists" that show users exactly where information sits within the knowledge structure. [warmly] This **spatial understanding** helps users navigate and builds mental models of the domain.
 
-**Scalability** is impressive. In a graph with millions of nodes, hierarchical pruning lets you **ignore entire branches** that aren't relevant. If you're searching in the Python subtree, you never even consider the Java, C++, or Ruby subtrees. This can reduce search space from millions to hundreds of nodes, making queries fast even on massive graphs. The **algorithmic complexity** goes from potentially exponential to logarithmic with good pruning.
+[enthusiastically] **Scalability** is impressive. In a graph with millions of nodes, hierarchical pruning lets you **ignore entire branches** that aren't relevant. [pleased] If you're searching in the Python subtree, you never even consider the Java, C++, or Ruby subtrees. [delighted] This can reduce search space from millions to hundreds of nodes, making queries fast even on massive graphs. [lecture] The **algorithmic complexity** goes from potentially exponential to logarithmic with good pruning.
 
-Hierarchies also provide a **natural fit for many real-world structures**. Technical documentation, educational materials, organizational knowledge, legal codes, product catalogs—all inherently hierarchical. You're working with the grain of the data rather than against it.
+[confidently] Hierarchies also provide a **natural fit for many real-world structures**. Technical documentation, educational materials, organizational knowledge, legal codes, product catalogs—all inherently hierarchical. [pleased] You're working with the grain of the data rather than against it.
 
 #### Limitations: Rigidity and Completeness
-The biggest limitation is the **requirement for clean hierarchical structure**. Not all information naturally organizes into clean parent-child trees. Many domains have **complex, networked relationships** that don't fit hierarchical constraints. Forcing such information into a hierarchy can be artificial and lose important cross-cutting connections.
+[cautiously] The biggest limitation is the **requirement for clean hierarchical structure**. [concerned] Not all information naturally organizes into clean parent-child trees. Many domains have **complex, networked relationships** that don't fit hierarchical constraints. [seriously] Forcing such information into a hierarchy can be artificial and lose important cross-cutting connections.
 
-**Cross-hierarchy links** create complexity. In pure trees, every node has exactly one parent. But in real knowledge graphs, concepts often have multiple parents or relationships that cut across the hierarchy. "Machine Learning" might sit under both "Computer Science" and "Statistics." "Security" might be relevant across multiple product categories. These **polyhierarchies** or **lattices** require special handling and can break simple traversal logic.
+[puzzled] **Cross-hierarchy links** create complexity. In pure trees, every node has exactly one parent. [cautiously] But in real knowledge graphs, concepts often have multiple parents or relationships that cut across the hierarchy. [storytelling] "Machine Learning" might sit under both "Computer Science" and "Statistics." "Security" might be relevant across multiple product categories. [concerned] These **polyhierarchies** or **lattices** require special handling and can break simple traversal logic.
 
-You may **miss important connections** that exist outside the parent-child structure. If "List Comprehensions" in Python has important relationships with "Generator Expressions" in a different part of the hierarchy, pure hierarchical retrieval won't surface that connection. You're constrained to vertical traversal (up/down) and miss horizontal connections (across branches).
+[seriously] You may **miss important connections** that exist outside the parent-child structure. [cautiously] If "List Comprehensions" in Python has important relationships with "Generator Expressions" in a different part of the hierarchy, pure hierarchical retrieval won't surface that connection. [lecture] You're constrained to vertical traversal (up/down) and miss horizontal connections (across branches).
 
-**Query classification difficulty** is a practical challenge. Determining whether a query wants high-level or detailed information isn't always straightforward. User intent can be ambiguous. "Tell me about Python" might want an overview or might want comprehensive advanced information depending on the user's background. Misclassifying granularity leads to frustrating mismatches between query intent and result detail.
+[puzzled] **Query classification difficulty** is a practical challenge. Determining whether a query wants high-level or detailed information isn't always straightforward. [cautiously] User intent can be ambiguous. "Tell me about Python" might want an overview or might want comprehensive advanced information depending on the user's background. [concerned] Misclassifying granularity leads to frustrating mismatches between query intent and result detail.
 
 #### Practical Challenges
-**Maintenance overhead** can be significant. As your knowledge base evolves, you need to keep the hierarchy accurate. New content must be slotted into the right place. Reorganizations ripple through the structure. This **structural maintenance** is extra work compared to flatter graph structures.
+[cautiously] **Maintenance overhead** can be significant. As your knowledge base evolves, you need to keep the hierarchy accurate. [concerned] New content must be slotted into the right place. Reorganizations ripple through the structure. [seriously] This **structural maintenance** is extra work compared to flatter graph structures.
 
-**Multiple valid hierarchies** exist for the same content. Should you organize programming languages by paradigm (functional, object-oriented, procedural) or by use case (web, systems, data science) or by popularity? Different organizations serve different needs, but you typically must choose one primary structure. This **single-hierarchy constraint** can frustrate users who think about the domain differently.
+[puzzled] **Multiple valid hierarchies** exist for the same content. [storytelling] Should you organize programming languages by paradigm (functional, object-oriented, procedural) or by use case (web, systems, data science) or by popularity? [cautiously] Different organizations serve different needs, but you typically must choose one primary structure. [concerned] This **single-hierarchy constraint** can frustrate users who think about the domain differently.
 
-**Uneven depth** is common in real hierarchies. Some branches go 6 levels deep while others stop at 2. This **depth inconsistency** complicates level-based retrieval. You can't just say "retrieve at level 3" when that might be detailed leaves in one branch and high-level categories in another.
+[cautiously] **Uneven depth** is common in real hierarchies. Some branches go 6 levels deep while others stop at 2. [puzzled] This **depth inconsistency** complicates level-based retrieval. [conversational] You can't just say "retrieve at level 3" when that might be detailed leaves in one branch and high-level categories in another.
 
 #### When to Choose This Technique
-Use hierarchical retrieval when your **content naturally has hierarchical structure** with clear parent-child relationships. When **granularity control** is critical and different users or queries need different levels of detail. When you have **large-scale graphs** where pruning provides essential performance gains. When **structural navigation** is a key part of your user experience.
+[confidently] Use hierarchical retrieval when your **content naturally has hierarchical structure** with clear parent-child relationships. When **granularity control** is critical and different users or queries need different levels of detail. [pleased] When you have **large-scale graphs** where pruning provides essential performance gains. [warmly] When **structural navigation** is a key part of your user experience.
 
-Avoid it when your **domain is highly networked** without clear hierarchy. When **cross-cutting concerns** are as important as hierarchical structure. When you need to surface **non-hierarchical relationships** like analogies, contrasts, or temporal sequences. When the **overhead of maintaining hierarchy** outweighs the retrieval benefits.
+[cautiously] Avoid it when your **domain is highly networked** without clear hierarchy. When **cross-cutting concerns** are as important as hierarchical structure. [seriously] When you need to surface **non-hierarchical relationships** like analogies, contrasts, or temporal sequences. [conversational] When the **overhead of maintaining hierarchy** outweighs the retrieval benefits.
 
-Ready for our next technique? Let's explore Graph + Dense Vector Hybrid Retrieval!`
+[energetic] Ready for our next technique? Let's explore Graph + Dense Vector Hybrid Retrieval!`
         }
       ]
     },
