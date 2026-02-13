@@ -1088,7 +1088,7 @@ Imagine a symptom checker app. Instead of directly diagnosing "headache, fever, 
 
 > Pro tip: Verify generated facts against trusted sources for critical applications. Don't blindly trust model-generated knowledge!`
         },
-{
+        {
           id: 25,
           title: '6. Generate Knowledge - Implementation',
           icon: { name: 'duo-code' },
@@ -1125,7 +1125,7 @@ How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few an
 
 > Pro tip: For production systems, implement fact verification! Cross-check generated facts against trusted knowledge bases or use retrieval-augmented generation to ground facts in real documents!`
         },
-{
+        {
           id: 26,
           title: '6. Generate Knowledge - Considerations',
           icon: { name: 'duo-clipboard-check' },
@@ -2660,10 +2660,11 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
                 <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.9}>
-                <ul><li>Transparent action-reasoning trajectory plus answer</li>
-                <li>Dynamic adaptation based on observations</li>
-                <li>Grounded reasoning with external information</li>
-                <li>Interpretable decision-making process</li>
+                <ul>
+                  <li>Transparent action-reasoning trajectory plus answer</li>
+                  <li>Dynamic adaptation based on observations</li>
+                  <li>Grounded reasoning with external information</li>
+                  <li>Interpretable decision-making process</li>
                 </ul>
               </GSAPStaggerList>
               <GSAPAnimated animation="slideInBottom" delay={1.5}>
