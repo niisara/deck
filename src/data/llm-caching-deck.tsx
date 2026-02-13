@@ -51,22 +51,22 @@ export const llmCachingDeck: Deck = {
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 13 Caching Patterns That Save Cost in LLM Systems
-Welcome everyone! Today we're going to explore one of the most practical topics in production **LLM 👉 'el-el-em'** systems: caching patterns that can dramatically reduce both your costs and latency.
+[cheerfully] Welcome everyone! [excited] Today we're going to explore one of the most practical topics in production **LLM 👉 'el-el-em'** systems: caching patterns that can dramatically reduce both your costs and latency.
 
 #### Why This Matters
-Building **LLM systems** is expensive. Every API call costs money, and every millisecond of latency impacts user experience. But here's the good news: most applications show significant repetition in queries, retrieval operations, and even generation patterns. That's where intelligent caching comes in.
+[conversational] Building **LLM systems** is expensive. Every API call costs money, and every millisecond of latency impacts user experience. [pleased] But here's the good news: most applications show significant repetition in queries, retrieval operations, and even generation patterns. [confidently] That's where intelligent caching comes in.
 
 #### What We'll Cover Today
-We're going to walk through **thirteen proven caching patterns** that address different layers of your LLM stack. From simple query embedding caches all the way to sophisticated partial response reconstruction, each pattern solves a specific problem and brings measurable savings.
+[energetic] We're going to walk through **thirteen proven caching patterns** that address different layers of your LLM stack. From simple query embedding caches all the way to sophisticated partial response reconstruction, each pattern solves a specific problem and brings measurable savings.
 
 #### The Journey Ahead
-Think of caching as a layered strategy. You have the **input layer** where queries come in, the **retrieval layer** where you search your knowledge base, the **generation layer** where the model produces responses, and the **personalization layer** where you tailor outputs to individual users. Each layer has its own caching opportunities.
+[storytelling] Think of caching as a layered strategy. You have the **input layer** where queries come in, the **retrieval layer** where you search your knowledge base, the **generation layer** where the model produces responses, and the **personalization layer** where you tailor outputs to individual users. Each layer has its own caching opportunities.
 
-> Ask the audience: "How many of you are currently running LLM applications in production?"
+> Ask the audience: [warmly] "How many of you are currently running LLM applications in production?"
 
-These patterns aren't just theoretical. They're battle-tested approaches used by companies processing millions of LLM requests daily. By the end of this presentation, you'll understand exactly which patterns to apply and when.
+[confidently] These patterns aren't just theoretical. They're battle-tested approaches used by companies processing millions of LLM requests daily. By the end of this presentation, you'll understand exactly which patterns to apply and when.
 
-Let's begin by understanding why caching is so critical for LLM systems.`
+[inspiringly] Let's begin by understanding why caching is so critical for LLM systems.`
         },
         {
           id: 2,
@@ -163,15 +163,15 @@ Let's begin by understanding why caching is so critical for LLM systems.`
           ),
           backgroundColor: '#6b1d1d',
           notes: `### Why Caching Matters in LLM Systems
-Now let's dive into why caching is absolutely critical when you're building production LLM systems.
+[conversational] Now let's dive into why caching is absolutely critical when you're building production LLM systems.
 
 #### The Cost Reality
-Let's talk numbers first. Every time your system processes a query, you're paying for multiple expensive operations. **Tokenization** breaks down your text into tokens. **Embedding generation** converts text into high-dimensional vectors, which requires running neural networks. **Vector search** operations scan through potentially millions of vectors. Then there's **re-ranking** of retrieved content, which often involves another model call. And finally, the big one: **generation tokens** from the LLM itself, along with prompt processing and any tool calls.
+[seriously] Let's talk numbers first. Every time your system processes a query, you're paying for multiple expensive operations. [lecture] **Tokenization** breaks down your text into tokens. **Embedding generation** converts text into high-dimensional vectors, which requires running neural networks. **Vector search** operations scan through potentially millions of vectors. Then there's **re-ranking** of retrieved content, which often involves another model call. And finally, the big one: **generation tokens** from the LLM itself, along with prompt processing and any tool calls.
 
-Think about a typical RAG 👉 'rag' system handling ten thousand queries per day. If even thirty percent of those queries are repeated or very similar, you're literally burning money on redundant computations. That's where intelligent caching becomes your best friend.
+[concerned] Think about a typical RAG 👉 'rag' system handling ten thousand queries per day. If even thirty percent of those queries are repeated or very similar, you're literally burning money on redundant computations. [pleased] That's where intelligent caching becomes your best friend.
 
 #### What Caching Actually Saves
-Caching eliminates three major bottlenecks. First, you skip **repeated preprocessing and tokenization**. These steps might seem fast, but they add up at scale. Second, you avoid **redundant retrieval operations**. Why search your vector database again when you already found the best results for this query yesterday? Third, and perhaps most importantly, caching dramatically lowers your **TTFT** 👉 'tee-tee-eff-tee', which stands for **time to first token**, and your **tail latency**. Users notice when responses are slow, and caching can turn a three-second response into a three-hundred-millisecond response.
+[confidently] Caching eliminates three major bottlenecks. First, you skip **repeated preprocessing and tokenization**. These steps might seem fast, but they add up at scale. Second, you avoid **redundant retrieval operations**. [storytelling] Why search your vector database again when you already found the best results for this query yesterday? [excited] Third, and perhaps most importantly, caching dramatically lowers your **TTFT** 👉 'tee-tee-eff-tee', which stands for **time to first token**, and your **tail latency**. Users notice when responses are slow, and caching can turn a three-second response into a three-hundred-millisecond response.
 
 #### The Four Caching Layers
 \`\`\`mermaid
@@ -185,15 +185,15 @@ flowchart TB
     style D fill:#e1bee7,color:#000
 \`\`\`
 
-Caching isn't one-size-fits-all. We work with **four distinct layers**. At the top, you have your **edge or application cache** that stores complete responses and templates. This is your first line of defense. Moving deeper, there's the **vector or index cache** that holds retrieval results. Then you get into the model itself with **runtime caches** like KV caches 👉 'kay-vee' and logit caches that make generation faster. Finally, at the personalization layer, you have **user and session memory** that maintains contextual state across conversations.
+[lecture] Caching isn't one-size-fits-all. We work with **four distinct layers**. At the top, you have your **edge or application cache** that stores complete responses and templates. This is your first line of defense. Moving deeper, there's the **vector or index cache** that holds retrieval results. [conversational] Then you get into the model itself with **runtime caches** like KV caches 👉 'kay-vee' and logit caches that make generation faster. Finally, at the personalization layer, you have **user and session memory** that maintains contextual state across conversations.
 
 #### Measuring Success
-How do you know if your caching strategy is working? Four key metrics tell the story. Your **cache hit rate** shows what percentage of requests are served from cache, and the **miss penalty cost** shows how expensive it is when you don't hit cache. **P95 latency** 👉 'pee ninety-five' improvements demonstrate the user experience impact. You need to balance **freshness SLAs** 👉 'service level agreements' because some data needs to be current. And finally, track your **storage cost versus compute savings ratio** to ensure caching is economically viable.
+How do you know if your caching strategy is working? [confidently] Four key metrics tell the story. Your **cache hit rate** shows what percentage of requests are served from cache, and the **miss penalty cost** shows how expensive it is when you don't hit cache. **P95 latency** 👉 'pee ninety-five' improvements demonstrate the user experience impact. You need to balance **freshness SLAs** 👉 'service level agreements' because some data needs to be current. And finally, track your **storage cost versus compute savings ratio** to ensure caching is economically viable.
 
 #### The Guiding Principles
-Three principles govern effective caching. Use **stable cache keys with version tags** so you can invalidate when needed. Find the right balance between **TTLs** 👉 'tee-tee-els', or time-to-live values, and your invalidation strategies. And never forget **privacy and security** when you're caching sensitive data. A leaked cache entry with personal information is a disaster waiting to happen.
+[seriously] Three principles govern effective caching. Use **stable cache keys with version tags** so you can invalidate when needed. Find the right balance between **TTLs** 👉 'tee-tee-els', or time-to-live values, and your invalidation strategies. [firmly] And never forget **privacy and security** when you're caching sensitive data. A leaked cache entry with personal information is a disaster waiting to happen.
 
-Now that we understand why caching matters, let's explore the first of our thirteen patterns.`
+[inspiringly] Now that we understand why caching matters, let's explore the first of our thirteen patterns.`
         }
       ]
     },
@@ -286,10 +286,10 @@ Now that we understand why caching matters, let's explore the first of our thirt
           ),
           backgroundColor: '#6b561d',
           notes: `### Pattern 1: Query Embedding Cache
-Here's our first caching pattern: **Query Embedding Cache**. This is one of the most straightforward yet impactful patterns you can implement in your LLM system.
+[confidently] Here's our first caching pattern: **Query Embedding Cache**. [pleased] This is one of the most straightforward yet impactful patterns you can implement in your LLM system.
 
 #### What Gets Cached
-In this pattern, we cache **query embedding vectors and their normalization artifacts**. Think about what happens every time a user asks a question. Your system takes that text, normalizes it, and then runs it through an embedding model to convert it into a high-dimensional vector. This embedding step isn't free. It requires a forward pass through a neural network, which takes time and costs money or compute resources.
+[lecture] In this pattern, we cache **query embedding vectors and their normalization artifacts**. [conversational] Think about what happens every time a user asks a question. Your system takes that text, normalizes it, and then runs it through an embedding model to convert it into a high-dimensional vector. [seriously] This embedding step isn't free. It requires a forward pass through a neural network, which takes time and costs money or compute resources.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -304,24 +304,24 @@ flowchart LR
     style E fill:#ffd700,color:#000
 \\\`\\\`\\\`
 
-When a query comes in, we normalize it first, then check the cache. If we get a cache hit, we instantly return the embedding without touching the embedding model. On a miss, we generate the embedding, store it in the cache, and then return it. Simple flow, massive impact.
+[conversational] When a query comes in, we normalize it first, then check the cache. [pleased] If we get a cache hit, we instantly return the embedding without touching the embedding model. On a miss, we generate the embedding, store it in the cache, and then return it. [confidently] Simple flow, massive impact.
 
 #### The Cache Key Strategy
-The cache key is critical here. We use \\\`hash(normalized_query + embedding_model + version + dim)\\\`. Notice what we're including: the normalized query text itself, obviously, but also the embedding model name, its version, and the output dimensionality. Why all this extra information? Because embeddings from different models or different versions aren't interchangeable. If you upgrade your embedding model and don't include the version in the key, you'll get cache hits with stale embeddings from the old model. That leads to subtle quality degradation that's hard to debug.
+[seriously] The cache key is critical here. We use \\\`hash(normalized_query + embedding_model + version + dim)\\\`. Notice what we're including: the normalized query text itself, obviously, but also the embedding model name, its version, and the output dimensionality. [cautiously] Why all this extra information? Because embeddings from different models or different versions aren't interchangeable. If you upgrade your embedding model and don't include the version in the key, you'll get cache hits with stale embeddings from the old model. [concerned] That leads to subtle quality degradation that's hard to debug.
 
 #### Storage Architecture
-We store these embeddings in **Redis 👉 'red-iss' or KeyDB 👉 'key-dee-bee'** for the hot cache. These are in-memory stores that give you microsecond-level latency. For rarely-accessed embeddings, you can optionally tier down to **S3 👉 'ess-three'** or another object store. The key is co-locating your cache per region, keeping it close to your application servers to minimize network latency.
+[lecture] We store these embeddings in **Redis 👉 'red-iss' or KeyDB 👉 'key-dee-bee'** for the hot cache. These are in-memory stores that give you microsecond-level latency. For rarely-accessed embeddings, you can optionally tier down to **S3 👉 'ess-three'** or another object store. [confidently] The key is co-locating your cache per region, keeping it close to your application servers to minimize network latency.
 
 #### Time-to-Live Configuration
-We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. Embeddings are deterministic. For the same input and model version, you'll always get the same output, so they're safe to cache for extended periods. When you need to invalidate, you do a **version-bump** in your cache key rather than expiring all entries. You also want **LFU 👉 'el-eff-you' or LRU 👉 'el-are-you'** eviction policies. LFU is least frequently used, and LRU is least recently used. These ensure your cache doesn't fill up with one-time queries.
+We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassuringly] Embeddings are deterministic. For the same input and model version, you'll always get the same output, so they're safe to cache for extended periods. When you need to invalidate, you do a **version-bump** in your cache key rather than expiring all entries. You also want **LFU 👉 'el-eff-you' or LRU 👉 'el-are-you'** eviction policies. LFU is least frequently used, and LRU is least recently used. [conversational] These ensure your cache doesn't fill up with one-time queries.
 
 #### When This Pattern Shines
-The **strengths** are compelling. You completely avoid recomputing embeddings for identical queries. If you're running a customer support chatbot, you'll see the same questions repeatedly. Your **hit rate for frequently asked questions** will be excellent, often above eighty percent. And since embeddings are deterministic, you get **consistent quality** with zero variation.
+[pleased] The **strengths** are compelling. You completely avoid recomputing embeddings for identical queries. [storytelling] If you're running a customer support chatbot, you'll see the same questions repeatedly. [enthusiastically] Your **hit rate for frequently asked questions** will be excellent, often above eighty percent. And since embeddings are deterministic, you get **consistent quality** with zero variation.
 
 #### The Limitations
-But there are trade-offs. Embeddings are **memory intensive**. A single embedding from a model like **text-embedding-3-large 👉 'text embedding three large'** can be three thousand dimensions of float32 values. That's twelve kilobytes per embedding. At scale, this adds up. You also have **strict version coupling**. Every model update requires careful cache key management. And you must be extremely careful with **text normalization and PII 👉 'pee-eye-eye'**, which is personally identifiable information. If your normalization is inconsistent, you'll get cache misses on queries that should hit. And if you cache queries containing sensitive data, you create a security risk.
+[cautiously] But there are trade-offs. Embeddings are **memory intensive**. A single embedding from a model like **text-embedding-3-large 👉 'text embedding three large'** can be three thousand dimensions of float32 values. [seriously] That's twelve kilobytes per embedding. At scale, this adds up. You also have **strict version coupling**. Every model update requires careful cache key management. [firmly] And you must be extremely careful with **text normalization and PII 👉 'pee-eye-eye'**, which is personally identifiable information. If your normalization is inconsistent, you'll get cache misses on queries that should hit. And if you cache queries containing sensitive data, you create a security risk.
 
-Let's look at the strengths and limitations in more detail on the next slide.`
+[conversational] Let's look at the strengths and limitations in more detail on the next slide.`
         },
         {
           id: 4,
@@ -359,23 +359,23 @@ Let's look at the strengths and limitations in more detail on the next slide.`
           ),
           backgroundColor: '#6b561d',
           notes: `### Strengths and Limitations
-Let's take a closer look at when Query Embedding Cache works brilliantly and when you need to be cautious.
+[conversational] Let's take a closer look at when Query Embedding Cache works brilliantly and when you need to be cautious.
 
 #### The Good Stuff
-On the **strengths** side, the value proposition is crystal clear. You're **avoiding expensive embedding computation** for queries you've already seen. Think about the math here. If generating an embedding takes fifty milliseconds and costs you point-zero-zero-one cents, and you're processing a million queries per month with a forty percent hit rate, that's four hundred thousand avoided computations. The savings in both latency and cost add up fast.
+[pleased] On the **strengths** side, the value proposition is crystal clear. You're **avoiding expensive embedding computation** for queries you've already seen. [storytelling] Think about the math here. If generating an embedding takes fifty milliseconds and costs you point-zero-zero-one cents, and you're processing a million queries per month with a forty percent hit rate, that's four hundred thousand avoided computations. [enthusiastically] The savings in both latency and cost add up fast.
 
-The **hit rate for frequently asked questions** is where this really shines. In customer support, documentation search, or any domain with common queries, you'll see the same questions over and over. Your cache hit rate can easily exceed seventy to eighty percent for these workloads. And because embeddings are deterministic functions of the input, you get **perfect quality consistency**. There's zero risk of quality degradation from caching.
+[excited] The **hit rate for frequently asked questions** is where this really shines. In customer support, documentation search, or any domain with common queries, you'll see the same questions over and over. Your cache hit rate can easily exceed seventy to eighty percent for these workloads. [confidently] And because embeddings are deterministic functions of the input, you get **perfect quality consistency**. There's zero risk of quality degradation from caching.
 
 #### The Trade-offs
-Now for the **limitations**. First, embeddings are **memory intensive**. Modern embedding models produce high-dimensional vectors. **Text-embedding-3-large 👉 'text embedding three large'**, for example, outputs three-thousand-dimensional vectors. Each dimension is a thirty-two-bit float, so that's twelve kilobytes per cached embedding. If you're caching a million embeddings, that's twelve gigabytes of memory just for the vectors themselves, not counting the cache metadata and keys.
+[cautiously] Now for the **limitations**. First, embeddings are **memory intensive**. [lecture] Modern embedding models produce high-dimensional vectors. **Text-embedding-3-large 👉 'text embedding three large'**, for example, outputs three-thousand-dimensional vectors. Each dimension is a thirty-two-bit float, so that's twelve kilobytes per cached embedding. [seriously] If you're caching a million embeddings, that's twelve gigabytes of memory just for the vectors themselves, not counting the cache metadata and keys.
 
-Second, there's **strict version coupling with your embedding model**. When you update your embedding model, all your cached embeddings become incompatible. You can't mix embeddings from different model versions in your similarity searches. This means you need to carefully manage cache keys with version tags and plan for cache warming when you upgrade models.
+[concerned] Second, there's **strict version coupling with your embedding model**. When you update your embedding model, all your cached embeddings become incompatible. You can't mix embeddings from different model versions in your similarity searches. This means you need to carefully manage cache keys with version tags and plan for cache warming when you upgrade models.
 
-Third, you need to handle **text normalization and PII 👉 'pee-eye-eye', or personally identifiable information, very carefully**. If your normalization is inconsistent, like sometimes lowercasing and sometimes not, or varying how you handle punctuation, you'll get cache misses on queries that should be hits. And if you're caching the actual query text as part of your cache key or value, and that text contains personal information like names, emails, or addresses, you've now stored sensitive data that might be subject to privacy regulations. You need proper data governance around your caching layer.
+[firmly] Third, you need to handle **text normalization and PII 👉 'pee-eye-eye', or personally identifiable information, very carefully**. If your normalization is inconsistent, like sometimes lowercasing and sometimes not, or varying how you handle punctuation, you'll get cache misses on queries that should be hits. [seriously] And if you're caching the actual query text as part of your cache key or value, and that text contains personal information like names, emails, or addresses, you've now stored sensitive data that might be subject to privacy regulations. You need proper data governance around your caching layer.
 
-> Ask the audience: "How many of you are currently caching embeddings in your systems?"
+> Ask the audience: [warmly] "How many of you are currently caching embeddings in your systems?"
 
-With those trade-offs in mind, let's move on to Pattern 2, which caches at a different layer of the stack.`
+[inspiringly] With those trade-offs in mind, let's move on to Pattern 2, which caches at a different layer of the stack.`
         }
       ]
     },
@@ -470,10 +470,10 @@ With those trade-offs in mind, let's move on to Pattern 2, which caches at a dif
           ),
           backgroundColor: '#516b1d',
           notes: `### Pattern 2: Retrieval Results Cache
-Now let's move up one layer in the stack to **Pattern 2: Retrieval Results Cache**. While the first pattern cached embeddings, this pattern caches the actual results from your vector search operations.
+[confidently] Now let's move up one layer in the stack to **Pattern 2: Retrieval Results Cache**. [conversational] While the first pattern cached embeddings, this pattern caches the actual results from your vector search operations.
 
 #### What Gets Cached
-In this pattern, we cache **the output of vector search operations**. Specifically, we're storing the **top-k document IDs, their similarity scores, and optionally document snippets or previews**. Think about what happens when you run a semantic search query. You generate an embedding, that embedding gets compared against potentially millions of vectors in your index, you compute similarity scores, sort them, apply filters, and return the top results. This entire vector search operation is computationally expensive and time-consuming.
+[lecture] In this pattern, we cache **the output of vector search operations**. Specifically, we're storing the **top-k document IDs, their similarity scores, and optionally document snippets or previews**. [storytelling] Think about what happens when you run a semantic search query. You generate an embedding, that embedding gets compared against potentially millions of vectors in your index, you compute similarity scores, sort them, apply filters, and return the top results. [seriously] This entire vector search operation is computationally expensive and time-consuming.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -488,26 +488,26 @@ flowchart LR
     style E fill:#ffd700,color:#000
 \\\`\\\`\\\`
 
-Here's the flow. Query comes in, gets embedded, then we check the cache. On a **cache hit**, we instantly return the document IDs and scores without touching the vector database at all. On a **cache miss**, we perform the full vector search, store those results in the cache, and then return them. The key insight is that vector search is often one of the most expensive operations in your retrieval pipeline. By caching these results, you can skip that entire computation.
+[conversational] Here's the flow. Query comes in, gets embedded, then we check the cache. [pleased] On a **cache hit**, we instantly return the document IDs and scores without touching the vector database at all. On a **cache miss**, we perform the full vector search, store those results in the cache, and then return them. [confidently] The key insight is that vector search is often one of the most expensive operations in your retrieval pipeline. By caching these results, you can skip that entire computation.
 
 #### The Cache Key Strategy
-The cache key here is more complex than the embedding cache. We use \\\`hash(normalized_query or quantized_embedding + index_snapshot_id + k + filters)\\\`. Let me break this down. You can either hash the normalized query text or a **quantized version of the embedding** to save space. The critical part is including the **index_snapshot_id 👉 'index snapshot I-D'**. This tracks the version of your vector index. Why is this essential? Because when you add new documents or update existing ones, the search results for the same query will change. Including the index version ensures you don't serve stale results from before that update.
+[seriously] The cache key here is more complex than the embedding cache. We use \\\`hash(normalized_query or quantized_embedding + index_snapshot_id + k + filters)\\\`. Let me break this down. [lecture] You can either hash the normalized query text or a **quantized version of the embedding** to save space. [firmly] The critical part is including the **index_snapshot_id 👉 'index snapshot I-D'**. This tracks the version of your vector index. Why is this essential? [cautiously] Because when you add new documents or update existing ones, the search results for the same query will change. Including the index version ensures you don't serve stale results from before that update.
 
-You also include **k**, which is the number of results requested, and any **filter parameters**. If someone asks for the top five results versus the top ten, those need different cache entries. Same with filters. A query filtered to only engineering documents versus all documents should produce different cached results.
+You also include **k**, which is the number of results requested, and any **filter parameters**. [storytelling] If someone asks for the top five results versus the top ten, those need different cache entries. Same with filters. A query filtered to only engineering documents versus all documents should produce different cached results.
 
 #### Storage Architecture
-For storage, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cached'** for fast in-memory access. These stores give you sub-millisecond latency, which is crucial because you're trying to avoid a vector search that might take fifty to two hundred milliseconds. For **public FAQs 👉 'frequently asked questions'**, you can optionally push results to **edge caches or CDN 👉 'content delivery network'** layers, getting them even closer to your users. The key is **regional deployment**. Deploy your cache in the same region as your vector database to minimize network hops.
+[lecture] For storage, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cached'** for fast in-memory access. These stores give you sub-millisecond latency, which is crucial because you're trying to avoid a vector search that might take fifty to two hundred milliseconds. [conversational] For **public FAQs 👉 'frequently asked questions'**, you can optionally push results to **edge caches or CDN 👉 'content delivery network'** layers, getting them even closer to your users. [confidently] The key is **regional deployment**. Deploy your cache in the same region as your vector database to minimize network hops.
 
 #### Time-to-Live Configuration
-Notice the TTL 👉 'tee-tee-el' is much **shorter** here than with embeddings. We use **five to sixty minutes** typically. Why so short? Because retrieval results become stale quickly. As soon as you update your knowledge base, add new documents, or change existing ones, the cached results are potentially outdated. You also implement **event-driven invalidation**. When your knowledge base changes, you proactively purge or invalidate affected cache entries rather than waiting for TTL expiration. This keeps your results fresh while still getting cache benefits for queries that happen repeatedly within short time windows.
+[cautiously] Notice the TTL 👉 'tee-tee-el' is much **shorter** here than with embeddings. We use **five to sixty minutes** typically. Why so short? [concerned] Because retrieval results become stale quickly. As soon as you update your knowledge base, add new documents, or change existing ones, the cached results are potentially outdated. [lecture] You also implement **event-driven invalidation**. When your knowledge base changes, you proactively purge or invalidate affected cache entries rather than waiting for TTL expiration. This keeps your results fresh while still getting cache benefits for queries that happen repeatedly within short time windows.
 
 #### When This Pattern Shines
-The **strengths** are powerful. You completely skip expensive vector search operations. Vector similarity computation across large indices is resource-intensive, especially with high-dimensional embeddings. The **latency improvements** can be dramatic. A vector search might take one hundred milliseconds or more. A cache hit takes under one millisecond. And the results themselves are **cheap to store**. Unlike embeddings, which are large vectors, you're just storing document IDs, which are typically integers or short strings, plus some floating-point scores.
+[pleased] The **strengths** are powerful. You completely skip expensive vector search operations. [seriously] Vector similarity computation across large indices is resource-intensive, especially with high-dimensional embeddings. [excited] The **latency improvements** can be dramatic. A vector search might take one hundred milliseconds or more. A cache hit takes under one millisecond. [confidently] And the results themselves are **cheap to store**. Unlike embeddings, which are large vectors, you're just storing document IDs, which are typically integers or short strings, plus some floating-point scores.
 
 #### The Limitations
-But there are important **trade-offs**. First, **results become stale when your corpus changes**. Every document update, addition, or deletion potentially invalidates cached results. You need robust invalidation logic. Second, **filter-specific cache keys can explode your cache size**. If users are applying many different filter combinations, you might end up with low hit rates because each unique filter combination needs its own cache entry. Third, you get **lower hit rates on tail or uncommon queries**. If your users are asking highly diverse questions, you won't see the same queries repeatedly, reducing cache effectiveness. This pattern works best when you have repeated queries or concentrated query patterns, like customer support with common questions.
+[cautiously] But there are important **trade-offs**. [concerned] First, **results become stale when your corpus changes**. Every document update, addition, or deletion potentially invalidates cached results. You need robust invalidation logic. [disappointed] Second, **filter-specific cache keys can explode your cache size**. If users are applying many different filter combinations, you might end up with low hit rates because each unique filter combination needs its own cache entry. Third, you get **lower hit rates on tail or uncommon queries**. If your users are asking highly diverse questions, you won't see the same queries repeatedly, reducing cache effectiveness. [reassuringly] This pattern works best when you have repeated queries or concentrated query patterns, like customer support with common questions.
 
-Let's dive deeper into the strengths and limitations on the next slide.`
+[conversational] Let's dive deeper into the strengths and limitations on the next slide.`
         },
         {
           id: 6,
@@ -545,30 +545,30 @@ Let's dive deeper into the strengths and limitations on the next slide.`
           ),
           backgroundColor: '#516b1d',
           notes: `### Strengths and Limitations
-Let's examine the Retrieval Results Cache more closely to understand when it delivers exceptional value and where you need to be careful.
+[conversational] Let's examine the Retrieval Results Cache more closely to understand when it delivers exceptional value and where you need to be careful.
 
 #### The Performance Wins
-On the **strengths** side, this is all about performance and cost optimization. You're **skipping expensive vector search operations**. Let me give you some concrete numbers. A typical vector search across a million documents with a seven-hundred-sixty-eight-dimensional embedding might take fifty to one hundred fifty milliseconds, depending on your index structure and whether you're using approximate nearest neighbor algorithms like **HNSW 👉 'H-N-S-W', which stands for hierarchical navigable small world**, or **IVF 👉 'I-V-F', which is inverted file index**. A cache hit returns those same results in under a millisecond. That's a hundred-x speedup or more.
+[pleased] On the **strengths** side, this is all about performance and cost optimization. You're **skipping expensive vector search operations**. [lecture] Let me give you some concrete numbers. A typical vector search across a million documents with a seven-hundred-sixty-eight-dimensional embedding might take fifty to one hundred fifty milliseconds, depending on your index structure and whether you're using approximate nearest neighbor algorithms like **HNSW 👉 'H-N-S-W', which stands for hierarchical navigable small world**, or **IVF 👉 'I-V-F', which is inverted file index**. [excited] A cache hit returns those same results in under a millisecond. That's a hundred-x speedup or more.
 
-The **latency improvements** translate directly to better user experience. In conversational AI applications, every hundred milliseconds matters. When you're targeting sub-second response times from query to final answer, cutting out a hundred-millisecond vector search is huge. It's the difference between a snappy, responsive system and one that feels sluggish.
+[enthusiastically] The **latency improvements** translate directly to better user experience. In conversational AI applications, every hundred milliseconds matters. [storytelling] When you're targeting sub-second response times from query to final answer, cutting out a hundred-millisecond vector search is huge. It's the difference between a snappy, responsive system and one that feels sluggish.
 
-And the storage is **incredibly cheap compared to raw embeddings**. A cached retrieval result might be ten to twenty document IDs, which are typically four or eight bytes each, plus ten to twenty float scores at four bytes each. That's maybe two hundred bytes total. Compare that to caching the full embedding vectors at twelve kilobytes or more. You can cache thousands of retrieval results in the same memory space as a hundred embeddings. This makes the pattern very cost-effective from a resource perspective.
+[pleased] And the storage is **incredibly cheap compared to raw embeddings**. A cached retrieval result might be ten to twenty document IDs, which are typically four or eight bytes each, plus ten to twenty float scores at four bytes each. That's maybe two hundred bytes total. [confidently] Compare that to caching the full embedding vectors at twelve kilobytes or more. You can cache thousands of retrieval results in the same memory space as a hundred embeddings. This makes the pattern very cost-effective from a resource perspective.
 
 #### The Freshness Challenge
-Now for the **limitations**, and this is where things get interesting. The biggest challenge is **staleness 👉 'stay-ul-ness'**. Results become stale when your corpus changes. Imagine you're running a documentation search system. A user asks "how do I configure authentication?" and you cache the top ten results. Two hours later, your team publishes a new authentication guide that's more relevant and comprehensive than any existing docs. New users asking the same question should get this new document in their results, but if they hit the cache, they get the old results without the new guide.
+[cautiously] Now for the **limitations**, and this is where things get interesting. [concerned] The biggest challenge is **staleness 👉 'stay-ul-ness'**. Results become stale when your corpus changes. [storytelling] Imagine you're running a documentation search system. A user asks "how do I configure authentication?" and you cache the top ten results. Two hours later, your team publishes a new authentication guide that's more relevant and comprehensive than any existing docs. [disappointed] New users asking the same question should get this new document in their results, but if they hit the cache, they get the old results without the new guide.
 
-This is why **event-driven invalidation** is critical. You need to listen for document additions, updates, or deletions and proactively purge affected cache entries. But implementing this correctly is non-trivial. You need to decide which cache entries are affected by a given document change. In some systems, people take a conservative approach and flush the entire cache on any corpus update. In others, they try to selectively invalidate only affected entries, which is more efficient but more complex to implement.
+[seriously] This is why **event-driven invalidation** is critical. You need to listen for document additions, updates, or deletions and proactively purge affected cache entries. [cautiously] But implementing this correctly is non-trivial. You need to decide which cache entries are affected by a given document change. In some systems, people take a conservative approach and flush the entire cache on any corpus update. In others, they try to selectively invalidate only affected entries, which is more efficient but more complex to implement.
 
-Second, **filter-specific cache keys can explode your cache size and fragment your hit rate**. Say you're building an internal knowledge base search. Users can filter by department, date range, document type, author, and tags. Each unique combination of filters creates a separate cache key. If users are applying diverse filter combinations, you end up with many cache entries that each get hit rarely. Your cache becomes bloated with low-value entries.
+[concerned] Second, **filter-specific cache keys can explode your cache size and fragment your hit rate**. [lecture] Say you're building an internal knowledge base search. Users can filter by department, date range, document type, author, and tags. Each unique combination of filters creates a separate cache key. [disappointed] If users are applying diverse filter combinations, you end up with many cache entries that each get hit rarely. Your cache becomes bloated with low-value entries.
 
-Third, you face **lower hit rates on tail or uncommon queries**. This pattern shines when you have high query repetition. Think customer support FAQs, where you see the same hundred questions over and over. Your cache hit rate might be seventy to eighty percent. But in a research assistant tool where users are asking highly specific, diverse questions, your hit rate might drop to ten or twenty percent. At that point, you're paying the memory and operational cost of the cache without getting much benefit.
+[cautiously] Third, you face **lower hit rates on tail or uncommon queries**. [conversational] This pattern shines when you have high query repetition. Think customer support FAQs, where you see the same hundred questions over and over. Your cache hit rate might be seventy to eighty percent. But in a research assistant tool where users are asking highly specific, diverse questions, your hit rate might drop to ten or twenty percent. [disappointed] At that point, you're paying the memory and operational cost of the cache without getting much benefit.
 
 #### Practical Deployment Considerations
-In practice, successful deployments of this pattern often combine it with **monitoring and adaptive cache sizing**. You track your hit rate metrics and adjust your cache size and TTL 👉 'tee-tee-el' based on actual usage patterns. Some teams use **separate cache tiers** for different query types. They might have a hot cache for common queries with a thirty-minute TTL and a warm cache for less frequent queries with a five-minute TTL. This lets them optimize for different workload characteristics.
+[confidently] In practice, successful deployments of this pattern often combine it with **monitoring and adaptive cache sizing**. You track your hit rate metrics and adjust your cache size and TTL 👉 'tee-tee-el' based on actual usage patterns. [lecture] Some teams use **separate cache tiers** for different query types. They might have a hot cache for common queries with a thirty-minute TTL and a warm cache for less frequent queries with a five-minute TTL. [reassuringly] This lets them optimize for different workload characteristics.
 
-> Ask the audience: "Who here is doing RAG 👉 'rag', retrieval-augmented generation, or semantic search in production? Have you tried caching retrieval results?"
+> Ask the audience: [warmly] "Who here is doing RAG 👉 'rag', retrieval-augmented generation, or semantic search in production? Have you tried caching retrieval results?"
 
-With that understanding of Pattern 2, let's look at our third caching pattern, which operates at yet another layer of the system.`
+[inspiringly] With that understanding of Pattern 2, let's look at our third caching pattern, which operates at yet another layer of the system.`
         }
       ]
     },
