@@ -56,12 +56,12 @@ export const queryRewritingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `### 1 · 21 Query Rewriting Strategies for RAG
-Welcome everyone! Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.
+          notes: `### 21 Query Rewriting Strategies for RAG
+[cheerfully] Welcome everyone! Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. [conversational] RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. [seriously] But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.
 #### 🎯 What You'll Learn
-We'll walk through **21 battle-tested strategies** for rewriting user queries so your retrieval pipeline returns much better results. Each strategy comes with a clear explanation, a prompt template you can copy, an implementation pattern, and real-world examples showing the before-and-after.
-Think of query rewriting as a translator sitting between the user and your search engine. The user says something messy, and the rewriter cleans it up before it ever touches the retrieval system. Simple concept, massive impact.
-Let's dive in!`
+[energetic] We'll walk through **21 battle-tested strategies** for rewriting user queries so your retrieval pipeline returns much better results. Each strategy comes with a clear explanation, a prompt template you can copy, an implementation pattern, and real-world examples showing the before-and-after.
+[storytelling] Think of query rewriting as a translator sitting between the user and your search engine. The user says something messy, and the rewriter cleans it up before it ever touches the retrieval system. [confidently] Simple concept, massive impact.
+[enthusiastically] Let's dive in!`
         },
         {
           id: 2,
@@ -115,14 +115,14 @@ Let's dive in!`
             </div>
           ),
           backgroundColor: '#34495E',
-          notes: `### 2 · Why Query Rewriting?
-So why do we even need query rewriting? Let's look at the real problems it solves.
+          notes: `### Why Query Rewriting?
+[conversational] So why do we even need query rewriting? [seriously] Let's look at the real problems it solves.
 #### ❌ The Problems
-Users are notoriously bad at writing good search queries. They type things like "pricing" when they mean "What is the current pricing for the Enterprise plan of Product X?" They use **vague or underspecified queries** all the time. Then there's the **vocabulary mismatch** problem — a user might say "heart attack" but your medical corpus uses "myocardial infarction." Those are semantically identical but lexically completely different, so keyword search fails. **Long, complex questions** also hurt recall because the important terms get diluted. And in chat applications, **follow-up questions** like "What about its limits?" lose all context from previous turns.
+[cautiously] Users are notoriously bad at writing good search queries. They type things like "pricing" when they mean "What is the current pricing for the Enterprise plan of Product X?" They use **vague or underspecified queries** all the time. [concerned] Then there's the **vocabulary mismatch** problem — a user might say "heart attack" but your medical corpus uses "myocardial infarction." Those are semantically identical but lexically completely different, so keyword search fails. **Long, complex questions** also hurt recall because the important terms get diluted. [disappointed] And in chat applications, **follow-up questions** like "What about its limits?" lose all context from previous turns.
 #### ✅ The Outcomes
-When you apply query rewriting, you get **higher recall** — more relevant documents come back. You get **better precision** — fewer irrelevant results cluttering the context window. Your answers become **more factually grounded** because the LLM has better source material. And users stop having to manually rephrase their questions over and over.
+[pleased] When you apply query rewriting, you get **higher recall** — more relevant documents come back. You get **better precision** — fewer irrelevant results cluttering the context window. [enthusiastically] Your answers become **more factually grounded** because the LLM has better source material. And users stop having to manually rephrase their questions over and over.
 > 🎤 Ask the audience: "Has anyone experienced a chatbot that just couldn't understand follow-up questions?"
-Let's see the actual numbers next.`
+[conversational] Let's see the actual numbers next.`
         },
         {
           id: 3,
@@ -171,13 +171,13 @@ Let's see the actual numbers next.`
             </div>
           ),
           backgroundColor: '#16496b',
-          notes: `### 3 · Impact on RAG Performance
-Now let's talk numbers, because this is where it gets exciting.
+          notes: `### Impact on RAG Performance
+[excited] Now let's talk numbers, because this is where it gets exciting.
 #### 📊 The Metrics
-**Recall at k** — that's the fraction of relevant documents you actually retrieve in your top-k results — sees a **15-40% improvement** with proper query rewriting. That's huge. MRR 👉 'em-ar-ar' and NDCG 👉 'en-dee-see-jee' — those are ranking quality metrics — jump by **10-25%**. The **grounded-rate**, meaning how many answers are actually backed by retrieved evidence, improves by **20-45%**. And **Eval pass at one**, the chance of getting the right answer on the first try, goes up **15-30%**.
+[confidently] **Recall at k** — that's the fraction of relevant documents you actually retrieve in your top-k results — sees a **15-40% improvement** with proper query rewriting. [enthusiastically] That's huge. MRR 👉 'em-ar-ar' and NDCG 👉 'en-dee-see-jee' — those are ranking quality metrics — jump by **10-25%**. The **grounded-rate**, meaning how many answers are actually backed by retrieved evidence, improves by **20-45%**. And **Eval pass at one**, the chance of getting the right answer on the first try, goes up **15-30%**.
 #### 💡 Why These Numbers Matter
-Think about it this way: if your RAG system currently answers 60% of questions correctly, a 20% improvement in grounded-rate could push that to over 70%. That's the difference between a frustrating chatbot and a useful one. And these gains come without changing your embedding model, your vector database, or your LLM — just by rewriting the query before it hits the retrieval system.
-Let's now look at the implementation workflow to see how this fits together.`
+[storytelling] Think about it this way: if your RAG system currently answers 60% of questions correctly, a 20% improvement in grounded-rate could push that to over 70%. [firmly] That's the difference between a frustrating chatbot and a useful one. [pleased] And these gains come without changing your embedding model, your vector database, or your LLM — just by rewriting the query before it hits the retrieval system.
+[conversational] Let's now look at the implementation workflow to see how this fits together.`
         },
         {
           id: 4,
@@ -261,8 +261,8 @@ Let's now look at the implementation workflow to see how this fits together.`
             </div>
           ),
           backgroundColor: '#34495E',
-          notes: `### 4 · Implementation Workflow
-Let me walk you through the six-step workflow for implementing query rewriting in a RAG pipeline.
+          notes: `### Implementation Workflow
+[conversational] Let me walk you through the six-step workflow for implementing query rewriting in a RAG pipeline.
 #### 🔄 The Six Steps
 \`\`\`mermaid
 flowchart LR
@@ -280,7 +280,7 @@ flowchart LR
 **Step 1: Parse Intent & Context** — Figure out what the user actually wants. Is it a lookup, a comparison, troubleshooting? Extract entities and context from history. **Step 2: Pick Rewriting Policy** — Based on the intent, choose which rewriting strategy to apply. You might use a rule-based router or an LLM-based classifier. **Step 3: Transform Query** — Apply the selected rewriting strategy. This is where the magic happens. **Step 4: Retrieve** — Send the rewritten query to your retrieval system using hybrid search. **Step 5: Check Coverage** — Evaluate whether the retrieved documents actually cover the user's question. If not, loop back and try a different rewrite. **Step 6: Log & Adapt** — Capture feedback and performance metrics so you can continuously improve your rewriting policies.
 #### 🛡️ Guardrails
 Don't forget the guardrails: token and cost caps so your LLM rewriting doesn't blow your budget, evaluation gates to check rewrite quality, and fallback mechanisms to the original query if all rewrites fail.
-Now let's see an overview of all 21 strategies we'll cover.`
+[conversational] Now let's see an overview of all 21 strategies we'll cover.`
         },
         {
           id: 5,
@@ -342,21 +342,21 @@ Now let's see an overview of all 21 strategies we'll cover.`
             </div>
           ),
           backgroundColor: '#194f2f',
-          notes: `### 5 · 21 Strategies Overview
+          notes: `### 21 Strategies Overview
 Here's a bird's-eye view of all twenty-one strategies organized by their approach type.
 #### 📈 Expansion & Enhancement
-The first cluster includes strategies that make your queries bigger and richer. **Query Expansion** adds synonyms and related terms. **Query Reformulation** makes queries clearer and self-contained. **HyDE** 👉 'hide' generates a hypothetical answer document. **Multi-Query Generation** creates multiple search queries from one. And **Query2Doc** turns a query into a pseudo-document for better semantic matching.
+[pleased] The first cluster includes strategies that make your queries bigger and richer. **Query Expansion** adds synonyms and related terms. **Query Reformulation** makes queries clearer and self-contained. **HyDE** 👉 'hide' generates a hypothetical answer document. **Multi-Query Generation** creates multiple search queries from one. And **Query2Doc** turns a query into a pseudo-document for better semantic matching.
 #### 🔍 Context & Conversation
-These deal with chat-style interactions. **Context-Aware Rewriting** makes follow-ups standalone. **Query Clarification** asks users to disambiguate. **Intent Classification** routes queries to the right strategy.
+[lecture] These deal with chat-style interactions. **Context-Aware Rewriting** makes follow-ups standalone. **Query Clarification** asks users to disambiguate. **Intent Classification** routes queries to the right strategy.
 #### 🧩 Decomposition & Structure
 For complex questions: **Query Decomposition** splits them into sub-questions. **Step-Back Prompting** abstracts to higher-level concepts. **ITER-RETGEN** 👉 'iter-ret-jen' iterates between retrieval and generation. **Template-Based** uses predefined patterns.
 #### 🎯 Specification & Filtering
-These narrow the search: **Query Specification** adds explicit constraints. **Entity-Centric** disambiguates entities. **Temporal Rewriting** handles time references.
+[lecture] These narrow the search: **Query Specification** adds explicit constraints. **Entity-Centric** disambiguates entities. **Temporal Rewriting** handles time references.
 #### 🔬 Domain & Semantic
 **Semantic Bridging** maps lay terms to expert vocabulary. **Domain-Specific Rewriting** translates to field jargon.
 #### 🔄 Adaptive & Learning
-The advanced strategies: **Diverse Multi-Query**, **Feedback-Based**, **Prompt-Based**, and **Adaptive Rewriting** that picks the best strategy automatically.
-Let's start with Strategy 1: Query Expansion.`
+[lecture] The advanced strategies: **Diverse Multi-Query**, **Feedback-Based**, **Prompt-Based**, and **Adaptive Rewriting** that picks the best strategy automatically.
+[conversational] Let's start with Strategy 1: Query Expansion.`
         }
       ]
     },
@@ -389,15 +389,15 @@ Let's start with Strategy 1: Query Expansion.`
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: `### 6 · Query Expansion — Overview
-Let's start with the simplest and most widely used strategy: **Query Expansion**.
+          notes: `### Query Expansion — Overview
+[conversational] Let's start with the simplest and most widely used strategy: **Query Expansion**.
 #### 🎯 What Is It?
-The idea is dead simple. When a user searches for "flu treatment," your retrieval system only looks for documents containing those exact words. But what about documents that say "influenza therapy" or "antiviral medication"? Query expansion **adds synonyms and related terms** to the original query so you cast a wider net. Think of it like fishing with a bigger net — you catch more relevant fish.
+[confidently] The idea is dead simple. When a user searches for "flu treatment," your retrieval system only looks for documents containing those exact words. But what about documents that say "influenza therapy" or "antiviral medication"? Query expansion **adds synonyms and related terms** to the original query so you cast a wider net. Think of it like fishing with a bigger net — you catch more relevant fish.
 #### ✅ Pros
-The good stuff: it's incredibly **simple to implement**, extremely **cost-effective** since you can use lightweight approaches, and delivers **significant recall improvement** right out of the box. It works with any existing search engine, no special infrastructure needed.
+[pleased] The good stuff: it's incredibly **simple to implement**, extremely **cost-effective** since you can use lightweight approaches, and delivers **significant recall improvement** right out of the box. It works with any existing search engine, no special infrastructure needed.
 #### 🕐 When to Use This?
-Use query expansion when you see **low recall** in your metrics, when users submit **sparse or short queries** with just two or three words, when your corpus uses **domain-specific terminology** that users don't know, or when you're dealing with **rare concepts** that have many different names.
-Let's see how it actually works under the hood.`
+[reassuringly] Use query expansion when you see **low recall** in your metrics, when users submit **sparse or short queries** with just two or three words, when your corpus uses **domain-specific terminology** that users don't know, or when you're dealing with **rare concepts** that have many different names.
+[conversational] Let's see how it actually works under the hood.`
         },
         {
           id: 7,
@@ -431,7 +431,7 @@ Let's see how it actually works under the hood.`
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: `### 7 · Query Expansion — How It Works
+          notes: `### Query Expansion — How It Works
 So how does query expansion actually work? There are four main approaches, and you can mix and match them.
 #### 🔄 The Expansion Methods
 \`\`\`mermaid
@@ -447,8 +447,8 @@ flowchart LR
     style F fill:#81c784,color:#000
 \`\`\`
 **Thesaurus and dictionary lookups** are the old-school approach — you look up synonyms in WordNet or a domain-specific dictionary. Fast and predictable but limited. **Embedding-based similarity** uses your vector embedding model to find terms that are close in semantic space. **Pseudo-relevance feedback** is clever — you do an initial retrieval, grab the top results, extract key terms from them, and add those terms back to your query. And **LLM-generated related terms** is the most flexible — you just ask a language model "give me synonyms and related terms for this query."
-The key insight is that you're not replacing the original query — you're **appending** related terms to it, usually with OR operators so the search engine considers documents matching any of the expanded terms.
-Now let's look at the implementation.`
+[firmly] The key insight is that you're not replacing the original query — you're **appending** related terms to it, usually with OR operators so the search engine considers documents matching any of the expanded terms.
+[conversational] Now let's look at the implementation.`
         },
         {
           id: 8,
@@ -476,14 +476,14 @@ def expand_query(query):
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: `### 8 · Query Expansion — Implementation
+          notes: `### Query Expansion — Implementation
 Here's a practical implementation pattern you can use right away.
 #### 💻 The Prompt Template
-The prompt is straightforward: you ask the LLM to extract five synonyms and five related terms for the query. You tell it to return them as a comma-separated list without explanations — this keeps the output clean and parseable.
+[lecture] The prompt is straightforward: you ask the LLM to extract five synonyms and five related terms for the query. You tell it to return them as a comma-separated list without explanations — this keeps the output clean and parseable.
 #### ⚙️ The Code
-The implementation is just a few lines. You send the query to the LLM with the prompt, get back the related terms, then construct an expanded query using OR operators. So "flu treatment" becomes "flu treatment OR influenza therapy OR antiviral medication OR oseltamivir OR flu remedies OR fever reduction."
-The beauty of this approach is its simplicity. You can add it to any existing RAG pipeline with minimal changes — just insert it between the user input and the retrieval step. No model fine-tuning, no special infrastructure.
-Let's look at a concrete before-and-after example.`
+[lecture] The implementation is just a few lines. You send the query to the LLM with the prompt, get back the related terms, then construct an expanded query using OR operators. So "flu treatment" becomes "flu treatment OR influenza therapy OR antiviral medication OR oseltamivir OR flu remedies OR fever reduction."
+[confidently] The beauty of this approach is its simplicity. You can add it to any existing RAG pipeline with minimal changes — just insert it between the user input and the retrieval step. No model fine-tuning, no special infrastructure.
+[conversational] Let's look at a concrete before-and-after example.`
         },
         {
           id: 9,
@@ -506,14 +506,14 @@ Let's look at a concrete before-and-after example.`
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: `### 9 · Query Expansion — Example & Considerations
-Let's look at a real example.
+          notes: `### Query Expansion — Example & Considerations
+[conversational] Let's look at a real example.
 #### 📝 Before and After
-The user types "flu treatment" — just two words. After expansion, it becomes "flu treatment OR influenza therapy OR antiviral medication OR oseltamivir OR flu remedies OR fever reduction." Now your search covers medical terminology, brand names, and common phrases. The recall improvement can be dramatic — sometimes doubling the number of relevant documents retrieved.
+[pleased] The user types "flu treatment" — just two words. After expansion, it becomes "flu treatment OR influenza therapy OR antiviral medication OR oseltamivir OR flu remedies OR fever reduction." Now your search covers medical terminology, brand names, and common phrases. The recall improvement can be dramatic — sometimes doubling the number of relevant documents retrieved.
 #### ⚠️ Watch Out For
 But there are gotchas. **Precision can drop** if you add too many terms without reranking — suddenly you're pulling in documents about fever reduction for sunburns. There's **query drift** risk where expanded terms take you away from the original intent. It's **less effective for ambiguous queries** — if "apple" could mean the fruit or the company, expanding with synonyms for both just makes things worse. And you may need **domain tuning** to get the expansion terms right for specialized corpora.
-The key takeaway? Query expansion is your **first line of defense** — it's simple, cheap, and effective. But pair it with a reranker to maintain precision.
-Now let's move on to Strategy 2: Query Reformulation.`
+[firmly] The key takeaway? Query expansion is your **first line of defense** — it's simple, cheap, and effective. But pair it with a reranker to maintain precision.
+[conversational] Now let's move on to Strategy 2: Query Reformulation.`
         }
       ]
     },
@@ -546,15 +546,15 @@ Now let's move on to Strategy 2: Query Reformulation.`
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: `### 10 · Query Reformulation — Overview
-Strategy number two is **Query Reformulation**, and it's all about making queries clearer and self-contained.
+          notes: `### Query Reformulation — Overview
+[conversational] Strategy number two is **Query Reformulation**, and it's all about making queries clearer and self-contained.
 #### 🎯 What Is It?
-While query expansion adds more terms, reformulation **rewrites the entire query** to be explicit, unambiguous, and standalone. Imagine a user in a chat saying "What about pricing?" — that's completely useless without context. Reformulation transforms it into "What is the pricing for the Pro plan of Acme API in 2024?" — now it's a query that can actually retrieve relevant documents on its own.
+[confidently] While query expansion adds more terms, reformulation **rewrites the entire query** to be explicit, unambiguous, and standalone. Imagine a user in a chat saying "What about pricing?" — that's completely useless without context. Reformulation transforms it into "What is the pricing for the Pro plan of Acme API in 2024?" — now it's a query that can actually retrieve relevant documents on its own.
 #### ✅ Pros
-The good stuff: you get **improved precision** because the rewritten query is specific and targeted. It **reduces irrelevant document hits** since the query now says exactly what it means. It's especially powerful for **multi-turn chat** applications where follow-up queries lose context. And reformulated queries are **self-contained**, which means they're cacheable — if another user asks the same thing, you can reuse the result.
+[pleased] The good stuff: you get **improved precision** because the rewritten query is specific and targeted. It **reduces irrelevant document hits** since the query now says exactly what it means. It's especially powerful for **multi-turn chat** applications where follow-up queries lose context. And reformulated queries are **self-contained**, which means they're cacheable — if another user asks the same thing, you can reuse the result.
 #### 🕐 When to Use This?
-Use reformulation for **conversational follow-ups**, **terse or vague questions**, **multi-turn interactions**, and whenever you see **ambiguous references** to entities like "it," "they," or "that one."
-Let's see the mechanics.`
+[reassuringly] Use reformulation for **conversational follow-ups**, **terse or vague questions**, **multi-turn interactions**, and whenever you see **ambiguous references** to entities like "it," "they," or "that one."
+[conversational] Let's see the mechanics.`
         },
         {
           id: 11,
@@ -573,12 +573,12 @@ Let's see the mechanics.`
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: `### 11 · Query Reformulation — How It Works
+          notes: `### Query Reformulation — How It Works
 Here's how reformulation works in practice.
 #### 🔄 The Process
-The system takes a vague or context-dependent query and adds back all the missing information. It does this by incorporating **full entity names and identifiers** — replacing "it" with "the Acme Pro API." It adds **explicit constraints and qualifiers** — turning "pricing" into "current pricing for the Enterprise tier." It pulls in **contextual information from conversation history** — so "What about limits?" becomes "What are the rate limits for the service we were discussing?" And it fills in **temporal or domain context** that the user assumed but didn't state.
-The key difference from query expansion is that reformulation doesn't just add terms — it **restructures the entire query** into a clear, complete question. It's like the difference between adding ingredients to a recipe versus rewriting the recipe from scratch.
-Let's see the implementation.`
+[lecture] The system takes a vague or context-dependent query and adds back all the missing information. It does this by incorporating **full entity names and identifiers** — replacing "it" with "the Acme Pro API." It adds **explicit constraints and qualifiers** — turning "pricing" into "current pricing for the Enterprise tier." It pulls in **contextual information from conversation history** — so "What about limits?" becomes "What are the rate limits for the service we were discussing?" And it fills in **temporal or domain context** that the user assumed but didn't state.
+[firmly] The key difference from query expansion is that reformulation doesn't just add terms — it **restructures the entire query** into a clear, complete question. It's like the difference between adding ingredients to a recipe versus rewriting the recipe from scratch.
+[conversational] Let's see the implementation.`
         },
         {
           id: 12,
@@ -610,14 +610,14 @@ def reformulate_query(query, history):
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: `### 12 · Query Reformulation — Implementation
-The implementation uses a simple but effective prompt pattern.
+          notes: `### Query Reformulation — Implementation
+[lecture] The implementation uses a simple but effective prompt pattern.
 #### 💻 The Prompt
 You tell the LLM: "Rewrite the user query to be explicit and standalone, keeping the original intent unchanged. Make sure all entities and context are clearly stated." Then you provide both the query and the conversation context. The LLM's job is to produce a single, clean, self-contained query.
 #### ⚙️ The Code
 In the implementation, you first summarize the conversation history to extract the key context, then feed both the query and that context to the LLM. The output is a single rewritten query that contains everything needed for retrieval — no pronouns, no implicit references, no ambiguity.
-This pattern is absolutely essential for any chat-based RAG system. Without it, every follow-up question is essentially unsearchable.
-Let's see a before-and-after.`
+[firmly] This pattern is absolutely essential for any chat-based RAG system. Without it, every follow-up question is essentially unsearchable.
+[conversational] Let's see a before-and-after.`
         },
         {
           id: 13,
@@ -640,14 +640,14 @@ Let's see a before-and-after.`
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: `### 13 · Query Reformulation — Example & Considerations
+          notes: `### Query Reformulation — Example & Considerations
 Here's a perfect example of what reformulation does.
 #### 📝 Before and After
-The user asks "What about pricing?" — three words, completely ambiguous. After reformulation using the conversation context, it becomes "What is the pricing for the Pro plan of Acme API in 2024?" Now the retrieval system knows exactly what to search for.
+[confidently] The user asks "What about pricing?" — three words, completely ambiguous. After reformulation using the conversation context, it becomes "What is the pricing for the Pro plan of Acme API in 2024?" Now the retrieval system knows exactly what to search for.
 #### ⚠️ Watch Out For
 But here are the risks. You need **access to conversation context** — if your system doesn't track history, reformulation can't work. There's a **risk of over-specification** where the LLM adds constraints the user didn't intend. The LLM may **introduce assumptions** that aren't warranted. And there's **additional latency** from the preprocessing step, since you're making an extra LLM call before retrieval.
 The sweet spot? Use reformulation for **every follow-up query in chat** scenarios, but keep it lightweight for first-turn queries where expansion might be enough.
-Next up is Strategy 3: Query Decomposition, which handles a completely different challenge.`
+[conversational] Next up is Strategy 3: Query Decomposition, which handles a completely different challenge.`
         }
       ]
     },
@@ -680,15 +680,15 @@ Next up is Strategy 3: Query Decomposition, which handles a completely different
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: `### 14 · Query Decomposition — Overview
-Strategy 3 is **Query Decomposition**, and it tackles one of the hardest problems in retrieval: complex, multi-part questions.
+          notes: `### Query Decomposition — Overview
+[conversational] Strategy 3 is **Query Decomposition**, and it tackles one of the hardest problems in retrieval: complex, multi-part questions.
 #### 🎯 What Is It?
 When a user asks "Compare Snowflake vs BigQuery costs for 10 TB per month," that's actually several questions rolled into one. What does Snowflake charge? What does BigQuery charge? What compute resources are needed? How do the pricing structures compare? No single retrieval pass can answer all of that well. Decomposition **breaks the big question into smaller, answerable sub-questions**, retrieves documents for each one separately, then synthesizes a comprehensive answer.
 #### ✅ Pros
-The good stuff: you get **better coverage** of complex topics because each aspect gets its own focused retrieval. **Reasoning improves** because each sub-question is simpler. Each sub-question can be **precisely answered** with targeted evidence. And you **reduce hallucinations** on complex queries because the LLM has specific evidence for each part.
+[pleased] The good stuff: you get **better coverage** of complex topics because each aspect gets its own focused retrieval. **Reasoning improves** because each sub-question is simpler. Each sub-question can be **precisely answered** with targeted evidence. And you **reduce hallucinations** on complex queries because the LLM has specific evidence for each part.
 #### 🕐 When to Use This?
-Use decomposition for **multi-entity relationships**, **multi-step reasoning**, **compare-and-contrast scenarios**, and questions requiring information from **different domains or sources**.
-Let's see the workflow.`
+[reassuringly] Use decomposition for **multi-entity relationships**, **multi-step reasoning**, **compare-and-contrast scenarios**, and questions requiring information from **different domains or sources**.
+[conversational] Let's see the workflow.`
         },
         {
           id: 15,
@@ -707,12 +707,12 @@ Let's see the workflow.`
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: `### 15 · Query Decomposition — How It Works
-The decomposition workflow follows a plan-retrieve-answer-combine pattern.
+          notes: `### Query Decomposition — How It Works
+[lecture] The decomposition workflow follows a plan-retrieve-answer-combine pattern.
 #### 🔄 The Four Steps
 First, you **split the original query into atomic sub-questions**. These should be independent, answerable on their own, and collectively cover the full scope of the original question. Second, you **retrieve relevant passages for each sub-query** — this means running separate retrieval calls for each sub-question. Third, you **answer each sub-question independently** using its own retrieved context. Finally, you **synthesize the final answer** by combining all the sub-answers into one comprehensive response.
-The critical insight here is that you're trading **one hard retrieval** for **several easy ones**. A single complex query might fail to find any good documents, but three simple sub-queries each find exactly what they need. It's like searching for a restaurant that has great sushi, is open late, and has outdoor seating — much easier to search for each criterion separately and then find the intersection.
-Now for the implementation details.`
+[firmly] The critical insight here is that you're trading **one hard retrieval** for **several easy ones**. A single complex query might fail to find any good documents, but three simple sub-queries each find exactly what they need. It's like searching for a restaurant that has great sushi, is open late, and has outdoor seating — much easier to search for each criterion separately and then find the intersection.
+[conversational] Now for the implementation details.`
         },
         {
           id: 16,
@@ -744,14 +744,14 @@ def answer_with_decomposition(query):
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: `### 16 · Query Decomposition — Implementation
+          notes: `### Query Decomposition — Implementation
 Here's how to implement decomposition in practice.
 #### 💻 The Prompt
-The decomposition prompt asks the LLM to break the question into two to five simpler sub-questions. You explicitly ask for a numbered list without explanations. The key constraint is that the sub-questions, when answered separately, should collectively answer the main question comprehensively.
+[firmly] The decomposition prompt asks the LLM to break the question into two to five simpler sub-questions. You explicitly ask for a numbered list without explanations. The key constraint is that the sub-questions, when answered separately, should collectively answer the main question comprehensively.
 #### ⚙️ The Code
-The implementation loops through each sub-question, retrieves documents for it, and generates a sub-answer. Then a final synthesis step combines everything. Notice the three LLM calls: one for decomposition, one per sub-question for answering, and one for synthesis. This is more expensive than simple expansion, but the quality improvement on complex questions is substantial.
-The tradeoff is clear: **more LLM calls and higher latency** in exchange for **much better answers on complex questions**. For simple factual queries, decomposition is overkill. Save it for the hard stuff.
-Let's see an example.`
+[pleased] The implementation loops through each sub-question, retrieves documents for it, and generates a sub-answer. Then a final synthesis step combines everything. Notice the three LLM calls: one for decomposition, one per sub-question for answering, and one for synthesis. This is more expensive than simple expansion, but the quality improvement on complex questions is substantial.
+[lecture] The tradeoff is clear: **more LLM calls and higher latency** in exchange for **much better answers on complex questions**. For simple factual queries, decomposition is overkill. Save it for the hard stuff.
+[conversational] Let's see an example.`
         },
         {
           id: 17,
@@ -774,15 +774,15 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: `### 17 · Query Decomposition — Example & Considerations
+          notes: `### Query Decomposition — Example & Considerations
 Here's a real-world example of decomposition in action.
 #### 📝 Before and After
-The user asks "Compare Snowflake vs BigQuery costs for 10 TB per month." Decomposition breaks this into four sub-questions: What is Snowflake's pricing? What is BigQuery's pricing? What compute resources are needed? And how do the structures compare? Each sub-question gets its own focused retrieval and answer, then they're combined into a comprehensive comparison.
+[confidently] The user asks "Compare Snowflake vs BigQuery costs for 10 TB per month." Decomposition breaks this into four sub-questions: What is Snowflake's pricing? What is BigQuery's pricing? What compute resources are needed? And how do the structures compare? Each sub-question gets its own focused retrieval and answer, then they're combined into a comprehensive comparison.
 #### ⚠️ Watch Out For
-The main concerns are: **multiple retrieval calls increase latency** — you're doing four or five searches instead of one. **Orchestration complexity** goes up since you need to manage parallel retrievals and synthesis. **Token usage and costs** are higher because of multiple LLM calls. And the **synthesis step can introduce errors** if it misrepresents or incorrectly combines the sub-answers.
+[lecture] The main concerns are: **multiple retrieval calls increase latency** — you're doing four or five searches instead of one. **Orchestration complexity** goes up since you need to manage parallel retrievals and synthesis. **Token usage and costs** are higher because of multiple LLM calls. And the **synthesis step can introduce errors** if it misrepresents or incorrectly combines the sub-answers.
 > 🎤 Ask the audience: "What kinds of complex questions do your users ask that might benefit from decomposition?"
-The takeaway: decomposition is your **power tool for hard questions**. Don't use it on everything — reserve it for multi-part, compare-and-contrast, or multi-hop reasoning scenarios.
-Next, let's look at Step-Back Prompting, which takes the opposite approach — going broader instead of narrower.`
+[confidently] The takeaway: decomposition is your **power tool for hard questions**. Don't use it on everything — reserve it for multi-part, compare-and-contrast, or multi-hop reasoning scenarios.
+[conversational] Next, let's look at Step-Back Prompting, which takes the opposite approach — going broader instead of narrower.`
         }
       ]
     },
@@ -815,15 +815,15 @@ Next, let's look at Step-Back Prompting, which takes the opposite approach — g
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: `### 18 · Step-Back Prompting — Overview
-Strategy 4 is **Step-Back Prompting**, and it takes the opposite approach from decomposition — instead of breaking a query down, it zooms out.
+          notes: `### Step-Back Prompting — Overview
+[conversational] Strategy 4 is **Step-Back Prompting**, and it takes the opposite approach from decomposition — instead of breaking a query down, it zooms out.
 #### 🎯 What Is It?
 When a user asks "How to fix CUDA OOM with Llama 3.1 70B?" 👉 'lah-mah three-point-one', that's very specific. Step-back prompting transforms it into broader concepts like "LLM memory optimization, quantization, gradient checkpointing." The idea is that documents about the general principles of GPU memory management are more likely to exist and be helpful than documents about that exact CUDA error with that exact model.
 #### ✅ Pros
-It's **robust to query wording variations** — different specific questions map to the same general concepts. It provides **better generalization** across related topics. It **improves coverage** by pulling in foundational information. And it helps users understand the **fundamental principles** behind their specific problem.
+[pleased] It's **robust to query wording variations** — different specific questions map to the same general concepts. It provides **better generalization** across related topics. It **improves coverage** by pulling in foundational information. And it helps users understand the **fundamental principles** behind their specific problem.
 #### 🕐 When to Use This?
-Use step-back prompting when specific queries **under-retrieve**, for **reasoning-heavy or conceptual topics**, for **technical questions needing broader context**, and when **direct retrieval with specific terms fails** to return useful results.
-Let's see how it works.`
+[reassuringly] Use step-back prompting when specific queries **under-retrieve**, for **reasoning-heavy or conceptual topics**, for **technical questions needing broader context**, and when **direct retrieval with specific terms fails** to return useful results.
+[conversational] Let's see how it works.`
         },
         {
           id: 19,
@@ -842,12 +842,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: `### 19 · Step-Back Prompting — How It Works
-The process is straightforward but powerful.
+          notes: `### Step-Back Prompting — How It Works
+[lecture] The process is straightforward but powerful.
 #### 🔄 The Process
 You take the specific query and ask the LLM to **extract the underlying principles**. For the CUDA OOM example, the underlying principles are memory management, model parallelism, and quantization. Then you **identify broader concepts and frameworks** — what general areas of knowledge would help answer this? Next, you **create a more general retrieval query** using these abstract terms. Finally, the retrieval **focuses on conceptual understanding** rather than exact problem matching.
-Think of it like asking a professor for help. Instead of searching "how to fix error X in library Y version Z," you step back and search for "best practices for handling resource constraints in deep learning." The professor-level documents are more likely to exist and more likely to be comprehensive.
-Now let's see the implementation.`
+[storytelling] Think of it like asking a professor for help. Instead of searching "how to fix error X in library Y version Z," you step back and search for "best practices for handling resource constraints in deep learning." The professor-level documents are more likely to exist and more likely to be comprehensive.
+[conversational] Now let's see the implementation.`
         },
         {
           id: 20,
@@ -878,14 +878,14 @@ def step_back_query(original_query):
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: `### 20 · Step-Back Prompting — Implementation
-The implementation is surprisingly simple.
+          notes: `### Step-Back Prompting — Implementation
+[lecture] The implementation is surprisingly simple.
 #### 💻 The Prompt
-The prompt says: "Step back and derive three to five high-level concepts underlying this query, then produce a concise retrieval query based on those concepts." That's it. You're asking the LLM to think at a higher level of abstraction.
+[lecture] The prompt says: "Step back and derive three to five high-level concepts underlying this query, then produce a concise retrieval query based on those concepts." That's it. You're asking the LLM to think at a higher level of abstraction.
 #### ⚙️ The Code
-The code is minimal — you send the original query to the LLM with the step-back prompt, and the output is a new query focused on general concepts rather than specific details. This new query then goes to your retrieval system.
-The key insight is that you're not losing the original query — in practice, you often run **both** the original specific query and the step-back query, then combine their results. This gives you both the specific documents and the conceptual foundations.
-Let's look at an example.`
+[lecture] The code is minimal — you send the original query to the LLM with the step-back prompt, and the output is a new query focused on general concepts rather than specific details. This new query then goes to your retrieval system.
+[firmly] The key insight is that you're not losing the original query — in practice, you often run **both** the original specific query and the step-back query, then combine their results. This gives you both the specific documents and the conceptual foundations.
+[conversational] Let's look at an example.`
         },
         {
           id: 21,
@@ -908,14 +908,14 @@ Let's look at an example.`
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: `### 21 · Step-Back Prompting — Example & Considerations
-Let's see step-back in action.
+          notes: `### Step-Back Prompting — Example & Considerations
+[conversational] Let's see step-back in action.
 #### 📝 Before and After
-The user asks "How to fix CUDA OOM with Llama 3.1 70B?" — a very specific error with a specific model. After step-back prompting, the query becomes "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints." Now the retrieval system finds comprehensive guides on memory management techniques that absolutely apply to the original problem.
+[cautiously] The user asks "How to fix CUDA OOM with Llama 3.1 70B?" — a very specific error with a specific model. After step-back prompting, the query becomes "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints." Now the retrieval system finds comprehensive guides on memory management techniques that absolutely apply to the original problem.
 #### ⚠️ Watch Out For
-There are real risks. **Over-abstraction** can happen — if you step back too far, you get results that are too generic to be useful. You'll **need a good reranker** to filter results because the broader query brings back more diverse documents. You may **lose specificity** for narrow, well-defined queries where the user knows exactly what they want. And the abstraction can **introduce unwanted generality** that dilutes the answer.
+[cautiously] There are real risks. **Over-abstraction** can happen — if you step back too far, you get results that are too generic to be useful. You'll **need a good reranker** to filter results because the broader query brings back more diverse documents. You may **lose specificity** for narrow, well-defined queries where the user knows exactly what they want. And the abstraction can **introduce unwanted generality** that dilutes the answer.
 The rule of thumb: use step-back prompting when specific queries fail, but always combine it with the original query's results.
-Next up is Strategy 5: HyDE, which takes a completely different and fascinating approach.`
+[conversational] Next up is Strategy 5: HyDE, which takes a completely different and fascinating approach.`
         }
       ]
     },
@@ -950,15 +950,15 @@ Next up is Strategy 5: HyDE, which takes a completely different and fascinating 
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: `### 22 · HyDE — Overview
-Strategy 5 is **HyDE**, which stands for Hypothetical Document Embeddings, and it's one of my favorite techniques. HyDE 👉 'hide'.
+          notes: `### HyDE — Overview
+[conversational] Strategy 5 is **HyDE**, which stands for Hypothetical Document Embeddings, and it's one of my favorite techniques. HyDE 👉 'hide'.
 #### 🎯 What Is It?
-Here's the brilliant insight behind HyDE: instead of embedding the user's query and searching for similar documents, you first ask the LLM to **generate a fake answer** to the question, then embed that fake answer and search for documents similar to it. Why? Because a document that looks like an answer is semantically much closer to actual answer documents than the original short query.
+[lecture] Here's the brilliant insight behind HyDE: instead of embedding the user's query and searching for similar documents, you first ask the LLM to **generate a fake answer** to the question, then embed that fake answer and search for documents similar to it. Why? Because a document that looks like an answer is semantically much closer to actual answer documents than the original short query.
 #### ✅ Pros
-The good stuff: you get **strong recall gains** in dense retrieval systems. It **works with existing embedding models** — no fine-tuning needed. It has **zero-shot capability** for new domains. And it **bridges vocabulary gaps** effectively because the hypothetical document uses the language of answers, not questions.
+[pleased] The good stuff: you get **strong recall gains** in dense retrieval systems. It **works with existing embedding models** — no fine-tuning needed. It has **zero-shot capability** for new domains. And it **bridges vocabulary gaps** effectively because the hypothetical document uses the language of answers, not questions.
 #### 🕐 When to Use This?
 HyDE shines when you have **low recall in dense retrieval**, for **zero-shot domain applications**, when there's a **vocabulary mismatch** between queries and documents, and for **complex information needs** where a short query can't capture the semantic intent.
-Let's see the mechanics.`
+[conversational] Let's see the mechanics.`
         },
         {
           id: 23,
@@ -977,12 +977,12 @@ Let's see the mechanics.`
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: `### 23 · HyDE — How It Works
+          notes: `### HyDE — How It Works
 Here's the four-step process that makes HyDE work.
 #### 🔄 The Four Steps
 First, the **LLM generates a hypothetical answer document** — a fake but plausible answer to the user's question. It doesn't need to be factually correct, just semantically similar to what a real answer would look like. Second, this **synthetic document is embedded** using your regular embedding model. Third, **retrieval uses this embedding** to find real documents that are semantically similar to the hypothetical answer. Finally, the **actual retrieved documents** are used to generate the real answer.
-The magic is in step one. A query like "causal ML uplift modeling tutorial" is short and keyword-heavy. But the hypothetical document the LLM generates is a paragraph-long explanation using the same language patterns as actual tutorial documents. When you embed that paragraph, it naturally lands close to real tutorial content in vector space.
-Now for the code.`
+[confidently] The magic is in step one. A query like "causal ML uplift modeling tutorial" is short and keyword-heavy. But the hypothetical document the LLM generates is a paragraph-long explanation using the same language patterns as actual tutorial documents. When you embed that paragraph, it naturally lands close to real tutorial content in vector space.
+[conversational] Now for the code.`
         },
         {
           id: 24,
@@ -1016,14 +1016,14 @@ def hyde_retrieval(query, top_k=5):
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: `### 24 · HyDE — Implementation
-The implementation is clean and modular.
+          notes: `### HyDE — Implementation
+[lecture] The implementation is clean and modular.
 #### 💻 The Prompt
 You ask the LLM to "Write a 120-200 word passage that would likely answer the following query. Keep a factual, informative tone. Include key terminology and concepts." The important detail is telling it NOT to use hedging phrases like "according to" — you want it to write as if it's a confident reference document.
 #### ⚙️ The Code
 Three steps in code: generate the pseudo-document, embed it, then use that embedding for similarity search. The function takes the query and a top-k parameter. The pseudo-document generation is the expensive step — one LLM call. After that, embedding and retrieval are fast.
 One practical tip: you can generate **multiple hypothetical documents** with different temperatures and average their embeddings. This creates a more robust search vector that covers different angles of the answer.
-Let's see a concrete example.`
+[conversational] Let's see a concrete example.`
         },
         {
           id: 25,
@@ -1052,14 +1052,14 @@ Let's see a concrete example.`
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: `### 25 · HyDE — Example & Considerations
+          notes: `### HyDE — Example & Considerations
 Here's HyDE in action with a real example.
 #### 📝 Before and After
-The user searches "causal ML uplift modeling tutorial." The LLM generates a hypothetical document about uplift modeling that describes treatment and control groups, feature engineering approaches, model training algorithms like random forests, and evaluation metrics like AUUC 👉 'ay-you-you-see' and Qini 👉 'kee-nee' coefficients. This hypothetical document, when embedded, lands right next to actual uplift modeling tutorials in vector space.
+[lecture] The user searches "causal ML uplift modeling tutorial." The LLM generates a hypothetical document about uplift modeling that describes treatment and control groups, feature engineering approaches, model training algorithms like random forests, and evaluation metrics like AUUC 👉 'ay-you-you-see' and Qini 👉 'kee-nee' coefficients. This hypothetical document, when embedded, lands right next to actual uplift modeling tutorials in vector space.
 #### ⚠️ Watch Out For
-The risks are real. **Extra token usage and latency** — you're generating a full paragraph before you even start retrieval. **Pseudo-document bias** if the LLM's generated answer is skewed or incomplete. **Quality depends on the LLM's knowledge** — if the model doesn't know about the topic, the hypothetical document will be poor. It **may introduce hallucinations** if the fake answer contains incorrect information that biases retrieval. And it's **less efficient for simple queries** where direct embedding works just fine.
+[lecture] The risks are real. **Extra token usage and latency** — you're generating a full paragraph before you even start retrieval. **Pseudo-document bias** if the LLM's generated answer is skewed or incomplete. **Quality depends on the LLM's knowledge** — if the model doesn't know about the topic, the hypothetical document will be poor. It **may introduce hallucinations** if the fake answer contains incorrect information that biases retrieval. And it's **less efficient for simple queries** where direct embedding works just fine.
 Use HyDE when dense retrieval underperforms. For simple keyword queries, it's overkill.
-Next up is Strategy 6: Multi-Query Generation.`
+[conversational] Next up is Strategy 6: Multi-Query Generation.`
         }
       ]
     },
@@ -1092,15 +1092,15 @@ Next up is Strategy 6: Multi-Query Generation.`
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: `### 26 · Multi-Query Generation — Overview
-Strategy 6 is **Multi-Query Generation**, which attacks the problem from multiple angles simultaneously.
+          notes: `### Multi-Query Generation — Overview
+[conversational] Strategy 6 is **Multi-Query Generation**, which attacks the problem from multiple angles simultaneously.
 #### 🎯 What Is It?
 Instead of sending one query to your retrieval system, you generate **multiple different versions** of the same query and send them all. Each version explores a different phrasing, perspective, or aspect of the user's intent. Then you combine all the results. It's like asking five different people to search for the same thing — each one will find slightly different documents.
 #### ✅ Pros
-The good stuff: it's **robust to query ambiguity** because different phrasings cover different interpretations. You get a **higher hit-rate** for relevant documents since you're casting multiple nets. It provides **better coverage** of different aspects of the topic. And it naturally **handles vocabulary mismatches** because each variant uses different words.
+[pleased] The good stuff: it's **robust to query ambiguity** because different phrasings cover different interpretations. You get a **higher hit-rate** for relevant documents since you're casting multiple nets. It provides **better coverage** of different aspects of the topic. And it naturally **handles vocabulary mismatches** because each variant uses different words.
 #### 🕐 When to Use This?
-Best for **ambiguous or underspecified queries**, **heterogeneous document corpora** where different sections use different terminology, **tasks requiring breadth** of coverage, and **critical applications** where missing a relevant document is costly.
-Let's see the mechanism.`
+[reassuringly] Best for **ambiguous or underspecified queries**, **heterogeneous document corpora** where different sections use different terminology, **tasks requiring breadth** of coverage, and **critical applications** where missing a relevant document is costly.
+[conversational] Let's see the mechanism.`
         },
         {
           id: 27,
@@ -1119,13 +1119,13 @@ Let's see the mechanism.`
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: `### 27 · Multi-Query Generation — How It Works
-The workflow is straightforward but effective.
+          notes: `### Multi-Query Generation — How It Works
+[lecture] The workflow is straightforward but effective.
 #### 🔄 The Steps
 First, you **generate k diverse query variants** — typically three to five alternative phrasings that explore different angles of the user's intent. Second, you **retrieve documents for each variant** — running separate retrieval calls for each query version. Third, you **union the results** from all queries into one combined set. Finally, you **apply reranking** to score, deduplicate, and consolidate the combined results.
-The critical difference from query expansion is that each variant is a **complete, standalone query**, not just the original query with extra terms appended. This means each variant can find documents that the others would miss entirely.
-Think of it like searching Google with five different phrasings of the same question — each search returns slightly different results, and the best answer is probably in the union of all of them.
-Now the implementation.`
+[firmly] The critical difference from query expansion is that each variant is a **complete, standalone query**, not just the original query with extra terms appended. This means each variant can find documents that the others would miss entirely.
+[storytelling] Think of it like searching Google with five different phrasings of the same question — each search returns slightly different results, and the best answer is probably in the union of all of them.
+[conversational] Now the implementation.`
         },
         {
           id: 28,
@@ -1159,14 +1159,14 @@ def multi_query_retrieve(query):
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: `### 28 · Multi-Query Generation — Implementation
-The implementation involves a focused generation prompt and a result fusion step.
+          notes: `### Multi-Query Generation — Implementation
+[lecture] The implementation involves a focused generation prompt and a result fusion step.
 #### 💻 The Prompt
-The prompt asks the LLM to generate five diverse phrasings covering different angles of the query. You explicitly tell it to explore different perspectives, avoid duplicates, and skip explanations. This gives you clean, parseable output.
+[lecture] The prompt asks the LLM to generate five diverse phrasings covering different angles of the query. You explicitly tell it to explore different perspectives, avoid duplicates, and skip explanations. This gives you clean, parseable output.
 #### ⚙️ The Code
 For each variant, you retrieve documents using your standard retrieval pipeline. Then a reranking step deduplicates and scores the combined results. The deduplication is important — you don't want the same document appearing multiple times just because two query variants found it.
 A practical optimization: run the retrieval calls **in parallel**. Since each variant is independent, there's no reason to wait for one to finish before starting the next. This keeps the latency close to a single retrieval call despite running multiple queries.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 29,
@@ -1196,15 +1196,15 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: `### 29 · Multi-Query Generation — Example & Considerations
+          notes: `### Multi-Query Generation — Example & Considerations
 Here's a great example of multi-query in action.
 #### 📝 Before and After
-The user searches "LLM eval methods" — short and ambiguous. Multi-query generation produces five variants: "evaluation frameworks for large language models," "LLM benchmarks and testing methodologies," "automatic evaluation prompts for language models," "human evaluation rubrics for LLM outputs," and "RAG evaluation metrics and techniques." Each variant finds documents the others would miss.
+[lecture] The user searches "LLM eval methods" — short and ambiguous. Multi-query generation produces five variants: "evaluation frameworks for large language models," "LLM benchmarks and testing methodologies," "automatic evaluation prompts for language models," "human evaluation rubrics for LLM outputs," and "RAG evaluation metrics and techniques." Each variant finds documents the others would miss.
 #### ⚠️ Watch Out For
-The costs are real. **Increased cost and latency** from running multiple retrievals. You need **deduplication and fusion logic** to combine results intelligently. The **implementation is more complex** with parallel retrieval and result merging. And some variants **may retrieve irrelevant results** that waste context window space.
+[lecture] The costs are real. **Increased cost and latency** from running multiple retrievals. You need **deduplication and fusion logic** to combine results intelligently. The **implementation is more complex** with parallel retrieval and result merging. And some variants **may retrieve irrelevant results** that waste context window space.
 > 🎤 Ask the audience: "How many of you are currently using just a single query for retrieval?"
-The key insight: multi-query generation is especially powerful when combined with a **good reranker** that can sort through the combined results and pick the truly relevant ones.
-Next, Strategy 7: Context-Aware Rewriting for chat applications.`
+[firmly] The key insight: multi-query generation is especially powerful when combined with a **good reranker** that can sort through the combined results and pick the truly relevant ones.
+[conversational] Next, Strategy 7: Context-Aware Rewriting for chat applications.`
         }
       ]
     },
@@ -1237,15 +1237,15 @@ Next, Strategy 7: Context-Aware Rewriting for chat applications.`
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: `### 30 · Context-Aware Rewriting — Overview
-Strategy 7 is **Context-Aware Rewriting**, and if you're building any kind of chat-based RAG system, this is absolutely essential.
+          notes: `### Context-Aware Rewriting — Overview
+[conversational] Strategy 7 is **Context-Aware Rewriting**, and if you're building any kind of chat-based RAG system, this is absolutely essential.
 #### 🎯 What Is It?
 In a conversation, users naturally use pronouns and references: "Tell me about it," "What are its limits?" "And the pricing?" These follow-up queries are meaningless without the context of what came before. Context-aware rewriting **incorporates conversation history** into the query to make it standalone and searchable.
 #### ✅ Pros
-The good stuff: it provides a **significant quality improvement** in chat applications. It **reduces context window waste** because you only retrieve relevant documents instead of trying to stuff the entire conversation into the prompt. It **enables effective RAG on follow-ups**, which is where most chat-based systems struggle. And it **preserves conversation flow** so the user experience feels natural.
+[pleased] The good stuff: it provides a **significant quality improvement** in chat applications. It **reduces context window waste** because you only retrieve relevant documents instead of trying to stuff the entire conversation into the prompt. It **enables effective RAG on follow-ups**, which is where most chat-based systems struggle. And it **preserves conversation flow** so the user experience feels natural.
 #### 🕐 When to Use This?
-This is ideal for **conversational chatbots**, **multi-turn question answering**, **session-based search interfaces**, and any scenario with **follow-up questions that use pronouns** or implicit references.
-Let's see the mechanism.`
+[reassuringly] This is ideal for **conversational chatbots**, **multi-turn question answering**, **session-based search interfaces**, and any scenario with **follow-up questions that use pronouns** or implicit references.
+[conversational] Let's see the mechanism.`
         },
         {
           id: 31,
@@ -1264,12 +1264,12 @@ Let's see the mechanism.`
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: `### 31 · Context-Aware Rewriting — How It Works
+          notes: `### Context-Aware Rewriting — How It Works
 Here's how context-aware rewriting works in practice.
 #### 🔄 The Process
-The system injects several types of contextual elements into the query. It replaces **entities mentioned in previous turns** — changing "it" to "the Acme Pro API" based on what was discussed earlier. It adds **constraints established earlier** — if the user specified "enterprise tier" three turns ago, that constraint gets included. It incorporates **references to prior answers** — connecting the follow-up to what was already discussed. And it applies **user preferences from the session** — like language preference or region.
-The key insight is that you're not rewriting the user's query into something different — you're **completing it** with the information the user assumed was already understood. It's like having a human assistant who heard the whole conversation and can fill in the gaps.
-Let's look at the code.`
+[lecture] The system injects several types of contextual elements into the query. It replaces **entities mentioned in previous turns** — changing "it" to "the Acme Pro API" based on what was discussed earlier. It adds **constraints established earlier** — if the user specified "enterprise tier" three turns ago, that constraint gets included. It incorporates **references to prior answers** — connecting the follow-up to what was already discussed. And it applies **user preferences from the session** — like language preference or region.
+[firmly] The key insight is that you're not rewriting the user's query into something different — you're **completing it** with the information the user assumed was already understood. It's like having a human assistant who heard the whole conversation and can fill in the gaps.
+[conversational] Let's look at the code.`
         },
         {
           id: 32,
@@ -1303,14 +1303,14 @@ def context_aware_rewrite(query, history):
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: `### 32 · Context-Aware Rewriting — Implementation
-The implementation pattern is clean and reusable.
+          notes: `### Context-Aware Rewriting — Implementation
+[lecture] The implementation pattern is clean and reusable.
 #### 💻 The Prompt
-The prompt provides the conversation history and the follow-up query, then asks: "Rewrite the follow-up query as a standalone query that preserves the original intent but includes all necessary context." The output should be a single, self-contained query.
+[lecture] The prompt provides the conversation history and the follow-up query, then asks: "Rewrite the follow-up query as a standalone query that preserves the original intent but includes all necessary context." The output should be a single, self-contained query.
 #### ⚙️ The Code
 In code, you format the conversation history into a digestible summary, then pass both the history and the current query to the LLM. The LLM produces a standalone query that can be sent directly to retrieval. This standalone query is also great for caching — if another user asks the same resolved question, you can reuse the retrieval results.
 One important consideration: **how much history to include**. Sending the entire conversation can be expensive and noisy. In practice, the last three to five turns is usually sufficient. You can also summarize older turns to save tokens.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 33,
@@ -1333,14 +1333,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: `### 33 · Context-Aware Rewriting — Example & Considerations
+          notes: `### Context-Aware Rewriting — Example & Considerations
 Here's a classic example.
 #### 📝 Before and After
-The user's follow-up query is just three words: "And its limits?" After context-aware rewriting, it becomes "What are the 2024 rate limits for the Acme Pro API we discussed above?" The rewritten query is specific, searchable, and standalone. Without this rewriting, your retrieval system would search for "limits" and return completely irrelevant documents.
+[lecture] The user's follow-up query is just three words: "And its limits?" After context-aware rewriting, it becomes "What are the 2024 rate limits for the Acme Pro API we discussed above?" The rewritten query is specific, searchable, and standalone. Without this rewriting, your retrieval system would search for "limits" and return completely irrelevant documents.
 #### ⚠️ Watch Out For
 Be careful with **context selection** — picking the wrong context can lead to incorrect rewrites. There are **privacy concerns** when storing and using conversation history. The system **can overspecify** in some cases, adding constraints the user didn't intend. And you need **history tracking infrastructure** to maintain and access conversation state.
-The bottom line: if you're building a chat-based RAG system, context-aware rewriting is **not optional** — it's a must-have. Without it, every follow-up question is essentially broken.
-Next, Strategy 8: Query Clarification, where we ask the user for help.`
+[confidently] The bottom line: if you're building a chat-based RAG system, context-aware rewriting is **not optional** — it's a must-have. Without it, every follow-up question is essentially broken.
+[conversational] Next, Strategy 8: Query Clarification, where we ask the user for help.`
         }
       ]
     },
@@ -1373,15 +1373,15 @@ Next, Strategy 8: Query Clarification, where we ask the user for help.`
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: `### 34 · Query Clarification — Overview
-Strategy 8 is **Query Clarification**, and it's unique because it involves the user in the rewriting process.
+          notes: `### Query Clarification — Overview
+[conversational] Strategy 8 is **Query Clarification**, and it's unique because it involves the user in the rewriting process.
 #### 🎯 What Is It?
 Instead of silently rewriting the query, the system **detects ambiguity** and asks the user to clarify before proceeding. When someone searches "Apple pay policy," do they mean Apple Inc.'s payment policies or the fruit industry's payment terms? Rather than guessing, the system asks.
 #### ✅ Pros
-The good stuff: it **significantly improves precision** because you know exactly what the user wants. It creates **better user alignment** since the user feels heard. It **reduces irrelevant results** from the start. And it **educates users** on how to write better queries over time.
+[pleased] The good stuff: it **significantly improves precision** because you know exactly what the user wants. It creates **better user alignment** since the user feels heard. It **reduces irrelevant results** from the start. And it **educates users** on how to write better queries over time.
 #### 🕐 When to Use This?
-Use query clarification for **short or vague queries**, **ambiguous terms with multiple meanings**, **missing contextual constraints**, and **domain-specific clarification needs** where getting it wrong would be costly.
-Let's see how it works.`
+[reassuringly] Use query clarification for **short or vague queries**, **ambiguous terms with multiple meanings**, **missing contextual constraints**, and **domain-specific clarification needs** where getting it wrong would be costly.
+[conversational] Let's see how it works.`
         },
         {
           id: 35,
@@ -1400,12 +1400,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: `### 35 · Query Clarification — How It Works
-The system operates through a detect-ask-rewrite cycle.
+          notes: `### Query Clarification — How It Works
+[lecture] The system operates through a detect-ask-rewrite cycle.
 #### 🔄 The Process
 First, it **detects missing constraints or ambiguities** by analyzing the query for undefined terms, multiple possible interpretations, or insufficient specificity. Then it **asks one or two targeted clarifying questions** — not a list of twenty questions, just the most impactful ones. It can also **propose default interpretations** — "Did you mean X? If so, here's the answer." Finally, it **uses the responses to reformulate** the query with the clarified intent.
-The key design principle is minimizing friction. You don't want to ask five clarifying questions for every query — that would be incredibly annoying. The system should only ask when the ambiguity is significant enough to meaningfully affect results.
-Let's see the implementation.`
+[firmly] The key design principle is minimizing friction. You don't want to ask five clarifying questions for every query — that would be incredibly annoying. The system should only ask when the ambiguity is significant enough to meaningfully affect results.
+[conversational] Let's see the implementation.`
         },
         {
           id: 36,
@@ -1436,14 +1436,14 @@ def clarify_query(query):
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: `### 36 · Query Clarification — Implementation
-The implementation follows a clarify-then-rewrite pattern.
+          notes: `### Query Clarification — Implementation
+[lecture] The implementation follows a clarify-then-rewrite pattern.
 #### 💻 The Prompt
-The clarification prompt asks the LLM to analyze the query, identify the top ambiguity, and ask one clarifying question. If there are multiple interpretations, it should propose two options for the user to choose from. This keeps the interaction focused and fast.
+[lecture] The clarification prompt asks the LLM to analyze the query, identify the top ambiguity, and ask one clarifying question. If there are multiple interpretations, it should propose two options for the user to choose from. This keeps the interaction focused and fast.
 #### ⚙️ The Code
 In the implementation, you first run an ambiguity detector. If the ambiguity score is above a threshold, you ask the user a clarifying question. Once you get the answer, you rewrite the query incorporating the clarification. If the ambiguity is below the threshold, you skip clarification entirely and proceed with the original query.
-The threshold is crucial — set it too low and you'll annoy users with unnecessary questions. Set it too high and you'll miss important ambiguities.
-Let's see an example.`
+[firmly] The threshold is crucial — set it too low and you'll annoy users with unnecessary questions. Set it too high and you'll miss important ambiguities.
+[conversational] Let's see an example.`
         },
         {
           id: 37,
@@ -1468,14 +1468,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: `### 37 · Query Clarification — Example & Considerations
+          notes: `### Query Clarification — Example & Considerations
 Here's query clarification in a real scenario.
 #### 📝 Before and After
-The user searches "Apple pay policy." The system detects ambiguity and asks: "Do you mean Apple Inc.'s payment policies or the fruit industry's payment policies? For Apple Inc., which region?" The user responds "Apple Inc., United States." Now the system rewrites to "Apple Inc. digital payment policies and terms for Apple Pay service in the United States." Crystal clear.
+[lecture] The user searches "Apple pay policy." The system detects ambiguity and asks: "Do you mean Apple Inc.'s payment policies or the fruit industry's payment policies? For Apple Inc., which region?" The user responds "Apple Inc., United States." Now the system rewrites to "Apple Inc. digital payment policies and terms for Apple Pay service in the United States." Crystal clear.
 #### ⚠️ Watch Out For
-The downsides: it **adds an interaction step** which increases latency and breaks the flow. You need **timeout handling** for when users don't respond. It **may frustrate users** who just want quick answers without being asked questions. And you need **careful default selection** for when users dismiss the clarification.
-The sweet spot is using clarification **selectively** — only for high-ambiguity queries where the cost of guessing wrong is high. For most queries, silent rewriting is fine.
-Next, Strategy 9: Query Specification.`
+[concerned] The downsides: it **adds an interaction step** which increases latency and breaks the flow. You need **timeout handling** for when users don't respond. It **may frustrate users** who just want quick answers without being asked questions. And you need **careful default selection** for when users dismiss the clarification.
+[confidently] The sweet spot is using clarification **selectively** — only for high-ambiguity queries where the cost of guessing wrong is high. For most queries, silent rewriting is fine.
+[conversational] Next, Strategy 9: Query Specification.`
         }
       ]
     },
@@ -1510,15 +1510,15 @@ Next, Strategy 9: Query Specification.`
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: `### 38 · Query Specification — Overview
-Strategy 9 is **Query Specification**, which adds explicit filters and constraints to narrow down retrieval.
+          notes: `### Query Specification — Overview
+[conversational] Strategy 9 is **Query Specification**, which adds explicit filters and constraints to narrow down retrieval.
 #### 🎯 What Is It?
 Query specification is about adding **structured constraints** to your query — things like time ranges, source domains, file types, and metadata filters. Instead of searching broadly, you tell the retrieval system exactly where and when to look. It's like searching with advanced operators: "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf."
 #### ✅ Pros
-The good stuff: you get **high precision retrieval** because you're filtering out noise before it even enters the results. **Faster reranking** because the candidate pool is smaller. It's **excellent for enterprise and compliance** use cases where you need results from specific sources. And it **combines well with BM25 keyword search** since many search engines support field-based filtering natively.
+[pleased] The good stuff: you get **high precision retrieval** because you're filtering out noise before it even enters the results. **Faster reranking** because the candidate pool is smaller. It's **excellent for enterprise and compliance** use cases where you need results from specific sources. And it **combines well with BM25 keyword search** since many search engines support field-based filtering natively.
 #### 🕐 When to Use This?
-Best for **enterprise search systems**, **data analytics**, **compliance and audit searches**, **large heterogeneous document collections**, and **time-sensitive information needs** where recency matters.
-Let's see the mechanics.`
+[reassuringly] Best for **enterprise search systems**, **data analytics**, **compliance and audit searches**, **large heterogeneous document collections**, and **time-sensitive information needs** where recency matters.
+[conversational] Let's see the mechanics.`
         },
         {
           id: 39,
@@ -1538,13 +1538,13 @@ Let's see the mechanics.`
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: `### 39 · Query Specification — How It Works
+          notes: `### Query Specification — How It Works
 Query specification works by expanding queries with structured search operators.
 #### 🔄 The Process
-The system adds several types of constraints. **Time range specifications** constrain results to specific date ranges — crucial for fast-moving fields. **Source and domain constraints** limit results to specific websites or databases. **File type filters** target PDFs, docs, or specific formats. **Metadata qualifiers** filter by author, department, or category. And **language or locale parameters** ensure results are in the right language and region.
-Think of it like using the advanced search features of Google — most users never use them, but they're incredibly powerful for narrowing down results. Query specification automates that process.
-The key difference from other strategies is that these constraints are **structural**, not semantic. You're not changing the meaning of the query — you're adding filters that tell the retrieval system where to look.
-Let's see the implementation.`
+[firmly] The system adds several types of constraints. **Time range specifications** constrain results to specific date ranges — crucial for fast-moving fields. **Source and domain constraints** limit results to specific websites or databases. **File type filters** target PDFs, docs, or specific formats. **Metadata qualifiers** filter by author, department, or category. And **language or locale parameters** ensure results are in the right language and region.
+[storytelling] Think of it like using the advanced search features of Google — most users never use them, but they're incredibly powerful for narrowing down results. Query specification automates that process.
+[firmly] The key difference from other strategies is that these constraints are **structural**, not semantic. You're not changing the meaning of the query — you're adding filters that tell the retrieval system where to look.
+[conversational] Let's see the implementation.`
         },
         {
           id: 40,
@@ -1581,14 +1581,14 @@ def specify_query(query):
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: `### 40 · Query Specification — Implementation
-The implementation detects constraints and annotates the query.
+          notes: `### Query Specification — Implementation
+[lecture] The implementation detects constraints and annotates the query.
 #### 💻 The Prompt
-The prompt instructs the LLM to add explicit constraints for time range, document type, source, and entity. It provides a set of search operators like time colon YYYY-YYYY, site colon domain, filetype colon extension, and entity with quotes for disambiguation.
+[lecture] The prompt instructs the LLM to add explicit constraints for time range, document type, source, and entity. It provides a set of search operators like time colon YYYY-YYYY, site colon domain, filetype colon extension, and entity with quotes for disambiguation.
 #### ⚙️ The Code
 In the implementation, you first extract entities and classify the intent. Then you generate appropriate constraints based on the entities, intent, and whether time relevance is important. Finally, you append these constraints to the original query. The result is a highly targeted search query that leverages your search engine's filtering capabilities.
 One important note: this strategy works best with search engines that support fielded search. If your retrieval system is purely vector-based, you may need to convert these constraints into metadata filters.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 41,
@@ -1612,14 +1612,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: `### 41 · Query Specification — Example & Considerations
-Let's see specification in action.
+          notes: `### Query Specification — Example & Considerations
+[conversational] Let's see specification in action.
 #### 📝 Before and After
-The user searches "GDPR fines" — broad and could return thousands of results. After specification, it becomes "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf entity:data protection authority." Now you're getting official EU documents about GDPR fines from the right source, time period, and document type.
+[lecture] The user searches "GDPR fines" — broad and could return thousands of results. After specification, it becomes "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf entity:data protection authority." Now you're getting official EU documents about GDPR fines from the right source, time period, and document type.
 #### ⚠️ Watch Out For
-The risks include **over-filtering** — adding too many constraints can result in zero results, which is worse than too many results. It **requires field support** in your search system — not all retrieval engines support these operators. The implementation is **more complex to maintain** as you need to keep constraint mappings up to date. And it's **less effective for unstructured sources** that don't have clean metadata.
-The key insight: query specification is powerful for **enterprise and structured search** but needs to be used carefully. Always have a fallback to the original query if the specified version returns nothing.
-Next, Strategy 10: Semantic Bridging.`
+[lecture] The risks include **over-filtering** — adding too many constraints can result in zero results, which is worse than too many results. It **requires field support** in your search system — not all retrieval engines support these operators. The implementation is **more complex to maintain** as you need to keep constraint mappings up to date. And it's **less effective for unstructured sources** that don't have clean metadata.
+[firmly] The key insight: query specification is powerful for **enterprise and structured search** but needs to be used carefully. Always have a fallback to the original query if the specified version returns nothing.
+[conversational] Next, Strategy 10: Semantic Bridging.`
         }
       ]
     },
@@ -1652,15 +1652,15 @@ Next, Strategy 10: Semantic Bridging.`
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: `### 42 · Semantic Bridging — Overview
-Strategy 10 is **Semantic Bridging**, and it's all about closing the vocabulary gap between users and domain experts.
+          notes: `### Semantic Bridging — Overview
+[conversational] Strategy 10 is **Semantic Bridging**, and it's all about closing the vocabulary gap between users and domain experts.
 #### 🎯 What Is It?
 Users speak one language, domain experts speak another. A patient says "heart attack" but the medical literature says "myocardial infarction." A customer says "server keeps crashing" but the engineering docs reference "kernel panic" or "segmentation fault." Semantic bridging **maps user language to domain-specific terminology** using ontologies and taxonomies.
 #### ✅ Pros
-The good stuff: it **closes the vocabulary gap** between lay users and expert documentation. It **significantly improves recall** in domain-specific searches. It **reduces zero-result scenarios** where user terms simply don't match any documents. And it **works well with both sparse and dense retrieval** systems.
+[pleased] The good stuff: it **closes the vocabulary gap** between lay users and expert documentation. It **significantly improves recall** in domain-specific searches. It **reduces zero-result scenarios** where user terms simply don't match any documents. And it **works well with both sparse and dense retrieval** systems.
 #### 🕐 When to Use This?
-Best for domains with **specialized jargon** like medicine, law, or engineering. Also great for **product catalogs**, **academic or scientific search**, and any domain with **significant terminology gaps** between how users ask and how documents are written.
-Let's see how it works.`
+[reassuringly] Best for domains with **specialized jargon** like medicine, law, or engineering. Also great for **product catalogs**, **academic or scientific search**, and any domain with **significant terminology gaps** between how users ask and how documents are written.
+[conversational] Let's see how it works.`
         },
         {
           id: 43,
@@ -1679,12 +1679,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: `### 43 · Semantic Bridging — How It Works
-The bridging process uses several complementary techniques.
+          notes: `### Semantic Bridging — How It Works
+[lecture] The bridging process uses several complementary techniques.
 #### 🔄 The Process
 First, **domain-specific ontology lookups** match user terms to formal taxonomies. Medical ontologies like SNOMED 👉 'snoh-med' or ICD 👉 'eye-see-dee' codes can map "heart attack" to "myocardial infarction" automatically. Second, **terminology mapping** translates from layman language to expert vocabulary. Third, **synonym expansion with field expertise** adds domain-appropriate synonyms. And fourth, **abbreviation and acronym resolution** expands shortened forms to full terms — "MI" becomes "myocardial infarction."
-The key advantage over simple synonym expansion is that semantic bridging is **domain-aware**. It doesn't just find any synonym — it finds the ones that match how experts actually write and speak in that specific field.
-Let's look at the implementation.`
+[pleased] The key advantage over simple synonym expansion is that semantic bridging is **domain-aware**. It doesn't just find any synonym — it finds the ones that match how experts actually write and speak in that specific field.
+[conversational] Let's look at the implementation.`
         },
         {
           id: 44,
@@ -1717,14 +1717,14 @@ def semantic_bridge(query, domain):
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: `### 44 · Semantic Bridging — Implementation
-The implementation combines ontology lookups with LLM-powered normalization.
+          notes: `### Semantic Bridging — Implementation
+[lecture] The implementation combines ontology lookups with LLM-powered normalization.
 #### 💻 The Prompt
-The prompt instructs the LLM to map terms to canonical ontology labels, providing synonyms and formal terminology from the specified domain. You feed in the domain knowledge as context so the LLM knows which terminology system to use.
+[lecture] The prompt instructs the LLM to map terms to canonical ontology labels, providing synonyms and formal terminology from the specified domain. You feed in the domain knowledge as context so the LLM knows which terminology system to use.
 #### ⚙️ The Code
-The implementation fetches the domain ontology, passes it along with the query to the LLM, and constructs an enriched query using the mapped terms. The output query includes both the original user terms and the domain-specific equivalents.
+[lecture] The implementation fetches the domain ontology, passes it along with the query to the LLM, and constructs an enriched query using the mapped terms. The output query includes both the original user terms and the domain-specific equivalents.
 A practical tip: build and maintain a **curated mapping dictionary** for your most common user terms. This is faster and more reliable than LLM-based mapping for known terms, and you only fall back to the LLM for novel queries.
-Let's see a medical example.`
+[conversational] Let's see a medical example.`
         },
         {
           id: 45,
@@ -1747,14 +1747,14 @@ Let's see a medical example.`
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: `### 45 · Semantic Bridging — Example & Considerations
+          notes: `### Semantic Bridging — Example & Considerations
 Here's a perfect medical example.
 #### 📝 Before and After
-The user searches "heart attack treatment." After semantic bridging, it becomes "myocardial infarction management OR acute coronary syndrome therapy OR thrombolysis OR PCI OR cardiac revascularization." Now the search covers all the medical terminology that doctors actually use in clinical literature.
+[lecture] The user searches "heart attack treatment." After semantic bridging, it becomes "myocardial infarction management OR acute coronary syndrome therapy OR thrombolysis OR PCI OR cardiac revascularization." Now the search covers all the medical terminology that doctors actually use in clinical literature.
 #### ⚠️ Watch Out For
-The challenges: it **requires a curated domain ontology** which takes significant effort to build and maintain. **Ontology drift** is real — medical terminology evolves, new drugs get approved, coding systems change. It **may over-expand** in ambiguous cases where a lay term maps to multiple expert concepts. And there's ongoing **domain knowledge maintenance overhead**.
-The key insight: semantic bridging is **essential for specialized domains** but requires investment in domain-specific resources. Once you build the ontology mapping, though, the quality improvement is dramatic and sustainable.
-Next up, Strategy 11: Query2Doc.`
+[lecture] The challenges: it **requires a curated domain ontology** which takes significant effort to build and maintain. **Ontology drift** is real — medical terminology evolves, new drugs get approved, coding systems change. It **may over-expand** in ambiguous cases where a lay term maps to multiple expert concepts. And there's ongoing **domain knowledge maintenance overhead**.
+[firmly] The key insight: semantic bridging is **essential for specialized domains** but requires investment in domain-specific resources. Once you build the ontology mapping, though, the quality improvement is dramatic and sustainable.
+[conversational] Next up, Strategy 11: Query2Doc.`
         }
       ]
     },
@@ -1787,15 +1787,15 @@ Next up, Strategy 11: Query2Doc.`
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: `### 46 · Query2Doc — Overview
-Strategy 11 is **Query2Doc**, which is similar to HyDE but with a different focus.
+          notes: `### Query2Doc — Overview
+[conversational] Strategy 11 is **Query2Doc**, which is similar to HyDE but with a different focus.
 #### 🎯 What Is It?
 Query2Doc turns a query into a **pseudo-document** that mimics the style and content of relevant passages in your corpus. While HyDE generates a hypothetical answer, Query2Doc generates something that looks like a document you'd find in your collection. This pseudo-document is then used for retrieval — either by embedding it or by using it to expand the query with key terms.
 #### ✅ Pros
-The good stuff: you get **strong recall improvement** because the pseudo-document contains rich semantic content. It enables **richer semantic matching** since a paragraph has more signal than a few query words. It **works well with dense retrieval** systems. And it **bridges vocabulary gaps** naturally because the generated document uses document-style language.
+[pleased] The good stuff: you get **strong recall improvement** because the pseudo-document contains rich semantic content. It enables **richer semantic matching** since a paragraph has more signal than a few query words. It **works well with dense retrieval** systems. And it **bridges vocabulary gaps** naturally because the generated document uses document-style language.
 #### 🕐 When to Use This?
-Best when **sparse or short queries lack context**, when using **dense or hybrid retrieval systems**, in **technical domains with specific terminology**, and for **knowledge-intensive queries** that need comprehensive matching.
-Let's see how it works.`
+[reassuringly] Best when **sparse or short queries lack context**, when using **dense or hybrid retrieval systems**, in **technical domains with specific terminology**, and for **knowledge-intensive queries** that need comprehensive matching.
+[conversational] Let's see how it works.`
         },
         {
           id: 47,
@@ -1814,12 +1814,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: `### 47 · Query2Doc — How It Works
-The Query2Doc process generates document-style expansions.
+          notes: `### Query2Doc — How It Works
+[lecture] The Query2Doc process generates document-style expansions.
 #### 🔄 The Process
-The system generates text that **mimics the style and content of relevant passages** — not an answer to the question, but a passage that would appear alongside relevant documents. This generated text **contains key terms and relationships** specific to the domain. It **creates a richer representation** for matching because a paragraph has far more semantic signal than a three-word query. And it **uses the LLM's knowledge** to fill in domain-specific vocabulary and concepts.
-The subtle difference from HyDE is that Query2Doc focuses on generating text that looks like a **source document**, not an answer. If you're searching a medical database, Query2Doc generates text that reads like a medical paper, not a doctor's explanation to a patient.
-Let's see the implementation.`
+[firmly] The system generates text that **mimics the style and content of relevant passages** — not an answer to the question, but a passage that would appear alongside relevant documents. This generated text **contains key terms and relationships** specific to the domain. It **creates a richer representation** for matching because a paragraph has far more semantic signal than a three-word query. And it **uses the LLM's knowledge** to fill in domain-specific vocabulary and concepts.
+[confidently] The subtle difference from HyDE is that Query2Doc focuses on generating text that looks like a **source document**, not an answer. If you're searching a medical database, Query2Doc generates text that reads like a medical paper, not a doctor's explanation to a patient.
+[conversational] Let's see the implementation.`
         },
         {
           id: 48,
@@ -1849,14 +1849,14 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: `### 48 · Query2Doc — Implementation
-The implementation follows a generate-embed-retrieve pattern.
+          notes: `### Query2Doc — Implementation
+[lecture] The implementation follows a generate-embed-retrieve pattern.
 #### 💻 The Prompt
-The prompt asks the LLM to write a 150-word pseudo-document that would appear in relevant sources for the given query. You instruct it to include key terminology and technical concepts while staying factual. The goal is generating text that would naturally appear in the same corpus you're searching.
+[firmly] The prompt asks the LLM to write a 150-word pseudo-document that would appear in relevant sources for the given query. You instruct it to include key terminology and technical concepts while staying factual. The goal is generating text that would naturally appear in the same corpus you're searching.
 #### ⚙️ The Code
 Three steps: generate the pseudo-document, embed it using your embedding model, then query the vector database with that embedding. The result is documents that are semantically similar to what a real answer document would look like.
 A practical optimization: you can concatenate the original query with the pseudo-document before embedding, giving the retrieval system both the exact user terms and the expanded semantic context.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 49,
@@ -1879,14 +1879,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: `### 49 · Query2Doc — Example & Considerations
+          notes: `### Query2Doc — Example & Considerations
 Here's Query2Doc in practice.
 #### 📝 Before and After
-The user searches "vector DB HNSW tuning." Query2Doc generates a pseudo-document explaining HNSW 👉 'H-N-S-W' as a graph-based indexing algorithm, describing key parameters like M for maximum connections, efConstruction 👉 'ee-eff-construction' for build-time search width, and efSearch 👉 'ee-eff-search' for query-time width. This rich technical passage, when embedded, finds documents about the exact same concepts.
+[firmly] The user searches "vector DB HNSW tuning." Query2Doc generates a pseudo-document explaining HNSW 👉 'H-N-S-W' as a graph-based indexing algorithm, describing key parameters like M for maximum connections, efConstruction 👉 'ee-eff-construction' for build-time search width, and efSearch 👉 'ee-eff-search' for query-time width. This rich technical passage, when embedded, finds documents about the exact same concepts.
 #### ⚠️ Watch Out For
-The concerns: it's a **token-heavy approach** since you're generating a full paragraph. There's a **risk of introducing hallucinations** if the LLM generates incorrect technical details. **Latency impact** from the generation step. And you **must avoid overly specific claims** in the pseudo-document that could bias retrieval toward incorrect information.
-The difference between Query2Doc and HyDE is subtle but important. HyDE generates an answer. Query2Doc generates a source document. In practice, both work well, and the choice often comes down to your specific use case.
-Next, Strategy 12: ITER-RETGEN, the iterative approach.`
+[lecture] The concerns: it's a **token-heavy approach** since you're generating a full paragraph. There's a **risk of introducing hallucinations** if the LLM generates incorrect technical details. **Latency impact** from the generation step. And you **must avoid overly specific claims** in the pseudo-document that could bias retrieval toward incorrect information.
+[firmly] The difference between Query2Doc and HyDE is subtle but important. HyDE generates an answer. Query2Doc generates a source document. In practice, both work well, and the choice often comes down to your specific use case.
+[conversational] Next, Strategy 12: ITER-RETGEN, the iterative approach.`
         }
       ]
     },
@@ -1921,15 +1921,15 @@ Next, Strategy 12: ITER-RETGEN, the iterative approach.`
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: `### 50 · ITER-RETGEN — Overview
-Strategy 12 is **ITER-RETGEN**, which stands for Iterative Retrieval-Generation. ITER-RETGEN 👉 'iter-ret-jen'.
+          notes: `### ITER-RETGEN — Overview
+[conversational] Strategy 12 is **ITER-RETGEN**, which stands for Iterative Retrieval-Generation. ITER-RETGEN 👉 'iter-ret-jen'.
 #### 🎯 What Is It?
-This is the most sophisticated strategy we've seen so far. Instead of doing one retrieval pass and hoping for the best, ITER-RETGEN **alternates between retrieval and generation in multiple rounds**. It retrieves some documents, generates a draft answer, identifies what's missing, retrieves more targeted information, refines the answer, and repeats until the answer is comprehensive.
+[lecture] This is the most sophisticated strategy we've seen so far. Instead of doing one retrieval pass and hoping for the best, ITER-RETGEN **alternates between retrieval and generation in multiple rounds**. It retrieves some documents, generates a draft answer, identifies what's missing, retrieves more targeted information, refines the answer, and repeats until the answer is comprehensive.
 #### ✅ Pros
-The good stuff: you get **better coverage without over-fetching** because each iteration targets specific gaps. The answer **progressively improves** with each round. It **handles complex multi-part questions** naturally. It **adapts to information gaps** by identifying what's missing and searching specifically for it. And the **final responses are more comprehensive** than single-pass approaches.
+[pleased] The good stuff: you get **better coverage without over-fetching** because each iteration targets specific gaps. The answer **progressively improves** with each round. It **handles complex multi-part questions** naturally. It **adapts to information gaps** by identifying what's missing and searching specifically for it. And the **final responses are more comprehensive** than single-pass approaches.
 #### 🕐 When to Use This?
-Best for **hard questions requiring comprehensive information**, **incomplete initial context**, **multi-step reasoning requirements**, and **when a single retrieval pass misses key information**.
-Let's see the workflow.`
+[reassuringly] Best for **hard questions requiring comprehensive information**, **incomplete initial context**, **multi-step reasoning requirements**, and **when a single retrieval pass misses key information**.
+[conversational] Let's see the workflow.`
         },
         {
           id: 51,
@@ -1949,13 +1949,13 @@ Let's see the workflow.`
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: `### 51 · ITER-RETGEN — How It Works
-The process alternates between drafting and targeted retrieval.
+          notes: `### ITER-RETGEN — How It Works
+[lecture] The process alternates between drafting and targeted retrieval.
 #### 🔄 The Iterative Loop
-The **initial response identifies knowledge gaps** — the first draft answer naturally reveals what information is missing. Then the **system generates targeted follow-up queries** specifically for those gaps. It **retrieves additional context** on the missing points. The answer is **refined with the new information**. And this **repeats until the answer is complete** or a maximum iteration count is reached.
-Think of it like a researcher writing a paper. You write a first draft, realize you need more data on a specific point, go search for it, update the draft, realize another gap, search again, and so on until the paper is comprehensive. ITER-RETGEN automates this research loop.
-The key insight is that the **first retrieval attempt rarely gets everything right**. By iterating, you progressively fill in the gaps.
-Let's see the implementation.`
+[lecture] The **initial response identifies knowledge gaps** — the first draft answer naturally reveals what information is missing. Then the **system generates targeted follow-up queries** specifically for those gaps. It **retrieves additional context** on the missing points. The answer is **refined with the new information**. And this **repeats until the answer is complete** or a maximum iteration count is reached.
+[storytelling] Think of it like a researcher writing a paper. You write a first draft, realize you need more data on a specific point, go search for it, update the draft, realize another gap, search again, and so on until the paper is comprehensive. ITER-RETGEN automates this research loop.
+[firmly] The key insight is that the **first retrieval attempt rarely gets everything right**. By iterating, you progressively fill in the gaps.
+[conversational] Let's see the implementation.`
         },
         {
           id: 52,
@@ -1987,14 +1987,14 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: `### 52 · ITER-RETGEN — Implementation
-The implementation uses a loop with draft evaluation.
+          notes: `### ITER-RETGEN — Implementation
+[lecture] The implementation uses a loop with draft evaluation.
 #### 💻 The Prompt
-The prompt provides the current draft answer and asks the LLM to propose up to three follow-up retrieval queries that would help complete or improve the answer. It explicitly asks for just the queries, no explanations.
+[lecture] The prompt provides the current draft answer and asks the LLM to propose up to three follow-up retrieval queries that would help complete or improve the answer. It explicitly asks for just the queries, no explanations.
 #### ⚙️ The Code
-The code starts by generating an initial answer from the first retrieval pass. Then it enters a loop: generate follow-up queries from the draft, retrieve new documents using those queries, and refine the answer with the combined context. The loop runs for a configurable maximum number of iterations, typically two to three.
-The stopping criteria are important. You can stop when the LLM reports no more gaps, when the quality score stops improving, when the maximum iteration count is reached, or when the token budget is exhausted.
-Let's see an example.`
+[lecture] The code starts by generating an initial answer from the first retrieval pass. Then it enters a loop: generate follow-up queries from the draft, retrieve new documents using those queries, and refine the answer with the combined context. The loop runs for a configurable maximum number of iterations, typically two to three.
+[firmly] The stopping criteria are important. You can stop when the LLM reports no more gaps, when the quality score stops improving, when the maximum iteration count is reached, or when the token budget is exhausted.
+[conversational] Let's see an example.`
         },
         {
           id: 53,
@@ -2021,14 +2021,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: `### 53 · ITER-RETGEN — Example & Considerations
+          notes: `### ITER-RETGEN — Example & Considerations
 Here's ITER-RETGEN solving a complex question.
 #### 📝 Before and After
-The user asks "What are effective LLM guardrails?" The first retrieval and draft mention input filtering. The system generates a follow-up query: "prompt injection prevention techniques" and retrieves more context. The refined draft now covers filtering and RLHF 👉 'ar-ell-aitch-eff'. Another follow-up: "sandboxing approaches for LLMs." The final answer comprehensively covers filtering, RLHF, sandboxing, output checking, and monitoring — far more complete than any single-pass approach.
+[lecture] The user asks "What are effective LLM guardrails?" The first retrieval and draft mention input filtering. The system generates a follow-up query: "prompt injection prevention techniques" and retrieves more context. The refined draft now covers filtering and RLHF 👉 'ar-ell-aitch-eff'. Another follow-up: "sandboxing approaches for LLMs." The final answer comprehensively covers filtering, RLHF, sandboxing, output checking, and monitoring — far more complete than any single-pass approach.
 #### ⚠️ Watch Out For
-The challenges are significant. **Orchestration complexity** — you need to manage the iteration loop, track state, and handle edge cases. **Increased latency** — each iteration adds retrieval and generation time. **Higher token and API costs** — multiple LLM calls per query add up quickly. **Potential for retrieval drift** — follow-up queries might go off-topic. And you **need good stopping criteria** to avoid infinite loops.
-The bottom line: ITER-RETGEN is your **heavy artillery** for complex questions. Don't use it for simple queries — the overhead isn't worth it. But for hard, multi-faceted questions, it delivers dramatically better answers.
-Next, Strategy 13: Template-Based Rewriting.`
+[lecture] The challenges are significant. **Orchestration complexity** — you need to manage the iteration loop, track state, and handle edge cases. **Increased latency** — each iteration adds retrieval and generation time. **Higher token and API costs** — multiple LLM calls per query add up quickly. **Potential for retrieval drift** — follow-up queries might go off-topic. And you **need good stopping criteria** to avoid infinite loops.
+[pleased] The bottom line: ITER-RETGEN is your **heavy artillery** for complex questions. Don't use it for simple queries — the overhead isn't worth it. But for hard, multi-faceted questions, it delivers dramatically better answers.
+[conversational] Next, Strategy 13: Template-Based Rewriting.`
         }
       ]
     },
@@ -2062,15 +2062,15 @@ Next, Strategy 13: Template-Based Rewriting.`
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: `### 54 · Template-Based Rewriting — Overview
-Strategy 13 is **Template-Based Rewriting**, which brings consistency and speed to query transformation.
+          notes: `### Template-Based Rewriting — Overview
+[conversational] Strategy 13 is **Template-Based Rewriting**, which brings consistency and speed to query transformation.
 #### 🎯 What Is It?
-Instead of generating a new rewrite for every query, you maintain a library of **predefined templates** for common query patterns. When a user asks a comparison question, you slot their terms into a comparison template. When they ask a troubleshooting question, you use a troubleshooting template. Think of it like Mad Libs for queries — the structure is fixed, you just fill in the blanks.
+[storytelling] Instead of generating a new rewrite for every query, you maintain a library of **predefined templates** for common query patterns. When a user asks a comparison question, you slot their terms into a comparison template. When they ask a troubleshooting question, you use a troubleshooting template. Think of it like Mad Libs for queries — the structure is fixed, you just fill in the blanks.
 #### ✅ Pros
-The good stuff: **consistent query quality** because every query of the same type gets the same structure. **Fast execution** with low latency since template filling is cheaper than full LLM generation. **Predictable behavior** that's easy to test and debug. And it **enforces standardized formats** that your retrieval system can be optimized for.
+[pleased] The good stuff: **consistent query quality** because every query of the same type gets the same structure. **Fast execution** with low latency since template filling is cheaper than full LLM generation. **Predictable behavior** that's easy to test and debug. And it **enforces standardized formats** that your retrieval system can be optimized for.
 #### 🕐 When to Use This?
-Best for **customer support and documentation QA**, **e-commerce product search**, **specialized domain knowledge** bases, and any scenario with **high-volume, predictable query patterns**.
-Let's see how it works.`
+[reassuringly] Best for **customer support and documentation QA**, **e-commerce product search**, **specialized domain knowledge** bases, and any scenario with **high-volume, predictable query patterns**.
+[conversational] Let's see how it works.`
         },
         {
           id: 55,
@@ -2089,12 +2089,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: `### 55 · Template-Based Rewriting — How It Works
-The system matches queries to predefined templates and fills in the slots.
+          notes: `### Template-Based Rewriting — How It Works
+[lecture] The system matches queries to predefined templates and fills in the slots.
 #### 🔄 The Template Types
 There are several common template types. **Lookup templates** for finding specific items: "Find information about [product] in [category]." **Comparison templates** for contrasting items: "Compare [A] vs [B] by [attribute] in [timeframe]." **Troubleshooting templates** for fixing problems: "[error] resolution for [system] on [platform]." And **how-to templates** for procedural questions: "How to [task] with [constraints]."
-The beauty is that each template type can be optimized independently. Your comparison template can include structure that your retrieval system knows how to handle efficiently, while your troubleshooting template uses different search strategies.
-Let's look at the implementation.`
+[confidently] The beauty is that each template type can be optimized independently. Your comparison template can include structure that your retrieval system knows how to handle efficiently, while your troubleshooting template uses different search strategies.
+[conversational] Let's look at the implementation.`
         },
         {
           id: 56,
@@ -2125,14 +2125,14 @@ Available templates:
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: `### 56 · Template-Based Rewriting — Implementation
-The implementation follows a classify-select-fill pattern.
+          notes: `### Template-Based Rewriting — Implementation
+[lecture] The implementation follows a classify-select-fill pattern.
 #### 💻 The Prompt
-The prompt provides the intent type and available templates, then asks the LLM to fill in the appropriate template with slots from the query. This is much cheaper than generating a full rewrite from scratch because the LLM only needs to extract entities and slot them in.
+[lecture] The prompt provides the intent type and available templates, then asks the LLM to fill in the appropriate template with slots from the query. This is much cheaper than generating a full rewrite from scratch because the LLM only needs to extract entities and slot them in.
 #### ⚙️ The Code
-The code first classifies the intent, selects the matching template, extracts slot values from the query, and fills the template. The result is a structured, standardized query that follows a known pattern.
+[lecture] The code first classifies the intent, selects the matching template, extracts slot values from the query, and fills the template. The result is a structured, standardized query that follows a known pattern.
 One practical tip: start with five to ten templates covering your most common query patterns. You can always add more later. Monitor which queries don't match any template and use those to guide new template creation.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 57,
@@ -2156,14 +2156,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: `### 57 · Template-Based Rewriting — Example & Considerations
+          notes: `### Template-Based Rewriting — Example & Considerations
 Here's template-based rewriting in action.
 #### 📝 Before and After
-The user searches "compare s3 vs gcs pricing." The system detects a comparison intent, selects the comparison template, and fills it in: "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1-10 TB, standard tier, 2024." Notice how the template adds the volume range, tier, and year — information that makes the retrieval much more targeted.
+[lecture] The user searches "compare s3 vs gcs pricing." The system detects a comparison intent, selects the comparison template, and fills it in: "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1-10 TB, standard tier, 2024." Notice how the template adds the volume range, tier, and year — information that makes the retrieval much more targeted.
 #### ⚠️ Watch Out For
-The downsides: **rigid structure limits flexibility** — novel query types that don't fit any template get handled poorly. **Template maintenance** is ongoing work as new patterns emerge. The system **struggles with novel queries** that don't match existing patterns. And **intent classification errors cascade** — if you pick the wrong template, the entire rewrite is wrong.
-The key insight: template-based rewriting is perfect for **known, recurring query patterns**. Use it alongside more flexible strategies for novel queries.
-Next, Strategy 14: Entity-Centric Rewriting.`
+[concerned] The downsides: **rigid structure limits flexibility** — novel query types that don't fit any template get handled poorly. **Template maintenance** is ongoing work as new patterns emerge. The system **struggles with novel queries** that don't match existing patterns. And **intent classification errors cascade** — if you pick the wrong template, the entire rewrite is wrong.
+[firmly] The key insight: template-based rewriting is perfect for **known, recurring query patterns**. Use it alongside more flexible strategies for novel queries.
+[conversational] Next, Strategy 14: Entity-Centric Rewriting.`
         }
       ]
     },
@@ -2199,15 +2199,15 @@ Next, Strategy 14: Entity-Centric Rewriting.`
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: `### 58 · Entity-Centric Rewriting — Overview
-Strategy 14 is **Entity-Centric Rewriting**, which focuses on identifying, disambiguating, and enriching entities in queries.
+          notes: `### Entity-Centric Rewriting — Overview
+[conversational] Strategy 14 is **Entity-Centric Rewriting**, which focuses on identifying, disambiguating, and enriching entities in queries.
 #### 🎯 What Is It?
 When a user searches "jaguar speed," what do they mean? The animal? The car? The macOS version? Entity-centric rewriting uses **Named Entity Recognition** (NER 👉 'ner') and **entity linking** to figure out which entities the user is referring to, then rewrites the query with disambiguated, canonical entity names.
 #### ✅ Pros
-The good stuff: it **significantly improves precision** by eliminating entity ambiguity. It **enables knowledge graph integration** for richer queries. It **solves homonym and polysemy issues** — the same word meaning different things. It can **add helpful entity attributes** like types, categories, and relationships. And it **reduces irrelevant results** caused by entity confusion.
+[cautiously] The good stuff: it **significantly improves precision** by eliminating entity ambiguity. It **enables knowledge graph integration** for richer queries. It **solves homonym and polysemy issues** — the same word meaning different things. It can **add helpful entity attributes** like types, categories, and relationships. And it **reduces irrelevant results** caused by entity confusion.
 #### 🕐 When to Use This?
-Best for **knowledge graph integration**, **product catalogs**, **people, places, and organization queries**, **ambiguous entity names**, and **domain-specific entity collections**.
-Let's see the process.`
+[reassuringly] Best for **knowledge graph integration**, **product catalogs**, **people, places, and organization queries**, **ambiguous entity names**, and **domain-specific entity collections**.
+[conversational] Let's see the process.`
         },
         {
           id: 59,
@@ -2226,12 +2226,12 @@ Let's see the process.`
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: `### 59 · Entity-Centric Rewriting — How It Works
-The process follows an extract-link-enrich-reformulate pipeline.
+          notes: `### Entity-Centric Rewriting — How It Works
+[lecture] The process follows an extract-link-enrich-reformulate pipeline.
 #### 🔄 The Pipeline
 First, **NER extraction** identifies all entities in the query — people, organizations, products, locations, technical terms. Second, **entity linking** connects each entity to a canonical ID in your knowledge base. Third, **entity enrichment** adds attributes from the knowledge base — types, categories, relationships. Finally, **disambiguation with entity types** clarifies which specific entity the user means.
-For example, "Apple" in a food context links to the fruit entity, while "Apple" in a tech context links to Apple Inc. The system uses surrounding terms and context to make this determination.
-Let's look at the implementation.`
+[conversational] For example, "Apple" in a food context links to the fruit entity, while "Apple" in a tech context links to Apple Inc. The system uses surrounding terms and context to make this determination.
+[conversational] Let's look at the implementation.`
         },
         {
           id: 60,
@@ -2267,14 +2267,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: `### 60 · Entity-Centric Rewriting — Implementation
-The implementation combines NER with knowledge base linking.
+          notes: `### Entity-Centric Rewriting — Implementation
+[lecture] The implementation combines NER with knowledge base linking.
 #### 💻 The Prompt
-The prompt asks the LLM to identify all entities, determine their types, link them to canonical names or IDs, add disambiguation information, and then rewrite the query with the resolved entities.
+[lecture] The prompt asks the LLM to identify all entities, determine their types, link them to canonical names or IDs, add disambiguation information, and then rewrite the query with the resolved entities.
 #### ⚙️ The Code
-The code extracts entities using an NER model, links them to a knowledge base for canonical names, and then rewrites the query with the disambiguated entities. This is more infrastructure-heavy than other strategies because you need both an NER model and a knowledge base.
+[lecture] The code extracts entities using an NER model, links them to a knowledge base for canonical names, and then rewrites the query with the disambiguated entities. This is more infrastructure-heavy than other strategies because you need both an NER model and a knowledge base.
 A practical alternative: if you don't have a full knowledge base, you can use the LLM itself for entity disambiguation by providing it with a list of known entities and their types. It's less precise but much easier to implement.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 61,
@@ -2299,14 +2299,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: `### 61 · Entity-Centric Rewriting — Example & Considerations
+          notes: `### Entity-Centric Rewriting — Example & Considerations
 Here's entity-centric rewriting solving the classic ambiguity problem.
 #### 📝 Before and After
-The user searches "jaguar speed." The system identifies "jaguar" as an ambiguous entity — it could be the animal Panthera onca or the automobile manufacturer. Based on context or user profile, it rewrites to "Jaguar (animal: Panthera onca) top speed; exclude Jaguar (brand: automobile manufacturer)." Now the retrieval system knows exactly which jaguar to search for.
+[lecture] The user searches "jaguar speed." The system identifies "jaguar" as an ambiguous entity — it could be the animal Panthera onca or the automobile manufacturer. Based on context or user profile, it rewrites to "Jaguar (animal: Panthera onca) top speed; exclude Jaguar (brand: automobile manufacturer)." Now the retrieval system knows exactly which jaguar to search for.
 #### ⚠️ Watch Out For
-The challenges: you **need a knowledge graph or entity database**, which is a significant infrastructure investment. The **entity linking system is complex** to build and maintain. It **struggles with novel or unknown entities** not in your knowledge base. There's **risk of incorrect disambiguation** when context is insufficient. And the overall **implementation complexity is higher** than simpler strategies.
-The key insight: entity-centric rewriting is **essential for domains with many ambiguous entities** — product catalogs, medical terminology, geographic locations. For general-purpose search, simpler strategies may suffice.
-Next, Strategy 15: Temporal Rewriting.`
+[lecture] The challenges: you **need a knowledge graph or entity database**, which is a significant infrastructure investment. The **entity linking system is complex** to build and maintain. It **struggles with novel or unknown entities** not in your knowledge base. There's **risk of incorrect disambiguation** when context is insufficient. And the overall **implementation complexity is higher** than simpler strategies.
+[firmly] The key insight: entity-centric rewriting is **essential for domains with many ambiguous entities** — product catalogs, medical terminology, geographic locations. For general-purpose search, simpler strategies may suffice.
+[conversational] Next, Strategy 15: Temporal Rewriting.`
         }
       ]
     },
@@ -2341,15 +2341,15 @@ Next, Strategy 15: Temporal Rewriting.`
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: `### 62 · Temporal Rewriting — Overview
-Strategy 15 is **Temporal Rewriting**, which handles one of the most common but overlooked problems in search: time.
+          notes: `### Temporal Rewriting — Overview
+[conversational] Strategy 15 is **Temporal Rewriting**, which handles one of the most common but overlooked problems in search: time.
 #### 🎯 What Is It?
 When a user asks for "latest OpenAI API quotas," what does "latest" mean? Today? This month? This year? Temporal rewriting **makes time references explicit** by resolving relative dates, adding date ranges, and boosting recency for time-sensitive topics.
 #### ✅ Pros
-The good stuff: it **reduces stale and outdated results** — no more getting 2019 pricing when the user wants 2024 data. It provides **significant relevance gains** for time-sensitive topics. It **improves specificity** for versioned documentation — "React 18" vs "React 19" makes a huge difference. And it **handles implicit temporal context** automatically — "latest" and "current" get resolved to actual dates.
+[pleased] The good stuff: it **reduces stale and outdated results** — no more getting 2019 pricing when the user wants 2024 data. It provides **significant relevance gains** for time-sensitive topics. It **improves specificity** for versioned documentation — "React 18" vs "React 19" makes a huge difference. And it **handles implicit temporal context** automatically — "latest" and "current" get resolved to actual dates.
 #### 🕐 When to Use This?
-Best for **news and current events**, **product pricing and availability**, **API documentation and changelogs**, **policy and regulation updates**, and **documentation with versioning**.
-Let's see the mechanics.`
+[reassuringly] Best for **news and current events**, **product pricing and availability**, **API documentation and changelogs**, **policy and regulation updates**, and **documentation with versioning**.
+[conversational] Let's see the mechanics.`
         },
         {
           id: 63,
@@ -2368,12 +2368,12 @@ Let's see the mechanics.`
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: `### 63 · Temporal Rewriting — How It Works
+          notes: `### Temporal Rewriting — How It Works
 Temporal rewriting resolves and enhances time aspects through several techniques.
 #### 🔄 The Process
 **Relative time normalization** converts expressions like "yesterday," "last month," or "recently" into specific dates. **Adding explicit date ranges** constrains results to relevant time periods. **Recency boosting** prioritizes newer documents for topics where freshness matters. And **resolving ambiguous temporal references** clarifies what "latest" or "current" means in context.
-This is surprisingly impactful. Consider a search for "Python best practices" — results from 2018 recommending Python 2 are actively harmful. By adding a time constraint, you ensure the user gets current, relevant information.
-Let's see the implementation.`
+This is surprisingly impactful. [storytelling] Consider a search for "Python best practices" — results from 2018 recommending Python 2 are actively harmful. By adding a time constraint, you ensure the user gets current, relevant information.
+[conversational] Let's see the implementation.`
         },
         {
           id: 64,
@@ -2406,14 +2406,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: `### 64 · Temporal Rewriting — Implementation
-The implementation combines date parsing with LLM-powered time resolution.
+          notes: `### Temporal Rewriting — Implementation
+[lecture] The implementation combines date parsing with LLM-powered time resolution.
 #### 💻 The Prompt
-The prompt provides the current date and asks the LLM to normalize any relative time expressions to absolute dates, then add an explicit date range that's most relevant to the query. The output format includes the original query plus a "from start date to end date" suffix.
+[lecture] The prompt provides the current date and asks the LLM to normalize any relative time expressions to absolute dates, then add an explicit date range that's most relevant to the query. The output format includes the original query plus a "from start date to end date" suffix.
 #### ⚙️ The Code
-The implementation is clean: get the current date, pass it along with the query to the LLM, and receive a time-normalized rewrite. The LLM handles both explicit relative terms like "last week" and implicit temporal context like "latest" or "current."
+[lecture] The implementation is clean: get the current date, pass it along with the query to the LLM, and receive a time-normalized rewrite. The LLM handles both explicit relative terms like "last week" and implicit temporal context like "latest" or "current."
 A practical tip: you can implement basic temporal rewriting with **simple regex rules** for common patterns like "today," "this year," "last quarter." Fall back to the LLM only for complex or ambiguous temporal expressions.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 65,
@@ -2437,14 +2437,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: `### 65 · Temporal Rewriting — Example & Considerations
+          notes: `### Temporal Rewriting — Example & Considerations
 Here's temporal rewriting in action.
 #### 📝 Before and After
-The user searches "latest OpenAI API quotas." After temporal rewriting, it becomes "OpenAI API rate limits as of 2025-11; changes in 2024-2025." Now the retrieval system knows to prioritize recent documents and focus on the specific time period that matters.
+[lecture] The user searches "latest OpenAI API quotas." After temporal rewriting, it becomes "OpenAI API rate limits as of 2025-11; changes in 2024-2025." Now the retrieval system knows to prioritize recent documents and focus on the specific time period that matters.
 #### ⚠️ Watch Out For
-The risks: it **requires a fresh and updated index** — temporal constraints are useless if your documents don't have accurate timestamps. It **may miss historically relevant information** that provides important context. It **needs fine-tuning for specific domains** — "latest" means different things in fast-moving tech versus slow-changing legal. And it can **over-specify time constraints**, filtering out relevant documents that don't have explicit dates.
-The key insight: temporal rewriting is a **quick win** with high impact. Even basic date normalization can significantly improve result relevance. Start simple with regex-based rules and add LLM-based resolution for complex cases.
-Next, Strategy 16: Domain-Specific Rewriting.`
+[firmly] The risks: it **requires a fresh and updated index** — temporal constraints are useless if your documents don't have accurate timestamps. It **may miss historically relevant information** that provides important context. It **needs fine-tuning for specific domains** — "latest" means different things in fast-moving tech versus slow-changing legal. And it can **over-specify time constraints**, filtering out relevant documents that don't have explicit dates.
+[firmly] The key insight: temporal rewriting is a **quick win** with high impact. Even basic date normalization can significantly improve result relevance. Start simple with regex-based rules and add LLM-based resolution for complex cases.
+[conversational] Next, Strategy 16: Domain-Specific Rewriting.`
         }
       ]
     },
@@ -2479,15 +2479,15 @@ Next, Strategy 16: Domain-Specific Rewriting.`
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: `### 66 · Domain-Specific Rewriting — Overview
-Strategy 16 is **Domain-Specific Rewriting**, which is similar to semantic bridging but goes deeper into domain expertise.
+          notes: `### Domain-Specific Rewriting — Overview
+[conversational] Strategy 16 is **Domain-Specific Rewriting**, which is similar to semantic bridging but goes deeper into domain expertise.
 #### 🎯 What Is It?
 While semantic bridging maps terms to ontologies, domain-specific rewriting **fully translates** lay queries into expert-level formulations with field-specific constraints. It doesn't just replace "blood thinner" with "anticoagulant" — it adds specific drug names, complication types, and field tags.
 #### ✅ Pros
-The good stuff: **high precision in specialized corpora** because queries match expert terminology exactly. **Better matching to expert terminology** that documents actually use. **Improved semantic relevance** across the board. And **efficient filtering via field constraints** that narrow the search space.
+[pleased] The good stuff: **high precision in specialized corpora** because queries match expert terminology exactly. **Better matching to expert terminology** that documents actually use. **Improved semantic relevance** across the board. And **efficient filtering via field constraints** that narrow the search space.
 #### 🕐 When to Use This?
-Best for **legal research**, **medical and healthcare information**, **financial and investment analysis**, **technical engineering documentation**, and **scientific literature search**.
-Let's see how it works.`
+[reassuringly] Best for **legal research**, **medical and healthcare information**, **financial and investment analysis**, **technical engineering documentation**, and **scientific literature search**.
+[conversational] Let's see how it works.`
         },
         {
           id: 67,
@@ -2506,12 +2506,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: `### 67 · Domain-Specific Rewriting — How It Works
-The system maps queries to domain terminology and applies field constraints.
+          notes: `### Domain-Specific Rewriting — How It Works
+[lecture] The system maps queries to domain terminology and applies field constraints.
 #### 🔄 The Process
-The system uses **specialized domain lexicons and ontologies** — curated vocabularies for each field. It applies **field-specific constraints and filters** — like specifying "pharmacology" as the field for a drug query. It performs **terminology standardization** — ensuring consistent use of canonical terms. And it leverages **expert-guided jargon translation** — mapping lay descriptions to precise technical language.
-Think of it like having a specialist librarian for each domain. When you walk into a medical library and ask about "blood thinners," the librarian knows to search for anticoagulants, specific drug classes, and relevant medical subfields.
-Let's see the implementation.`
+[lecture] The system uses **specialized domain lexicons and ontologies** — curated vocabularies for each field. It applies **field-specific constraints and filters** — like specifying "pharmacology" as the field for a drug query. It performs **terminology standardization** — ensuring consistent use of canonical terms. And it leverages **expert-guided jargon translation** — mapping lay descriptions to precise technical language.
+[storytelling] Think of it like having a specialist librarian for each domain. When you walk into a medical library and ask about "blood thinners," the librarian knows to search for anticoagulants, specific drug classes, and relevant medical subfields.
+[conversational] Let's see the implementation.`
         },
         {
           id: 68,
@@ -2549,14 +2549,14 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: `### 68 · Domain-Specific Rewriting — Implementation
-The implementation loads domain ontologies and applies them to queries.
+          notes: `### Domain-Specific Rewriting — Implementation
+[lecture] The implementation loads domain ontologies and applies them to queries.
 #### 💻 The Prompt
-The prompt instructs the LLM to rewrite the query using domain-appropriate terminology, preserving the original intent but using precise technical terms, standard classifications, and field constraints.
+[lecture] The prompt instructs the LLM to rewrite the query using domain-appropriate terminology, preserving the original intent but using precise technical terms, standard classifications, and field constraints.
 #### ⚙️ The Code
-The code loads a domain-specific ontology, generates the domain-aware rewrite using the LLM with the ontology as context, and then adds field constraints specific to the domain. The result is a query that looks like it was written by a domain expert.
+[lecture] The code loads a domain-specific ontology, generates the domain-aware rewrite using the LLM with the ontology as context, and then adds field constraints specific to the domain. The result is a query that looks like it was written by a domain expert.
 A practical consideration: you can build lightweight domain ontologies by extracting terms from your own corpus. You don't need a full medical ontology — just a mapping of the most common lay terms to expert equivalents for your specific document collection.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 69,
@@ -2580,14 +2580,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: `### 69 · Domain-Specific Rewriting — Example & Considerations
+          notes: `### Domain-Specific Rewriting — Example & Considerations
 Here's a medical example.
 #### 📝 Before and After
-The user searches "blood thinner side effects." After domain-specific rewriting, it becomes "anticoagulant adverse effects: warfarin, DOACs 👉 'dee-oh-aks' (apixaban, rivaroxaban), hemorrhagic complications field:pharmacology." The rewrite adds specific drug names, drug classes, complication types, and a field constraint — everything a medical professional would search for.
+[lecture] The user searches "blood thinner side effects." After domain-specific rewriting, it becomes "anticoagulant adverse effects: warfarin, DOACs 👉 'dee-oh-aks' (apixaban, rivaroxaban), hemorrhagic complications field:pharmacology." The rewrite adds specific drug names, drug classes, complication types, and a field constraint — everything a medical professional would search for.
 #### ⚠️ Watch Out For
-The challenges: it **requires domain-specific knowledge and lexicons** that take effort to build. It's **harder to maintain across evolving domains** as new terminology emerges. It **may over-specialize simple queries** that don't need expert-level formulation. And it **needs separate models per domain**, which increases infrastructure complexity.
-The key insight: domain-specific rewriting delivers the **highest precision** for specialized searches. If your RAG system serves a specific vertical like legal, medical, or financial, this strategy is essential.
-Next, Strategy 17: Intent Classification and Rewriting.`
+[lecture] The challenges: it **requires domain-specific knowledge and lexicons** that take effort to build. It's **harder to maintain across evolving domains** as new terminology emerges. It **may over-specialize simple queries** that don't need expert-level formulation. And it **needs separate models per domain**, which increases infrastructure complexity.
+[firmly] The key insight: domain-specific rewriting delivers the **highest precision** for specialized searches. If your RAG system serves a specific vertical like legal, medical, or financial, this strategy is essential.
+[conversational] Next, Strategy 17: Intent Classification and Rewriting.`
         }
       ]
     },
@@ -2621,15 +2621,15 @@ Next, Strategy 17: Intent Classification and Rewriting.`
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: `### 70 · Intent Classification — Overview
-Strategy 17 is **Intent Classification and Rewriting**, which acts as a **router** that directs queries to the most appropriate rewriting strategy.
+          notes: `### Intent Classification — Overview
+[conversational] Strategy 17 is **Intent Classification and Rewriting**, which acts as a **router** that directs queries to the most appropriate rewriting strategy.
 #### 🎯 What Is It?
 Instead of applying the same rewriting strategy to every query, intent classification first figures out **what kind of query it is**, then applies the strategy that works best for that type. A lookup query gets entity-centric rewriting. A comparison query gets multi-query generation. A troubleshooting query gets step-back prompting. It's like having a traffic controller for your query rewriting pipeline.
 #### ✅ Pros
-The good stuff: **centralized policy control** — you manage all strategies from one place. **Highly scalable** across domains and query types. It **adapts to varied query patterns** automatically. And you can **optimize different metrics per intent** — precision for lookups, recall for comparisons.
+[pleased] The good stuff: **centralized policy control** — you manage all strategies from one place. **Highly scalable** across domains and query types. It **adapts to varied query patterns** automatically. And you can **optimize different metrics per intent** — precision for lookups, recall for comparisons.
 #### 🕐 When to Use This?
-Best for **mixed query workloads**, **systems with agent-based routing**, **enterprise search with diverse needs**, and **multi-domain knowledge bases**.
-Let's see the routing logic.`
+[reassuringly] Best for **mixed query workloads**, **systems with agent-based routing**, **enterprise search with diverse needs**, and **multi-domain knowledge bases**.
+[conversational] Let's see the routing logic.`
         },
         {
           id: 71,
@@ -2648,12 +2648,12 @@ Let's see the routing logic.`
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: `### 71 · Intent Classification — How It Works
-The system classifies queries into intent categories and routes them to specific strategies.
+          notes: `### Intent Classification — How It Works
+[lecture] The system classifies queries into intent categories and routes them to specific strategies.
 #### 🔄 The Routing Map
 **Lookup queries** go to entity-centric rewriting — "What is X?" gets entity disambiguation and enrichment. **Comparison queries** go to multi-query and structured expansion — "A vs B" gets split into parallel searches. **Troubleshooting queries** go to step-back prompting and domain-specific rewriting — error messages get abstracted to root causes. **Generation queries** go to template-based rewriting — "Write me a" gets structured templates.
-The power of this approach is that each query type gets the **optimal strategy**, rather than a one-size-fits-all approach. This is especially important in production systems where query types are diverse.
-Let's see the implementation.`
+[firmly] The power of this approach is that each query type gets the **optimal strategy**, rather than a one-size-fits-all approach. This is especially important in production systems where query types are diverse.
+[conversational] Let's see the implementation.`
         },
         {
           id: 72,
@@ -2689,14 +2689,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: `### 72 · Intent Classification — Implementation
-The implementation combines an intent classifier with a strategy router.
+          notes: `### Intent Classification — Implementation
+[lecture] The implementation combines an intent classifier with a strategy router.
 #### 💻 The Prompt
-The prompt classifies the query into one of four categories: lookup, compare, troubleshoot, or generate. It then rewrites the query optimized for that specific intent type and returns both the intent label and the rewritten query.
+[lecture] The prompt classifies the query into one of four categories: lookup, compare, troubleshoot, or generate. It then rewrites the query optimized for that specific intent type and returns both the intent label and the rewritten query.
 #### ⚙️ The Code
-The code uses an intent classifier to predict the query type, looks up the appropriate strategy from a router dictionary, and applies that strategy's rewrite method. Clean and modular — you can add new intents and strategies without changing the core logic.
+[lecture] The code uses an intent classifier to predict the query type, looks up the appropriate strategy from a router dictionary, and applies that strategy's rewrite method. Clean and modular — you can add new intents and strategies without changing the core logic.
 A practical tip: start with a simple rule-based classifier using keyword patterns before investing in a trained model. Phrases containing "vs" or "compare" are comparison intents. Questions starting with "how to fix" are troubleshooting. You can upgrade to ML-based classification later.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 73,
@@ -2720,15 +2720,15 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: `### 73 · Intent Classification — Example & Considerations
+          notes: `### Intent Classification — Example & Considerations
 Here's intent-based routing in action.
 #### 📝 Before and After
-The user searches "fix 500 error nginx." The system classifies this as a **troubleshoot** intent. The troubleshooting strategy rewrites it to "Nginx 500 error troubleshooting steps for Ubuntu 22.04 — common causes, log file analysis, and configuration fixes." The strategy adds platform context, problem categories, and specific troubleshooting aspects that improve retrieval.
+[cautiously] The user searches "fix 500 error nginx." The system classifies this as a **troubleshoot** intent. The troubleshooting strategy rewrites it to "Nginx 500 error troubleshooting steps for Ubuntu 22.04 — common causes, log file analysis, and configuration fixes." The strategy adds platform context, problem categories, and specific troubleshooting aspects that improve retrieval.
 #### ⚠️ Watch Out For
-The challenges: you need a **high-accuracy intent model** because misclassification leads to the wrong strategy. The **intent taxonomy needs maintenance** as new query patterns emerge. **Multi-intent queries are challenging** — what if a query is both a comparison and a troubleshooting request? And there's **more engineering overhead** to build and maintain the routing infrastructure.
+[lecture] The challenges: you need a **high-accuracy intent model** because misclassification leads to the wrong strategy. The **intent taxonomy needs maintenance** as new query patterns emerge. **Multi-intent queries are challenging** — what if a query is both a comparison and a troubleshooting request? And there's **more engineering overhead** to build and maintain the routing infrastructure.
 > 🎤 Ask the audience: "What types of queries do your users most commonly ask? Lookups? Comparisons? Troubleshooting?"
-The key insight: intent classification is the **glue** that connects all other strategies. Once you have it, you can pick and choose which strategies to apply to which query types.
-Next, Strategy 18: Diverse Multi-Query Rewriting.`
+[firmly] The key insight: intent classification is the **glue** that connects all other strategies. Once you have it, you can pick and choose which strategies to apply to which query types.
+[conversational] Next, Strategy 18: Diverse Multi-Query Rewriting.`
         }
       ]
     },
@@ -2762,15 +2762,15 @@ Next, Strategy 18: Diverse Multi-Query Rewriting.`
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: `### 74 · Diverse Multi-Query Rewriting — Overview
-Strategy 18 is **Diverse Multi-Query Rewriting**, or DMQR 👉 'dee-em-queue-ar'. It's like multi-query generation on steroids.
+          notes: `### Diverse Multi-Query Rewriting — Overview
+[conversational] Strategy 18 is **Diverse Multi-Query Rewriting**, or DMQR 👉 'dee-em-queue-ar'. It's like multi-query generation on steroids.
 #### 🎯 What Is It?
-Regular multi-query generation creates multiple query variants, but they can end up being too similar to each other. DMQR **explicitly enforces diversity** among the generated queries, ensuring each variant covers a genuinely different facet or perspective of the user's intent. Think of it as sending out scouts in every direction instead of sending them all down the same path.
+Regular multi-query generation creates multiple query variants, but they can end up being too similar to each other. DMQR **explicitly enforces diversity** among the generated queries, ensuring each variant covers a genuinely different facet or perspective of the user's intent. [storytelling] Think of it as sending out scouts in every direction instead of sending them all down the same path.
 #### ✅ Pros
-The good stuff: **comprehensive coverage** across different facets of a topic. It **improves recall for complex topics** by exploring multiple angles. It **handles ambiguous queries** better because different interpretations all get explored. And it **surfaces different perspectives** that a single query would miss.
+[pleased] The good stuff: **comprehensive coverage** across different facets of a topic. It **improves recall for complex topics** by exploring multiple angles. It **handles ambiguous queries** better because different interpretations all get explored. And it **surfaces different perspectives** that a single query would miss.
 #### 🕐 When to Use This?
-Best for **broad, ambiguous topics**, **exploratory search needs**, **queries with multiple potential interpretations**, and scenarios requiring **high recall across different facets** of a subject.
-Let's see how diversity is enforced.`
+[reassuringly] Best for **broad, ambiguous topics**, **exploratory search needs**, **queries with multiple potential interpretations**, and scenarios requiring **high recall across different facets** of a subject.
+[conversational] Let's see how diversity is enforced.`
         },
         {
           id: 75,
@@ -2789,12 +2789,12 @@ Let's see how diversity is enforced.`
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: `### 75 · Diverse Multi-Query Rewriting — How It Works
-The key differentiator is the **explicit diversity constraints**.
+          notes: `### Diverse Multi-Query Rewriting — How It Works
+[firmly] The key differentiator is the **explicit diversity constraints**.
 #### 🔄 The Process
-The system **produces multiple rewrites covering different angles** — not just paraphrases but genuinely different perspectives. It **applies diversity penalties** to minimize overlap between generated queries. It uses **controlled sampling techniques** like high-temperature generation with deduplication. And it **penalizes n-gram overlap** between queries to ensure each one brings something new to the table.
-The n-gram penalty is clever: if two generated queries share more than three consecutive words, the system penalizes or regenerates one of them. This mechanical check ensures diversity even when the LLM tends to produce similar outputs.
-Let's see the implementation.`
+[lecture] The system **produces multiple rewrites covering different angles** — not just paraphrases but genuinely different perspectives. It **applies diversity penalties** to minimize overlap between generated queries. It uses **controlled sampling techniques** like high-temperature generation with deduplication. And it **penalizes n-gram overlap** between queries to ensure each one brings something new to the table.
+[confidently] The n-gram penalty is clever: if two generated queries share more than three consecutive words, the system penalizes or regenerates one of them. This mechanical check ensures diversity even when the LLM tends to produce similar outputs.
+[conversational] Let's see the implementation.`
         },
         {
           id: 76,
@@ -2828,14 +2828,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: `### 76 · Diverse Multi-Query Rewriting — Implementation
-The implementation generates queries with explicit diversity checks.
+          notes: `### Diverse Multi-Query Rewriting — Implementation
+[lecture] The implementation generates queries with explicit diversity checks.
 #### 💻 The Prompt
-The prompt asks for six diverse rewrites, each covering a different aspect: different intents, different timeframes, different terminology. It explicitly constrains n-gram overlap to no more than three words between rewrites. This structural constraint forces the LLM to think creatively about different angles.
+[lecture] The prompt asks for six diverse rewrites, each covering a different aspect: different intents, different timeframes, different terminology. It explicitly constrains n-gram overlap to no more than three words between rewrites. This structural constraint forces the LLM to think creatively about different angles.
 #### ⚙️ The Code
 After generating the rewrites, the code embeds them all and calculates pairwise similarity. It then selects a diverse subset by filtering out queries that are too similar to each other. The result is a set of queries that collectively cover the broadest possible range of the topic.
 A practical tip: you can also use **maximal marginal relevance** (MMR 👉 'em-em-ar') selection after generating many candidates to pick the most diverse subset.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 77,
@@ -2867,14 +2867,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: `### 77 · Diverse Multi-Query Rewriting — Example & Considerations
+          notes: `### Diverse Multi-Query Rewriting — Example & Considerations
 Here's DMQR tackling a broad topic.
 #### 📝 Before and After
-The user searches "data governance framework." DMQR generates six diverse queries covering enterprise policies, software tools, regulatory compliance, case studies, effectiveness metrics, and risk management. Each query targets a completely different facet of data governance. Together, they provide comprehensive coverage that no single query could achieve.
+[lecture] The user searches "data governance framework." DMQR generates six diverse queries covering enterprise policies, software tools, regulatory compliance, case studies, effectiveness metrics, and risk management. Each query targets a completely different facet of data governance. Together, they provide comprehensive coverage that no single query could achieve.
 #### ⚠️ Watch Out For
-The costs: **fusion and deduplication cost** — combining results from six queries requires careful merging. **Careful reranking is needed** to sort through the combined results. **Higher token usage** from generating and processing multiple queries. And the **implementation is more complex** than single-query approaches.
-The key insight: DMQR is your best tool for **exploratory search** where the user's intent is broad or unclear. It casts the widest net possible while ensuring each cast covers new territory.
-Next, Strategy 19: Feedback-Based Rewriting.`
+[lecture] The costs: **fusion and deduplication cost** — combining results from six queries requires careful merging. **Careful reranking is needed** to sort through the combined results. **Higher token usage** from generating and processing multiple queries. And the **implementation is more complex** than single-query approaches.
+[firmly] The key insight: DMQR is your best tool for **exploratory search** where the user's intent is broad or unclear. It casts the widest net possible while ensuring each cast covers new territory.
+[conversational] Next, Strategy 19: Feedback-Based Rewriting.`
         }
       ]
     },
@@ -2908,15 +2908,15 @@ Next, Strategy 19: Feedback-Based Rewriting.`
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: `### 78 · Feedback-Based Rewriting — Overview
-Strategy 19 is **Feedback-Based Rewriting**, which learns from actual user behavior to improve queries over time.
+          notes: `### Feedback-Based Rewriting — Overview
+[conversational] Strategy 19 is **Feedback-Based Rewriting**, which learns from actual user behavior to improve queries over time.
 #### 🎯 What Is It?
-This strategy uses **real user interaction data** — clicks, ratings, dwell time, session behavior — to refine how queries are rewritten. If users who search for "vector database comparison" consistently click on documents about HNSW and FAISS, the system learns to include those terms in future rewrites of similar queries. It's the **only strategy that gets smarter over time**.
+[lecture] This strategy uses **real user interaction data** — clicks, ratings, dwell time, session behavior — to refine how queries are rewritten. If users who search for "vector database comparison" consistently click on documents about HNSW and FAISS, the system learns to include those terms in future rewrites of similar queries. It's the **only strategy that gets smarter over time**.
 #### ✅ Pros
-The good stuff: it **improves continuously** with usage — the more users interact, the better the rewrites become. It's **user-aligned and personalized** because it learns what users actually want. It **adapts to changing content and trends** automatically. And it **leverages collective intelligence** — one user's successful search helps all future users.
+[pleased] The good stuff: it **improves continuously** with usage — the more users interact, the better the rewrites become. It's **user-aligned and personalized** because it learns what users actually want. It **adapts to changing content and trends** automatically. And it **leverages collective intelligence** — one user's successful search helps all future users.
 #### 🕐 When to Use This?
-Best for **production systems with telemetry**, **high-volume search applications**, **domain-specific search engines**, and **customer-facing RAG systems** with enough traffic to generate meaningful signals.
-Let's see the mechanism.`
+[reassuringly] Best for **production systems with telemetry**, **high-volume search applications**, **domain-specific search engines**, and **customer-facing RAG systems** with enough traffic to generate meaningful signals.
+[conversational] Let's see the mechanism.`
         },
         {
           id: 79,
@@ -2935,12 +2935,12 @@ Let's see the mechanism.`
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: `### 79 · Feedback-Based Rewriting — How It Works
-The system uses feedback signals to progressively refine queries.
+          notes: `### Feedback-Based Rewriting — How It Works
+[lecture] The system uses feedback signals to progressively refine queries.
 #### 🔄 The Process
 It **promotes terms and entities from clicked documents** — if users consistently click on documents containing "HNSW," that term gets boosted in future queries about vector databases. It **suppresses noise terms** with low engagement — terms that appear in skipped results get demoted. It applies **collaborative filtering techniques** — "users who searched for X also found Y useful." And it **incrementally updates term weights** based on ongoing feedback.
-Think of it like Amazon's recommendation system, but for search queries. Instead of "customers who bought this also bought," it's "users who searched this found these terms useful."
-Let's look at the implementation.`
+[storytelling] Think of it like Amazon's recommendation system, but for search queries. Instead of "customers who bought this also bought," it's "users who searched this found these terms useful."
+[conversational] Let's look at the implementation.`
         },
         {
           id: 80,
@@ -2975,14 +2975,14 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: `### 80 · Feedback-Based Rewriting — Implementation
-The implementation connects user telemetry to the rewriting pipeline.
+          notes: `### Feedback-Based Rewriting — Implementation
+[lecture] The implementation connects user telemetry to the rewriting pipeline.
 #### 💻 The Prompt
-The prompt provides the original query along with clicked documents and user ratings, then asks the LLM to suggest a refined query that emphasizes terms found in positively rated documents.
+[lecture] The prompt provides the original query along with clicked documents and user ratings, then asks the LLM to suggest a refined query that emphasizes terms found in positively rated documents.
 #### ⚙️ The Code
-The code retrieves the user's click history, extracts documents they engaged with positively, identifies common terms across those documents, and uses the LLM to generate a refined query. The refined query naturally incorporates the vocabulary and concepts that real users found useful.
+[lecture] The code retrieves the user's click history, extracts documents they engaged with positively, identifies common terms across those documents, and uses the LLM to generate a refined query. The refined query naturally incorporates the vocabulary and concepts that real users found useful.
 A practical consideration: you need a **minimum volume threshold** before feedback signals are reliable. For queries with very few interactions, fall back to other strategies until you have enough data.
-Let's see an example.`
+[conversational] Let's see an example.`
         },
         {
           id: 81,
@@ -3007,14 +3007,14 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: `### 81 · Feedback-Based Rewriting — Example & Considerations
+          notes: `### Feedback-Based Rewriting — Example & Considerations
 Here's feedback-based rewriting learning from user behavior.
 #### 📝 Before and After
-The user searches "vector database comparison." The system notices that previous users who searched similar queries consistently clicked on documents about HNSW vs IVF index types, FAISS, Qdrant 👉 'queue-drant', and Milvus 👉 'mil-vus'. It rewrites to "vector database comparison HNSW vs IVF FAISS Qdrant Milvus efSearch time-accuracy tradeoff." This enriched query reflects what real users actually care about.
+[lecture] The user searches "vector database comparison." The system notices that previous users who searched similar queries consistently clicked on documents about HNSW vs IVF index types, FAISS, Qdrant 👉 'queue-drant', and Milvus 👉 'mil-vus'. It rewrites to "vector database comparison HNSW vs IVF FAISS Qdrant Milvus efSearch time-accuracy tradeoff." This enriched query reflects what real users actually care about.
 #### ⚠️ Watch Out For
-The challenges: it **requires a data pipeline and telemetry** infrastructure, which is a significant investment. **Cold-start issues** mean new or rare queries have no feedback data. **Privacy considerations** arise when tracking user behavior. And it can **amplify popularity biases** — popular documents get more clicks, which generates more feedback, which makes them appear even more often.
-The key insight: feedback-based rewriting is the **long game**. It takes time to build up enough data, but once it's running, it continuously improves without manual intervention.
-Next, Strategy 20: Prompt-Based Rewriting.`
+[cautiously] The challenges: it **requires a data pipeline and telemetry** infrastructure, which is a significant investment. **Cold-start issues** mean new or rare queries have no feedback data. **Privacy considerations** arise when tracking user behavior. And it can **amplify popularity biases** — popular documents get more clicks, which generates more feedback, which makes them appear even more often.
+[firmly] The key insight: feedback-based rewriting is the **long game**. It takes time to build up enough data, but once it's running, it continuously improves without manual intervention.
+[conversational] Next, Strategy 20: Prompt-Based Rewriting.`
         }
       ]
     },
@@ -3048,15 +3048,15 @@ Next, Strategy 20: Prompt-Based Rewriting.`
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: `### 82 · Prompt-Based Rewriting — Overview
-Strategy 20 is **Prompt-Based Rewriting**, and it's the **easiest strategy to deploy** — you literally just write a good prompt.
+          notes: `### Prompt-Based Rewriting — Overview
+[conversational] Strategy 20 is **Prompt-Based Rewriting**, and it's the **easiest strategy to deploy** — you literally just write a good prompt.
 #### 🎯 What Is It?
 Instead of building complex pipelines, ontologies, or feedback systems, you craft a **well-designed prompt** that instructs an LLM to rewrite any query into a retrieval-optimized format. The prompt includes rules, examples, and guidelines. It's like writing an instruction manual for a human assistant: "When you receive a query, add the main entity, temporal context, document type preference, and essential constraints."
 #### ✅ Pros
-The good stuff: **fast to deploy** with virtually no infrastructure. **Highly flexible** across different query types. **Easy to update** — just edit the prompt. And it **works with any capable LLM** without fine-tuning.
+[pleased] The good stuff: **fast to deploy** with virtually no infrastructure. **Highly flexible** across different query types. **Easy to update** — just edit the prompt. And it **works with any capable LLM** without fine-tuning.
 #### 🕐 When to Use This?
 Perfect for **quick wins without complex pipelines**, **rapid prototyping and testing**, **low engineering lift** projects, and scenarios where you want **minimal infrastructure changes**.
-Let's see how it works.`
+[conversational] Let's see how it works.`
         },
         {
           id: 83,
@@ -3075,12 +3075,12 @@ Let's see how it works.`
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: `### 83 · Prompt-Based Rewriting — How It Works
-The approach uses well-crafted system prompts with few-shot examples.
+          notes: `### Prompt-Based Rewriting — How It Works
+[lecture] The approach uses well-crafted system prompts with few-shot examples.
 #### 🔄 The Process
-The prompt **enforces consistent style and structure** across all rewrites. It **includes critical information fields** that should always be present in the rewritten query. It **guides the LLM** to maintain specific patterns and formatting. And it **applies guardrails** against hallucination by instructing the model not to add information it's unsure about.
-The few-shot examples are crucial — they show the LLM exactly what a good rewrite looks like. Include three to five examples covering different query types, and the LLM will generalize the pattern to new queries.
-Let's look at the implementation.`
+[firmly] The prompt **enforces consistent style and structure** across all rewrites. It **includes critical information fields** that should always be present in the rewritten query. It **guides the LLM** to maintain specific patterns and formatting. And it **applies guardrails** against hallucination by instructing the model not to add information it's unsure about.
+[firmly] The few-shot examples are crucial — they show the LLM exactly what a good rewrite looks like. Include three to five examples covering different query types, and the LLM will generalize the pattern to new queries.
+[conversational] Let's look at the implementation.`
         },
         {
           id: 84,
@@ -3121,14 +3121,14 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: `### 84 · Prompt-Based Rewriting — Implementation
-The implementation is refreshingly simple.
+          notes: `### Prompt-Based Rewriting — Implementation
+[lecture] The implementation is refreshingly simple.
 #### 💻 The Prompt
-The prompt instructs the LLM to make the query explicit, self-contained, and retrieval-optimized. It specifies what to include: main entity, temporal context, document type preference, and essential constraints. Then it provides examples showing before-and-after transformations — "nodejs security" becomes "Node.js security best practices 2024 with code examples for protecting Express applications."
+[firmly] The prompt instructs the LLM to make the query explicit, self-contained, and retrieval-optimized. It specifies what to include: main entity, temporal context, document type preference, and essential constraints. Then it provides examples showing before-and-after transformations — "nodejs security" becomes "Node.js security best practices 2024 with code examples for protecting Express applications."
 #### ⚙️ The Code
-The code is minimal: set a system prompt establishing the LLM as a query optimization expert, then pass the user's query through the template. That's it. No NER models, no knowledge bases, no feedback loops — just a well-crafted prompt.
-This is why prompt-based rewriting is the **starting point** for most teams. You can have it running in production within an hour. Then gradually add more sophisticated strategies as needed.
-Let's see an example.`
+[lecture] The code is minimal: set a system prompt establishing the LLM as a query optimization expert, then pass the user's query through the template. That's it. No NER models, no knowledge bases, no feedback loops — just a well-crafted prompt.
+[confidently] This is why prompt-based rewriting is the **starting point** for most teams. You can have it running in production within an hour. Then gradually add more sophisticated strategies as needed.
+[conversational] Let's see an example.`
         },
         {
           id: 85,
@@ -3152,13 +3152,13 @@ Let's see an example.`
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: `### 85 · Prompt-Based Rewriting — Example & Considerations
-Here's the simplest strategy delivering real results.
+          notes: `### Prompt-Based Rewriting — Example & Considerations
+[warmly] Here's the simplest strategy delivering real results.
 #### 📝 Before and After
-The user types "api auth" — two words. After prompt-based rewriting, it becomes "OAuth 2.0 authentication for Acme API docs 2024, guide or tutorial with implementation examples." The prompt-based approach added the authentication protocol, temporal context, the company name from context, document type preferences, and specificity. All from a single prompt call.
+[warmly] The user types "api auth" — two words. After prompt-based rewriting, it becomes "OAuth 2.0 authentication for Acme API docs 2024, guide or tutorial with implementation examples." The prompt-based approach added the authentication protocol, temporal context, the company name from context, document type preferences, and specificity. All from a single prompt call.
 #### ⚠️ Watch Out For
-The risks: **prompt drift over time** — as your corpus evolves, the prompt may need updating. **Quality varies by LLM capability** — a smaller model may produce worse rewrites. It's **less structured than rule-based systems**, so outputs can be unpredictable. And it's **harder to enforce strict constraints** compared to template-based approaches.
-The bottom line: prompt-based rewriting is your **MVP strategy**. Start here, measure the improvement, and then decide which of the more complex strategies to add based on where your system still struggles.
+[warmly] The risks: **prompt drift over time** — as your corpus evolves, the prompt may need updating. **Quality varies by LLM capability** — a smaller model may produce worse rewrites. It's **less structured than rule-based systems**, so outputs can be unpredictable. And it's **harder to enforce strict constraints** compared to template-based approaches.
+[pleased] The bottom line: prompt-based rewriting is your **MVP strategy**. Start here, measure the improvement, and then decide which of the more complex strategies to add based on where your system still struggles.
 Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all.`
         }
       ]
@@ -3193,14 +3193,14 @@ Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 86 · Adaptive Query Rewriting — Overview
-Our final strategy, number 21, is **Adaptive Query Rewriting** — the grand orchestrator.
+          notes: `### Adaptive Query Rewriting — Overview
+[warmly] Our final strategy, number 21, is **Adaptive Query Rewriting** — the grand orchestrator.
 #### 🎯 What Is It?
-Adaptive rewriting doesn't commit to a single strategy. Instead, it **dynamically selects the best strategy** for each query based on the query's characteristics, the conversation context, past performance, and cost constraints. It's like having an experienced engineer who knows all 20 previous strategies and picks the right one for each situation.
+[warmly] Adaptive rewriting doesn't commit to a single strategy. Instead, it **dynamically selects the best strategy** for each query based on the query's characteristics, the conversation context, past performance, and cost constraints. It's like having an experienced engineer who knows all 20 previous strategies and picks the right one for each situation.
 #### ✅ Pros
-The good stuff: **balanced quality and cost optimization** — expensive strategies are only used when they're worth it. **Robust across diverse query types** since it can handle anything. **Self-improving with feedback** as it learns which strategies work best for which queries. And **flexible scaling** — you can allocate more compute for important queries and less for simple ones.
+[warmly] The good stuff: **balanced quality and cost optimization** — expensive strategies are only used when they're worth it. **Robust across diverse query types** since it can handle anything. **Self-improving with feedback** as it learns which strategies work best for which queries. And **flexible scaling** — you can allocate more compute for important queries and less for simple ones.
 #### 🕐 When to Use This?
-Best for **heterogeneous query workloads**, **variable cost and latency constraints**, **production systems with metrics**, and **complex RAG pipelines** that already implement multiple strategies.
+[warmly] Best for **heterogeneous query workloads**, **variable cost and latency constraints**, **production systems with metrics**, and **complex RAG pipelines** that already implement multiple strategies.
 Let's see how it selects strategies.`
         },
         {
@@ -3220,11 +3220,11 @@ Let's see how it selects strategies.`
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 87 · Adaptive Query Rewriting — How It Works
-The system uses a **policy model or agent** to select among available strategies.
+          notes: `### Adaptive Query Rewriting — How It Works
+[warmly] The system uses a **policy model or agent** to select among available strategies.
 #### 🔄 The Decision Factors
-The policy considers **query characteristics** — length, ambiguity level, entity count, complexity. It looks at **conversation context and history** — is this a follow-up? Is the topic established? It uses **past performance signals** — which strategies have worked well for similar queries? And it respects **cost and latency budgets** — if the user needs a fast response, skip the expensive strategies.
-Think of it as a decision tree or a learned policy. Short, ambiguous queries might get sent to clarification. Long, complex queries go to decomposition. Follow-ups go to context-aware rewriting. And simple, clear queries might skip rewriting entirely to save latency.
+[warmly] The policy considers **query characteristics** — length, ambiguity level, entity count, complexity. It looks at **conversation context and history** — is this a follow-up? Is the topic established? It uses **past performance signals** — which strategies have worked well for similar queries? And it respects **cost and latency budgets** — if the user needs a fast response, skip the expensive strategies.
+[storytelling] Think of it as a decision tree or a learned policy. Short, ambiguous queries might get sent to clarification. Long, complex queries go to decomposition. Follow-ups go to context-aware rewriting. And simple, clear queries might skip rewriting entirely to save latency.
 Let's see the implementation.`
         },
         {
@@ -3262,12 +3262,12 @@ Signals:
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 88 · Adaptive Query Rewriting — Implementation
-The implementation uses a policy model to route queries to strategies.
+          notes: `### Adaptive Query Rewriting — Implementation
+[warmly] The implementation uses a policy model to route queries to strategies.
 #### 💻 The Prompt
-The prompt provides the query along with signals like length category, ambiguity score, conversation history, and previous recall metrics. It asks the LLM to choose the optimal strategy, apply it, and return the strategy name, rewritten query, and rationale.
+[warmly] The prompt provides the query along with signals like length category, ambiguity score, conversation history, and previous recall metrics. It asks the LLM to choose the optimal strategy, apply it, and return the strategy name, rewritten query, and rationale.
 #### ⚙️ The Code
-The adaptive rewriter class extracts signals from the query and state, uses a policy model to select the best strategy, applies that strategy, and logs everything for future evaluation. The logging is critical — it's what enables the system to learn and improve over time.
+[warmly] The adaptive rewriter class extracts signals from the query and state, uses a policy model to select the best strategy, applies that strategy, and logs everything for future evaluation. The logging is critical — it's what enables the system to learn and improve over time.
 A practical approach: start with a **rule-based policy** using simple heuristics, then gradually replace it with a **learned policy** trained on your logs. The rule-based version gets you 80% of the benefit with 20% of the complexity.
 Let's see a final example.`
         },
@@ -3296,16 +3296,16 @@ Let's see a final example.`
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 89 · Adaptive Query Rewriting — Example & Considerations
-Let's see the adaptive approach making decisions.
+          notes: `### Adaptive Query Rewriting — Example & Considerations
+[warmly] Let's see the adaptive approach making decisions.
 #### 📝 Before and After
-First example: the query is just "apple." The policy detects an ambiguous short query and routes it to the **clarification strategy**: "Did you mean Apple Inc. products, apple fruit nutrition, or Apple software?" Second example: "compare MongoDB vs PostgreSQL for IoT data" — the policy detects a complex multi-entity comparison and routes it to the **decomposition strategy**, breaking it into focused sub-queries.
+[warmly] First example: the query is just "apple." The policy detects an ambiguous short query and routes it to the **clarification strategy**: "Did you mean Apple Inc. products, apple fruit nutrition, or Apple software?" Second example: "compare MongoDB vs PostgreSQL for IoT data" — the policy detects a complex multi-entity comparison and routes it to the **decomposition strategy**, breaking it into focused sub-queries.
 #### ⚠️ Watch Out For
-The challenges: it **requires policy training** which needs historical data about strategy performance. It **needs an evaluation feedback loop** to continuously improve the policy. The **orchestration is more complex** than any single strategy. And there are **cold-start challenges** when you don't have enough data to train the policy.
+[warmly] The challenges: it **requires policy training** which needs historical data about strategy performance. It **needs an evaluation feedback loop** to continuously improve the policy. The **orchestration is more complex** than any single strategy. And there are **cold-start challenges** when you don't have enough data to train the policy.
 #### 🎉 Wrapping Up
-And that's all twenty-one strategies! Remember, you don't need to implement all of them. Start with **prompt-based rewriting** for a quick win. Add **context-aware rewriting** for chat. Then gradually add more strategies based on where your system struggles. The adaptive approach is the end goal — but it's built on top of the individual strategies we've covered.
+[warmly] And that's all twenty-one strategies! Remember, you don't need to implement all of them. Start with **prompt-based rewriting** for a quick win. Add **context-aware rewriting** for chat. Then gradually add more strategies based on where your system struggles. The adaptive approach is the end goal — but it's built on top of the individual strategies we've covered.
 > 🎤 Ask the audience: "Which strategy are you most excited to try first?"
-Thank you for your attention!`
+[warmly] Thank you for your attention!`
         }
       ]
     }
