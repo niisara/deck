@@ -60,18 +60,18 @@ export const ragLatencyDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1d5a6b',
-          notes: `### 1. 11 Techniques to Reduce RAG Latency
-Welcome everyone! Today we're going to tackle one of the most critical challenges in production RAG systems — **latency** 👉 'LAY-ten-see'. If you've ever built a RAG pipeline and wondered why it takes so long to return answers, this presentation is for you.
+          notes: `### 11 Techniques to Reduce RAG Latency
+[cheerfully] Welcome everyone! [excited] Today we're going to tackle one of the most critical challenges in production RAG systems — **latency** 👉 'LAY-ten-see'. If you've ever built a RAG pipeline and wondered why it takes so long to return answers, this presentation is for you.
 
 #### 🎯 What We'll Cover
-We'll walk through **eleven practical techniques** that you can apply right away to speed up your RAG 👉 'rag' pipelines. These aren't just theoretical ideas — they're battle-tested optimizations used in real production systems. We'll cover four key areas: **embedding and chunking**, **retrieval**, **caching**, and **generation/UX** optimizations.
+[energetic] We'll walk through **eleven practical techniques** that you can apply right away to speed up your RAG 👉 'rag' pipelines. [confidently] These aren't just theoretical ideas — they're battle-tested optimizations used in real production systems. We'll cover four key areas: **embedding and chunking**, **retrieval**, **caching**, and **generation/UX** optimizations.
 
 #### 💡 Why Latency Matters
-Think of it this way — if your RAG system takes five seconds to answer a question, users will get frustrated and stop using it. But if you can get that down to under one second, it feels almost magical. The techniques we'll cover today can collectively reduce your end-to-end latency by 50-90% depending on your setup.
+[conversational] Think of it this way — if your RAG system takes five seconds to answer a question, users will get frustrated and stop using it. [excited] But if you can get that down to under one second, it feels almost magical. The techniques we'll cover today can collectively reduce your end-to-end latency by 50-90% depending on your setup.
 
 > 🎤 Ask the audience: "How many of you have worked with RAG systems before?"
 
-Let's dive in and see how we can make your RAG pipelines lightning fast!`
+[enthusiastically] Let's dive in and see how we can make your RAG pipelines lightning fast!`
         },
         {
           id: 2,
@@ -172,11 +172,11 @@ Let's dive in and see how we can make your RAG pipelines lightning fast!`
             </div>
           ),
           backgroundColor: '#1d5a6b',
-          notes: `### 2. Overview — The 11 Techniques at a Glance
-Here's your roadmap for today. We've organized the eleven techniques into five categories, each targeting a different part of the RAG pipeline.
+          notes: `### Overview — The 11 Techniques at a Glance
+[conversational] Here's your roadmap for today. We've organized the eleven techniques into five categories, each targeting a different part of the RAG pipeline.
 
 #### 🔧 The Categories
-First up, **Embeddings & Chunking** — techniques one and two focus on making your data preparation faster. Then **Retrieval** — techniques three and four speed up how you search through your vector store. **Caching** in techniques five and six is all about avoiding redundant work. **Reranking & Compression** in seven and eight reduce the amount of data your LLM 👉 'ell-ell-em' needs to process. And finally, **Orchestration and Generation/UX** in techniques nine through eleven optimize the overall pipeline flow.
+[lecture] First up, **Embeddings & Chunking** — techniques one and two focus on making your data preparation faster. Then **Retrieval** — techniques three and four speed up how you search through your vector store. **Caching** in techniques five and six is all about avoiding redundant work. **Reranking & Compression** in seven and eight reduce the amount of data your LLM 👉 'ell-ell-em' needs to process. And finally, **Orchestration and Generation/UX** in techniques nine through eleven optimize the overall pipeline flow.
 
 #### 📊 The Pipeline Flow
 \`\`\`mermaid
@@ -191,7 +191,7 @@ flowchart LR
     style D fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000
 \`\`\`
-Each technique targets one or more of these stages. The key insight is that you don't need to apply all eleven — pick the ones that address your biggest bottleneck first.
+[conversational] Each technique targets one or more of these stages. The key insight is that you don't need to apply all eleven — pick the ones that address your biggest bottleneck first.
 
 #### 🎯 Key Takeaway
 [confidently] The key idea is simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. Now let's dive into each technique, starting with smaller embedding models...`
@@ -262,20 +262,20 @@ This technique is particularly powerful because embedding happens on **every sin
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: `### 4. Use Smaller Embedding Models — When to Use
-So when should you reach for a smaller embedding model? There are four main scenarios where this technique really shines.
+          notes: `### Use Smaller Embedding Models — When to Use
+[conversational] So when should you reach for a smaller embedding model? There are four main scenarios where this technique really shines.
 
 #### 📊 High Query Volume
-If your application handles thousands or millions of queries per day, every millisecond saved on embedding adds up. A model that's 5x (five x) faster means you can handle 5x more queries with the same hardware.
+[seriously] If your application handles thousands or millions of queries per day, every millisecond saved on embedding adds up. [pleased] A model that's 5x (five x) faster means you can handle 5x more queries with the same hardware.
 
 #### 📚 Large Document Corpora
-When you're indexing millions of documents, the embedding step can take hours or even days with a large model. Switching to a smaller model can cut that time dramatically — think going from a twelve-hour indexing job to just two hours.
+[lecture] When you're indexing millions of documents, the embedding step can take hours or even days with a large model. [excited] Switching to a smaller model can cut that time dramatically — think going from a twelve-hour indexing job to just two hours.
 
 #### 🔄 Frequent Re-indexing
-If your data changes often and you need to re-embed documents regularly, faster models save both time and compute costs. This is especially important for applications like news aggregation or product catalogs that update constantly.
+[conversational] If your data changes often and you need to re-embed documents regularly, faster models save both time and compute costs. This is especially important for applications like news aggregation or product catalogs that update constantly.
 
 #### 🌍 Multilingual Applications
-Some smaller models like multilingual E5-small 👉 'ee-five small' handle multiple languages efficiently without needing separate models for each language.
+[confidently] Some smaller models like multilingual E5-small 👉 'ee-five small' handle multiple languages efficiently without needing separate models for each language.
 
 [energetic] Now let\'s look at how this actually works under the hood...`
         },
@@ -2921,8 +2921,8 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: `### 58. Key Takeaways
-Alright, let's bring it all together with the key takeaways from our eleven techniques. These are the principles you should remember even if you forget the specific details.
+          notes: `### Key Takeaways
+[warmly] Alright, let's bring it all together with the key takeaways from our eleven techniques. These are the principles you should remember even if you forget the specific details.
 
 #### 🎯 The Core Message
 [lecture] The most important takeaway is this: **you don't need to implement all eleven techniques**. Start by profiling your pipeline to find your biggest bottleneck, then apply the technique that addresses it. One well-chosen optimization often gives you 50% or more of the total possible improvement.
@@ -2931,7 +2931,7 @@ Alright, let's bring it all together with the key takeaways from our eleven tech
 [reassuringly] Think of these techniques as layers. Start with the easy wins — limiting Top-K, adding caching, enabling streaming. These are quick to implement and give immediate results. Then move to the medium-effort techniques like smaller models, reranking, and compression. Finally, tackle the infrastructure-level optimizations like ANN indexes and parallelization when you need to squeeze out every last millisecond.
 
 #### 💡 Measure Everything
-[cautiously] Before and after every optimization, measure both latency and quality. It's tempting to skip evaluation, but without measurement, you can't tell if an optimization actually helped or if it degraded quality in ways you haven't noticed. Track TTFT 👉 'tee-tee-eff-tee' (time-to-first-token), p50, and p95 latency for a complete picture.
+[seriously] Before and after every optimization, measure both latency and quality. It's tempting to skip evaluation, but without measurement, you can't tell if an optimization actually helped or if it degraded quality in ways you haven't noticed. Track TTFT 👉 'tee-tee-eff-tee' (time-to-first-token), p50, and p95 latency for a complete picture.
 
 [energetic] Now let\'s look at a practical guide for choosing where to start...`
         },
@@ -2976,20 +2976,20 @@ Alright, let's bring it all together with the key takeaways from our eleven tech
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: `### 59. Quick Chooser — Which Techniques to Start With?
-Here's your practical decision guide for choosing which techniques to implement first. Not every team needs every technique, so let's help you prioritize.
+          notes: `### Quick Chooser — Which Techniques to Start With?
+[conversational] Here's your practical decision guide for choosing which techniques to implement first. Not every team needs every technique, so let's help you prioritize.
 
 #### ⚡ If Latency Is Your Main Problem
-[reassuringly] Start with techniques 3 (Limit Top-K), 10 (Streaming), and 11 (Smaller LLM). These three alone can reduce perceived latency by 70-80% with minimal implementation effort. Top-K is a one-parameter change, streaming is usually a simple API flag, and switching to a smaller model is a model swap.
+[enthusiastically] Start with techniques 3 (Limit Top-K), 10 (Streaming), and 11 (Smaller LLM). These three alone can reduce perceived latency by 70-80% with minimal implementation effort. Top-K is a one-parameter change, streaming is usually a simple API flag, and switching to a smaller model is a model swap.
 
 #### 💰 If Cost Is Your Main Concern
-Focus on techniques 2 (Reduce Chunk Size), 5-6 (Caching), and 11 (Smaller LLM). Reducing chunks and caching eliminate unnecessary computation. A smaller LLM slashes your per-query cost dramatically.
+[lecture] Focus on techniques 2 (Reduce Chunk Size), 5-6 (Caching), and 11 (Smaller LLM). Reducing chunks and caching eliminate unnecessary computation. A smaller LLM slashes your per-query cost dramatically.
 
 #### 🎯 If Quality Is Your Priority
-Implement techniques 7 (Re-Ranking) and 8 (Context Compression) first. These actually improve answer quality while also reducing latency — a rare win-win. Then add technique 1 (Smaller Embeddings) cautiously with careful quality monitoring.
+[confidently] Implement techniques 7 (Re-Ranking) and 8 (Context Compression) first. These actually improve answer quality while also reducing latency — a rare win-win. Then add technique 1 (Smaller Embeddings) cautiously with careful quality monitoring.
 
 #### 🏗️ If You're Building From Scratch
-Start with techniques 1 (Smaller Embeddings), 3 (Limit Top-K), and 4 (ANN Indexes) as your foundation. These set you up for success from the start. Add caching and streaming as you scale.
+[reassuringly] Start with techniques 1 (Smaller Embeddings), 3 (Limit Top-K), and 4 (ANN Indexes) as your foundation. These set you up for success from the start. Add caching and streaming as you scale.
 
 Let's now visualize the speed versus recall trade-offs...`
         },
@@ -3021,20 +3021,20 @@ Let's now visualize the speed versus recall trade-offs...`
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: `### 60. Speed vs Recall Tradeoffs
+          notes: `### Speed vs Recall Tradeoffs
 [lecture] This slide helps you understand the fundamental tension in RAG optimization — **speed versus recall**. Every optimization exists somewhere on this spectrum.
 
 #### ⚖️ The Trade-off Spectrum
-On one end, you have maximum recall — finding every relevant document no matter how long it takes. On the other end, you have maximum speed — returning results instantly with some information potentially missed. The art of RAG optimization is finding the sweet spot for your use case.
+[conversational] On one end, you have maximum recall — finding every relevant document no matter how long it takes. On the other end, you have maximum speed — returning results instantly with some information potentially missed. The art of RAG optimization is finding the sweet spot for your use case.
 
 #### 📊 Low Trade-off Techniques
-Some techniques have almost no quality cost. **Caching** (techniques 5-6) gives you speed with zero quality loss for cache hits. **Streaming** (technique 10) improves perceived speed with zero quality impact. **Parallelization** (technique 9) also gives free speed.
+[pleased] Some techniques have almost no quality cost. **Caching** (techniques 5-6) gives you speed with zero quality loss for cache hits. **Streaming** (technique 10) improves perceived speed with zero quality impact. **Parallelization** (technique 9) also gives free speed.
 
 #### ⚠️ Higher Trade-off Techniques
 [cautiously] Others require careful balancing. **Smaller embeddings** (technique 1) and **ANN indexes** (technique 4) trade a small amount of recall for significant speed gains. **Smaller LLMs** (technique 11) may reduce answer sophistication. **Reducing chunk size** (technique 2) can miss context if done too aggressively.
 
 #### 🎯 The Key Insight
-[cautiously] Always start with the **zero trade-off techniques** first, then carefully add the ones with trade-offs, measuring quality at each step. Now let's look at quality versus cost...`
+[confidently] Always start with the **zero trade-off techniques** first, then carefully add the ones with trade-offs, measuring quality at each step. Now let's look at quality versus cost...`
         },
         {
           id: 61,
@@ -3082,20 +3082,20 @@ Some techniques have almost no quality cost. **Caching** (techniques 5-6) gives 
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: `### 61. Quality vs Cost Tradeoffs
-[energetic] Now let\'s look at the other critical dimension — **quality versus cost**. In production, every optimization has a dollar value.
+          notes: `### Quality vs Cost Tradeoffs
+[conversational] Now let\'s look at the other critical dimension — **quality versus cost**. In production, every optimization has a dollar value.
 
 #### 💰 The Cost Spectrum
-[cautiously] LLM inference is typically your biggest cost center. At scale, the difference between GPT-4 and a self-hosted 7B model can be hundreds of thousands of dollars per year. But quality matters too — a system that gives wrong answers is worse than a slow system.
+[seriously] LLM inference is typically your biggest cost center. At scale, the difference between GPT-4 and a self-hosted 7B model can be hundreds of thousands of dollars per year. But quality matters too — a system that gives wrong answers is worse than a slow system.
 
 #### 📊 Cost-Reducing Techniques
-**Caching** (techniques 5-6) reduces costs by eliminating redundant computation. **Context compression** (technique 8) reduces token counts sent to the LLM. **Smaller LLMs** (technique 11) have the biggest per-query cost impact. **Reducing chunk size** (technique 2) also reduces token costs.
+[lecture] **Caching** (techniques 5-6) reduces costs by eliminating redundant computation. **Context compression** (technique 8) reduces token counts sent to the LLM. **Smaller LLMs** (technique 11) have the biggest per-query cost impact. **Reducing chunk size** (technique 2) also reduces token costs.
 
 #### ⚖️ Quality-Cost Sweet Spots
-[lecture] The best optimizations reduce cost while maintaining or improving quality. **Re-ranking** (technique 7) is one of these — it improves quality and can reduce LLM costs by providing more relevant context. **Context compression** (technique 8) is another — less noise means better answers and lower costs.
+[pleased] The best optimizations reduce cost while maintaining or improving quality. **Re-ranking** (technique 7) is one of these — it improves quality and can reduce LLM costs by providing more relevant context. **Context compression** (technique 8) is another — less noise means better answers and lower costs.
 
 #### 🎯 Practical Advice
-Start by measuring your current cost per query. Identify which component — embedding, search, or generation — accounts for the most cost. Then apply the techniques that target that component. Most teams find that 80% of their cost is in the LLM, making techniques 8 and 11 the highest-impact choices.
+[confidently] Start by measuring your current cost per query. Identify which component — embedding, search, or generation — accounts for the most cost. Then apply the techniques that target that component. Most teams find that 80% of their cost is in the LLM, making techniques 8 and 11 the highest-impact choices.
 
 Let's wrap up with your optimization roadmap...`
         },
@@ -3141,22 +3141,22 @@ Let's wrap up with your optimization roadmap...`
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: `### 62. Next Steps — Your RAG Optimization Roadmap
-And here we are at the finish line! Let's put together your personal RAG optimization roadmap so you can take action immediately.
+          notes: `### Next Steps — Your RAG Optimization Roadmap
+[warmly] And here we are at the finish line! Let's put together your personal RAG optimization roadmap so you can take action immediately.
 
 #### 🚀 Week 1: Quick Wins
-Start this week with three zero-effort optimizations. First, **limit your Top-K** to 3-5 — it's literally changing one number. Second, **enable streaming** on your LLM responses — usually a single parameter. Third, **profile your pipeline** to identify your biggest bottleneck. These three steps alone can cut your perceived latency in half.
+[enthusiastically] Start this week with three zero-effort optimizations. First, **limit your Top-K** to 3-5 — it's literally changing one number. Second, **enable streaming** on your LLM responses — usually a single parameter. Third, **profile your pipeline** to identify your biggest bottleneck. These three steps alone can cut your perceived latency in half.
 
 #### 📈 Week 2-3: Foundation
-Next, implement **caching** — both query embedding caching and retrieval result caching. Set up Redis, add the cache-aside pattern, and start measuring hit rates. Then evaluate **smaller embedding models** — benchmark 2-3 alternatives and switch if the quality holds up.
+[conversational] Next, implement **caching** — both query embedding caching and retrieval result caching. Set up Redis, add the cache-aside pattern, and start measuring hit rates. Then evaluate **smaller embedding models** — benchmark 2-3 alternatives and switch if the quality holds up.
 
 #### 🏗️ Month 2: Deeper Optimizations
-[cautiously] Now tackle the bigger changes. Evaluate a **smaller LLM** or set up model routing. Implement **context compression** to reduce token costs. Add **lightweight reranking** for quality improvement. Each of these requires more engineering effort but delivers substantial returns.
+[seriously] Now tackle the bigger changes. Evaluate a **smaller LLM** or set up model routing. Implement **context compression** to reduce token costs. Add **lightweight reranking** for quality improvement. Each of these requires more engineering effort but delivers substantial returns.
 
 #### 🎯 Ongoing: Monitor and Iterate
-Set up dashboards for TTFT, p95 latency, answer quality, and cost per query. Review these weekly and adjust your optimizations. The RAG optimization journey is ongoing — as your data, queries, and scale change, different techniques become more or less valuable.
+[confidently] Set up dashboards for TTFT, p95 latency, answer quality, and cost per query. Review these weekly and adjust your optimizations. The RAG optimization journey is ongoing — as your data, queries, and scale change, different techniques become more or less valuable.
 
-Thank you for attending! Remember: **start with measurement, apply one technique at a time, and always verify quality.** Happy optimizing! 🎉`
+[inspiringly] Thank you for attending! Remember: **start with measurement, apply one technique at a time, and always verify quality.** Happy optimizing! 🎉`
         }
       ]
     }
