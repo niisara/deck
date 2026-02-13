@@ -1512,24 +1512,24 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: `### 20. Structure-Aware Chunking - Pros
-Now we're stepping up to truly intelligent chunking! Structure-aware chunking understands that documents have hierarchy, and that changes everything.
+          notes: `### Structure-Aware Chunking - Pros
+[excited] Now we're stepping up to truly intelligent chunking! [conversational] Structure-aware chunking understands that documents have hierarchy, and that changes everything.
 
 #### Respecting Document Hierarchy
-This technique **respects headers and sections**, which means **better coherence**. Think about a technical manual with "Chapter 3: Security" followed by subsections like "3.1 Authentication" and "3.2 Authorization". Structure-aware chunking understands this hierarchy! It knows that the content under "3.1 Authentication" belongs together and should be chunked as a unit. It won't randomly split halfway through the authentication section just because it hit a token limit.
+[enthusiastically] This technique **respects headers and sections**, which means **better coherence**. [storytelling] Think about a technical manual with "Chapter 3: Security" followed by subsections like "3.1 Authentication" and "3.2 Authorization". Structure-aware chunking understands this hierarchy! It knows that the content under "3.1 Authentication" belongs together and should be chunked as a unit. [confidently] It won't randomly split halfway through the authentication section just because it hit a token limit.
 
-This awareness dramatically improves retrieval quality. When someone searches for "how does authentication work," they get the complete authentication section, not half of authentication mixed with half of authorization.
+[pleased] This awareness dramatically improves retrieval quality. When someone searches for "how does authentication work," they get the complete authentication section, not half of authentication mixed with half of authorization.
 
 #### Preserving Hierarchical Relationships
-It **preserves document structure and hierarchy**. The chunker understands parent-child relationships. It knows that a level-2 heading belongs under a level-1 heading, and that both should stay contextually connected. Many implementations even include parent headers in child chunks as context. So a chunk about "Configuring SSL" might include "Chapter 5: Network Security → 5.2 Encryption → Configuring SSL" in its metadata or as a prefix. This context is invaluable for retrieval and for users understanding where information fits in the bigger picture.
+[lecture] It **preserves document structure and hierarchy**. The chunker understands parent-child relationships. It knows that a level-2 heading belongs under a level-1 heading, and that both should stay contextually connected. [enthusiastically] Many implementations even include parent headers in child chunks as context. [storytelling] So a chunk about "Configuring SSL" might include "Chapter 5: Network Security → 5.2 Encryption → Configuring SSL" in its metadata or as a prefix. [pleased] This context is invaluable for retrieval and for users understanding where information fits in the bigger picture.
 
 #### Logical Content Grouping
-This approach **keeps related content together logically**. Everything under "Installation Requirements" stays together. All subsections of "API Reference" are grouped appropriately. The document's logical organization – which the author carefully crafted – is preserved in your chunks. This is massive for documentation, reports, academic papers, or any content where structure conveys meaning.
+[confidently] This approach **keeps related content together logically**. Everything under "Installation Requirements" stays together. All subsections of "API Reference" are grouped appropriately. [enthusiastically] The document's logical organization – which the author carefully crafted – is preserved in your chunks. This is massive for documentation, reports, academic papers, or any content where structure conveys meaning.
 
 #### Semantic Integrity
-Most importantly, it **maintains semantic integrity of document sections**. Each section is typically about one topic or subtopic. By chunking at section boundaries, you ensure each chunk is semantically cohesive. A section on "Error Handling Best Practices" contains a complete, self-contained discussion of that topic. You're not cutting concepts in half or mixing unrelated topics.
+[seriously] Most importantly, it **maintains semantic integrity of document sections**. Each section is typically about one topic or subtopic. [lecture] By chunking at section boundaries, you ensure each chunk is semantically cohesive. A section on "Error Handling Best Practices" contains a complete, self-contained discussion of that topic. [confidently] You're not cutting concepts in half or mixing unrelated topics.
 
-Structure-aware chunking transforms your retrieval from "finding text" to "finding coherent information units" – that's the level of quality modern RAG systems need.`
+[inspiringly] Structure-aware chunking transforms your retrieval from "finding text" to "finding coherent information units" – that's the level of quality modern RAG systems need.`
         },
         {
           id: 21,
@@ -1546,22 +1546,22 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: `### 21. Structure-Aware Chunking - Cons
-Every technique has trade-offs, and structure-aware chunking is no exception. Let's explore where this approach can run into trouble.
+          notes: `### Structure-Aware Chunking - Cons
+[cautiously] Every technique has trade-offs, and structure-aware chunking is no exception. [seriously] Let's explore where this approach can run into trouble.
 
 #### Parsing Challenges
-The biggest challenge with structure-aware chunking is that **parsing and layout extraction can be brittle**. Think of it like trying to read a book where the formatting is inconsistent, some chapters have headings and some don't, or the table of contents doesn't match the actual content. Your parsing tools might work perfectly on one document but fail miserably on another. When the structure isn't clean, the parser struggles to identify boundaries correctly.
+[disappointed] The biggest challenge with structure-aware chunking is that **parsing and layout extraction can be brittle**. [storytelling] Think of it like trying to read a book where the formatting is inconsistent, some chapters have headings and some don't, or the table of contents doesn't match the actual content. [concerned] Your parsing tools might work perfectly on one document but fail miserably on another. When the structure isn't clean, the parser struggles to identify boundaries correctly.
 
 #### Document Quality Dependencies
-This technique **requires well-structured documents** to shine. If you're working with PDFs that were scanned from paper, documents with inconsistent heading styles, or content that was poorly formatted to begin with, you're going to have a bad time. It's like trying to organize a messy closet when half the items don't have labels. The technique assumes your input already follows some organizational logic.
+[firmly] This technique **requires well-structured documents** to shine. [cautiously] If you're working with PDFs that were scanned from paper, documents with inconsistent heading styles, or content that was poorly formatted to begin with, you're going to have a bad time. [storytelling] It's like trying to organize a messy closet when half the items don't have labels. [seriously] The technique assumes your input already follows some organizational logic.
 
 #### Size Variability
-Structure-aware chunking **may produce uneven chunk sizes** because it respects the natural boundaries of your document structure. One section might be 100 tokens while another is 1,500 tokens. This isn't always bad, but it can cause problems if you have strict size requirements for your embedding model or retrieval system. Some chunks might be too small to be meaningful, while others exceed your context window.
+[concerned] Structure-aware chunking **may produce uneven chunk sizes** because it respects the natural boundaries of your document structure. One section might be 100 tokens while another is 1,500 tokens. [cautiously] This isn't always bad, but it can cause problems if you have strict size requirements for your embedding model or retrieval system. Some chunks might be too small to be meaningful, while others exceed your context window.
 
 #### Formatting Dependence
-Ultimately, the **quality depends heavily on document formatting**. Well-formatted documents with clear hierarchies produce excellent results. Poorly formatted documents? Not so much. You're essentially at the mercy of whoever created the original document.
+[seriously] Ultimately, the **quality depends heavily on document formatting**. Well-formatted documents with clear hierarchies produce excellent results. [disappointed] Poorly formatted documents? Not so much. You're essentially at the mercy of whoever created the original document.
 
-Understanding these limitations helps you decide when this technique is worth the effort and when a simpler approach might be more reliable.`
+[conversational] Understanding these limitations helps you decide when this technique is worth the effort and when a simpler approach might be more reliable.`
         },
         {
           id: 22,
@@ -1593,18 +1593,18 @@ Understanding these limitations helps you decide when this technique is worth th
           ),
           backgroundColor: '#1c6521',
           notes: `### 22. Structure-Aware Chunking - Configuration
-Now let's get practical and talk numbers. How do you actually configure structure-aware chunking for real-world use?
+[conversational] Now let's get practical and talk numbers. How do you actually configure structure-aware chunking for real-world use?
 
 #### Best Chunk Size
-For structure-aware chunking, aim for **300 to 1200 tokens per section**. Notice that's quite a range! That's because this technique respects the natural boundaries of your document structure. A subsection might be 300 tokens, while a major section could be 1200 tokens. Think of it like organizing a book, some chapters are naturally shorter than others. The **sizes vary based on document structure and heading levels**. If you're working with deeply nested headings (H1, H2, H3, H4), you might chunk at the H3 level to keep sizes manageable. For flatter documents, chunking at H2 might be perfect.
+[lecture] For structure-aware chunking, aim for **300 to 1200 tokens per section**. Notice that's quite a range! [conversational] That's because this technique respects the natural boundaries of your document structure. A subsection might be 300 tokens, while a major section could be 1200 tokens. [storytelling] Think of it like organizing a book, some chapters are naturally shorter than others. [seriously] The **sizes vary based on document structure and heading levels**. If you're working with deeply nested headings (H1, H2, H3, H4), you might chunk at the H3 level to keep sizes manageable. For flatter documents, chunking at H2 might be perfect.
 
 #### Overlap Configuration
-Structure-aware chunking uses **minimal overlap across sections**, and that's actually a strength! Since you're breaking at natural semantic boundaries (like section headings), you don't need much overlap to preserve context. You **only need overlap to maintain cross-sectional references**, like when one section refers to concepts from a previous section. Think of it like chapters in a book, each chapter is self-contained, but occasionally one chapter references another.
+[conversational] Structure-aware chunking uses **minimal overlap across sections**, and that's actually a strength! Since you're breaking at natural semantic boundaries (like section headings), you don't need much overlap to preserve context. [lecture] You **only need overlap to maintain cross-sectional references**, like when one section refers to concepts from a previous section. [storytelling] Think of it like chapters in a book, each chapter is self-contained, but occasionally one chapter references another.
 
 #### Computational Requirements  
-The **computational cost is medium** because you need **structure parsing and analysis**. You're not just counting characters or tokens, you're actually analyzing the document to identify headings, sections, and hierarchies. It's more work than fixed-size chunking but less expensive than semantic embedding-based approaches. Think of it as a middle ground between simple and sophisticated.
+[seriously] The **computational cost is medium** because you need **structure parsing and analysis**. You're not just counting characters or tokens, you're actually analyzing the document to identify headings, sections, and hierarchies. [conversational] It's more work than fixed-size chunking but less expensive than semantic embedding-based approaches. Think of it as a middle ground between simple and sophisticated.
 
-These configurations give you a solid starting point, but remember to tune based on your specific documents and retrieval needs.`
+[lecture] These configurations give you a solid starting point, but remember to tune based on your specific documents and retrieval needs.`
         },
         {
           id: 23,
@@ -1638,18 +1638,18 @@ These configurations give you a solid starting point, but remember to tune based
           ),
           backgroundColor: '#1c6521',
           notes: `### 23. Structure-Aware Chunking - Use Cases & Tools
-Let's explore where structure-aware chunking really shines and what tools can help you implement it effectively.
+[conversational] Let's explore where structure-aware chunking really shines and what tools can help you implement it effectively.
 
 #### Perfect Use Cases
-Structure-aware chunking is ideal for **manuals, whitepapers, and SOWs** (Statements of Work) because these documents are typically well-structured with clear sections, headings, and hierarchies. Think of a user manual with chapters like "Getting Started," "Installation," and "Troubleshooting." Each section is naturally self-contained and meaningful. **Documentation sites** are another perfect fit, websites built with tools like ReadTheDocs or GitBook already have a clear structure that this technique can leverage beautifully. **Academic papers with clear sections** like Abstract, Introduction, Methodology, Results, and Conclusion are ideal candidates. The structure is standardized and semantic. Finally, **technical reports and legal documents** often have numbered sections and subsections that map perfectly to this chunking strategy.
+[enthusiastically] Structure-aware chunking is ideal for **manuals, whitepapers, and SOWs** (Statements of Work) because these documents are typically well-structured with clear sections, headings, and hierarchies. [storytelling] Think of a user manual with chapters like "Getting Started," "Installation," and "Troubleshooting." Each section is naturally self-contained and meaningful. [pleased] **Documentation sites** are another perfect fit, websites built with tools like ReadTheDocs or GitBook already have a clear structure that this technique can leverage beautifully. [lecture] **Academic papers with clear sections** like Abstract, Introduction, Methodology, Results, and Conclusion are ideal candidates. The structure is standardized and semantic. Finally, **technical reports and legal documents** often have numbered sections and subsections that map perfectly to this chunking strategy.
 
 #### Available Tools
-You're not building this from scratch! **Azure Document Layout** provides powerful APIs for extracting structure from PDFs and documents. **Unstructured.io** is a fantastic open-source library that handles structure extraction across many formats. **Docling** is another great tool specialized for document understanding and structure parsing. And if you're working with HTML or Markdown, **LangChain's HTML and Markdown splitters** have built-in support for structure-aware chunking with minimal configuration. These tools handle the heavy lifting of parsing and boundary detection.
+[enthusiastically] You're not building this from scratch! **Azure Document Layout** provides powerful APIs for extracting structure from PDFs and documents. **Unstructured.io** is a fantastic open-source library that handles structure extraction across many formats. [pleased] **Docling** is another great tool specialized for document understanding and structure parsing. And if you're working with HTML or Markdown, **LangChain's HTML and Markdown splitters** have built-in support for structure-aware chunking with minimal configuration. These tools handle the heavy lifting of parsing and boundary detection.
 
 #### Complexity Assessment
-This is an **intermediate-level technique** that **requires structure parsing knowledge**. You need to understand document formats, heading hierarchies, and how to configure parsers. It's not as simple as "split every 500 characters," but it's also not as complex as building custom NLP models. Most developers can learn this with a few days of practice.
+[conversational] This is an **intermediate-level technique** that **requires structure parsing knowledge**. You need to understand document formats, heading hierarchies, and how to configure parsers. [lecture] It's not as simple as "split every 500 characters," but it's also not as complex as building custom NLP models. Most developers can learn this with a few days of practice.
 
-Structure-aware chunking is powerful when your documents cooperate. Use it when structure exists and matters!`
+[confidently] Structure-aware chunking is powerful when your documents cooperate. Use it when structure exists and matters!`
         }
       ]
     },
@@ -1673,21 +1673,21 @@ Structure-aware chunking is powerful when your documents cooperate. Use it when 
           ),
           backgroundColor: '#1c655a',
           notes: `### 24. Content-Aware Chunking - Pros
-Welcome to content-aware chunking, a sophisticated approach that understands *what* type of content it's dealing with, not just *where* to split. Let's explore why this technique is so powerful.
+[pleased] Welcome to content-aware chunking, a sophisticated approach that understands *what* type of content it's dealing with, not just *where* to split. Let's explore why this technique is so powerful.
 
 #### Intelligent Content Recognition
-Content-aware chunking uses **heuristics based on content type**, recognizing whether you're dealing with lists, bullets, code blocks, tables, or regular prose. Think of it like a smart librarian who doesn't just organize books by size, but by genre and topic. If you have a Python code block, this technique knows to keep it together as one unit rather than splitting it mid-function. If you have a table, it keeps the entire table intact so the data relationships remain meaningful.
+[enthusiastically] Content-aware chunking uses **heuristics based on content type**, recognizing whether you're dealing with lists, bullets, code blocks, tables, or regular prose. [storytelling] Think of it like a smart librarian who doesn't just organize books by size, but by genre and topic. [lecture] If you have a Python code block, this technique knows to keep it together as one unit rather than splitting it mid-function. If you have a table, it keeps the entire table intact so the data relationships remain meaningful.
 
 #### Semantic Preservation
-The key advantage is that it **preserves the meaning of special content elements**. A bulleted list makes sense as a complete unit. A code example needs to stay together to be understandable. A table's rows and columns form a cohesive whole. Regular character-based or token-based chunking would happily split these elements in arbitrary places, destroying their meaning. Content-aware chunking respects the semantics of your content.
+[confidently] The key advantage is that it **preserves the meaning of special content elements**. A bulleted list makes sense as a complete unit. A code example needs to stay together to be understandable. A table's rows and columns form a cohesive whole. [seriously] Regular character-based or token-based chunking would happily split these elements in arbitrary places, destroying their meaning. Content-aware chunking respects the semantics of your content.
 
 #### Adaptive Intelligence
-It **adapts to document formatting patterns** automatically. If your document alternates between prose paragraphs, code blocks, and tables, this technique adjusts the chunking strategy on the fly based on what it encounters. It's like having a smart assistant who changes their approach based on what they're organizing.
+[delighted] It **adapts to document formatting patterns** automatically. If your document alternates between prose paragraphs, code blocks, and tables, this technique adjusts the chunking strategy on the fly based on what it encounters. [storytelling] It's like having a smart assistant who changes their approach based on what they're organizing.
 
 #### Mixed Content Excellence
-For documents with **mixed content**, this technique produces **better chunk boundaries** than one-size-fits-all approaches. Each chunk is more likely to be semantically complete and meaningful because the chunker understands the content structure.
+[pleased] For documents with **mixed content**, this technique produces **better chunk boundaries** than one-size-fits-all approaches. Each chunk is more likely to be semantically complete and meaningful because the chunker understands the content structure.
 
-This intelligence comes at a cost, but for documents with rich formatting, it's often worth it!`
+[confidently] This intelligence comes at a cost, but for documents with rich formatting, it's often worth it!`
         },
         {
           id: 25,
@@ -1705,21 +1705,21 @@ This intelligence comes at a cost, but for documents with rich formatting, it's 
           ),
           backgroundColor: '#1c655a',
           notes: `### 25. Content-Aware Chunking - Cons
-While content-aware chunking is intelligent, that intelligence comes with practical challenges. Let's be honest about where this technique struggles.
+[cautiously] While content-aware chunking is intelligent, that intelligence comes with practical challenges. Let's be honest about where this technique struggles.
 
 #### Domain-Specific Tuning
-The **rules require tuning for different domains**, and this is a significant maintenance burden. What works for technical documentation might not work for legal contracts. What works for scientific papers might fail spectacularly on marketing materials. You can't just set it and forget it. Each new document type or domain may require you to adjust the heuristics, recognition patterns, and boundary rules. It's like having a sophisticated tool that needs constant calibration.
+[concerned] The **rules require tuning for different domains**, and this is a significant maintenance burden. What works for technical documentation might not work for legal contracts. What works for scientific papers might fail spectacularly on marketing materials. [seriously] You can't just set it and forget it. Each new document type or domain may require you to adjust the heuristics, recognition patterns, and boundary rules. [cautiously] It's like having a sophisticated tool that needs constant calibration.
 
 #### Heuristic Development
-You need **domain-specific heuristics**, which means understanding your content deeply before you can chunk it effectively. How do you recognize a code block versus a formatted quote? How do you identify a table that should stay together versus a list that can be split? These rules don't write themselves, you need domain expertise to craft them.
+[firmly] You need **domain-specific heuristics**, which means understanding your content deeply before you can chunk it effectively. [playfully] How do you recognize a code block versus a formatted quote? How do you identify a table that should stay together versus a list that can be split? [seriously] These rules don't write themselves, you need domain expertise to craft them.
 
 #### Maintenance Overhead
-This approach is **harder to maintain than simpler methods** like fixed-size or sentence-based chunking. Every time your document formats change, you might need to update your content recognition rules. New content types require new heuristics. It's an ongoing engineering investment rather than a one-time setup.
+[disappointed] This approach is **harder to maintain than simpler methods** like fixed-size or sentence-based chunking. Every time your document formats change, you might need to update your content recognition rules. [cautiously] New content types require new heuristics. It's an ongoing engineering investment rather than a one-time setup.
 
 #### Edge Case Fragility
-The system **may break on unusual formatting** that doesn't match your heuristics. Encounter a document with a weird mix of Markdown and HTML? Tables nested inside lists? Code blocks with unusual delimiters? Your carefully crafted rules might fail in unexpected ways. Simple, right? Not always!
+[concerned] The system **may break on unusual formatting** that doesn't match your heuristics. Encounter a document with a weird mix of Markdown and HTML? Tables nested inside lists? Code blocks with unusual delimiters? [playfully] Your carefully crafted rules might fail in unexpected ways. Simple, right? Not always!
 
-These challenges don't make content-aware chunking bad, they just mean you need to weigh the benefits against the ongoing maintenance costs.`
+[firmly] These challenges don't make content-aware chunking bad, they just mean you need to weigh the benefits against the ongoing maintenance costs.`
         },
         {
           id: 26,
@@ -1751,18 +1751,18 @@ These challenges don't make content-aware chunking bad, they just mean you need 
           ),
           backgroundColor: '#1c655a',
           notes: `### 26. Content-Aware Chunking - Configuration
-Let's talk numbers and practical settings. How do you configure content-aware chunking for production use?
+[conversational] Let's talk numbers and practical settings. How do you configure content-aware chunking for production use?
 
 #### Dynamic Chunk Sizing
-Aim for **200 to 800 tokens, but expect this to be dynamic**. Unlike fixed-size chunking where every chunk is exactly 512 tokens, content-aware chunking produces variable sizes. A code block might be 150 tokens, a prose paragraph might be 400 tokens, and a complex table with explanation might be 750 tokens. The **size varies based on content type and complexity**. Think of it like packing boxes, you adjust the box size to fit the item, not vice versa. This variability is a feature, not a bug, because it preserves semantic completeness.
+[lecture] Aim for **200 to 800 tokens, but expect this to be dynamic**. Unlike fixed-size chunking where every chunk is exactly 512 tokens, content-aware chunking produces variable sizes. [conversational] A code block might be 150 tokens, a prose paragraph might be 400 tokens, and a complex table with explanation might be 750 tokens. [seriously] The **size varies based on content type and complexity**. [storytelling] Think of it like packing boxes, you adjust the box size to fit the item, not vice versa. [confidently] This variability is a feature, not a bug, because it preserves semantic completeness.
 
 #### Context-Sensitive Overlap
-Use **0 to 15% overlap depending on content type**. This is where content-awareness really shines! For **complex content** like interrelated paragraphs or sequential explanations, use **more overlap** (maybe 10-15%) to preserve context across chunks. For **structured elements** like code blocks, tables, or bulleted lists, use **less overlap** (0-5%) because these elements are self-contained. A code function doesn't need overlap with the next function. A table is complete on its own. But narrative text benefits from context bridges.
+[lecture] Use **0 to 15% overlap depending on content type**. This is where content-awareness really shines! [conversational] For **complex content** like interrelated paragraphs or sequential explanations, use **more overlap** (maybe 10-15%) to preserve context across chunks. For **structured elements** like code blocks, tables, or bulleted lists, use **less overlap** (0-5%) because these elements are self-contained. [storytelling] A code function doesn't need overlap with the next function. A table is complete on its own. But narrative text benefits from context bridges.
 
 #### Computational Investment
-Expect a **medium computational cost** due to **implementation complexity and processing requirements**. You're running content detection heuristics, pattern matching, and adaptive logic for every piece of content. It's more expensive than "split every N tokens" but less expensive than generating embeddings for semantic chunking. The processing happens once during ingestion, so this cost is typically acceptable for production systems.
+[seriously] Expect a **medium computational cost** due to **implementation complexity and processing requirements**. You're running content detection heuristics, pattern matching, and adaptive logic for every piece of content. [conversational] It's more expensive than "split every N tokens" but less expensive than generating embeddings for semantic chunking. The processing happens once during ingestion, so this cost is typically acceptable for production systems.
 
-These configurations give you flexibility while preserving content integrity. Adjust based on your specific needs!`
+[lecture] These configurations give you flexibility while preserving content integrity. Adjust based on your specific needs!`
         },
         {
           id: 27,
@@ -1794,18 +1794,18 @@ These configurations give you flexibility while preserving content integrity. Ad
           ),
           backgroundColor: '#1c655a',
           notes: `### 27. Content-Aware Chunking - Use Cases & Tools
-Now let's see where content-aware chunking really earns its keep, and what tools can help you implement it without building everything from scratch.
+[conversational] Now let's see where content-aware chunking really earns its keep, and what tools can help you implement it without building everything from scratch.
 
 #### Ideal Applications
-Content-aware chunking shines for **ebooks and technical guides** where you have a mix of narrative prose, code examples, diagrams, and tables all in one document. Think of an O'Reilly book on Python programming, it has explanatory text, code blocks, output examples, and tables comparing features. Each content type needs different handling. **Documentation sites and wikis** are another sweet spot, they typically have prose sections, API examples, configuration snippets, and structured data that benefit from content-aware boundaries. Any document with **mixed content including lists, tables, and code** is a prime candidate. And **formatting-rich documents** where the formatting carries semantic meaning (like Markdown with various elements) work beautifully with this approach.
+[enthusiastically] Content-aware chunking shines for **ebooks and technical guides** where you have a mix of narrative prose, code examples, diagrams, and tables all in one document. [storytelling] Think of an O'Reilly book on Python programming, it has explanatory text, code blocks, output examples, and tables comparing features. Each content type needs different handling. [pleased] **Documentation sites and wikis** are another sweet spot, they typically have prose sections, API examples, configuration snippets, and structured data that benefit from content-aware boundaries. [lecture] Any document with **mixed content including lists, tables, and code** is a prime candidate. And **formatting-rich documents** where the formatting carries semantic meaning (like Markdown with various elements) work beautifully with this approach.
 
 #### Implementation Tools
-Here's where it gets interesting, much of this is **custom heuristics that are often bespoke** to your specific needs. You'll write rules like "keep code blocks together" or "don't split tables." But you're not completely on your own! **Coveo** provides chunking strategies with content-awareness built in. **Unstructured.io** has excellent content extractors that understand different element types. And you can build **rule-based custom splitters** using pattern matching and content detection logic. The tooling landscape here is more fragmented than simple methods, but the flexibility is worth it.
+[conversational] Here's where it gets interesting, much of this is **custom heuristics that are often bespoke** to your specific needs. You'll write rules like "keep code blocks together" or "don't split tables." [enthusiastically] But you're not completely on your own! **Coveo** provides chunking strategies with content-awareness built in. [pleased] **Unstructured.io** has excellent content extractors that understand different element types. And you can build **rule-based custom splitters** using pattern matching and content detection logic. [conversational] The tooling landscape here is more fragmented than simple methods, but the flexibility is worth it.
 
 #### Skill Requirements
-This is an **intermediate-level technique** that **requires expertise and domain-specific implementation** skills. You need to understand your document formats deeply, write effective heuristics, and test thoroughly across your content types. Expect a learning curve, but the results justify the investment for content-rich applications.
+[lecture] This is an **intermediate-level technique** that **requires expertise and domain-specific implementation** skills. You need to understand your document formats deeply, write effective heuristics, and test thoroughly across your content types. [confidently] Expect a learning curve, but the results justify the investment for content-rich applications.
 
-Content-aware chunking is your go-to when content diversity demands intelligent handling!`
+[enthusiastically] Content-aware chunking is your go-to when content diversity demands intelligent handling!`
         }
       ]
     },
@@ -1829,21 +1829,21 @@ Content-aware chunking is your go-to when content diversity demands intelligent 
           ),
           backgroundColor: '#1c1c65',
           notes: `### 28. Semantic Chunking (Embedding-Based) - Pros
-Now we're entering advanced territory! Semantic chunking uses embeddings to understand meaning, not just structure. This is where AI meets chunking strategy.
+[excited] Now we're entering advanced territory! Semantic chunking uses embeddings to understand meaning, not just structure. This is where AI meets chunking strategy.
 
 #### Topic Coherence and Precision
-Semantic chunking creates **topic-coherent chunks** that result in **high retrieval precision**. Instead of breaking text at arbitrary character counts or sentence boundaries, this technique uses embedding models to identify where topics actually change. Think of it like a smart reader who can tell when the conversation shifts from discussing databases to discussing APIs, even if there's no heading to mark the transition. This leads to chunks that are semantically complete and topically focused, which dramatically improves retrieval quality.
+[enthusiastically] Semantic chunking creates **topic-coherent chunks** that result in **high retrieval precision**. Instead of breaking text at arbitrary character counts or sentence boundaries, this technique uses embedding models to identify where topics actually change. [storytelling] Think of it like a smart reader who can tell when the conversation shifts from discussing databases to discussing APIs, even if there's no heading to mark the transition. [confidently] This leads to chunks that are semantically complete and topically focused, which dramatically improves retrieval quality.
 
 #### Semantic Intelligence
-It provides **better semantic understanding and context preservation** than any technique we've discussed so far. When you embed sentences or paragraphs, you're capturing their *meaning* in vector space. Sentences about the same topic cluster together, even if they use different words. This is huge! You can group content about "machine learning model training" even if some parts say "neural network optimization" and others say "teaching algorithms."
+[pleased] It provides **better semantic understanding and context preservation** than any technique we've discussed so far. When you embed sentences or paragraphs, you're capturing their *meaning* in vector space. [delighted] Sentences about the same topic cluster together, even if they use different words. This is huge! You can group content about "machine learning model training" even if some parts say "neural network optimization" and others say "teaching algorithms."
 
 #### Physical Independence
-Semantic chunking **groups similar content regardless of physical proximity** in the document. If page 5 and page 47 discuss the same concept, semantic chunking recognizes that relationship. This is especially powerful for documents where related concepts are scattered throughout.
+[confidently] Semantic chunking **groups similar content regardless of physical proximity** in the document. If page 5 and page 47 discuss the same concept, semantic chunking recognizes that relationship. [enthusiastically] This is especially powerful for documents where related concepts are scattered throughout.
 
 #### Retrieval Excellence
-The end result is **improved relevance in retrieval results**. When users query your system, they get chunks that are semantically aligned with their question, not just keyword matches. This is the gold standard for RAG applications.
+[delighted] The end result is **improved relevance in retrieval results**. When users query your system, they get chunks that are semantically aligned with their question, not just keyword matches. This is the gold standard for RAG applications.
 
-The intelligence comes at a cost, but for many applications, it's absolutely worth it!`
+[confidently] The intelligence comes at a cost, but for many applications, it's absolutely worth it!`
         },
         {
           id: 29,
@@ -1861,21 +1861,21 @@ The intelligence comes at a cost, but for many applications, it's absolutely wor
           ),
           backgroundColor: '#1c1c65',
           notes: `### 29. Semantic Chunking (Embedding-Based) - Cons
-With great power comes great complexity. Let's talk about the real challenges you'll face with semantic chunking.
+[cautiously] With great power comes great complexity. Let's talk about the real challenges you'll face with semantic chunking.
 
 #### Computational Requirements
-This technique **requires embeddings**, which **adds significant computation cost**. You're not just splitting text, you're running every sentence or paragraph through an embedding model to generate vector representations. For a large document corpus, this can mean thousands or millions of embedding calls. That's real money if you're using commercial APIs, or real infrastructure if you're self-hosting models. The compute happens during the chunking phase, before you even start your retrieval pipeline.
+[concerned] This technique **requires embeddings**, which **adds significant computation cost**. You're not just splitting text, you're running every sentence or paragraph through an embedding model to generate vector representations. [seriously] For a large document corpus, this can mean thousands or millions of embedding calls. That's real money if you're using commercial APIs, or real infrastructure if you're self-hosting models. The compute happens during the chunking phase, before you even start your retrieval pipeline.
 
 #### Threshold Tuning Challenges
-**Tuning similarity thresholds can be challenging** and often requires experimentation. How similar do two sentences need to be before you group them into the same chunk? Set the threshold too high, and you get tiny chunks that lack context. Set it too low, and you get massive chunks that include multiple unrelated topics. There's no universal magic number, it varies by document type, embedding model, and your specific use case. Expect to iterate!
+[cautiously] **Tuning similarity thresholds can be challenging** and often requires experimentation. [playfully] How similar do two sentences need to be before you group them into the same chunk? [concerned] Set the threshold too high, and you get tiny chunks that lack context. Set it too low, and you get massive chunks that include multiple unrelated topics. [firmly] There's no universal magic number, it varies by document type, embedding model, and your specific use case. Expect to iterate!
 
 #### Model Dependency
-The **quality depends heavily on your embedding model choice**. Use a weak or generic embedding model, and you get poor topic detection. Use a domain-specific model, and you might get great results on one content type but poor results on another. Different models have different strengths, some excel at code, others at legal text, others at conversational content. Your chunking quality is fundamentally limited by your model's semantic understanding.
+[disappointed] The **quality depends heavily on your embedding model choice**. Use a weak or generic embedding model, and you get poor topic detection. [cautiously] Use a domain-specific model, and you might get great results on one content type but poor results on another. [seriously] Different models have different strengths, some excel at code, others at legal text, others at conversational content. Your chunking quality is fundamentally limited by your model's semantic understanding.
 
 #### Complexity Overhead
-This has **more implementation complexity than fixed methods** by an order of magnitude. You need to manage embedding model deployment, handle batching for efficiency, tune similarity thresholds, and debug semantic grouping issues. It's not plug-and-play.
+[concerned] This has **more implementation complexity than fixed methods** by an order of magnitude. You need to manage embedding model deployment, handle batching for efficiency, tune similarity thresholds, and debug semantic grouping issues. [firmly] It's not plug-and-play.
 
-These challenges don't disqualify semantic chunking, but they do mean you should use it deliberately, not casually!`
+[seriously] These challenges don't disqualify semantic chunking, but they do mean you should use it deliberately, not casually!`
         },
         {
           id: 30,
@@ -1907,18 +1907,18 @@ These challenges don't disqualify semantic chunking, but they do mean you should
           ),
           backgroundColor: '#1c1c65',
           notes: `### 30. Semantic Chunking (Embedding-Based) - Configuration
-Let's get practical about configuring semantic chunking for production systems. The numbers matter here!
+[conversational] Let's get practical about configuring semantic chunking for production systems. The numbers matter here!
 
 #### Semantic Unit Sizing
-Target **200 to 600 tokens per semantic unit**, which is typically smaller than structure-based chunks. Why? Because semantic chunking creates naturally cohesive units based on meaning, not structure. A semantic unit might be a single concept explained across multiple sentences, or a subsection discussing one specific point. The **size varies based on topic cohesion and content density**. Dense technical content might produce smaller chunks (200-300 tokens) where each concept is tightly packed. Narrative or explanatory content might produce larger chunks (400-600 tokens) where ideas flow more loosely. Let the semantics guide the size, not arbitrary limits.
+[lecture] Target **200 to 600 tokens per semantic unit**, which is typically smaller than structure-based chunks. [playfully] Why? [conversational] Because semantic chunking creates naturally cohesive units based on meaning, not structure. A semantic unit might be a single concept explained across multiple sentences, or a subsection discussing one specific point. [seriously] The **size varies based on topic cohesion and content density**. Dense technical content might produce smaller chunks (200-300 tokens) where each concept is tightly packed. Narrative or explanatory content might produce larger chunks (400-600 tokens) where ideas flow more loosely. [lecture] Let the semantics guide the size, not arbitrary limits.
 
 #### Minimal Overlap Strategy
-Use **0 to 10% overlap**, which is **minimal compared to fixed-size methods**. Here's why this works: **semantic boundaries naturally reduce the need for significant overlap**. When you break at topic transitions, the adjacent chunks are about different things, so overlap doesn't add much value. It's like chapters in a book, Chapter 2 doesn't need to repeat the ending of Chapter 1 because they're about different topics. You might use some overlap (5-10%) if your topics are closely related and build on each other sequentially, but often 0% works just fine.
+[conversational] Use **0 to 10% overlap**, which is **minimal compared to fixed-size methods**. Here's why this works: [lecture] **semantic boundaries naturally reduce the need for significant overlap**. When you break at topic transitions, the adjacent chunks are about different things, so overlap doesn't add much value. [storytelling] It's like chapters in a book, Chapter 2 doesn't need to repeat the ending of Chapter 1 because they're about different topics. [conversational] You might use some overlap (5-10%) if your topics are closely related and build on each other sequentially, but often 0% works just fine.
 
 #### Performance Considerations
-Expect **medium to high computational cost** due to **embedding generation and similarity calculations**. Every sentence or small paragraph needs to be embedded, which means multiple API calls or model inferences. Then you need to compute similarity between embeddings to find topic boundaries. This is significantly more expensive than simple text manipulation. Budget accordingly, both in terms of infrastructure and latency. The good news is this happens once during ingestion, not during every query.
+[seriously] Expect **medium to high computational cost** due to **embedding generation and similarity calculations**. Every sentence or small paragraph needs to be embedded, which means multiple API calls or model inferences. Then you need to compute similarity between embeddings to find topic boundaries. [cautiously] This is significantly more expensive than simple text manipulation. Budget accordingly, both in terms of infrastructure and latency. [conversational] The good news is this happens once during ingestion, not during every query.
 
-These configurations balance quality with computational reality. Tune based on your retrieval metrics!`
+[lecture] These configurations balance quality with computational reality. Tune based on your retrieval metrics!`
         },
         {
           id: 31,
@@ -1952,18 +1952,18 @@ These configurations balance quality with computational reality. Tune based on y
           ),
           backgroundColor: '#1c1c65',
           notes: `### 31. Semantic Chunking (Embedding-Based) - Use Cases & Tools
-When should you invest in semantic chunking, and what tools make it easier? Let's explore the sweet spots and practical implementation paths.
+[conversational] When should you invest in semantic chunking, and what tools make it easier? Let's explore the sweet spots and practical implementation paths.
 
 #### Prime Use Cases
-Semantic chunking excels with **multi-topic documents and research papers** where topics shift subtly without clear structural markers. Think of a research paper that discusses methodology, then pivots to related work, then discusses results, all without always having explicit section headers. **Knowledge bases with diverse content** are another perfect fit, when you have articles about completely different topics all mixed together, semantic chunking groups related concepts correctly. **Product documentation libraries** benefit enormously because users ask semantic questions like "how do I authenticate?" and you need chunks that capture complete authentication-related concepts, even if they span multiple pages. Use this technique **when retrieval precision is absolutely critical** and the computational cost is justified by business value.
+[enthusiastically] Semantic chunking excels with **multi-topic documents and research papers** where topics shift subtly without clear structural markers. [storytelling] Think of a research paper that discusses methodology, then pivots to related work, then discusses results, all without always having explicit section headers. [pleased] **Knowledge bases with diverse content** are another perfect fit, when you have articles about completely different topics all mixed together, semantic chunking groups related concepts correctly. [delighted] **Product documentation libraries** benefit enormously because users ask semantic questions like "how do I authenticate?" and you need chunks that capture complete authentication-related concepts, even if they span multiple pages. [lecture] Use this technique **when retrieval precision is absolutely critical** and the computational cost is justified by business value.
 
 #### Production-Ready Tools
-You're in luck, excellent tools exist! **Sentence-transformers library** provides state-of-the-art embedding models specifically designed for semantic similarity. It's open-source and battle-tested. **Pinecone** offers examples and guides for semantic chunking as part of their vector database ecosystem. **Superlinked VectorHub** has excellent resources and implementations for semantic chunking patterns. And **LlamaIndex SemanticSplitter** provides a turnkey solution if you're already in the LlamaIndex ecosystem. These tools handle much of the complexity for you.
+[enthusiastically] You're in luck, excellent tools exist! **Sentence-transformers library** provides state-of-the-art embedding models specifically designed for semantic similarity. It's open-source and battle-tested. [pleased] **Pinecone** offers examples and guides for semantic chunking as part of their vector database ecosystem. **Superlinked VectorHub** has excellent resources and implementations for semantic chunking patterns. And **LlamaIndex SemanticSplitter** provides a turnkey solution if you're already in the LlamaIndex ecosystem. These tools handle much of the complexity for you.
 
 #### Skill Level
-This is **intermediate to advanced** territory, requiring **understanding of embeddings and similarity thresholds**. You need to grasp vector spaces, cosine similarity, and how different embedding models behave. You'll need to experiment with thresholds and evaluate results quantitatively. It's not beginner-friendly, but it's learnable with effort.
+[conversational] This is **intermediate to advanced** territory, requiring **understanding of embeddings and similarity thresholds**. You need to grasp vector spaces, cosine similarity, and how different embedding models behave. [lecture] You'll need to experiment with thresholds and evaluate results quantitatively. It's not beginner-friendly, but it's learnable with effort.
 
-Semantic chunking is the premium option for applications where retrieval quality directly impacts user value!`
+[confidently] Semantic chunking is the premium option for applications where retrieval quality directly impacts user value!`
         }
       ]
     },
@@ -1987,21 +1987,21 @@ Semantic chunking is the premium option for applications where retrieval quality
           ),
           backgroundColor: '#651c5d',
           notes: `### 32. TextTiling - Pros
-TextTiling is a classic algorithm from computational linguistics that's stood the test of time. Let's explore why this technique remains relevant decades after its invention.
+[pleased] TextTiling is a classic algorithm from computational linguistics that's stood the test of time. Let's explore why this technique remains relevant decades after its invention.
 
 #### Explainable Topic Segmentation
-TextTiling uses **topic segmentation via cohesion drops**, and it's **classic and explainable**. Unlike black-box neural approaches, you can actually understand *why* TextTiling chose a particular boundary. It measures lexical cohesion (how related the words are) between text blocks, and when cohesion drops significantly, that's a topic boundary. Think of it like watching the conversation at a dinner party, when everyone stops talking about vacation plans and starts discussing politics, there's a clear shift. TextTiling detects those shifts mathematically by analyzing word repetition and semantic relatedness patterns.
+[confidently] TextTiling uses **topic segmentation via cohesion drops**, and it's **classic and explainable**. Unlike black-box neural approaches, you can actually understand *why* TextTiling chose a particular boundary. [lecture] It measures lexical cohesion (how related the words are) between text blocks, and when cohesion drops significantly, that's a topic boundary. [storytelling] Think of it like watching the conversation at a dinner party, when everyone stops talking about vacation plans and starts discussing politics, there's a clear shift. [lecture] TextTiling detects those shifts mathematically by analyzing word repetition and semantic relatedness patterns.
 
 #### Natural Boundary Detection
-It **finds natural topic boundaries in text** without requiring explicit markers like headings or section breaks. The algorithm analyzes the text itself to identify where topics change. This is powerful for unstructured content like transcripts, articles, or books where the author didn't provide clear structural cues. The boundaries emerge from the content itself.
+[delighted] It **finds natural topic boundaries in text** without requiring explicit markers like headings or section breaks. The algorithm analyzes the text itself to identify where topics change. [enthusiastically] This is powerful for unstructured content like transcripts, articles, or books where the author didn't provide clear structural cues. The boundaries emerge from the content itself.
 
 #### Topic Shift Excellence
-TextTiling is particularly **good for documents with distinct topic shifts**. If your content has clear topical organization but poor structural markers, this is ideal. Think of a news article that discusses multiple related but distinct topics, or a transcript of a presentation that covers several themes sequentially.
+[pleased] TextTiling is particularly **good for documents with distinct topic shifts**. If your content has clear topical organization but poor structural markers, this is ideal. [conversational] Think of a news article that discusses multiple related but distinct topics, or a transcript of a presentation that covers several themes sequentially.
 
 #### Linguistic Foundation
-It's **based on linguistic principles of lexical cohesion**, which means it has decades of research backing its approach. This isn't someone's random heuristic, it's grounded in understanding how human language actually works. Lexical cohesion theory tells us that related ideas tend to use related vocabulary, and TextTiling leverages that insight elegantly.
+[confidently] It's **based on linguistic principles of lexical cohesion**, which means it has decades of research backing its approach. This isn't someone's random heuristic, it's grounded in understanding how human language actually works. [lecture] Lexical cohesion theory tells us that related ideas tend to use related vocabulary, and TextTiling leverages that insight elegantly.
 
-This is a sophisticated yet understandable approach that bridges classic NLP with modern chunking needs!`
+[delighted] This is a sophisticated yet understandable approach that bridges classic NLP with modern chunking needs!`
         },
         {
           id: 33,
@@ -2019,21 +2019,21 @@ This is a sophisticated yet understandable approach that bridges classic NLP wit
           ),
           backgroundColor: '#651c5d',
           notes: `### 33. TextTiling - Cons
-TextTiling is powerful but finicky. Let's be realistic about where this classic algorithm shows its age and limitations.
+[cautiously] TextTiling is powerful but finicky. Let's be realistic about where this classic algorithm shows its age and limitations.
 
 #### Parameter Sensitivity
-TextTiling is **sensitive to parameters** and shows **domain variance** that can be frustrating. You need to configure window sizes, smoothing factors, and threshold values, and these settings that work beautifully for news articles might fail completely for technical documentation. It's like trying to tune a musical instrument, getting it just right requires patience and experimentation. Different text genres have different cohesion patterns, so one-size-fits-all configurations rarely work well.
+[concerned] TextTiling is **sensitive to parameters** and shows **domain variance** that can be frustrating. You need to configure window sizes, smoothing factors, and threshold values, and these settings that work beautifully for news articles might fail completely for technical documentation. [storytelling] It's like trying to tune a musical instrument, getting it just right requires patience and experimentation. [disappointed] Different text genres have different cohesion patterns, so one-size-fits-all configurations rarely work well.
 
 #### Gradual Transition Struggles
-The algorithm **can struggle with gradual topic transitions** where ideas shift slowly rather than abruptly. If a document gradually moves from discussing database design principles to specific SQL optimization techniques, TextTiling might miss the transition because there's no sharp cohesion drop. It's designed to detect valleys between hills, not gentle slopes. This makes it less effective for flowing narrative content where topics blend seamlessly.
+[cautiously] The algorithm **can struggle with gradual topic transitions** where ideas shift slowly rather than abruptly. If a document gradually moves from discussing database design principles to specific SQL optimization techniques, TextTiling might miss the transition because there's no sharp cohesion drop. [seriously] It's designed to detect valleys between hills, not gentle slopes. This makes it less effective for flowing narrative content where topics blend seamlessly.
 
 #### Configuration Overhead
-It **requires preprocessing and tuning** before it works well. You can't just point it at text and expect great results. You need to tokenize properly, potentially remove stopwords, configure the window parameters, and tune the sensitivity. This upfront work is an investment that might not be worth it for simple use cases.
+[firmly] It **requires preprocessing and tuning** before it works well. You can't just point it at text and expect great results. [concerned] You need to tokenize properly, potentially remove stopwords, configure the window parameters, and tune the sensitivity. This upfront work is an investment that might not be worth it for simple use cases.
 
 #### Style Dependence
-**Performance varies significantly with text style and genre**. Academic papers, news articles, transcripts, and technical docs all have different cohesion patterns. What works for one genre often needs retuning for another. This lack of generalization can be a maintenance burden if you're processing diverse content types.
+[disappointed] **Performance varies significantly with text style and genre**. Academic papers, news articles, transcripts, and technical docs all have different cohesion patterns. [cautiously] What works for one genre often needs retuning for another. This lack of generalization can be a maintenance burden if you're processing diverse content types.
 
-TextTiling is powerful but demands respect and careful tuning to deliver its best results!`
+[seriously] TextTiling is powerful but demands respect and careful tuning to deliver its best results!`
         },
         {
           id: 34,
@@ -2065,18 +2065,18 @@ TextTiling is powerful but demands respect and careful tuning to deliver its bes
           ),
           backgroundColor: '#651c5d',
           notes: `### 34. TextTiling - Configuration
-Let's talk about the practical settings for TextTiling. This algorithm is unique because it's *driven by content*, not by arbitrary size limits.
+[conversational] Let's talk about the practical settings for TextTiling. This algorithm is unique because it's *driven by content*, not by arbitrary size limits.
 
 #### Dynamic Size by Topic
-The chunk size is **variable by tile or window**, typically ranging from **200 to 800 tokens**, but the key insight is that it's **based on topic boundaries, not fixed size**. You don't tell TextTiling "make 500-token chunks." Instead, you configure window parameters and let the algorithm find natural boundaries. One topic might be expressed in 250 tokens while another needs 700. This variability is a feature! It means each chunk is topically coherent rather than artificially truncated. Think of it like cutting a cake along the layer lines rather than with a ruler.
+[lecture] The chunk size is **variable by tile or window**, typically ranging from **200 to 800 tokens**, but the key insight is that it's **based on topic boundaries, not fixed size**. [conversational] You don't tell TextTiling "make 500-token chunks." Instead, you configure window parameters and let the algorithm find natural boundaries. One topic might be expressed in 250 tokens while another needs 700. [confidently] This variability is a feature! It means each chunk is topically coherent rather than artificially truncated. [storytelling] Think of it like cutting a cake along the layer lines rather than with a ruler.
 
 #### Zero Overlap Strategy
-TextTiling uses **no overlap** between chunks, and here's why that's okay: the **algorithm itself handles transitions between topics** by detecting the cohesion valleys. When you break at a natural topic boundary, the concepts on either side are distinct enough that overlap doesn't add value. It's like chapters in a textbook, Chapter 3 about databases doesn't need to repeat the end of Chapter 2 about data structures because they're different topics. The boundary is clean. If you need context preservation, consider post-processing to add minimal overlap, but the algorithm doesn't include it natively.
+[lecture] TextTiling uses **no overlap** between chunks, and here's why that's okay: the **algorithm itself handles transitions between topics** by detecting the cohesion valleys. [conversational] When you break at a natural topic boundary, the concepts on either side are distinct enough that overlap doesn't add value. [storytelling] It's like chapters in a textbook, Chapter 3 about databases doesn't need to repeat the end of Chapter 2 about data structures because they're different topics. The boundary is clean. [conversational] If you need context preservation, consider post-processing to add minimal overlap, but the algorithm doesn't include it natively.
 
 #### Processing Requirements
-Expect **medium computational cost** because it **requires lexical cohesion calculations across text segments**. For each potential boundary point, the algorithm computes similarity scores between adjacent text blocks, looking for cohesion drops. This involves tokenization, vocabulary analysis, and similarity calculations across sliding windows. It's more expensive than simple splitting but much less expensive than embedding-based approaches. The math is tractable and deterministic.
+[seriously] Expect **medium computational cost** because it **requires lexical cohesion calculations across text segments**. For each potential boundary point, the algorithm computes similarity scores between adjacent text blocks, looking for cohesion drops. [lecture] This involves tokenization, vocabulary analysis, and similarity calculations across sliding windows. It's more expensive than simple splitting but much less expensive than embedding-based approaches. The math is tractable and deterministic.
 
-TextTiling's configurations reflect its linguistic foundation, prioritize semantic boundaries over arbitrary size limits!`
+[confidently] TextTiling's configurations reflect its linguistic foundation, prioritize semantic boundaries over arbitrary size limits!`
         },
         {
           id: 35,
@@ -2110,18 +2110,18 @@ TextTiling's configurations reflect its linguistic foundation, prioritize semant
           ),
           backgroundColor: '#651c5d',
           notes: `### 35. TextTiling - Use Cases & Tools
-Where does TextTiling shine, and how can you actually implement it? Let's explore the practical landscape.
+[conversational] Where does TextTiling shine, and how can you actually implement it? Let's explore the practical landscape.
 
 #### Ideal Scenarios
-TextTiling excels with **articles and transcripts that have topic shifts**. Think of a podcast transcript that moves from discussing one guest's background to their current work to future plans, distinct topics but no structural markers. **Academic papers and technical documentation** work well because they tend to have clear topical organization even when section headers are missing or inconsistent. **Long-form content with distinct sections** is perfect, like a blog post discussing three different case studies sequentially. And for **multi-topic document segmentation** where you need to identify where topics change without relying on formatting, TextTiling is a solid choice.
+[enthusiastically] TextTiling excels with **articles and transcripts that have topic shifts**. [storytelling] Think of a podcast transcript that moves from discussing one guest's background to their current work to future plans, distinct topics but no structural markers. [pleased] **Academic papers and technical documentation** work well because they tend to have clear topical organization even when section headers are missing or inconsistent. [lecture] **Long-form content with distinct sections** is perfect, like a blog post discussing three different case studies sequentially. And for **multi-topic document segmentation** where you need to identify where topics change without relying on formatting, TextTiling is a solid choice.
 
 #### Implementation Resources
-The tooling landscape for TextTiling is more academic than commercial. **NLTK-style implementations** exist in various NLP libraries, giving you ready-to-use versions of the classic algorithm. **Open-source repositories like DeepTiling** provide modernized implementations with better defaults. Many teams end up with **custom Python implementations** because the algorithm is well-documented and not overly complex to code from scratch. You'll find it in **research-oriented NLP libraries** rather than production-focused commercial tools. This means you might need to package it yourself for production use.
+[conversational] The tooling landscape for TextTiling is more academic than commercial. **NLTK-style implementations** exist in various NLP libraries, giving you ready-to-use versions of the classic algorithm. [pleased] **Open-source repositories like DeepTiling** provide modernized implementations with better defaults. [lecture] Many teams end up with **custom Python implementations** because the algorithm is well-documented and not overly complex to code from scratch. You'll find it in **research-oriented NLP libraries** rather than production-focused commercial tools. This means you might need to package it yourself for production use.
 
 #### Skill Requirements
-This is an **intermediate-level technique** requiring **understanding of lexical cohesion and parameter tuning**. You need to grasp the linguistic concepts behind cohesion analysis and be comfortable experimenting with window sizes, smoothing parameters, and thresholds. It's not plug-and-play, but it's also not rocket science. With some NLP background and willingness to iterate, most developers can make it work effectively.
+[conversational] This is an **intermediate-level technique** requiring **understanding of lexical cohesion and parameter tuning**. You need to grasp the linguistic concepts behind cohesion analysis and be comfortable experimenting with window sizes, smoothing parameters, and thresholds. [lecture] It's not plug-and-play, but it's also not rocket science. With some NLP background and willingness to iterate, most developers can make it work effectively.
 
-TextTiling bridges classic computational linguistics with modern chunking needs beautifully!`
+[pleased] TextTiling bridges classic computational linguistics with modern chunking needs beautifully!`
         }
       ]
     },
@@ -2145,21 +2145,21 @@ TextTiling bridges classic computational linguistics with modern chunking needs 
           ),
           backgroundColor: '#1c653f',
           notes: `### 36. Discourse / RST Chunking - Pros
-Now we're entering the cutting edge of linguistic analysis! Discourse and RST (Rhetorical Structure Theory) chunking represents the most sophisticated understanding of how text is organized. Let's explore why this is so powerful.
+[excited] Now we're entering the cutting edge of linguistic analysis! Discourse and RST (Rhetorical Structure Theory) chunking represents the most sophisticated understanding of how text is organized. Let's explore why this is so powerful.
 
 #### Deep Semantic Understanding
-This approach **uses discourse units (EDUs, or Elementary Discourse Units) and relations for high fidelity semantics**. An EDU is roughly a clause, the smallest unit that expresses a complete idea. RST analysis identifies how these EDUs relate to each other through rhetorical relations like "elaboration," "contrast," "cause-effect," or "evidence." This is like understanding not just what sentences say, but *how* they work together to build arguments and narratives. You're capturing the author's communicative strategy, not just the words.
+[enthusiastically] This approach **uses discourse units (EDUs, or Elementary Discourse Units) and relations for high fidelity semantics**. [lecture] An EDU is roughly a clause, the smallest unit that expresses a complete idea. RST analysis identifies how these EDUs relate to each other through rhetorical relations like "elaboration," "contrast," "cause-effect," or "evidence." [storytelling] This is like understanding not just what sentences say, but *how* they work together to build arguments and narratives. [confidently] You're capturing the author's communicative strategy, not just the words.
 
 #### Rhetorical Structure Capture
-It **captures rhetorical structure and text organization** at a level that no other chunking technique approaches. You understand which parts of the text are claims versus support, which are background versus new information, which are main points versus details. Think of it like understanding the skeleton of an argument, not just the flesh. This structural understanding enables much more intelligent retrieval because you can match queries to the right *type* of content.
+[delighted] It **captures rhetorical structure and text organization** at a level that no other chunking technique approaches. You understand which parts of the text are claims versus support, which are background versus new information, which are main points versus details. [storytelling] Think of it like understanding the skeleton of an argument, not just the flesh. [enthusiastically] This structural understanding enables much more intelligent retrieval because you can match queries to the right *type* of content.
 
 #### Argumentative Coherence
-RST chunking **preserves argumentative flow and logical connections** between ideas. If sentence A provides evidence for claim B, and claim B supports conclusion C, RST captures those relationships. When you chunk at discourse boundaries, you keep complete argumentative units together. This is invaluable for question answering and reasoning tasks where understanding the logical structure matters.
+[pleased] RST chunking **preserves argumentative flow and logical connections** between ideas. If sentence A provides evidence for claim B, and claim B supports conclusion C, RST captures those relationships. [confidently] When you chunk at discourse boundaries, you keep complete argumentative units together. This is invaluable for question answering and reasoning tasks where understanding the logical structure matters.
 
 #### Long-Form Excellence
-It's **excellent for long-form content comprehension** where understanding the overall structure is as important as understanding individual parts. Research papers, legal briefs, technical proposals, they all benefit from discourse-aware chunking.
+[delighted] It's **excellent for long-form content comprehension** where understanding the overall structure is as important as understanding individual parts. Research papers, legal briefs, technical proposals, they all benefit from discourse-aware chunking.
 
-This is the most linguistically sophisticated chunking approach available!`
+[excited] This is the most linguistically sophisticated chunking approach available!`
         },
         {
           id: 37,
@@ -2177,21 +2177,21 @@ This is the most linguistically sophisticated chunking approach available!`
           ),
           backgroundColor: '#1c653f',
           notes: `### 37. Discourse / RST Chunking - Cons
-The sophistication of RST chunking comes with serious practical challenges. This is not an approach for the faint of heart or tight deadlines!
+[cautiously] The sophistication of RST chunking comes with serious practical challenges. This is not an approach for the faint of heart or tight deadlines!
 
 #### Computational Intensity
-**Parsers are computationally heavy**, and that's an understatement. RST parsing requires analyzing syntactic structure, identifying EDU boundaries, determining rhetorical relations between all EDU pairs, and building a complete discourse tree. This is orders of magnitude more expensive than any technique we've discussed. We're talking seconds per document, not milliseconds. For large corpora, the processing time can be prohibitive unless you have serious compute resources.
+[concerned] **Parsers are computationally heavy**, and that's an understatement. RST parsing requires analyzing syntactic structure, identifying EDU boundaries, determining rhetorical relations between all EDU pairs, and building a complete discourse tree. [seriously] This is orders of magnitude more expensive than any technique we've discussed. We're talking seconds per document, not milliseconds. [disappointed] For large corpora, the processing time can be prohibitive unless you have serious compute resources.
 
 #### Expertise Barrier
-This is **not turnkey and requires specialized knowledge**. You can't just pip install a package and start chunking. You need to understand RST theory, how discourse parsers work, how to interpret their output, and how to tune them for your domain. The learning curve is steep. Most NLP engineers haven't worked with RST, and the pool of expertise is limited. This can be a blocker for teams without deep NLP experience.
+[firmly] This is **not turnkey and requires specialized knowledge**. You can't just pip install a package and start chunking. [cautiously] You need to understand RST theory, how discourse parsers work, how to interpret their output, and how to tune them for your domain. The learning curve is steep. [concerned] Most NLP engineers haven't worked with RST, and the pool of expertise is limited. This can be a blocker for teams without deep NLP experience.
 
 #### Performance Trade-offs
-Expect **lower throughput than simpler methods** by several orders of magnitude. Fixed-size chunking processes documents in milliseconds. RST parsing might take 10-30 seconds per document. If you're processing millions of documents, this matters enormously. The throughput difference can make or break the feasibility of using this approach at scale.
+[disappointed] Expect **lower throughput than simpler methods** by several orders of magnitude. Fixed-size chunking processes documents in milliseconds. RST parsing might take 10-30 seconds per document. [seriously] If you're processing millions of documents, this matters enormously. The throughput difference can make or break the feasibility of using this approach at scale.
 
 #### Tooling Scarcity
-There's **limited availability of production-ready tools**. Most RST parsers are research-grade implementations, not production-hardened services. They might crash on edge cases, lack proper error handling, or require specific input formats. You'll likely need to do significant engineering to productionize them.
+[cautiously] There's **limited availability of production-ready tools**. Most RST parsers are research-grade implementations, not production-hardened services. [concerned] They might crash on edge cases, lack proper error handling, or require specific input formats. You'll likely need to do significant engineering to productionize them.
 
-RST chunking delivers unmatched linguistic sophistication, but the practical barriers are substantial!`
+[firmly] RST chunking delivers unmatched linguistic sophistication, but the practical barriers are substantial!`
         },
         {
           id: 38,
@@ -2223,18 +2223,18 @@ RST chunking delivers unmatched linguistic sophistication, but the practical bar
           ),
           backgroundColor: '#1c653f',
           notes: `### 38. Discourse / RST Chunking - Configuration
-How do you actually configure RST chunking? The settings here reflect its unique linguistic foundation.
+[conversational] How do you actually configure RST chunking? The settings here reflect its unique linguistic foundation.
 
 #### EDU-Based Sizing
-You **combine Elementary Discourse Units (EDUs) to reach approximately 150 to 400 tokens** per chunk. An individual EDU might be just 5-15 tokens (a single clause), so you're grouping multiple EDUs together based on their rhetorical relationships. If three EDUs form a complete argumentative unit (claim + evidence + elaboration), you keep them together even if the total is only 180 tokens. The **size is based on discourse relation boundaries, not fixed counts**. You're respecting the natural rhetorical structure of the text. Think of it like chapters in a book, they vary in length but each is a complete narrative unit.
+[lecture] You **combine Elementary Discourse Units (EDUs) to reach approximately 150 to 400 tokens** per chunk. An individual EDU might be just 5-15 tokens (a single clause), so you're grouping multiple EDUs together based on their rhetorical relationships. [conversational] If three EDUs form a complete argumentative unit (claim + evidence + elaboration), you keep them together even if the total is only 180 tokens. [seriously] The **size is based on discourse relation boundaries, not fixed counts**. You're respecting the natural rhetorical structure of the text. [storytelling] Think of it like chapters in a book, they vary in length but each is a complete narrative unit.
 
 #### Boundary-Respecting Overlap
-Use **no overlap by default** because **discourse boundaries are naturally respected**. When you break at a discourse boundary (the end of a complete argumentative unit), the next chunk starts a new rhetorical structure. There's a clean conceptual break, so overlap doesn't add value. However, you might use **optional minimal overlap when coherence requires it**, such as when one discourse unit explicitly references the previous one. But this is the exception, not the rule. The discourse structure itself provides the context.
+[lecture] Use **no overlap by default** because **discourse boundaries are naturally respected**. When you break at a discourse boundary (the end of a complete argumentative unit), the next chunk starts a new rhetorical structure. [conversational] There's a clean conceptual break, so overlap doesn't add value. However, you might use **optional minimal overlap when coherence requires it**, such as when one discourse unit explicitly references the previous one. But this is the exception, not the rule. The discourse structure itself provides the context.
 
 #### Heavy Processing
-Expect **high computational cost** due to **implementation complexity and heavy processing requirements**. RST parsing involves syntactic analysis, EDU segmentation, relation classification between all EDU pairs, and tree construction. This is the most expensive chunking approach by far. Plan for seconds-per-document processing times and significant CPU/memory requirements. This is research-grade computational linguistics in production!
+[seriously] Expect **high computational cost** due to **implementation complexity and heavy processing requirements**. RST parsing involves syntactic analysis, EDU segmentation, relation classification between all EDU pairs, and tree construction. [cautiously] This is the most expensive chunking approach by far. Plan for seconds-per-document processing times and significant CPU/memory requirements. [conversational] This is research-grade computational linguistics in production!
 
-These configurations reflect RST's unique approach, linguistic structure trumps arbitrary sizing!`
+[lecture] These configurations reflect RST's unique approach, linguistic structure trumps arbitrary sizing!`
         },
         {
           id: 39,
@@ -2268,18 +2268,18 @@ These configurations reflect RST's unique approach, linguistic structure trumps 
           ),
           backgroundColor: '#1c653f',
           notes: `### 39. Discourse / RST Chunking - Use Cases & Tools
-When is the computational and intellectual investment in RST chunking actually worthwhile? Let's identify the high-value scenarios.
+[conversational] When is the computational and intellectual investment in RST chunking actually worthwhile? Let's identify the high-value scenarios.
 
 #### Premium Applications
-RST chunking excels at **long-form question answering** where understanding argumentative structure helps select the right evidence chunks. If someone asks "What evidence supports the authors' main claim?" RST helps you identify claim-evidence relationships. **Summarization grounding** is another killer app, when generating summaries, knowing which EDUs are main points versus supporting details is invaluable. **Academic papers and legal documents** are natural fits because they have explicit rhetorical structure, introductions support claims, methodology sections elaborate on procedures, and conclusions synthesize arguments. Finally, **complex reasoning over structured arguments** where you need to understand logical relationships, not just keyword matches, benefits enormously from discourse-aware chunking.
+[enthusiastically] RST chunking excels at **long-form question answering** where understanding argumentative structure helps select the right evidence chunks. [playfully] If someone asks "What evidence supports the authors' main claim?" [pleased] RST helps you identify claim-evidence relationships. [lecture] **Summarization grounding** is another killer app, when generating summaries, knowing which EDUs are main points versus supporting details is invaluable. [conversational] **Academic papers and legal documents** are natural fits because they have explicit rhetorical structure, introductions support claims, methodology sections elaborate on procedures, and conclusions synthesize arguments. [enthusiastically] Finally, **complex reasoning over structured arguments** where you need to understand logical relationships, not just keyword matches, benefits enormously from discourse-aware chunking.
 
 #### Implementation Landscape
-The tooling is academic-grade, expect challenges. **Research-grade RST parsers** like DPLP or neural discourse parsers exist but require significant setup. **Discourse segmentation toolkits** provide EDU boundary detection as a first step. Most production use requires **custom NLP pipelines** that you build and maintain yourself. **Academic libraries like NLTK-RST** provide foundations but aren't production-ready. You'll need serious NLP engineering to deploy this.
+[cautiously] The tooling is academic-grade, expect challenges. **Research-grade RST parsers** like DPLP or neural discourse parsers exist but require significant setup. [conversational] **Discourse segmentation toolkits** provide EDU boundary detection as a first step. [seriously] Most production use requires **custom NLP pipelines** that you build and maintain yourself. **Academic libraries like NLTK-RST** provide foundations but aren't production-ready. You'll need serious NLP engineering to deploy this.
 
 #### Expert-Level Technique
-This is an **advanced technique** requiring **specialized expertise and significant implementation difficulty**. You need deep understanding of RST theory, experience with discourse parsing, and strong NLP engineering skills. This is not a weekend project! Expect weeks or months to get it working well. Only pursue this if the value justifies the investment.
+[firmly] This is an **advanced technique** requiring **specialized expertise and significant implementation difficulty**. You need deep understanding of RST theory, experience with discourse parsing, and strong NLP engineering skills. [seriously] This is not a weekend project! Expect weeks or months to get it working well. [cautiously] Only pursue this if the value justifies the investment.
 
-RST chunking is the pinnacle of linguistic sophistication, use it when nothing else will suffice!`
+[confidently] RST chunking is the pinnacle of linguistic sophistication, use it when nothing else will suffice!`
         }
       ]
     },
@@ -2303,21 +2303,21 @@ RST chunking is the pinnacle of linguistic sophistication, use it when nothing e
           ),
           backgroundColor: '#656a1c',
           notes: `### 40. Token-Aware Chunking - Pros
-Let's shift gears to a more practical, engineering-focused approach. Token-aware chunking addresses a real problem: making sure your chunks actually fit in your models' context windows!
+[conversational] Let's shift gears to a more practical, engineering-focused approach. Token-aware chunking addresses a real problem: making sure your chunks actually fit in your models' context windows!
 
 #### Tokenizer Alignment
-Token-aware chunking **honors tokenizer limits** and provides **predictable fit** for your models. This is huge! Instead of guessing "is 500 characters about 128 tokens?" you *know* exactly how many tokens each chunk contains because you're using the actual tokenizer. Different models tokenize differently, "GPT" in GPT-3.5's tokenizer might be one token, while in another tokenizer it's three. Token-aware chunking eliminates this uncertainty by using the same tokenizer that your embedding model uses.
+[enthusiastically] Token-aware chunking **honors tokenizer limits** and provides **predictable fit** for your models. This is huge! [lecture] Instead of guessing "is 500 characters about 128 tokens?" you *know* exactly how many tokens each chunk contains because you're using the actual tokenizer. [conversational] Different models tokenize differently, "GPT" in GPT-3.5's tokenizer might be one token, while in another tokenizer it's three. Token-aware chunking eliminates this uncertainty by using the same tokenizer that your embedding model uses.
 
 #### Truncation Prevention
-It **avoids truncation by embedding models**, which is a silent killer of quality. Many embedding models have hard limits like 512 tokens. If you send 600 tokens, they silently truncate the last 88 tokens, losing information and degrading retrieval quality. You might not even notice this is happening! Token-aware chunking ensures every chunk fits perfectly within the model's window, no truncation, no loss.
+[seriously] It **avoids truncation by embedding models**, which is a silent killer of quality. Many embedding models have hard limits like 512 tokens. [cautiously] If you send 600 tokens, they silently truncate the last 88 tokens, losing information and degrading retrieval quality. [playfully] You might not even notice this is happening! [confidently] Token-aware chunking ensures every chunk fits perfectly within the model's window, no truncation, no loss.
 
 #### Exact Window Matching
-It **matches the exact token windows of models** you're using. If your embedding model performs best with 256-token inputs, you can chunk at exactly 256 tokens. If your retrieval model has a 1024-token limit, you can chunk at 1024. This precision ensures you're using your models optimally, not leaving capacity unused or exceeding limits.
+[pleased] It **matches the exact token windows of models** you're using. If your embedding model performs best with 256-token inputs, you can chunk at exactly 256 tokens. [lecture] If your retrieval model has a 1024-token limit, you can chunk at 1024. This precision ensures you're using your models optimally, not leaving capacity unused or exceeding limits.
 
 #### Accuracy Over Characters
-It provides **more accurate size estimation than character-based methods**. A character count might suggest your chunk is small enough, but after tokenization it exceeds limits. Token-aware chunking measures what actually matters: tokens, not characters or words.
+[confidently] It provides **more accurate size estimation than character-based methods**. A character count might suggest your chunk is small enough, but after tokenization it exceeds limits. Token-aware chunking measures what actually matters: tokens, not characters or words.
 
-This is engineering pragmatism at its finest, solving real production problems!`
+[delighted] This is engineering pragmatism at its finest, solving real production problems!`
         },
         {
           id: 41,
@@ -2337,16 +2337,16 @@ This is engineering pragmatism at its finest, solving real production problems!`
           ),
           backgroundColor: '#656a1c',
           notes: `### 41. Token-Aware Chunking - Cons
-Now let's talk about the downsides of token-aware chunking, because like everything in engineering, there are trade-offs.
+[conversational] Now let's talk about the downsides of token-aware chunking, because like everything in engineering, there are trade-offs.
 #### The Splitting Problem
-The biggest issue is that **tokens don't care about meaning**. Think about it this way, tokenizers are like scissors that cut based on character patterns, not ideas. They might split right in the middle of a variable name or a sentence, breaking the semantic flow. It's like cutting a book based on word count instead of chapter endings. You might end up with half a sentence in one chunk and the other half in another.
+[cautiously] The biggest issue is that **tokens don't care about meaning**. [storytelling] Think about it this way, tokenizers are like scissors that cut based on character patterns, not ideas. [concerned] They might split right in the middle of a variable name or a sentence, breaking the semantic flow. [storytelling] It's like cutting a book based on word count instead of chapter endings. You might end up with half a sentence in one chunk and the other half in another.
 #### Model Variance
-Here's something that surprises many people: **different models tokenize differently**. OpenAI's GPT-4 uses a different tokenizer than Claude or LLaMA. What counts as 512 tokens in one model might be 600 in another! This means if you switch embedding models down the road, your carefully calibrated chunk sizes might suddenly become inefficient.
+[playfully] Here's something that surprises many people: [cautiously] **different models tokenize differently**. OpenAI's GPT-4 uses a different tokenizer than Claude or LLaMA. [disappointed] What counts as 512 tokens in one model might be 600 in another! This means if you switch embedding models down the road, your carefully calibrated chunk sizes might suddenly become inefficient.
 #### Dependencies
-You also **need access to the tokenizer** itself, which adds a dependency to your pipeline. Some tokenizers require API calls, others need libraries installed. It's not a huge barrier, but it's one more thing to manage and one more potential failure point.
+[conversational] You also **need access to the tokenizer** itself, which adds a dependency to your pipeline. Some tokenizers require API calls, others need libraries installed. [cautiously] It's not a huge barrier, but it's one more thing to manage and one more potential failure point.
 #### Semantic Misalignment
-Finally, token boundaries **ignore semantic structure**. They don't understand that a paragraph is ending or that a new topic is starting. They just count tokens. So while you get predictable sizes, you lose that natural flow that comes from respecting the actual meaning and structure of the text.
-This is why token-aware chunking works best when combined with other strategies that can add back some semantic awareness.`
+[firmly] Finally, token boundaries **ignore semantic structure**. They don't understand that a paragraph is ending or that a new topic is starting. They just count tokens. [disappointed] So while you get predictable sizes, you lose that natural flow that comes from respecting the actual meaning and structure of the text.
+[conversational] This is why token-aware chunking works best when combined with other strategies that can add back some semantic awareness.`
         },
         {
           id: 42,
@@ -2384,15 +2384,15 @@ This is why token-aware chunking works best when combined with other strategies 
           ),
           backgroundColor: '#656a1c',
           notes: `### 42. Token-Aware Chunking - Configuration
-Let's get practical and talk about the recommended settings for token-aware chunking. These are battle-tested defaults from production systems.
+[conversational] Let's get practical and talk about the recommended settings for token-aware chunking. These are battle-tested defaults from production systems.
 #### Best Chunk Size
-For chunk size, the sweet spot is **256 to 1024 tokens**. Now, this isn't arbitrary. The key principle here is to **match your embedding model's context window**. If you're using OpenAI's text-embedding-ada-002, that's 8192 tokens, but you typically want chunks smaller than the full window. Around 512 tokens is a common choice because it's large enough to capture meaningful context but small enough to stay focused.
-Think of it like Goldilocks: too small and you lose context, too big and you dilute the signal with noise. The exact number depends on your use case. Technical documentation might work better with larger chunks like 800-1024 tokens, while conversational content might prefer 256-512.
+[lecture] For chunk size, the sweet spot is **256 to 1024 tokens**. Now, this isn't arbitrary. The key principle here is to **match your embedding model's context window**. [conversational] If you're using OpenAI's text-embedding-ada-002, that's 8192 tokens, but you typically want chunks smaller than the full window. Around 512 tokens is a common choice because it's large enough to capture meaningful context but small enough to stay focused.
+[storytelling] Think of it like Goldilocks: too small and you lose context, too big and you dilute the signal with noise. [lecture] The exact number depends on your use case. Technical documentation might work better with larger chunks like 800-1024 tokens, while conversational content might prefer 256-512.
 #### Overlap Size  
-For overlap, aim for **10 to 20 percent**, which typically translates to **50 to 100 tokens**. This overlap acts as a safety net. When you cut text into chunks, important context might sit right at the boundary. The overlap ensures that boundary information appears in both neighboring chunks, so you don't lose critical connections.
+[lecture] For overlap, aim for **10 to 20 percent**, which typically translates to **50 to 100 tokens**. [conversational] This overlap acts as a safety net. When you cut text into chunks, important context might sit right at the boundary. The overlap ensures that boundary information appears in both neighboring chunks, so you don't lose critical connections.
 #### Computational Cost
-The beauty of token-aware chunking is its **low computational cost**. You're basically just counting tokens and slicing text. No heavy NLP processing, no machine learning models running. It's fast, predictable, and scales well even to massive document collections.
-These configurations give you a solid starting point that works for most RAG applications right out of the box.`
+[pleased] The beauty of token-aware chunking is its **low computational cost**. You're basically just counting tokens and slicing text. [conversational] No heavy NLP processing, no machine learning models running. It's fast, predictable, and scales well even to massive document collections.
+[confidently] These configurations give you a solid starting point that works for most RAG applications right out of the box.`
         },
         {
           id: 43,
@@ -2430,18 +2430,18 @@ These configurations give you a solid starting point that works for most RAG app
           ),
           backgroundColor: '#656a1c',
           notes: `### 43. Token-Aware Chunking - Use Cases & Tools
-Now let's explore where token-aware chunking really shines and the tools that make it easy to implement.
+[conversational] Now let's explore where token-aware chunking really shines and the tools that make it easy to implement.
 #### Use Cases
-Token-aware chunking is incredibly versatile. It works for **any embedding pipeline** where you need predictable chunk sizes. This makes it perfect for production RAG systems where you have **strict token budgets** or context window limits. Think of scenarios like OpenAI's embeddings where you pay per token, or when you're constrained by model input limits.
-It's also your go-to choice for **cross-model compatibility**. If you might switch between different LLMs or embedding models, token-aware chunking gives you a consistent baseline. You're not tied to any particular model's quirks or behaviors.
+[lecture] Token-aware chunking is incredibly versatile. It works for **any embedding pipeline** where you need predictable chunk sizes. [conversational] This makes it perfect for production RAG systems where you have **strict token budgets** or context window limits. Think of scenarios like OpenAI's embeddings where you pay per token, or when you're constrained by model input limits.
+[pleased] It's also your go-to choice for **cross-model compatibility**. If you might switch between different LLMs or embedding models, token-aware chunking gives you a consistent baseline. You're not tied to any particular model's quirks or behaviors.
 #### Tooling Support
-The ecosystem for token-aware chunking is mature and well-supported. Let's walk through your options. **Tiktoken** is OpenAI's official tokenizer library. It's fast, written in Rust under the hood, and gives you exact token counts for GPT models. If you're using OpenAI embeddings, this is your best friend.
-**Hugging Face tokenizers** cover pretty much every other model out there. They support BERT 👉 'burt', RoBERTa, and hundreds of other models. The library is battle-tested and highly optimized.
-**LangChain** provides a TokenTextSplitter that handles the splitting logic for you. It integrates seamlessly with their broader RAG framework, so you're not reinventing the wheel.
-Even **spaCy** 👉 'spay-see' includes tokenizers, though they're more focused on linguistic tokenization rather than model-specific tokens.
+[enthusiastically] The ecosystem for token-aware chunking is mature and well-supported. Let's walk through your options. **Tiktoken** is OpenAI's official tokenizer library. [conversational] It's fast, written in Rust under the hood, and gives you exact token counts for GPT models. If you're using OpenAI embeddings, this is your best friend.
+[pleased] **Hugging Face tokenizers** cover pretty much every other model out there. They support BERT, RoBERTa, and hundreds of other models. The library is battle-tested and highly optimized.
+[conversational] **LangChain** provides a TokenTextSplitter that handles the splitting logic for you. It integrates seamlessly with their broader RAG framework, so you're not reinventing the wheel.
+[lecture] Even **spaCy** includes tokenizers, though they're more focused on linguistic tokenization rather than model-specific tokens.
 #### Complexity Level
-This is rated as **Beginner** level, and for good reason. You don't need deep NLP expertise or complex algorithms. It's basically counting and slicing, which makes it a perfect starting point for anyone new to RAG systems.
-This is your foundational technique that you'll use again and again across different projects.`
+[confidently] This is rated as **Beginner** level, and for good reason. You don't need deep NLP expertise or complex algorithms. [conversational] It's basically counting and slicing, which makes it a perfect starting point for anyone new to RAG systems.
+[pleased] This is your foundational technique that you'll use again and again across different projects.`
         },
       ]
     },
@@ -2467,16 +2467,16 @@ This is your foundational technique that you'll use again and again across diffe
           ),
           backgroundColor: '#1c5265',
           notes: `### 44. Heading / Title Anchor Chunking - Pros
-Moving on to technique number 11, heading-based chunking. This is one of my favorite approaches for structured documents because it respects the author's original intent.
+[pleased] Moving on to technique number 11, heading-based chunking. This is one of my favorite approaches for structured documents because it respects the author's original intent.
 #### Document Navigation Alignment
-The biggest advantage here is **strong alignment to how documents are naturally organized**. When an author writes a technical document or README, they deliberately create sections with headings. These headings mark topic boundaries, create logical groupings, and guide the reader through the content. By chunking on headings, you're essentially saying "I trust the author knew what they were doing." This makes it **perfect for documentation sites**, API references, and any content where structure matters.
+[enthusiastically] The biggest advantage here is **strong alignment to how documents are naturally organized**. When an author writes a technical document or README, they deliberately create sections with headings. [lecture] These headings mark topic boundaries, create logical groupings, and guide the reader through the content. [confidently] By chunking on headings, you're essentially saying "I trust the author knew what they were doing." [delighted] This makes it **perfect for documentation sites**, API references, and any content where structure matters.
 #### Hierarchy Preservation
-Heading-based chunking **preserves the document hierarchy**. You maintain that tree structure from H1 down to H2 and H3 sections. This means when someone searches for information, you can return not just the relevant chunk but also its position in the document's logical structure. Think of it like breadcrumbs: "Installation Guide > Prerequisites > Python Setup." That context is gold for understanding.
+[pleased] Heading-based chunking **preserves the document hierarchy**. You maintain that tree structure from H1 down to H2 and H3 sections. [conversational] This means when someone searches for information, you can return not just the relevant chunk but also its position in the document's logical structure. [storytelling] Think of it like breadcrumbs: "Installation Guide > Prerequisites > Python Setup." That context is gold for understanding.
 #### Enhanced Retrieval Context
-Every chunk comes with **built-in metadata** from the heading itself. You know exactly what topic each chunk covers because the heading tells you! This makes filtering and ranking much more precise during retrieval. You're not guessing about relevance; the structure makes it explicit.
+[enthusiastically] Every chunk comes with **built-in metadata** from the heading itself. You know exactly what topic each chunk covers because the heading tells you! [confidently] This makes filtering and ranking much more precise during retrieval. You're not guessing about relevance; the structure makes it explicit.
 #### Semantic Boundaries
-Headings naturally mark **semantic boundaries**. When an author starts a new section, they're signaling a topic shift. By respecting these boundaries, your chunks are inherently more coherent and topically focused than arbitrary splits would be.
-This approach works beautifully when your documents have clear, consistent heading structures.`
+[lecture] Headings naturally mark **semantic boundaries**. When an author starts a new section, they're signaling a topic shift. [pleased] By respecting these boundaries, your chunks are inherently more coherent and topically focused than arbitrary splits would be.
+[delighted] This approach works beautifully when your documents have clear, consistent heading structures.`
         },
         {
           id: 45,
@@ -2496,16 +2496,16 @@ This approach works beautifully when your documents have clear, consistent headi
           ),
           backgroundColor: '#1c5265',
           notes: `### 45. Heading / Title Anchor Chunking - Cons
-Of course, heading-based chunking isn't perfect. Let's talk about when it breaks down and what challenges you'll face.
+[cautiously] Of course, heading-based chunking isn't perfect. Let's talk about when it breaks down and what challenges you'll face.
 #### Clean Structure Requirement
-The fundamental limitation is that you **need clean, consistent headings**. If your documents are free-flowing prose without clear structure, like novels or stream-of-consciousness writing, this approach simply won't work. You can't chunk on headings that don't exist! Even worse is inconsistent heading usage, where one author uses H2 for major sections and another uses H3. Your chunking strategy falls apart.
+[firmly] The fundamental limitation is that you **need clean, consistent headings**. [disappointed] If your documents are free-flowing prose without clear structure, like novels or stream-of-consciousness writing, this approach simply won't work. You can't chunk on headings that don't exist! [concerned] Even worse is inconsistent heading usage, where one author uses H2 for major sections and another uses H3. Your chunking strategy falls apart.
 #### Uneven Chunk Sizes
-Here's a practical problem: **sections vary wildly in length**. Your "Introduction" might be 50 words while your "Implementation Details" section runs 2000 words. This creates chunks that range from tiny to massive, which makes embedding and retrieval less predictable. Some chunks might not have enough context, while others have way too much.
+[cautiously] Here's a practical problem: **sections vary wildly in length**. Your "Introduction" might be 50 words while your "Implementation Details" section runs 2000 words. [disappointed] This creates chunks that range from tiny to massive, which makes embedding and retrieval less predictable. Some chunks might not have enough context, while others have way too much.
 #### Context Window Overflow
-Related to the size issue, **some sections might exceed your model's context window**. If someone writes a comprehensive 3000-token section under a single heading, and your embedding model maxes out at 512 tokens, you've got a problem. You'd need to sub-chunk that section, which adds complexity.
+[concerned] Related to the size issue, **some sections might exceed your model's context window**. If someone writes a comprehensive 3000-token section under a single heading, and your embedding model maxes out at 512 tokens, you've got a problem. [cautiously] You'd need to sub-chunk that section, which adds complexity.
 #### Heading Style Inconsistencies
-Different authors and different documents use **different heading conventions**. Markdown headings are clean, but HTML might mix heading levels with CSS classes. Some documents use ALL CAPS for headings, others use title case. These variations require preprocessing and normalization, which adds friction to your pipeline.
-Despite these challenges, for well-structured documentation, the benefits usually outweigh the drawbacks.`
+[disappointed] Different authors and different documents use **different heading conventions**. Markdown headings are clean, but HTML might mix heading levels with CSS classes. [conversational] Some documents use ALL CAPS for headings, others use title case. [firmly] These variations require preprocessing and normalization, which adds friction to your pipeline.
+[conversational] Despite these challenges, for well-structured documentation, the benefits usually outweigh the drawbacks.`
         },
         {
           id: 46,
@@ -2563,10 +2563,10 @@ Despite these challenges, for well-structured documentation, the benefits usuall
           ),
           backgroundColor: '#1c5265',
           notes: `### 46. Heading / Title Anchor Chunking - Configuration
-Let's dial in the practical settings for heading-based chunking so you can implement this effectively.
+[conversational] Let's dial in the practical settings for heading-based chunking so you can implement this effectively.
 #### Best Chunk Size
-Unlike fixed-size chunking, heading-based chunks are **section-bounded**, meaning the chunk size is determined by your document structure rather than an arbitrary number. In practice, sections typically range from **200 to 1200 tokens**. That's quite a range, right? A short "Overview" section might be 200 tokens, while a detailed "API Reference" section could hit 1200 tokens or more.
-The key insight is that **heading density** affects your chunk sizes. Documents with many subsections create smaller, more focused chunks. Documents with sparse headings create larger, more comprehensive chunks. Think of a GitHub README with tons of H2 and H3 sections versus a blog post with just a few main headings.
+[lecture] Unlike fixed-size chunking, heading-based chunks are **section-bounded**, meaning the chunk size is determined by your document structure rather than an arbitrary number. In practice, sections typically range from **200 to 1200 tokens**. [playfully] That's quite a range, right? [conversational] A short "Overview" section might be 200 tokens, while a detailed "API Reference" section could hit 1200 tokens or more.
+[lecture] The key insight is that **heading density** affects your chunk sizes. Documents with many subsections create smaller, more focused chunks. Documents with sparse headings create larger, more comprehensive chunks. [storytelling] Think of a GitHub README with tons of H2 and H3 sections versus a blog post with just a few main headings.
 \`\`\`mermaid
 graph TD
     A[Document] --> B[H1: Introduction<br/>200 tokens]
@@ -2586,10 +2586,10 @@ graph TD
     style H fill:#e1bee7
 \`\`\`
 #### Overlap Size
-For overlap, you typically want **0 to 5 percent**, which is minimal. Why so low? Because headings already provide natural boundaries. However, there's a clever trick: you can **include the parent heading** with each sub-section chunk. This gives context without bloating storage. For example, if you have "Installation > Linux Setup", you'd include the "Installation" heading with the "Linux Setup" content.
+[lecture] For overlap, you typically want **0 to 5 percent**, which is minimal. [playfully] Why so low? [conversational] Because headings already provide natural boundaries. However, there's a clever trick: you can **include the parent heading** with each sub-section chunk. [lecture] This gives context without bloating storage. For example, if you have "Installation > Linux Setup", you'd include the "Installation" heading with the "Linux Setup" content.
 #### Computational Cost
-The implementation sits at **Low to Medium** complexity. You need a heading parser, which adds a bit more logic than simple character splitting, but it's still straightforward. Markdown is particularly easy since headings follow a clear pattern with hash marks.
-This configuration gives you semantically meaningful chunks that align with how humans naturally structure information.`
+[conversational] The implementation sits at **Low to Medium** complexity. You need a heading parser, which adds a bit more logic than simple character splitting, but it's still straightforward. [pleased] Markdown is particularly easy since headings follow a clear pattern with hash marks.
+[confidently] This configuration gives you semantically meaningful chunks that align with how humans naturally structure information.`
         },
         {
           id: 47,
@@ -2627,20 +2627,20 @@ This configuration gives you semantically meaningful chunks that align with how 
           ),
           backgroundColor: '#1c5265',
           notes: `### 47. Heading / Title Anchor Chunking - Use Cases & Tools
-Now let's explore the ideal scenarios for heading-based chunking and the tooling ecosystem that supports it.
+[conversational] Now let's explore the ideal scenarios for heading-based chunking and the tooling ecosystem that supports it.
 #### Use Cases
-This technique absolutely shines for **Markdown documentation and README files**. Think about every GitHub repo you've seen, they all have structured READMEs with clear headings. By chunking on those headings, you preserve the logical flow that the maintainers carefully crafted.
-**API references and technical docs sites** are another perfect fit. These documents are inherently hierarchical, with sections for endpoints, parameters, examples, and error codes. Each section is a natural chunk that contains everything you need to know about one specific aspect.
-**Knowledge bases** with clear structure benefit immensely. If you're building a corporate knowledge system or a help center, the articles likely already have headings that organize the content logically. Why fight that structure? Embrace it!
-**Wikis and developer documentation** follow similar patterns. Whether it's a company wiki or open-source docs, the heading structure provides built-in navigation and organization.
+[enthusiastically] This technique absolutely shines for **Markdown documentation and README files**. [storytelling] Think about every GitHub repo you've seen, they all have structured READMEs with clear headings. [pleased] By chunking on those headings, you preserve the logical flow that the maintainers carefully crafted.
+[delighted] **API references and technical docs sites** are another perfect fit. These documents are inherently hierarchical, with sections for endpoints, parameters, examples, and error codes. [lecture] Each section is a natural chunk that contains everything you need to know about one specific aspect.
+[conversational] **Knowledge bases** with clear structure benefit immensely. If you're building a corporate knowledge system or a help center, the articles likely already have headings that organize the content logically. [playfully] Why fight that structure? Embrace it!
+[pleased] **Wikis and developer documentation** follow similar patterns. Whether it's a company wiki or open-source docs, the heading structure provides built-in navigation and organization.
 #### Tooling Support
-The tools here are mature and widely available. **Markdown heading parsers** are plentiful in every programming language. Simple regex or dedicated libraries can extract heading hierarchies in milliseconds.
-**GitHub Flavored Markdown**, or GFM, includes automatic anchor generation for headings. This means you can even create deep links to specific chunks in your original documents, which is fantastic for user experience.
-**Static site generators** like Jekyll and MkDocs are built around heading-based navigation. They already parse and organize content by headings, so integrating chunking into these workflows is natural.
-**LangChain's MarkdownTextSplitter** provides ready-made functionality specifically for this use case. It handles the parsing, respects heading boundaries, and even lets you customize how it handles different heading levels.
+[conversational] The tools here are mature and widely available. **Markdown heading parsers** are plentiful in every programming language. [lecture] Simple regex or dedicated libraries can extract heading hierarchies in milliseconds.
+[pleased] **GitHub Flavored Markdown**, or GFM, includes automatic anchor generation for headings. [enthusiastically] This means you can even create deep links to specific chunks in your original documents, which is fantastic for user experience.
+[conversational] **Static site generators** like Jekyll and MkDocs are built around heading-based navigation. They already parse and organize content by headings, so integrating chunking into these workflows is natural.
+[delighted] **LangChain's MarkdownTextSplitter** provides ready-made functionality specifically for this use case. It handles the parsing, respects heading boundaries, and even lets you customize how it handles different heading levels.
 #### Complexity Level
-This sits at **Beginner to Intermediate**. If you're comfortable with basic text parsing, you can implement this. The challenge comes from handling edge cases and different markdown flavors, but nothing insurmountable.
-This is one of those techniques where the structure does most of the work for you.`
+[conversational] This sits at **Beginner to Intermediate**. If you're comfortable with basic text parsing, you can implement this. [lecture] The challenge comes from handling edge cases and different markdown flavors, but nothing insurmountable.
+[pleased] This is one of those techniques where the structure does most of the work for you.`
         },
       ]
     },
@@ -2666,16 +2666,16 @@ This is one of those techniques where the structure does most of the work for yo
           ),
           backgroundColor: '#5c1c65',
           notes: `### 48. Markdown / HTML Structure Chunking - Pros
-Let's dive into technique 12, which takes the heading-based approach and supercharges it by considering the full structural markup of documents.
+[pleased] Let's dive into technique 12, which takes the heading-based approach and supercharges it by considering the full structural markup of documents.
 #### Element Preservation
-The magic here is that you **preserve special elements intact**. Think about code blocks, tables, bullet lists, numbered lists, and blockquotes. These aren't just text; they have semantic meaning tied to their formatting. A code block split in half becomes useless. A table with missing rows loses its data integrity. By chunking based on HTML or Markdown structure, you keep these elements whole and meaningful.
+[enthusiastically] The magic here is that you **preserve special elements intact**. [lecture] Think about code blocks, tables, bullet lists, numbered lists, and blockquotes. These aren't just text; they have semantic meaning tied to their formatting. [seriously] A code block split in half becomes useless. A table with missing rows loses its data integrity. [confidently] By chunking based on HTML or Markdown structure, you keep these elements whole and meaningful.
 #### Structure and Hierarchy
-Just like heading-based chunking, you **maintain the document's hierarchical organization**, but now you're also respecting inline structure. Paragraphs stay together, list items remain grouped, and nested elements maintain their relationships. It's like preserving the DOM tree or Markdown AST 👉 'abstract syntax tree' of your content.
+[conversational] Just like heading-based chunking, you **maintain the document's hierarchical organization**, but now you're also respecting inline structure. [lecture] Paragraphs stay together, list items remain grouped, and nested elements maintain their relationships. [storytelling] It's like preserving the DOM tree or Markdown AST of your content.
 #### Rich Metadata
-Here's where it gets really powerful: **metadata extraction from the markup itself**. HTML elements have classes, IDs, and data attributes. Markdown has syntax that indicates emphasis, links, and image captions. All of this becomes metadata you can use during retrieval. Want to prioritize chunks with code examples? Easy, just check for code block elements. Need chunks with specific CSS classes? You've got that information.
+[delighted] Here's where it gets really powerful: **metadata extraction from the markup itself**. [lecture] HTML elements have classes, IDs, and data attributes. Markdown has syntax that indicates emphasis, links, and image captions. All of this becomes metadata you can use during retrieval. [enthusiastically] Want to prioritize chunks with code examples? Easy, just check for code block elements. [pleased] Need chunks with specific CSS classes? You've got that information.
 #### Meaningful Boundaries
-The structure provides **natural semantic boundaries**. A paragraph element is a complete thought. A list is a complete enumeration. A section with a heading is a complete topic. By chunking along these structural lines, you get semantically coherent units without having to guess where meaning starts and stops.
-This approach is perfect when your documents are already well-marked up and you want to leverage that investment in structure.`
+[confidently] The structure provides **natural semantic boundaries**. A paragraph element is a complete thought. A list is a complete enumeration. A section with a heading is a complete topic. [pleased] By chunking along these structural lines, you get semantically coherent units without having to guess where meaning starts and stops.
+[delighted] This approach is perfect when your documents are already well-marked up and you want to leverage that investment in structure.`
         },
         {
           id: 49,
@@ -2695,16 +2695,16 @@ This approach is perfect when your documents are already well-marked up and you 
           ),
           backgroundColor: '#5c1c65',
           notes: `### 49. Markdown / HTML Structure Chunking - Cons
-Now let's be real about the challenges you'll face with structure-based chunking.
+[cautiously] Now let's be real about the challenges you'll face with structure-based chunking.
 #### Structure Dependency
-The fundamental requirement is **well-structured source documents**. If your HTML is malformed with unclosed tags, missing elements, or inconsistent nesting, parsers will struggle or produce garbage. Similarly, if your Markdown doesn't follow consistent conventions, you'll get unreliable results. You're at the mercy of the document quality, which in the real world can be quite variable.
+[firmly] The fundamental requirement is **well-structured source documents**. [concerned] If your HTML is malformed with unclosed tags, missing elements, or inconsistent nesting, parsers will struggle or produce garbage. [disappointed] Similarly, if your Markdown doesn't follow consistent conventions, you'll get unreliable results. You're at the mercy of the document quality, which in the real world can be quite variable.
 #### Boilerplate and Noise
-Web pages especially are full of **boilerplate content**: navigation bars, footers, sidebars, cookie banners, ads. All of this gets parsed along with your actual content unless you explicitly filter it out. This means you need preprocessing logic to identify and remove noise, which adds complexity. Without filtering, you'd be embedding and retrieving chunks about "Click here to accept cookies!" which wastes resources and pollutes your search results.
+[cautiously] Web pages especially are full of **boilerplate content**: navigation bars, footers, sidebars, cookie banners, ads. [concerned] All of this gets parsed along with your actual content unless you explicitly filter it out. [seriously] This means you need preprocessing logic to identify and remove noise, which adds complexity. [disappointed] Without filtering, you'd be embedding and retrieving chunks about "Click here to accept cookies!" which wastes resources and pollutes your search results.
 #### Parsing Complexity
-**HTML parsing can be brittle**. Real-world HTML is messy, browser-specific, and often relies on JavaScript to render properly. You might use BeautifulSoup or similar tools, but they have to make assumptions about malformed markup. Edge cases abound, and each one requires handling. Markdown is simpler but still has variations like GitHub Flavored Markdown, CommonMark, and custom extensions.
+[cautiously] **HTML parsing can be brittle**. Real-world HTML is messy, browser-specific, and often relies on JavaScript to render properly. [concerned] You might use BeautifulSoup or similar tools, but they have to make assumptions about malformed markup. [disappointed] Edge cases abound, and each one requires handling. Markdown is simpler but still has variations like GitHub Flavored Markdown, CommonMark, and custom extensions.
 #### Format-Specific Implementation
-You need **separate implementations for different formats**. Your HTML parser won't work for Markdown, and vice versa. If you're dealing with multiple document types, you need a chunking pipeline that can route to the appropriate parser. This multiplies maintenance burden and testing surface area.
-Despite these challenges, the payoff in chunk quality often justifies the extra engineering effort.`
+[firmly] You need **separate implementations for different formats**. Your HTML parser won't work for Markdown, and vice versa. [cautiously] If you're dealing with multiple document types, you need a chunking pipeline that can route to the appropriate parser. This multiplies maintenance burden and testing surface area.
+[conversational] Despite these challenges, the payoff in chunk quality often justifies the extra engineering effort.`
         },
         {
           id: 50,
@@ -2758,10 +2758,10 @@ Despite these challenges, the payoff in chunk quality often justifies the extra 
           ),
           backgroundColor: '#5c1c65',
           notes: `### 50. Markdown / HTML Structure Chunking - Configuration
-Let's get into the practical configuration for structure-based chunking to help you implement this effectively.
+[conversational] Let's get into the practical configuration for structure-based chunking to help you implement this effectively.
 #### Best Chunk Size
-Chunks are **element-grouped**, typically ranging from **300 to 900 tokens**. What does element-grouped mean? Instead of counting characters or tokens arbitrarily, you're grouping based on structural elements. A single paragraph might be 150 tokens, perfect for one chunk. A section element containing multiple paragraphs might be 600 tokens, still a great chunk. A complex article with code examples could hit 900 tokens.
-The key is that **element type determines size**. Small elements like paragraphs and list items create small chunks. Larger container elements like sections and articles create bigger chunks. You might configure your chunker to combine small adjacent elements like multiple paragraphs until you reach a minimum size, or to split large elements that exceed a maximum threshold.
+[lecture] Chunks are **element-grouped**, typically ranging from **300 to 900 tokens**. [playfully] What does element-grouped mean? [conversational] Instead of counting characters or tokens arbitrarily, you're grouping based on structural elements. A single paragraph might be 150 tokens, perfect for one chunk. A section element containing multiple paragraphs might be 600 tokens, still a great chunk. A complex article with code examples could hit 900 tokens.
+[seriously] The key is that **element type determines size**. Small elements like paragraphs and list items create small chunks. Larger container elements like sections and articles create bigger chunks. [lecture] You might configure your chunker to combine small adjacent elements like multiple paragraphs until you reach a minimum size, or to split large elements that exceed a maximum threshold.
 \`\`\`mermaid
 graph LR
     A[HTML Page] --> B[Section: 600 tokens]
@@ -2779,10 +2779,10 @@ graph LR
     style G fill:#e1bee7
 \`\`\`
 #### Overlap Size
-Overlap is typically **0 to 10 percent** between structural elements. Since elements already have natural boundaries, you don't need as much overlap as with arbitrary splitting. However, a common pattern is to include **header or context information** with each chunk. For example, include the parent section's heading with each sub-element's content. This gives context without literal text duplication.
+[conversational] Overlap is typically **0 to 10 percent** between structural elements. Since elements already have natural boundaries, you don't need as much overlap as with arbitrary splitting. [lecture] However, a common pattern is to include **header or context information** with each chunk. For example, include the parent section's heading with each sub-element's content. This gives context without literal text duplication.
 #### Computational Cost
-The cost is **Medium** due to **parser overhead**. You need to parse HTML into a DOM 👉 'document object model' or Markdown into an AST 👉 'abstract syntax tree'. This parsing takes time and memory, especially for large documents. However, parsers are well-optimized and this overhead is usually acceptable for the quality improvement you gain.
-This configuration leverages document structure to create semantically rich, meaningful chunks.`
+[seriously] The cost is **Medium** due to **parser overhead**. You need to parse HTML into a DOM or Markdown into an AST. [conversational] This parsing takes time and memory, especially for large documents. However, parsers are well-optimized and this overhead is usually acceptable for the quality improvement you gain.
+[confidently] This configuration leverages document structure to create semantically rich, meaningful chunks.`
         },
         {
           id: 51,
