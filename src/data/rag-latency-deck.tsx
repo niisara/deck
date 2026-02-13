@@ -30,13 +30,13 @@ export const ragLatencyDeck: Deck = {
           content: (
             <div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0}>
-                <div style={{ fontSize: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ marginRight: '1rem' }} darkModeInvert={true} />
+                <div style={{ fontSize: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
+                  <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                   RAG Optimization
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ fontSize: '2rem', color: '#98c379' }}>
+                <div style={{ fontSize: '2rem', color: '#98c379', marginTop: '12px' }}>
                   Practical, production-ready optimizations for faster RAG
                 </div>
               </GSAPAnimated>
@@ -79,7 +79,13 @@ export const ragLatencyDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}>
-                <MermaidPopover
+              </div>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#e06c75', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-microchip" sizeName="2x" darkModeInvert={true} />
+                      <strong>Embeddings & Chunking <MermaidPopover
                   title="RAG Pipeline Stages"
                   diagram={`flowchart LR
     A["📝 Query"] --> B["🔢 Embed"]
@@ -91,14 +97,7 @@ export const ragLatencyDeck: Deck = {
     style C fill:#ffd700,color:#000
     style D fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000`}
-                />
-              </div>
-              <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                  <div>
-                    <div style={{ color: '#e06c75', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <SvgIcon iconName="duo-microchip" sizeName="2x" darkModeInvert={true} />
-                      <strong>Embeddings & Chunking</strong>
+                /></strong>
                     </div>
                     <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
                       <div><strong>1)</strong> Use Smaller Embedding Models</div>
@@ -208,9 +207,9 @@ flowchart LR
           icon: { name: 'duo-microchip' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -244,9 +243,9 @@ This technique is particularly powerful because embedding happens on **every sin
           icon: { name: 'duo-microchip' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -285,9 +284,9 @@ This technique is particularly powerful because embedding happens on **every sin
           icon: { name: 'duo-microchip' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -306,7 +305,7 @@ This technique is particularly powerful because embedding happens on **every sin
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Replace large embedding models with smaller, more efficient alternatives that offer comparable semantic understanding with reduced computation:</p>
+              <p>Replace large embedding models with smaller, more efficient alternatives that offer comparable semantic understanding with reduced computation:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -348,9 +347,9 @@ You're trading a small amount of recall quality for big latency gains. In most r
           icon: { name: 'duo-microchip' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -387,7 +386,7 @@ Let's walk through the practical steps to switch to a smaller embedding model. T
           icon: { name: 'duo-microchip' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -446,9 +445,9 @@ The problems: There's a **potential recall drop on nuanced queries** — very su
           icon: { name: 'duo-scissors' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -482,9 +481,9 @@ The problems: There's a **potential recall drop on nuanced queries** — very su
           icon: { name: 'duo-scissors' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -523,9 +522,9 @@ Every token sent to the LLM adds to generation time. Smaller chunks mean fewer t
           icon: { name: 'duo-scissors' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -544,7 +543,7 @@ Every token sent to the LLM adds to generation time. Smaller chunks mean fewer t
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Split documents into smaller, overlapping chunks so retrieval finds more specific, relevant context and the LLM processes fewer tokens:</p>
+              <p>Split documents into smaller, overlapping chunks so retrieval finds more specific, relevant context and the LLM processes fewer tokens:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -585,9 +584,9 @@ Use chunk overlap — typically 10 to 20 percent — to ensure you don't cut imp
           icon: { name: 'duo-scissors' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -626,7 +625,7 @@ Time to see the trade-offs of this approach...`
           icon: { name: 'duo-scissors' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -685,9 +684,9 @@ Time to see the trade-offs of this approach...`
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -721,9 +720,9 @@ Top-K 👉 'top kay' refers to how many results your vector search returns. If y
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -762,9 +761,9 @@ Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tok
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -784,7 +783,7 @@ Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tok
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Retrieve only the minimal number of documents (K) that maintains answer quality while reducing processing overhead:</p>
+              <p>Retrieve only the minimal number of documents (K) that maintains answer quality while reducing processing overhead:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -826,9 +825,9 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -867,7 +866,7 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
           icon: { name: 'duo-filter' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -926,9 +925,9 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
           icon: { name: 'duo-network-wired' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="flipCard" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -962,9 +961,9 @@ Two popular ANN algorithms are HNSW 👉 'H-N-S-W' and IVF 👉 'eye-vee-eff'. L
           icon: { name: 'duo-network-wired' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -1003,9 +1002,9 @@ Most production vector databases like Pinecone 👉 'pine-cone', Weaviate 👉 '
           icon: { name: 'duo-network-wired' },
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -1025,7 +1024,7 @@ Most production vector databases like Pinecone 👉 'pine-cone', Weaviate 👉 '
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1rem' }}>Two popular approaches for approximate nearest neighbor search:</p>
+              <p>Two popular approaches for approximate nearest neighbor search:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -1066,9 +1065,9 @@ You might miss the absolute best match occasionally, but you'll almost always fi
           icon: { name: 'duo-network-wired' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -1107,7 +1106,7 @@ You might miss the absolute best match occasionally, but you'll almost always fi
           icon: { name: 'duo-network-wired' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1166,9 +1165,9 @@ You might miss the absolute best match occasionally, but you'll almost always fi
           icon: { name: 'duo-database' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -1203,9 +1202,9 @@ In many production systems, a large percentage of queries are repeats or near-du
           icon: { name: 'duo-database' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -1246,9 +1245,9 @@ If you're using a paid embedding API like OpenAI's, each embedding call costs mo
           icon: { name: 'duo-database' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -1268,7 +1267,7 @@ If you're using a paid embedding API like OpenAI's, each embedding call costs mo
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Store and reuse embeddings for previously seen queries to bypass the embedding model:</p>
+              <p>Store and reuse embeddings for previously seen queries to bypass the embedding model:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -1312,9 +1311,9 @@ Here's how to implement it step by step...`
           icon: { name: 'duo-database' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -1353,7 +1352,7 @@ Here's how to implement it step by step...`
           icon: { name: 'duo-database' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1412,9 +1411,9 @@ Here's how to implement it step by step...`
           icon: { name: 'duo-floppy-disk' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -1449,9 +1448,9 @@ Vector search typically takes 5-50 milliseconds depending on your index size and
           icon: { name: 'duo-floppy-disk' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -1490,9 +1489,9 @@ Some vector databases charge per query or have limited throughput. Caching reduc
           icon: { name: 'duo-floppy-disk' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -1514,7 +1513,7 @@ Some vector databases charge per query or have limited throughput. Caching reduc
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Store and reuse search results for queries that have been previously processed:</p>
+              <p>Store and reuse search results for queries that have been previously processed:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -1560,9 +1559,9 @@ Here are the practical implementation steps...`
           icon: { name: 'duo-floppy-disk' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -1601,7 +1600,7 @@ Here are the practical implementation steps...`
           icon: { name: 'duo-floppy-disk' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1661,9 +1660,9 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="flipCard" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -1697,9 +1696,9 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -1738,9 +1737,9 @@ In systems where you first do a broad retrieval and then narrow down, reranking 
           icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -1803,9 +1802,9 @@ Even though reranking adds a step, the improved result quality means less noise 
           icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -1845,7 +1844,7 @@ Even though reranking adds a step, the improved result quality means less noise 
           icon: { name: 'duo-ranking-star' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1905,9 +1904,9 @@ Even though reranking adds a step, the improved result quality means less noise 
           icon: { name: 'duo-compress' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -1942,9 +1941,9 @@ In practice, context compression can reduce your context size by 50-80% while pr
           icon: { name: 'duo-compress' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -1983,9 +1982,9 @@ Let's dive into how context compression actually works...`
           icon: { name: 'duo-compress' },
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -2006,7 +2005,7 @@ Let's dive into how context compression actually works...`
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Apply intelligent reduction techniques to minimize prompt size without losing critical context:</p>
+              <p>Apply intelligent reduction techniques to minimize prompt size without losing critical context:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -2052,9 +2051,9 @@ Aim for a 50-70% compression ratio. Going too aggressive — say 90% — risks l
           icon: { name: 'duo-compress' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -2093,7 +2092,7 @@ Aim for a 50-70% compression ratio. Going too aggressive — say 90% — risks l
           icon: { name: 'duo-compress' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2153,9 +2152,9 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -2190,9 +2189,9 @@ Well-designed parallelization can reduce your overall pipeline latency by 30-50%
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -2231,9 +2230,9 @@ Pipelines with independent preprocessing steps — like query expansion, spell c
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -2257,7 +2256,7 @@ Pipelines with independent preprocessing steps — like query expansion, spell c
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Execute multiple search operations concurrently and process results as they arrive:</p>
+              <p>Execute multiple search operations concurrently and process results as they arrive:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -2303,9 +2302,9 @@ After parallel searches complete, you need to merge and deduplicate results. Com
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -2344,7 +2343,7 @@ Let's look at the trade-offs...`
           icon: { name: 'duo-gears' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2404,9 +2403,9 @@ Let's look at the trade-offs...`
           icon: { name: 'duo-stream' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -2441,9 +2440,9 @@ Research shows that users perceive streaming responses as 2-3x faster than batch
           icon: { name: 'duo-stream' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -2484,9 +2483,9 @@ Voice assistants, live customer support, and interactive tutoring systems all be
           icon: { name: 'duo-stream' },
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -2505,7 +2504,7 @@ Voice assistants, live customer support, and interactive tutoring systems all be
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Rather than waiting for the complete LLM response, stream tokens incrementally as they're generated:</p>
+              <p>Rather than waiting for the complete LLM response, stream tokens incrementally as they're generated:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -2550,9 +2549,9 @@ Time-to-first-token can be further optimized by reducing pre-LLM processing time
           icon: { name: 'duo-stream' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -2591,7 +2590,7 @@ Let's examine the trade-offs...`
           icon: { name: 'duo-stream' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2651,9 +2650,9 @@ Let's examine the trade-offs...`
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="flipCard" delay={0.1}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
@@ -2688,9 +2687,9 @@ Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation l
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
@@ -2732,9 +2731,9 @@ A smaller model fine-tuned on your domain data can outperform a generic large mo
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-              <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>
                   How It Works
@@ -2753,7 +2752,7 @@ A smaller model fine-tuned on your domain data can outperform a generic large mo
               </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-              <p style={{ marginBottom: '1.5rem' }}>Replace large models with smaller but efficient alternatives while maintaining acceptable quality:</p>
+              <p>Replace large models with smaller but efficient alternatives while maintaining acceptable quality:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
@@ -2795,9 +2794,9 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+              <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
@@ -2836,7 +2835,7 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2895,9 +2894,9 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
           title: 'Key Takeaways',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                 <strong>Key Takeaways</strong>
               </div>
@@ -2940,9 +2939,9 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
           title: 'Quick Chooser - Which Techniques to Start With?',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '42px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-compass" sizeName="2x" darkModeInvert={true} />
                 <strong>Quick Chooser</strong>
               </div>
@@ -2998,9 +2997,9 @@ Let's now visualize the speed versus recall trade-offs...`
           title: 'Speed vs Recall Tradeoffs',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.2}>
-              <div style={{ color: '#c678dd', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ color: '#c678dd', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-scale-balanced" sizeName="2x" darkModeInvert={true} />
                 <strong>Speed vs Recall</strong>
               </div>
@@ -3041,9 +3040,9 @@ Let's now visualize the speed versus recall trade-offs...`
           title: 'Quality vs Cost Tradeoffs',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-              <div style={{ color: '#e5c07b', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ color: '#e5c07b', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-coins" sizeName="2x" darkModeInvert={true} />
                 <strong>Quality vs Cost</strong>
               </div>
@@ -3104,9 +3103,9 @@ Let's wrap up with your optimization roadmap...`
           title: 'Next Steps - Your RAG Optimization Roadmap',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
-              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <SvgIcon iconName="duo-clipboard-check" sizeName="2x" darkModeInvert={true} />
                 <strong>Next Steps</strong>
               </div>
