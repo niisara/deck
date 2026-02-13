@@ -2686,7 +2686,16 @@ This coupling between retrieval and re-ranking caches adds architectural complex
             </div>
           ),
           backgroundColor: '#371d6b',
-          notes: ''
+          notes: `### Pattern 12: Summarization Cache
+[confident] Here's Pattern 12, the **Summarization Cache**. [lecture] This pattern operates at a different granularity than we've seen so far. Instead of caching raw text or embeddings, we're caching pre-generated summaries of documents at multiple levels: document-level, section-level, and chunk-level summaries.
+
+[conversational] This is particularly powerful for RAG systems that need to process long documents. [pleased] Rather than re-summarizing the same content repeatedly, you cache these summaries and their embeddings, dramatically reducing the context size you need to send to your LLM.
+
+[lecture] The cache key includes the document ID, segment ID, summary prompt version, model ID, and locale. [seriously] Version tracking is critical here because summary quality can drift over time as models evolve.
+
+[confidently] Storage uses object stores plus metadata indexes, with Redis for hot summaries. [conversational] TTLs are long - weeks to months - with event-driven invalidation when source documents update.
+
+[inspiringly] Let's look at the strengths and limitations on the next slide.`
         },
         {
           id: 26,
@@ -2721,7 +2730,14 @@ This coupling between retrieval and re-ranking caches adds architectural complex
             </div>
           ),
           backgroundColor: '#371d6b',
-          notes: ''
+          notes: `### Strengths and Limitations
+[pleased] The **strengths** of Summarization Cache are compelling. [excited] Summaries can be reused across multiple different queries, dramatically reducing context tokens in RAG systems. [enthusiastically] This speeds up answer generation with pre-processed insights, and reduces costs significantly.
+
+[cautiously] But there are **limitations** to consider. [concerned] First, there's storage overhead for multiple granularity levels. You're maintaining document, section, and chunk summaries, which multiplies your storage needs. [disappointed] Second, summary quality can variance and potentially drift over time as source content or models change. [firmly] Third, this requires strong governance and version tracking to ensure summaries remain accurate and up-to-date.
+
+[conversational] The key is balancing the benefits of reduced context size against the complexity of managing multi-level summaries.
+
+[inspiringly] Now let's move to our final pattern, Pattern 13, which brings us back to the simplest and often most effective caching approach.`
         }
       ]
     },
@@ -2796,7 +2812,18 @@ This coupling between retrieval and re-ranking caches adds architectural complex
             </div>
           ),
           backgroundColor: '#6b1d5b',
-          notes: ''
+          notes: `### Pattern 13: Final Answer Cache with TTL
+[cheerfully] And here we are at Pattern 13, the **Final Answer Cache with TTL**! [pleased] This is the simplest and most straightforward caching pattern - exact query to final answer mapping.
+
+[lecture] What gets cached? The exact query maps to the final answer, typically using temperature equals zero for consistency. [conversational] You can optionally include citations and links to sources.
+
+[seriously] The cache key is comprehensive: hash of normalized query plus language, model ID, prompt version, and decoding parameters. [cautiously] Query normalization is absolutely critical for hit rate.
+
+[confident] Storage is simple: Redis for high throughput applications, or CDN and edge caching for public endpoints. [firmly] Encryption is required for private user data.
+
+[lecture] TTLs range from minutes to days based on data volatility. [seriously] You need manual purge hooks for emergency hotfixes, and shorter TTLs for rapidly changing information.
+
+[conversational] Let's examine the strengths and limitations on the next slide.`
         },
         {
           id: 28,
@@ -2833,7 +2860,14 @@ This coupling between retrieval and re-ranking caches adds architectural complex
             </div>
           ),
           backgroundColor: '#6b1d5b',
-          notes: ''
+          notes: `### Strengths and Limitations
+[pleased] The **strengths** of Final Answer Cache are fantastic. [excited] This is the easiest caching pattern to implement! [enthusiastically] You get a huge latency win on frequently asked questions, it's excellent for FAQs and common queries, and it reduces overall token usage significantly.
+
+[cautiously] But the **limitations** are real. [disappointed] You'll see low hit rates on long-tail queries - those unique questions that don't repeat. [concerned] The cache is brittle to small wording differences in queries. "How do I reset my password?" versus "Help me reset my password" might miss the cache despite being the same intent. [seriously] There are freshness and consistency risks over time, and you need a robust invalidation mechanism.
+
+[conversational] The key insight is that this pattern works brilliantly for common queries but struggles with diversity. [confidently] If your application has concentrated query patterns - like customer support FAQs - this is one of your most valuable patterns. [cautiously] If queries are highly diverse and unique, you'll see lower returns.
+
+[inspiringly] Now that we've covered all thirteen patterns, let's summarize the key takeaways to help you apply these in your own systems.`
         }
       ]
     },
@@ -2902,7 +2936,20 @@ This coupling between retrieval and re-ranking caches adds architectural complex
             </div>
           ),
           backgroundColor: '#1d6b5c',
-          notes: ''
+          notes: `### Key Takeaways
+[warmly] We've covered a lot of ground today! [inspiringly] Let's crystallize the key takeaways from these thirteen caching patterns.
+
+[confidently] First: **Layer your caches strategically**. [lecture] Input layer with embeddings and prompts, retrieval layer with results and ranking, generation layer with KV and logits, memory layer with session and user data, and output layer with answers and summaries. [pleased] Each layer has distinct benefits and implementation patterns.
+
+[firmly] Second: **Nail the cache keys**. [seriously] Include versions, model IDs, corpus snapshot IDs, filters, and decoding parameters in your cache keys to avoid inconsistencies and ensure correct cache hits. This is non-negotiable for correctness.
+
+[cautiously] Third: **Freshness first**. [lecture] Combine TTL-based expiration with event-based invalidation on corpus or template updates. [conversational] Balance performance with data freshness requirements - stale data is often worse than slow responses.
+
+[enthusiastically] Fourth: **Measure relentlessly**. [lecture] Hit rate times miss cost equals savings. [confidently] Track P95 latency improvements and staleness incidents to continuously optimize your cache strategies.
+
+[reassuringly] Finally: **Start simple, scale gradually**. [conversational] Begin with exact-match and retrieval caches for early wins. [pleased] Add semantic similarity and KV/logit layers as your system matures and scale grows.
+
+[inspiringly] Thank you all for your attention! [warmly] I hope these patterns help you build more cost-effective and performant LLM systems. [cheerfully] Feel free to reach out if you have questions!`
         }
       ]
     }
