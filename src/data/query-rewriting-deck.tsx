@@ -57,7 +57,7 @@ export const queryRewritingDeck: Deck = {
           ),
           backgroundColor: '#2C3E50',
           notes: `### 21 Query Rewriting Strategies for RAG
-[cheerfully] Welcome everyone! [excited] Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. [seriously] But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.
+[cheerfully] Welcome everyone! Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. [conversational] RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. [seriously] But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.
 #### 🎯 What You'll Learn
 [energetic] We'll walk through **21 battle-tested strategies** for rewriting user queries so your retrieval pipeline returns much better results. Each strategy comes with a clear explanation, a prompt template you can copy, an implementation pattern, and real-world examples showing the before-and-after.
 [storytelling] Think of query rewriting as a translator sitting between the user and your search engine. The user says something messy, and the rewriter cleans it up before it ever touches the retrieval system. [confidently] Simple concept, massive impact.
@@ -750,7 +750,7 @@ Here's how to implement decomposition in practice.
 [firmly] The decomposition prompt asks the LLM to break the question into two to five simpler sub-questions. You explicitly ask for a numbered list without explanations. The key constraint is that the sub-questions, when answered separately, should collectively answer the main question comprehensively.
 #### ⚙️ The Code
 [pleased] The implementation loops through each sub-question, retrieves documents for it, and generates a sub-answer. Then a final synthesis step combines everything. Notice the three LLM calls: one for decomposition, one per sub-question for answering, and one for synthesis. This is more expensive than simple expansion, but the quality improvement on complex questions is substantial.
-[pleased] The tradeoff is clear: **more LLM calls and higher latency** in exchange for **much better answers on complex questions**. For simple factual queries, decomposition is overkill. Save it for the hard stuff.
+[lecture] The tradeoff is clear: **more LLM calls and higher latency** in exchange for **much better answers on complex questions**. For simple factual queries, decomposition is overkill. Save it for the hard stuff.
 [conversational] Let's see an example.`
         },
         {
@@ -913,7 +913,7 @@ def step_back_query(original_query):
 #### 📝 Before and After
 [cautiously] The user asks "How to fix CUDA OOM with Llama 3.1 70B?" — a very specific error with a specific model. After step-back prompting, the query becomes "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints." Now the retrieval system finds comprehensive guides on memory management techniques that absolutely apply to the original problem.
 #### ⚠️ Watch Out For
-There are real risks. **Over-abstraction** can happen — if you step back too far, you get results that are too generic to be useful. You'll **need a good reranker** to filter results because the broader query brings back more diverse documents. You may **lose specificity** for narrow, [sigh] well-defined queries where the user knows exactly what they want. And the abstraction can **introduce unwanted generality** that dilutes the answer.
+[cautiously] There are real risks. **Over-abstraction** can happen — if you step back too far, you get results that are too generic to be useful. You'll **need a good reranker** to filter results because the broader query brings back more diverse documents. You may **lose specificity** for narrow, well-defined queries where the user knows exactly what they want. And the abstraction can **introduce unwanted generality** that dilutes the answer.
 The rule of thumb: use step-back prompting when specific queries fail, but always combine it with the original query's results.
 [conversational] Next up is Strategy 5: HyDE, which takes a completely different and fascinating approach.`
         }
@@ -2065,7 +2065,7 @@ Here's ITER-RETGEN solving a complex question.
           notes: `### Template-Based Rewriting — Overview
 [conversational] Strategy 13 is **Template-Based Rewriting**, which brings consistency and speed to query transformation.
 #### 🎯 What Is It?
-Instead of generating a new rewrite for every query, you maintain a library of **predefined templates** for common query patterns. When a user asks a comparison question, you slot their terms into a comparison template. When they ask a troubleshooting question, you use a troubleshooting template. [storytelling] Think of it like Mad Libs for queries — the structure is fixed, you just fill in the blanks.
+[storytelling] Instead of generating a new rewrite for every query, you maintain a library of **predefined templates** for common query patterns. When a user asks a comparison question, you slot their terms into a comparison template. When they ask a troubleshooting question, you use a troubleshooting template. Think of it like Mad Libs for queries — the structure is fixed, you just fill in the blanks.
 #### ✅ Pros
 [pleased] The good stuff: **consistent query quality** because every query of the same type gets the same structure. **Fast execution** with low latency since template filling is cheaper than full LLM generation. **Predictable behavior** that's easy to test and debug. And it **enforces standardized formats** that your retrieval system can be optimized for.
 #### 🕐 When to Use This?
