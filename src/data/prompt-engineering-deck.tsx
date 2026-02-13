@@ -241,7 +241,7 @@ Use zero-shot when you need *quick results* for well-known tasks like summarizat
 [conversational] Now let's understand the mechanics behind zero-shot prompting and why it's so powerful despite its simplicity.
 
 #### The Magic of Pre-training
-[lecture] [confidently] Here's the key insight: modern language models like **GPT-4** 👉 'G-P-T four', **Claude 3.5** 👉 'Claude three point five', and **Gemini 1.5** 👉 'Gemini one point five' have been trained on *massive* amounts of text data. During that training, they learned patterns for thousands of tasks — summarization, classification, translation, question-answering, and more. When you use zero-shot prompting, you're essentially activating this *pre-learned knowledge* with your instruction.
+[confidently] Here's the key insight: modern language models like **GPT-4** 👉 'G-P-T four', **Claude 3.5** 👉 'Claude three point five', and **Gemini 1.5** 👉 'Gemini one point five' have been trained on *massive* amounts of text data. During that training, they learned patterns for thousands of tasks — summarization, classification, translation, question-answering, and more. When you use zero-shot prompting, you're essentially activating this *pre-learned knowledge* with your instruction.
 
 #### Complexity and Model Selection
 Zero-shot is our **simplest technique** — it requires no special setup, no examples, and works across virtually all modern LLMs. Even smaller models can handle straightforward zero-shot tasks, though larger, more capable models will give you better accuracy and consistency. [enthusiastically] The beauty is that you can start with zero-shot on any model and immediately get results.
@@ -1149,7 +1149,7 @@ How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few an
 [seriously] While Generate Knowledge is powerful, it has critical limitations around factual accuracy that you must understand.
 
 #### The Hallucination Risk
-The biggest danger with Generate Knowledge is **hallucinated facts**. The model might confidently generate plausible-sounding but completely incorrect facts. Since these become the foundation for the answer, hallucinated facts lead to confidently wrong conclusions. [excited] This is especially dangerous because the explicit facts look trustworthy — "The model listed its sources, so it must be right!" Wrong! For critical applications in medicine, law, finance, or any domain where errors have serious consequences, **never trust generated facts without verification**.
+The biggest danger with Generate Knowledge is **hallucinated facts**. The model might confidently generate plausible-sounding but completely incorrect facts. Since these become the foundation for the answer, hallucinated facts lead to confidently wrong conclusions. [seriously] This is especially dangerous because the explicit facts look trustworthy — "The model listed its sources, so it must be right!" Wrong! For critical applications in medicine, law, finance, or any domain where errors have serious consequences, **never trust generated facts without verification**.
 
 #### Verification Strategies
 For production systems, implement **fact verification** through multiple strategies. Cross-check facts against trusted knowledge bases or APIs. Use retrieval-augmented generation (RAG) to ground facts in actual documents rather than model memory. Implement confidence scoring where the model indicates certainty for each fact. For high-stakes decisions, require human review of generated facts before proceeding to the answer stage. Think of generated knowledge as a hypothesis that needs validation, not as ground truth.
@@ -2198,7 +2198,7 @@ The efficiency gain is huge: you're focusing your expensive human annotation tim
 Alright, let's break down the mechanics here - this is really fascinating!
 
 #### The Uncertainty Estimation Process
-[lecture] Here's the secret sauce: the system generates multiple Chain-of-Thought solutions for each candidate example. Let's say you ask the model to solve a problem 10 different times. If all 10 answers are the same, the model is confident. But [sigh] if you get 5 different answers? That's high disagreement, which signals uncertainty. That's your gold mine!
+[lecture] Here's the secret sauce: the system generates multiple Chain-of-Thought solutions for each candidate example. Let's say you ask the model to solve a problem 10 different times. If all 10 answers are the same, the model is confident. But if you get 5 different answers? That's high disagreement, which signals uncertainty. [enthusiastically] That's your gold mine!
 
 Think of it like polling a group of experts - when they all agree, you're probably on solid ground. When they disagree wildly, that's where you need to dig deeper and get more information.
 
@@ -3220,7 +3220,7 @@ Models can struggle with very small or detailed visual elements. Things like:
 For these cases, you might need to combine Multimodal CoT with other techniques like explicit OCR, image segmentation, or even breaking the image into multiple focused crops.
 
 #### Cost and Latency
-[firmly] [conversational] Let's be real — processing images with these advanced models is more expensive than text-only prompts. Image tokens count significantly toward your API costs, and processing time is longer. For production systems, consider:
+[conversational] Let's be real — processing images with these advanced models is more expensive than text-only prompts. Image tokens count significantly toward your API costs, and processing time is longer. For production systems, consider:
 - Caching results for identical images
 - Downsampling images when appropriate
 - Using tiered approaches (cheap model first, expensive model only if needed)
@@ -3636,7 +3636,7 @@ The meta-lesson: **prompt engineering is iterative.** You won't nail it on the f
 
 [lecture] **Level 2: Reasoning.** Chain of Thought, Meta-prompting, Self-Consistency. Climb to this level when outputs need to be more thoughtful or more reliable. Math problems? CoT helps the model show its work. Need standardized JSON output? Meta-prompting sets the rules. Getting inconsistent answers? Self-consistency samples multiple reasoning paths. You're still just making API calls, but you're orchestrating them more carefully to improve quality.
 
-[lecture] **Level 3: Retrieval & Orchestration.** RAG and Prompt Chaining. This is production territory. Most real-world applications eventually need external knowledge (RAG) or multi-step workflows (chaining). You're now running infrastructure: vector databases, retrieval pipelines, workflow orchestration. But [sigh] these are proven patterns with tons of tooling support. Companies run entire products on this level.
+[lecture] **Level 3: Retrieval & Orchestration.** RAG and Prompt Chaining. This is production territory. Most real-world applications eventually need external knowledge (RAG) or multi-step workflows (chaining). You're now running infrastructure: vector databases, retrieval pipelines, workflow orchestration. But these are proven patterns with tons of tooling support. Companies run entire products on this level.
 
 [lecture] **Level 4: Agentic.** ReAct, PAL, Reflexion. Here's where AI starts to *do things*—calling APIs, writing and executing code, reflecting on its own outputs and improving. This is powerful but requires careful guardrails. Tool use means more failure modes. Self-correction means more LLM calls and higher costs. Use this level when the task truly requires autonomous actions or iteration.
 
