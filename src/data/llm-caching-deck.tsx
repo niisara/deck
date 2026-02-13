@@ -989,53 +989,53 @@ You **eliminate repeated expensive inference calls**, which not only saves money
           ),
           backgroundColor: '#1d6b42',
           notes: `### Strengths and Limitations
-Let's dive deeper into when RAG Answer Cache delivers exceptional value and when you need to exercise caution.
+[conversational] Let's dive deeper into when RAG Answer Cache delivers exceptional value and when you need to exercise caution.
 
 #### The Compelling Benefits
-On the **strengths** side, this pattern offers some of the most dramatic improvements you'll see in any caching strategy. The **cost and latency savings are substantial**. Think about the economics here. Generating a complete RAG 👉 'rag' answer involves multiple expensive steps: embedding the query, searching your vector database, retrieving full document content, constructing a prompt with potentially thousands of tokens, running inference through an LLM, and streaming back the response. All of that might cost you two to five cents per query and take two to four seconds.
+[pleased] On the **strengths** side, this pattern offers some of the most dramatic improvements you'll see in any caching strategy. [excited] The **cost and latency savings are substantial**. [lecture] Think about the economics here. Generating a complete RAG 👉 'rag' answer involves multiple expensive steps: embedding the query, searching your vector database, retrieving full document content, constructing a prompt with potentially thousands of tokens, running inference through an LLM, and streaming back the response. [seriously] All of that might cost you two to five cents per query and take two to four seconds.
 
-Now compare that to a cache hit. You do a similarity search against cached query embeddings, which takes maybe twenty milliseconds, retrieve the cached answer from **Redis 👉 'red-iss'**, which takes another five milliseconds, and return it. Total cost: fractions of a cent. Total latency: under fifty milliseconds. That's a **ninety-percent latency reduction** and potentially **ninety-five-percent cost savings**. When you're handling millions of queries per month, this translates to tens of thousands of dollars saved and dramatically better user experience.
+[storytelling] Now compare that to a cache hit. You do a similarity search against cached query embeddings, which takes maybe twenty milliseconds, retrieve the cached answer from **Redis 👉 'red-iss'**, which takes another five milliseconds, and return it. [enthusiastically] Total cost: fractions of a cent. Total latency: under fifty milliseconds. That's a **ninety-percent latency reduction** and potentially **ninety-five-percent cost savings**. When you're handling millions of queries per month, this translates to tens of thousands of dollars saved and dramatically better user experience.
 
 #### The Perfect Use Case
-This pattern is **ideal for FAQ and static knowledge domains**. Consider a customer support chatbot for a SaaS company. The most common questions are variations on the same themes. "How do I reset my password?" might appear as "I forgot my password, what do I do?" or "Can you help me get back into my account?" Semantic caching captures all these variations. Your knowledge base articles explaining password resets don't change daily. Once you've generated a high-quality answer with proper citations, you can safely cache it for days or weeks.
+[pleased] This pattern is **ideal for FAQ and static knowledge domains**. [storytelling] Consider a customer support chatbot for a SaaS company. The most common questions are variations on the same themes. "How do I reset my password?" might appear as "I forgot my password, what do I do?" or "Can you help me get back into my account?" [confidently] Semantic caching captures all these variations. Your knowledge base articles explaining password resets don't change daily. Once you've generated a high-quality answer with proper citations, you can safely cache it for days or weeks.
 
-Documentation search is another perfect fit. Questions like "How do I configure authentication?" or "What are the rate limits for this API?" have stable answers. The underlying documentation might update occasionally, but not constantly. Cache hit rates in these domains can exceed **sixty to seventy percent**, meaning the majority of your queries are served from cache.
+[conversational] Documentation search is another perfect fit. Questions like "How do I configure authentication?" or "What are the rate limits for this API?" have stable answers. [lecture] The underlying documentation might update occasionally, but not constantly. [enthusiastically] Cache hit rates in these domains can exceed **sixty to seventy percent**, meaning the majority of your queries are served from cache.
 
 #### Eliminating the Expensive Operations
-You **completely eliminate repeated expensive inference calls**. This isn't just about saving money. It's also about reliability and control. Every external API call is a potential failure point. LLM providers have rate limits, occasional outages, and variable latency. By serving more queries from cache, you reduce your dependency on external services. Your application becomes more resilient to provider issues.
+[pleased] You **completely eliminate repeated expensive inference calls**. [seriously] This isn't just about saving money. It's also about reliability and control. [cautiously] Every external API call is a potential failure point. LLM providers have rate limits, occasional outages, and variable latency. [confidently] By serving more queries from cache, you reduce your dependency on external services. Your application becomes more resilient to provider issues.
 
-There's also an interesting quality benefit. Because you're caching complete answers that your LLM has already generated and that presumably passed your quality checks, users see consistent responses. There's no risk of the model having an "off day" and producing a weird or incorrect answer on a retry of the same query. You've essentially locked in the quality of your best responses.
+[conversational] There's also an interesting quality benefit. [reassuringly] Because you're caching complete answers that your LLM has already generated and that presumably passed your quality checks, users see consistent responses. There's no risk of the model having an "off day" and producing a weird or incorrect answer on a retry of the same query. You've essentially locked in the quality of your best responses.
 
 #### The Reality Check on Limitations
-Now for the **limitations**, and these are significant. First, this pattern is **brittle to small context changes**. Here's the problem: your cache key includes the retrieved context documents. If your retrieval system returns a slightly different set of documents, even if they're semantically equivalent, the cache key changes and you miss the cache. And retrieval systems can be non-deterministic. **Approximate nearest neighbor 👉 'A-N-N'** algorithms like **HNSW 👉 'H-N-S-W'** or **IVF 👉 'I-V-F'** don't guarantee identical results every time, especially if your index is being updated or if you're using probabilistic pruning for speed.
+[cautiously] Now for the **limitations**, and these are significant. [concerned] First, this pattern is **brittle to small context changes**. Here's the problem: your cache key includes the retrieved context documents. [disappointed] If your retrieval system returns a slightly different set of documents, even if they're semantically equivalent, the cache key changes and you miss the cache. [lecture] And retrieval systems can be non-deterministic. **Approximate nearest neighbor 👉 'A-N-N'** algorithms like **HNSW 👉 'H-N-S-W'** or **IVF 👉 'I-V-F'** don't guarantee identical results every time, especially if your index is being updated or if you're using probabilistic pruning for speed.
 
-This means your actual cache hit rate might be lower than expected. You might have semantically identical queries that should hit the cache but don't because the underlying retrieval produced slightly different context. Some teams address this by using **query embeddings alone** as the cache key, ignoring context, but then you risk serving cached answers that were generated with outdated or different context.
+[disappointed] This means your actual cache hit rate might be lower than expected. [conversational] You might have semantically identical queries that should hit the cache but don't because the underlying retrieval produced slightly different context. [cautiously] Some teams address this by using **query embeddings alone** as the cache key, ignoring context, but then you risk serving cached answers that were generated with outdated or different context.
 
 #### The Storage Economics
-The second limitation is **storage overhead for complete responses**. Let's do the math. A typical answer with citations might be one to three kilobytes of text. If you're caching a million answers, that's one to three gigabytes. Add in encryption overhead, cache metadata, and you might be looking at five gigabytes or more. For **Redis 👉 'red-iss'** running in memory, this gets expensive. AWS ElastiCache 👉 'Elastic Cache' with five gigabytes of memory costs around fifty dollars per month. That's not prohibitive, but it's not negligible either.
+[seriously] The second limitation is **storage overhead for complete responses**. [lecture] Let's do the math. A typical answer with citations might be one to three kilobytes of text. If you're caching a million answers, that's one to three gigabytes. [conversational] Add in encryption overhead, cache metadata, and you might be looking at five gigabytes or more. For **Redis 👉 'red-iss'** running in memory, this gets expensive. AWS ElastiCache 👉 'Elastic Cache' with five gigabytes of memory costs around fifty dollars per month. That's not prohibitive, but it's not negligible either.
 
-And if you want persistence and durability, storing in **DynamoDB 👉 'die-nam-oh-dee-bee'** or **RDS 👉 'are-dee-ess'**, you pay for storage plus read/write capacity. At scale, these costs add up. You need to ensure your cost savings from avoiding LLM calls exceed your caching infrastructure costs. Usually they do by a wide margin, but it's worth monitoring.
+[cautiously] And if you want persistence and durability, storing in **DynamoDB 👉 'die-nam-oh-dee-bee'** or **RDS 👉 'are-dee-ess'**, you pay for storage plus read/write capacity. [seriously] At scale, these costs add up. You need to ensure your cost savings from avoiding LLM calls exceed your caching infrastructure costs. [reassuringly] Usually they do by a wide margin, but it's worth monitoring.
 
 #### The Freshness Challenge
-The third limitation is the most operationally complex: **freshness guarantees are required**. Serving a stale answer is often worse than being slow. Imagine a user asks "What's your return policy?" and your cached answer references a policy that changed last month. You've just given incorrect information, potentially causing customer frustration or even legal issues.
+[firmly] The third limitation is the most operationally complex: **freshness guarantees are required**. [seriously] Serving a stale answer is often worse than being slow. [cautiously] Imagine a user asks "What's your return policy?" and your cached answer references a policy that changed last month. [concerned] You've just given incorrect information, potentially causing customer frustration or even legal issues.
 
-To handle this, you need **event-based cache invalidation**. When a document in your knowledge base gets updated, you must identify and invalidate all cached answers that referenced it. This requires maintaining a **reverse index** mapping from document IDs to cache keys. It's doable, but it adds complexity to your system architecture.
+[lecture] To handle this, you need **event-based cache invalidation**. When a document in your knowledge base gets updated, you must identify and invalidate all cached answers that referenced it. This requires maintaining a **reverse index** mapping from document IDs to cache keys. [conversational] It's doable, but it adds complexity to your system architecture.
 
-You also need **content classification** to determine appropriate TTLs 👉 'tee-tee-els'. Some queries are inherently time-sensitive. "What's today's special offer?" can't be cached for days. Others, like "What's the speed of light?" are effectively permanent. Your system needs heuristics or metadata to distinguish these cases.
+You also need **content classification** to determine appropriate TTLs 👉 'tee-tee-els'. [storytelling] Some queries are inherently time-sensitive. "What's today's special offer?" can't be cached for days. Others, like "What's the speed of light?" are effectively permanent. [seriously] Your system needs heuristics or metadata to distinguish these cases.
 
 #### Practical Implementation Patterns
-Successful deployments often use **tiered TTLs**. Answers tagged as "policies" or "documentation" get long TTLs, maybe seven days. Answers tagged as "promotions" or "inventory" get short TTLs, maybe one day. You can also implement **popularity-based caching**, where only queries that have been asked multiple times get cached. This reduces storage for one-off queries while ensuring high-value queries benefit.
+[confidently] Successful deployments often use **tiered TTLs**. Answers tagged as "policies" or "documentation" get long TTLs, maybe seven days. Answers tagged as "promotions" or "inventory" get short TTLs, maybe one day. [conversational] You can also implement **popularity-based caching**, where only queries that have been asked multiple times get cached. This reduces storage for one-off queries while ensuring high-value queries benefit.
 
-Some teams use **cache warming** strategies, proactively generating and caching answers for known frequent queries during off-peak hours. This ensures your cache is pre-populated when traffic spikes.
+[reassuringly] Some teams use **cache warming** strategies, proactively generating and caching answers for known frequent queries during off-peak hours. This ensures your cache is pre-populated when traffic spikes.
 
 #### When to Use This Pattern
-This pattern delivers maximum value in **high-traffic FAQ systems** where questions repeat frequently and answers are relatively stable. Customer support, product documentation, and knowledge base search are ideal domains. It's less suitable for **highly dynamic content** where the knowledge base changes constantly, or for **highly personalized queries** where every user needs a unique answer.
+[confidently] This pattern delivers maximum value in **high-traffic FAQ systems** where questions repeat frequently and answers are relatively stable. [conversational] Customer support, product documentation, and knowledge base search are ideal domains. [cautiously] It's less suitable for **highly dynamic content** where the knowledge base changes constantly, or for **highly personalized queries** where every user needs a unique answer.
 
-The cost-benefit analysis is straightforward: if your cache hit rate is above **thirty percent** and your average LLM call costs more than **one cent**, you'll almost certainly see positive ROI. Most well-implemented systems achieve **fifty to sixty percent hit rates**, making this pattern one of the most impactful in the entire caching toolkit.
+[lecture] The cost-benefit analysis is straightforward: if your cache hit rate is above **thirty percent** and your average LLM call costs more than **one cent**, you'll almost certainly see positive ROI. [pleased] Most well-implemented systems achieve **fifty to sixty percent hit rates**, making this pattern one of the most impactful in the entire caching toolkit.
 
-> Ask the audience: "How many of you are currently caching LLM responses, and what hit rates are you seeing?"
+> Ask the audience: [warmly] "How many of you are currently caching LLM responses, and what hit rates are you seeing?"
 
-With that deep dive into RAG Answer Cache complete, let's move on to Pattern 5, which takes a different approach to caching at the generation layer.`
+[inspiringly] With that deep dive into RAG Answer Cache complete, let's move on to Pattern 5, which takes a different approach to caching at the generation layer.`
         }
       ]
     },
@@ -1131,10 +1131,10 @@ With that deep dive into RAG Answer Cache complete, let's move on to Pattern 5, 
           ),
           backgroundColor: '#1d616b',
           notes: `### Pattern 5: Chunk-Level Cache
-Here's our fifth caching pattern: **Chunk-Level Cache**. This is a foundational pattern that operates at the document ingestion and processing layer, caching pre-processed document fragments before they even enter your retrieval pipeline.
+[lecture] Here's our fifth caching pattern: **Chunk-Level Cache**. This is a foundational pattern that operates at the document ingestion and processing layer, caching pre-processed document fragments before they even enter your retrieval pipeline.
 
 #### What Gets Cached
-In this pattern, we cache **per-chunk embeddings, tokenized text, reranker features, and metadata**. Think about what happens when you ingest documents into your RAG 👉 'rag' system. You take large documents, split them into chunks, generate embeddings for each chunk, tokenize the text, potentially compute reranker features, and extract metadata. All of this processing is expensive and time-consuming.
+[conversational] In this pattern, we cache **per-chunk embeddings, tokenized text, reranker features, and metadata**. Think about what happens when you ingest documents into your RAG 👉 'rag' system. You take large documents, split them into chunks, generate embeddings for each chunk, tokenize the text, potentially compute reranker features, and extract metadata. All of this processing is expensive and time-consuming.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -1153,7 +1153,7 @@ flowchart LR
 When a document comes in for processing, we chunk it first, then check the cache for each chunk. If we get a cache hit, we instantly return the pre-processed chunk data without re-running the embedding model or tokenizer. On a miss, we process the chunk, generate the embedding, store everything in the cache, and then return it. This is particularly valuable when you're re-indexing documents or when multiple documents contain overlapping content.
 
 #### The Cache Key Strategy
-The cache key is carefully constructed: \\\`doc_id + chunk_index + chunk_hash + pipeline_version\\\`. Notice what we're tracking here. The **doc_id** identifies the source document. The **chunk_index** tells us which chunk this is within that document. The **chunk_hash** is a content hash of the actual chunk text, so if the content changes, we invalidate automatically. And **pipeline_version** ensures compatibility across processing pipeline updates. When you change your chunking strategy, embedding model, or reranking features, the pipeline version in the key changes, naturally invalidating stale cache entries.
+[confidently] The cache key is carefully constructed: \\\`doc_id + chunk_index + chunk_hash + pipeline_version\\\`. Notice what we're tracking here. The **doc_id** identifies the source document. The **chunk_index** tells us which chunk this is within that document. The **chunk_hash** is a content hash of the actual chunk text, so if the content changes, we invalidate automatically. And **pipeline_version** ensures compatibility across processing pipeline updates. When you change your chunking strategy, embedding model, or reranking features, the pipeline version in the key changes, naturally invalidating stale cache entries.
 
 This design is elegant because it handles both **document updates** and **pipeline evolution** automatically. If you update a document, its chunks get different hashes and miss the cache. If you upgrade your processing pipeline, the version bump causes misses. Either way, you reprocess only what's necessary.
 
@@ -1164,14 +1164,14 @@ We use a **multi-tier storage strategy**. The bulk of chunk data lives in **obje
 Interestingly, there's **no fixed TTL 👉 'tee-tee-el'** for chunk caches. Instead, we use **content-driven expiration**. Chunks are invalidated when the source document is updated or when you re-index. This is a **lazy refresh strategy**. We don't proactively expire chunks on a timer. Instead, we keep them until there's a semantic reason to invalidate. This maximizes cache efficiency because chunks from stable documents can remain cached indefinitely.
 
 #### When This Pattern Shines
-The **strengths** are substantial. You **dramatically speed up ingestion and retrieval workflows**. If you're ingesting millions of documents, and many of them contain overlapping content, like standard legal disclaimers, common API examples, or repeated documentation sections, you avoid redundant processing. Your ingestion pipeline becomes much faster.
+[pleased] The **strengths** are substantial. You **dramatically speed up ingestion and retrieval workflows**. If you're ingesting millions of documents, and many of them contain overlapping content, like standard legal disclaimers, common API examples, or repeated documentation sections, you avoid redundant processing. Your ingestion pipeline becomes much faster.
 
 You also enable **reproducible pipeline processing**. Because you're caching intermediate outputs, you can replay your pipeline with consistent results. This is invaluable for debugging, testing, and compliance scenarios where you need to prove exactly what processing was applied to which data.
 
 Finally, you **significantly reduce recomputation costs**. Embedding generation is expensive. If you're using a model like **text-embedding-3-large 👉 'text embedding three large'**, and you're processing terabytes of documents, the compute costs add up fast. Caching at the chunk level cuts those costs dramatically for any documents that share content or get re-processed.
 
 #### The Limitations
-But there are real trade-offs. First, the **storage footprint at scale is substantial**. You're caching not just embeddings but also tokenized text, reranker features, and metadata for every chunk. If you have a hundred million chunks, and each cached chunk is twenty kilobytes on average, that's two terabytes of storage. This is manageable with object stores, which are cheap, but it's not trivial.
+[cautiously] But there are real trade-offs. First, the **storage footprint at scale is substantial**. You're caching not just embeddings but also tokenized text, reranker features, and metadata for every chunk. If you have a hundred million chunks, and each cached chunk is twenty kilobytes on average, that's two terabytes of storage. This is manageable with object stores, which are cheap, but it's not trivial.
 
 Second, you need **complex invalidation logic**. When a document updates, you must identify and invalidate all its cached chunks. When your pipeline version changes, you must handle migration carefully to avoid serving results from mixed pipeline versions. This requires sophisticated cache management code and operational discipline.
 
@@ -1215,17 +1215,17 @@ Let's examine these trade-offs more closely on the next slide.`
           ),
           backgroundColor: '#1d616b',
           notes: `### Strengths and Limitations
-Let's dive deeper into the Chunk-Level Cache to understand where it delivers exceptional value and where you need to be mindful of the complexities.
+[conversational] Let's dive deeper into the Chunk-Level Cache to understand where it delivers exceptional value and where you need to be mindful of the complexities.
 
 #### The Performance Benefits
-On the **strengths** side, this pattern offers compelling efficiency gains at the ingestion layer. The first major benefit is **dramatically faster ingestion and retrieval workflows**. Let me give you concrete numbers. Imagine you're ingesting a large corpus of technical documentation where many documents share common sections, like API reference pages that all include the same authentication examples, or legal documents with standard disclaimers.
+[enthusiastically] On the **strengths** side, this pattern offers compelling efficiency gains at the ingestion layer. The first major benefit is **dramatically faster ingestion and retrieval workflows**. Let me give you concrete numbers. Imagine you're ingesting a large corpus of technical documentation where many documents share common sections, like API reference pages that all include the same authentication examples, or legal documents with standard disclaimers.
 
 Without chunk-level caching, every document gets processed independently. You chunk it, embed every chunk, tokenize, compute reranker features—all redundant work for shared content. With chunk-level caching, the first time you process a chunk, you pay the full cost. But every subsequent occurrence of that same content, whether in the same document or across different documents, is a cache hit. You've eliminated ninety-five percent of the processing time and cost for overlapping content.
 
 In practice, if you're ingesting a hundred thousand documents and twenty percent of the content is shared or repeated, chunk-level caching can reduce your total ingestion time from maybe ten hours down to three hours. The savings compound as your corpus grows.
 
 #### Pipeline Reproducibility
-The second strength is **enabling reproducible pipeline processing**. This is subtle but incredibly valuable, especially in regulated industries or research contexts. Because you're caching intermediate processing outputs with version tags, you can deterministically reproduce exactly what processing was applied to any piece of content. Need to debug why a particular query isn't retrieving the right documents? You can trace back to the exact cached chunk embeddings and metadata that were used. Need to prove compliance with data processing regulations? You have an audit trail of what was cached and when.
+[confidently] The second strength is **enabling reproducible pipeline processing**. This is subtle but incredibly valuable, especially in regulated industries or research contexts. Because you're caching intermediate processing outputs with version tags, you can deterministically reproduce exactly what processing was applied to any piece of content. Need to debug why a particular query isn't retrieving the right documents? You can trace back to the exact cached chunk embeddings and metadata that were used. Need to prove compliance with data processing regulations? You have an audit trail of what was cached and when.
 
 This reproducibility also simplifies testing. When you're developing new features or fixing bugs in your retrieval pipeline, you can work with cached chunks and get consistent results. You're not fighting non-deterministic behavior from re-running embeddings or tokenization with slightly different parameters.
 
@@ -1235,12 +1235,12 @@ The third strength is **significantly reducing recomputation costs**. Embedding 
 Let's do the math. Suppose embedding a million chunks costs you five hundred dollars in compute time. Without caching, if you re-index three times during development and testing, that's fifteen hundred dollars. With chunk-level caching, you pay five hundred dollars once, and subsequent re-indexes are nearly free from an embedding standpoint. The ROI is clear.
 
 #### The Storage Reality Check
-Now for the **limitations**, and these are significant at scale. First, the **storage footprint is substantial**. You're caching embeddings, tokenized text, reranker features, and metadata for every chunk. Let's break down the math. A typical chunk might have a three-thousand-dimensional embedding, which is twelve kilobytes. Tokenized text might add another two kilobytes. Reranker features and metadata add maybe three more kilobytes. That's roughly twenty kilobytes per cached chunk.
+[firmly] Now for the **limitations**, and these are significant at scale. First, the **storage footprint is substantial**. You're caching embeddings, tokenized text, reranker features, and metadata for every chunk. Let's break down the math. A typical chunk might have a three-thousand-dimensional embedding, which is twelve kilobytes. Tokenized text might add another two kilobytes. Reranker features and metadata add maybe three more kilobytes. That's roughly twenty kilobytes per cached chunk.
 
 If you're working with a hundred million chunks, that's two terabytes of cached data. Now, object stores like **S3 👉 'ess-three'** are cheap, roughly twenty-three dollars per terabyte per month. So two terabytes costs you about forty-six dollars per month for storage alone. That's very manageable. But if you want high-performance access, and you're keeping hot chunks in **Redis 👉 'red-iss'**, memory costs are much higher, maybe five hundred dollars per terabyte per month. You need to carefully tier your storage, keeping only truly hot data in memory and everything else in object stores.
 
 #### The Invalidation Complexity
-The second limitation is **complex invalidation logic**. This is where operational complexity creeps in. When a document is updated, you need to identify and invalidate all cached chunks from that document. This requires maintaining a **reverse index** mapping document IDs to chunk cache keys. It's doable, but it's not trivial. Your cache management layer needs to be sophisticated.
+[concerned] The second limitation is **complex invalidation logic**. This is where operational complexity creeps in. When a document is updated, you need to identify and invalidate all cached chunks from that document. This requires maintaining a **reverse index** mapping document IDs to chunk cache keys. It's doable, but it's not trivial. Your cache management layer needs to be sophisticated.
 
 You also need to handle partial updates carefully. If only one paragraph in a large document changes, ideally you'd invalidate only the affected chunks, not the entire document's cache. This requires content hashing at the chunk level, which we include in our cache key, but it also requires careful tracking of chunk boundaries. If your chunking strategy changes slightly, you might miss some invalidations.
 
@@ -1261,13 +1261,13 @@ You also implement **background cache refresh jobs** that gradually update cache
 Some teams also use **chunk fingerprinting** based on semantic content rather than exact text, so that minor formatting changes to documents don't invalidate chunks unnecessarily. This increases cache hit rates but requires more sophisticated hashing logic.
 
 #### When to Use This Pattern
-This pattern is most valuable in **large-scale knowledge bases with significant content overlap**, like technical documentation, legal repositories, or academic paper collections. It's also ideal when you **frequently re-index or update your corpus** and want to avoid paying the full reprocessing cost every time.
+[lecture] This pattern is most valuable in **large-scale knowledge bases with significant content overlap**, like technical documentation, legal repositories, or academic paper collections. It's also ideal when you **frequently re-index or update your corpus** and want to avoid paying the full reprocessing cost every time.
 
 It's less valuable in **small corpora or highly unique content** where there's minimal chunk repetition. In those cases, the caching overhead might exceed the benefits. And it's challenging in **rapidly evolving systems** where your processing pipeline changes frequently, because the invalidation and migration complexity can overwhelm your team.
 
-> Ask the audience: "How many of you are processing documents with overlapping content, like API documentation or legal boilerplate?"
+> [warmly] Ask the audience: "How many of you are processing documents with overlapping content, like API documentation or legal boilerplate?"
 
-With that deep understanding of Chunk-Level Cache, let's move on to Pattern 6, which shifts our focus to the personalization layer and conversation continuity.`
+[conversational] With that deep understanding of Chunk-Level Cache, let's move on to Pattern 6, which shifts our focus to the personalization layer and conversation continuity.`
         }
       ]
     },
@@ -1364,10 +1364,10 @@ With that deep understanding of Chunk-Level Cache, let's move on to Pattern 6, w
           ),
           backgroundColor: '#5a1d6b',
           notes: `### Pattern 6: Token-Level KV Cache
-Welcome to Pattern 6, the **Token-Level KV Cache** 👉 'kay-vee cache'. This is one of the most fundamental and powerful caching patterns in modern LLM 👉 'el-el-em' inference. Unlike the previous patterns that operated at the application level, caching queries or embeddings or retrieval results, this pattern operates deep inside the model itself, at the transformer layer level.
+[excited] Welcome to Pattern 6, the **Token-Level KV Cache** 👉 'kay-vee cache'. This is one of the most fundamental and powerful caching patterns in modern LLM 👉 'el-el-em' inference. [lecture] Unlike the previous patterns that operated at the application level, caching queries or embeddings or retrieval results, this pattern operates deep inside the model itself, at the transformer layer level.
 
 #### What Gets Cached
-In this pattern, we cache **transformer attention key and value tensors per layer for prompt tokens**. Let me break down what that means. When a transformer model like **GPT 👉 'gee-pee-tee'** or **Llama 👉 'lah-mah'** processes text, it uses self-attention mechanisms in every layer. For each token in the input, the model computes three vectors: a query vector, a key vector, and a value vector. These are the famous **Q 👉 'cue', K 👉 'kay', and V 👉 'vee'** in the attention formula.
+[conversational] In this pattern, we cache **transformer attention key and value tensors per layer for prompt tokens**. Let me break down what that means. When a transformer model like **GPT 👉 'gee-pee-tee'** or **Llama 👉 'lah-mah'** processes text, it uses self-attention mechanisms in every layer. For each token in the input, the model computes three vectors: a query vector, a key vector, and a value vector. These are the famous **Q 👉 'cue', K 👉 'kay', and V 👉 'vee'** in the attention formula.
 
 \\\`\\\`\\\`mermaid
 flowchart TB
@@ -1390,17 +1390,17 @@ Here's the key insight: when you're generating text auto-regressively, token by 
 We're caching **intermediate computation results of attention mechanisms** and **layer-specific key-value pairs for each processed token**. In a model with thirty-two layers, like **Llama-2-7B 👉 'lah-mah two seven bee'**, you have thirty-two sets of K and V tensors per token. For a two-thousand-token prompt, that's sixty-four thousand cached vectors. Each vector might be forty-ninety-six dimensions, so we're talking about substantial memory usage, but the computational savings are massive.
 
 #### The Performance Impact
-This is not a minor optimization. **KV caching** is the difference between usable and unusable latency in LLM generation. Without KV caching, the **TTFT 👉 'tee-tee-eff-tee', or time to first token**, grows quadratically with prompt length because you're recomputing attention over all previous tokens at every step. A two-thousand-token prompt might take ten seconds to start generating. With KV caching, you compute once and generate immediately. TTFT drops to under a second. The speedup is typically **three to ten times faster generation**, sometimes more.
+[enthusiastically] This is not a minor optimization. **KV caching** is the difference between usable and unusable latency in LLM generation. Without KV caching, the **TTFT 👉 'tee-tee-eff-tee', or time to first token**, grows quadratically with prompt length because you're recomputing attention over all previous tokens at every step. A two-thousand-token prompt might take ten seconds to start generating. With KV caching, you compute once and generate immediately. TTFT drops to under a second. The speedup is typically **three to ten times faster generation**, sometimes more.
 
 #### The Cache Key Strategy
-The cache key is technical but critical: \\\`request_id/session_id + prompt_token_range + model_id + shard/block_id\\\`. Let's unpack this. The **request_id** or **session_id** identifies which generation request or conversation session this cache belongs to. The **prompt_token_range** specifies which portion of the input these cached K/V tensors correspond to. This is important for prefix caching, where you might cache a common system prompt across multiple requests.
+[lecture] The cache key is technical but critical: \\\`request_id/session_id + prompt_token_range + model_id + shard/block_id\\\`. Let's unpack this. The **request_id** or **session_id** identifies which generation request or conversation session this cache belongs to. The **prompt_token_range** specifies which portion of the input these cached K/V tensors correspond to. This is important for prefix caching, where you might cache a common system prompt across multiple requests.
 
 The **model_id** is essential because K/V tensors are specific to the model architecture. Tensors from **GPT-4 👉 'gee-pee-tee four'** are incompatible with **Claude 👉 'clawed'**. Even different versions of the same model, like **Llama-2-7B 👉 'lah-mah two seven bee'** versus **Llama-3-8B 👉 'lah-mah three eight bee'**, have different architectures and require separate caches.
 
 The **shard or block_id** is relevant in distributed inference systems where a single large model is sharded across multiple GPUs or nodes. Each shard maintains its own portion of the KV cache. This key structure ensures we never mix up cached tensors from different contexts or models.
 
 #### Storage Architecture
-Where do these tensors live? In **GPU VRAM 👉 'vee-ram', which is the primary storage for fast access**. This is critical. KV tensors need to be immediately accessible to the GPU during generation. Storing them in system RAM or on disk would introduce latency that defeats the entire purpose. Modern GPUs have tens of gigabytes of VRAM, and a significant portion is dedicated to KV caching.
+[confidently] Where do these tensors live? In **GPU VRAM 👉 'vee-ram', which is the primary storage for fast access**. This is critical. KV tensors need to be immediately accessible to the GPU during generation. Storing them in system RAM or on disk would introduce latency that defeats the entire purpose. Modern GPUs have tens of gigabytes of VRAM, and a significant portion is dedicated to KV caching.
 
 However, VRAM is expensive and limited. For long contexts or high concurrency scenarios, you can **offload to CPU RAM 👉 'cpu ram' or NVMe 👉 'en-vee-em-ee' when needed**. Systems like **PagedAttention** in **vLLM 👉 'vee-el-el-em'** manage this intelligently, keeping hot KV blocks in VRAM and evicting cold blocks to CPU memory. When needed, they're paged back in. It's like virtual memory for attention caches.
 
@@ -1414,7 +1414,7 @@ Under memory pressure, the system uses **LRU 👉 'el-are-you', or least recentl
 The cache is **freed upon completion or when the context window overflows**. If you hit the model's maximum context length, typically two thousand to a hundred and twenty-eight thousand tokens depending on the model, old tokens and their cached K/V tensors are discarded to make room for new tokens. This is a sliding window approach.
 
 #### The Critical Trade-Off
-The brilliance of KV caching is that it trades memory for computation. You're storing large tensors to avoid recomputing them. This trade-off is almost always favorable because modern GPUs have abundant VRAM and memory bandwidth, but compute is still relatively expensive. However, for extremely long contexts or high concurrency, memory becomes the bottleneck. This is why advanced techniques like **PagedAttention, FlashAttention 👉 'flash attention', and quantized KV caching** exist: they reduce the memory footprint while maintaining the computational benefits.
+[pleased] The brilliance of KV caching is that it trades memory for computation. You're storing large tensors to avoid recomputing them. This trade-off is almost always favorable because modern GPUs have abundant VRAM and memory bandwidth, but compute is still relatively expensive. However, for extremely long contexts or high concurrency, memory becomes the bottleneck. This is why advanced techniques like **PagedAttention, FlashAttention 👉 'flash attention', and quantized KV caching** exist: they reduce the memory footprint while maintaining the computational benefits.
 
 Let's look at the strengths and limitations on the next slide.`
         },
@@ -1454,22 +1454,22 @@ Let's look at the strengths and limitations on the next slide.`
           ),
           backgroundColor: '#5a1d6b',
           notes: `### Strengths and Limitations of Token-Level KV Cache
-Now let's examine where **Token-Level KV 👉 'kay-vee' Cache** delivers exceptional performance and where you need to manage its challenges carefully.
+[conversational] Now let's examine where **Token-Level KV 👉 'kay-vee' Cache** delivers exceptional performance and where you need to manage its challenges carefully.
 
 #### The Performance Revolution
-On the **strengths** side, this pattern is transformational. The first and most dramatic benefit is **massive speedups in decoding, typically three to ten times faster generation**. Let me put this in concrete terms. Without KV caching, generating a one-hundred-token response from a two-thousand-token prompt on a model like **Llama-2-13B 👉 'lah-mah two thirteen bee'** might take thirty seconds. With KV caching, that drops to three to five seconds. The difference is night and day for user experience.
+[enthusiastically] On the **strengths** side, this pattern is transformational. The first and most dramatic benefit is **massive speedups in decoding, typically three to ten times faster generation**. Let me put this in concrete terms. Without KV caching, generating a one-hundred-token response from a two-thousand-token prompt on a model like **Llama-2-13B 👉 'lah-mah two thirteen bee'** might take thirty seconds. With KV caching, that drops to three to five seconds. The difference is night and day for user experience.
 
 Why such a dramatic speedup? Because we're **reducing re-computation of attention for prompt tokens**. Self-attention is the most computationally expensive part of transformer inference. For each new token you generate, without KV caching, you'd compute attention over the entire prompt plus all previously generated tokens. That's quadratic complexity. If your prompt is two thousand tokens and you've generated fifty tokens, you're computing attention over two thousand and fifty tokens at every step. With KV caching, you only compute attention for the new token against cached K and V vectors. The complexity goes from quadratic to linear. That's the fundamental algorithmic win.
 
 #### The Economics of Inference
-The second strength is that this **improves throughput and reduces inference costs**. Higher throughput means you can serve more requests per GPU. If each request completes three times faster, you can handle roughly three times as many requests with the same hardware. This directly translates to lower per-request costs. For a company running millions of inference requests daily, KV caching can save hundreds of thousands of dollars in compute costs annually.
+[pleased] The second strength is that this **improves throughput and reduces inference costs**. Higher throughput means you can serve more requests per GPU. If each request completes three times faster, you can handle roughly three times as many requests with the same hardware. This directly translates to lower per-request costs. For a company running millions of inference requests daily, KV caching can save hundreds of thousands of dollars in compute costs annually.
 
 There's also a latency benefit beyond just generation speed. Lower latency means better user experience, which translates to higher engagement and conversion rates. In customer-facing applications, every hundred milliseconds of latency matters. KV caching keeps your **TTFT 👉 'tee-tee-eff-tee'** and **time-per-token** low enough that users perceive the system as responsive and intelligent.
 
 This isn't optional. In modern LLM inference, KV caching is **table stakes**. Every production inference system, whether you're using **OpenAI 👉 'open-a-eye', Anthropic 👉 'ann-thro-pic', Hugging Face TGI 👉 'hugging face tee-gee-eye', vLLM 👉 'vee-el-el-em', or TensorRT-LLM 👉 'tensor-are-tee el-el-em'**, implements KV caching. It's the foundation that makes auto-regressive generation practical.
 
 #### The Memory Pressure Challenge
-Now for the **limitations**, and the primary one is **high VRAM 👉 'vee-ram' footprint that can consume gigabytes**. Let's do the math to understand the scale. Consider **Llama-2-7B 👉 'lah-mah two seven bee'** with thirty-two layers, a hidden dimension of forty ninety-six, and thirty-two attention heads. For each token, each layer stores a key vector and value vector, each of dimension forty ninety-six. In FP16 👉 'eff-pee sixteen', that's two bytes per number, so eight kilobytes per token per layer, times thirty-two layers, equals roughly two hundred and fifty-six kilobytes per token.
+[cautiously] Now for the **limitations**, and the primary one is **high VRAM 👉 'vee-ram' footprint that can consume gigabytes**. Let's do the math to understand the scale. Consider **Llama-2-7B 👉 'lah-mah two seven bee'** with thirty-two layers, a hidden dimension of forty ninety-six, and thirty-two attention heads. For each token, each layer stores a key vector and value vector, each of dimension forty ninety-six. In FP16 👉 'eff-pee sixteen', that's two bytes per number, so eight kilobytes per token per layer, times thirty-two layers, equals roughly two hundred and fifty-six kilobytes per token.
 
 For a context of eight thousand tokens, that's roughly two gigabytes of KV cache. An **A100 👉 'a one hundred' GPU** with eighty gigabytes of VRAM can hold maybe twenty to thirty concurrent contexts of that size, depending on what else is in memory. If you're running a high-traffic service with hundreds of concurrent users, VRAM becomes the bottleneck. You can't load more requests even though your GPU compute is underutilized.
 
@@ -1478,19 +1478,19 @@ This is why techniques like **PagedAttention** were developed. PagedAttention br
 Quantization helps too. Storing K and V vectors in INT8 👉 'int eight' or FP8 👉 'eff-pee eight' instead of FP16 👉 'eff-pee sixteen' cuts memory usage in half or more, with minimal quality loss. But it requires specialized kernels and isn't universally supported yet.
 
 #### Memory Fragmentation and Compaction
-The second limitation is **memory fragmentation and compaction challenges**. When you have many concurrent requests of varying lengths, you end up with a **fragmented memory space**. Imagine you've allocated a block for a two-thousand-token context, but that request completes after generating only five hundred tokens. You have fifteen hundred tokens worth of wasted space. When the next request comes in with a different context size, it might not fit in that exact slot. You get fragmentation, just like in traditional memory management.
+[concerned] The second limitation is **memory fragmentation and compaction challenges**. When you have many concurrent requests of varying lengths, you end up with a **fragmented memory space**. Imagine you've allocated a block for a two-thousand-token context, but that request completes after generating only five hundred tokens. You have fifteen hundred tokens worth of wasted space. When the next request comes in with a different context size, it might not fit in that exact slot. You get fragmentation, just like in traditional memory management.
 
 Systems like **vLLM 👉 'vee-el-el-em'** solve this with **memory compaction** and **paged attention**. They dynamically allocate and deallocate KV cache blocks as needed. But this adds runtime overhead and complexity. You need sophisticated memory management algorithms and careful engineering to make it efficient. This is not trivial to implement from scratch.
 
 #### The Architecture Coupling Problem
-The third limitation is **strong coupling with model version and architecture**. KV cache tensors are tied to a specific model's layer count, hidden dimensions, and attention head configuration. If you upgrade from **Llama-2-7B 👉 'lah-mah two seven bee'** to **Llama-3-8B 👉 'lah-mah three eight bee'**, all cached K/V tensors become invalid. You can't reuse them. This means model upgrades require flushing all KV caches, which can cause a temporary spike in latency as new caches are populated.
+[firmly] The third limitation is **strong coupling with model version and architecture**. KV cache tensors are tied to a specific model's layer count, hidden dimensions, and attention head configuration. If you upgrade from **Llama-2-7B 👉 'lah-mah two seven bee'** to **Llama-3-8B 👉 'lah-mah three eight bee'**, all cached K/V tensors become invalid. You can't reuse them. This means model upgrades require flushing all KV caches, which can cause a temporary spike in latency as new caches are populated.
 
 It also means you can't share KV caches across different models. If you're running multiple model variants, A/B testing different architectures, or serving different model sizes based on request complexity, each model needs its own isolated KV cache pool. This multiplies your memory requirements and operational complexity.
 
 Furthermore, if you're doing **continuous batching**, where you dynamically batch together requests as they arrive, you need to manage KV caches for each request independently. They can't interfere with each other. This requires careful indexing and isolation, which adds overhead.
 
 #### Advanced Optimizations
-Despite these challenges, KV caching is so valuable that enormous engineering effort has gone into optimizing it. Techniques like **FlashAttention 👉 'flash attention'** fuse attention operations and reduce memory traffic. **Multi-query attention 👉 'em-cue-a'** and **grouped-query attention 👉 'gee-cue-a'** reduce the number of K/V heads, cutting cache size. **Prefix caching** shares KV cache blocks across requests with common prompts, like system instructions. All of these build on the fundamental KV caching pattern we're discussing.
+[confidently] Despite these challenges, KV caching is so valuable that enormous engineering effort has gone into optimizing it. Techniques like **FlashAttention 👉 'flash attention'** fuse attention operations and reduce memory traffic. **Multi-query attention 👉 'em-cue-a'** and **grouped-query attention 👉 'gee-cue-a'** reduce the number of K/V heads, cutting cache size. **Prefix caching** shares KV cache blocks across requests with common prompts, like system instructions. All of these build on the fundamental KV caching pattern we're discussing.
 
 The takeaway is that KV caching is essential but not free. You're trading memory for compute, and in production systems, memory management becomes a first-class concern. Understanding this trade-off helps you architect your inference infrastructure correctly.
 
@@ -1591,15 +1591,15 @@ Let's move on to the next pattern, where we'll see another model-level caching t
           ),
           backgroundColor: '#211d6b',
           notes: `### Pattern 7: Logit Cache
-Welcome to Pattern 7: **Logit Cache**, also known as **Model Output Logit Cache**. This is a sophisticated model-level caching pattern that stores the probability distributions that come out of your language model before token sampling happens.
+[lecture] Welcome to Pattern 7: **Logit Cache**, also known as **Model Output Logit Cache**. This is a sophisticated model-level caching pattern that stores the probability distributions that come out of your language model before token sampling happens.
 
 #### What Exactly Are Logits?
-Let's start with fundamentals. When a language model processes a sequence of tokens, the final layer outputs a vector of **logits** 👉 'loj-its'. These are raw, unnormalized scores for every token in the vocabulary. A typical model vocabulary has thirty thousand to one hundred thousand tokens, so we're talking about vectors with tens of thousands of dimensions. These logits get converted into probabilities through a **softmax** function, and then your sampling strategy picks the next token based on those probabilities.
+[conversational] Let's start with fundamentals. When a language model processes a sequence of tokens, the final layer outputs a vector of **logits** 👉 'loj-its'. These are raw, unnormalized scores for every token in the vocabulary. A typical model vocabulary has thirty thousand to one hundred thousand tokens, so we're talking about vectors with tens of thousands of dimensions. These logits get converted into probabilities through a **softmax** function, and then your sampling strategy picks the next token based on those probabilities.
 
 Here's the key insight: computing those logits is expensive. It requires a full forward pass through the entire neural network. But if you've seen a particular prefix before, those logits will be identical every time, assuming the same model and parameters. That's the opportunity.
 
 #### What Gets Cached
-In **Logit Cache**, we're caching **next-token logits and probabilities for frequent prefixes**. Think about common prompt templates. If your system starts every customer support query with the same system prompt, maybe five hundred tokens long, the logits for the next token after that prefix are always the same. Why recompute them millions of times? Cache them once.
+[confidently] In **Logit Cache**, we're caching **next-token logits and probabilities for frequent prefixes**. Think about common prompt templates. If your system starts every customer support query with the same system prompt, maybe five hundred tokens long, the logits for the next token after that prefix are always the same. Why recompute them millions of times? Cache them once.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -1621,7 +1621,7 @@ Practically speaking, you can cache the **full logit vectors** if memory allows,
 You also capture the **output probability distributions at the token level**. This is useful not just for generation but also for tasks like **rescoring multiple candidates** or implementing **safety filters** that check probability distributions for unwanted patterns.
 
 #### The Cache Key Strategy
-The cache key is critical here. You're hashing the **prefix token IDs** plus the **model ID** and a **logits version**. Why version? Because if you change the model, even slightly, all your cached logits are invalid. Imagine you fine-tune your model or switch to a quantized version. The logits will differ. Your cache key must reflect that.
+[lecture] The cache key is critical here. You're hashing the **prefix token IDs** plus the **model ID** and a **logits version**. Why version? Because if you change the model, even slightly, all your cached logits are invalid. Imagine you fine-tune your model or switch to a quantized version. The logits will differ. Your cache key must reflect that.
 
 You also need to include **decoding bias and temperature parameters**. If your application sometimes uses temperature zero-point-seven and sometimes one-point-zero, those produce different probability distributions even for the same logits. So either include temperature in the key, or always cache at a fixed temperature and apply temperature scaling on the fly when retrieving.
 
@@ -1638,12 +1638,12 @@ Logit cache has a **short TTL**, typically minutes to hours. Why? Because this c
 You also use **frequency-based eviction**. Not all prefixes are equally common. Track cache hit rates per entry and evict the least frequently used ones when memory pressure builds up. This keeps your cache focused on the highest-value prefixes.
 
 #### The Model-Level Cache Concept
-This is a **model-level cache**, meaning it operates inside or immediately adjacent to the inference layer. Unlike application-level caches that store final responses, logit cache stores intermediate computational artifacts. It's transparent to the rest of your application. Your inference server checks the cache before running the forward pass, and if it finds a hit, it skips straight to sampling. From the application's perspective, nothing changes except the latency drops dramatically.
+[conversational] This is a **model-level cache**, meaning it operates inside or immediately adjacent to the inference layer. Unlike application-level caches that store final responses, logit cache stores intermediate computational artifacts. It's transparent to the rest of your application. Your inference server checks the cache before running the forward pass, and if it finds a hit, it skips straight to sampling. From the application's perspective, nothing changes except the latency drops dramatically.
 
 This pattern is particularly powerful when combined with other caching strategies. You might have a **KV cache** 👉 'kay-vee cache' for within-generation token reuse and a **logit cache** for across-generation prefix reuse. They complement each other beautifully.
 
 #### Real-World Scenarios
-Where does logit cache shine? Think about **template-heavy applications**. Customer support bots, code generation systems, and structured output generators often use fixed prompt templates. The first few hundred tokens are identical across millions of requests. Caching those logits can reduce **time-to-first-token by fifty to eighty percent** for those requests.
+[pleased] Where does logit cache shine? Think about **template-heavy applications**. Customer support bots, code generation systems, and structured output generators often use fixed prompt templates. The first few hundred tokens are identical across millions of requests. Caching those logits can reduce **time-to-first-token by fifty to eighty percent** for those requests.
 
 Another scenario is **retry and rescoring**. Sometimes you generate multiple candidate completions and then pick the best one. If the prefix is the same across all candidates, you only compute the logits once and sample multiple times. This speeds up beam search and other multi-candidate generation strategies significantly.
 
@@ -1692,15 +1692,15 @@ Let's explore the trade-offs in more detail on the next slide.`
           ),
           backgroundColor: '#211d6b',
           notes: `### Strengths and Limitations
-Let's carefully examine the strengths and limitations of **Logit Cache** to understand when this pattern delivers exceptional value and when you need to be cautious.
+[conversational] Let's carefully examine the strengths and limitations of **Logit Cache** to understand when this pattern delivers exceptional value and when you need to be cautious.
 
 #### The Compelling Advantages
-On the **strengths** side, logit cache offers some unique benefits that other caching patterns can't match. First and foremost, you get **faster time-to-first-token for common prompts and prefixes**. This is a big deal for user experience. When your system uses standardized prompt templates, the first token generation can be dramatically faster. Instead of waiting fifty to one hundred milliseconds for the model to process the prefix and compute logits, you retrieve cached logits in single-digit milliseconds and immediately start sampling.
+[pleased] On the **strengths** side, logit cache offers some unique benefits that other caching patterns can't match. First and foremost, you get **faster time-to-first-token for common prompts and prefixes**. This is a big deal for user experience. When your system uses standardized prompt templates, the first token generation can be dramatically faster. Instead of waiting fifty to one hundred milliseconds for the model to process the prefix and compute logits, you retrieve cached logits in single-digit milliseconds and immediately start sampling.
 
 The impact compounds in **high-throughput scenarios**. If you're serving thousands of requests per second and thirty to forty percent share common prefixes, you're effectively multiplying your inference capacity. The same GPU fleet can handle more requests because prefix processing is nearly free for cache hits.
 
 #### Rescoring and Multi-Candidate Generation
-Logit cache is **particularly useful for rescoring, safety passes, and retry scenarios**. Imagine you're implementing a content moderation system that needs to check multiple completion candidates. You generate the prefix logits once, then sample five different continuations. Without logit cache, you'd compute the prefix five times. With logit cache, you compute it once and sample five times. That's an eighty-percent reduction in compute for the prefix portion.
+[enthusiastically] Logit cache is **particularly useful for rescoring, safety passes, and retry scenarios**. Imagine you're implementing a content moderation system that needs to check multiple completion candidates. You generate the prefix logits once, then sample five different continuations. Without logit cache, you'd compute the prefix five times. With logit cache, you compute it once and sample five times. That's an eighty-percent reduction in compute for the prefix portion.
 
 The same principle applies to **beam search** and other multi-candidate strategies. In machine translation or code generation, you might explore multiple paths. Logit cache ensures that shared prefixes don't get recomputed, making these algorithms much more efficient.
 
@@ -1712,19 +1712,19 @@ An underappreciated benefit is that logit cache **helps maintain consistent outp
 Some teams use logit cache specifically for **A-B testing**. You can cache logits from your production model and then test new sampling strategies or decoding algorithms without rerunning expensive inference. This accelerates experimentation significantly.
 
 #### The Practical Constraints
-Now let's talk about the **limitations**, because they're significant. The most obvious one is the **large memory footprint for many prefixes**. Logits are not small. For a model with a fifty-thousand-token vocabulary, a single set of logits is two hundred kilobytes in float32. If you're caching ten thousand prefixes, that's two gigabytes. Scale up to a million prefixes, and you're talking about two hundred gigabytes, which is way beyond what you can store in RAM economically.
+[firmly] Now let's talk about the **limitations**, because they're significant. The most obvious one is the **large memory footprint for many prefixes**. Logits are not small. For a model with a fifty-thousand-token vocabulary, a single set of logits is two hundred kilobytes in float32. If you're caching ten thousand prefixes, that's two gigabytes. Scale up to a million prefixes, and you're talking about two hundred gigabytes, which is way beyond what you can store in RAM economically.
 
 Even with top-k pruning where you only store the top one hundred tokens per prefix, you still need several gigabytes for tens of thousands of entries. This creates a memory-cost trade-off. You need to carefully monitor which prefixes get cached and use **aggressive eviction policies** to keep only the hottest entries.
 
 #### The Exact-Match Problem
-The second major limitation is that logit cache is **exact-match sensitive**, leading to a **limited hit rate**. Unlike semantic caching where you can match similar queries, logit cache requires the token sequence to be identical. Even a single token difference invalidates the cache. This is fundamental to how transformers work. The attention mechanism depends on the exact sequence of tokens, so you can't reuse logits from a slightly different prefix.
+[cautiously] The second major limitation is that logit cache is **exact-match sensitive**, leading to a **limited hit rate**. Unlike semantic caching where you can match similar queries, logit cache requires the token sequence to be identical. Even a single token difference invalidates the cache. This is fundamental to how transformers work. The attention mechanism depends on the exact sequence of tokens, so you can't reuse logits from a slightly different prefix.
 
 In practice, this means your cache hit rate depends entirely on how much repetition exists in your workload. If you're using the same system prompts across all requests, great. But if every user query is unique, logit cache provides zero value. You need to **measure prefix repetition** in your actual traffic before investing in this pattern.
 
 Some systems try to work around this with **prefix tree** data structures that let you cache logits for partial matches, but this adds significant complexity and is only useful if your prompts have hierarchical structure.
 
 #### Privacy and Security Considerations
-The third limitation involves **privacy concerns with caching user-specific content**. If your prompts contain **PII** 👉 'pee-eye-eye', or personally identifiable information, caching those logits creates a security risk. Imagine you cache logits for a prompt that includes a user's email address or account details. If your cache is compromised, an attacker could reverse-engineer the cached data to extract sensitive information.
+[seriously] The third limitation involves **privacy concerns with caching user-specific content**. If your prompts contain **PII** 👉 'pee-eye-eye', or personally identifiable information, caching those logits creates a security risk. Imagine you cache logits for a prompt that includes a user's email address or account details. If your cache is compromised, an attacker could reverse-engineer the cached data to extract sensitive information.
 
 This is less of an issue if you only cache system prompts that contain no user data. But if you're caching arbitrary user queries, you need **strict access controls**, encryption at rest, and potentially **data anonymization**. Some regulated industries may prohibit this type of caching entirely due to compliance requirements like **GDPR** 👉 'gee-dee-pee-are' or **HIPAA** 👉 'hip-ah'.
 
@@ -1736,7 +1736,7 @@ Logit cache creates operational challenges during **model updates**. When you de
 Some teams address this with **dual caching**, maintaining separate caches for the old and new model versions during a transition period. But this doubles memory requirements temporarily and adds complexity to your deployment process.
 
 #### When to Use Logit Cache
-This pattern is most effective in **template-driven systems** with high query volume. Customer support chatbots with standardized greeting prompts, code generation tools with common imports and boilerplate, and enterprise assistants with multi-hundred-token system prompts all benefit enormously.
+[lecture] This pattern is most effective in **template-driven systems** with high query volume. Customer support chatbots with standardized greeting prompts, code generation tools with common imports and boilerplate, and enterprise assistants with multi-hundred-token system prompts all benefit enormously.
 
 It's less suitable for **highly dynamic, user-specific queries** where every prompt is unique, or for small-scale systems where the complexity of managing logit cache outweighs the benefits.
 
@@ -1747,9 +1747,9 @@ Logit cache works beautifully with other patterns. Combine it with **KV cache** 
 
 You can also layer logit cache beneath **semantic similarity cache**. The semantic cache matches similar queries at the application level, while logit cache optimizes exact prefix matches at the inference level. They operate at different abstraction layers and complement each other perfectly.
 
-> Ask the audience: "How many of you are currently using prompt templates in your applications, and what's your typical prefix length?"
+> [warmly] Ask the audience: "How many of you are currently using prompt templates in your applications, and what's your typical prefix length?"
 
-With this deep understanding of logit cache complete, let's move on to the next pattern, which takes us in a different direction at the retrieval layer.`
+[conversational] With this deep understanding of logit cache complete, let's move on to the next pattern, which takes us in a different direction at the retrieval layer.`
         }
       ]
     },
@@ -1843,10 +1843,10 @@ With this deep understanding of logit cache complete, let's move on to the next 
           ),
           backgroundColor: '#5a1d6b',
           notes: `### Pattern 8: Template Cache
-Here's our eighth caching pattern: **Template Cache**. This pattern operates at the output rendering layer, caching fully formatted templates after variable substitution. It's particularly valuable when you have templates with limited variable combinations that get rendered repeatedly.
+[confident] Here's our eighth caching pattern: **Template Cache**. This pattern operates at the output rendering layer, caching fully formatted templates after variable substitution. [conversational] It's particularly valuable when you have templates with limited variable combinations that get rendered repeatedly.
 
 #### What Gets Cached
-In this pattern, we cache **rendered templates with substituted variables, formatted output strings, and pre-processed template results**. Think about applications that send emails, generate reports, or display notifications. You have a template, like "Hello {{name}}, your order {{order_id}} has been shipped", and you substitute variables to create the final output. Even though template rendering is relatively fast compared to LLM inference, it adds up when you're processing thousands or millions of requests.
+[lecture] In this pattern, we cache **rendered templates with substituted variables, formatted output strings, and pre-processed template results**. Think about applications that send emails, generate reports, or display notifications. You have a template, like "Hello {{name}}, your order {{order_id}} has been shipped", and you substitute variables to create the final output. Even though template rendering is relatively fast compared to LLM inference, it adds up when you're processing thousands or millions of requests.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -1872,13 +1872,13 @@ We store rendered templates in **Redis 👉 'red-iss' or Memcached 👉 'mem-cas
 We use a **medium TTL 👉 'tee-tee-el', typically one to twenty-four hours**, depending on how volatile your data is. If your templates reference data that changes frequently, use shorter TTLs. You also want to **invalidate on template version updates**. When you modify a template, bump the version number in your cache keys to ensure old cached results aren't served. For eviction, use **LRU 👉 'el-are-you', or least recently used** policy. This naturally ages out template results for uncommon variable combinations.
 
 #### When This Pattern Shines
-The **strengths** are significant. You eliminate redundant template rendering work, which matters at scale. Templates with limited variable cardinality, like status notifications with five possible states or confirmation emails with standard fields, hit the cache frequently. You also reduce CPU load on your application servers, freeing resources for other processing. And cached templates provide **consistent formatting and faster response times**.
+[pleased] The **strengths** are significant. You eliminate redundant template rendering work, which matters at scale. Templates with limited variable cardinality, like status notifications with five possible states or confirmation emails with standard fields, hit the cache frequently. You also reduce CPU load on your application servers, freeing resources for other processing. And cached templates provide **consistent formatting and faster response times**.
 
 #### The Limitations
-But there are considerations. If your variable space is **highly dimensional or unbounded**, your cache hit rate will be poor. For example, templates with user-generated content, timestamps, or unique identifiers in every request won't benefit much. You also have **memory overhead** for storing rendered strings. Large templates like HTML emails can be several kilobytes each. And you need careful **cache invalidation** when template logic changes, not just content. If you update conditional logic in your template engine, you must invalidate all cached results for that template.
+[cautiously] But there are considerations. If your variable space is **highly dimensional or unbounded**, your cache hit rate will be poor. For example, templates with user-generated content, timestamps, or unique identifiers in every request won't benefit much. You also have **memory overhead** for storing rendered strings. Large templates like HTML emails can be several kilobytes each. And you need careful **cache invalidation** when template logic changes, not just content. If you update conditional logic in your template engine, you must invalidate all cached results for that template.
 
 #### Practical Examples
-Think about real-world scenarios. **Email templates** for order confirmations, password resets, or welcome messages. These have fixed structures with a handful of variables. **Report templates** for dashboards, analytics summaries, or status reports. If you're generating the same report structure for different users or time ranges, caching the rendered output saves compute. **Notification templates** for push notifications, SMS messages, or in-app alerts. These often have limited message types and variable sets, making them perfect candidates for template caching.
+[conversational] Think about real-world scenarios. **Email templates** for order confirmations, password resets, or welcome messages. These have fixed structures with a handful of variables. **Report templates** for dashboards, analytics summaries, or status reports. If you're generating the same report structure for different users or time ranges, caching the rendered output saves compute. **Notification templates** for push notifications, SMS messages, or in-app alerts. These often have limited message types and variable sets, making them perfect candidates for template caching.
 
 Let's look at the strengths and limitations in more detail on the next slide.`
         },
@@ -1920,10 +1920,10 @@ Let's look at the strengths and limitations in more detail on the next slide.`
           ),
           backgroundColor: '#5a1d6b',
           notes: `### Strengths and Limitations
-Let's take a closer look at when Template Cache delivers real value and when you need to be cautious.
+[conversational] Let's take a closer look at when Template Cache delivers real value and when you need to be cautious.
 
 #### The Good Stuff
-On the **strengths** side, the value proposition is straightforward. You're **eliminating redundant template rendering work** that would otherwise consume CPU cycles on every request. Even though template rendering is much faster than LLM inference, at scale these microseconds and milliseconds add up. If you're processing a hundred thousand email notifications per hour, avoiding re-rendering for common scenarios saves significant compute resources.
+[pleased] On the **strengths** side, the value proposition is straightforward. You're **eliminating redundant template rendering work** that would otherwise consume CPU cycles on every request. Even though template rendering is much faster than LLM inference, at scale these microseconds and milliseconds add up. If you're processing a hundred thousand email notifications per hour, avoiding re-rendering for common scenarios saves significant compute resources.
 
 The **hit rate for templates with limited variable cardinality** is excellent. Think about status notifications. You might have five possible states: pending, processing, completed, failed, and cancelled. If you're using ten standard variables like user name, timestamp, and identifiers, your total combination space is manageable. Your cache hit rate can easily reach sixty to eighty percent for these workloads.
 
@@ -1932,7 +1932,7 @@ You also **reduce CPU load on your application servers**, which is valuable. Tem
 And you get **consistent formatting and faster response times**. Once a template is rendered and cached, every subsequent request gets exactly the same output in microseconds. There's no risk of formatting variations or template engine bugs creating inconsistent outputs. Your users experience lower latency, especially for frequently accessed templates.
 
 #### The Trade-offs
-Now for the **limitations**. First, if your variable space is **highly dimensional or unbounded**, this pattern doesn't work well. Imagine a template that includes a user-generated message, a timestamp with second precision, and a unique transaction ID in every request. Your cache will never hit because every combination is unique. In these scenarios, template caching provides no benefit and just wastes memory.
+[cautiously] Now for the **limitations**. First, if your variable space is **highly dimensional or unbounded**, this pattern doesn't work well. Imagine a template that includes a user-generated message, a timestamp with second precision, and a unique transaction ID in every request. Your cache will never hit because every combination is unique. In these scenarios, template caching provides no benefit and just wastes memory.
 
 Second, there's **memory overhead for storing rendered strings**. Rendered templates, especially HTML emails or formatted reports, can be several kilobytes to tens of kilobytes each. If you're caching millions of unique combinations, the memory footprint becomes substantial. At some point, the cost of cache storage exceeds the benefit of avoiding template rendering.
 
@@ -1941,11 +1941,11 @@ Third, you need **careful cache invalidation when template logic changes**. It's
 Fourth, this pattern is **not effective for templates with user-generated or highly unique content**. If your template includes long-form text, markdown rendering, or dynamic content that varies significantly between requests, your cache hit rate will be very low. You end up storing results that get used once and then evicted, providing no performance benefit.
 
 #### Real-World Application
-The sweet spot for Template Cache is **transactional emails, standard notifications, and fixed-format reports**. Order confirmations, shipping notifications, password reset emails, these are perfect candidates. You have a small set of templates with limited variables that get rendered thousands or millions of times. The cache hit rate is high, the memory footprint is manageable, and the performance improvement is measurable.
+[confidently] The sweet spot for Template Cache is **transactional emails, standard notifications, and fixed-format reports**. Order confirmations, shipping notifications, password reset emails, these are perfect candidates. You have a small set of templates with limited variables that get rendered thousands or millions of times. The cache hit rate is high, the memory footprint is manageable, and the performance improvement is measurable.
 
-> Ask the audience: "How many of you are rendering templates at high volume in your applications?"
+> [warmly] Ask the audience: "How many of you are rendering templates at high volume in your applications?"
 
-For scenarios with unbounded variable spaces or highly dynamic content, skip this pattern and focus on optimizing your template engine instead. Now let's move on to Pattern 9, which operates at a completely different layer of the stack.`
+[conversational] For scenarios with unbounded variable spaces or highly dynamic content, skip this pattern and focus on optimizing your template engine instead. Now let's move on to Pattern 9, which operates at a completely different layer of the stack.`
         }
       ]
     },
@@ -2039,10 +2039,10 @@ For scenarios with unbounded variable spaces or highly dynamic content, skip thi
           ),
           backgroundColor: '#6b1d54',
           notes: `### Pattern 9: Tool Call Cache
-This is our ninth caching pattern: **Tool Call Cache**. This pattern operates at the tool execution layer, caching the results of external function calls and tool invocations. When your LLM agents need to call APIs, query databases, or perform calculations, tool call caching can dramatically reduce latency and cost.
+[pleased] This is our ninth caching pattern: **Tool Call Cache**. This pattern operates at the tool execution layer, caching the results of external function calls and tool invocations. [enthusiastically] When your LLM agents need to call APIs, query databases, or perform calculations, tool call caching can dramatically reduce latency and cost.
 
 #### What Gets Cached
-In this pattern, we cache **tool execution results**. These are the outputs from **API responses**, **database queries**, and **calculations** performed by your tools. When a language model decides to call a tool, like searching a knowledge base, fetching weather data, or calculating a complex formula, the result of that execution is what we store. We also cache **function call outputs for deterministic tools**, meaning tools that always return the same result for the same inputs. And we include **metadata** like execution time and success or error status, which helps with debugging and monitoring.
+[conversational] In this pattern, we cache **tool execution results**. These are the outputs from **API responses**, **database queries**, and **calculations** performed by your tools. When a language model decides to call a tool, like searching a knowledge base, fetching weather data, or calculating a complex formula, the result of that execution is what we store. We also cache **function call outputs for deterministic tools**, meaning tools that always return the same result for the same inputs. And we include **metadata** like execution time and success or error status, which helps with debugging and monitoring.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -2059,7 +2059,7 @@ flowchart LR
 The flow is straightforward. When your agent decides to call a tool with specific arguments, we first check if we've cached that exact combination. On a cache hit, we return the stored result immediately, skipping the actual tool execution. On a miss, we execute the tool, store the result with a timestamp, and return it. This is especially powerful for expensive operations like API calls that have rate limits or cost money per invocation.
 
 #### The Cache Key Strategy
-The cache key is \\\`hash(tool_name + serialized_arguments + version)\\\`. We combine the tool name, like \\\`get_weather\\\` or \\\`search_database\\\`, with the serialized arguments. Crucially, we **normalize argument ordering**, so \\\`get_weather(city="Seattle", units="metric")\\\` and \\\`get_weather(units="metric", city="Seattle")\\\` produce the same cache key. We also include a **tool version tag**, which is vital. If you change a tool's implementation or schema, you bump the version, and all previous cached results are naturally invalidated because they're keyed to the old version.
+[lecture] The cache key is \\\`hash(tool_name + serialized_arguments + version)\\\`. We combine the tool name, like \\\`get_weather\\\` or \\\`search_database\\\`, with the serialized arguments. Crucially, we **normalize argument ordering**, so \\\`get_weather(city="Seattle", units="metric")\\\` and \\\`get_weather(units="metric", city="Seattle")\\\` produce the same cache key. We also include a **tool version tag**, which is vital. If you change a tool's implementation or schema, you bump the version, and all previous cached results are naturally invalidated because they're keyed to the old version.
 
 #### Storage Architecture
 For storage, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cash-dee'** for fast lookup of frequently called tools. These in-memory stores provide sub-millisecond access times. For persistent storage of longer-lived results, we use **DynamoDB 👉 'die-namo-dee-bee' or PostgreSQL 👉 'post-gres'**. This gives us durability for tool results that should live beyond application restarts. And for the absolute hottest tools, ones called thousands of times per minute, we maintain an **in-memory application cache** to avoid even the network hop to Redis.
@@ -2068,10 +2068,10 @@ For storage, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cash-dee'** fo
 TTL 👉 'tee-tee-el' configuration is **variable based on tool type**. This is important because different tools have different freshness requirements. A tool that fetches stock prices might have a TTL 👉 'tee-tee-el' of thirty seconds, because stock prices change constantly. A tool that queries historical data or calculates mathematical constants might have a TTL of days or even weeks. We **invalidate on tool schema or version changes**, forcing re-execution when the tool's behavior changes. And we implement **context-aware expiration** for data freshness. If the underlying data source signals that data has changed, we can proactively invalidate cached results even before TTL expires.
 
 #### When This Pattern Shines
-The **strengths** are compelling. First, you **dramatically reduce API costs and rate limit pressure**. If you're calling an external API that costs ten cents per request, and you can cache fifty percent of calls, you've just cut your API bill in half. Second, you **speed up agent response times**. Tool execution can be slow, especially for network calls or complex database queries. Cached results return in milliseconds instead of seconds. Third, you **enable offline or degraded mode operation**. If an external API goes down, you can still serve cached results to maintain partial functionality. And fourth, you **reduce load on downstream systems**. If you're querying your own database, caching tool results means fewer queries hitting your production database.
+[confidently] The **strengths** are compelling. First, you **dramatically reduce API costs and rate limit pressure**. If you're calling an external API that costs ten cents per request, and you can cache fifty percent of calls, you've just cut your API bill in half. Second, you **speed up agent response times**. Tool execution can be slow, especially for network calls or complex database queries. Cached results return in milliseconds instead of seconds. Third, you **enable offline or degraded mode operation**. If an external API goes down, you can still serve cached results to maintain partial functionality. And fourth, you **reduce load on downstream systems**. If you're querying your own database, caching tool results means fewer queries hitting your production database.
 
 #### The Limitations
-But there are real challenges. First, **stale data is a serious concern for non-deterministic or frequently changing tools**. If you cache a weather forecast and serve it six hours later, users get outdated information. You need careful TTL 👉 'tee-tee-el' management and potentially push-based invalidation from data sources. Second, there's **memory overhead for storing large tool outputs**. If your tool returns megabytes of data, like a large dataset or a rendered image, caching becomes expensive. You might need to cache only metadata or references. Third, **argument serialization complexity** can bite you. If your tool accepts complex objects or nested data structures, you need to serialize them consistently. Two semantically identical arguments that serialize differently will miss the cache. And fourth, **privacy and security concerns** are paramount. If your tools handle user-specific data, you must ensure cache keys are properly scoped to prevent data leakage between users.
+[cautiously] But there are real challenges. First, **stale data is a serious concern for non-deterministic or frequently changing tools**. If you cache a weather forecast and serve it six hours later, users get outdated information. You need careful TTL 👉 'tee-tee-el' management and potentially push-based invalidation from data sources. Second, there's **memory overhead for storing large tool outputs**. If your tool returns megabytes of data, like a large dataset or a rendered image, caching becomes expensive. You might need to cache only metadata or references. Third, **argument serialization complexity** can bite you. If your tool accepts complex objects or nested data structures, you need to serialize them consistently. Two semantically identical arguments that serialize differently will miss the cache. And fourth, **privacy and security concerns** are paramount. If your tools handle user-specific data, you must ensure cache keys are properly scoped to prevent data leakage between users.
 
 Let's dive deeper into the trade-offs on the next slide.`
         },
@@ -2113,15 +2113,15 @@ Let's dive deeper into the trade-offs on the next slide.`
           ),
           backgroundColor: '#6b1d54',
           notes: `### Strengths and Limitations
-Let's examine the Tool Call Cache pattern more deeply to understand when it delivers exceptional value and where you need to navigate carefully.
+[conversational] Let's examine the Tool Call Cache pattern more deeply to understand when it delivers exceptional value and where you need to navigate carefully.
 
 #### The Economic Advantage
-On the **strengths** side, the most immediate benefit is **dramatically reducing API costs and rate limit pressure**. Let me give you a concrete example. Imagine you're building an agent that helps users book flights. One of your tools calls a flight search API that costs fifteen cents per request and has a rate limit of one hundred requests per minute. Without caching, if ten users all search for flights from Seattle to New York on the same day, you make ten separate API calls costing a dollar fifty.
+[pleased] On the **strengths** side, the most immediate benefit is **dramatically reducing API costs and rate limit pressure**. Let me give you a concrete example. Imagine you're building an agent that helps users book flights. One of your tools calls a flight search API that costs fifteen cents per request and has a rate limit of one hundred requests per minute. Without caching, if ten users all search for flights from Seattle to New York on the same day, you make ten separate API calls costing a dollar fifty.
 
 With tool call caching, the first user's search executes the API call, and the result gets cached for, say, fifteen minutes. The next nine users get instant results from cache. You've reduced ten API calls to one, saving a dollar thirty-five. More importantly, you've reduced your rate limit consumption from ten requests to one. At scale, if you're processing ten thousand tool calls per hour, and you achieve a sixty percent cache hit rate, you're saving six thousand API calls per hour. That's real money and operational headroom.
 
 #### The Performance Win
-The second major strength is **speeding up agent response times significantly**. Tool execution is often the slowest part of agent workflows. A database query might take two hundred milliseconds. An external API call might take five hundred milliseconds or more, especially if you're dealing with third-party services that have variable latency. Cached tool results return in single-digit milliseconds from Redis 👉 'red-iss' or instantaneously from in-memory cache.
+[enthusiastically] The second major strength is **speeding up agent response times significantly**. Tool execution is often the slowest part of agent workflows. A database query might take two hundred milliseconds. An external API call might take five hundred milliseconds or more, especially if you're dealing with third-party services that have variable latency. Cached tool results return in single-digit milliseconds from Redis 👉 'red-iss' or instantaneously from in-memory cache.
 
 This compounds when agents make multiple tool calls in sequence. If your agent needs to call three tools to answer a question, and each tool call takes three hundred milliseconds, that's nine hundred milliseconds total. With caching, if all three are cache hits, you're looking at maybe five milliseconds total. The user perceives this as nearly instant versus a noticeable delay. In conversational AI, where users expect snappy responses, this latency reduction is transformative.
 
@@ -2136,12 +2136,12 @@ The fourth strength is **reducing load on downstream systems**. If your tools qu
 This doesn't just save database resources. It also reduces the risk of cascading failures. If your agent system suddenly gets a traffic spike, tool call caching prevents that spike from overwhelming your database or external APIs. You're essentially using the cache as a buffer that smooths out traffic patterns.
 
 #### The Freshness Challenge
-Now for the **limitations**, and these are real. First and most important is the **stale data concern for non-deterministic or frequently changing tools**. Not all tools are cacheable. A tool that returns the current time should never be cached. A tool that checks stock prices needs very short TTLs. A tool that queries real-time inventory needs careful invalidation logic.
+[cautiously] Now for the **limitations**, and these are real. First and most important is the **stale data concern for non-deterministic or frequently changing tools**. Not all tools are cacheable. A tool that returns the current time should never be cached. A tool that checks stock prices needs very short TTLs. A tool that queries real-time inventory needs careful invalidation logic.
 
 The challenge is that LLMs 👉 'el-el-ems' don't understand staleness. If you cache a weather forecast and serve it twelve hours later, the LLM will confidently present that stale data as current information. Users will make decisions based on outdated weather. This is dangerous. You need to be disciplined about **identifying which tools are safe to cache** and setting appropriate TTLs. As a rule of thumb, deterministic tools like calculators, formatters, or reference lookups are excellent candidates. Non-deterministic tools like live data queries need short TTLs or no caching at all.
 
 #### The Storage Math
-The second limitation is **memory overhead for large tool outputs**. Some tools return small results: a number, a boolean, a short string. These are cheap to cache. But some tools return large payloads: entire documents, lists of hundreds of items, serialized objects with nested data. If your tool returns fifty kilobytes of data, and you're caching a million tool results, that's fifty gigabytes of cache storage.
+[concerned] The second limitation is **memory overhead for large tool outputs**. Some tools return small results: a number, a boolean, a short string. These are cheap to cache. But some tools return large payloads: entire documents, lists of hundreds of items, serialized objects with nested data. If your tool returns fifty kilobytes of data, and you're caching a million tool results, that's fifty gigabytes of cache storage.
 
 Redis 👉 'red-iss' pricing for fifty gigabytes can be substantial, maybe two hundred dollars per month depending on your hosting provider. You need to weigh that cost against the savings from avoiding tool execution. Sometimes it's more economical to cache only metadata or to cache compressed versions of results. Other times, you selectively cache only the smallest or most frequently called tool results and let the larger ones always execute fresh.
 
@@ -2153,7 +2153,7 @@ You need to implement **argument normalization**. Sort lists, canonicalize JSON 
 Some teams handle this by defining a strict serialization protocol for each tool, specifying exactly how arguments should be normalized before hashing. This works but requires discipline and documentation. Others use content-based hashing where you hash the semantic meaning, not the exact representation. Both approaches have trade-offs.
 
 #### Privacy and Security
-The fourth limitation is **privacy and security concerns for user-specific data**. If your tool fetches user profile information, account balances, or any personal data, caching becomes fraught with risk. You must ensure that cache keys are properly scoped to prevent user A from accidentally seeing user B's data due to a cache collision or key collision.
+[seriously] The fourth limitation is **privacy and security concerns for user-specific data**. If your tool fetches user profile information, account balances, or any personal data, caching becomes fraught with risk. You must ensure that cache keys are properly scoped to prevent user A from accidentally seeing user B's data due to a cache collision or key collision.
 
 This typically means including a user identifier in the cache key: \\\`hash(tool_name + arguments + user_id + version)\\\`. But this reduces cache hit rates because results are no longer shared across users. You also need to think about data retention policies. If a user deletes their account, do you have a process to purge all cached tool results associated with that user? What about GDPR 👉 'gee-dee-pee-are' right-to-erasure requests?
 
@@ -2169,15 +2169,15 @@ Third, use **cache warming strategies** for predictable workloads. If you know t
 Fourth, consider **partial caching** for tools with mixed deterministic and non-deterministic components. For example, a tool that fetches user data and does expensive calculations might cache the calculated result but always fetch fresh user data. You're caching the computation, not the data.
 
 #### When to Use This Pattern
-Tool Call Cache is most valuable in **agent systems with high tool call volume and significant call repetition**. If your agents are answering similar questions across many users, like customer support bots or documentation helpers, tool call patterns converge. Caching becomes very effective.
+[lecture] Tool Call Cache is most valuable in **agent systems with high tool call volume and significant call repetition**. If your agents are answering similar questions across many users, like customer support bots or documentation helpers, tool call patterns converge. Caching becomes very effective.
 
 It's also ideal for **expensive or rate-limited external APIs**. If you're paying per API call or dealing with strict rate limits, caching is often your only option to scale economically. And it's valuable for **tools with stable, slowly changing data**, like reference databases, configuration lookups, or historical data queries.
 
 It's less valuable in **highly personalized, unique tool calls** where every request has different arguments. If your agents are generating unique queries for every user, cache hit rates will be low. It's also challenging in **real-time systems** where staleness is unacceptable. If users demand up-to-the-second accuracy, you can't cache, or you need extremely short TTLs that reduce the benefit.
 
-> Ask the audience: "How many of you are building agents that make repeated external API calls or database queries?"
+> [warmly] Ask the audience: "How many of you are building agents that make repeated external API calls or database queries?"
 
-With that comprehensive understanding of Tool Call Cache, let's move to Pattern 10, which shifts our focus to the personalization layer and conversation continuity.`
+[conversational] With that comprehensive understanding of Tool Call Cache, let's move to Pattern 10, which shifts our focus to the personalization layer and conversation continuity.`
         }
       ]
     },
@@ -2271,10 +2271,10 @@ With that comprehensive understanding of Tool Call Cache, let's move to Pattern 
           ),
           backgroundColor: '#6b1d1d',
           notes: `### Pattern 10: Session Memory
-Welcome to Pattern 10, the **Session Memory** pattern. This is where we shift from caching computational artifacts like embeddings or retrieval results to caching the conversational and personalization context that makes your LLM 👉 'el-el-em' application feel continuous and personalized across multiple interactions.
+[warm] Welcome to Pattern 10, the **Session Memory** pattern. [storytelling] This is where we shift from caching computational artifacts like embeddings or retrieval results to caching the conversational and personalization context that makes your LLM 👉 'el-el-em' application feel continuous and personalized across multiple interactions.
 
 #### What Gets Cached
-In this pattern, we cache **conversation history and message sequences**. Think about a typical chatbot interaction. When a user says "Tell me more about that," the system needs to know what "that" refers to. The entire conversation history, the back-and-forth exchanges between the user and the assistant, needs to be readily available. We're storing complete message sequences with timestamps, roles like user or assistant or system, and the full content of each message.
+[conversational] In this pattern, we cache **conversation history and message sequences**. Think about a typical chatbot interaction. When a user says "Tell me more about that," the system needs to know what "that" refers to. The entire conversation history, the back-and-forth exchanges between the user and the assistant, needs to be readily available. We're storing complete message sequences with timestamps, roles like user or assistant or system, and the full content of each message.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -2295,7 +2295,7 @@ We're also caching **user preferences, personalization data, and context**. This
 And we cache **session state including active workflows and partial completions**. If a user is in the middle of a multi-step process, like filling out a form or debugging an issue, that state needs to persist across messages. If they ask a side question, then say "okay, back to what we were doing," the system needs to know exactly where they left off.
 
 #### The Performance Impact
-Session memory is absolutely critical for user experience. Without it, every message feels like starting over. The user has to re-establish context every single time. It's frustrating and breaks the flow of conversation. With session memory, interactions feel natural. The system remembers who the user is, what they've been talking about, and where they're trying to go. The hit on performance is minimal because we're just loading structured data, not running models.
+[pleased] Session memory is absolutely critical for user experience. Without it, every message feels like starting over. The user has to re-establish context every single time. It's frustrating and breaks the flow of conversation. With session memory, interactions feel natural. The system remembers who the user is, what they've been talking about, and where they're trying to go. The hit on performance is minimal because we're just loading structured data, not running models.
 
 #### The Cache Key Strategy
 The cache key is straightforward: \\\`session_id or user_id + conversation_id\\\`. The **session_id** uniquely identifies this particular conversation thread. Some systems use a combination of **user_id** and **conversation_id** to allow users to maintain multiple parallel conversations. You also want to **namespace per application domain or tenant** if you're running a multi-tenant system. User one-two-three's session in Tenant A should never collide with user one-two-three's session in Tenant B.
@@ -2313,16 +2313,16 @@ For **active sessions**, you typically use **thirty minutes to twenty-four hours
 And you use **sliding window expiration on user activity**. Every time the user sends a message, you reset the TTL 👉 'tee-tee-el'. This means an active conversation never expires mid-discussion, but once the user goes quiet, the timer starts counting down.
 
 #### When This Pattern Shines
-Session memory is essential for **multi-turn conversations** where context accumulates. Customer support bots, coding assistants, personal assistants, anything where the conversation builds over multiple exchanges. It's critical for **personalization** where you're tailoring responses based on user preferences or history. And it's valuable for **workflow continuity**, like debugging sessions, form filling, or guided troubleshooting.
+[confidently] Session memory is essential for **multi-turn conversations** where context accumulates. Customer support bots, coding assistants, personal assistants, anything where the conversation builds over multiple exchanges. It's critical for **personalization** where you're tailoring responses based on user preferences or history. And it's valuable for **workflow continuity**, like debugging sessions, form filling, or guided troubleshooting.
 
 #### The Limitations
-The main limitation is **storage growth**. Conversations can get long. A debugging session might have fifty or a hundred messages. If each message is a few hundred tokens, and you're storing thousands of sessions, that adds up. You need a strategy for truncating or summarizing old conversation history to fit within context windows and storage constraints.
+[cautiously] The main limitation is **storage growth**. Conversations can get long. A debugging session might have fifty or a hundred messages. If each message is a few hundred tokens, and you're storing thousands of sessions, that adds up. You need a strategy for truncating or summarizing old conversation history to fit within context windows and storage constraints.
 
 You also have **privacy and compliance concerns**. Session data often contains personally identifiable information 👉 'pee-eye-eye'. You need to handle it carefully, ensure proper encryption at rest and in transit, and comply with regulations like GDPR 👉 'gee-dee-pee-are' or HIPAA 👉 'hip-ah'. And you need to provide mechanisms for users to delete their data if they request it.
 
-> Ask the audience: "How many of you are building conversational agents that need to remember context across multiple turns?"
+> [warmly] Ask the audience: "How many of you are building conversational agents that need to remember context across multiple turns?"
 
-With that understanding of Session Memory, let's look at the strengths and limitations in more detail.`
+[conversational] With that understanding of Session Memory, let's look at the strengths and limitations in more detail.`
         },
         {
           id: 22,
@@ -2362,10 +2362,10 @@ With that understanding of Session Memory, let's look at the strengths and limit
           ),
           backgroundColor: '#6b1d1d',
           notes: `### Strengths and Limitations
-Let's dive deeper into when Session Memory is your best friend and when you need to be cautious about its implementation.
+[storytelling] Let's dive deeper into when Session Memory is your best friend and when you need to be cautious about its implementation.
 
 #### The Good Stuff
-On the **strengths** side, Session Memory is transformative for user experience. The first and most obvious benefit is that it **enables natural multi-turn conversations with context continuity**. Users can ask follow-up questions, refer back to earlier points in the conversation, and build complex discussions over time. They can say things like "what about the alternative you mentioned earlier?" and the system knows exactly what they're talking about. This is the difference between a chatbot that feels like a stateless form and one that feels like talking to a knowledgeable assistant.
+[pleased] On the **strengths** side, Session Memory is transformative for user experience. The first and most obvious benefit is that it **enables natural multi-turn conversations with context continuity**. Users can ask follow-up questions, refer back to earlier points in the conversation, and build complex discussions over time. They can say things like "what about the alternative you mentioned earlier?" and the system knows exactly what they're talking about. This is the difference between a chatbot that feels like a stateless form and one that feels like talking to a knowledgeable assistant.
 
 Second, it **personalizes responses based on user history and preferences**. If a user always prefers concise answers, you remember that. If they're a developer who wants code examples, you adapt. If they're in a particular timezone or speak a specific language, you tailor the experience. This personalization creates a much more satisfying and efficient interaction. Users don't have to repeatedly specify their preferences.
 
@@ -2374,7 +2374,7 @@ Third, it **maintains workflow state across interruptions**. Real conversations 
 And fourth, you get **fast access for active sessions with tiered storage**. The sessions users are actively engaged with live in Redis 👉 'red-iss' or another in-memory store, giving you sub-millisecond retrieval times. Older sessions get tiered to cheaper, slower storage. This lets you balance performance and cost effectively.
 
 #### The Trade-offs
-Now for the **limitations**. First, **storage grows linearly with conversation length**. Every message adds to the session. A long debugging conversation, a complex customer support interaction, or a day-long coding session can result in hundreds of messages. At some point, you need to decide what to keep and what to truncate or summarize. This is especially important if you're passing the full history to the LLM 👉 'el-el-em' as part of the prompt. Models have context window limits. GPT-4 👉 'gee-pee-tee four' might support a hundred and twenty-eight thousand tokens, but you still can't store infinite history.
+[seriously] Now for the **limitations**. First, **storage grows linearly with conversation length**. Every message adds to the session. A long debugging conversation, a complex customer support interaction, or a day-long coding session can result in hundreds of messages. At some point, you need to decide what to keep and what to truncate or summarize. This is especially important if you're passing the full history to the LLM 👉 'el-el-em' as part of the prompt. Models have context window limits. GPT-4 👉 'gee-pee-tee four' might support a hundred and twenty-eight thousand tokens, but you still can't store infinite history.
 
 Second, there are **privacy and compliance concerns with PII 👉 'pee-eye-eye' storage**. Conversations often contain personal information. User names, email addresses, account numbers, health information, financial details. You're storing all of this in your session cache. That means you need encryption at rest, encryption in transit, access controls, audit logging, and the ability to comply with regulations like GDPR 👉 'gee-dee-pee-are', which gives users the right to request deletion of their data, or HIPAA 👉 'hip-ah' in healthcare contexts.
 
@@ -2383,11 +2383,11 @@ Third, **context window limitations require truncation strategies**. As conversa
 And fourth, you need **data retention and deletion mechanisms**. You can't keep sessions forever. They'll fill up your storage, and many users won't want their conversations stored indefinitely. You need clear retention policies, TTLs 👉 'tee-tee-els' that match your use case, and mechanisms to purge old data. And you need to handle user-initiated deletions, which might happen asynchronously if the data has been tiered to cold storage.
 
 #### Best Practices
-Despite these limitations, the benefits are huge. The best practice is to implement Session Memory with a **clear data lifecycle**. Active sessions in hot storage, recent sessions in warm storage, archived sessions in cold storage, and automated purging based on TTL. Use **compression for long conversations** to save storage space. Implement **PII detection and redaction** where appropriate. And provide users with **transparency and control** over their data.
+[confidently] Despite these limitations, the benefits are huge. The best practice is to implement Session Memory with a **clear data lifecycle**. Active sessions in hot storage, recent sessions in warm storage, archived sessions in cold storage, and automated purging based on TTL. Use **compression for long conversations** to save storage space. Implement **PII detection and redaction** where appropriate. And provide users with **transparency and control** over their data.
 
-> Ask the audience: "How do you currently handle conversation history in your applications? Are you storing it, or starting fresh each time?"
+> [warmly] Ask the audience: "How do you currently handle conversation history in your applications? Are you storing it, or starting fresh each time?"
 
-With that comprehensive understanding of Session Memory, let's move on to Pattern 11, which shifts our focus back to retrieval optimization with a different angle.`
+[conversational] With that comprehensive understanding of Session Memory, let's move on to Pattern 11, which shifts our focus back to retrieval optimization with a different angle.`
         }
       ]
     },
@@ -2483,10 +2483,10 @@ With that comprehensive understanding of Session Memory, let's move on to Patter
           ),
           backgroundColor: '#1d6b5c',
           notes: `### Pattern 11: Ranked Results Cache (Post Re-Ranker)
-Let's examine **Pattern 11: Ranked Results Cache**, which addresses one of the most expensive operations in modern RAG systems: re-ranking.
+[confident] Let's examine **Pattern 11: Ranked Results Cache**, which addresses one of the most expensive operations in modern RAG systems: re-ranking.
 
 #### The Re-Ranking Problem
-In a typical RAG pipeline, you first do a fast but approximate retrieval using vector similarity search. This gives you maybe a hundred or two hundred candidate documents. But vector search alone isn't always accurate enough for the final ranking. The semantic similarity scores from bi-encoder models like **text-embedding-ada-002 👉 'text embedding ada zero zero two'** or **all-MiniLM 👉 'all mini-el-em'** are directionally correct but not precise enough for selecting the top five or ten documents to include in your context.
+[lecture] In a typical RAG pipeline, you first do a fast but approximate retrieval using vector similarity search. This gives you maybe a hundred or two hundred candidate documents. But vector search alone isn't always accurate enough for the final ranking. The semantic similarity scores from bi-encoder models like **text-embedding-ada-002 👉 'text embedding ada zero zero two'** or **all-MiniLM 👉 'all mini-el-em'** are directionally correct but not precise enough for selecting the top five or ten documents to include in your context.
 
 That's where re-ranking comes in. You take those candidates and run them through a more sophisticated model, usually a **cross-encoder** or even a small **LLM 👉 'el-el-em'** like **GPT-3.5 👉 'gee-pee-tee three point five'** or **Llama-3-8B 👉 'lah-mah three eight bee'**, that scores each candidate's relevance to the query with much higher accuracy. The problem? Re-ranking is expensive. A cross-encoder requires a forward pass for each query-document pair. If you have a hundred candidates, that's a hundred forward passes. This can take several hundred milliseconds and consumes significant compute resources.
 
@@ -2507,12 +2507,12 @@ flowchart LR
 When a query comes in, we perform the initial retrieval, which gives us a candidate list. Before re-ranking, we check the cache. If we have a hit, we return the pre-computed ranked results immediately, skipping the expensive re-ranker entirely. On a miss, we run the re-ranker, store those rankings in the cache, and then return them. The key insight is that for similar or identical queries, the ranked order of candidates is often very similar or identical.
 
 #### What Gets Cached
-We're caching the **final reranked candidate list with their relevance scores**. This is the output of your **cross-encoder or LLM re-ranker**. Each cache entry contains an ordered list of document IDs along with their computed relevance scores. Typically, you're storing the top ten to fifty results. You don't need to store all hundred candidates, just the ones that might actually be used in context.
+[conversational] We're caching the **final reranked candidate list with their relevance scores**. This is the output of your **cross-encoder or LLM re-ranker**. Each cache entry contains an ordered list of document IDs along with their computed relevance scores. Typically, you're storing the top ten to fifty results. You don't need to store all hundred candidates, just the ones that might actually be used in context.
 
 The cache value is relatively compact. If each document ID is a sixteen-byte UUID and each score is an eight-byte float, storing fifty results is about one point two kilobytes per cache entry. Very manageable. You might also store snippet metadata or a hash of the actual document content to detect staleness, but the core value is the ranked list of IDs and scores.
 
 #### The Cache Key Strategy
-The cache key is sophisticated: \\\`hash(query_norm + candidate_ids + reranker_version + topN + filters)\\\`. Let's break this down. The **query_norm** is your normalized query text. This handles query variations, so "what is python?" and "What is Python?" hit the same cache entry. The **candidate_ids** are critical and often overlooked. The same query might retrieve different candidates if your vector index has been updated. Including a representation of the candidate set ensures you're only getting cache hits when the underlying candidates match.
+[lecture] The cache key is sophisticated: \\\`hash(query_norm + candidate_ids + reranker_version + topN + filters)\\\`. Let's break this down. The **query_norm** is your normalized query text. This handles query variations, so "what is python?" and "What is Python?" hit the same cache entry. The **candidate_ids** are critical and often overlooked. The same query might retrieve different candidates if your vector index has been updated. Including a representation of the candidate set ensures you're only getting cache hits when the underlying candidates match.
 
 The **reranker_version** is essential because re-ranker models, like any models, evolve. If you upgrade your cross-encoder from version one to version two, the scores and rankings might change. You need to invalidate old cache entries or version your keys to prevent serving stale rankings. The **topN** parameter specifies how many results you want returned. If one request asks for top five and another asks for top ten, they should hit different cache entries. Finally, **filters** capture any context-specific constraints, like filtering by document date, category, or user permissions. Different filters produce different rankings, so they must be part of the key.
 
@@ -2527,7 +2527,7 @@ The TTL is **short, typically five to thirty minutes**. Why so short? Because re
 You also implement **purging when the candidate document set changes**. If you update or delete a document that was in the candidate list, you invalidate any cache entries that reference it. This is event-based invalidation. It's more complex to implement but ensures you never serve results with missing or stale documents. Similarly, you use **event-based invalidation on re-ranker model updates**. When you deploy a new version of your re-ranker, you flush all cached rankings to ensure consistency.
 
 #### The Critical Trade-Off
-The primary trade-off here is **freshness versus cost**. Re-ranking is expensive, so caching it saves significant compute and latency. But cached rankings can become stale quickly in dynamic systems. You're betting that the benefit of avoiding re-ranking outweighs the risk of serving slightly outdated results. For systems where accuracy is paramount, this trade-off might not be acceptable. For systems where speed and cost matter more than absolute precision, it's a huge win.
+[cautiously] The primary trade-off here is **freshness versus cost**. Re-ranking is expensive, so caching it saves significant compute and latency. But cached rankings can become stale quickly in dynamic systems. You're betting that the benefit of avoiding re-ranking outweighs the risk of serving slightly outdated results. For systems where accuracy is paramount, this trade-off might not be acceptable. For systems where speed and cost matter more than absolute precision, it's a huge win.
 
 Another consideration is **cache key explosion**. If your re-ranker uses many filters or if candidate sets vary widely, you might end up with very low hit rates. Each unique combination of query, candidates, and filters creates a separate cache entry. If you're not careful, you spend more on cache storage and lookup overhead than you save on re-ranking. This is where analyzing your query patterns and candidate distributions is essential.
 
@@ -2571,33 +2571,33 @@ Let's examine the strengths and limitations on the next slide.`
           ),
           backgroundColor: '#1d6b5c',
           notes: `### Strengths and Limitations of Ranked Results Cache
-Now let's examine where the **Ranked Results Cache** delivers exceptional value and where you need to manage its challenges carefully.
+[conversational] Now let's examine where the **Ranked Results Cache** delivers exceptional value and where you need to manage its challenges carefully.
 
 #### The Performance Revolution
-On the **strengths** side, the primary benefit is that you're **avoiding expensive re-ranking computation**. Re-ranking is one of the most costly operations in modern RAG systems. A cross-encoder like **ms-marco-MiniLM 👉 'em-ess marco mini-el-em'** or **bge-reranker 👉 'bee-gee-ee reranker'** requires a full forward pass for each query-document pair. If you have a hundred candidates, that's a hundred individual computations. Even on a GPU, this can take two hundred to five hundred milliseconds. LLM-based re-rankers, which are becoming popular, are even more expensive. Running **GPT-3.5 👉 'gee-pee-tee three point five'** or **Claude 👉 'clawed'** to score relevance can take a second or more and costs real money per API call.
+[enthusiastically] On the **strengths** side, the primary benefit is that you're **avoiding expensive re-ranking computation**. Re-ranking is one of the most costly operations in modern RAG systems. A cross-encoder like **ms-marco-MiniLM 👉 'em-ess marco mini-el-em'** or **bge-reranker 👉 'bee-gee-ee reranker'** requires a full forward pass for each query-document pair. If you have a hundred candidates, that's a hundred individual computations. Even on a GPU, this can take two hundred to five hundred milliseconds. LLM-based re-rankers, which are becoming popular, are even more expensive. Running **GPT-3.5 👉 'gee-pee-tee three point five'** or **Claude 👉 'clawed'** to score relevance can take a second or more and costs real money per API call.
 
 By caching the re-ranked results, you bypass this entire expense for repeat queries. The cache hit is effectively free, just a Redis lookup that takes a millisecond or two. For applications with high query repetition, like customer support FAQs, product search, or documentation lookup, you can achieve hit rates of fifty to seventy percent or more. The cost savings compound quickly. If re-ranking costs you point-zero-one cents per query and you're processing a million queries per month with a sixty percent hit rate, that's six thousand dollars saved monthly just from this one caching layer.
 
 #### Latency and Throughput Benefits
-The second strength is that this pattern **significantly lowers end-to-end latency**. Users don't wait for re-ranking. They get results immediately from the cache. This can shave three hundred to eight hundred milliseconds off your total response time. In user-facing applications, especially search and chat interfaces, every hundred milliseconds matters. Studies show that each hundred-millisecond increase in latency reduces user engagement. By caching re-ranked results, you're keeping your **P95 👉 'pee ninety-five'** and **P99 👉 'pee ninety-nine'** latencies low, which translates to better user experience and higher satisfaction scores.
+[pleased] The second strength is that this pattern **significantly lowers end-to-end latency**. Users don't wait for re-ranking. They get results immediately from the cache. This can shave three hundred to eight hundred milliseconds off your total response time. In user-facing applications, especially search and chat interfaces, every hundred milliseconds matters. Studies show that each hundred-millisecond increase in latency reduces user engagement. By caching re-ranked results, you're keeping your **P95 👉 'pee ninety-five'** and **P99 👉 'pee ninety-nine'** latencies low, which translates to better user experience and higher satisfaction scores.
 
 The third strength is that you're **reducing load on expensive cross-encoder models**. Cross-encoders are often run on GPUs, which are resource-constrained and expensive. By serving cached results, you reduce the number of re-ranking requests hitting your GPU infrastructure. This increases your effective throughput. A single GPU that might handle fifty re-ranking requests per second without caching could effectively serve several hundred requests per second with a good cache hit rate. This means you need fewer GPUs, lower operational costs, and better resource utilization.
 
 #### When This Pattern Shines
-This pattern **works exceptionally well for high-frequency similar queries**. If your users are repeatedly asking variations of the same questions, the cache hit rate will be excellent. Think about customer support: "How do I reset my password?" appears in dozens of forms. If your normalization is good, all those variations hit the same cache entry. E-commerce search is similar. Queries like "best laptops under a thousand dollars" and "top laptops under one thousand dollars" should ideally normalize to the same cache key and return identical rankings.
+[confidently] This pattern **works exceptionally well for high-frequency similar queries**. If your users are repeatedly asking variations of the same questions, the cache hit rate will be excellent. Think about customer support: "How do I reset my password?" appears in dozens of forms. If your normalization is good, all those variations hit the same cache entry. E-commerce search is similar. Queries like "best laptops under a thousand dollars" and "top laptops under one thousand dollars" should ideally normalize to the same cache key and return identical rankings.
 
 #### The Staleness Challenge
-Now for the **limitations**, and the primary one is that **results become stale if retrieval patterns shift**. If your document collection is dynamic, if you're constantly adding, updating, or removing documents, the cached rankings can quickly become outdated. A document that was ranked number three yesterday might have been updated and should now be number one. Or a highly-ranked document might have been deleted entirely. Serving stale rankings is worse than serving slower but fresh results, because it degrades the user experience and trust in your system.
+[cautiously] Now for the **limitations**, and the primary one is that **results become stale if retrieval patterns shift**. If your document collection is dynamic, if you're constantly adding, updating, or removing documents, the cached rankings can quickly become outdated. A document that was ranked number three yesterday might have been updated and should now be number one. Or a highly-ranked document might have been deleted entirely. Serving stale rankings is worse than serving slower but fresh results, because it degrades the user experience and trust in your system.
 
 This is why the **TTL 👉 'tee-tee-el'** is critical. You need to balance freshness with performance. A five-minute TTL means you're never more than five minutes stale, but it also means lower cache hit rates because entries expire quickly. A thirty-minute TTL improves hit rates but increases the risk of staleness. The right choice depends on your document update frequency and your tolerance for outdated results.
 
 #### Filter Explosion Problem
-The second limitation is **filter explosion leading to low cache hit rates**. If your re-ranker supports many filter combinations, like filtering by date, category, user permissions, language, region, and content type, you end up with a combinatorial explosion of cache keys. Each unique combination creates a separate cache entry. If you have ten boolean filters, that's potentially one thousand and twenty-four different cache keys for the same base query. Your effective hit rate plummets because each user's specific filter combination is unique.
+[concerned] The second limitation is **filter explosion leading to low cache hit rates**. If your re-ranker supports many filter combinations, like filtering by date, category, user permissions, language, region, and content type, you end up with a combinatorial explosion of cache keys. Each unique combination creates a separate cache entry. If you have ten boolean filters, that's potentially one thousand and twenty-four different cache keys for the same base query. Your effective hit rate plummets because each user's specific filter combination is unique.
 
 This is a fundamental challenge with parameterized caching. You can mitigate it by identifying the most common filter combinations and only caching those, or by caching at a coarser granularity, like caching re-ranked results without filters and then applying filters post-cache. But these approaches add complexity and might not always be feasible depending on how your re-ranker integrates filters.
 
 #### Version Sensitivity
-The third limitation is **high sensitivity to reranker model version changes**. When you update your re-ranker, whether you're fine-tuning it, upgrading to a new version, or switching to a different model entirely, all cached results become invalid. The new model produces different scores and potentially different rankings. You must flush the entire cache or carefully version your keys to ensure you don't serve results from the old model.
+[firmly] The third limitation is **high sensitivity to reranker model version changes**. When you update your re-ranker, whether you're fine-tuning it, upgrading to a new version, or switching to a different model entirely, all cached results become invalid. The new model produces different scores and potentially different rankings. You must flush the entire cache or carefully version your keys to ensure you don't serve results from the old model.
 
 This creates an operational burden. Every model deployment requires cache invalidation and a warm-up period where hit rates are low as the cache repopulates. For teams that iterate frequently on their re-rankers, this constant invalidation can significantly reduce the effectiveness of caching. You need robust versioning strategies and potentially shadow testing to validate that new models perform better before cutting over.
 
@@ -2607,11 +2607,11 @@ The fourth limitation is that you **require a consistent candidate set between c
 This coupling between retrieval and re-ranking caches adds architectural complexity. You need mechanisms to detect when the candidate set has changed and invalidate affected cache entries. This often requires tracking document versions or index snapshots and including those in your cache keys, which further increases key complexity and reduces hit rates.
 
 #### The Engineering Investment
-Implementing this pattern effectively requires significant engineering. You need robust key generation that captures all relevant parameters, sophisticated invalidation logic for document updates and model changes, monitoring to track hit rates and staleness metrics, and potentially A/B testing infrastructure to measure the quality impact of caching versus live re-ranking. This isn't a trivial "add Redis and you're done" scenario.
+[lecture] Implementing this pattern effectively requires significant engineering. You need robust key generation that captures all relevant parameters, sophisticated invalidation logic for document updates and model changes, monitoring to track hit rates and staleness metrics, and potentially A/B testing infrastructure to measure the quality impact of caching versus live re-ranking. This isn't a trivial "add Redis and you're done" scenario.
 
-But for systems where re-ranking is a major cost and latency driver, and where query patterns have sufficient repetition, the investment pays off handsomely. You're trading engineering complexity for significant cost savings and performance improvements.
+[confidently] But for systems where re-ranking is a major cost and latency driver, and where query patterns have sufficient repetition, the investment pays off handsomely. You're trading engineering complexity for significant cost savings and performance improvements.
 
-With Pattern 11 complete, let's move on to Pattern 12, which focuses on caching at a different granularity.`
+[conversational] With Pattern 11 complete, let's move on to Pattern 12, which focuses on caching at a different granularity.`
         }
       ]
     },
