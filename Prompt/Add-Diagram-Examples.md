@@ -3,7 +3,6 @@ chunking-techniques-deck.tsx
 context-packing-deck.tsx
 document-preprocessing-deck.tsx
 embedding-models-deck.tsx
-embedding-quality-deck.tsx
 entity-normalization-deck.tsx
 feature-extraction-deck.tsx
 graph-retrieval-deck.tsx
@@ -25,8 +24,6 @@ sample-deck.tsx
 sentiment-analysis-deck.tsx
 text-preprocessing-deck.tsx
 vector-databases-deck.tsx
-
-
 vector-indexing-deck.tsx for this file do the following:
 
 ## Purpose
