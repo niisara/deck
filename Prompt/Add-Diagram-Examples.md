@@ -1,8 +1,36 @@
-# Adding Interactive Diagram Examples to Slides
+
+chunking-techniques-deck.tsx
+context-packing-deck.tsx
+document-preprocessing-deck.tsx
+embedding-models-deck.tsx
+embedding-quality-deck.tsx
+entity-normalization-deck.tsx
+feature-extraction-deck.tsx
+graph-retrieval-deck.tsx
+hybrid-search-deck.tsx
+llm-caching-deck.tsx
+metadata-enrichment-deck.tsx
+multi-step-retrieval-deck.tsx
+ner-approaches-deck.tsx
+ner-metrics-deck.tsx
+ner-training-deck.tsx
+parent-child-retrieval-deck.tsx
+production-rag-deck.tsx
+prompt-engineering-deck.tsx
+query-rewriting-deck.tsx
+rag-evaluation-metrics-deck.tsx
+rag-latency-deck.tsx
+reranking-models-deck.tsx
+sample-deck.tsx
+sentiment-analysis-deck.tsx
+text-preprocessing-deck.tsx
+vector-databases-deck.tsx
+vector-indexing-deck.tsx
+
+In the above file mentioned do the following:
 
 ## Purpose
-This prompt helps you add interactive MermaidPopover diagrams as inline clickable badges to slides, making technical concepts more engaging and visual during presentations without adding vertical space or requiring scrolling.
-    
+Add interactive MermaidPopover diagrams as inline clickable badges to slides, making technical concepts more engaging and visual during presentations without adding vertical space or requiring scrolling.
 ## When to Use This Pattern
 Add MermaidPopover diagrams when slides contain:
 - Example walkthroughs or calculations
