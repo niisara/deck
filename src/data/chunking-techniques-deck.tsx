@@ -940,24 +940,24 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c6532',
-          notes: `### 12. Paragraph-Level Chunking - Pros
-Now we're getting into chunks with real substance! Paragraph-level chunking strikes a sweet balance between granularity and context. Let's explore why it works so well.
+          notes: `### Paragraph-Level Chunking - Pros
+[excited] Now we're getting into chunks with real substance! [conversational] Paragraph-level chunking strikes a sweet balance between granularity and context. Let's explore why it works so well.
 
 #### Natural Units of Thought
-Paragraphs are **natural units** in writing. When an author creates a paragraph, they're deliberately grouping related sentences around a single topic or idea. This is intentional structure! By chunking at the paragraph level, you **preserve local context** – all the sentences that the author believed belonged together stay together. It's like keeping family members in the same room instead of scattering them randomly.
+[lecture] Paragraphs are **natural units** in writing. When an author creates a paragraph, they're deliberately grouping related sentences around a single topic or idea. [enthusiastically] This is intentional structure! [conversational] By chunking at the paragraph level, you **preserve local context** – all the sentences that the author believed belonged together stay together. [storytelling] It's like keeping family members in the same room instead of scattering them randomly.
 
 #### Respecting the Author's Intent
-This approach **respects author-defined text boundaries**. Writers use paragraph breaks to signal "this is one cohesive thought, and now I'm moving to the next thought." That's valuable semantic information! Unlike fixed-size chunking that ignores these signals, paragraph chunking honors them. You're working with the document's natural grain instead of cutting against it.
+[pleased] This approach **respects author-defined text boundaries**. [lecture] Writers use paragraph breaks to signal "this is one cohesive thought, and now I'm moving to the next thought." That's valuable semantic information! [conversational] Unlike fixed-size chunking that ignores these signals, paragraph chunking honors them. You're working with the document's natural grain instead of cutting against it.
 
 #### Topic Coherence
-Paragraphs **maintain topical coherence**. A well-written paragraph discusses one main idea with supporting details. When you retrieve that paragraph, you get the complete thought: the claim, the evidence, the examples, and the conclusion all in one chunk. This is far more useful than retrieving half a thought from one chunk and the other half from another.
+[confidently] Paragraphs **maintain topical coherence**. A well-written paragraph discusses one main idea with supporting details. [enthusiastically] When you retrieve that paragraph, you get the complete thought: the claim, the evidence, the examples, and the conclusion all in one chunk. [lecture] This is far more useful than retrieving half a thought from one chunk and the other half from another.
 
-For instance, a paragraph about "How to configure SSL certificates" will contain the complete mini-guide: why it matters, what you need, the steps, and common pitfalls. Everything related stays together.
+[storytelling] For instance, a paragraph about "How to configure SSL certificates" will contain the complete mini-guide: why it matters, what you need, the steps, and common pitfalls. Everything related stays together.
 
 #### Implementation Simplicity
-Here's a bonus: it's **simpler to implement than semantic methods**. You don't need machine learning models or complex embeddings. Just split on double newlines or paragraph markers. It's almost as simple as fixed-size chunking but with much better semantic respect. You get 80% of the benefit of semantic chunking with 20% of the complexity.
+[pleased] Here's a bonus: it's **simpler to implement than semantic methods**. You don't need machine learning models or complex embeddings. Just split on double newlines or paragraph markers. [playfully] It's almost as simple as fixed-size chunking but with much better semantic respect. You get 80% of the benefit of semantic chunking with 20% of the complexity.
 
-This makes paragraph-level chunking the sweet spot for many real-world applications, especially when working with well-formatted documents.`
+[conversational] This makes paragraph-level chunking the sweet spot for many real-world applications, especially when working with well-formatted documents.`
         },
         {
           id: 13,
@@ -997,22 +997,22 @@ This makes paragraph-level chunking the sweet spot for many real-world applicati
             </div>
           ),
           backgroundColor: '#1c6532',
-          notes: `### 13. Paragraph-Level Chunking - Cons
-Paragraph-level chunking has some real limitations you need to be aware of. Let's be honest about where this approach falls short.
+          notes: `### Paragraph-Level Chunking - Cons
+[cautiously] Paragraph-level chunking has some real limitations you need to be aware of. [seriously] Let's be honest about where this approach falls short.
 
 #### The Inconsistency Problem
-**Paragraphs can be long or inconsistent**. Some authors write tight, focused paragraphs of 3-4 sentences. Others write sprawling paragraphs that go on for half a page, covering multiple sub-topics. In academic writing, you might see single-sentence paragraphs for emphasis. In blog posts, paragraphs might be massive walls of text. This inconsistency means your chunks will have wildly varying sizes – some might be 50 tokens, others 800 tokens. That creates the same problems we saw with sentence-level chunking, but amplified.
+[disappointed] **Paragraphs can be long or inconsistent**. [storytelling] Some authors write tight, focused paragraphs of 3-4 sentences. Others write sprawling paragraphs that go on for half a page, covering multiple sub-topics. In academic writing, you might see single-sentence paragraphs for emphasis. In blog posts, paragraphs might be massive walls of text. [concerned] This inconsistency means your chunks will have wildly varying sizes – some might be 50 tokens, others 800 tokens. That creates the same problems we saw with sentence-level chunking, but amplified.
 
 #### Garbage In, Garbage Out
-**Document formatting affects quality** dramatically. If your source document has proper paragraph breaks, great! But if you're working with a scraped web page that never uses paragraph tags, or a PDF where the extraction merged everything into one giant block, you're in trouble. A badly formatted document might have zero paragraph breaks, or paragraph breaks in weird places that don't reflect semantic boundaries. Your chunking quality is entirely dependent on the author's formatting discipline.
+[seriously] **Document formatting affects quality** dramatically. [conversational] If your source document has proper paragraph breaks, great! [disappointed] But if you're working with a scraped web page that never uses paragraph tags, or a PDF where the extraction merged everything into one giant block, you're in trouble. [cautiously] A badly formatted document might have zero paragraph breaks, or paragraph breaks in weird places that don't reflect semantic boundaries. Your chunking quality is entirely dependent on the author's formatting discipline.
 
 #### Uneven Chunks
-This approach **may create uneven chunk sizes**. A paragraph could be 3 sentences or 20 sentences. When you embed these for retrieval, the short paragraphs might lack sufficient context while the long ones might dilute key information. Your embedding model might struggle with the inconsistency. Some chunks will be dense with information; others will be sparse.
+[concerned] This approach **may create uneven chunk sizes**. A paragraph could be 3 sentences or 20 sentences. [lecture] When you embed these for retrieval, the short paragraphs might lack sufficient context while the long ones might dilute key information. Your embedding model might struggle with the inconsistency. [disappointed] Some chunks will be dense with information; others will be sparse.
 
 #### Structure Dependency
-Here's the dealbreaker for many use cases: it **doesn't work well for documents without clear paragraphs**. What about code documentation that's structured as bullet lists? What about chat logs, which have no paragraphs at all? What about structured data like tables or JSON? Paragraph-level chunking simply doesn't apply. You need documents that follow traditional prose structure with clear paragraph delineation.
+[firmly] Here's the dealbreaker for many use cases: it **doesn't work well for documents without clear paragraphs**. [storytelling] What about code documentation that's structured as bullet lists? What about chat logs, which have no paragraphs at all? What about structured data like tables or JSON? [seriously] Paragraph-level chunking simply doesn't apply. You need documents that follow traditional prose structure with clear paragraph delineation.
 
-Despite these limitations, when you *do* have well-formatted prose documents, paragraph-level chunking is often the right choice – you just can't use it everywhere.`
+[conversational] Despite these limitations, when you *do* have well-formatted prose documents, paragraph-level chunking is often the right choice – you just can't use it everywhere.`
         },
         {
           id: 14,
@@ -1080,25 +1080,25 @@ Despite these limitations, when you *do* have well-formatted prose documents, pa
             </div>
           ),
           backgroundColor: '#1c6532',
-          notes: `### 14. Paragraph-Level Chunking - Configuration
-Let's configure paragraph-level chunking for optimal results. The settings here are more flexible than you might expect because paragraphs themselves are variable.
+          notes: `### Paragraph-Level Chunking - Configuration
+[lecture] Let's configure paragraph-level chunking for optimal results. [conversational] The settings here are more flexible than you might expect because paragraphs themselves are variable.
 
 #### Paragraph Size Sweet Spot
-For **chunk size**, we're looking at **150 to 400 tokens**, but here's the key: it's **paragraph-bound**. You're not cutting mid-paragraph to hit a token limit – you take the whole paragraph as-is. This means your actual chunk sizes will vary based on how the author wrote.
+[conversational] For **chunk size**, we're looking at **150 to 400 tokens**, but here's the key: it's **paragraph-bound**. [lecture] You're not cutting mid-paragraph to hit a token limit – you take the whole paragraph as-is. This means your actual chunk sizes will vary based on how the author wrote.
 
-In practice, **size varies based on document formatting**. Blog posts tend toward shorter paragraphs (150-200 tokens) for readability. Technical documentation might have denser paragraphs (250-350 tokens) with lots of specific details. Academic papers often have substantial paragraphs (300-400 tokens) that develop complex arguments. You're accepting this variability as a trade-off for maintaining semantic coherence.
+[storytelling] In practice, **size varies based on document formatting**. Blog posts tend toward shorter paragraphs (150-200 tokens) for readability. Technical documentation might have denser paragraphs (250-350 tokens) with lots of specific details. Academic papers often have substantial paragraphs (300-400 tokens) that develop complex arguments. [conversational] You're accepting this variability as a trade-off for maintaining semantic coherence.
 
-If a paragraph exceeds 400 tokens, you have a decision to make: split it using sentence boundaries, or accept the larger chunk. Many implementations set a maximum and fall back to sentence splitting for oversized paragraphs.
+[cautiously] If a paragraph exceeds 400 tokens, you have a decision to make: split it using sentence boundaries, or accept the larger chunk. Many implementations set a maximum and fall back to sentence splitting for oversized paragraphs.
 
 #### Minimal Overlap Requirements
-**Overlap** is typically **0 to 1 sentence**. Why so minimal? Because **paragraphs are natural breaks**. When an author starts a new paragraph, they're explicitly signaling a topic shift or a new aspect of the discussion. There's usually a clean semantic boundary there, so overlap provides less value than it does with fixed-size chunking.
+[conversational] **Overlap** is typically **0 to 1 sentence**. [lecture] Why so minimal? Because **paragraphs are natural breaks**. When an author starts a new paragraph, they're explicitly signaling a topic shift or a new aspect of the discussion. There's usually a clean semantic boundary there, so overlap provides less value than it does with fixed-size chunking.
 
-That said, a **1-sentence overlap** can help when paragraphs are tightly connected. For example, if paragraph 2 opens with "This approach solves that problem," having the last sentence of paragraph 1 in the overlap provides helpful context about "that problem." But it's optional – many successful implementations use zero overlap.
+[conversational] That said, a **1-sentence overlap** can help when paragraphs are tightly connected. [storytelling] For example, if paragraph 2 opens with "This approach solves that problem," having the last sentence of paragraph 1 in the overlap provides helpful context about "that problem." [playfully] But it's optional – many successful implementations use zero overlap.
 
 #### Processing Overhead
-The **computational cost is Low**. You're essentially splitting on double newlines (\\n\\n) or paragraph markers in HTML/Markdown. No NLP models, no complex parsing – just string operations. It's barely more expensive than fixed-size chunking. You can process thousands of documents per second on modest hardware.
+[pleased] The **computational cost is Low**. You're essentially splitting on double newlines (\\n\\n) or paragraph markers in HTML/Markdown. [confidently] No NLP models, no complex parsing – just string operations. It's barely more expensive than fixed-size chunking. You can process thousands of documents per second on modest hardware.
 
-This simplicity combined with semantic awareness makes paragraph chunking a go-to choice for well-formatted documents.`
+[warmly] This simplicity combined with semantic awareness makes paragraph chunking a go-to choice for well-formatted documents.`
         },
         {
           id: 15,
@@ -1159,25 +1159,25 @@ This simplicity combined with semantic awareness makes paragraph chunking a go-t
             </div>
           ),
           backgroundColor: '#1c6532',
-          notes: `### 15. Paragraph-Level Chunking - Use Cases & Tools
-Where does paragraph-level chunking excel in real-world applications, and how do you implement it? Let's get practical.
+          notes: `### Paragraph-Level Chunking - Use Cases & Tools
+[conversational] Where does paragraph-level chunking excel in real-world applications, and how do you implement it? Let's get practical.
 
 #### Perfect Use Cases
-Paragraph-level chunking is tailor-made for **blogs, reports, and knowledge articles**. These content types naturally organize information into paragraphs where each paragraph explores one aspect of a topic. When a user searches your blog for "how to optimize database queries," you can return the exact paragraph that explains indexing strategies, complete with context and examples.
+[lecture] Paragraph-level chunking is tailor-made for **blogs, reports, and knowledge articles**. These content types naturally organize information into paragraphs where each paragraph explores one aspect of a topic. [storytelling] When a user searches your blog for "how to optimize database queries," you can return the exact paragraph that explains indexing strategies, complete with context and examples.
 
-**Well-structured documents** are ideal. Think of documentation sites, corporate reports, or product manuals where writers follow clear formatting guidelines. Each paragraph is a self-contained unit that makes sense on its own while contributing to the larger narrative. This structure aligns perfectly with paragraph-level chunking.
+[pleased] **Well-structured documents** are ideal. [conversational] Think of documentation sites, corporate reports, or product manuals where writers follow clear formatting guidelines. Each paragraph is a self-contained unit that makes sense on its own while contributing to the larger narrative. This structure aligns perfectly with paragraph-level chunking.
 
-**Content with clear paragraph delineation** – whether it's **articles and essays** or editorial content – benefits enormously. Writers in these formats use paragraphs intentionally to guide readers through ideas. By respecting those boundaries, you preserve the author's intended information architecture.
+[confidently] **Content with clear paragraph delineation** – whether it's **articles and essays** or editorial content – benefits enormously. [lecture] Writers in these formats use paragraphs intentionally to guide readers through ideas. By respecting those boundaries, you preserve the author's intended information architecture.
 
 #### Simple and Universal Tooling
-The **tooling support is wonderfully simple**. Got a Markdown file? Use a **Markdown splitter** that breaks on double newlines. Working with HTML? Parse it and split on <p> tags with an **HTML splitter**. For plain text, you can use **regex or newline heuristics** – literally just text.split('\\n\\n') in many cases.
+[enthusiastically] The **tooling support is wonderfully simple**. Got a Markdown file? Use a **Markdown splitter** that breaks on double newlines. Working with HTML? Parse it and split on <p> tags with an **HTML splitter**. [conversational] For plain text, you can use **regex or newline heuristics** – literally just text.split('\\n\\n') in many cases.
 
-**Common text processing libraries** in every language support this. Python's built-in string methods work great. You don't need specialized NLP libraries or external services. A **simple string split on double newlines** is often sufficient for 80% of use cases. For more robust parsing, libraries like BeautifulSoup for HTML or markdown parsers provide clean paragraph extraction.
+[pleased] **Common text processing libraries** in every language support this. Python's built-in string methods work great. You don't need specialized NLP libraries or external services. [playfully] A **simple string split on double newlines** is often sufficient for 80% of use cases. For more robust parsing, libraries like BeautifulSoup for HTML or markdown parsers provide clean paragraph extraction.
 
 #### Beginner-Friendly
-The **complexity level is Beginner**. If you can split a string, you can implement paragraph-level chunking. There's no machine learning, no model training, no complex configuration. Write 5 lines of code and you're done. This makes it perfect for MVPs, prototypes, or situations where you need something working immediately.
+[confidently] The **complexity level is Beginner**. If you can split a string, you can implement paragraph-level chunking. There's no machine learning, no model training, no complex configuration. [enthusiastically] Write 5 lines of code and you're done. This makes it perfect for MVPs, prototypes, or situations where you need something working immediately.
 
-Next, we'll explore recursive character text splitting, which combines the simplicity of character-based chunking with smarter boundary detection.`
+[warmly] Next, we'll explore recursive character text splitting, which combines the simplicity of character-based chunking with smarter boundary detection.`
         }
       ]
     },
