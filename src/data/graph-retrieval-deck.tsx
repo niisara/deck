@@ -1890,35 +1890,35 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - Overview
 
-Welcome to **Graph + Dense Vector Hybrid Retrieval**, a powerful technique that combines two complementary approaches to information retrieval. This is where we stop choosing between methods and start leveraging the strengths of multiple techniques together.
+[excitedly] Welcome to **Graph + Dense Vector Hybrid Retrieval**, a powerful technique that combines two complementary approaches to information retrieval. [enthusiastically] This is where we stop choosing between methods and start leveraging the strengths of multiple techniques together.
 
 #### What Is Hybrid Retrieval?
-Imagine you're searching for information and you have two assistants. One assistant understands **what things mean**—they can tell that "canine" and "dog" are similar concepts even though the words are different. Another assistant understands **how things connect**—they know that "dog" is related to "leash," "veterinarian," and "pet food" because these concepts co-occur in your knowledge base. Hybrid retrieval asks both assistants and combines their recommendations.
+[storytelling] Imagine you're searching for information and you have two assistants. [conversational] One assistant understands **what things mean**—they can tell that "canine" and "dog" are similar concepts even though the words are different. Another assistant understands **how things connect**—they know that "dog" is related to "leash," "veterinarian," and "pet food" because these concepts co-occur in your knowledge base. [pleased] Hybrid retrieval asks both assistants and combines their recommendations.
 
-**Dense vector embeddings** capture **semantic similarity**. They place semantically related concepts close together in high-dimensional space, enabling fuzzy matching that handles synonyms, paraphrases, and conceptual relationships. This is the foundation of modern semantic search.
+[lecture] **Dense vector embeddings** capture **semantic similarity**. [conversational] They place semantically related concepts close together in high-dimensional space, enabling fuzzy matching that handles synonyms, paraphrases, and conceptual relationships. This is the foundation of modern semantic search.
 
-**Graph structure** captures **relational and structural relevance**. It knows which nodes are connected, how strong those connections are, which nodes are central to a topic, and which form communities. This is the foundation of graph-based retrieval.
+[lecture] **Graph structure** captures **relational and structural relevance**. [conversational] It knows which nodes are connected, how strong those connections are, which nodes are central to a topic, and which form communities. This is the foundation of graph-based retrieval.
 
-By combining both, you get retrieval that is **semantically aware** (understanding what the query means) and **structurally aware** (understanding how concepts relate in your specific knowledge base).
+[confidently] By combining both, you get retrieval that is **semantically aware** (understanding what the query means) and **structurally aware** (understanding how concepts relate in your specific knowledge base).
 
 #### The Core Concept: Complementary Signals
-These two signals are **complementary, not redundant**. Vector search might find semantically similar nodes that aren't directly connected in your graph—valuable for discovering analogies or transferring knowledge across domains. Graph traversal finds structurally related nodes that might not be semantically similar in embedding space—valuable for following domain-specific relationships.
+[enthusiastically] These two signals are **complementary, not redundant**. [conversational] Vector search might find semantically similar nodes that aren't directly connected in your graph—valuable for discovering analogies or transferring knowledge across domains. Graph traversal finds structurally related nodes that might not be semantically similar in embedding space—valuable for following domain-specific relationships.
 
-Consider a query about "machine learning in healthcare." **Vector search** finds nodes with similar semantic content: medical diagnosis systems, patient data analysis, health informatics. **Graph expansion** from these seed nodes might find connected nodes about regulatory compliance, privacy laws like HIPAA 👉 'hip-uh', and integration challenges—important context that might not be semantically similar to the query but is structurally relevant.
+[storytelling] Consider a query about "machine learning in healthcare." **Vector search** finds nodes with similar semantic content: medical diagnosis systems, patient data analysis, health informatics. [pleased] **Graph expansion** from these seed nodes might find connected nodes about regulatory compliance, privacy laws like HIPAA 👉 'hip-uh', and integration challenges—important context that might not be semantically similar to the query but is structurally relevant.
 
 #### Goals: Robustness and Balance
-The primary goal is achieving a **better precision/recall balance** than either technique alone. Vector search alone might have high recall (finding lots of relevant content) but include false positives that are semantically similar but contextually wrong. Graph traversal alone might have high precision (only returning contextually appropriate nodes) but miss semantically relevant content that isn't well connected.
+[confidently] The primary goal is achieving a **better precision/recall balance** than either technique alone. [conversational] Vector search alone might have high recall (finding lots of relevant content) but include false positives that are semantically similar but contextually wrong. Graph traversal alone might have high precision (only returning contextually appropriate nodes) but miss semantically relevant content that isn't well connected.
 
-Another key benefit is **robustness to query variations**. Some queries are well-suited to semantic search; others benefit from graph structure. Hybrid approaches work reasonably well across diverse query types without requiring you to predict which approach will work best.
+[pleased] Another key benefit is **robustness to query variations**. [conversational] Some queries are well-suited to semantic search; others benefit from graph structure. [reassuringly] Hybrid approaches work reasonably well across diverse query types without requiring you to predict which approach will work best.
 
-**Handling noisy graphs** is also important. If your graph structure has errors—missing edges, incorrect connections, weak signal—the semantic component compensates. If your embeddings are imperfect or trained on different domains, the graph structure provides grounding in your specific knowledge base.
+[lecture] **Handling noisy graphs** is also important. [conversational] If your graph structure has errors—missing edges, incorrect connections, weak signal—the semantic component compensates. If your embeddings are imperfect or trained on different domains, the graph structure provides grounding in your specific knowledge base.
 
 #### When to Use This Technique
-Hybrid retrieval shines in **complex domains** where both semantic understanding and structural relationships matter. In **enterprise knowledge bases** with heterogeneous content—technical docs, policy documents, internal wikis, product specs—where no single retrieval method handles all content types well. When dealing with **ambiguous queries** that could match multiple topics; the combination provides more robust disambiguation. In **real-world production systems** where query diversity is high and you need consistent quality across query types.
+[enthusiastically] Hybrid retrieval shines in **complex domains** where both semantic understanding and structural relationships matter. [conversational] In **enterprise knowledge bases** with heterogeneous content—technical docs, policy documents, internal wikis, product specs—where no single retrieval method handles all content types well. [pleased] When dealing with **ambiguous queries** that could match multiple topics; the combination provides more robust disambiguation. In **real-world production systems** where query diversity is high and you need consistent quality across query types.
 
-It's particularly valuable when you have **both high-quality embeddings and well-constructed graphs**. If you're investing in both infrastructure components, hybrid retrieval lets you leverage both investments simultaneously.
+[warmly] It's particularly valuable when you have **both high-quality embeddings and well-constructed graphs**. [delighted] If you're investing in both infrastructure components, hybrid retrieval lets you leverage both investments simultaneously.
 
-Now let's see how this technique works in practice!`
+[energetic] Now let's see how this technique works in practice!`
         },
         {
           id: 28,
@@ -1985,30 +1985,30 @@ Now let's see how this technique works in practice!`
           backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - How It Works
 
-Let's break down the mechanics of hybrid retrieval. This involves parallel retrieval paths, score fusion, and intelligent ranking that leverages both semantic and structural signals.
+[lecture] Let's break down the mechanics of hybrid retrieval. [conversational] This involves parallel retrieval paths, score fusion, and intelligent ranking that leverages both semantic and structural signals.
 
 #### Phase 1: Parallel Retrieval
-The process starts with **parallel execution** of two retrieval strategies. Think of these as independent processes that run simultaneously, then merge results.
+[confidently] The process starts with **parallel execution** of two retrieval strategies. [storytelling] Think of these as independent processes that run simultaneously, then merge results.
 
-**Vector Search Path**: Embed the query using your embedding model (OpenAI, Cohere, open-source models like BGE 👉 'bee-jee-ee'). Search your vector index (Pinecone, Weaviate, Chroma, or similar) for the top-k nodes by cosine similarity. Typical k might be 50-100 to ensure you're not missing relevant nodes due to embedding imperfections. Each retrieved node gets a **semantic similarity score** between 0 and 1.
+[lecture] **Vector Search Path**: Embed the query using your embedding model (OpenAI, Cohere, open-source models like BGE 👉 'bee-jee-ee'). [conversational] Search your vector index (Pinecone, Weaviate, Chroma, or similar) for the top-k nodes by cosine similarity. [lecture] Typical k might be 50-100 to ensure you're not missing relevant nodes due to embedding imperfections. Each retrieved node gets a **semantic similarity score** between 0 and 1.
 
-**Graph Traversal Path**: Identify seed nodes from the query using node-level retrieval or entity linking. From these seeds, perform graph expansion—maybe 1-hop or 2-hop traversal to find connected nodes. For each node in the graph results, compute **structural relevance scores** based on metrics like proximity to seed nodes (fewer hops = higher score), centrality within the local subgraph, edge weights if available, or community membership with seeds.
+[lecture] **Graph Traversal Path**: Identify seed nodes from the query using node-level retrieval or entity linking. [conversational] From these seeds, perform graph expansion—maybe 1-hop or 2-hop traversal to find connected nodes. [lecture] For each node in the graph results, compute **structural relevance scores** based on metrics like proximity to seed nodes (fewer hops = higher score), centrality within the local subgraph, edge weights if available, or community membership with seeds.
 
 
 #### Phase 2: Result Fusion
-Now you have two sets of candidate nodes with different scoring schemes. The challenge is **combining them meaningfully**. Several fusion strategies exist:
+[conversational] Now you have two sets of candidate nodes with different scoring schemes. [puzzled] The challenge is **combining them meaningfully**. Several fusion strategies exist:
 
-**Linear Combination**: The simplest approach. Normalize both scores to [0,1], then compute \`final_score = α * semantic_score + β * structural_score\` where α and β are weights (often α=0.5, β=0.5 for balanced fusion, but tunable). Nodes that appear in both result sets get both scores; nodes in only one set get zero for the missing score.
+[lecture] **Linear Combination**: The simplest approach. [conversational] Normalize both scores to [0,1], then compute \`final_score = α * semantic_score + β * structural_score\` where α and β are weights (often α=0.5, β=0.5 for balanced fusion, but tunable). Nodes that appear in both result sets get both scores; nodes in only one set get zero for the missing score.
 
-**Rank-Based Fusion**: Instead of raw scores, use ranks. If a node ranks 3rd in vector results and 7th in graph results, its fusion score might be \`1/rank_vector + 1/rank_graph\`. This is more robust when score scales differ dramatically between methods.
+[lecture] **Rank-Based Fusion**: Instead of raw scores, use ranks. [conversational] If a node ranks 3rd in vector results and 7th in graph results, its fusion score might be \`1/rank_vector + 1/rank_graph\`. [pleased] This is more robust when score scales differ dramatically between methods.
 
-**Learned Fusion**: Train a model (simple logistic regression or neural network) that takes semantic score, structural score, and additional features (node degree, content length, freshness) and predicts relevance. This requires labeled training data but can achieve better performance than fixed formulas.
+[lecture] **Learned Fusion**: Train a model (simple logistic regression or neural network) that takes semantic score, structural score, and additional features (node degree, content length, freshness) and predicts relevance. [cautiously] This requires labeled training data but can achieve better performance than fixed formulas.
 
-**Cascading**: Use one method to retrieve candidates, the other to re-rank. For example, vector search retrieves top-100, then graph features re-rank these 100. This is computationally cheaper than full parallel retrieval.
+[lecture] **Cascading**: Use one method to retrieve candidates, the other to re-rank. [conversational] For example, vector search retrieves top-100, then graph features re-rank these 100. [pleased] This is computationally cheaper than full parallel retrieval.
 
 #### Phase 3: Hybrid Scoring Features
-The richness of hybrid retrieval comes from leveraging **multiple features**:
-- **Semantic similarity**: Cosine similarity between query and node embeddings
+[enthusiastically] The richness of hybrid retrieval comes from leveraging **multiple features**:
+[lecture] - **Semantic similarity**: Cosine similarity between query and node embeddings
 - **Graph proximity**: Hop distance from seed nodes (closer = better)
 - **Centrality**: PageRank 👉 'page-rank', degree centrality, betweenness
 - **Edge weights**: Sum of edge weights along the path from seeds
@@ -2016,14 +2016,14 @@ The richness of hybrid retrieval comes from leveraging **multiple features**:
 - **Co-occurrence**: How often the node co-occurs with query terms in documents
 - **Content features**: Node content length, freshness, source authority
 
-Combining these features gives you a **multi-dimensional relevance signal** that's more robust than any single metric.
+[delighted] Combining these features gives you a **multi-dimensional relevance signal** that's more robust than any single metric.
 
 #### Data Infrastructure Needed
-You need **both a vector index and a graph database**. The vector index (Pinecone, Weaviate, Qdrant) handles semantic search efficiently at scale. The graph database (Neo4j, Amazon Neptune, TigerGraph) handles traversal and structural queries. Some systems like Weaviate have built-in graph capabilities, simplifying infrastructure.
+[lecture] You need **both a vector index and a graph database**. [conversational] The vector index (Pinecone, Weaviate, Qdrant) handles semantic search efficiently at scale. The graph database (Neo4j, Amazon Neptune, TigerGraph) handles traversal and structural queries. [pleased] Some systems like Weaviate have built-in graph capabilities, simplifying infrastructure.
 
-Store **node embeddings** in the vector index with IDs that link back to graph nodes. Store **graph structure** with edges, weights, and metadata in the graph database. Have a **fusion service** that orchestrates both retrievals and combines results.
+[lecture] Store **node embeddings** in the vector index with IDs that link back to graph nodes. Store **graph structure** with edges, weights, and metadata in the graph database. Have a **fusion service** that orchestrates both retrievals and combines results.
 
-Now let's look at practical implementation!`
+[energetic] Now let's look at practical implementation!`
         },
         {
           id: 29,
@@ -2058,28 +2058,28 @@ Now let's look at practical implementation!`
           backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - Implementation
 
-Let's walk through building a production-grade hybrid retrieval system. This involves infrastructure setup, parallel query execution, and intelligent fusion logic.
+[conversational] Let's walk through building a production-grade hybrid retrieval system. [lecture] This involves infrastructure setup, parallel query execution, and intelligent fusion logic.
 
 #### Step 1: Infrastructure Setup
-You need **dual indices**: a vector index for semantic search and a graph database for structural queries. Start by choosing your vector database. Options include **Pinecone** (fully managed, great for production), **Weaviate** (has built-in graph features, can simplify architecture), **Qdrant** (high performance, open-source), or **Chroma** (simple, good for prototyping).
+[lecture] You need **dual indices**: a vector index for semantic search and a graph database for structural queries. [conversational] Start by choosing your vector database. Options include **Pinecone** (fully managed, great for production), **Weaviate** (has built-in graph features, can simplify architecture), **Qdrant** (high performance, open-source), or **Chroma** (simple, good for prototyping).
 
-For the graph database, **Neo4j** is the most popular with excellent query language (Cypher) and tooling. **Amazon Neptune** if you're in AWS and want managed service. **TigerGraph** for very large-scale graphs. Or **ArangoDB** which combines document, graph, and search capabilities.
+[conversational] For the graph database, **Neo4j** is the most popular with excellent query language (Cypher) and tooling. **Amazon Neptune** if you're in AWS and want managed service. **TigerGraph** for very large-scale graphs. Or **ArangoDB** which combines document, graph, and search capabilities.
 
-**Embedding generation**: Use a consistent embedding model for all nodes. OpenAI's text-embedding-3-small or text-embedding-3-large provide high quality. Open-source alternatives include BGE 👉 'bee-jee-ee' models, E5 models, or all-MiniLM 👉 'mini-L-M'. Pre-compute embeddings for all nodes during graph construction. Store embeddings in your vector index with node IDs that map back to graph nodes.
+[lecture] **Embedding generation**: Use a consistent embedding model for all nodes. [conversational] OpenAI's text-embedding-3-small or text-embedding-3-large provide high quality. Open-source alternatives include BGE 👉 'bee-jee-ee' models, E5 models, or all-MiniLM 👉 'mini-L-M'. Pre-compute embeddings for all nodes during graph construction. Store embeddings in your vector index with node IDs that map back to graph nodes.
 
-**Data synchronization**: Ensure node IDs are consistent across both systems. When you add or update a node, update both the vector index and graph database. Consider using a **message queue** like Kafka or RabbitMQ to ensure eventual consistency.
+[cautiously] **Data synchronization**: Ensure node IDs are consistent across both systems. [conversational] When you add or update a node, update both the vector index and graph database. Consider using a **message queue** like Kafka or RabbitMQ to ensure eventual consistency.
 
 #### Step 2: Parallel Query Execution
-When a query arrives, launch **parallel retrieval tasks**. In Python, use \`asyncio\` or \`concurrent.futures\` to run both retrievals simultaneously, minimizing latency.
+[lecture] When a query arrives, launch **parallel retrieval tasks**. [conversational] In Python, use \`asyncio\` or \`concurrent.futures\` to run both retrievals simultaneously, minimizing latency.
 
-**Vector retrieval**: Embed the query with your embedding model. Query your vector index with \`top_k=100\` (or whatever number gives sufficient recall). Each result includes node ID and similarity score. This typically completes in 10-50 milliseconds for millions of vectors.
+[lecture] **Vector retrieval**: Embed the query with your embedding model. [conversational] Query your vector index with \`top_k=100\` (or whatever number gives sufficient recall). Each result includes node ID and similarity score. [pleased] This typically completes in 10-50 milliseconds for millions of vectors.
 
-**Graph retrieval**: Use node-level retrieval or entity linking to identify 1-3 seed nodes from the query. From these seeds, perform Cypher queries (Neo4j) or equivalent graph traversal to find nodes within 1-2 hops. For each connected node, compute structural relevance: hop distance (1-hop gets score 1.0, 2-hop gets 0.5), edge weights if available, or use Personalized PageRank 👉 'page-rank' from the seed nodes. Graph queries typically complete in 50-200 milliseconds depending on graph density.
+[lecture] **Graph retrieval**: Use node-level retrieval or entity linking to identify 1-3 seed nodes from the query. [conversational] From these seeds, perform Cypher queries (Neo4j) or equivalent graph traversal to find nodes within 1-2 hops. [lecture] For each connected node, compute structural relevance: hop distance (1-hop gets score 1.0, 2-hop gets 0.5), edge weights if available, or use Personalized PageRank 👉 'page-rank' from the seed nodes. [conversational] Graph queries typically complete in 50-200 milliseconds depending on graph density.
 
-**Combine candidate sets**: Merge the two result sets. Some nodes will appear in both (high semantic similarity AND structurally connected—strong signal!). Others appear in only one set.
+[pleased] **Combine candidate sets**: Merge the two result sets. [delighted] Some nodes will appear in both (high semantic similarity AND structurally connected—strong signal!). Others appear in only one set.
 
 #### Step 3: Hybrid Scoring and Fusion
-Now compute the final score for each candidate node. The **weighted linear combination** is most common:
+[conversational] Now compute the final score for each candidate node. [lecture] The **weighted linear combination** is most common:
 
 \`\`\`
 final_score = α * semantic_score + β * structural_score + γ * bonus_score
@@ -2091,24 +2091,24 @@ Where:
 - \`bonus_score\`: Extra boost for nodes in both result sets (overlap bonus)
 - α, β, γ: Tunable weights (start with α=0.5, β=0.4, γ=0.1)
 
-**Normalization is critical**. Semantic scores from cosine similarity are naturally 0-1. Structural scores need normalization: divide by max score in the set, or use min-max scaling.
+[cautiously] **Normalization is critical**. [conversational] Semantic scores from cosine similarity are naturally 0-1. Structural scores need normalization: divide by max score in the set, or use min-max scaling.
 
-For nodes appearing in both results, you might apply a **synergy boost**: if a node is both semantically similar AND structurally connected, it's particularly relevant. Multiply the combined score by 1.2 or add a fixed bonus.
+[pleased] For nodes appearing in both results, you might apply a **synergy boost**: if a node is both semantically similar AND structurally connected, it's particularly relevant. Multiply the combined score by 1.2 or add a fixed bonus.
 
 #### Step 4: Ranking and Return
-Sort all candidate nodes by \`final_score\` descending. Take the top-k (typically 5-20 for end-user display, more for LLM 👉 'el-el-em' context). Return these nodes with their content chunks, scores, and optionally **explanations**: "This result scored highly due to semantic similarity (0.89) and close proximity to related concepts in the graph."
+[lecture] Sort all candidate nodes by \`final_score\` descending. [conversational] Take the top-k (typically 5-20 for end-user display, more for LLM 👉 'el-el-em' context). [pleased] Return these nodes with their content chunks, scores, and optionally **explanations**: "This result scored highly due to semantic similarity (0.89) and close proximity to related concepts in the graph."
 
 #### Real-World Example
-Imagine a customer support system for a SaaS 👉 'sass' platform. A user asks "Why isn't my dashboard loading?" Your **vector search** finds nodes with similar semantic content: "Dashboard performance issues," "Loading problems," "Display errors." Your **graph expansion** starts from the "Dashboard" product node and finds connected nodes: "Authentication requirements," "Browser compatibility," "API 👉 'ay-pee-eye' rate limits"—structurally relevant but not semantically similar to the query.
+[storytelling] Imagine a customer support system for a SaaS 👉 'sass' platform. A user asks "Why isn't my dashboard loading?" [conversational] Your **vector search** finds nodes with similar semantic content: "Dashboard performance issues," "Loading problems," "Display errors." Your **graph expansion** starts from the "Dashboard" product node and finds connected nodes: "Authentication requirements," "Browser compatibility," "API 👉 'ay-pee-eye' rate limits"—structurally relevant but not semantically similar to the query.
 
-Fusion combines both: the semantic matches get high scores, but "API rate limits" gets boosted because it's structurally connected to "Dashboard" (which the query mentions) even though the words don't match. The final results include both direct semantic matches and structurally relevant context, providing comprehensive coverage that neither approach would achieve alone.
+[pleased] Fusion combines both: the semantic matches get high scores, but "API rate limits" gets boosted because it's structurally connected to "Dashboard" (which the query mentions) even though the words don't match. [delighted] The final results include both direct semantic matches and structurally relevant context, providing comprehensive coverage that neither approach would achieve alone.
 
 #### Implementation Tips
-**Start with simple fusion**: Linear combination with equal weights (α=0.5, β=0.5) works surprisingly well. Optimize later with A/B testing. **Cache frequent queries** since both vector and graph lookups can be cached. **Monitor latency** for each component; parallelize but set timeouts so one slow system doesn't block results. **Use async I/O** to maximize throughput. **Experiment with weights** specific to your domain; technical documentation might favor semantic (α=0.7), while highly structured domains favor graph (β=0.7).
+[reassuringly] **Start with simple fusion**: Linear combination with equal weights (α=0.5, β=0.5) works surprisingly well. [conversational] Optimize later with A/B testing. **Cache frequent queries** since both vector and graph lookups can be cached. [cautiously] **Monitor latency** for each component; parallelize but set timeouts so one slow system doesn't block results. [conversational] **Use async I/O** to maximize throughput. **Experiment with weights** specific to your domain; technical documentation might favor semantic (α=0.7), while highly structured domains favor graph (β=0.7).
 
-**Log fusion decisions** to understand which signals drive results. This helps with debugging and optimization. Consider **learning to rank** if you have relevance feedback data; train a model to predict optimal fusion weights per query type.
+[lecture] **Log fusion decisions** to understand which signals drive results. [conversational] This helps with debugging and optimization. [pleased] Consider **learning to rank** if you have relevance feedback data; train a model to predict optimal fusion weights per query type.
 
-Now let's evaluate the benefits and limitations!`
+[energetic] Now let's evaluate the benefits and limitations!`
         },
         {
           id: 30,
@@ -2140,43 +2140,43 @@ Now let's evaluate the benefits and limitations!`
           backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - Considerations
 
-Let's examine what makes hybrid retrieval powerful and where it adds complexity. Understanding these trade-offs is essential for deciding if the benefits justify the additional implementation effort.
+[conversational] Let's examine what makes hybrid retrieval powerful and where it adds complexity. [reassuringly] Understanding these trade-offs is essential for deciding if the benefits justify the additional implementation effort.
 
 #### Benefits: Complementary Strengths
-The defining advantage is **leveraging complementary signals**. Semantic search via embeddings captures meaning, handles synonyms, and works across paraphrases. Graph structure captures domain-specific relationships, importance, and context that embeddings might miss. Together, they cover each other's blind spots. When one approach struggles (sparse query, ambiguous terms, domain-specific jargon), the other compensates.
+[excitedly] The defining advantage is **leveraging complementary signals**. [lecture] Semantic search via embeddings captures meaning, handles synonyms, and works across paraphrases. Graph structure captures domain-specific relationships, importance, and context that embeddings might miss. [enthusiastically] Together, they cover each other's blind spots. [warmly] When one approach struggles (sparse query, ambiguous terms, domain-specific jargon), the other compensates.
 
-**Superior precision/recall balance** is the measurable benefit. Studies consistently show hybrid approaches outperforming either vector search or graph traversal alone on standard IR 👉 'eye-are' benchmarks. You get the **recall** of semantic search (finding relevant content even with vocabulary mismatch) combined with the **precision** of graph structure (filtering to contextually appropriate results). Typical improvements range from 10-30% in F1 👉 'eff-one' score depending on domain and implementation quality.
+[pleased] **Superior precision/recall balance** is the measurable benefit. [lecture] Studies consistently show hybrid approaches outperforming either vector search or graph traversal alone on standard IR 👉 'eye-are' benchmarks. [enthusiastically] You get the **recall** of semantic search (finding relevant content even with vocabulary mismatch) combined with the **precision** of graph structure (filtering to contextually appropriate results). [confidently] Typical improvements range from 10-30% in F1 👉 'eff-one' score depending on domain and implementation quality.
 
-**Robustness across query types** is invaluable in production. Some users write detailed questions, others type keywords. Some queries are common (well-represented in training data), others are rare or novel. Hybrid retrieval maintains **consistent quality** across this diversity because it doesn't rely on a single signal that might fail for certain query patterns.
+[pleased] **Robustness across query types** is invaluable in production. [conversational] Some users write detailed questions, others type keywords. Some queries are common (well-represented in training data), others are rare or novel. [reassuringly] Hybrid retrieval maintains **consistent quality** across this diversity because it doesn't rely on a single signal that might fail for certain query patterns.
 
-The approach **handles graph and embedding imperfections gracefully**. Real-world knowledge graphs have missing edges, incorrect connections, or sparse regions. Real-world embeddings struggle with rare entities, technical jargon, or out-of-domain concepts. Hybrid retrieval **degrades gradually** rather than failing catastrophically when one component has issues.
+[warmly] The approach **handles graph and embedding imperfections gracefully**. [conversational] Real-world knowledge graphs have missing edges, incorrect connections, or sparse regions. Real-world embeddings struggle with rare entities, technical jargon, or out-of-domain concepts. [pleased] Hybrid retrieval **degrades gradually** rather than failing catastrophically when one component has issues.
 
 #### Limitations: Complexity and Cost
-The biggest challenge is **infrastructure complexity**. You're running **two retrieval systems** instead of one. That means two databases to maintain, two indices to keep synchronized, two query interfaces to integrate. When you update content, you must update both the vector index and graph database consistently. This **operational overhead** is significant and requires DevOps expertise.
+[cautiously] The biggest challenge is **infrastructure complexity**. [seriously] You're running **two retrieval systems** instead of one. [conversational] That means two databases to maintain, two indices to keep synchronized, two query interfaces to integrate. [concerned] When you update content, you must update both the vector index and graph database consistently. This **operational overhead** is significant and requires DevOps expertise.
 
-**Tuning fusion weights** is non-trivial and domain-specific. The optimal balance between semantic and structural scoring depends on your data, use case, and query distribution. α=0.5, β=0.5 might work for general knowledge but α=0.7, β=0.3 might be better for technical docs. You need **evaluation datasets** with relevance judgments to tune these parameters properly. This requires time, expertise, and often multiple iterations.
+[puzzled] **Tuning fusion weights** is non-trivial and domain-specific. [lecture] The optimal balance between semantic and structural scoring depends on your data, use case, and query distribution. [conversational] α=0.5, β=0.5 might work for general knowledge but α=0.7, β=0.3 might be better for technical docs. [cautiously] You need **evaluation datasets** with relevance judgments to tune these parameters properly. This requires time, expertise, and often multiple iterations.
 
-**Computational cost** is higher. You're running two retrieval operations instead of one. Even with parallelization, **latency** increases. Vector search might take 20ms, graph traversal 100ms, fusion 10ms—total 100ms+ versus 20ms for vector-only. At scale, this impacts user experience and infrastructure costs. You'll need more powerful servers or clever caching strategies.
+[concerned] **Computational cost** is higher. [conversational] You're running two retrieval operations instead of one. [cautiously] Even with parallelization, **latency** increases. [lecture] Vector search might take 20ms, graph traversal 100ms, fusion 10ms—total 100ms+ versus 20ms for vector-only. [seriously] At scale, this impacts user experience and infrastructure costs. You'll need more powerful servers or clever caching strategies.
 
-**Development and maintenance expertise** requirements increase. Your team needs people who understand both embedding-based semantic search AND graph algorithms. Debugging is harder when results come from two systems. **Monitoring** becomes more complex—you need observability into both components and their fusion logic.
+[cautiously] **Development and maintenance expertise** requirements increase. [concerned] Your team needs people who understand both embedding-based semantic search AND graph algorithms. [puzzled] Debugging is harder when results come from two systems. **Monitoring** becomes more complex—you need observability into both components and their fusion logic.
 
 #### Practical Challenges
-**Score normalization** can be tricky. Semantic similarity scores from different embedding models have different distributions. Graph-based scores depend on graph density and structure. Getting these on comparable scales requires careful normalization and calibration.
+[puzzled] **Score normalization** can be tricky. [conversational] Semantic similarity scores from different embedding models have different distributions. Graph-based scores depend on graph density and structure. [cautiously] Getting these on comparable scales requires careful normalization and calibration.
 
-**Deciding on expansion depth** for graph traversal is a balancing act. 1-hop is fast but might miss relevant nodes. 2-hop finds more but increases noise and latency. The optimal depth is **domain and query-dependent**, making one-size-fits-all solutions difficult.
+[conversational] **Deciding on expansion depth** for graph traversal is a balancing act. [lecture] 1-hop is fast but might miss relevant nodes. 2-hop finds more but increases noise and latency. [cautiously] The optimal depth is **domain and query-dependent**, making one-size-fits-all solutions difficult.
 
-**Handling conflicts** between signals requires strategy. What if a node has high semantic similarity but low structural relevance, or vice versa? Should you include it? The fusion function encodes these trade-offs, but there's no universally correct answer. Different use cases prioritize differently.
+[puzzled] **Handling conflicts** between signals requires strategy. [conversational] What if a node has high semantic similarity but low structural relevance, or vice versa? Should you include it? [cautiously] The fusion function encodes these trade-offs, but there's no universally correct answer. Different use cases prioritize differently.
 
-**Cost considerations** matter at scale. Running both vector and graph databases isn't cheap. **Managed services** like Pinecone or Neo4j Aura charge per query or per node. For high-traffic applications, hybrid retrieval can mean **2x the infrastructure cost** of single-method approaches.
+[seriously] **Cost considerations** matter at scale. [conversational] Running both vector and graph databases isn't cheap. **Managed services** like Pinecone or Neo4j Aura charge per query or per node. [concerned] For high-traffic applications, hybrid retrieval can mean **2x the infrastructure cost** of single-method approaches.
 
 #### When to Choose This Technique
-Use hybrid retrieval when **both semantic and structural signals are valuable** in your domain. When you need **robust, consistent quality** across diverse queries and can justify the complexity. When you have **high-quality embeddings AND well-constructed graphs** so both components contribute meaningfully. When **marginal accuracy improvements** justify additional cost and complexity—think high-value applications like medical diagnosis support, legal research, or critical enterprise decisions.
+[confidently] Use hybrid retrieval when **both semantic and structural signals are valuable** in your domain. [conversational] When you need **robust, consistent quality** across diverse queries and can justify the complexity. When you have **high-quality embeddings AND well-constructed graphs** so both components contribute meaningfully. [seriously] When **marginal accuracy improvements** justify additional cost and complexity—think high-value applications like medical diagnosis support, legal research, or critical enterprise decisions.
 
-It's particularly appropriate for **production systems** serving diverse users where you can't predict query patterns upfront. For **complex domains** where single-method retrieval demonstrably underperforms. When you have the **engineering resources** to build, tune, and maintain dual infrastructure.
+[warmly] It's particularly appropriate for **production systems** serving diverse users where you can't predict query patterns upfront. For **complex domains** where single-method retrieval demonstrably underperforms. When you have the **engineering resources** to build, tune, and maintain dual infrastructure.
 
-Avoid hybrid approaches when **one method clearly dominates** for your use case—if pure semantic search or pure graph traversal works well, keep it simple. When **latency requirements are strict** and you can't afford the overhead. When **development resources are limited** and the complexity outweighs benefits. When your **graph is sparse or poorly connected**, making structural signals weak.
+[cautiously] Avoid hybrid approaches when **one method clearly dominates** for your use case—if pure semantic search or pure graph traversal works well, keep it simple. [seriously] When **latency requirements are strict** and you can't afford the overhead. [concerned] When **development resources are limited** and the complexity outweighs benefits. When your **graph is sparse or poorly connected**, making structural signals weak.
 
-Ready to explore more advanced techniques? Let's continue with our next approach!`
+[energetic] Ready to explore more advanced techniques? Let's continue with our next approach!`
         }
       ]
     },
@@ -2212,35 +2212,35 @@ Ready to explore more advanced techniques? Let's continue with our next approach
           backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - Overview
 
-Welcome to **Graph + BM25 Hybrid Retrieval**, a technique that bridges semantic understanding with keyword precision. This approach combines the structural awareness of graph retrieval with the lexical accuracy of traditional information retrieval.
+[excitedly] Welcome to **Graph + BM25 Hybrid Retrieval**, a technique that bridges semantic understanding with keyword precision. [conversational] This approach combines the structural awareness of graph retrieval with the lexical accuracy of traditional information retrieval.
 
 #### What Is BM25 👉 'bee-em-twenty-five'?
-Before diving into the hybrid approach, let's understand BM25. **BM25** (Best Match 25) is a probabilistic ranking function used in information retrieval since the 1990s. Unlike embedding-based semantic search, BM25 focuses on **exact keyword matches** and **term frequency**. It answers: "How important are the keywords from this query in each document?" It considers term frequency (how often query terms appear), document length (shorter documents with matches rank higher), and inverse document frequency or IDF 👉 'eye-dee-eff' (rare terms matter more than common ones).
+[lecture] Before diving into the hybrid approach, let's understand BM25. **BM25** (Best Match 25) is a probabilistic ranking function used in information retrieval since the 1990s. [conversational] Unlike embedding-based semantic search, BM25 focuses on **exact keyword matches** and **term frequency**. [lecture] It answers: "How important are the keywords from this query in each document?" It considers term frequency (how often query terms appear), document length (shorter documents with matches rank higher), and inverse document frequency or IDF 👉 'eye-dee-eff' (rare terms matter more than common ones).
 
-Think of BM25 as a sophisticated keyword search. If you search for "section 409A," BM25 finds documents containing exactly those characters, not documents that are "semantically similar" to tax code sections. This exactness is critical in domains where **precision is non-negotiable**.
+[storytelling] Think of BM25 as a sophisticated keyword search. [conversational] If you search for "section 409A," BM25 finds documents containing exactly those characters, not documents that are "semantically similar" to tax code sections. [seriously] This exactness is critical in domains where **precision is non-negotiable**.
 
 #### The Problem with Pure Semantic Search
-Embedding-based semantic search is powerful but has a weakness: **false positives from semantic similarity**. If you search for "Python programming," semantic search might return results about "snake handling" or "Monty Python" because these phrases can be semantically close in embedding space depending on training data. When someone searches for "diabetes type 1," you don't want results about "diabetes type 2" just because they're semantically similar—the distinction is medically critical.
+[cautiously] Embedding-based semantic search is powerful but has a weakness: **false positives from semantic similarity**. [storytelling] If you search for "Python programming," semantic search might return results about "snake handling" or "Monty Python" because these phrases can be semantically close in embedding space depending on training data. [seriously] When someone searches for "diabetes type 1," you don't want results about "diabetes type 2" just because they're semantically similar—the distinction is medically critical.
 
-In technical domains, this problem intensifies. Legal codes, medical diagnoses, product SKUs 👉 'skews', API 👉 'ay-pee-eye' endpoint names, chemical formulas—these require **exact matching**, not fuzzy semantic matching. A search for "RFC 👉 'are-eff-see' 2616" shouldn't return "RFC 2617" even though they're adjacent standards.
+[concerned] In technical domains, this problem intensifies. [lecture] Legal codes, medical diagnoses, product SKUs 👉 'skews', API 👉 'ay-pee-eye' endpoint names, chemical formulas—these require **exact matching**, not fuzzy semantic matching. [cautiously] A search for "RFC 👉 'are-eff-see' 2616" shouldn't return "RFC 2617" even though they're adjacent standards.
 
 #### The Graph + BM25 Solution
-This hybrid technique combines **graph expansion** (which provides structural context and related nodes) with **BM25 filtering** (which ensures retrieved nodes actually contain the query keywords). The workflow is: use graph traversal or semantic search to find candidate nodes, then apply BM25 scoring to verify these candidates contain the exact terms users are looking for, and re-rank based on combined scores.
+[confidently] This hybrid technique combines **graph expansion** (which provides structural context and related nodes) with **BM25 filtering** (which ensures retrieved nodes actually contain the query keywords). [lecture] The workflow is: use graph traversal or semantic search to find candidate nodes, then apply BM25 scoring to verify these candidates contain the exact terms users are looking for, and re-rank based on combined scores.
 
 #### Goals: Precision and Grounding
-The primary goal is **reducing false positives** while maintaining the **contextual benefits** of graph retrieval. You want nodes that are structurally relevant AND lexically matched to the query. Another key benefit is **handling technical terminology**. Domain-specific terms, acronyms, codes, identifiers—BM25 ensures these are matched exactly, while the graph component provides surrounding context.
+[pleased] The primary goal is **reducing false positives** while maintaining the **contextual benefits** of graph retrieval. [conversational] You want nodes that are structurally relevant AND lexically matched to the query. [warmly] Another key benefit is **handling technical terminology**. [lecture] Domain-specific terms, acronyms, codes, identifiers—BM25 ensures these are matched exactly, while the graph component provides surrounding context.
 
-**Interpretability** improves too. When a result ranks highly because it contains exact keyword matches AND is structurally connected to related concepts, users understand why they're seeing it. This builds trust, especially in professional domains where accuracy is critical.
+[pleased] **Interpretability** improves too. [conversational] When a result ranks highly because it contains exact keyword matches AND is structurally connected to related concepts, users understand why they're seeing it. [warmly] This builds trust, especially in professional domains where accuracy is critical.
 
 #### When to Use This Technique
-Graph + BM25 hybrid is essential in **legal research** where specific statute numbers, case names, or legal terms must appear verbatim. In **medical and clinical systems** where diagnosis codes (ICD-10 👉 'eye-see-dee-ten'), drug names, or procedure codes need exact matching. For **technical documentation** where users search for function names, error codes, or configuration parameters that must match precisely. In **compliance and regulatory** domains where specific requirements, clauses, or identifiers are referenced.
+[seriously] Graph + BM25 hybrid is essential in **legal research** where specific statute numbers, case names, or legal terms must appear verbatim. [conversational] In **medical and clinical systems** where diagnosis codes (ICD-10 👉 'eye-see-dee-ten'), drug names, or procedure codes need exact matching. For **technical documentation** where users search for function names, error codes, or configuration parameters that must match precisely. In **compliance and regulatory** domains where specific requirements, clauses, or identifiers are referenced.
 
-It's also valuable when your content includes **acronyms and abbreviations** that embeddings might not capture well. Or when dealing with **multi-lingual** content where keyword matching helps when embeddings struggle across languages. When you have **sparse text** like bullet points, tables, or structured data where semantic embeddings are weak but keyword matching is strong.
+[conversational] It's also valuable when your content includes **acronyms and abbreviations** that embeddings might not capture well. Or when dealing with **multi-lingual** content where keyword matching helps when embeddings struggle across languages. [pleased] When you have **sparse text** like bullet points, tables, or structured data where semantic embeddings are weak but keyword matching is strong.
 
 #### Contrast with Pure Dense Vector Hybrid
-Earlier we covered **Graph + Dense Vector Hybrid**, which combines graph structure with semantic embeddings. That technique prioritizes **semantic similarity**—understanding meaning even with vocabulary mismatch. This BM25 👉 'bee-em-twenty-five' hybrid prioritizes **lexical precision**—ensuring exact terms appear. They're complementary: dense vector hybrid for conceptual queries, BM25 hybrid for queries with critical specific terms.
+[lecture] Earlier we covered **Graph + Dense Vector Hybrid**, which combines graph structure with semantic embeddings. [conversational] That technique prioritizes **semantic similarity**—understanding meaning even with vocabulary mismatch. This BM25 👉 'bee-em-twenty-five' hybrid prioritizes **lexical precision**—ensuring exact terms appear. [warmly] They're complementary: dense vector hybrid for conceptual queries, BM25 hybrid for queries with critical specific terms.
 
-Now let's see how this technique operates!`
+[energetic] Now let's see how this technique operates!`
         },
         {
           id: 32,
@@ -2313,44 +2313,44 @@ Now let's see how this technique operates!`
           backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - How It Works
 
-Let's break down the mechanics of Graph + BM25 hybrid retrieval. This involves parallel retrieval streams, keyword scoring, and intelligent fusion that balances structural and lexical signals.
+[lecture] Let's break down the mechanics of Graph + BM25 hybrid retrieval. [conversational] This involves parallel retrieval streams, keyword scoring, and intelligent fusion that balances structural and lexical signals.
 
 #### Phase 1: Parallel Retrieval Paths
-The process runs **two retrieval operations simultaneously**, just like the dense vector hybrid but with BM25 instead of embeddings.
+[conversational] The process runs **two retrieval operations simultaneously**, just like the dense vector hybrid but with BM25 instead of embeddings.
 
-**Graph Retrieval Path**: Identify seed nodes from the query using entity linking or basic keyword matching. Expand from these seeds using 1-hop or 2-hop traversal to find structurally connected nodes. Score nodes based on graph proximity, edge weights, or centrality. This gives you candidates that are **structurally relevant** to the query context.
+[lecture] **Graph Retrieval Path**: Identify seed nodes from the query using entity linking or basic keyword matching. [conversational] Expand from these seeds using 1-hop or 2-hop traversal to find structurally connected nodes. Score nodes based on graph proximity, edge weights, or centrality. [confidently] This gives you candidates that are **structurally relevant** to the query context.
 
-**BM25 Retrieval Path**: Build or query an **inverted index** mapping terms to documents (nodes). For the query, extract keywords and compute BM25 scores for each node in your corpus. BM25 scoring considers: **term frequency** (TF 👉 'tee-eff')—how often query terms appear in the node, **inverse document frequency** (IDF 👉 'eye-dee-eff')—how rare/important each term is across all nodes, **document length normalization**—penalizing very long documents that accumulate high term counts, and **saturation**—diminishing returns for repeated terms (the 10th occurrence of "Python" adds less value than the 2nd).
+[lecture] **BM25 Retrieval Path**: Build or query an **inverted index** mapping terms to documents (nodes). [conversational] For the query, extract keywords and compute BM25 scores for each node in your corpus. [lecture] BM25 scoring considers: **term frequency** (TF 👉 'tee-eff')—how often query terms appear in the node, **inverse document frequency** (IDF 👉 'eye-dee-eff')—how rare/important each term is across all nodes, **document length normalization**—penalizing very long documents that accumulate high term counts, and **saturation**—diminishing returns for repeated terms (the 10th occurrence of "Python" adds less value than the 2nd).
 
-The BM25 formula is: \`score = Σ IDF(term) × (TF × (k+1)) / (TF + k × (1 - b + b × doc_length/avg_length))\` where k and b are tuning parameters (typically k=1.5, b=0.75). Don't worry about memorizing this—most libraries implement it for you.
+[conversational] The BM25 formula is: \`score = Σ IDF(term) × (TF × (k+1)) / (TF + k × (1 - b + b × doc_length/avg_length))\` where k and b are tuning parameters (typically k=1.5, b=0.75). [reassuringly] Don't worry about memorizing this—most libraries implement it for you.
 
 #### Phase 2: Result Fusion Strategies
-Now you have two candidate sets with different scoring schemes. The challenge is combining them meaningfully. Several strategies exist:
+[conversational] Now you have two candidate sets with different scoring schemes. [puzzled] The challenge is combining them meaningfully. [confidently] Several strategies exist:
 
-**Intersection Strategy**: Only return nodes that appear in BOTH result sets. This maximizes precision—you only get nodes that are structurally relevant AND contain the exact keywords. Very conservative. Good when you can't afford false positives. The combined score might be \`score = graph_score × BM25_score\` or \`score = α × graph_score + β × BM25_score\`.
+[lecture] **Intersection Strategy**: Only return nodes that appear in BOTH result sets. [seriously] This maximizes precision—you only get nodes that are structurally relevant AND contain the exact keywords. Very conservative. Good when you can't afford false positives. [conversational] The combined score might be \`score = graph_score × BM25_score\` or \`score = α × graph_score + β × BM25_score\`.
 
-**Union Strategy**: Return nodes from EITHER result set. This maximizes recall—you get anything structurally relevant OR keyword-matched. For nodes in only one set, assign zero for the missing score. Combined score: \`score = α × graph_score + β × BM25_score\` where missing scores are zero. This is more forgiving and returns more results.
+[lecture] **Union Strategy**: Return nodes from EITHER result set. [conversational] This maximizes recall—you get anything structurally relevant OR keyword-matched. For nodes in only one set, assign zero for the missing score. [lecture] Combined score: \`score = α × graph_score + β × BM25_score\` where missing scores are zero. [pleased] This is more forgiving and returns more results.
 
-**Threshold-Based Filtering**: Use one method for retrieval, the other for validation. For example, retrieve top-100 from graph expansion, then filter to only nodes with BM25 score above a threshold (e.g., BM25 > 1.0). Or retrieve from BM25, then boost nodes that are also graph-connected. This is computationally cheaper than full parallel retrieval.
+[lecture] **Threshold-Based Filtering**: Use one method for retrieval, the other for validation. [conversational] For example, retrieve top-100 from graph expansion, then filter to only nodes with BM25 score above a threshold (e.g., BM25 > 1.0). Or retrieve from BM25, then boost nodes that are also graph-connected. [pleased] This is computationally cheaper than full parallel retrieval.
 
-**Rank-Based Fusion**: Combine based on ranks rather than raw scores. If a node ranks 5th in graph results and 8th in BM25 results, its fusion score is \`1/5 + 1/8 = 0.325\`. This is more robust when score scales differ dramatically.
+[lecture] **Rank-Based Fusion**: Combine based on ranks rather than raw scores. [conversational] If a node ranks 5th in graph results and 8th in BM25 results, its fusion score is \`1/5 + 1/8 = 0.325\`. [pleased] This is more robust when score scales differ dramatically.
 
 #### Phase 3: Score Normalization and Combination
-**Normalization** is critical because graph scores and BM25 scores live on different scales. Graph scores might be 0-1 (similarity scores) while BM25 scores range from 0 to 10+ (depending on term frequency and document counts).
+[cautiously] **Normalization** is critical because graph scores and BM25 scores live on different scales. [conversational] Graph scores might be 0-1 (similarity scores) while BM25 scores range from 0 to 10+ (depending on term frequency and document counts).
 
-Apply **min-max normalization** to each score set: \`normalized_score = (score - min_score) / (max_score - min_score)\`. This maps both to [0,1]. Alternatively, use **z-score normalization** if you want to preserve outliers: \`z = (score - mean) / std_dev\`.
+[lecture] Apply **min-max normalization** to each score set: \`normalized_score = (score - min_score) / (max_score - min_score)\`. [conversational] This maps both to [0,1]. Alternatively, use **z-score normalization** if you want to preserve outliers: \`z = (score - mean) / std_dev\`.
 
-After normalization, compute the **combined score**: \`final_score = α × normalized_graph + β × normalized_BM25\` where α and β are weights (start with α=0.5, β=0.5, then tune based on your domain). Nodes appearing in both sets might receive a **synergy bonus** because they satisfy both criteria.
+[conversational] After normalization, compute the **combined score**: \`final_score = α × normalized_graph + β × normalized_BM25\` where α and β are weights (start with α=0.5, β=0.5, then tune based on your domain). [pleased] Nodes appearing in both sets might receive a **synergy bonus** because they satisfy both criteria.
 
 #### Phase 4: Re-ranking and Filtering
-Sort all candidate nodes by final score. Apply any final **filters**—minimum BM25 threshold to ensure at least some keyword match, maximum rank from graph to avoid distant nodes. Return the **top-k results** with their content and scores.
+[lecture] Sort all candidate nodes by final score. [conversational] Apply any final **filters**—minimum BM25 threshold to ensure at least some keyword match, maximum rank from graph to avoid distant nodes. [pleased] Return the **top-k results** with their content and scores.
 
 #### Data Infrastructure Requirements
-You need an **inverted index** for BM25 scoring. Libraries like **Elasticsearch**, **Solr**, or **Whoosh** provide this out-of-box. Or use simpler implementations like **rank_bm25** Python library for smaller datasets. Store **node text content** that BM25 will score against—could be node descriptions, attached document chunks, or concatenated metadata.
+[lecture] You need an **inverted index** for BM25 scoring. [conversational] Libraries like **Elasticsearch**, **Solr**, or **Whoosh** provide this out-of-box. Or use simpler implementations like **rank_bm25** Python library for smaller datasets. Store **node text content** that BM25 will score against—could be node descriptions, attached document chunks, or concatenated metadata.
 
 Your **graph database** stores the structural data—nodes, edges, relationships. **Fusion logic** lives in your application layer, orchestrating both retrievals and combining results.
 
-Now let's look at practical implementation steps!`
+[energetic] Now let's look at practical implementation steps!`
         },
         {
           id: 33,
@@ -2388,60 +2388,60 @@ Now let's look at practical implementation steps!`
           backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - Implementation
 
-Let's walk through building a production-ready Graph + BM25 hybrid retrieval system. This involves setting up dual retrieval infrastructure, implementing parallel queries, and creating robust fusion logic.
+[conversational] Let's walk through building a production-ready Graph + BM25 hybrid retrieval system. [lecture] This involves setting up dual retrieval infrastructure, implementing parallel queries, and creating robust fusion logic.
 
 #### Step 1: Build the Inverted Index
-Start by creating a **BM25 inverted index** over your node content. For **small to medium datasets** (under 1 million nodes), use the **rank_bm25** Python library. It's simple and requires minimal setup. For **larger datasets** or production systems, use **Elasticsearch** or **OpenSearch**, which provide distributed BM25 search with excellent performance and operational tooling.
+[lecture] Start by creating a **BM25 inverted index** over your node content. [conversational] For **small to medium datasets** (under 1 million nodes), use the **rank_bm25** Python library. It's simple and requires minimal setup. For **larger datasets** or production systems, use **Elasticsearch** or **OpenSearch**, which provide distributed BM25 search with excellent performance and operational tooling.
 
-**Index construction**: For each node in your knowledge graph, extract the **text content** you want BM25 to score against. This might be the node's description field, attached document chunks, concatenated metadata, or all of the above. **Tokenize** this text (split into words, lowercase, remove punctuation). Build the inverted index mapping each term to the list of nodes containing it, along with term frequency and position information.
+[lecture] **Index construction**: For each node in your knowledge graph, extract the **text content** you want BM25 to score against. [conversational] This might be the node's description field, attached document chunks, concatenated metadata, or all of the above. **Tokenize** this text (split into words, lowercase, remove punctuation). Build the inverted index mapping each term to the list of nodes containing it, along with term frequency and position information.
 
-**Configure BM25 parameters**: The standard parameters are k1=1.5 (controls term frequency saturation) and b=0.75 (controls document length normalization). These defaults work well for most text, but you can tune them. Higher k1 gives more weight to term repetition; higher b penalizes long documents more aggressively.
+[lecture] **Configure BM25 parameters**: The standard parameters are k1=1.5 (controls term frequency saturation) and b=0.75 (controls document length normalization). [conversational] These defaults work well for most text, but you can tune them. [lecture] Higher k1 gives more weight to term repetition; higher b penalizes long documents more aggressively.
 
-**Index maintenance**: When nodes are added, updated, or deleted, update the inverted index accordingly. Elasticsearch handles this automatically with near-real-time indexing. For custom implementations, consider batch updates or eventual consistency patterns.
+[conversational] **Index maintenance**: When nodes are added, updated, or deleted, update the inverted index accordingly. [pleased] Elasticsearch handles this automatically with near-real-time indexing. For custom implementations, consider batch updates or eventual consistency patterns.
 
 #### Step 2: Graph Retrieval Pipeline
-Implement your **graph expansion** logic just like previous techniques. For a given query, perform **entity linking** or **keyword matching** to identify seed nodes. Query your graph database to find nodes within 1-2 hops of these seeds. For each candidate node, compute a **graph relevance score** based on proximity (1-hop = 1.0, 2-hop = 0.5), edge weights if available, or graph centrality metrics.
+[lecture] Implement your **graph expansion** logic just like previous techniques. [conversational] For a given query, perform **entity linking** or **keyword matching** to identify seed nodes. Query your graph database to find nodes within 1-2 hops of these seeds. For each candidate node, compute a **graph relevance score** based on proximity (1-hop = 1.0, 2-hop = 0.5), edge weights if available, or graph centrality metrics.
 
-Store these graph candidates with their IDs and scores in memory. You'll merge them with BM25 results shortly.
+[conversational] Store these graph candidates with their IDs and scores in memory. You'll merge them with BM25 results shortly.
 
 #### Step 3: BM25 Keyword Search
-Extract **query keywords** from the user's query. Remove stopwords (common words like "the," "is," "and") unless they're critical for your domain. For the query "What are Section 409A requirements?" the keywords might be ["Section", "409A", "requirements"].
+[lecture] Extract **query keywords** from the user's query. [conversational] Remove stopwords (common words like "the," "is," "and") unless they're critical for your domain. [lecture] For the query "What are Section 409A requirements?" the keywords might be ["Section", "409A", "requirements"].
 
-Execute the **BM25 search** against your inverted index with these keywords. The index returns nodes ranked by BM25 score, representing how well each node's content matches the query keywords. Retrieve the **top-k candidates** (k=50-100) to ensure sufficient recall.
+[conversational] Execute the **BM25 search** against your inverted index with these keywords. [lecture] The index returns nodes ranked by BM25 score, representing how well each node's content matches the query keywords. Retrieve the **top-k candidates** (k=50-100) to ensure sufficient recall.
 
-For Elasticsearch, this is a simple query: \`{"query": {"match": {"content": "Section 409A requirements"}}}\`. Elasticsearch computes BM25 scores automatically. For rank_bm25 👉 'rank bee-em-twenty-five' library: \`bm25.get_top_n(query_tokens, corpus, n=100)\`.
+[conversational] For Elasticsearch, this is a simple query: \`{"query": {"match": {"content": "Section 409A requirements"}}}\`. Elasticsearch computes BM25 scores automatically. For rank_bm25 👉 'rank bee-em-twenty-five' library: \`bm25.get_top_n(query_tokens, corpus, n=100)\`.
 
 #### Step 4: Result Fusion
-Now merge the two candidate sets. Your **fusion strategy** depends on your precision/recall priorities:
+[conversational] Now merge the two candidate sets. [lecture] Your **fusion strategy** depends on your precision/recall priorities:
 
-**For high-precision applications** (legal, medical, compliance): Use **intersection**. Only return nodes appearing in BOTH graph results AND BM25 results. Combined score: \`final_score = graph_score × BM25_score\` or \`final_score = 0.5 × graph_score + 0.5 × BM25_score\`. This ensures results are structurally relevant and contain exact keywords.
+[seriously] **For high-precision applications** (legal, medical, compliance): Use **intersection**. [conversational] Only return nodes appearing in BOTH graph results AND BM25 results. [lecture] Combined score: \`final_score = graph_score × BM25_score\` or \`final_score = 0.5 × graph_score + 0.5 × BM25_score\`. [seriously] This ensures results are structurally relevant and contain exact keywords.
 
-**For balanced applications** (technical documentation, customer support): Use **weighted union**. Return nodes from either set. Normalize both score types to [0,1]. For each node: if in both sets, \`final_score = α × graph_score + β × BM25_score\`; if in one set, assign zero for missing score. Start with α=0.5, β=0.5, then tune based on evaluation metrics.
+[conversational] **For balanced applications** (technical documentation, customer support): Use **weighted union**. [lecture] Return nodes from either set. Normalize both score types to [0,1]. For each node: if in both sets, \`final_score = α × graph_score + β × BM25_score\`; if in one set, assign zero for missing score. [reassuringly] Start with α=0.5, β=0.5, then tune based on evaluation metrics.
 
-**For recall-focused applications** (exploratory search, research): Use **union with low thresholds**. Include nodes from either set as long as they meet minimum criteria (graph_score > 0.3 OR BM25_score > 1.0). This maximizes coverage.
+[conversational] **For recall-focused applications** (exploratory search, research): Use **union with low thresholds**. Include nodes from either set as long as they meet minimum criteria (graph_score > 0.3 OR BM25_score > 1.0). This maximizes coverage.
 
 #### Step 5: Score Normalization and Ranking
-Apply **min-max normalization** to each score distribution: \`norm_score = (score - min) / (max - min)\`. This maps both graph and BM25 scores to [0,1] ranges. If your BM25 scores are naturally well-scaled (using Elasticsearch), you might skip normalization and tune fusion weights instead.
+[lecture] Apply **min-max normalization** to each score distribution: \`norm_score = (score - min) / (max - min)\`. [conversational] This maps both graph and BM25 scores to [0,1] ranges. If your BM25 scores are naturally well-scaled (using Elasticsearch), you might skip normalization and tune fusion weights instead.
 
-Compute **final scores** for all candidates. Sort by final score descending. Apply any **post-filters**—minimum BM25 threshold to ensure keyword presence, diversity filtering to avoid redundant results. Return the **top-k results** (k=5-20) with their content, scores, and optionally **explanations**: "Ranked #1 due to graph proximity (0.85) and strong keyword match (BM25: 3.2)."
+[conversational] Compute **final scores** for all candidates. Sort by final score descending. [lecture] Apply any **post-filters**—minimum BM25 threshold to ensure keyword presence, diversity filtering to avoid redundant results. Return the **top-k results** (k=5-20) with their content, scores, and optionally **explanations**: "Ranked #1 due to graph proximity (0.85) and strong keyword match (BM25: 3.2)."
 
 #### Real-World Example: Medical Knowledge System
-Imagine building a medical reference system for clinicians. A doctor searches for "Type 1 diabetes treatment guidelines." Your **graph expansion** identifies the "Type 1 Diabetes" node as a seed, then expands to connected nodes: "Insulin Therapy," "Blood Glucose Monitoring," "Dietary Management," "Pediatric Considerations."
+[storytelling] Imagine building a medical reference system for clinicians. A doctor searches for "Type 1 diabetes treatment guidelines." [conversational] Your **graph expansion** identifies the "Type 1 Diabetes" node as a seed, then expands to connected nodes: "Insulin Therapy," "Blood Glucose Monitoring," "Dietary Management," "Pediatric Considerations."
 
-Your **BM25 search** finds documents containing the exact terms "Type 1 diabetes," "treatment," and "guidelines." Some of these overlap with graph results (high confidence!). Others are BM25-only matches—maybe research papers mentioning the terms but not well-connected in your graph yet.
+[conversational] Your **BM25 search** finds documents containing the exact terms "Type 1 diabetes," "treatment," and "guidelines." [pleased] Some of these overlap with graph results (high confidence!). Others are BM25-only matches—maybe research papers mentioning the terms but not well-connected in your graph yet.
 
-The **intersection** strategy returns only the overlap: "Insulin Therapy for Type 1 Diabetes" (contains keywords AND structurally connected), "Current Treatment Guidelines" (contains keywords AND linked from the Type 1 Diabetes node). These are precisely what the clinician needs—documents that are topically relevant AND contain the exact terminology.
+[confidently] The **intersection** strategy returns only the overlap: "Insulin Therapy for Type 1 Diabetes" (contains keywords AND structurally connected), "Current Treatment Guidelines" (contains keywords AND linked from the Type 1 Diabetes node). [pleased] These are precisely what the clinician needs—documents that are topically relevant AND contain the exact terminology.
 
-A BM25-only result like "Type 2 diabetes treatment" gets filtered out despite keyword matches because the graph correctly identifies it as structurally distinct. A graph-only result like "Diabetes Research History" (connected but lacking keyword matches) also gets filtered. You're left with **high-precision, high-relevance results**.
+[conversational] A BM25-only result like "Type 2 diabetes treatment" gets filtered out despite keyword matches because the graph correctly identifies it as structurally distinct. A graph-only result like "Diabetes Research History" (connected but lacking keyword matches) also gets filtered. [delighted] You're left with **high-precision, high-relevance results**.
 
 #### Implementation Tips
-**Use Elasticsearch** if you're building for production—it scales well and provides excellent BM25 implementation with query DSL 👉 'dee-es-el', scoring explanations, and operational tools. **Cache BM25 results** for frequently repeated queries to reduce latency. **Monitor score distributions** for both graph and BM25 to tune normalization and fusion weights effectively.
+[reassuringly] **Use Elasticsearch** if you're building for production—it scales well and provides excellent BM25 implementation with query DSL 👉 'dee-es-el', scoring explanations, and operational tools. [conversational] **Cache BM25 results** for frequently repeated queries to reduce latency. **Monitor score distributions** for both graph and BM25 to tune normalization and fusion weights effectively.
 
-**Start with intersection** if precision is critical, then relax to weighted union if recall is too low. **Log fusion decisions** to understand which signal drives rankings. Implement **A/B tests** to compare fusion strategies on real queries.
+[reassuringly] **Start with intersection** if precision is critical, then relax to weighted union if recall is too low. [conversational] **Log fusion decisions** to understand which signal drives rankings. Implement **A/B tests** to compare fusion strategies on real queries.
 
-**Precompute graph scores** for common seed nodes if your graph is relatively static—this speeds up the graph retrieval path. Use **async I/O** to parallelize graph and BM25 queries for minimum latency.
+[conversational] **Precompute graph scores** for common seed nodes if your graph is relatively static—this speeds up the graph retrieval path. Use **async I/O** to parallelize graph and BM25 queries for minimum latency.
 
-Now let's examine the benefits and limitations!`
+[energetic] Now let's examine the benefits and limitations!`
         },
         {
           id: 34,
@@ -2473,52 +2473,52 @@ Now let's examine the benefits and limitations!`
           backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - Considerations
 
-Let's examine the trade-offs of Graph + BM25 hybrid retrieval. Understanding where this technique excels and where it struggles helps you decide when it's the right choice for your application.
+[conversational] Let's examine the trade-offs of Graph + BM25 hybrid retrieval. [reassuringly] Understanding where this technique excels and where it struggles helps you decide when it's the right choice for your application.
 
 #### Benefits: Precision Through Keywords
-The defining advantage is **keyword-based precision**. When users include specific terms, codes, identifiers, or technical vocabulary in queries, BM25 ensures these exact terms appear in results. This dramatically **reduces false positives** from semantic similarity. Semantic search might return "conceptually related but lexically different" content; BM25 grounds results in actual keyword matches.
+[excitedly] The defining advantage is **keyword-based precision**. [conversational] When users include specific terms, codes, identifiers, or technical vocabulary in queries, BM25 ensures these exact terms appear in results. [enthusiastically] This dramatically **reduces false positives** from semantic similarity. [lecture] Semantic search might return "conceptually related but lexically different" content; BM25 grounds results in actual keyword matches.
 
-**Handling technical terminology** is where this technique truly shines. In **legal domains**, users search for statute numbers like "Section 409A" or case citations like "Brown v. Board of Education." These must match exactly—no semantic approximations. In **medical fields**, diagnosis codes (ICD-10 👉 'eye-see-dee-ten' J45.909 for asthma), drug names (metformin, not "diabetes medication"), and procedure codes must be precise. In **code search**, function names, API endpoints, error codes, and configuration parameters need exact matching.
+[excitedly] **Handling technical terminology** is where this technique truly shines. [seriously] In **legal domains**, users search for statute numbers like "Section 409A" or case citations like "Brown v. Board of Education." [confidently] These must match exactly—no semantic approximations. [conversational] In **medical fields**, diagnosis codes (ICD-10 👉 'eye-see-dee-ten' J45.909 for asthma), drug names (metformin, not "diabetes medication"), and procedure codes must be precise. In **code search**, function names, API endpoints, error codes, and configuration parameters need exact matching.
 
-**Robust for sparse text and structured data** is another major benefit. Semantic embeddings struggle with short text snippets, bullet points, tables, and highly structured content because there's insufficient context for meaningful embeddings. BM25 works perfectly fine on sparse text—even a two-word title can be ranked by keyword matching. This makes hybrid retrieval effective for **databases, spreadsheets, metadata fields**, and other structured content.
+[pleased] **Robust for sparse text and structured data** is another major benefit. [conversational] Semantic embeddings struggle with short text snippets, bullet points, tables, and highly structured content because there's insufficient context for meaningful embeddings. [confidently] BM25 works perfectly fine on sparse text—even a two-word title can be ranked by keyword matching. [pleased] This makes hybrid retrieval effective for **databases, spreadsheets, metadata fields**, and other structured content.
 
-**Transparent explanations** improve user trust. You can tell users: "This result ranks #1 because it contains your query terms 'Section 409A' (12 times) and is structurally connected to related tax regulations." These explanations are concrete and verifiable. Users can scan the result and see the highlighted keywords, confirming relevance.
+[warmly] **Transparent explanations** improve user trust. [conversational] You can tell users: "This result ranks #1 because it contains your query terms 'Section 409A' (12 times) and is structurally connected to related tax regulations." [pleased] These explanations are concrete and verifiable. Users can scan the result and see the highlighted keywords, confirming relevance.
 
-The approach is also **computationally efficient** compared to dense vector search at scale. BM25 on inverted indices is fast—Elasticsearch can search millions of documents in milliseconds. Graph traversal is also relatively fast for local expansions. You avoid the computational cost of embedding generation and similarity computation across large vector spaces.
+[lecture] The approach is also **computationally efficient** compared to dense vector search at scale. [conversational] BM25 on inverted indices is fast—Elasticsearch can search millions of documents in milliseconds. Graph traversal is also relatively fast for local expansions. You avoid the computational cost of embedding generation and similarity computation across large vector spaces.
 
 #### Limitations: Missing Semantic Flexibility
-The biggest weakness is **missing paraphrases and semantic variations**. BM25 requires keyword overlap. If a user searches "automobile" but your documents say "car," BM25 finds nothing unless you've implemented synonym expansion. If someone asks "how to fix Python errors" and your docs say "debugging Python issues," BM25 might score this poorly despite semantic equivalence. This **vocabulary mismatch problem** is the flip side of keyword precision.
+[cautiously] The biggest weakness is **missing paraphrases and semantic variations**. [seriously] BM25 requires keyword overlap. [conversational] If a user searches "automobile" but your documents say "car," BM25 finds nothing unless you've implemented synonym expansion. If someone asks "how to fix Python errors" and your docs say "debugging Python issues," BM25 might score this poorly despite semantic equivalence. [concerned] This **vocabulary mismatch problem** is the flip side of keyword precision.
 
-**Recall suffers** when users don't know the exact terminology. A patient searching for "chest pain when breathing" might miss the medically precise document about "pleuritic chest pain" because vocabulary doesn't match. An acronym like "ML 👉 'em-el'" won't match "machine learning" without preprocessing. You need **query expansion** (adding synonyms), **stemming** (reducing words to roots), or **lemmatization** (normalizing word forms) to compensate, adding complexity.
+[cautiously] **Recall suffers** when users don't know the exact terminology. [storytelling] A patient searching for "chest pain when breathing" might miss the medically precise document about "pleuritic chest pain" because vocabulary doesn't match. [conversational] An acronym like "ML 👉 'em-el'" won't match "machine learning" without preprocessing. [lecture] You need **query expansion** (adding synonyms), **stemming** (reducing words to roots), or **lemmatization** (normalizing word forms) to compensate, adding complexity.
 
-**BM25 index overhead** is significant. Building and maintaining inverted indices requires storage (often 20-50% of original content size), computational resources for indexing, and ongoing maintenance as content changes. For **large-scale systems**, this means running Elasticsearch or similar infrastructure, adding operational complexity and cost. You're now managing **two retrieval indices** (BM25 + graph), each with different failure modes and performance characteristics.
+[concerned] **BM25 index overhead** is significant. [lecture] Building and maintaining inverted indices requires storage (often 20-50% of original content size), computational resources for indexing, and ongoing maintenance as content changes. [seriously] For **large-scale systems**, this means running Elasticsearch or similar infrastructure, adding operational complexity and cost. [cautiously] You're now managing **two retrieval indices** (BM25 + graph), each with different failure modes and performance characteristics.
 
-**Tuning fusion weights is non-trivial**. The optimal balance between graph scores and BM25 scores depends on your domain, query types, and data characteristics. In **technical documentation**, you might weight BM25 heavily (β=0.7) because keyword matching is critical. In **exploratory research queries**, graph structure might dominate (α=0.7). Finding these weights requires **evaluation datasets** with relevance judgments and iterative testing.
+[puzzled] **Tuning fusion weights is non-trivial**. [lecture] The optimal balance between graph scores and BM25 scores depends on your domain, query types, and data characteristics. [conversational] In **technical documentation**, you might weight BM25 heavily (β=0.7) because keyword matching is critical. In **exploratory research queries**, graph structure might dominate (α=0.7). [cautiously] Finding these weights requires **evaluation datasets** with relevance judgments and iterative testing.
 
-**Sensitivity to query formulation** affects results. BM25 performs best with **keyword queries** (3-5 important terms), not full natural language questions. A query like "What are the requirements for Section 409A compliance?" needs preprocessing to extract keywords ["Section", "409A", "requirements", "compliance"]. Without this, stopwords like "What," "are," "the," "for" dilute the BM25 scores.
+[cautiously] **Sensitivity to query formulation** affects results. [lecture] BM25 performs best with **keyword queries** (3-5 important terms), not full natural language questions. [conversational] A query like "What are the requirements for Section 409A compliance?" needs preprocessing to extract keywords ["Section", "409A", "requirements", "compliance"]. Without this, stopwords like "What," "are," "the," "for" dilute the BM25 scores.
 
 #### Practical Challenges
-**Multilingual content** is challenging because BM25 requires matching exact terms across languages. If your content includes English and Spanish, a Spanish query won't match English documents without translation or cross-lingual indexing.
+[puzzled] **Multilingual content** is challenging because BM25 requires matching exact terms across languages. [conversational] If your content includes English and Spanish, a Spanish query won't match English documents without translation or cross-lingual indexing.
 
-**Query expansion** becomes necessary to improve recall. You need **synonym dictionaries** (automobile → car, vehicle, auto), **acronym expansion** (ML → machine learning), or **domain thesauri**. Building and maintaining these resources adds development effort.
+[cautiously] **Query expansion** becomes necessary to improve recall. [lecture] You need **synonym dictionaries** (automobile → car, vehicle, auto), **acronym expansion** (ML → machine learning), or **domain thesauri**. [conversational] Building and maintaining these resources adds development effort.
 
-**Balancing precision and recall** requires careful fusion strategy selection. **Intersection** gives high precision but risks low recall if either retrieval method fails. **Union** gives high recall but might introduce noise. Finding the right balance is application-specific.
+[puzzled] **Balancing precision and recall** requires careful fusion strategy selection. [seriously] **Intersection** gives high precision but risks low recall if either retrieval method fails. **Union** gives high recall but might introduce noise. [conversational] Finding the right balance is application-specific.
 
-**Indexing freshness** matters more for BM25 than graph structure. If documents update frequently, your BM25 index needs near-real-time updates to avoid serving stale results. This requires investment in indexing infrastructure.
+[cautiously] **Indexing freshness** matters more for BM25 than graph structure. [conversational] If documents update frequently, your BM25 index needs near-real-time updates to avoid serving stale results. This requires investment in indexing infrastructure.
 
 #### When to Choose This Technique
-Use Graph + BM25 hybrid when **exact terminology is critical** to relevance. When your domain has **technical vocabulary, codes, identifiers, or precise terms** that users will search for explicitly. When dealing with **sparse or structured text** where semantic embeddings are weak. When you need **explainable, transparent ranking** based on keyword presence.
+[confidently] Use Graph + BM25 hybrid when **exact terminology is critical** to relevance. [enthusiastically] When your domain has **technical vocabulary, codes, identifiers, or precise terms** that users will search for explicitly. [pleased] When dealing with **sparse or structured text** where semantic embeddings are weak. When you need **explainable, transparent ranking** based on keyword presence.
 
-It's particularly valuable in **legal, medical, compliance, and technical domains**. In **code search** where function names and API paths must match exactly. When handling **acronym-heavy content** or **multi-lingual scenarios** where keyword matching helps bridge language gaps. When users are **domain experts** who know the correct terminology and expect precision.
+[excitedly] It's particularly valuable in **legal, medical, compliance, and technical domains**. [conversational] In **code search** where function names and API paths must match exactly. When handling **acronym-heavy content** or **multi-lingual scenarios** where keyword matching helps bridge language gaps. When users are **domain experts** who know the correct terminology and expect precision.
 
-**Avoid this technique** when queries are highly **natural language** and varied in phrasing, requiring semantic understanding more than keyword matching. When your content doesn't have strong **keyword signals**—like creative writing, narrative text, or conversational content where meaning matters more than exact terms. When **recall is paramount** and you can't risk missing relevant content due to vocabulary mismatch.
+[cautiously] **Avoid this technique** when queries are highly **natural language** and varied in phrasing, requiring semantic understanding more than keyword matching. [conversational] When your content doesn't have strong **keyword signals**—like creative writing, narrative text, or conversational content where meaning matters more than exact terms. [seriously] When **recall is paramount** and you can't risk missing relevant content due to vocabulary mismatch.
 
 #### Combining with Other Techniques
-This technique works well **in combination with dense vector hybrid**. You might run a **three-way fusion**: graph + dense vectors + BM25, giving you semantic understanding, structural context, AND keyword precision. Or use **cascading retrieval**: dense vectors for initial candidates, then graph + BM25 for validation and re-ranking.
+[excitedly] This technique works well **in combination with dense vector hybrid**. [conversational] You might run a **three-way fusion**: graph + dense vectors + BM25, giving you semantic understanding, structural context, AND keyword precision. Or use **cascading retrieval**: dense vectors for initial candidates, then graph + BM25 for validation and re-ranking.
 
-Consider **adaptive fusion** where the system detects query characteristics and adjusts weights automatically. If a query contains technical terms or codes, increase BM25 weight. If it's a conceptual question, favor semantic signals.
+[pleased] Consider **adaptive fusion** where the system detects query characteristics and adjusts weights automatically. [conversational] If a query contains technical terms or codes, increase BM25 weight. If it's a conceptual question, favor semantic signals.
 
-Ready to explore our next advanced technique? Let's look at Semantic Graph Traversal!`
+[energetic] Ready to explore our next advanced technique? Let's look at Semantic Graph Traversal!`
         }
       ]
     },
@@ -2554,37 +2554,37 @@ Ready to explore our next advanced technique? Let's look at Semantic Graph Trave
           backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - Overview
 
-Welcome to **Semantic Graph Traversal**, an intelligent exploration technique that uses semantic similarity as a gatekeeper for which graph edges to follow. This approach combines the structural guidance of graph traversal with the semantic awareness of embedding-based methods.
+[excitedly] Welcome to **Semantic Graph Traversal**, an intelligent exploration technique that uses semantic similarity as a gatekeeper for which graph edges to follow. [conversational] This approach combines the structural guidance of graph traversal with the semantic awareness of embedding-based methods.
 
 #### The Problem: Not All Edges Are Worth Following
-In previous graph techniques, we've traversed edges based on their existence, weights, or proximity to seed nodes. But in real-world knowledge graphs, especially **automatically constructed** ones, not all edges are equally valuable. Some connections are **strong and meaningful**—"diabetes" to "insulin" is highly relevant. Others are **weak or tangential**—"diabetes" to "exercise physiology" might be connected but isn't central to most diabetes queries.
+[lecture] In previous graph techniques, we've traversed edges based on their existence, weights, or proximity to seed nodes. [cautiously] But in real-world knowledge graphs, especially **automatically constructed** ones, not all edges are equally valuable. [conversational] Some connections are **strong and meaningful**—"diabetes" to "insulin" is highly relevant. [concerned] Others are **weak or tangential**—"diabetes" to "exercise physiology" might be connected but isn't central to most diabetes queries.
 
-Without semantic filtering, graph traversal can **drift off-topic**. You start at "quantum computing," traverse to "computational complexity," then to "graph algorithms," then to "social network analysis," and suddenly you're far from quantum computing. Each edge might be valid, but the cumulative effect is **topic drift** that reduces precision.
+[cautiously] Without semantic filtering, graph traversal can **drift off-topic**. [storytelling] You start at "quantum computing," traverse to "computational complexity," then to "graph algorithms," then to "social network analysis," and suddenly you're far from quantum computing. [seriously] Each edge might be valid, but the cumulative effect is **topic drift** that reduces precision.
 
 #### The Solution: Semantic Gating
-**Semantic Graph Traversal** adds a crucial filter: before following an edge to a neighbor, check if that neighbor is **semantically similar** to the query or current context. If the similarity score crosses a threshold τ 👉 'tau' (typically 0.7-0.85), follow the edge. If not, skip it. This creates **adaptive traversal** that stays on-topic even in noisy graphs.
+[confidently] **Semantic Graph Traversal** adds a crucial filter: before following an edge to a neighbor, check if that neighbor is **semantically similar** to the query or current context. [lecture] If the similarity score crosses a threshold τ 👉 'tau' (typically 0.7-0.85), follow the edge. If not, skip it. [pleased] This creates **adaptive traversal** that stays on-topic even in noisy graphs.
 
-Think of it like hiking with a compass. Traditional graph traversal follows every trail marker regardless of direction. Semantic traversal checks: "Does this trail go toward my destination?" Only trails pointing the right direction are followed. You reach your destination faster and don't waste time on tangents.
+[storytelling] Think of it like hiking with a compass. [conversational] Traditional graph traversal follows every trail marker regardless of direction. Semantic traversal checks: "Does this trail go toward my destination?" [pleased] Only trails pointing the right direction are followed. You reach your destination faster and don't waste time on tangents.
 
 #### Core Concept: Query-Guided Exploration
-At each node during traversal, you compare the **semantic similarity** between the neighbor's content embedding and the **query embedding**. High similarity means the neighbor is topically relevant; low similarity means it's a digression. This comparison happens **dynamically during traversal**, making each expansion decision context-aware.
+[lecture] At each node during traversal, you compare the **semantic similarity** between the neighbor's content embedding and the **query embedding**. [conversational] High similarity means the neighbor is topically relevant; low similarity means it's a digression. [confidently] This comparison happens **dynamically during traversal**, making each expansion decision context-aware.
 
-The threshold τ 👉 'tau' controls **precision versus recall**. High threshold (τ=0.85) means only very similar neighbors are explored—high precision, narrow exploration. Low threshold (τ=0.6) allows more divergent connections—broader exploration, higher recall, but more noise. The threshold is tunable based on your application's needs.
+[lecture] The threshold τ 👉 'tau' controls **precision versus recall**. [conversational] High threshold (τ=0.85) means only very similar neighbors are explored—high precision, narrow exploration. Low threshold (τ=0.6) allows more divergent connections—broader exploration, higher recall, but more noise. [reassuringly] The threshold is tunable based on your application's needs.
 
 #### Goals: Controlled Precision
-The primary goal is **maintaining topical coherence** during graph exploration. You want to discover connected information **without wandering into unrelated territory**. Another benefit is **handling noisy graphs** where automated extraction or link prediction has created many spurious or low-quality edges. Semantic gating filters out the noise automatically.
+[confidently] The primary goal is **maintaining topical coherence** during graph exploration. [conversational] You want to discover connected information **without wandering into unrelated territory**. [pleased] Another benefit is **handling noisy graphs** where automated extraction or link prediction has created many spurious or low-quality edges. [reassuringly] Semantic gating filters out the noise automatically.
 
-**Adaptive depth** is another advantage. Instead of fixed k-hop traversal, you explore as far as semantically relevant connections extend. Some queries might expand 3-4 hops before running out of similar nodes; others stay local. The graph structure AND semantic relevance together determine exploration depth.
+[pleased] **Adaptive depth** is another advantage. [conversational] Instead of fixed k-hop traversal, you explore as far as semantically relevant connections extend. Some queries might expand 3-4 hops before running out of similar nodes; others stay local. The graph structure AND semantic relevance together determine exploration depth.
 
 #### When to Use This Technique
-Semantic Graph Traversal excels when working with **noisy or automatically constructed graphs** where edge quality varies significantly. In **research and literature exploration** where you want to follow relevant citations without diverging into tangentially related fields. For **medical diagnosis support** where following symptom and treatment connections should stay focused on the presenting condition, not branch into unrelated specialties.
+[enthusiastically] Semantic Graph Traversal excels when working with **noisy or automatically constructed graphs** where edge quality varies significantly. [conversational] In **research and literature exploration** where you want to follow relevant citations without diverging into tangentially related fields. [seriously] For **medical diagnosis support** where following symptom and treatment connections should stay focused on the presenting condition, not branch into unrelated specialties.
 
-It's valuable when **precision is more important than exhaustive recall**. When users prefer **fewer, highly relevant results** over comprehensive but noisy result sets. When your graph has **high branching factor**—many edges per node—making unfiltered traversal computationally expensive and likely to return too much irrelevant content.
+[confidently] It's valuable when **precision is more important than exhaustive recall**. [warmly] When users prefer **fewer, highly relevant results** over comprehensive but noisy result sets. [conversational] When your graph has **high branching factor**—many edges per node—making unfiltered traversal computationally expensive and likely to return too much irrelevant content.
 
 #### Contrast with Other Techniques
-Unlike **simple neighborhood expansion** which follows all edges equally, semantic traversal is selective. Unlike **edge-weighted retrieval** which uses pre-computed weights, this technique computes relevance **dynamically based on each query**. Unlike **path-based retrieval** which finds specific paths, semantic traversal does **breadth-first or depth-first exploration** with semantic pruning.
+[lecture] Unlike **simple neighborhood expansion** which follows all edges equally, semantic traversal is selective. Unlike **edge-weighted retrieval** which uses pre-computed weights, this technique computes relevance **dynamically based on each query**. Unlike **path-based retrieval** which finds specific paths, semantic traversal does **breadth-first or depth-first exploration** with semantic pruning.
 
-Now let's see how this technique operates in practice!`
+[energetic] Now let's see how this technique operates in practice!`
         },
         {
           id: 36,
@@ -2656,48 +2656,47 @@ A → D (sim=0.45, skip) | Stop at threshold τ=0.70`}
           backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - How It Works
 
-Let's break down the mechanics of semantic graph traversal. This involves embedding computation, similarity-based filtering, and intelligent exploration strategies.
+[lecture] Let's break down the mechanics of semantic graph traversal. [conversational] This involves embedding computation, similarity-based filtering, and intelligent exploration strategies.
 
 #### Phase 1: Initialization and Setup
-The process begins with **query embedding**. Use your embedding model (OpenAI, Cohere, open-source like BGE 👉 'bee-jee-ee') to generate a dense vector representation of the user's query. This query embedding serves as the **reference point** for all similarity comparisons during traversal. Store it in memory since you'll use it repeatedly.
+[lecture] The process begins with **query embedding**. [conversational] Use your embedding model (OpenAI, Cohere, open-source like BGE 👉 'bee-jee-ee') to generate a dense vector representation of the user's query. [confidently] This query embedding serves as the **reference point** for all similarity comparisons during traversal. Store it in memory since you'll use it repeatedly.
 
-Next, **identify seed nodes** from the query using entity linking, exact matching, or node-level retrieval. These are your starting points. For the query "quantum computing applications," you might identify "Quantum Computing" and "Computational Applications" as seeds.
+[conversational] Next, **identify seed nodes** from the query using entity linking, exact matching, or node-level retrieval. [lecture] These are your starting points. For the query "quantum computing applications," you might identify "Quantum Computing" and "Computational Applications" as seeds.
 
-**Set traversal parameters**: Choose your similarity threshold τ 👉 'tau' (start with 0.70-0.75 for balanced exploration). Define your **traversal budget**—maximum number of nodes to visit (e.g., 50-100) or maximum depth (2-3 hops). Select traversal strategy: **BFS 👉 'breadth-first search'** for broad exploration of nearby nodes, or **DFS 👉 'depth-first search'** for following promising paths deeply before backtracking.
+[lecture] **Set traversal parameters**: Choose your similarity threshold τ 👉 'tau' (start with 0.70-0.75 for balanced exploration). Define your **traversal budget**—maximum number of nodes to visit (e.g., 50-100) or maximum depth (2-3 hops). [conversational] Select traversal strategy: **BFS 👉 'breadth-first search'** for broad exploration of nearby nodes, or **DFS 👉 'depth-first search'** for following promising paths deeply before backtracking.
 
 #### Phase 2: Traversal with Semantic Gating
-Start from each seed node and begin exploration. The key innovation is the **similarity gate** at each step:
+[conversational] Start from each seed node and begin exploration. [confidently] The key innovation is the **similarity gate** at each step:
 
-**For each current node**, retrieve its neighbors from the graph. For **each neighbor**, compute the **semantic similarity** between the neighbor's embedding and the query embedding. Use cosine similarity: \`similarity = dot(query_embedding, node_embedding) / (||query|| × ||node||)\`. This gives a score from -1 to 1 (typically 0 to 1 for meaningful content).
+[lecture] **For each current node**, retrieve its neighbors from the graph. For **each neighbor**, compute the **semantic similarity** between the neighbor's embedding and the query embedding. [conversational] Use cosine similarity: \`similarity = dot(query_embedding, node_embedding) / (||query|| × ||node||)\`. This gives a score from -1 to 1 (typically 0 to 1 for meaningful content).
 
-**Apply the threshold filter**: If \`similarity >= τ\`, add this neighbor to the expansion queue. If \`similarity < τ\`, skip this neighbor entirely—don't traverse its edges. This is the semantic gating mechanism that prevents topic drift.
+[lecture] **Apply the threshold filter**: If \`similarity >= τ\`, add this neighbor to the expansion queue. If \`similarity < τ\`, skip this neighbor entirely—don't traverse its edges. [confidently] This is the semantic gating mechanism that prevents topic drift.
 
-
-**Continue traversal** from accepted neighbors. Repeat the similarity check for their neighbors. This creates a **recursive exploration** that follows semantically coherent paths and prunes irrelevant branches.
+[conversational] **Continue traversal** from accepted neighbors. Repeat the similarity check for their neighbors. [pleased] This creates a **recursive exploration** that follows semantically coherent paths and prunes irrelevant branches.
 
 #### Phase 3: Traversal Strategies
-**Breadth-First Search (BFS 👉 'breadth-first search')** explores all 1-hop neighbors before moving to 2-hop. This gives you a **wide, shallow** exploration—good for discovering diverse but closely related content. BFS ensures you don't miss any nearby highly-relevant nodes before going deeper.
+[lecture] **Breadth-First Search (BFS 👉 'breadth-first search')** explores all 1-hop neighbors before moving to 2-hop. [conversational] This gives you a **wide, shallow** exploration—good for discovering diverse but closely related content. BFS ensures you don't miss any nearby highly-relevant nodes before going deeper.
 
-**Depth-First Search (DFS 👉 'depth-first search')** follows each promising path as far as it goes before backtracking. This gives **narrow, deep** exploration—good for following chains of reasoning or narrative flows. DFS can discover distant but highly relevant nodes along specific paths.
+[lecture] **Depth-First Search (DFS 👉 'depth-first search')** follows each promising path as far as it goes before backtracking. [conversational] This gives **narrow, deep** exploration—good for following chains of reasoning or narrative flows. DFS can discover distant but highly relevant nodes along specific paths.
 
-**Priority-Based Traversal** (a variant) maintains a priority queue sorted by similarity score. Always expand the highest-similarity unexpanded node next. This is a **greedy best-first** approach that prioritizes the most relevant paths. Typically outperforms pure BFS or DFS for retrieval tasks.
+[lecture] **Priority-Based Traversal** (a variant) maintains a priority queue sorted by similarity score. [conversational] Always expand the highest-similarity unexpanded node next. [pleased] This is a **greedy best-first** approach that prioritizes the most relevant paths. Typically outperforms pure BFS or DFS for retrieval tasks.
 
 #### Phase 4: Termination and Result Collection
-**Traversal stops** when you've reached your budget (visited max nodes or max depth) or when there are no more neighbors that pass the similarity threshold. At this point, you have a set of **visited nodes** that form a semantically coherent subgraph around your query.
+[lecture] **Traversal stops** when you've reached your budget (visited max nodes or max depth) or when there are no more neighbors that pass the similarity threshold. [conversational] At this point, you have a set of **visited nodes** that form a semantically coherent subgraph around your query.
 
-**Rank the collected nodes** by their similarity scores (or combined scores if using other features like edge weights or centrality). Return the **top-k nodes** with their content. Optionally, return the **subgraph structure** showing how nodes are connected, which can be visualized or used for explanation.
+[conversational] **Rank the collected nodes** by their similarity scores (or combined scores if using other features like edge weights or centrality). [lecture] Return the **top-k nodes** with their content. [pleased] Optionally, return the **subgraph structure** showing how nodes are connected, which can be visualized or used for explanation.
 
 #### Advanced: Combined Scoring
-For more sophisticated systems, combine **semantic similarity with other features**: edge weights (if available), graph proximity (fewer hops = higher score), node centrality (PageRank 👉 'page-rank' or degree), or content freshness. A combined score might be: \`score = α × similarity + β × (1 / hop_distance) + γ × edge_weight\` where α, β, γ are tunable weights.
+[lecture] For more sophisticated systems, combine **semantic similarity with other features**: edge weights (if available), graph proximity (fewer hops = higher score), node centrality (PageRank 👉 'page-rank' or degree), or content freshness. [conversational] A combined score might be: \`score = α × similarity + β × (1 / hop_distance) + γ × edge_weight\` where α, β, γ are tunable weights.
 
-This gives you **multi-signal ranking** that leverages both semantic relevance and structural importance while still maintaining the semantic gating mechanism to prevent drift.
+[pleased] This gives you **multi-signal ranking** that leverages both semantic relevance and structural importance while still maintaining the semantic gating mechanism to prevent drift.
 
 #### Data Requirements in Detail
-You need **node embeddings** for all nodes, pre-computed and stored (vector database or graph database with embedding properties). **Query embedding** generated at query time. **Graph structure** with edges stored in a traversable format (adjacency lists or graph database). **Similarity computation** capability—either online (compute similarities during traversal) or offline (pre-compute pairwise similarities for fast lookup, though this is expensive for large graphs).
+[lecture] You need **node embeddings** for all nodes, pre-computed and stored (vector database or graph database with embedding properties). **Query embedding** generated at query time. **Graph structure** with edges stored in a traversable format (adjacency lists or graph database). [conversational] **Similarity computation** capability—either online (compute similarities during traversal) or offline (pre-compute pairwise similarities for fast lookup, though this is expensive for large graphs).
 
-**Traversal state** tracking—visited nodes set, expansion queue, depth counters. **Budget enforcement** logic to prevent infinite traversal in cyclic graphs.
+[lecture] **Traversal state** tracking—visited nodes set, expansion queue, depth counters. **Budget enforcement** logic to prevent infinite traversal in cyclic graphs.
 
-Now let's look at implementation details!`
+[energetic] Now let's look at implementation details!`
         },
         {
           id: 37,
@@ -2735,31 +2734,31 @@ Now let's look at implementation details!`
           backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - Implementation
 
-Let's walk through implementing semantic graph traversal step-by-step. This involves embedding infrastructure, similarity computation, and intelligent traversal logic.
+[conversational] Let's walk through implementing semantic graph traversal step-by-step. [lecture] This involves embedding infrastructure, similarity computation, and intelligent traversal logic.
 
 #### Step 1: Embedding Infrastructure
-Start by ensuring **all nodes have embeddings**. Use a consistent embedding model across your entire graph—OpenAI's text-embedding-3-small for quality, or BGE 👉 'bee-jee-ee' models for open-source alternatives. For each node, embed its **content text**—title, description, or concatenated metadata. Store embeddings either in your graph database as node properties (Neo4j supports this) or in a separate **vector database** with node IDs as keys.
+[lecture] Start by ensuring **all nodes have embeddings**. [conversational] Use a consistent embedding model across your entire graph—OpenAI's text-embedding-3-small for quality, or BGE 👉 'bee-jee-ee' models for open-source alternatives. [lecture] For each node, embed its **content text**—title, description, or concatenated metadata. Store embeddings either in your graph database as node properties (Neo4j supports this) or in a separate **vector database** with node IDs as keys.
 
-**Pre-compute embeddings** for all nodes during graph construction. For large graphs, this is a one-time batch operation that might take hours or days, but it's done offline. Keep embeddings **synchronized** with node content—when a node updates, regenerate its embedding. Use message queues or event-driven systems to maintain consistency.
+[lecture] **Pre-compute embeddings** for all nodes during graph construction. [conversational] For large graphs, this is a one-time batch operation that might take hours or days, but it's done offline. Keep embeddings **synchronized** with node content—when a node updates, regenerate its embedding. Use message queues or event-driven systems to maintain consistency.
 
-**Optimize for similarity computation**. If using cosine similarity, **normalize embeddings** to unit length during storage. Then similarity computation becomes a simple dot product, which is very fast. Store embeddings in efficient formats—NumPy arrays, FAISS indices, or database-native vector types.
+[conversational] **Optimize for similarity computation**. [lecture] If using cosine similarity, **normalize embeddings** to unit length during storage. [pleased] Then similarity computation becomes a simple dot product, which is very fast. Store embeddings in efficient formats—NumPy arrays, FAISS indices, or database-native vector types.
 
 #### Step 2: Seed Node Identification
-When a query arrives, **identify starting points**. Use **entity linking** if your query mentions specific entities: "quantum computing" links to your "Quantum Computing" node. Use **semantic search** over node embeddings: embed the query, find top-k most similar nodes (k=3-5) as seeds. Or use **keyword matching** for simple queries where entity names appear directly.
+[conversational] When a query arrives, **identify starting points**. [lecture] Use **entity linking** if your query mentions specific entities: "quantum computing" links to your "Quantum Computing" node. Use **semantic search** over node embeddings: embed the query, find top-k most similar nodes (k=3-5) as seeds. Or use **keyword matching** for simple queries where entity names appear directly.
 
-**Multiple seeds** provide coverage for multi-faceted queries. "Machine learning in healthcare" might seed both "Machine Learning" and "Healthcare AI 👉 'ay-eye'" nodes, allowing traversal from multiple relevant starting points.
+[conversational] **Multiple seeds** provide coverage for multi-faceted queries. [lecture] "Machine learning in healthcare" might seed both "Machine Learning" and "Healthcare AI 👉 'ay-eye'" nodes, allowing traversal from multiple relevant starting points.
 
 #### Step 3: Traversal Setup
-**Choose your strategy**. For most retrieval applications, **priority-based BFS** works well: explore in order of similarity score, always expanding the most promising node next. Implement this with a **priority queue** (Python's heapq or queue.PriorityQueue) sorted by similarity scores.
+[lecture] **Choose your strategy**. [conversational] For most retrieval applications, **priority-based BFS** works well: explore in order of similarity score, always expanding the most promising node next. Implement this with a **priority queue** (Python's heapq or queue.PriorityQueue) sorted by similarity scores.
 
-**Set your threshold** τ 👉 'tau'. Start with 0.70 for balanced exploration. **Higher thresholds** (0.80-0.85) for narrow, highly-focused retrieval; **lower thresholds** (0.60-0.65) for broader exploration. This is domain-dependent and requires tuning with evaluation data.
+[lecture] **Set your threshold** τ 👉 'tau'. [reassuringly] Start with 0.70 for balanced exploration. [conversational] **Higher thresholds** (0.80-0.85) for narrow, highly-focused retrieval; **lower thresholds** (0.60-0.65) for broader exploration. This is domain-dependent and requires tuning with evaluation data.
 
-**Define your budget**: maximum nodes to visit (50-100 is typical) or maximum depth (2-3 hops). These prevent infinite loops in cyclic graphs and control computational cost. You can also set a **time budget**—stop traversal after 500ms to ensure low latency.
+[lecture] **Define your budget**: maximum nodes to visit (50-100 is typical) or maximum depth (2-3 hops). [conversational] These prevent infinite loops in cyclic graphs and control computational cost. You can also set a **time budget**—stop traversal after 500ms to ensure low latency.
 
-Initialize your **data structures**: visited set (to avoid revisiting nodes), expansion queue (nodes to process next), results collection (nodes passing the similarity threshold).
+[conversational] Initialize your **data structures**: visited set (to avoid revisiting nodes), expansion queue (nodes to process next), results collection (nodes passing the similarity threshold).
 
 #### Step 4: Core Traversal Loop
-Implement the traversal algorithm:
+[lecture] Implement the traversal algorithm:
 
 \`\`\`python
 def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
@@ -2792,33 +2791,33 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
     return sorted(results, key=lambda x: x[1], reverse=True)
 \`\`\`
 
-This implements **priority-based traversal** with semantic gating. Neighbors passing the threshold are added to both results and the expansion queue.
+[conversational] This implements **priority-based traversal** with semantic gating. Neighbors passing the threshold are added to both results and the expansion queue.
 
 #### Step 5: Similarity Computation Optimization
-Computing similarity for every neighbor at every step can be expensive. **Optimization strategies**:
+[conversational] Computing similarity for every neighbor at every step can be expensive. [lecture] **Optimization strategies**:
 
-**Batch computation**: Instead of computing similarities one-by-one, collect all neighbors and compute similarities in a batch using matrix operations. This leverages GPU acceleration and vectorized operations. **Caching**: If your graph is relatively stable, cache similarity computations between frequently accessed node pairs. **Early stopping**: If a node has dozens of neighbors, you might sort by a cheap heuristic (edge weight, degree) and only compute similarities for the top candidates.
+[lecture] **Batch computation**: Instead of computing similarities one-by-one, collect all neighbors and compute similarities in a batch using matrix operations. [pleased] This leverages GPU acceleration and vectorized operations. [lecture] **Caching**: If your graph is relatively stable, cache similarity computations between frequently accessed node pairs. **Early stopping**: If a node has dozens of neighbors, you might sort by a cheap heuristic (edge weight, degree) and only compute similarities for the top candidates.
 
-**Approximate similarity**: For very large graphs, use **approximate nearest neighbor** (ANN 👉 'ay-en-en') methods like HNSW 👉 'aitchens-wuh' or product quantization to quickly filter neighbors before exact similarity computation.
+[lecture] **Approximate similarity**: For very large graphs, use **approximate nearest neighbor** (ANN 👉 'ay-en-en') methods like HNSW 👉 'aitchens-wuh' or product quantization to quickly filter neighbors before exact similarity computation.
 
 #### Step 6: Result Ranking and Return
-After traversal completes, **rank collected nodes** by their similarity scores. You might apply **additional scoring** factors: multiply similarity by 1/(hop_distance) to boost closer nodes, incorporate edge weights if available, or use graph centrality metrics.
+[conversational] After traversal completes, **rank collected nodes** by their similarity scores. [lecture] You might apply **additional scoring** factors: multiply similarity by 1/(hop_distance) to boost closer nodes, incorporate edge weights if available, or use graph centrality metrics.
 
-Return the **top-k results** (k=10-20) with their content. Include **metadata** like similarity scores, hop distance from seed, and traversal path for transparency. Optionally, return the **subgraph** showing how results connect—useful for visualization and explanation.
+[lecture] Return the **top-k results** (k=10-20) with their content. [conversational] Include **metadata** like similarity scores, hop distance from seed, and traversal path for transparency. [pleased] Optionally, return the **subgraph** showing how results connect—useful for visualization and explanation.
 
 #### Real-World Example: Medical Diagnosis Support
-Imagine a clinical decision support system. A doctor enters symptoms: "patient with irregular heartbeat and dizziness." Your system identifies seed nodes: "Cardiac Arrhythmia" and "Dizziness Symptoms." The traversal begins from these seeds with threshold τ=0.75.
+[storytelling] Imagine a clinical decision support system. A doctor enters symptoms: "patient with irregular heartbeat and dizziness." [conversational] Your system identifies seed nodes: "Cardiac Arrhythmia" and "Dizziness Symptoms." The traversal begins from these seeds with threshold τ=0.75.
 
-From "Cardiac Arrhythmia," neighbors include: "Atrial Fibrillation" (similarity 0.88—expand), "ECG 👉 'eee-see-gee' Diagnostics" (0.82—expand), "Heart Attack" (0.65—skip, below threshold), "Cardiology History" (0.52—skip). From "ECG Diagnostics," further neighbors include: "Holter Monitor" (0.79—expand), "Treatment Protocols" (0.81—expand).
+[conversational] From "Cardiac Arrhythmia," neighbors include: "Atrial Fibrillation" (similarity 0.88—expand), "ECG 👉 'eee-see-gee' Diagnostics" (0.82—expand), "Heart Attack" (0.65—skip, below threshold), "Cardiology History" (0.52—skip). From "ECG Diagnostics," further neighbors include: "Holter Monitor" (0.79—expand), "Treatment Protocols" (0.81—expand).
 
-The traversal continues, following highly relevant clinical pathways while avoiding tangential topics. The final results are **diagnostics, treatments, and procedures directly relevant to arrhythmia**, without noise from unrelated cardiac conditions or historical medical information. The system maintains **diagnostic focus** despite the large medical knowledge graph having thousands of interconnected nodes.
+[pleased] The traversal continues, following highly relevant clinical pathways while avoiding tangential topics. [delighted] The final results are **diagnostics, treatments, and procedures directly relevant to arrhythmia**, without noise from unrelated cardiac conditions or historical medical information. [confidently] The system maintains **diagnostic focus** despite the large medical knowledge graph having thousands of interconnected nodes.
 
 #### Implementation Tips
-Use **vector databases** like Pinecone, Weaviate, or Milvus for efficient embedding storage and similarity search. **Pre-normalize** embeddings for faster dot-product similarity. Implement **concurrent traversal** from multiple seeds using async I/O or threading to reduce latency. **Monitor threshold performance**—log queries where results are too narrow (increase budget or lower threshold) or too noisy (raise threshold).
+[reassuringly] Use **vector databases** like Pinecone, Weaviate, or Milvus for efficient embedding storage and similarity search. **Pre-normalize** embeddings for faster dot-product similarity. [conversational] Implement **concurrent traversal** from multiple seeds using async I/O or threading to reduce latency. **Monitor threshold performance**—log queries where results are too narrow (increase budget or lower threshold) or too noisy (raise threshold).
 
-**A/B test thresholds** on real queries with relevance judgments. **Combine with edge weights** if available: \`accept_neighbor = (similarity >= τ) AND (edge_weight >= w_min)\`. Implement **progressive deepening**—start with high threshold for quick, precise results; if too few, retry with lower threshold.
+[conversational] **A/B test thresholds** on real queries with relevance judgments. **Combine with edge weights** if available: \`accept_neighbor = (similarity >= τ) AND (edge_weight >= w_min)\`. [pleased] Implement **progressive deepening**—start with high threshold for quick, precise results; if too few, retry with lower threshold.
 
-Now let's examine benefits and limitations!`
+[energetic] Now let's examine benefits and limitations!`
         },
         {
           id: 38,
@@ -2850,50 +2849,50 @@ Now let's examine benefits and limitations!`
           backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - Considerations
 
-Let's examine the strengths and limitations of semantic graph traversal. Understanding these trade-offs helps you decide when this technique is the right choice and how to mitigate its weaknesses.
+[conversational] Let's examine the strengths and limitations of semantic graph traversal. [reassuringly] Understanding these trade-offs helps you decide when this technique is the right choice and how to mitigate its weaknesses.
 
 #### Benefits: Precision and Noise Handling
-The standout advantage is **preventing topic drift**. Traditional graph traversal can wander into unrelated territory through chains of loosely connected nodes. Semantic gating **maintains topical coherence** by only following semantically relevant paths. This is invaluable in large, highly connected graphs where unbounded traversal would return too much irrelevant content.
+[excitedly] The standout advantage is **preventing topic drift**. [cautiously] Traditional graph traversal can wander into unrelated territory through chains of loosely connected nodes. [confidently] Semantic gating **maintains topical coherence** by only following semantically relevant paths. [pleased] This is invaluable in large, highly connected graphs where unbounded traversal would return too much irrelevant content.
 
-**Handling noisy graphs** is another major strength. Automatically constructed knowledge graphs often have spurious edges from extraction errors, co-occurrence noise, or imperfect link prediction. Instead of manually cleaning these edges (expensive and never complete), semantic traversal **filters them dynamically** based on query context. An edge that's noise for one query might be valuable for another; semantic traversal adapts.
+[excitedly] **Handling noisy graphs** is another major strength. [conversational] Automatically constructed knowledge graphs often have spurious edges from extraction errors, co-occurrence noise, or imperfect link prediction. [pleased] Instead of manually cleaning these edges (expensive and never complete), semantic traversal **filters them dynamically** based on query context. [warmly] An edge that's noise for one query might be valuable for another; semantic traversal adapts.
 
-**Adaptive exploration depth** provides flexibility. Unlike fixed k-hop expansion, semantic traversal continues as far as relevant connections extend. For some queries, this means exploring 3-4 hops deeply into a specific domain. For others, it means staying local when there aren't distant relevant nodes. The graph structure AND semantic relevance together determine exploration, creating **query-specific retrieval** paths.
+[pleased] **Adaptive exploration depth** provides flexibility. [lecture] Unlike fixed k-hop expansion, semantic traversal continues as far as relevant connections extend. [conversational] For some queries, this means exploring 3-4 hops deeply into a specific domain. For others, it means staying local when there aren't distant relevant nodes. [confidently] The graph structure AND semantic relevance together determine exploration, creating **query-specific retrieval** paths.
 
-**High precision** results from the filtering mechanism. By construction, every returned node passed the similarity threshold, meaning it's semantically related to the query. This reduces **false positives** significantly compared to unfiltered graph expansion. Users get fewer but more relevant results, improving user experience in precision-critical applications.
+[pleased] **High precision** results from the filtering mechanism. [lecture] By construction, every returned node passed the similarity threshold, meaning it's semantically related to the query. [enthusiastically] This reduces **false positives** significantly compared to unfiltered graph expansion. [warmly] Users get fewer but more relevant results, improving user experience in precision-critical applications.
 
-The technique also provides **explainability through similarity scores**. You can tell users: "This node was included because its similarity to your query is 0.84" or visualize the traversal path showing how similarity scores guided exploration. This transparency builds trust and helps debug unexpected results.
+[pleased] The technique also provides **explainability through similarity scores**. [conversational] You can tell users: "This node was included because its similarity to your query is 0.84" or visualize the traversal path showing how similarity scores guided exploration. [warmly] This transparency builds trust and helps debug unexpected results.
 
 #### Limitations: Embedding Dependency and Threshold Sensitivity
-The biggest limitation is **dependency on embedding quality**. Semantic traversal is only as good as your embeddings. If embeddings don't capture domain-specific semantics well, similarity scores will be poor, and traversal will either miss relevant nodes (false negatives) or include irrelevant ones (false positives). **Domain-specific embeddings** often work better than general-purpose models, but training or fine-tuning embeddings requires expertise and data.
+[cautiously] The biggest limitation is **dependency on embedding quality**. [seriously] Semantic traversal is only as good as your embeddings. [concerned] If embeddings don't capture domain-specific semantics well, similarity scores will be poor, and traversal will either miss relevant nodes (false negatives) or include irrelevant ones (false positives). [lecture] **Domain-specific embeddings** often work better than general-purpose models, but training or fine-tuning embeddings requires expertise and data.
 
-**Threshold tuning** is challenging and **query-dependent**. The optimal threshold τ 👉 'tau' depends on your embedding model's score distribution, your graph's density, and the query's specificity. A threshold of 0.75 might work great for specific technical queries but be too restrictive for broad exploratory queries. Finding a **single threshold** that works across diverse queries is difficult. You might need **adaptive thresholding** that adjusts based on query characteristics or interim results.
+[puzzled] **Threshold tuning** is challenging and **query-dependent**. [lecture] The optimal threshold τ 👉 'tau' depends on your embedding model's score distribution, your graph's density, and the query's specificity. [conversational] A threshold of 0.75 might work great for specific technical queries but be too restrictive for broad exploratory queries. [cautiously] Finding a **single threshold** that works across diverse queries is difficult. You might need **adaptive thresholding** that adjusts based on query characteristics or interim results.
 
-**Missing valuable weak connections** is a risk. Some important relationships have low semantic similarity but high practical importance. In citation networks, a seminal paper from a different subfield might be highly relevant to your research question but have low embedding similarity because vocabulary differs. In medical graphs, a rare side effect might be critical but have low similarity to the main condition. Semantic filtering can inadvertently prune these **high-value, low-similarity connections**.
+[cautiously] **Missing valuable weak connections** is a risk. [seriously] Some important relationships have low semantic similarity but high practical importance. [storytelling] In citation networks, a seminal paper from a different subfield might be highly relevant to your research question but have low embedding similarity because vocabulary differs. [conversational] In medical graphs, a rare side effect might be critical but have low similarity to the main condition. [concerned] Semantic filtering can inadvertently prune these **high-value, low-similarity connections**.
 
-**Computational expense** grows with graph density. At each node, you compute similarity between the query embedding and all neighbor embeddings. In dense graphs with high branching factors (dozens of neighbors per node), this becomes expensive. Computing thousands of cosine similarities per query adds latency. **GPU acceleration** helps, but you still need infrastructure for embedding storage and similarity computation at scale.
+[concerned] **Computational expense** grows with graph density. [lecture] At each node, you compute similarity between the query embedding and all neighbor embeddings. [conversational] In dense graphs with high branching factors (dozens of neighbors per node), this becomes expensive. Computing thousands of cosine similarities per query adds latency. [reassuringly] **GPU acceleration** helps, but you still need infrastructure for embedding storage and similarity computation at scale.
 
 #### Practical Challenges
-**Embedding storage and access** requires infrastructure. Storing hundreds of thousands or millions of embeddings (each 512-1536 dimensions) consumes memory. **Vector databases** solve this but add operational complexity. Alternatively, storing embeddings as node properties in graph databases works but may not be optimized for fast similarity computation.
+[cautiously] **Embedding storage and access** requires infrastructure. [lecture] Storing hundreds of thousands or millions of embeddings (each 512-1536 dimensions) consumes memory. [conversational] **Vector databases** solve this but add operational complexity. Alternatively, storing embeddings as node properties in graph databases works but may not be optimized for fast similarity computation.
 
-**Traversal state management** becomes complex in large-scale systems. Tracking visited nodes, expansion queues, and budget enforcement across concurrent queries requires careful memory management. **Stateful traversal** can't easily be distributed across servers, limiting scalability.
+[cautiously] **Traversal state management** becomes complex in large-scale systems. [conversational] Tracking visited nodes, expansion queues, and budget enforcement across concurrent queries requires careful memory management. [seriously] **Stateful traversal** can't easily be distributed across servers, limiting scalability.
 
-**Cold start problems** occur with new nodes. If a node doesn't have an embedding yet (maybe it was just added), semantic traversal can't properly evaluate it. You need **embedding generation pipelines** that keep pace with graph updates, or fallback strategies (use structural features only) for unembedded nodes.
+[puzzled] **Cold start problems** occur with new nodes. [conversational] If a node doesn't have an embedding yet (maybe it was just added), semantic traversal can't properly evaluate it. [lecture] You need **embedding generation pipelines** that keep pace with graph updates, or fallback strategies (use structural features only) for unembedded nodes.
 
-**Balancing threshold sensitivity** with diverse query types is difficult. **Technical queries** with specialized vocabulary benefit from higher thresholds. **Natural language questions** with varied phrasing might need lower thresholds. **Short queries** provide less semantic context, making similarity scores less reliable. Handling this diversity requires either **query-dependent configuration** (complex) or **conservative defaults** (suboptimal for some queries).
+[puzzled] **Balancing threshold sensitivity** with diverse query types is difficult. [lecture] **Technical queries** with specialized vocabulary benefit from higher thresholds. **Natural language questions** with varied phrasing might need lower thresholds. **Short queries** provide less semantic context, making similarity scores less reliable. [cautiously] Handling this diversity requires either **query-dependent configuration** (complex) or **conservative defaults** (suboptimal for some queries).
 
 #### When to Choose This Technique
-Use semantic graph traversal when **precision is paramount** and you can tolerate potentially missing some relevant content. When working with **noisy or automatically constructed graphs** where unfiltered traversal would return too much irrelevant content. When your **embeddings are high-quality** and well-aligned with your domain. When you need **adaptive exploration** that goes deep for focused queries and stays shallow for broad ones.
+[confidently] Use semantic graph traversal when **precision is paramount** and you can tolerate potentially missing some relevant content. [enthusiastically] When working with **noisy or automatically constructed graphs** where unfiltered traversal would return too much irrelevant content. [reassuringly] When your **embeddings are high-quality** and well-aligned with your domain. [pleased] When you need **adaptive exploration** that goes deep for focused queries and stays shallow for broad ones.
 
-It's particularly valuable in **research and literature exploration** where topic coherence matters. In **medical and clinical systems** where diagnostic focus must be maintained. In **question-answering systems** where precision improves answer quality more than recall. When dealing with **large, dense graphs** where computational budgets prevent exhaustive exploration.
+[warmly] It's particularly valuable in **research and literature exploration** where topic coherence matters. [seriously] In **medical and clinical systems** where diagnostic focus must be maintained. [conversational] In **question-answering systems** where precision improves answer quality more than recall. When dealing with **large, dense graphs** where computational budgets prevent exhaustive exploration.
 
-**Avoid this technique** when recall is more important than precision—exhaustive retrieval matters more than avoiding false positives. When your **embeddings are weak** or not domain-specific, making similarity scores unreliable. When **weak connections are valuable**—in discovery applications where surprising connections across domains provide value. When you lack the **infrastructure** for embedding storage and fast similarity computation at scale.
+[cautiously] **Avoid this technique** when recall is more important than precision—exhaustive retrieval matters more than avoiding false positives. [seriously] When your **embeddings are weak** or not domain-specific, making similarity scores unreliable. [conversational] When **weak connections are valuable**—in discovery applications where surprising connections across domains provide value. [concerned] When you lack the **infrastructure** for embedding storage and fast similarity computation at scale.
 
 #### Combining with Other Techniques
-Semantic traversal works well **in combination with other methods**. Use it as a **re-ranking** step after initial graph expansion—expand broadly, then filter results by semantic similarity. Combine with **edge weights**: \`accept = (similarity >= τ) AND (edge_weight >= w)\` for dual filtering. Use **progressive relaxation**—start with high threshold; if results are too sparse, retry with lower threshold.
+[excitedly] Semantic traversal works well **in combination with other methods**. [conversational] Use it as a **re-ranking** step after initial graph expansion—expand broadly, then filter results by semantic similarity. Combine with **edge weights**: \`accept = (similarity >= τ) AND (edge_weight >= w)\` for dual filtering. [pleased] Use **progressive relaxation**—start with high threshold; if results are too sparse, retry with lower threshold.
 
-Consider **hybrid traversal** that uses semantic gating for some edge types but follows all edges of other types (e.g., always follow "definedBy" or "partOf" relationships, but filter "relatedTo" relationships semantically). This preserves important structural patterns while filtering noise.
+[conversational] Consider **hybrid traversal** that uses semantic gating for some edge types but follows all edges of other types (e.g., always follow "definedBy" or "partOf" relationships, but filter "relatedTo" relationships semantically). [pleased] This preserves important structural patterns while filtering noise.
 
-Ready to explore our final advanced technique? Let's dive into Graph Walk-Based Ranking!`
+[energetic] Ready to explore our final advanced technique? Let's dive into Graph Walk-Based Ranking!`
         }
       ]
     },
@@ -2929,45 +2928,45 @@ Ready to explore our final advanced technique? Let's dive into Graph Walk-Based 
           backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - Overview
 
-Welcome to **Graph Walk-Based Ranking**, a technique that leverages random walk algorithms to identify the most important or authoritative nodes in a graph. This approach brings the power of algorithms like PageRank 👉 'page-rank'—which revolutionized web search—to knowledge graph retrieval.
+[excitedly] Welcome to **Graph Walk-Based Ranking**, a technique that leverages random walk algorithms to identify the most important or authoritative nodes in a graph. [enthusiastically] This approach brings the power of algorithms like PageRank 👉 'page-rank'—which revolutionized web search—to knowledge graph retrieval.
 
 #### The Core Idea: Random Walks Reveal Importance
-Imagine a random person wandering through your knowledge graph, following edges randomly. Some nodes they'll visit frequently because they're **highly connected** or linked from many important nodes. Others they'll rarely visit because they're peripheral or isolated. The **frequency of visits** in a long random walk correlates with node importance.
+[storytelling] Imagine a random person wandering through your knowledge graph, following edges randomly. [conversational] Some nodes they'll visit frequently because they're **highly connected** or linked from many important nodes. Others they'll rarely visit because they're peripheral or isolated. [confidently] The **frequency of visits** in a long random walk correlates with node importance.
 
-This intuition underlies **random walk algorithms**. They simulate this wandering process mathematically and compute a **stationary distribution**—the probability of finding the random walker at each node after many steps. Nodes with high probability are **central, authoritative, or influential**. Nodes with low probability are peripheral.
+[lecture] This intuition underlies **random walk algorithms**. [conversational] They simulate this wandering process mathematically and compute a **stationary distribution**—the probability of finding the random walker at each node after many steps. [confidently] Nodes with high probability are **central, authoritative, or influential**. Nodes with low probability are peripheral.
 
 #### PageRank 👉 'page-rank': Global Importance
-**PageRank**, developed by Google founders Larry Page and Sergey Brin, ranks nodes based on **global importance** in the entire graph. A node has high PageRank if many other nodes link to it, especially if those linking nodes themselves have high PageRank. It's a **recursive definition** of importance.
+[lecture] **PageRank**, developed by Google founders Larry Page and Sergey Brin, ranks nodes based on **global importance** in the entire graph. [conversational] A node has high PageRank if many other nodes link to it, especially if those linking nodes themselves have high PageRank. [confidently] It's a **recursive definition** of importance.
 
-The algorithm simulates a random walker who, at each step, either follows a random outgoing edge (with probability 1-α) or teleports to a random node (with probability α). The α parameter (damping factor, typically 0.85) prevents the walker from getting stuck in isolated subgraphs. After many iterations, the walker's **visit probabilities converge** to the PageRank scores.
+[lecture] The algorithm simulates a random walker who, at each step, either follows a random outgoing edge (with probability 1-α) or teleports to a random node (with probability α). [conversational] The α parameter (damping factor, typically 0.85) prevents the walker from getting stuck in isolated subgraphs. [pleased] After many iterations, the walker's **visit probabilities converge** to the PageRank scores.
 
-In web search, PageRank identified authoritative pages. In knowledge graphs, it identifies central concepts, influential entities, or highly referenced documents.
+[lecture] In web search, PageRank identified authoritative pages. In knowledge graphs, it identifies central concepts, influential entities, or highly referenced documents.
 
 #### Personalized PageRank 👉 'pee-pee-arr': Query-Specific Importance
-**Personalized PageRank (PPR 👉 'pee-pee-arr')** adapts PageRank for retrieval by incorporating **query context**. Instead of teleporting randomly to any node, the walker teleports back to a **seed set** of query-relevant nodes. This biases the walk toward exploring the neighborhood of query-related nodes.
+[excitedly] **Personalized PageRank (PPR 👉 'pee-pee-arr')** adapts PageRank for retrieval by incorporating **query context**. [lecture] Instead of teleporting randomly to any node, the walker teleports back to a **seed set** of query-relevant nodes. [pleased] This biases the walk toward exploring the neighborhood of query-related nodes.
 
-PPR scores indicate: "How important is this node **relative to my query seeds**?" Nodes close to seeds or frequently visited from seeds get high scores. Distant or unrelated nodes get low scores. This provides **query-personalized ranking** that combines global graph structure with local query relevance.
+[lecture] PPR scores indicate: "How important is this node **relative to my query seeds**?" [conversational] Nodes close to seeds or frequently visited from seeds get high scores. Distant or unrelated nodes get low scores. [confidently] This provides **query-personalized ranking** that combines global graph structure with local query relevance.
 
 #### Goals: Authority and Robustness
-The primary goal is **identifying authoritative nodes**. In citation networks, highly-cited influential papers. In knowledge bases, central concepts that many others reference. In entity graphs, important entities that connect many domains. PageRank and PPR provide a **global signal** that complements local similarity measures.
+[confidently] The primary goal is **identifying authoritative nodes**. [lecture] In citation networks, highly-cited influential papers. In knowledge bases, central concepts that many others reference. In entity graphs, important entities that connect many domains. [pleased] PageRank and PPR provide a **global signal** that complements local similarity measures.
 
-Another key benefit is **robustness to noise**. Random walk algorithms aggregate information across many paths and neighbors. Individual noisy edges don't significantly affect rankings because the algorithm considers the **entire graph structure**. This makes rankings stable and resilient to graph imperfections.
+[pleased] Another key benefit is **robustness to noise**. [lecture] Random walk algorithms aggregate information across many paths and neighbors. [reassuringly] Individual noisy edges don't significantly affect rankings because the algorithm considers the **entire graph structure**. This makes rankings stable and resilient to graph imperfections.
 
-**Mathematical grounding** is a major advantage. These algorithms have rigorous theoretical foundations, convergence guarantees, and decades of research backing them. You're leveraging proven methods, not heuristics.
+[confidently] **Mathematical grounding** is a major advantage. [lecture] These algorithms have rigorous theoretical foundations, convergence guarantees, and decades of research backing them. [warmly] You're leveraging proven methods, not heuristics.
 
 #### When to Use This Technique
-Walk-based ranking excels in **citation and reference networks** where citation counts and link structure indicate paper or article importance. In **knowledge bases** where you want to surface the most central, well-connected concepts rather than peripheral ones. For **entity resolution** where ranking entities by their importance in the graph helps disambiguate (the person "Michael Jordan" who's highly connected in sports is different from the less-connected computer scientist).
+[enthusiastically] Walk-based ranking excels in **citation and reference networks** where citation counts and link structure indicate paper or article importance. [conversational] In **knowledge bases** where you want to surface the most central, well-connected concepts rather than peripheral ones. [lecture] For **entity resolution** where ranking entities by their importance in the graph helps disambiguate (the person "Michael Jordan" who's highly connected in sports is different from the less-connected computer scientist).
 
-It's valuable when **centrality correlates with quality**. In academic graphs, influential papers are central. In organizational knowledge bases, well-documented core processes are central. When you want to **surface important content** even if it's not the closest semantic match to a query.
+[warmly] It's valuable when **centrality correlates with quality**. [conversational] In academic graphs, influential papers are central. In organizational knowledge bases, well-documented core processes are central. [pleased] When you want to **surface important content** even if it's not the closest semantic match to a query.
 
-Use it for **exploratory search** where users want to understand "what's important here" rather than finding specific answers. For **graph summarization** where you need to identify key nodes representing the graph's main topics or entities.
+[conversational] Use it for **exploratory search** where users want to understand "what's important here" rather than finding specific answers. For **graph summarization** where you need to identify key nodes representing the graph's main topics or entities.
 
 #### Contrast with Other Techniques
-Unlike **node-level or edge-weighted retrieval** which rank based on local features (similarity, edge weights), walk-based ranking considers **global structure**. Unlike **neighborhood expansion** which includes all neighbors, walk-based ranking **prioritizes** neighbors based on their importance. Unlike **semantic traversal** which filters by semantic similarity, walk-based ranking filters by **structural centrality**.
+[lecture] Unlike **node-level or edge-weighted retrieval** which rank based on local features (similarity, edge weights), walk-based ranking considers **global structure**. Unlike **neighborhood expansion** which includes all neighbors, walk-based ranking **prioritizes** neighbors based on their importance. Unlike **semantic traversal** which filters by semantic similarity, walk-based ranking filters by **structural centrality**.
 
-These techniques are **complementary**. You might use PPR 👉 'pee-pee-arr' to rank candidates, then semantic filtering to ensure topical relevance. Or use edge weights to guide the random walk, combining local and global signals.
+[warmly] These techniques are **complementary**. [conversational] You might use PPR 👉 'pee-pee-arr' to rank candidates, then semantic filtering to ensure topical relevance. Or use edge weights to guide the random walk, combining local and global signals.
 
-Now let's see how random walk ranking operates in practice!`
+[energetic] Now let's see how random walk ranking operates in practice!`
         },
         {
           id: 40,
@@ -3038,69 +3037,68 @@ Now let's see how random walk ranking operates in practice!`
           backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - How It Works
 
-Let's break down the mechanics of random walk-based ranking, focusing on Personalized PageRank 👉 'pee-pee-arr' since it's most relevant for retrieval. Understanding the algorithm's steps and mathematical intuition will help you implement and tune it effectively.
+[lecture] Let's break down the mechanics of random walk-based ranking, focusing on Personalized PageRank 👉 'pee-pee-arr' since it's most relevant for retrieval. [conversational] Understanding the algorithm's steps and mathematical intuition will help you implement and tune it effectively.
 
 #### Phase 1: Graph Preparation
-Start by representing your graph in a format suitable for random walks. The **adjacency matrix** A is an N×N matrix where A[i][j] indicates an edge from node i to node j. For weighted graphs, A[i][j] stores the edge weight; for unweighted graphs, it's 0 or 1.
+[lecture] Start by representing your graph in a format suitable for random walks. [conversational] The **adjacency matrix** A is an N×N matrix where A[i][j] indicates an edge from node i to node j. For weighted graphs, A[i][j] stores the edge weight; for unweighted graphs, it's 0 or 1.
 
-Transform the adjacency matrix into a **transition matrix** P. For each node i, the transition probabilities to its neighbors must sum to 1. Compute: \`P[i][j] = A[i][j] / sum(A[i])\` where sum(A[i]) is the sum of all outgoing edges from node i. This represents: "If I'm at node i, what's the probability of moving to node j next?"
+[lecture] Transform the adjacency matrix into a **transition matrix** P. [conversational] For each node i, the transition probabilities to its neighbors must sum to 1. Compute: \`P[i][j] = A[i][j] / sum(A[i])\` where sum(A[i]) is the sum of all outgoing edges from node i. [confidently] This represents: "If I'm at node i, what's the probability of moving to node j next?"
 
-Handle **dangling nodes** (nodes with no outgoing edges) by adding self-loops or uniform transitions to all nodes. This prevents the random walker from getting stuck.
+[conversational] Handle **dangling nodes** (nodes with no outgoing edges) by adding self-loops or uniform transitions to all nodes. This prevents the random walker from getting stuck.
 
 #### Phase 2: Seed Node Identification
-For **Personalized PageRank**, identify seed nodes from the query. Use **entity linking** to find nodes mentioned in the query. Or use **semantic search** to find top-k most similar nodes to the query. Multiple seeds are fine—the algorithm handles seed sets naturally.
+[lecture] For **Personalized PageRank**, identify seed nodes from the query. [conversational] Use **entity linking** to find nodes mentioned in the query. Or use **semantic search** to find top-k most similar nodes to the query. Multiple seeds are fine—the algorithm handles seed sets naturally.
 
-Create the **personalization vector** s, an N-dimensional vector where s[i] = 1/|seeds| if node i is a seed, otherwise s[i] = 0. This vector defines where the random walker teleports during restarts. The sum of s must equal 1 (it's a probability distribution).
+[lecture] Create the **personalization vector** s, an N-dimensional vector where s[i] = 1/|seeds| if node i is a seed, otherwise s[i] = 0. [conversational] This vector defines where the random walker teleports during restarts. The sum of s must equal 1 (it's a probability distribution).
 
-For standard **PageRank** (non-personalized), the personalization vector is uniform: s[i] = 1/N for all nodes. This means the walker can teleport anywhere, not just to query-relevant seeds.
+[lecture] For standard **PageRank** (non-personalized), the personalization vector is uniform: s[i] = 1/N for all nodes. [conversational] This means the walker can teleport anywhere, not just to query-relevant seeds.
 
 #### Phase 3: Random Walk Iterations
-Initialize the **rank vector** r as the personalization vector: r = s. This represents the initial probability distribution—walker starts at seed nodes.
+[lecture] Initialize the **rank vector** r as the personalization vector: r = s. [conversational] This represents the initial probability distribution—walker starts at seed nodes.
 
-**Iterate** using the PageRank update formula:
+[lecture] **Iterate** using the PageRank update formula:
 \`\`\`
 r_new = α × P^T × r_old + (1 - α) × s
 \`\`\`
 
-Where:
+[conversational] Where:
 - α is the **damping factor** (typically 0.85), representing the probability of following an edge
 - (1-α) is the **restart probability**, representing the chance of teleporting back to seeds
 - P^T is the transpose of the transition matrix (incoming edges)
 - s is the personalization vector (where we restart)
 
-This formula says: "The new probability of being at each node equals the probability of walking there from neighbors, plus the probability of teleporting there."
+[lecture] This formula says: "The new probability of being at each node equals the probability of walking there from neighbors, plus the probability of teleporting there."
 
-**Iterate** until convergence: \`||r_new - r_old|| < ε\` where ε 👉 'epsilon' is a small threshold (e.g., 10^-6). Typically converges in 20-50 iterations for most graphs.
-
+[conversational] **Iterate** until convergence: \`||r_new - r_old|| < ε\` where ε 👉 'epsilon' is a small threshold (e.g., 10^-6). Typically converges in 20-50 iterations for most graphs.
 
 #### Phase 4: Convergence and Result Extraction
-After convergence, the rank vector r contains **PPR 👉 'pee-pee-arr' scores** for all nodes. r[i] represents the probability of finding the random walker at node i in the stationary distribution. Higher scores mean the node is **more important relative to the seed nodes**.
+[conversational] After convergence, the rank vector r contains **PPR 👉 'pee-pee-arr' scores** for all nodes. [lecture] r[i] represents the probability of finding the random walker at node i in the stationary distribution. [confidently] Higher scores mean the node is **more important relative to the seed nodes**.
 
-**Sort nodes** by their PPR scores in descending order. The top-k nodes are those most central to your query seeds according to graph structure. Return these nodes with their scores.
+[conversational] **Sort nodes** by their PPR scores in descending order. The top-k nodes are those most central to your query seeds according to graph structure. Return these nodes with their scores.
 
 #### The Mathematics: Why It Works
-The PageRank formula has an elegant interpretation. The stationary distribution satisfies: \`r = α × P^T × r + (1 - α) × s\`. This is a **fixed point equation**. The random walker's long-term behavior is described by this equilibrium where the probability flow in equals flow out at every node.
+[lecture] The PageRank formula has an elegant interpretation. [conversational] The stationary distribution satisfies: \`r = α × P^T × r + (1 - α) × s\`. This is a **fixed point equation**. [pleased] The random walker's long-term behavior is described by this equilibrium where the probability flow in equals flow out at every node.
 
-The **power iteration** method we use (repeatedly applying the update formula) is guaranteed to converge because the matrix \`α × P^T + (1-α) × s × 1^T\` is **stochastic** (rows sum to 1), **irreducible** (all nodes reachable from seeds), and **aperiodic** (damping ensures non-periodic walks). These properties guarantee a unique stationary distribution.
+[lecture] The **power iteration** method we use (repeatedly applying the update formula) is guaranteed to converge because the matrix \`α × P^T + (1-α) × s × 1^T\` is **stochastic** (rows sum to 1), **irreducible** (all nodes reachable from seeds), and **aperiodic** (damping ensures non-periodic walks). [confidently] These properties guarantee a unique stationary distribution.
 
 #### Advanced: Weighted Walks
-If your graph has **edge weights**, incorporate them into the transition matrix. Instead of uniform probabilities to neighbors, weight transitions by edge weights: \`P[i][j] = weight(i→j) / sum(weights from i)\`. This makes the walker more likely to follow high-weight edges, incorporating edge importance into rankings.
+[lecture] If your graph has **edge weights**, incorporate them into the transition matrix. [conversational] Instead of uniform probabilities to neighbors, weight transitions by edge weights: \`P[i][j] = weight(i→j) / sum(weights from i)\`. [pleased] This makes the walker more likely to follow high-weight edges, incorporating edge importance into rankings.
 
 #### Advanced: Approximate PPR 👉 'pee-pee-arr'
-For very large graphs (millions of nodes), full PPR computation is expensive. Use **approximation methods**:
+[conversational] For very large graphs (millions of nodes), full PPR computation is expensive. [lecture] Use **approximation methods**:
 
-**Monte Carlo Random Walks**: Simulate actual random walks starting from seeds. Count how often each node is visited. This gives approximate PPR scores without matrix operations. Fast and parallelizable.
+[lecture] **Monte Carlo Random Walks**: Simulate actual random walks starting from seeds. [conversational] Count how often each node is visited. [pleased] This gives approximate PPR scores without matrix operations. Fast and parallelizable.
 
-**Forward Push**: A local algorithm that computes PPR scores only for nodes near seeds, avoiding full graph computation. Suitable for sparse retrieval scenarios.
+[lecture] **Forward Push**: A local algorithm that computes PPR scores only for nodes near seeds, avoiding full graph computation. [conversational] Suitable for sparse retrieval scenarios.
 
-**Truncated Power Iteration**: Stop iterating early (after 10-15 iterations) for approximate but faster results. Works well when you only need relative rankings, not exact scores.
+[lecture] **Truncated Power Iteration**: Stop iterating early (after 10-15 iterations) for approximate but faster results. [conversational] Works well when you only need relative rankings, not exact scores.
 
 #### Data Requirements in Detail
-You need the **graph structure** as an adjacency list or matrix. **Transition probabilities** computed from edge weights or uniform over neighbors. **Seed nodes** identified from the query. **Tuning parameters**: damping factor α (0.8-0.95, typically 0.85), convergence threshold ε (10^-6 to 10^-4), maximum iterations (50-100 to prevent infinite loops).
+[lecture] You need the **graph structure** as an adjacency list or matrix. **Transition probabilities** computed from edge weights or uniform over neighbors. **Seed nodes** identified from the query. [conversational] **Tuning parameters**: damping factor α (0.8-0.95, typically 0.85), convergence threshold ε (10^-6 to 10^-4), maximum iterations (50-100 to prevent infinite loops).
 
-Optionally, **precompute standard PageRank** for the entire graph if running frequent queries. This provides a baseline importance score independent of any query, useful for combining with PPR or filtering low-importance nodes upfront.
+[conversational] Optionally, **precompute standard PageRank** for the entire graph if running frequent queries. [pleased] This provides a baseline importance score independent of any query, useful for combining with PPR or filtering low-importance nodes upfront.
 
-Now let's look at practical implementation!`
+[energetic] Now let's look at practical implementation!`
         },
         {
           id: 41,
