@@ -63,21 +63,21 @@ export const graphRetrievalDeck: Deck = {
           backgroundColor: '#291e5b',
           notes: `### 13 Graph-Based Retrieval Techniques
 
-Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
+[cheerfully] Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
 
 #### What Are Graph-Based Retrieval Techniques?
-Traditional search relies on finding individual documents that match your query. But what if you want to understand **relationships** between concepts? What if you need to trace **connections** between entities? That's where graph-based retrieval shines. Instead of treating documents as isolated islands, we organize information as a **network of interconnected nodes** where relationships matter just as much as the content itself.
+Traditional search relies on finding individual documents that match your query. But what if you want to understand **relationships** between concepts? [storytelling] What if you need to trace **connections** between entities? That's where graph-based retrieval shines. Instead of treating documents as isolated islands, we organize information as a **network of interconnected nodes** where relationships matter just as much as the content itself.
 
 #### Who Is This For?
 This deck is designed for **RAG engineers** building retrieval-augmented generation systems, **search engineers** improving information discovery, and **data scientists** working with knowledge graphs. Whether you're a complete beginner or have some experience, we'll break down thirteen powerful techniques in simple, practical terms.
 
 #### What You'll Learn
-By the end of this presentation, you'll have a comprehensive **cheat-sheet** covering thirteen distinct graph-based retrieval techniques. For each technique, we'll explore **when to use it**, **how it works**, **implementation steps**, and the **pros and cons** you need to consider. This isn't just theory; it's practical knowledge you can apply immediately.
+[confidently] By the end of this presentation, you'll have a comprehensive **cheat-sheet** covering thirteen distinct graph-based retrieval techniques. For each technique, we'll explore **when to use it**, **how it works**, **implementation steps**, and the **pros and cons** you need to consider. This isn't just theory; it's practical knowledge you can apply immediately.
 
 #### Our Approach
-We're keeping things **simple and visual**. No overwhelming complexity, no intimidating mathematical formulas. Just clear explanations, straightforward diagrams, and real-world guidance. Think of this as your friendly companion guide to navigating the world of graph-based retrieval.
+[warmly] We're keeping things **simple and visual**. No overwhelming complexity, no intimidating mathematical formulas. Just clear explanations, straightforward diagrams, and real-world guidance. Think of this as your friendly companion guide to navigating the world of graph-based retrieval.
 
-Let's get started with an overview of all thirteen techniques!`
+[energetic] Let's get started with an overview of all thirteen techniques!`
         },
         {
           id: 2,
@@ -182,15 +182,15 @@ Let's get started with an overview of all thirteen techniques!`
           backgroundColor: '#291e5b',
           notes: `### Overview: 13 Techniques at a Glance
 
-Let's take a bird's eye view of all thirteen techniques we'll be covering today. This roadmap will help you understand how these techniques relate to each other and when you might choose one over another.
+[lecture] Let's take a bird's eye view of all thirteen techniques we'll be covering today. This roadmap will help you understand how these techniques relate to each other and when you might choose one over another.
 
 #### The Four Categories
-The thirteen techniques naturally fall into **four categories** based on their complexity and use cases. Think of this as a progression from simple to sophisticated. First, we have **basic retrieval techniques** (techniques 1-3) that focus on finding and using individual nodes and their immediate connections. These are your starting point, the foundation upon which everything else builds.
+The thirteen techniques naturally fall into **four categories** based on their complexity and use cases. [conversational] Think of this as a progression from simple to sophisticated. First, we have **basic retrieval techniques** (techniques 1-3) that focus on finding and using individual nodes and their immediate connections. These are your starting point, the foundation upon which everything else builds.
 
 Next come **path and community techniques** (techniques 4-6) that explore relationships beyond immediate neighbors. These let you trace connections across multiple hops and identify clusters of related information. Then we have **hybrid methods** (techniques 7-8) that combine graph structures with other retrieval approaches like vector embeddings and keyword search. Finally, the **advanced techniques** (techniques 9-13) bring in sophisticated concepts like semantic traversal, ranking algorithms, and even LLM 👉 'el-el-em' guidance.
 
 #### Basic Building Blocks (Techniques 1-3)
-Let's start with the fundamentals. **Node-Level Retrieval** is the simplest approach: find the specific nodes (entities or concepts) that match your query. Think of it like finding specific pages in a book by their titles. **Edge-Weighted Retrieval** adds sophistication by considering how **strong** the relationships are between nodes. Some connections are more important than others, right? Finally, **Neighborhood Expansion** says "don't just give me the node, give me its immediate neighbors too." It's like saying "I want to know about Paris, but also show me information about France, the Eiffel Tower, and French cuisine."
+Let's start with the fundamentals. **Node-Level Retrieval** is the simplest approach: find the specific nodes (entities or concepts) that match your query. [storytelling] Think of it like finding specific pages in a book by their titles. **Edge-Weighted Retrieval** adds sophistication by considering how **strong** the relationships are between nodes. Some connections are more important than others, right? Finally, **Neighborhood Expansion** says "don't just give me the node, give me its immediate neighbors too." It's like saying "I want to know about Paris, but also show me information about France, the Eiffel Tower, and French cuisine."
 
 #### Path & Community Techniques (Techniques 4-6)
 Moving beyond single nodes, **Path-Based Retrieval** traces sequences of connections. Imagine asking "How is vitamin D connected to bone health?" The answer might involve a path through calcium absorption and mineral metabolism. **Community/Cluster Retrieval** identifies densely connected groups of related concepts, perfect when you want everything about a topic. **Hierarchical Graph Retrieval** organizes information in parent-child relationships, moving from broad topics to specific details.
@@ -199,7 +199,7 @@ Moving beyond single nodes, **Path-Based Retrieval** traces sequences of connect
 The remaining techniques combine graphs with other technologies or add sophisticated logic. The **hybrid methods** merge graph connectivity with vector similarity or keyword matching, giving you the best of multiple worlds. The **advanced techniques** include semantic traversal (following edges based on meaning), walk-based ranking (like Google's PageRank for your knowledge graph), query graph construction, path stitching for coherent context, and LLM-guided expansion where AI dynamically explores the graph.
 
 #### What's Next?
-We'll explore each technique in depth, covering exactly how it works, when to use it, implementation details, and the trade-offs involved. Ready to dive into technique number one?`
+[enthusiastically] We'll explore each technique in depth, covering exactly how it works, when to use it, implementation details, and the trade-offs involved. Ready to dive into technique number one?`
         }
       ]
     },
@@ -235,13 +235,13 @@ We'll explore each technique in depth, covering exactly how it works, when to us
           backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - Overview
 
-Welcome to our first technique: **Node-Level Retrieval**. This is the foundational building block of graph-based retrieval, and it's beautifully simple yet incredibly powerful when used in the right situations.
+Welcome to our first technique: **Node-Level Retrieval**. [reassuringly] This is the foundational building block of graph-based retrieval, and it's beautifully simple yet incredibly powerful when used in the right situations.
 
 #### What Is Node-Level Retrieval?
-Think of your knowledge graph as a massive library where every book has a precise location and label. Node-Level Retrieval is like walking directly to the shelf and picking the exact book you need based on its title or subject label. Each **node** in your graph represents a specific entity or concept, maybe "Python Programming" or "Marie Curie" or "Machine Learning." When someone asks a question, you find the node that best matches their query and return the information attached to that node.
+[storytelling] Think of your knowledge graph as a massive library where every book has a precise location and label. Node-Level Retrieval is like walking directly to the shelf and picking the exact book you need based on its title or subject label. Each **node** in your graph represents a specific entity or concept, maybe "Python Programming" or "Marie Curie" or "Machine Learning." When someone asks a question, you find the node that best matches their query and return the information attached to that node.
 
 #### The Goal: Precision and Speed
-The primary goal here is **high precision** with minimal noise. In traditional document retrieval, you might get dozens of partially relevant results that mention your topic. With node-level retrieval, you're going straight to the source. If someone asks "What is photosynthesis?" you return the node labeled "Photosynthesis" and its associated content. No ambiguity, no wading through tangentially related documents. This also dramatically **reduces hallucination** in AI systems because you're providing focused, authoritative information.
+[confidently] The primary goal here is **high precision** with minimal noise. In traditional document retrieval, you might get dozens of partially relevant results that mention your topic. With node-level retrieval, you're going straight to the source. If someone asks "What is photosynthesis?" you return the node labeled "Photosynthesis" and its associated content. No ambiguity, no wading through tangentially related documents. This also dramatically **reduces hallucination** in AI systems because you're providing focused, authoritative information.
 
 #### Benefits That Matter
 First, it's **simple** to implement and understand. You're essentially doing entity linking or label matching. Second, it's **fast** because you're looking up specific nodes rather than scoring thousands of documents. Third, it delivers **high precision** which is critical for applications where accuracy matters more than broad coverage.
@@ -296,7 +296,7 @@ Now let's see exactly how this technique works under the hood!`
           backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - How It Works
 
-Let's break down the mechanics of Node-Level Retrieval step by step. Understanding the process will help you implement this technique effectively and troubleshoot when things don't work as expected.
+[lecture] Let's break down the mechanics of Node-Level Retrieval step by step. Understanding the process will help you implement this technique effectively and troubleshoot when things don't work as expected.
 
 #### The Matching Process
 Here's the core workflow: when a query comes in, you need to **find the node that best represents what the user is asking about**. This involves several matching strategies working together. First, you check for **exact title matches**. If someone asks about "Python" and you have a node titled "Python Programming," that's a strong candidate. Second, you use **aliases and synonyms**. Maybe your Python node also has aliases like "Python language" or "Python development." Third, and most powerfully, you use **embedding similarity**. You've pre-computed embeddings for each node's title and description, so you can find semantically similar nodes even when the words don't match exactly.
@@ -308,7 +308,7 @@ The system calculates a **combined score** from exact matching and semantic simi
 To implement node-level retrieval, you need several pieces of infrastructure. Each node must have **metadata** including its title, any aliases or alternative names, and a description. You need the actual **text content** associated with each node, whether that's a definition, explanation, or related document chunks. You should have **pre-computed embeddings** for each node so you can perform fast similarity searches. Optionally, an **entity linker** or named entity recognition system can help identify entities in the query automatically.
 
 #### The Simple Pattern
-At its core, the pattern is straightforward: **Query → Match Node → Return Content**. Someone asks about concept A, you find the node representing A, you return A's information. This direct mapping is what makes the technique so fast and precise.
+[conversational] At its core, the pattern is straightforward: **Query → Match Node → Return Content**. Someone asks about concept A, you find the node representing A, you return A's information. This direct mapping is what makes the technique so fast and precise.
 
 Now let's look at the practical implementation steps!`
         },
@@ -342,7 +342,7 @@ Now let's look at the practical implementation steps!`
           backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - Implementation
 
-Let's get practical. How do you actually build and deploy a node-level retrieval system? We'll walk through the implementation steps and look at a real-world example.
+[confidently] Let's get practical. How do you actually build and deploy a node-level retrieval system? We'll walk through the implementation steps and look at a real-world example.
 
 #### Step 1: Index Your Nodes
 First, you need to prepare your node index. For each node in your graph, create an **embedding** of its title and description using your chosen embedding model, maybe something like OpenAI's text-embedding-3-small or an open-source model like BGE 👉 'bee-jee-ee'. Store these embeddings in a vector database or search index alongside the node metadata. Make sure to include any **aliases** or alternative names for the node. For example, your "Machine Learning" node might have aliases like "ML 👉 'em-el'," "Statistical Learning," and "Automated Learning."
@@ -354,7 +354,7 @@ When a query arrives, **embed the query** using the same embedding model you use
 Select the **top k nodes**, typically the top 1-5 depending on your application. For each selected node, retrieve its **attached content chunks**. These might be definitions, explanations, related paragraphs, or linked documents. Return this content to your downstream system, whether that's an LLM 👉 'el-el-em' generating an answer or a user interface displaying results.
 
 #### Real-World Example
-Imagine you're building a technical documentation assistant. A user types "What is GraphRAG 👉 'graf-rag'?" Your system embeds this query, searches the node index, and finds the node titled "GraphRAG" with a very high similarity score. This node has attached content explaining that GraphRAG is a retrieval-augmented generation technique that uses knowledge graphs. Your system returns this precise definition, and the LLM uses it to generate a helpful, accurate response. The user gets exactly what they needed, quickly and without irrelevant information.
+[storytelling] Imagine you're building a technical documentation assistant. A user types "What is GraphRAG 👉 'graf-rag'?" Your system embeds this query, searches the node index, and finds the node titled "GraphRAG" with a very high similarity score. This node has attached content explaining that GraphRAG is a retrieval-augmented generation technique that uses knowledge graphs. [pleased] Your system returns this precise definition, and the LLM uses it to generate a helpful, accurate response. The user gets exactly what they needed, quickly and without irrelevant information.
 
 #### Implementation Tips
 Use a **vector database** like Pinecone, Weaviate, or Chroma for efficient similarity search at scale. Implement **caching** for frequently accessed nodes to reduce latency. Consider a **fallback strategy**: if no node scores above a confidence threshold, fall back to traditional document search. **Monitor** which queries fail to match nodes well; this feedback helps you identify missing entities or poor alias coverage.
@@ -389,7 +389,7 @@ Now let's consider the trade-offs and limitations of this approach!`
           backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - Considerations
 
-Every technique has strengths and weaknesses. Let's be honest about what Node-Level Retrieval does well and where it struggles. This understanding helps you choose the right technique for each situation.
+[conversational] Every technique has strengths and weaknesses. Let's be honest about what Node-Level Retrieval does well and where it struggles. This understanding helps you choose the right technique for each situation.
 
 #### Benefits: Why This Works
 **High precision** is the standout benefit. When you need exact, authoritative information about a specific entity or concept, node-level retrieval delivers. There's no ambiguity, no mixing of multiple topics. You asked about Python, you got Python. This precision is particularly valuable for **reducing hallucination** in LLM 👉 'el-el-em' systems because you're providing focused, verified information rather than a mishmash of tangentially related content.
@@ -397,7 +397,7 @@ Every technique has strengths and weaknesses. Let's be honest about what Node-Le
 The technique is **simple to implement** compared to more complex graph traversal methods. You're essentially doing similarity search with some exact matching logic. Most developers can get a basic version working in a day or two. It's also **fast** at query time. You're looking up a small number of nodes rather than traversing large portions of the graph or scoring thousands of documents. This speed makes it suitable for real-time applications.
 
 #### Limitations: Where It Falls Short
-The biggest limitation is **missing context and relationships**. Node-level retrieval treats each node as isolated. If understanding the answer requires connecting multiple concepts or following a chain of reasoning, this technique won't help. For example, if someone asks "How does vitamin D affect bone health?" the answer might require linking vitamin D to calcium absorption to bone mineralization. A single node can't capture that relationship chain.
+[cautiously] The biggest limitation is **missing context and relationships**. Node-level retrieval treats each node as isolated. If understanding the answer requires connecting multiple concepts or following a chain of reasoning, this technique won't help. For example, if someone asks "How does vitamin D affect bone health?" the answer might require linking vitamin D to calcium absorption to bone mineralization. A single node can't capture that relationship chain.
 
 It's **brittle for complex queries**. When users ask long, multi-part questions or queries that require multi-hop reasoning, node-level retrieval often fails to provide complete answers. It works best for simple, entity-focused questions.
 
@@ -442,13 +442,13 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
           backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - Overview
 
-Welcome to our second technique: **Edge-Weighted Retrieval**. While node-level retrieval focuses on finding the right entities, edge-weighted retrieval adds a crucial dimension: understanding that **not all relationships are created equal**.
+Welcome to our second technique: **Edge-Weighted Retrieval**. [conversational] While node-level retrieval focuses on finding the right entities, edge-weighted retrieval adds a crucial dimension: understanding that **not all relationships are created equal**.
 
 #### What Is Edge-Weighted Retrieval?
-Imagine you're researching a scientific topic and you have a knowledge graph connecting papers, concepts, and authors. Some connections are strong—a paper cited 500 times versus one cited twice. Some relationships have high confidence—extracted with 95% certainty versus 60%. Edge-weighted retrieval uses these **relationship strengths** as signals for ranking and prioritization. It's like knowing not just who your friends are, but how close each friendship is.
+[storytelling] Imagine you're researching a scientific topic and you have a knowledge graph connecting papers, concepts, and authors. Some connections are strong—a paper cited 500 times versus one cited twice. Some relationships have high confidence—extracted with 95% certainty versus 60%. Edge-weighted retrieval uses these **relationship strengths** as signals for ranking and prioritization. It's like knowing not just who your friends are, but how close each friendship is.
 
 #### The Core Concept: Relationship Strength Matters
-In many real-world graphs, edges carry **metadata** that indicates importance, trust, frequency, or confidence. Citation counts, co-occurrence frequencies, manual annotations, confidence scores from extraction systems, temporal recency, user ratings—all of these can become edge weights. Edge-weighted retrieval leverages this metadata to make smarter decisions about which nodes to retrieve and in what order.
+In many real-world graphs, edges carry **metadata** that indicates importance, trust, frequency, or confidence. Citation counts, co-occurrence frequencies, manual annotations, confidence scores from extraction systems, temporal recency, user ratings—all of these can become edge weights. [confidently] Edge-weighted retrieval leverages this metadata to make smarter decisions about which nodes to retrieve and in what order.
 
 #### Goals: Trust and Interpretability
 The primary goal is **trust-aware ranking**. Instead of treating all connected nodes equally, you prioritize based on evidence of relationship strength. This is particularly valuable when dealing with noisy or uncertain data. If your knowledge graph was automatically extracted, some edges might be confident while others are speculative guesses. Edge weights let you favor the confident connections.
@@ -459,7 +459,7 @@ Another key benefit is **interpretability**. When your system returns results ra
 Edge-weighted retrieval shines in several scenarios. **Citation networks** where paper importance can be measured by citation counts or impact factors. **Knowledge graphs** built from extraction pipelines that provide confidence scores for each extracted relationship. **Social networks** where connection strength varies (close friends versus distant acquaintances). **Temporal graphs** where relationship recency matters. **Heterogeneous graphs** with multiple edge types where different relationships have different importance levels.
 
 #### Use Cases That Benefit
-Think about a **literature review assistant**. You want papers that are not just relevant but **highly cited and influential**. Edge weights representing citation counts help surface the seminal works. Or consider a **product recommendation system** where edges represent "frequently bought together." Higher co-purchase frequencies should rank products higher. In a **compliance knowledge graph**, regulatory requirements connected with high-confidence edges should be prioritized over uncertain interpretations.
+[pleased] Think about a **literature review assistant**. You want papers that are not just relevant but **highly cited and influential**. Edge weights representing citation counts help surface the seminal works. Or consider a **product recommendation system** where edges represent "frequently bought together." Higher co-purchase frequencies should rank products higher. In a **compliance knowledge graph**, regulatory requirements connected with high-confidence edges should be prioritized over uncertain interpretations.
 
 Now let's see exactly how this technique works in practice!`
         },
@@ -520,7 +520,7 @@ Node A -(weight 0.3)→ Node C
           backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - How It Works
 
-Let's break down the mechanics of edge-weighted retrieval. Understanding each step will help you implement this technique effectively and troubleshoot edge cases.
+[lecture] Let's break down the mechanics of edge-weighted retrieval. Understanding each step will help you implement this technique effectively and troubleshoot edge cases.
 
 #### The Weighted Ranking Process
 The workflow starts similarly to node-level retrieval but adds sophistication through edge metadata. First, you **identify seed nodes** from the query using embedding similarity or exact matching. Let's say the query is "Machine Learning applications in healthcare." You find the seed node "Machine Learning."
@@ -529,7 +529,7 @@ Next comes the key difference: instead of treating all neighbors equally, you **
 
 
 #### Scoring and Ranking
-Now you **compute a combined score** for each neighbor. This typically involves multiplying the edge weight by a relevance score. The relevance score might come from embedding similarity between the neighbor's content and the query. So if "Neural Networks" has edge weight 0.9 and query relevance 0.8, its combined score is 0.72. You **rank all neighbors** by this combined score and select the top k.
+Now you **compute a combined score** for each neighbor. This typically involves multiplying the edge weight by a relevance score. The relevance score might come from embedding similarity between the neighbor's content and the query. [conversational] So if "Neural Networks" has edge weight 0.9 and query relevance 0.8, its combined score is 0.72. You **rank all neighbors** by this combined score and select the top k.
 
 #### Multi-Hop Considerations
 If you're traversing multiple hops, apply **decay factors**. A 2-hop neighbor shouldn't score as highly as a 1-hop neighbor with the same edge weight. Common approaches include multiplying weights along the path (0.9 × 0.8 = 0.72 for a two-edge path) or using exponential decay based on distance.
@@ -575,7 +575,7 @@ Let's look at practical implementation steps!`
           backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - Implementation
 
-Now let's get hands-on with implementing edge-weighted retrieval. We'll walk through each step with practical guidance and examples.
+[confidently] Now let's get hands-on with implementing edge-weighted retrieval. We'll walk through each step with practical guidance and examples.
 
 #### Step 1: Seed Node Identification
 Start by finding your seed nodes just like in node-level retrieval. **Embed the query** using your chosen model. **Search your node index** using cosine similarity or exact matching on titles and aliases. For the query "machine learning techniques," you might identify the seed node "Machine Learning" with high confidence. Store these seed node IDs for the next step.
@@ -592,9 +592,9 @@ Before ranking, **normalize edge weights** if they're on different scales. If so
 **Sort all neighbors** by their combined score in descending order. Select the **top k results**, typically k=3 to 10 depending on your application. For each selected node, **retrieve its attached content**—definitions, paragraphs, document chunks—and return this to your downstream system. Include the edge weights and scores in your response for transparency and debugging.
 
 #### Real-World Example: Academic Research Assistant
-Imagine building a literature review tool. A researcher asks "What are the key papers on transformer architectures?" Your system identifies "Transformer Models" as the seed node. It retrieves connected papers with edge weights representing citation counts: "Attention Is All You Need" (weight=15,000), "BERT 👉 'bert'" (weight=12,500), "GPT 👉 'jee-pee-tee' Architecture" (weight=8,000), and several others with lower counts.
+[storytelling] Imagine building a literature review tool. A researcher asks "What are the key papers on transformer architectures?" Your system identifies "Transformer Models" as the seed node. It retrieves connected papers with edge weights representing citation counts: "Attention Is All You Need" (weight=15,000), "BERT 👉 'bert'" (weight=12,500), "GPT 👉 'jee-pee-tee' Architecture" (weight=8,000), and several others with lower counts.
 
-You normalize these citation counts to a 0-1 scale. You compute query relevance by comparing each paper's abstract embedding to the query. "Attention Is All You Need" scores 0.95 on relevance, giving it a combined score of 0.95 × 1.0 = 0.95. Papers are ranked by combined score, and the top 5 are returned. The researcher gets the most influential, relevant papers first—exactly what they need.
+You normalize these citation counts to a 0-1 scale. You compute query relevance by comparing each paper's abstract embedding to the query. [pleased] "Attention Is All You Need" scores 0.95 on relevance, giving it a combined score of 0.95 × 1.0 = 0.95. Papers are ranked by combined score, and the top 5 are returned. The researcher gets the most influential, relevant papers first—exactly what they need.
 
 #### Implementation Tips
 Use **database indexes** on edge weight fields for faster retrieval. **Cache** normalized weights if your graph structure is stable. Implement **A/B testing** to tune your combination formula and decay factors. **Log** edge weights and scores for each query to identify patterns where the ranking fails. Consider **different combination strategies**: multiplicative (weight × relevance), additive (α×weight + β×relevance), or learned weights if you have ground truth ranking data.
@@ -631,19 +631,19 @@ Now let's examine the benefits and limitations of this approach!`
           backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - Considerations
 
-Every retrieval technique involves trade-offs. Let's discuss what edge-weighted retrieval does exceptionally well and where you need to be cautious.
+[conversational] Every retrieval technique involves trade-offs. Let's discuss what edge-weighted retrieval does exceptionally well and where you need to be cautious.
 
 #### Benefits: The Power of Weighted Relationships
 **Nuanced ranking** is the headline benefit. Unlike simple node retrieval or unweighted traversal, edge-weighted retrieval understands that relationships have different strengths. This leads to **more accurate results** in domains where relationship quality varies significantly. In citation networks, highly-cited papers are prioritized. In knowledge graphs, high-confidence extractions outrank uncertain ones. In social networks, strong ties matter more than weak ones.
 
-**Trust-aware retrieval** becomes possible. When your graph contains uncertain or noisy edges—common in automatically constructed knowledge graphs—edge weights let you favor reliable information. A medical knowledge graph might have edges extracted from peer-reviewed journals (high weight) and unverified online sources (low weight). Edge weighting ensures you surface trusted information first.
+**Trust-aware retrieval** becomes possible. When your graph contains uncertain or noisy edges—common in automatically constructed knowledge graphs—edge weights let you favor reliable information. [reassuringly] A medical knowledge graph might have edges extracted from peer-reviewed journals (high weight) and unverified online sources (low weight). Edge weighting ensures you surface trusted information first.
 
 **Interpretability** is another major win. When you return results, you can **explain the ranking**: "This node ranked first because its edge weight is 0.95, indicating high confidence" or "This paper has 5,000 citations, placing it in the top 1%." This transparency builds user trust and helps with debugging. You can identify when weights aren't aligned with user expectations and adjust your weighting scheme.
 
-The technique also **handles noise better** than unweighted approaches. In large, automatically constructed graphs, many edges might be spurious or low-quality. Edge weights let you focus on the signal and ignore the noise. This is critical for maintaining precision at scale.
+[pleased] The technique also **handles noise better** than unweighted approaches. In large, automatically constructed graphs, many edges might be spurious or low-quality. Edge weights let you focus on the signal and ignore the noise. This is critical for maintaining precision at scale.
 
 #### Limitations: What to Watch For
-The most significant challenge is **dependency on edge metadata quality**. Edge-weighted retrieval is only as good as your weights. If your weights are poorly calibrated, random, or systematically biased, your results will be too. This means you need **robust edge weight computation** or curation, which adds cost and complexity. For citation networks, citation counts are readily available. But for knowledge graphs, computing good confidence scores requires sophisticated extraction and validation systems.
+[cautiously] The most significant challenge is **dependency on edge metadata quality**. Edge-weighted retrieval is only as good as your weights. If your weights are poorly calibrated, random, or systematically biased, your results will be too. This means you need **robust edge weight computation** or curation, which adds cost and complexity. For citation networks, citation counts are readily available. But for knowledge graphs, computing good confidence scores requires sophisticated extraction and validation systems.
 
 **Popularity bias** is a real concern, sometimes called the "rich-get-richer" problem. High-weight edges often correlate with popularity. In citation networks, famous papers get more citations, which gives them higher weights, which makes them more discoverable, which leads to more citations. This creates a **feedback loop** that can overshadow newer or niche but highly relevant work. You need strategies to counteract this: temporal decay (older papers weighted down), diversity boosting (ensure variety in results), or separate tracks for emerging work.
 
