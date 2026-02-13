@@ -1306,20 +1306,20 @@ Let's look at additional important details.`
           backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Scaling Model
 #### Understanding Elasticsearch Scaling
-Elasticsearch has one of the most mature scaling architectures in the database world, refined over more than a decade of production use.
+[lecture] Elasticsearch has one of the most mature scaling architectures in the database world, refined over more than a decade of production use.
 #### Horizontal Scaling via Sharding
-Elasticsearch scales horizontally via native sharding and replication capabilities. Sharding splits your data across multiple nodes automatically. When you create an index, you specify the number of shards, and Elasticsearch distributes your vectors across them. Need more capacity? Add more nodes, and Elasticsearch rebalances automatically.
+[lecture] Elasticsearch scales horizontally via native sharding and replication capabilities. Sharding splits your data across multiple nodes automatically. [conversational] When you create an index, you specify the number of shards, and Elasticsearch distributes your vectors across them. [pleased] Need more capacity? Add more nodes, and Elasticsearch rebalances automatically.
 #### Replication for Availability
-Replication creates copies of each shard for high availability and read scaling. If a node fails, replica shards on other nodes serve requests seamlessly. Replicas also handle read queries, multiplying your total query throughput without affecting write performance.
+[lecture] Replication creates copies of each shard for high availability and read scaling. [confidently] If a node fails, replica shards on other nodes serve requests seamlessly. [pleased] Replicas also handle read queries, multiplying your total query throughput without affecting write performance.
 #### Elastic Cloud Auto-Scaling
-Elastic Cloud provides managed auto-scaling options that adjust cluster size based on load. During peak times, it automatically adds nodes. During quiet periods, it scales down to save costs. This elasticity - the name Elasticsearch makes sense now - is perfect for variable workloads.
+[pleased] Elastic Cloud provides managed auto-scaling options that adjust cluster size based on load. [conversational] During peak times, it automatically adds nodes. During quiet periods, it scales down to save costs. [pleased] This elasticity - the name Elasticsearch makes sense now - is perfect for variable workloads.
 #### Distributed Workload Management
-Vector search workloads distribute across multiple nodes for balanced resource utilization. Each node handles queries for its shards, allowing parallel processing. The coordinator node aggregates results from all shards and returns the final answer. This distributed architecture enables handling massive datasets and query volumes.
+[lecture] Vector search workloads distribute across multiple nodes for balanced resource utilization. Each node handles queries for its shards, allowing parallel processing. [conversational] The coordinator node aggregates results from all shards and returns the final answer. [confidently] This distributed architecture enables handling massive datasets and query volumes.
 #### High Availability Built-In
-Elasticsearch's architecture provides high availability built-in. Cluster state management ensures all nodes agree on configuration. Master nodes coordinate cluster operations. Data nodes handle indexing and queries. This separation of concerns creates a resilient system.
+[pleased] Elasticsearch's architecture provides high availability built-in. [lecture] Cluster state management ensures all nodes agree on configuration. Master nodes coordinate cluster operations. Data nodes handle indexing and queries. [confidently] This separation of concerns creates a resilient system.
 #### Mature Operational Tooling
-The operational tooling around Elasticsearch is mature and comprehensive - Kibana for visualization and management, monitoring APIs, snapshot and restore for backups, and countless third-party integrations.
-Let's explore Elasticsearch's performance characteristics.`
+[pleased] The operational tooling around Elasticsearch is mature and comprehensive - Kibana for visualization and management, monitoring APIs, snapshot and restore for backups, and countless third-party integrations.
+[conversational] Let's explore Elasticsearch's performance characteristics.`
         },
         {
           id: 41,
@@ -1337,20 +1337,20 @@ Let's explore Elasticsearch's performance characteristics.`
           backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Performance Profile
 #### Understanding Elasticsearch Performance
-Let's discuss where Elasticsearch Vector truly excels - hybrid search that combines traditional text relevance with modern vector similarity.
+[conversational] Let's discuss where Elasticsearch Vector truly excels - hybrid search that combines traditional text relevance with modern vector similarity.
 #### Hybrid Search Excellence
-Elasticsearch excels in hybrid search combining traditional BM25 👉 'B-M-twenty-five' text relevance with vector similarity. BM25 is a proven text ranking algorithm that scores documents based on keyword matches. Vector search scores based on semantic meaning. Combining both gives you the best of both worlds - exact keyword matches when needed, semantic understanding when beneficial.
+[enthusiastically] Elasticsearch excels in hybrid search combining traditional BM25 👉 'B-M-twenty-five' text relevance with vector similarity. [lecture] BM25 is a proven text ranking algorithm that scores documents based on keyword matches. Vector search scores based on semantic meaning. [pleased] Combining both gives you the best of both worlds - exact keyword matches when needed, semantic understanding when beneficial.
 #### Why Hybrid Search Matters
-Real-world search often needs both. Imagine searching for "iPhone 15 Pro" - you want exact matches on the product name (text search) plus semantically similar items (vector search). Or searching documentation where both keyword matches and conceptually similar content matter. Elasticsearch makes these hybrid queries natural and performant.
+[lecture] Real-world search often needs both. [storytelling] Imagine searching for "iPhone 15 Pro" - you want exact matches on the product name (text search) plus semantically similar items (vector search). Or searching documentation where both keyword matches and conceptually similar content matter. [pleased] Elasticsearch makes these hybrid queries natural and performant.
 #### ACORN-1 Performance Boost
-The new ACORN-1 algorithm delivers 5x faster filtered vector search performance. In benchmarks, queries that combine metadata filtering with vector search run dramatically faster. This is huge because most real-world queries include filters - date ranges, categories, user permissions, etc.
+[enthusiastically] The new ACORN-1 algorithm delivers 5x faster filtered vector search performance. [excited] In benchmarks, queries that combine metadata filtering with vector search run dramatically faster. This is huge because most real-world queries include filters - date ranges, categories, user permissions, etc.
 #### Ongoing Improvements
-Elasticsearch continuously improves vector search capabilities. Recent versions focus on memory efficiency and query optimization for large-scale deployments. The team learns from production usage patterns and optimizes accordingly.
+[pleased] Elasticsearch continuously improves vector search capabilities. [lecture] Recent versions focus on memory efficiency and query optimization for large-scale deployments. [conversational] The team learns from production usage patterns and optimizes accordingly.
 #### Balanced Performance Profile
-Elasticsearch offers balanced performance - not the absolute fastest for pure vector search, but excellent for hybrid workloads. If you need both text and vector search, Elasticsearch's integrated approach often outperforms separate systems for each.
+[lecture] Elasticsearch offers balanced performance - not the absolute fastest for pure vector search, but excellent for hybrid workloads. [pleased] If you need both text and vector search, Elasticsearch's integrated approach often outperforms separate systems for each.
 #### Scale and Reliability
-Performance remains consistent at scale thanks to mature distributed architecture. You can confidently deploy Elasticsearch for high-traffic applications knowing it has powered search for companies like Netflix, Uber, and LinkedIn.
-Let's discuss costs.`
+[confidently] Performance remains consistent at scale thanks to mature distributed architecture. You can confidently deploy Elasticsearch for high-traffic applications knowing it has powered search for companies like Netflix, Uber, and LinkedIn.
+[conversational] Let's discuss costs.`
         },
         {
           id: 42,
@@ -1368,20 +1368,20 @@ Let's discuss costs.`
           backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Cost Consideration
 #### Understanding Elasticsearch Economics
-Let's talk about costs with Elasticsearch - there are both infrastructure and licensing considerations to understand.
+[conversational] Let's talk about costs with Elasticsearch - there are both infrastructure and licensing considerations to understand.
 #### Cost Scales with Cluster Size
-Elasticsearch costs scale with cluster size and shard configuration. More nodes mean higher infrastructure costs. More shards improve parallelism but increase overhead. Finding the right balance requires understanding your workload and tuning accordingly.
+[lecture] Elasticsearch costs scale with cluster size and shard configuration. More nodes mean higher infrastructure costs. More shards improve parallelism but increase overhead. [conversational] Finding the right balance requires understanding your workload and tuning accordingly.
 #### Significant Advantages for Existing Users
-Here's the key insight: significant economic advantages exist for organizations already running Elasticsearch deployments. If you're using Elasticsearch for log analysis, application search, or observability, adding vector search capabilities leverages existing infrastructure and expertise. No separate database to deploy, manage, and pay for.
+[excited] Here's the key insight: significant economic advantages exist for organizations already running Elasticsearch deployments. [pleased] If you're using Elasticsearch for log analysis, application search, or observability, adding vector search capabilities leverages existing infrastructure and expertise. No separate database to deploy, manage, and pay for.
 #### Binary Quantization Saves Money
-Binary vector quantization reduces storage costs while maintaining search quality. Instead of storing full precision floats, you store binary representations - dramatically smaller. This means less disk space, less memory, lower costs. For many applications, the quality trade-off is minimal while savings are substantial.
+[pleased] Binary vector quantization reduces storage costs while maintaining search quality. [lecture] Instead of storing full precision floats, you store binary representations - dramatically smaller. [excited] This means less disk space, less memory, lower costs. For many applications, the quality trade-off is minimal while savings are substantial.
 #### Elastic Cloud Pricing
-Elastic Cloud offers various pricing tiers based on deployment size, features, and support level. You can start small and scale up as needed. Pricing is transparent and predictable based on resources consumed.
+[conversational] Elastic Cloud offers various pricing tiers based on deployment size, features, and support level. [pleased] You can start small and scale up as needed. Pricing is transparent and predictable based on resources consumed.
 #### Open Source Option
-Elasticsearch has open source versions you can self-host, though some features including advanced vector search capabilities may be limited to paid tiers. Check licensing carefully to ensure you have the features you need.
+[conversational] Elasticsearch has open source versions you can self-host, though [cautiously] some features including advanced vector search capabilities may be limited to paid tiers. Check licensing carefully to ensure you have the features you need.
 #### Total Cost of Ownership
-Consider total cost of ownership - if you need both text and vector search, running one Elasticsearch cluster costs less than running separate systems for each. Operational simplicity reduces engineering costs even if infrastructure costs are similar.
-Let's identify ideal use cases.`
+[pleased] Consider total cost of ownership - if you need both text and vector search, running one Elasticsearch cluster costs less than running separate systems for each. [conversational] Operational simplicity reduces engineering costs even if infrastructure costs are similar.
+[conversational] Let's identify ideal use cases.`
         },
         {
           id: 43,
@@ -1399,20 +1399,20 @@ Let's identify ideal use cases.`
           backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Best Use Case
 #### When to Choose Elasticsearch Vector
-After exploring Elasticsearch capabilities, let's identify when it's your best choice for vector search.
+[conversational] After exploring Elasticsearch capabilities, let's identify when it's your best choice for vector search.
 #### Unified Keyword Plus Semantic Search
-Elasticsearch is ideal for unified keyword plus semantic search applications where both traditional text matching and semantic relevance are needed. Think of e-commerce where users search with specific product names but you want to show similar items. Or documentation search where exact phrase matches and conceptually related content both matter.
+[lecture] Elasticsearch is ideal for unified keyword plus semantic search applications where both traditional text matching and semantic relevance are needed. [storytelling] Think of e-commerce where users search with specific product names but you want to show similar items. Or documentation search where exact phrase matches and conceptually related content both matter.
 #### Enterprise Search Applications
-For enterprise search - searching across company wikis, documentation, emails, and files - Elasticsearch excels. These applications need sophisticated text analysis, multiple languages, complex permissions, and now semantic understanding. Elasticsearch provides all of this in one platform.
+[pleased] For enterprise search - searching across company wikis, documentation, emails, and files - Elasticsearch excels. [lecture] These applications need sophisticated text analysis, multiple languages, complex permissions, and now semantic understanding. [confidently] Elasticsearch provides all of this in one platform.
 #### Logs and Observability with Semantic Enrichment
-Logs and observability platforms benefit from semantic enrichment. Traditional log search uses exact text matching. Adding vector search enables finding similar error patterns, related incidents, or semantically equivalent log messages even when exact words differ. This helps troubleshooting and root cause analysis.
+[excited] Logs and observability platforms benefit from semantic enrichment. [lecture] Traditional log search uses exact text matching. Adding vector search enables finding similar error patterns, related incidents, or semantically equivalent log messages even when exact words differ. [pleased] This helps troubleshooting and root cause analysis.
 #### Content Discovery Systems
-Content discovery systems requiring complex filtering are perfect for Elasticsearch. Filter by date, author, tags, categories, then find similar content using vectors. The ACORN-1 optimization makes these filtered vector queries fast.
+[pleased] Content discovery systems requiring complex filtering are perfect for Elasticsearch. [conversational] Filter by date, author, tags, categories, then find similar content using vectors. [confidently] The ACORN-1 optimization makes these filtered vector queries fast.
 #### Existing Elasticsearch Users
-Teams already using Elasticsearch for other purposes should seriously consider it for vector search. You already have expertise, infrastructure, and operational processes. Adding vector search is evolutionary, not revolutionary.
+[enthusiastically] Teams already using Elasticsearch for other purposes should seriously consider it for vector search. [pleased] You already have expertise, infrastructure, and operational processes. Adding vector search is evolutionary, not revolutionary.
 #### Unified Search Strategy
-Organizations wanting a unified search strategy across text and vector domains benefit from Elasticsearch's integrated approach. One system, one API, one set of tools, one operational model.
-Let's look at additional considerations.`
+[pleased] Organizations wanting a unified search strategy across text and vector domains benefit from Elasticsearch's integrated approach. [conversational] One system, one API, one set of tools, one operational model.
+[conversational] Let's look at additional considerations.`
         },
         {
           id: 44,
@@ -1433,18 +1433,18 @@ Let's look at additional considerations.`
           backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Notes
 #### Important Details and Best Practices
-Before moving to the next database, let's cover key details for working effectively with Elasticsearch Vector.
+[conversational] Before moving to the next database, let's cover key details for working effectively with Elasticsearch Vector.
 #### Ecosystem Maturity Benefits
-Elasticsearch benefits from ecosystem maturity and extensive tooling. Kibana provides visualization and management interfaces. Beats collect and ship data. Logstash processes and transforms data. APM provides application performance monitoring. This ecosystem means you're never starting from scratch - countless integrations and tools already exist.
+[pleased] Elasticsearch benefits from ecosystem maturity and extensive tooling. [lecture] Kibana provides visualization and management interfaces. Beats collect and ship data. Logstash processes and transforms data. APM provides application performance monitoring. [confidently] This ecosystem means you're never starting from scratch - countless integrations and tools already exist.
 #### Recent Features Improve Performance
-Recent features significantly improve filtered vector latency. If you tried Elasticsearch vector search a year ago and found filtered queries slow, try again. The ACORN-1 improvements and other optimizations have transformed performance characteristics for common query patterns.
+[excited] Recent features significantly improve filtered vector latency. [conversational] If you tried Elasticsearch vector search a year ago and found filtered queries slow, try again. [pleased] The ACORN-1 improvements and other optimizations have transformed performance characteristics for common query patterns.
 #### Default BBQ Compression
-Default BBQ 👉 'B-B-Q' compression provides optimal balance for most use cases. Elasticsearch's defaults are well-tuned based on production usage across thousands of deployments. You can customize if needed, but starting with defaults is recommended.
+[pleased] Default BBQ 👉 'B-B-Q' compression provides optimal balance for most use cases. [conversational] Elasticsearch's defaults are well-tuned based on production usage across thousands of deployments. You can customize if needed, but starting with defaults is recommended.
 #### Reduced Memory Requirements
-The compression techniques reduce memory requirements for large corpora - collections of documents. This makes Elasticsearch vector search more economical at scale than earlier versions. You can store more vectors with less infrastructure.
+[pleased] The compression techniques reduce memory requirements for large corpora - collections of documents. [conversational] This makes Elasticsearch vector search more economical at scale than earlier versions. You can store more vectors with less infrastructure.
 #### Integration with Existing Pipelines
-If you have existing Elasticsearch pipelines for ingesting and processing data, adding vector embeddings slots right in. Use the same index templates, ingest pipelines, and mapping configurations. This integration simplicity accelerates time to production.
-Now let's explore our eighth database - Vespa!`
+[pleased] If you have existing Elasticsearch pipelines for ingesting and processing data, adding vector embeddings slots right in. [conversational] Use the same index templates, ingest pipelines, and mapping configurations. [confidently] This integration simplicity accelerates time to production.
+[cheerfully] Now let's explore our eighth database - Vespa!`
         }
       ]
     },
@@ -1468,18 +1468,18 @@ Now let's explore our eighth database - Vespa!`
           backgroundColor: '#552200',
           notes: `### Vespa - Index Type
 #### Introduction to Vespa
-Welcome to Vespa! This is a sophisticated platform that takes vector search to another level with advanced capabilities. Vespa was originally developed by Yahoo for their massive-scale search and recommendation needs, then open-sourced for everyone to use.
+[cheerfully] Welcome to Vespa! [enthusiastically] This is a sophisticated platform that takes vector search to another level with advanced capabilities. [conversational] Vespa was originally developed by Yahoo for their massive-scale search and recommendation needs, then open-sourced for everyone to use.
 #### HNSW with Tensor Operations
-Vespa uses HNSW for vector indexing, but it extends this with tensor operations for advanced vector search. Tensors are multi-dimensional arrays - think of them as generalized vectors. While other databases work with simple vectors, Vespa's tensor framework allows complex operations like transformations, computations, and combinations during queries.
+[lecture] Vespa uses HNSW for vector indexing, but it extends this with tensor operations for advanced vector search. [conversational] Tensors are multi-dimensional arrays - think of them as generalized vectors. [pleased] While other databases work with simple vectors, Vespa's tensor framework allows complex operations like transformations, computations, and combinations during queries.
 #### Unified Engine
-What makes Vespa unique is that it supports vectors, text, and structured data in a single unified engine. You're not bolting vector search onto a text search system or vice versa - everything is designed together from the ground up. This integration enables sophisticated queries that combine all data types naturally.
+[excited] What makes Vespa unique is that it supports vectors, text, and structured data in a single unified engine. [conversational] You're not bolting vector search onto a text search system or vice versa - everything is designed together from the ground up. [pleased] This integration enables sophisticated queries that combine all data types naturally.
 #### Tensor Compute Framework
-The tensor compute framework allows complex operations beyond simple vector search. You can apply functions to tensors during queries, combine multiple tensor fields, perform mathematical operations, and even run machine learning model inference as part of query processing. This flexibility enables advanced use cases impossible with simpler vector databases.
+[enthusiastically] The tensor compute framework allows complex operations beyond simple vector search. [lecture] You can apply functions to tensors during queries, combine multiple tensor fields, perform mathematical operations, and even run machine learning model inference as part of query processing. [pleased] This flexibility enables advanced use cases impossible with simpler vector databases.
 #### Beyond Simple Similarity
-With Vespa, you're not limited to "find similar vectors." You can implement custom ranking functions that combine vector similarity with business logic, apply learned models during retrieval, and perform complex relevance calculations. This power comes with complexity, but for advanced applications, it's invaluable.
+[conversational] With Vespa, you're not limited to "find similar vectors." [lecture] You can implement custom ranking functions that combine vector similarity with business logic, apply learned models during retrieval, and perform complex relevance calculations. [cautiously] This power comes with complexity, but for advanced applications, it's invaluable.
 #### Built for Sophistication
-Think of Vespa as the database for teams building sophisticated search and recommendation systems that go beyond basic similarity search. It's a platform, not just a database.
-Let's discuss Vespa's scaling model.`
+[conversational] Think of Vespa as the database for teams building sophisticated search and recommendation systems that go beyond basic similarity search. It's a platform, not just a database.
+[conversational] Let's discuss Vespa's scaling model.`
         },
         {
           id: 46,
@@ -1497,20 +1497,20 @@ Let's discuss Vespa's scaling model.`
           backgroundColor: '#552200',
           notes: `### Vespa - Scaling Model
 #### Understanding Vespa Scaling
-Vespa's scaling architecture is built from the ground up for massive scale - we're talking about a system that powered Yahoo's global search infrastructure.
+[lecture] Vespa's scaling architecture is built from the ground up for massive scale - we're talking about a system that powered Yahoo's global search infrastructure.
 #### Distributed Elastic Architecture
-Vespa has a distributed elastic architecture with horizontal scaling capabilities. You can add nodes to the cluster and Vespa automatically redistributes data and queries across them. The architecture separates different concerns - container nodes handle queries, content nodes store data, and admin nodes manage the cluster.
+[conversational] Vespa has a distributed elastic architecture with horizontal scaling capabilities. [lecture] You can add nodes to the cluster and Vespa automatically redistributes data and queries across them. The architecture separates different concerns - container nodes handle queries, content nodes store data, and admin nodes manage the cluster.
 #### Real-Time Indexing and Serving
-Vespa supports real-time indexing and online serving simultaneously. You can continuously add and update documents while serving queries without degradation. This is crucial for applications where data changes frequently - news feeds, product catalogs, user profiles - and you need changes visible immediately.
+[pleased] Vespa supports real-time indexing and online serving simultaneously. [conversational] You can continuously add and update documents while serving queries without degradation. This is crucial for applications where data changes frequently - news feeds, product catalogs, user profiles - and you need changes visible immediately.
 #### Auto-Scaling Patterns
-Vespa supports auto-scaling patterns where the cluster adjusts to load automatically. During traffic spikes, add serving capacity. When load decreases, scale down. This elasticity helps manage costs while maintaining performance.
+[lecture] Vespa supports auto-scaling patterns where the cluster adjusts to load automatically. [conversational] During traffic spikes, add serving capacity. When load decreases, scale down. [pleased] This elasticity helps manage costs while maintaining performance.
 #### Multiple Content Clusters
-You can deploy multiple content clusters for different workloads with independent scaling. Maybe you have one cluster for user-facing search optimized for low latency, and another for batch analytics optimized for throughput. Each scales independently based on its requirements.
+[conversational] You can deploy multiple content clusters for different workloads with independent scaling. Maybe you have one cluster for user-facing search optimized for low latency, and another for batch analytics optimized for throughput. Each scales independently based on its requirements.
 #### Separation of Concerns
-The architecture's separation of stateless serving containers from stateful content nodes enables flexible scaling. Need more query capacity? Add container nodes. Need more storage? Add content nodes. Scale each dimension independently.
+[lecture] The architecture's separation of stateless serving containers from stateful content nodes enables flexible scaling. [conversational] Need more query capacity? Add container nodes. Need more storage? Add content nodes. Scale each dimension independently.
 #### Enterprise-Grade Operations
-Vespa provides enterprise-grade operational capabilities including live configuration updates, rolling upgrades without downtime, and sophisticated monitoring and alerting.
-Let's explore Vespa's performance profile.`
+[confidently] Vespa provides enterprise-grade operational capabilities including live configuration updates, rolling upgrades without downtime, and sophisticated monitoring and alerting.
+[cheerfully] Let's explore Vespa's performance profile.`
         },
         {
           id: 47,
@@ -1528,20 +1528,20 @@ Let's explore Vespa's performance profile.`
           backgroundColor: '#552200',
           notes: `### Vespa - Performance Profile
 #### Understanding Vespa Performance
-Let's discuss Vespa's performance characteristics - this is where its sophisticated architecture truly shines.
+[conversational] Let's discuss Vespa's performance characteristics - this is where its sophisticated architecture truly shines.
 #### High-Throughput, Low-Latency at Scale
-Vespa is engineered for high-throughput, low-latency at billion-scale operations. We're talking about serving millions of queries per second across billions of documents while maintaining millisecond response times. This is the scale Yahoo needed for search and recommendation, and Vespa delivers it.
+[excited] Vespa is engineered for high-throughput, low-latency at billion-scale operations. [enthusiastically] We're talking about serving millions of queries per second across billions of documents while maintaining millisecond response times. This is the scale Yahoo needed for search and recommendation, and Vespa delivers it.
 #### On-the-Fly Ranking and Inference
-Vespa supports on-the-fly ranking and inference during query execution. This means you can run machine learning models as part of query processing to compute relevance scores, personalize results, or make predictions in real-time. Most databases retrieve data then let your application code rank results. Vespa does ranking during retrieval for better performance and richer capabilities.
+[pleased] Vespa supports on-the-fly ranking and inference during query execution. [lecture] This means you can run machine learning models as part of query processing to compute relevance scores, personalize results, or make predictions in real-time. [conversational] Most databases retrieve data then let your application code rank results. Vespa does ranking during retrieval for better performance and richer capabilities.
 #### Complex Ranking Logic
-The ability to implement complex ranking logic within the database is powerful. You can combine vector similarity with business rules, user preferences, item popularity, temporal factors, and learned models - all evaluated efficiently during query execution. This eliminates the need to retrieve large result sets and rank them in application code.
+[enthusiastically] The ability to implement complex ranking logic within the database is powerful. [lecture] You can combine vector similarity with business rules, user preferences, item popularity, temporal factors, and learned models - all evaluated efficiently during query execution. This eliminates the need to retrieve large result sets and rank them in application code.
 #### Predictable Performance Characteristics
-Vespa scales to handle large-scale data with predictable performance characteristics. Performance remains consistent as data grows because the architecture distributes work efficiently. This predictability is crucial for capacity planning and meeting SLA commitments.
+[confidently] Vespa scales to handle large-scale data with predictable performance characteristics. [lecture] Performance remains consistent as data grows because the architecture distributes work efficiently. This predictability is crucial for capacity planning and meeting SLA commitments.
 #### Optimized Data Structures
-Vespa uses optimized data structures and algorithms throughout. The system is battle-tested on massive workloads and continuously refined for performance.
+[lecture] Vespa uses optimized data structures and algorithms throughout. The system is battle-tested on massive workloads and continuously refined for performance.
 #### Real-Time Updates
-Even while handling huge query loads, Vespa maintains real-time update capabilities. Document updates become visible in milliseconds without requiring full reindexing.
-Let's discuss costs.`
+[pleased] Even while handling huge query loads, Vespa maintains real-time update capabilities. Document updates become visible in milliseconds without requiring full reindexing.
+[cheerfully] Let's discuss costs.`
         },
         {
           id: 48,
@@ -1559,20 +1559,20 @@ Let's discuss costs.`
           backgroundColor: '#552200',
           notes: `### Vespa - Cost Consideration
 #### Understanding Vespa Economics
-Let's talk about costs with Vespa - there are several deployment models to consider.
+[conversational] Let's talk about costs with Vespa - there are several deployment models to consider.
 #### Open Source Foundation
-Vespa is open source with self-managed deployment options. You can download Vespa, deploy it on your infrastructure, and use it without licensing fees. This gives you full control but requires expertise to operate at scale. You're responsible for monitoring, tuning, upgrading, and troubleshooting.
+[pleased] Vespa is open source with self-managed deployment options. You can download Vespa, deploy it on your infrastructure, and use it without licensing fees. [cautiously] This gives you full control but requires expertise to operate at scale. You're responsible for monitoring, tuning, upgrading, and troubleshooting.
 #### Infrastructure Cost Drivers
-Infrastructure costs are tied primarily to throughput requirements and online inference or ranking needs. If you're running machine learning models during query execution, you need more compute capacity. If you're serving millions of queries per second, you need more nodes. The good news is costs scale with your actual requirements.
+[lecture] Infrastructure costs are tied primarily to throughput requirements and online inference or ranking needs. [conversational] If you're running machine learning models during query execution, you need more compute capacity. If you're serving millions of queries per second, you need more nodes. [pleased] The good news is costs scale with your actual requirements.
 #### Self-Managed vs Cloud
-Self-managed deployments give you maximum control and potentially lower costs if you have the expertise. You optimize everything for your specific use case. Cloud offerings provide managed operations where Vespa handles the operational complexity while you focus on your application. The cloud option costs more but saves engineering time.
+[conversational] Self-managed deployments give you maximum control and potentially lower costs if you have the expertise. You optimize everything for your specific use case. [lecture] Cloud offerings provide managed operations where Vespa handles the operational complexity while you focus on your application. The cloud option costs more but saves engineering time.
 #### Cloud Offering Available
-Vespa Cloud is available for teams wanting managed operations. It provides automatic scaling, monitoring, backups, and operational excellence without requiring deep Vespa expertise. Pricing scales with resource consumption.
+[pleased] Vespa Cloud is available for teams wanting managed operations. It provides automatic scaling, monitoring, backups, and operational excellence without requiring deep Vespa expertise. Pricing scales with resource consumption.
 #### Cost Optimization
-Because Vespa is sophisticated, cost optimization requires understanding your workload. You can tune memory usage, disk I/O patterns, CPU utilization, and network bandwidth. For teams with the expertise, this flexibility enables very efficient resource usage.
+[seriously] Because Vespa is sophisticated, cost optimization requires understanding your workload. [conversational] You can tune memory usage, disk I/O patterns, CPU utilization, and network bandwidth. [pleased] For teams with the expertise, this flexibility enables very efficient resource usage.
 #### Total Cost Considerations
-Consider total cost including engineering time. If Vespa's advanced features enable capabilities competitors can't match, the infrastructure cost may be justified by business value. If you need those features anyway, building them yourself would cost more.
-Let's identify ideal use cases.`
+[lecture] Consider total cost including engineering time. If Vespa's advanced features enable capabilities competitors can't match, the infrastructure cost may be justified by business value. If you need those features anyway, building them yourself would cost more.
+[cheerfully] Let's identify ideal use cases.`
         },
         {
           id: 49,
@@ -1590,20 +1590,20 @@ Let's identify ideal use cases.`
           backgroundColor: '#552200',
           notes: `### Vespa - Best Use Case
 #### When to Choose Vespa
-After exploring Vespa's sophisticated capabilities, let's identify when it's your best choice.
+[conversational] After exploring Vespa's sophisticated capabilities, let's identify when it's your best choice.
 #### Large-Scale Recommendation Systems
-Vespa excels for large-scale recommendation systems. Think Netflix recommending movies, YouTube recommending videos, or LinkedIn recommending connections. These systems need to combine multiple signals - user preferences, item popularity, contextual factors, and collaborative filtering - then rank billions of candidates in real-time. Vespa's architecture is built specifically for this.
+[enthusiastically] Vespa excels for large-scale recommendation systems. [storytelling] Think Netflix recommending movies, YouTube recommending videos, or LinkedIn recommending connections. [lecture] These systems need to combine multiple signals - user preferences, item popularity, contextual factors, and collaborative filtering - then rank billions of candidates in real-time. Vespa's architecture is built specifically for this.
 #### Complex Ranking Logic
-Search applications requiring complex ranking logic benefit tremendously from Vespa. When simple similarity isn't enough - when you need to boost recent items, personalize by user segment, apply business rules, and combine machine learning predictions - Vespa lets you implement all this efficiently within the database.
+[pleased] Search applications requiring complex ranking logic benefit tremendously from Vespa. [conversational] When simple similarity isn't enough - when you need to boost recent items, personalize by user segment, apply business rules, and combine machine learning predictions - Vespa lets you implement all this efficiently within the database.
 #### Multimodal and Tensor Pipelines
-For multimodal and tensor pipelines where search, ranking, and inference must happen in real-time within a single platform, Vespa is ideal. Maybe you're combining text embeddings, image embeddings, and user interaction embeddings with learned ranking models. Vespa handles this complexity naturally.
+[excited] For multimodal and tensor pipelines where search, ranking, and inference must happen in real-time within a single platform, Vespa is ideal. [conversational] Maybe you're combining text embeddings, image embeddings, and user interaction embeddings with learned ranking models. Vespa handles this complexity naturally.
 #### Real-Time ML Inference
-Applications requiring real-time machine learning inference during retrieval should consider Vespa. Instead of retrieving candidates then running models in application code, Vespa runs models during retrieval for better performance and richer capabilities.
+[lecture] Applications requiring real-time machine learning inference during retrieval should consider Vespa. [conversational] Instead of retrieving candidates then running models in application code, Vespa runs models during retrieval for better performance and richer capabilities.
 #### Sophisticated Search
-When your search requirements go beyond basic similarity - when you need linguistic processing, multiple ranking phases, query understanding, and result diversification - Vespa provides a complete platform.
+[conversational] When your search requirements go beyond basic similarity - when you need linguistic processing, multiple ranking phases, query understanding, and result diversification - Vespa provides a complete platform.
 #### Team with Expertise
-Vespa is best suited for teams with strong search and information retrieval expertise. It's powerful but complex. Teams comfortable with advanced search concepts will leverage Vespa's capabilities effectively.
-Let's look at additional considerations.`
+[seriously] Vespa is best suited for teams with strong search and information retrieval expertise. [cautiously] It's powerful but complex. [confidently] Teams comfortable with advanced search concepts will leverage Vespa's capabilities effectively.
+[cheerfully] Let's look at additional considerations.`
         },
         {
           id: 50,
@@ -1624,20 +1624,20 @@ Let's look at additional considerations.`
           backgroundColor: '#552200',
           notes: `### Vespa - Notes
 #### Important Details and Advanced Features
-Before moving forward, let's cover key details about Vespa's advanced capabilities.
+[conversational] Before moving forward, let's cover key details about Vespa's advanced capabilities.
 #### Rich Schema with Tensors
-Vespa's schema supports rich tensor types and integrates ranking functions natively. You define document types with multiple tensor fields, specify ranking profiles with complex logic, and Vespa optimizes execution automatically. This declarative approach is powerful once you understand the model.
+[lecture] Vespa's schema supports rich tensor types and integrates ranking functions natively. You define document types with multiple tensor fields, specify ranking profiles with complex logic, and Vespa optimizes execution automatically. [pleased] This declarative approach is powerful once you understand the model.
 #### ML Models at Serving Time
-You can deploy ML models at serving time for on-the-fly inference. Vespa supports ONNX 👉 'O-N-N-X' models, TensorFlow, XGBoost, and LightGBM. Load your trained model into Vespa and invoke it during query processing. This brings computation to the data for better performance.
+[excited] You can deploy ML models at serving time for on-the-fly inference. [lecture] Vespa supports ONNX 👉 'O-N-N-X' models, TensorFlow, XGBoost, and LightGBM. Load your trained model into Vespa and invoke it during query processing. [pleased] This brings computation to the data for better performance.
 #### Custom Query and Document Processors
-Vespa offers custom query and document processors for advanced transformation. Query processors can rewrite queries, add terms, or modify ranking parameters before execution. Document processors can transform, enrich, or validate documents during ingestion. This extensibility enables sophisticated pipelines.
+[conversational] Vespa offers custom query and document processors for advanced transformation. [lecture] Query processors can rewrite queries, add terms, or modify ranking parameters before execution. Document processors can transform, enrich, or validate documents during ingestion. [pleased] This extensibility enables sophisticated pipelines.
 #### Real-Time and Batch Processing
-Vespa offers both real-time and batch processing capabilities. Handle streaming updates for real-time data while also running batch operations for analytics or bulk updates. The system gracefully handles both patterns.
+[lecture] Vespa offers both real-time and batch processing capabilities. Handle streaming updates for real-time data while also running batch operations for analytics or bulk updates. The system gracefully handles both patterns.
 #### Learning Curve Consideration
-Be aware: Vespa has a learning curve. The power and flexibility come with complexity. Teams new to Vespa should allocate time for learning the concepts, schema language, and ranking expressions. The investment pays off for complex use cases.
+[cautiously] Be aware: Vespa has a learning curve. [seriously] The power and flexibility come with complexity. [conversational] Teams new to Vespa should allocate time for learning the concepts, schema language, and ranking expressions. [pleased] The investment pays off for complex use cases.
 #### Excellent Documentation
-Vespa provides excellent documentation and example applications to accelerate learning. The community is helpful and the company provides support options.
-Now let's explore our ninth database - PostgreSQL with pgvector!`
+[confidently] Vespa provides excellent documentation and example applications to accelerate learning. The community is helpful and the company provides support options.
+[cheerfully] Now let's explore our ninth database - PostgreSQL with pgvector!`
         }
       ]
     },
@@ -1661,18 +1661,18 @@ Now let's explore our ninth database - PostgreSQL with pgvector!`
           backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Index Type
 #### Introduction to PostgreSQL with pgvector
-Welcome to PostgreSQL with pgvector! This represents a fascinating approach - adding vector capabilities to the world's most popular open-source relational database. Many organizations already use PostgreSQL, and pgvector lets them add vector search without introducing a new database.
+[enthusiastically] Welcome to PostgreSQL with pgvector! [storytelling] This represents a fascinating approach - adding vector capabilities to the world's most popular open-source relational database. [pleased] Many organizations already use PostgreSQL, and pgvector lets them add vector search without introducing a new database.
 #### Vector Indices: HNSW and IVFFlat
-pgvector provides two main vector index types. HNSW we've seen before - fast graph-based approximate search. IVFFlat 👉 'I-V-F-Flat' uses inverted file structure with flat quantization - it partitions the vector space into clusters then searches relevant clusters. HNSW is generally faster but uses more memory; IVFFlat is more memory-efficient but slightly slower.
+[lecture] pgvector provides two main vector index types. HNSW we've seen before - fast graph-based approximate search. IVFFlat 👉 'I-V-F-Flat' uses inverted file structure with flat quantization - it partitions the vector space into clusters then searches relevant clusters. [conversational] HNSW is generally faster but uses more memory; IVFFlat is more memory-efficient but slightly slower.
 #### Standard PostgreSQL Indices
-Beyond vector indices, you get all standard PostgreSQL index types for scalar filtering and metadata - B-tree for ordered data, GiST for geometric data, GIN for full-text search and JSON. This combination is powerful: you can filter using traditional indices then search vectors, or vice versa.
+[pleased] Beyond vector indices, you get all standard PostgreSQL index types for scalar filtering and metadata - B-tree for ordered data, GiST for geometric data, GIN for full-text search and JSON. [excited] This combination is powerful: you can filter using traditional indices then search vectors, or vice versa.
 #### Approximate and Exact Search
-pgvector supports both approximate and exact vector search with different performance trade-offs. Approximate search using HNSW or IVFFlat is fast and works well for large datasets. Exact search scans all vectors - slower but perfect accuracy. Choose based on your requirements.
+[lecture] pgvector supports both approximate and exact vector search with different performance trade-offs. Approximate search using HNSW or IVFFlat is fast and works well for large datasets. Exact search scans all vectors - slower but perfect accuracy. Choose based on your requirements.
 #### Integration with SQL
-The beauty of pgvector is SQL integration. Vector operations use familiar SQL syntax. You write queries combining vector similarity with joins, aggregations, subqueries, and all other SQL capabilities. This familiarity accelerates development for teams already comfortable with SQL.
+[enthusiastically] The beauty of pgvector is SQL integration. [lecture] Vector operations use familiar SQL syntax. You write queries combining vector similarity with joins, aggregations, subqueries, and all other SQL capabilities. [pleased] This familiarity accelerates development for teams already comfortable with SQL.
 #### Extension Architecture
-pgvector is implemented as a PostgreSQL extension, which means it integrates deeply with PostgreSQL's query planner, optimizer, and execution engine. It's not a bolt-on; it's a native part of the system.
-Let's discuss how PostgreSQL scales with pgvector.`
+[lecture] pgvector is implemented as a PostgreSQL extension, which means it integrates deeply with PostgreSQL's query planner, optimizer, and execution engine. [confidently] It's not a bolt-on; it's a native part of the system.
+[cheerfully] Let's discuss how PostgreSQL scales with pgvector.`
         },
         {
           id: 52,
@@ -1690,20 +1690,20 @@ Let's discuss how PostgreSQL scales with pgvector.`
           backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Scaling Model
 #### Understanding PostgreSQL Scaling
-PostgreSQL with pgvector leverages PostgreSQL's mature, well-understood scaling mechanisms - both the strengths and limitations.
+[conversational] PostgreSQL with pgvector leverages PostgreSQL's mature, well-understood scaling mechanisms - both the strengths and limitations.
 #### Native Replication and Partitioning
-PostgreSQL uses native replication and partitioning mechanisms that have been refined over decades. Replication creates read replicas that handle read queries, multiplying read throughput. The primary handles writes while replicas serve reads. Partitioning splits tables into smaller pieces based on criteria you define, improving query performance and maintenance.
+[lecture] PostgreSQL uses native replication and partitioning mechanisms that have been refined over decades. [conversational] Replication creates read replicas that handle read queries, multiplying read throughput. The primary handles writes while replicas serve reads. [lecture] Partitioning splits tables into smaller pieces based on criteria you define, improving query performance and maintenance.
 #### Horizontal Scale-Out with Extensions
-For horizontal scale-out beyond basic replication, extensions like Citus and pg_shard enable distributed tables. Citus is particularly mature - it shards tables across multiple PostgreSQL nodes, turning PostgreSQL into a distributed database. Queries automatically route to relevant shards and results aggregate transparently.
+[conversational] For horizontal scale-out beyond basic replication, extensions like Citus and pg_shard enable distributed tables. [pleased] Citus is particularly mature - it shards tables across multiple PostgreSQL nodes, turning PostgreSQL into a distributed database. Queries automatically route to relevant shards and results aggregate transparently.
 #### Vertical Scaling
-Vertical scaling through instance sizing is straightforward - run PostgreSQL on machines with more CPU, RAM, and faster disks. For many workloads, a single powerful PostgreSQL instance handles millions of vectors efficiently. Modern servers with hundreds of gigabytes of RAM and dozens of CPU cores can serve demanding workloads.
+[lecture] Vertical scaling through instance sizing is straightforward - run PostgreSQL on machines with more CPU, RAM, and faster disks. [conversational] For many workloads, a single powerful PostgreSQL instance handles millions of vectors efficiently. [pleased] Modern servers with hundreds of gigabytes of RAM and dozens of CPU cores can serve demanding workloads.
 #### Scaling Considerations for Vectors
-Vector workloads can be memory-intensive, especially with HNSW indices that keep graphs in memory for performance. Plan RAM capacity carefully based on index size. The recent pgvector improvements dramatically reduce memory requirements compared to earlier versions.
+[seriously] Vector workloads can be memory-intensive, especially with HNSW indices that keep graphs in memory for performance. [conversational] Plan RAM capacity carefully based on index size. [pleased] The recent pgvector improvements dramatically reduce memory requirements compared to earlier versions.
 #### Proven Operational Model
-PostgreSQL's operational model is proven and familiar to countless organizations. Backup and restore procedures are well-established. Monitoring tools are mature. High availability solutions like Patroni or repmgr provide automatic failover. This operational maturity reduces risk.
+[confidently] PostgreSQL's operational model is proven and familiar to countless organizations. Backup and restore procedures are well-established. Monitoring tools are mature. High availability solutions like Patroni or repmgr provide automatic failover. [pleased] This operational maturity reduces risk.
 #### When Scaling Becomes Complex
-Know that extreme horizontal scaling with PostgreSQL requires more effort than purpose-built distributed databases. For billions of vectors, specialized solutions may be simpler.
-Let's explore performance characteristics.`
+[cautiously] Know that extreme horizontal scaling with PostgreSQL requires more effort than purpose-built distributed databases. [conversational] For billions of vectors, specialized solutions may be simpler.
+[cheerfully] Let's explore performance characteristics.`
         },
         {
           id: 53,
@@ -1721,20 +1721,20 @@ Let's explore performance characteristics.`
           backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Performance Profile
 #### Understanding pgvector Performance
-Let's talk about pgvector performance - this has improved dramatically in recent releases and continues getting better.
+[conversational] Let's talk about pgvector performance - this has improved dramatically in recent releases and continues getting better.
 #### Massive Performance Improvements
-Recent pgvector version 0.8.0 delivers a 150x improvement in query performance compared to earlier versions. Let that sink in - one hundred and fifty times faster. This came from fundamental algorithm optimizations, better memory management, and deeper PostgreSQL integration. If you tried pgvector years ago and found it slow, try again - it's a completely different experience now.
+[excited] Recent pgvector version 0.8.0 delivers a 150x improvement in query performance compared to earlier versions. [enthusiastically] Let that sink in - one hundred and fifty times faster. [lecture] This came from fundamental algorithm optimizations, better memory management, and deeper PostgreSQL integration. [conversational] If you tried pgvector years ago and found it slow, try again - it's a completely different experience now.
 #### Faster Index Builds
-Index build performance has also improved significantly. Creating HNSW indices on large datasets that previously took hours now completes in minutes. This matters during initial setup and when rebuilding indices after data changes.
+[pleased] Index build performance has also improved significantly. Creating HNSW indices on large datasets that previously took hours now completes in minutes. [conversational] This matters during initial setup and when rebuilding indices after data changes.
 #### Query Latency Improvements
-Query latency has decreased dramatically while recall quality remained high. You get fast responses without sacrificing accuracy. For moderate-scale workloads - millions of vectors - performance is excellent and comparable to specialized vector databases.
+[pleased] Query latency has decreased dramatically while recall quality remained high. You get fast responses without sacrificing accuracy. [confidently] For moderate-scale workloads - millions of vectors - performance is excellent and comparable to specialized vector databases.
 #### Moderate-Scale Sweet Spot
-pgvector is well-suited for moderate-scale vector workloads. If you have millions of vectors rather than billions, pgvector performs excellently. The performance characteristics scale well up to datasets that fit comfortably on large single instances or modest clusters.
+[conversational] pgvector is well-suited for moderate-scale vector workloads. If you have millions of vectors rather than billions, pgvector performs excellently. [pleased] The performance characteristics scale well up to datasets that fit comfortably on large single instances or modest clusters.
 #### Balanced Update and Query Performance
-PostgreSQL naturally provides balanced query and update performance. Unlike some specialized databases optimized purely for reads, PostgreSQL handles mixed workloads well. If your application has frequent updates alongside queries, this balance matters.
+[lecture] PostgreSQL naturally provides balanced query and update performance. [conversational] Unlike some specialized databases optimized purely for reads, PostgreSQL handles mixed workloads well. If your application has frequent updates alongside queries, this balance matters.
 #### Continuous Improvement
-The pgvector team continues optimizing performance. Each release brings improvements, and the community actively contributes enhancements. Expect performance to keep improving.
-Let's discuss costs.`
+[pleased] The pgvector team continues optimizing performance. Each release brings improvements, and the community actively contributes enhancements. Expect performance to keep improving.
+[cheerfully] Let's discuss costs.`
         },
         {
           id: 54,
@@ -1752,20 +1752,20 @@ Let's discuss costs.`
           backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Cost Consideration
 #### Understanding pgvector Economics
-Let's talk about costs with pgvector - this is one of its strongest selling points.
+[conversational] Let's talk about costs with pgvector - this is one of its strongest selling points.
 #### Open-Source Extension
-pgvector is an open-source extension for PostgreSQL, which means there are no licensing fees. You pay only for infrastructure costs - the servers or cloud instances running PostgreSQL, storage, and networking. This transparency and simplicity in pricing is refreshing compared to complex licensing models.
+[pleased] pgvector is an open-source extension for PostgreSQL, which means there are no licensing fees. You pay only for infrastructure costs - the servers or cloud instances running PostgreSQL, storage, and networking. [confidently] This transparency and simplicity in pricing is refreshing compared to complex licensing models.
 #### Simpler Operational Model
-For organizations already running PostgreSQL, the operational model is simpler than adding a separate vector database. You leverage existing PostgreSQL expertise, monitoring tools, backup procedures, and deployment pipelines. This reuse of existing infrastructure and knowledge significantly reduces total cost of ownership.
+[enthusiastically] For organizations already running PostgreSQL, the operational model is simpler than adding a separate vector database. [pleased] You leverage existing PostgreSQL expertise, monitoring tools, backup procedures, and deployment pipelines. [confidently] This reuse of existing infrastructure and knowledge significantly reduces total cost of ownership.
 #### Infrastructure Flexibility
-You can run pgvector on commodity hardware for development - an old laptop or inexpensive cloud instance works fine for experimenting. For production, cloud-managed PostgreSQL services from AWS, Google Cloud, Azure, or specialized PostgreSQL providers offer pgvector support with automated backups, monitoring, and scaling.
+[conversational] You can run pgvector on commodity hardware for development - an old laptop or inexpensive cloud instance works fine for experimenting. [lecture] For production, cloud-managed PostgreSQL services from AWS, Google Cloud, Azure, or specialized PostgreSQL providers offer pgvector support with automated backups, monitoring, and scaling.
 #### No Vendor Lock-In
-Being open source with no proprietary algorithms or formats, you avoid vendor lock-in. You can migrate between PostgreSQL providers or move from cloud to self-hosted without rewriting your application. Your vectors are stored in standard PostgreSQL tables you fully control.
+[confidently] Being open source with no proprietary algorithms or formats, you avoid vendor lock-in. [pleased] You can migrate between PostgreSQL providers or move from cloud to self-hosted without rewriting your application. Your vectors are stored in standard PostgreSQL tables you fully control.
 #### Cost Predictability
-Costs are predictable and scale linearly with resources. Larger instances cost proportionally more. There are no surprise charges for query volume, no per-vector fees, no tiered pricing based on usage patterns.
+[conversational] Costs are predictable and scale linearly with resources. Larger instances cost proportionally more. [pleased] There are no surprise charges for query volume, no per-vector fees, no tiered pricing based on usage patterns.
 #### Optimal for Modest Scale
-For applications with modest vector volumes - thousands to millions rather than billions - pgvector delivers excellent value. You get production-grade vector search without the cost of specialized infrastructure.
-Let's identify ideal use cases.`
+[conversational] For applications with modest vector volumes - thousands to millions rather than billions - pgvector delivers excellent value. [confidently] You get production-grade vector search without the cost of specialized infrastructure.
+[cheerfully] Let's identify ideal use cases.`
         },
         {
           id: 55,
@@ -1783,20 +1783,20 @@ Let's identify ideal use cases.`
           backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Best Use Case
 #### When to Choose PostgreSQL with pgvector
-After exploring pgvector capabilities, let's identify when it's your ideal choice.
+[conversational] After exploring pgvector capabilities, let's identify when it's your ideal choice.
 #### ACID Compliance with Vector Search
-Applications requiring ACID compliance with vector search capabilities should strongly consider pgvector. ACID stands for Atomicity, Consistency, Isolation, Durability - the guarantees relational databases provide for data integrity. If your application needs transactional guarantees - ensuring data stays consistent even during failures - PostgreSQL with pgvector delivers both vector search and ACID properties.
+[excited] Applications requiring ACID compliance with vector search capabilities should strongly consider pgvector. [lecture] ACID stands for Atomicity, Consistency, Isolation, Durability - the guarantees relational databases provide for data integrity. [conversational] If your application needs transactional guarantees - ensuring data stays consistent even during failures - [confidently] PostgreSQL with pgvector delivers both vector search and ACID properties.
 #### Modest Vector Volumes with SQL
-Systems with modest vector volumes that benefit from SQL interface and transactional guarantees are perfect for pgvector. If you're storing user profiles with embedding vectors, product catalogs with similarity search, or documents with semantic retrieval, and these number in thousands to millions rather than billions, pgvector is ideal.
+[pleased] Systems with modest vector volumes that benefit from SQL interface and transactional guarantees are perfect for pgvector. [conversational] If you're storing user profiles with embedding vectors, product catalogs with similarity search, or documents with semantic retrieval, and these number in thousands to millions rather than billions, pgvector is ideal.
 #### Existing Relational Data Models
-For developers who want to integrate vectors into existing relational data models, pgvector is unmatched. Instead of maintaining separate databases for structured data and vectors, keep everything together. Your user table can have an embedding column. Your product table includes a description vector. Query with familiar SQL joining across tables.
+[enthusiastically] For developers who want to integrate vectors into existing relational data models, pgvector is unmatched. [storytelling] Instead of maintaining separate databases for structured data and vectors, keep everything together. Your user table can have an embedding column. Your product table includes a description vector. [pleased] Query with familiar SQL joining across tables.
 #### SQL Skills Leverage
-Teams comfortable with SQL can leverage existing skills. No new query language to learn. No new concepts like eventual consistency or distributed transactions. Just SQL with vector operators added. This familiarity accelerates development significantly.
+[conversational] Teams comfortable with SQL can leverage existing skills. [pleased] No new query language to learn. No new concepts like eventual consistency or distributed transactions. Just SQL with vector operators added. [confidently] This familiarity accelerates development significantly.
 #### Unified Data Management
-When you need unified data management - ensuring vectors stay consistent with associated data, participating in transactions, and respecting foreign key constraints - having everything in PostgreSQL simplifies architecture dramatically. No synchronization logic between databases, no consistency worries.
+[lecture] When you need unified data management - ensuring vectors stay consistent with associated data, participating in transactions, and respecting foreign key constraints - [pleased] having everything in PostgreSQL simplifies architecture dramatically. [conversational] No synchronization logic between databases, no consistency worries.
 #### Rapid Development
-For rapid application development where vector search is one feature among many relational operations, pgvector enables building everything with familiar tools and patterns.
-Let's look at additional considerations.`
+[pleased] For rapid application development where vector search is one feature among many relational operations, pgvector enables building everything with familiar tools and patterns.
+[cheerfully] Let's look at additional considerations.`
         },
         {
           id: 56,
@@ -1817,18 +1817,18 @@ Let's look at additional considerations.`
           backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Notes
 #### Important Details and Optimization Tips
-Before moving to the next database, let's cover important tips for working effectively with pgvector.
+[conversational] Before moving to the next database, let's cover important tips for working effectively with pgvector.
 #### Tune HNSW and IVF Parameters
-Tune HNSW and IVF parameters for workload optimization. Both index types have configuration parameters affecting performance and accuracy trade-offs. For HNSW, the m parameter controls graph connectivity and ef_construction controls build quality. For IVFFlat, lists parameter determines clustering granularity. Start with defaults, then tune based on your specific query patterns.
+[lecture] Tune HNSW and IVF parameters for workload optimization. Both index types have configuration parameters affecting performance and accuracy trade-offs. [conversational] For HNSW, the m parameter controls graph connectivity and ef_construction controls build quality. For IVFFlat, lists parameter determines clustering granularity. [pleased] Start with defaults, then tune based on your specific query patterns.
 #### Consider pgvectorscale
-Consider pgvectorscale for enhanced performance. This is a newer extension building on pgvector with additional optimizations for larger-scale deployments. It adds features like DiskANN for memory-efficient storage and streaming HNSW for better write performance. If you're pushing pgvector's limits, pgvectorscale might help.
+[conversational] Consider pgvectorscale for enhanced performance. [lecture] This is a newer extension building on pgvector with additional optimizations for larger-scale deployments. It adds features like DiskANN for memory-efficient storage and streaming HNSW for better write performance. [conversational] If you're pushing pgvector's limits, pgvectorscale might help.
 #### Leverage PostgreSQL Strengths
-Leverage PostgreSQL's strengths: SQL for flexible queries, transactions for data integrity, joins for combining data, and rich data types like JSON for metadata. These capabilities distinguish pgvector from specialized vector databases. Use them to build sophisticated applications without multiple databases.
+[enthusiastically] Leverage PostgreSQL's strengths: SQL for flexible queries, transactions for data integrity, joins for combining data, and rich data types like JSON for metadata. [pleased] These capabilities distinguish pgvector from specialized vector databases. Use them to build sophisticated applications without multiple databases.
 #### Combine Vector with Traditional Features
-Combine vector search with traditional database features in a single system. You can join vectors with user data, apply complex filtering before similarity search, use triggers to automatically update vectors when source data changes, and maintain referential integrity across tables. This integration simplifies application logic significantly.
+[excited] Combine vector search with traditional database features in a single system. [conversational] You can join vectors with user data, apply complex filtering before similarity search, use triggers to automatically update vectors when source data changes, and maintain referential integrity across tables. [pleased] This integration simplifies application logic significantly.
 #### Monitoring and Tuning
-PostgreSQL provides excellent monitoring through pg_stat views and logging. Monitor query performance, index usage, and resource consumption. Tune shared_buffers, work_mem, and other PostgreSQL parameters for vector workloads.
-Now let's explore our tenth database - MongoDB Vector Search!`
+[lecture] PostgreSQL provides excellent monitoring through pg_stat views and logging. Monitor query performance, index usage, and resource consumption. Tune shared_buffers, work_mem, and other PostgreSQL parameters for vector workloads.
+[cheerfully] Now let's explore our tenth database - MongoDB Vector Search!`
         }
       ]
     },
@@ -1852,18 +1852,18 @@ Now let's explore our tenth database - MongoDB Vector Search!`
           backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Index Type
 #### Introduction to MongoDB Vector Search
-Welcome to MongoDB Vector Search! MongoDB is one of the world's most popular NoSQL databases, known for its document-oriented model and developer-friendly API. MongoDB Atlas Vector Search brings vector capabilities to this proven platform.
+[enthusiastically] Welcome to MongoDB Vector Search! [storytelling] MongoDB is one of the world's most popular NoSQL databases, known for its document-oriented model and developer-friendly API. [pleased] MongoDB Atlas Vector Search brings vector capabilities to this proven platform.
 #### HNSW-Based Indexes
-MongoDB uses HNSW-based vector indexes within MongoDB Atlas with native integration into the document data model. Instead of storing vectors separately from your data, they live naturally within your documents alongside other fields. This integration simplifies data modeling and keeps related data together.
+[lecture] MongoDB uses HNSW-based vector indexes within MongoDB Atlas with native integration into the document data model. [conversational] Instead of storing vectors separately from your data, they live naturally within your documents alongside other fields. [pleased] This integration simplifies data modeling and keeps related data together.
 #### Native Document Integration
-The native integration into MongoDB's document model means vectors are just another field in your JSON documents. You can have a document representing a product with fields for name, price, description, and an embedding vector - all in one place. This simplicity accelerates development.
+[excited] The native integration into MongoDB's document model means vectors are just another field in your JSON documents. [storytelling] You can have a document representing a product with fields for name, price, description, and an embedding vector - all in one place. [pleased] This simplicity accelerates development.
 #### Hybrid Relevance Scoring
-MongoDB supports hybrid relevance scoring combining vector similarity with traditional document data. You can search by vector similarity while also considering text matches, numeric ranges, nested object fields, and array membership. The scoring combines these signals intelligently to rank results.
+[enthusiastically] MongoDB supports hybrid relevance scoring combining vector similarity with traditional document data. [conversational] You can search by vector similarity while also considering text matches, numeric ranges, nested object fields, and array membership. [pleased] The scoring combines these signals intelligently to rank results.
 #### Built on Proven Infrastructure
-Vector search is built on top of Atlas's proven indexing infrastructure. MongoDB has spent years optimizing index performance, and vector indices benefit from this foundation. The same reliability and performance engineering that powers MongoDB's traditional indices applies to vectors.
+[confidently] Vector search is built on top of Atlas's proven indexing infrastructure. [lecture] MongoDB has spent years optimizing index performance, and vector indices benefit from this foundation. The same reliability and performance engineering that powers MongoDB's traditional indices applies to vectors.
 #### Atlas-Exclusive Feature
-Note that MongoDB Vector Search is available in Atlas, MongoDB's cloud offering. It's not available in self-hosted MongoDB Community Edition. This is a deliberate choice - vector search leverages Atlas-specific infrastructure and optimizations.
-Let's discuss MongoDB's scaling model.`
+[conversational] Note that MongoDB Vector Search is available in Atlas, MongoDB's cloud offering. It's not available in self-hosted MongoDB Community Edition. [lecture] This is a deliberate choice - vector search leverages Atlas-specific infrastructure and optimizations.
+[cheerfully] Let's discuss MongoDB's scaling model.`
         },
         {
           id: 58,
@@ -1881,20 +1881,20 @@ Let's discuss MongoDB's scaling model.`
           backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Scaling Model
 #### Understanding MongoDB Scaling
-MongoDB Atlas provides managed scaling that leverages MongoDB's mature distributed systems architecture refined over years of production use.
+[lecture] MongoDB Atlas provides managed scaling that leverages MongoDB's mature distributed systems architecture refined over years of production use.
 #### Atlas Managed Scaling
-Atlas handles scaling with minimal operational overhead. You can scale up or down through the Atlas console or API without managing individual servers. Click a button to upgrade your cluster tier, and Atlas handles the migration seamlessly without downtime.
+[pleased] Atlas handles scaling with minimal operational overhead. [conversational] You can scale up or down through the Atlas console or API without managing individual servers. [confidently] Click a button to upgrade your cluster tier, and Atlas handles the migration seamlessly without downtime.
 #### Automatic Sharding and Replication
-MongoDB uses automatic sharding and replication for distributed deployments. Sharding splits your data across multiple shards based on a shard key you define. Replication creates copies of each shard for high availability. If a node fails, replicas take over automatically ensuring continuous operation.
+[lecture] MongoDB uses automatic sharding and replication for distributed deployments. [conversational] Sharding splits your data across multiple shards based on a shard key you define. Replication creates copies of each shard for high availability. [pleased] If a node fails, replicas take over automatically ensuring continuous operation.
 #### RAM Sizing Guidance
-MongoDB provides clear guidance for sizing RAM relative to index footprint. Vector indices benefit from being in memory for fast queries. Atlas documentation includes calculators and best practices for determining appropriate cluster size based on your vector count, dimensions, and query patterns.
+[conversational] MongoDB provides clear guidance for sizing RAM relative to index footprint. [lecture] Vector indices benefit from being in memory for fast queries. [pleased] Atlas documentation includes calculators and best practices for determining appropriate cluster size based on your vector count, dimensions, and query patterns.
 #### Mature Distributed Architecture
-MongoDB leverages mature distributed systems architecture developed for handling massive scale. Companies like eBay, Adobe, and Forbes run production workloads on MongoDB at enormous scale. Vector search benefits from this battle-tested infrastructure.
+[confidently] MongoDB leverages mature distributed systems architecture developed for handling massive scale. [storytelling] Companies like eBay, Adobe, and Forbes run production workloads on MongoDB at enormous scale. [pleased] Vector search benefits from this battle-tested infrastructure.
 #### Vertical and Horizontal Scaling
-You can scale vertically by choosing larger cluster tiers with more RAM and CPU, or horizontally by sharding across more nodes. Atlas makes both approaches straightforward without requiring deep MongoDB expertise.
+[conversational] You can scale vertically by choosing larger cluster tiers with more RAM and CPU, or horizontally by sharding across more nodes. [pleased] Atlas makes both approaches straightforward without requiring deep MongoDB expertise.
 #### Elastic Scaling
-Atlas supports elastic scaling patterns where you can temporarily scale up for peak loads then scale down during quiet periods. This flexibility helps manage costs while meeting performance requirements.
-Let's explore performance characteristics.`
+[pleased] Atlas supports elastic scaling patterns where you can temporarily scale up for peak loads then scale down during quiet periods. [conversational] This flexibility helps manage costs while meeting performance requirements.
+[cheerfully] Let's explore performance characteristics.`
         },
         {
           id: 59,
@@ -1912,20 +1912,20 @@ Let's explore performance characteristics.`
           backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Performance Profile
 #### Understanding MongoDB Performance
-Let's discuss MongoDB Vector Search performance and where it excels particularly well.
+[conversational] Let's discuss MongoDB Vector Search performance and where it excels particularly well.
 #### Optimized for Combined Workloads
-MongoDB is optimized for combined operational plus vector workloads. "Operational workloads" means the typical database operations applications perform - reading user profiles, updating orders, querying products, inserting events. MongoDB Vector Search lets you mix these traditional operations with vector queries seamlessly in a single database.
+[lecture] MongoDB is optimized for combined operational plus vector workloads. [conversational] "Operational workloads" means the typical database operations applications perform - reading user profiles, updating orders, querying products, inserting events. [pleased] MongoDB Vector Search lets you mix these traditional operations with vector queries seamlessly in a single database.
 #### Efficient Hybrid Queries
-MongoDB delivers efficient hybrid queries leveraging both vector similarity and document field filtering. You can find similar products in a specific price range, search documents by embedding similarity while filtering by date, or recommend content matching user preferences. The query engine optimizes these combinations efficiently.
+[enthusiastically] MongoDB delivers efficient hybrid queries leveraging both vector similarity and document field filtering. [conversational] You can find similar products in a specific price range, search documents by embedding similarity while filtering by date, or recommend content matching user preferences. [pleased] The query engine optimizes these combinations efficiently.
 #### Pre-Filtering Capabilities
-Pre-filtering capabilities reduce search space for improved performance on large collections. Instead of searching all billions of vectors then filtering results, MongoDB can filter first then search the reduced set. When you're searching within a small subset - say one user's data or one category's items - pre-filtering dramatically improves performance.
+[excited] Pre-filtering capabilities reduce search space for improved performance on large collections. [lecture] Instead of searching all billions of vectors then filtering results, MongoDB can filter first then search the reduced set. [conversational] When you're searching within a small subset - say one user's data or one category's items - [pleased] pre-filtering dramatically improves performance.
 #### Document-Native Performance
-Because vectors live within documents, accessing related data doesn't require joins or additional queries. When you retrieve a vector search result, all document fields come back together in one operation. This reduces network round trips and simplifies application code.
+[pleased] Because vectors live within documents, accessing related data doesn't require joins or additional queries. [conversational] When you retrieve a vector search result, all document fields come back together in one operation. [pleased] This reduces network round trips and simplifies application code.
 #### Performance at Scale
-MongoDB performs well at scale thanks to mature query optimization and distributed execution. The query planner chooses efficient execution strategies, and sharded clusters distribute work across nodes for parallel processing.
+[confidently] MongoDB performs well at scale thanks to mature query optimization and distributed execution. [lecture] The query planner chooses efficient execution strategies, and sharded clusters distribute work across nodes for parallel processing.
 #### Continuous Optimization
-The Atlas team continuously optimizes vector search performance based on customer workloads and feedback. Expect improvements with each Atlas release.
-Let's discuss costs.`
+[pleased] The Atlas team continuously optimizes vector search performance based on customer workloads and feedback. Expect improvements with each Atlas release.
+[cheerfully] Let's discuss costs.`
         },
         {
           id: 60,
@@ -1943,20 +1943,20 @@ Let's discuss costs.`
           backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Cost Consideration
 #### Understanding MongoDB Economics
-Let's talk about costs with MongoDB Vector Search - understanding Atlas pricing helps you plan effectively.
+[conversational] Let's talk about costs with MongoDB Vector Search - understanding Atlas pricing helps you plan effectively.
 #### Cost Driven by Cluster Sizing
-Cost is driven by Atlas cluster sizing. You choose a cluster tier based on required RAM, CPU, and storage, and pay monthly for that tier. Larger clusters cost more but provide more capacity and performance. Atlas pricing is transparent with clear tiers.
+[lecture] Cost is driven by Atlas cluster sizing. You choose a cluster tier based on required RAM, CPU, and storage, and pay monthly for that tier. [conversational] Larger clusters cost more but provide more capacity and performance. [pleased] Atlas pricing is transparent with clear tiers.
 #### Sizing Best Practices
-Follow sizing best practices with sufficient RAM headroom for indexes. MongoDB documentation provides guidance: vector indices should fit in RAM for good performance. Calculate your index size based on vector count and dimensions, then choose a cluster tier with adequate RAM plus headroom for growth and other data.
+[conversational] Follow sizing best practices with sufficient RAM headroom for indexes. [lecture] MongoDB documentation provides guidance: vector indices should fit in RAM for good performance. [conversational] Calculate your index size based on vector count and dimensions, then choose a cluster tier with adequate RAM plus headroom for growth and other data.
 #### Unified Pricing Model
-A major advantage is the unified pricing model that includes both operational and vector workloads. You're paying for one database that handles traditional document operations and vector search. Compare this to running separate databases - one for application data, another for vectors - where you pay twice and manage synchronization.
+[enthusiastically] A major advantage is the unified pricing model that includes both operational and vector workloads. [pleased] You're paying for one database that handles traditional document operations and vector search. [conversational] Compare this to running separate databases - one for application data, another for vectors - where you pay twice and manage synchronization.
 #### Pay-As-You-Go Options
-Pay-as-you-go options are available for all Atlas tiers. Start small and scale up as needed. No long-term contracts required, though committed use discounts are available for cost optimization if you have predictable usage.
+[pleased] Pay-as-you-go options are available for all Atlas tiers. [conversational] Start small and scale up as needed. No long-term contracts required, though committed use discounts are available for cost optimization if you have predictable usage.
 #### No Separate Vector Database Costs
-For teams already using MongoDB Atlas, adding vector search leverages existing infrastructure. You're not paying for a separate vector database, not managing another system, not synchronizing data between databases. This simplicity reduces total cost of ownership significantly.
+[excited] For teams already using MongoDB Atlas, adding vector search leverages existing infrastructure. [pleased] You're not paying for a separate vector database, not managing another system, not synchronizing data between databases. [confidently] This simplicity reduces total cost of ownership significantly.
 #### Cost Predictability
-Atlas provides cost predictability through clear pricing tiers and usage monitoring. The Atlas console shows current usage and projected costs, helping you stay within budget.
-Let's identify ideal use cases.`
+[pleased] Atlas provides cost predictability through clear pricing tiers and usage monitoring. [conversational] The Atlas console shows current usage and projected costs, helping you stay within budget.
+[cheerfully] Let's identify ideal use cases.`
         },
         {
           id: 61,
@@ -1974,20 +1974,20 @@ Let's identify ideal use cases.`
           backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Best Use Case
 #### When to Choose MongoDB Vector Search
-After exploring MongoDB capabilities, let's identify when it's your ideal choice.
+[conversational] After exploring MongoDB capabilities, let's identify when it's your ideal choice.
 #### Unify Operational Data and Embeddings
-Applications needing to unify operational JSON data and embeddings in a single platform are perfect for MongoDB. If your application already stores user profiles, product catalogs, content items, or event logs in JSON format, adding embeddings to those documents is natural. Everything stays together, queries remain simple, and data stays consistent.
+[enthusiastically] Applications needing to unify operational JSON data and embeddings in a single platform are perfect for MongoDB. [storytelling] If your application already stores user profiles, product catalogs, content items, or event logs in JSON format, [pleased] adding embeddings to those documents is natural. Everything stays together, queries remain simple, and data stays consistent.
 #### Existing MongoDB Teams
-Teams already using MongoDB seeking to add vector capabilities without additional infrastructure should strongly consider Atlas Vector Search. You already have the database, expertise, monitoring, and deployment processes. Adding vector search is evolutionary - enable it in your existing cluster, add vector fields to documents, create vector indices, and start querying.
+[excited] Teams already using MongoDB seeking to add vector capabilities without additional infrastructure should strongly consider Atlas Vector Search. [conversational] You already have the database, expertise, monitoring, and deployment processes. [pleased] Adding vector search is evolutionary - enable it in your existing cluster, add vector fields to documents, create vector indices, and start querying.
 #### App Development with Structured and Semantic Data
-Perfect for app development requiring both structured data and semantic search. Modern applications often need both - storing user data, managing relationships, enforcing validation rules (structured data) while also providing semantic search, recommendations, and content discovery (vector search). MongoDB handles both naturally.
+[enthusiastically] Perfect for app development requiring both structured data and semantic search. [storytelling] Modern applications often need both - storing user data, managing relationships, enforcing validation rules (structured data) while also providing semantic search, recommendations, and content discovery (vector search). [pleased] MongoDB handles both naturally.
 #### JSON-Native Applications
-If your application is JSON-native - consuming and producing JSON APIs - MongoDB's document model aligns perfectly. You work with JSON throughout your stack without transformation between formats. Vectors become array fields in JSON, searchable through the same API you use for everything else.
+[conversational] If your application is JSON-native - consuming and producing JSON APIs - MongoDB's document model aligns perfectly. [pleased] You work with JSON throughout your stack without transformation between formats. Vectors become array fields in JSON, searchable through the same API you use for everything else.
 #### Rapid Development Cycles
-MongoDB accelerates development cycles when you need both database operations and vector search. One API, one driver, one deployment, one operational model. This simplicity eliminates complexity and lets your team focus on application logic.
+[enthusiastically] MongoDB accelerates development cycles when you need both database operations and vector search. [pleased] One API, one driver, one deployment, one operational model. [confidently] This simplicity eliminates complexity and lets your team focus on application logic.
 #### Unified Data Access Patterns
-When your access patterns mix operational queries with vector search, keeping everything in MongoDB makes sense. Query user preferences, find similar items, update counts, retrieve recommendations - all against one database.
-Let's look at additional considerations.`
+[conversational] When your access patterns mix operational queries with vector search, keeping everything in MongoDB makes sense. [pleased] Query user preferences, find similar items, update counts, retrieve recommendations - all against one database.
+[cheerfully] Let's look at additional considerations.`
         },
         {
           id: 62,
@@ -2008,20 +2008,20 @@ Let's look at additional considerations.`
           backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Notes
 #### Important Details and Best Practices
-Before moving to our final database, let's cover important details about working with MongoDB Vector Search.
+[conversational] Before moving to our final database, let's cover important details about working with MongoDB Vector Search.
 #### Extensive Tooling and SDKs
-MongoDB provides extensive tooling and SDKs across multiple languages. Whether you're building in Python, JavaScript, Java, Go, C#, or other languages, official MongoDB drivers support vector search. The API is consistent across languages, making it easy to work in polyglot environments.
+[pleased] MongoDB provides extensive tooling and SDKs across multiple languages. [conversational] Whether you're building in Python, JavaScript, Java, Go, C#, or other languages, official MongoDB drivers support vector search. [confidently] The API is consistent across languages, making it easy to work in polyglot environments.
 #### Comprehensive Documentation
-Comprehensive benchmarks and deployment guides are available in documentation. MongoDB provides detailed performance data, sizing calculators, and best practice guides based on real customer deployments. This documentation helps you make informed decisions about cluster sizing and configuration.
+[pleased] Comprehensive benchmarks and deployment guides are available in documentation. [lecture] MongoDB provides detailed performance data, sizing calculators, and best practice guides based on real customer deployments. [conversational] This documentation helps you make informed decisions about cluster sizing and configuration.
 #### Atlas Search Integration
-Atlas Vector Search integrates well with Atlas Search for unified text plus vector queries. Atlas Search provides full-text search with linguistic analysis, faceting, and relevance scoring. You can combine this with vector search in a single query, getting the benefits of both keyword and semantic search.
+[excited] Atlas Vector Search integrates well with Atlas Search for unified text plus vector queries. [lecture] Atlas Search provides full-text search with linguistic analysis, faceting, and relevance scoring. [pleased] You can combine this with vector search in a single query, getting the benefits of both keyword and semantic search.
 #### MongoDB Compass Visual Tools
-MongoDB Compass provides visual tools for vector index management. Compass is MongoDB's GUI that makes it easy to explore data, create indices, and run queries without writing code. For vector indices, Compass provides interfaces for creating and managing them visually, helpful for teams preferring graphical tools.
+[pleased] MongoDB Compass provides visual tools for vector index management. [conversational] Compass is MongoDB's GUI that makes it easy to explore data, create indices, and run queries without writing code. [pleased] For vector indices, Compass provides interfaces for creating and managing them visually, helpful for teams preferring graphical tools.
 #### Change Streams for Real-Time
-MongoDB Change Streams allow building real-time applications that react to data changes including vector updates. Your application can watch for document changes and respond immediately - perfect for live recommendations or dynamic content systems.
+[excited] MongoDB Change Streams allow building real-time applications that react to data changes including vector updates. [conversational] Your application can watch for document changes and respond immediately - perfect for live recommendations or dynamic content systems.
 #### Atlas App Services
-Atlas App Services provide additional functionality like triggers, functions, and GraphQL APIs that work naturally with vector data.
-Now let's explore our final database - LanceDB!`
+[pleased] Atlas App Services provide additional functionality like triggers, functions, and GraphQL APIs that work naturally with vector data.
+[cheerfully] Now let's explore our final database - LanceDB!`
         }
       ]
     },
@@ -2045,18 +2045,18 @@ Now let's explore our final database - LanceDB!`
           backgroundColor: '#383e3f',
           notes: `### LanceDB - Index Type
 #### Introduction to LanceDB
-Welcome to LanceDB, our final database! LanceDB represents a unique approach to vector search - optimized specifically for storage-efficient, disk-based operations. It's built on the Lance columnar format designed for machine learning workloads.
+[enthusiastically] Welcome to LanceDB, our final database! [storytelling] LanceDB represents a unique approach to vector search - optimized specifically for storage-efficient, disk-based operations. [lecture] It's built on the Lance columnar format designed for machine learning workloads.
 #### IVF-PQ and Disk-Optimized Algorithms
-LanceDB uses IVF-PQ and disk-optimized ANN algorithms over the Lance columnar format. IVF-PQ combines Inverted File indexing with Product Quantization - a compression technique that dramatically reduces memory requirements. The key innovation is making this work efficiently from disk rather than requiring everything in memory.
+[lecture] LanceDB uses IVF-PQ and disk-optimized ANN algorithms over the Lance columnar format. [conversational] IVF-PQ combines Inverted File indexing with Product Quantization - a compression technique that dramatically reduces memory requirements. [excited] The key innovation is making this work efficiently from disk rather than requiring everything in memory.
 #### Lance Columnar Format
-The Lance columnar format is specifically designed for ML data - vectors, tensors, and associated metadata. Columnar storage means related data is stored together on disk, enabling efficient reading of specific fields without loading entire records. This is perfect for vector workloads where you often read vectors without needing all metadata.
+[lecture] The Lance columnar format is specifically designed for ML data - vectors, tensors, and associated metadata. [conversational] Columnar storage means related data is stored together on disk, enabling efficient reading of specific fields without loading entire records. [pleased] This is perfect for vector workloads where you often read vectors without needing all metadata.
 #### Hybrid Search Support
-LanceDB supports hybrid search combining vector and traditional search methods. You can filter by metadata while searching vectors, or combine multiple search strategies. The columnar format makes these hybrid queries efficient.
+[pleased] LanceDB supports hybrid search combining vector and traditional search methods. [conversational] You can filter by metadata while searching vectors, or combine multiple search strategies. [pleased] The columnar format makes these hybrid queries efficient.
 #### Robust Metadata Filtering
-Metadata filters are first-class citizens in LanceDB. You can filter on any field efficiently before vector search, during vector search, or after. The columnar storage means filtering doesn't require scanning unnecessary data.
+[conversational] Metadata filters are first-class citizens in LanceDB. You can filter on any field efficiently before vector search, during vector search, or after. [pleased] The columnar storage means filtering doesn't require scanning unnecessary data.
 #### Optimized for Storage
-The key differentiator is storage optimization. While other databases optimize for in-memory performance, LanceDB optimizes for efficient disk operations. This makes it economical for massive datasets where keeping everything in memory is prohibitively expensive.
-Let's discuss LanceDB's scaling model.`
+[excited] The key differentiator is storage optimization. [conversational] While other databases optimize for in-memory performance, LanceDB optimizes for efficient disk operations. [pleased] This makes it economical for massive datasets where keeping everything in memory is prohibitively expensive.
+[cheerfully] Let's discuss LanceDB's scaling model.`
         },
         {
           id: 64,
@@ -2074,20 +2074,20 @@ Let's discuss LanceDB's scaling model.`
           backgroundColor: '#383e3f',
           notes: `### LanceDB - Scaling Model
 #### Understanding LanceDB Scaling
-LanceDB takes a flexible approach to deployment and scaling that differs from traditional database architectures.
+[conversational] LanceDB takes a flexible approach to deployment and scaling that differs from traditional database architectures.
 #### Embedded or Serverless Deployment
-LanceDB offers flexible deployment as embedded database or serverless cloud service. "Embedded" means LanceDB runs within your application process - no separate database server. This is similar to SQLite where the database is a library you include. For production scale, LanceDB Cloud offers serverless deployment where you don't manage infrastructure at all.
+[lecture] LanceDB offers flexible deployment as embedded database or serverless cloud service. [conversational] "Embedded" means LanceDB runs within your application process - no separate database server. This is similar to SQLite where the database is a library you include. [pleased] For production scale, LanceDB Cloud offers serverless deployment where you don't manage infrastructure at all.
 #### Optimized for Object Storage
-LanceDB is specifically optimized for object storage solutions like S3 and high-performance local NVMe drives. Object storage is inexpensive - pennies per gigabyte per month - and LanceDB's architecture leverages this economically. By designing specifically for these storage tiers, LanceDB achieves great performance at low cost.
+[excited] LanceDB is specifically optimized for object storage solutions like S3 and high-performance local NVMe drives. [conversational] Object storage is inexpensive - pennies per gigabyte per month - and LanceDB's architecture leverages this economically. [pleased] By designing specifically for these storage tiers, LanceDB achieves great performance at low cost.
 #### S3 Storage Pattern
-When using S3, LanceDB stores data in optimized formats that minimize read operations. The columnar layout and compression mean each query reads only necessary data. S3's high throughput for sequential reads makes this pattern efficient.
+[lecture] When using S3, LanceDB stores data in optimized formats that minimize read operations. [conversational] The columnar layout and compression mean each query reads only necessary data. [pleased] S3's high throughput for sequential reads makes this pattern efficient.
 #### NVMe Local Storage
-For local deployments, modern NVMe SSDs provide excellent performance - sequential reads approaching RAM speeds. LanceDB exploits this with access patterns that favor sequential over random reads. On NVMe storage, LanceDB delivers remarkable performance despite being disk-based.
+[conversational] For local deployments, modern NVMe SSDs provide excellent performance - sequential reads approaching RAM speeds. [pleased] LanceDB exploits this with access patterns that favor sequential over random reads. [excited] On NVMe storage, LanceDB delivers remarkable performance despite being disk-based.
 #### Scale with Data Volume
-LanceDB is designed to scale with data volume rather than query complexity. Adding more data doesn't require cluster management or sharding configuration. Data naturally grows in storage, and LanceDB handles it.
+[lecture] LanceDB is designed to scale with data volume rather than query complexity. [conversational] Adding more data doesn't require cluster management or sharding configuration. [pleased] Data naturally grows in storage, and LanceDB handles it.
 #### Embedded Simplicity
-The embedded model scales vertically easily - run on a bigger machine with faster drives when needed. No cluster coordination, no distributed systems complexity.
-Let's explore performance characteristics.`
+[conversational] The embedded model scales vertically easily - run on a bigger machine with faster drives when needed. [pleased] No cluster coordination, no distributed systems complexity.
+[cheerfully] Let's explore performance characteristics.`
         },
         {
           id: 65,
@@ -2105,18 +2105,18 @@ Let's explore performance characteristics.`
           backgroundColor: '#383e3f',
           notes: `### LanceDB - Performance Profile
 #### Understanding LanceDB Performance
-Let's talk about LanceDB performance - this is impressive given its disk-based architecture.
+[conversational] Let's talk about LanceDB performance - this is impressive given its disk-based architecture.
 #### Sub-25ms Latency
-LanceDB achieves less than 25 milliseconds latency for typical query workloads. Twenty-five milliseconds for disk-based operations is remarkable. Most disk-based systems struggle to achieve sub-100ms. LanceDB's columnar format, efficient I/O patterns, and optimized algorithms make this possible.
+[excited] LanceDB achieves less than 25 milliseconds latency for typical query workloads. [enthusiastically] Twenty-five milliseconds for disk-based operations is remarkable. Most disk-based systems struggle to achieve sub-100ms. [pleased] LanceDB's columnar format, efficient I/O patterns, and optimized algorithms make this possible.
 #### Exceptional Disk Performance
-The exceptional disk-based performance compared to memory-dependent alternatives is LanceDB's killer feature. While in-memory systems require expensive RAM for the entire dataset, LanceDB delivers acceptable latency from inexpensive disk storage. For massive datasets, this economics completely changes the cost equation.
+[excited] The exceptional disk-based performance compared to memory-dependent alternatives is LanceDB's killer feature. [conversational] While in-memory systems require expensive RAM for the entire dataset, LanceDB delivers acceptable latency from inexpensive disk storage. [pleased] For massive datasets, this economics completely changes the cost equation.
 #### Performance at Scale
-LanceDB is particularly strong with large datasets stored on cost-effective storage solutions, maintaining performance at scale. Whether you're storing millions or billions of vectors, performance remains consistent because the architecture is designed specifically for this. The columnar format and compression mean you're never reading unnecessary data.
+[confidently] LanceDB is particularly strong with large datasets stored on cost-effective storage solutions, maintaining performance at scale. [lecture] Whether you're storing millions or billions of vectors, performance remains consistent because the architecture is designed specifically for this. [pleased] The columnar format and compression mean you're never reading unnecessary data.
 #### Efficient I/O Patterns
-The Lance format's I/O locality is key. Related data is stored together on disk, so queries result in sequential reads rather than random seeks. Sequential reads are fast even on rotating disks, and blazingly fast on SSDs. This is fundamentally different from database designs that scatter related data across disk.
+[lecture] The Lance format's I/O locality is key. Related data is stored together on disk, so queries result in sequential reads rather than random seeks. [conversational] Sequential reads are fast even on rotating disks, and blazingly fast on SSDs. [pleased] This is fundamentally different from database designs that scatter related data across disk.
 #### Trade-Offs Understood
-LanceDB won't match pure in-memory systems for absolute lowest latency. If you need sub-millisecond queries, look at Redis or in-memory HNSW. But if you can accept 25ms latency for massive cost savings on storage, LanceDB delivers incredible value.
-Let's discuss costs - this is where LanceDB really shines.`
+[cautiously] LanceDB won't match pure in-memory systems for absolute lowest latency. [seriously] If you need sub-millisecond queries, look at Redis or in-memory HNSW. [pleased] But if you can accept 25ms latency for massive cost savings on storage, LanceDB delivers incredible value.
+[cheerfully] Let's discuss costs - this is where LanceDB really shines.`
         },
         {
           id: 66,
@@ -2134,18 +2134,18 @@ Let's discuss costs - this is where LanceDB really shines.`
           backgroundColor: '#383e3f',
           notes: `### LanceDB - Cost Consideration
 #### Understanding LanceDB Economics
-Let's talk about LanceDB costs - this is its strongest selling point for many use cases.
+[enthusiastically] Let's talk about LanceDB costs - this is its strongest selling point for many use cases.
 #### Storage-Centric Economics
-LanceDB employs storage-centric economics leveraging inexpensive S3 or local disk to reduce RAM requirements and infrastructure costs. RAM costs roughly $10 per gigabyte per month in cloud environments. S3 costs about $0.02 per gigabyte per month. That's a 500x difference! For datasets measured in terabytes, using S3 instead of RAM saves enormous amounts of money.
+[excited] LanceDB employs storage-centric economics leveraging inexpensive S3 or local disk to reduce RAM requirements and infrastructure costs. [storytelling] RAM costs roughly $10 per gigabyte per month in cloud environments. S3 costs about $0.02 per gigabyte per month. That's a 500x difference! [enthusiastically] For datasets measured in terabytes, using S3 instead of RAM saves enormous amounts of money.
 #### Reduced RAM Requirements
-By working efficiently from disk, LanceDB reduces RAM requirements dramatically compared to in-memory databases. You still need some RAM for query processing and caching, but the bulk of data lives on disk. This means you can run LanceDB on much smaller, less expensive instances.
+[pleased] By working efficiently from disk, LanceDB reduces RAM requirements dramatically compared to in-memory databases. [conversational] You still need some RAM for query processing and caching, but the bulk of data lives on disk. [pleased] This means you can run LanceDB on much smaller, less expensive instances.
 #### Serverless Pricing
-LanceDB Cloud offers serverless pricing options allowing pay-for-use models that scale efficiently with actual workloads. You're not paying for idle capacity. When queries are running, you pay. When quiet, costs drop. This elasticity is perfect for variable workloads or applications in early stages before usage patterns stabilize.
+[excited] LanceDB Cloud offers serverless pricing options allowing pay-for-use models that scale efficiently with actual workloads. [conversational] You're not paying for idle capacity. When queries are running, you pay. When quiet, costs drop. [pleased] This elasticity is perfect for variable workloads or applications in early stages before usage patterns stabilize.
 #### Optimized for Low TCO at Scale
-LanceDB is optimized for low TCO 👉 'T-C-O' - Total Cost of Ownership - at scale. The more data you have, the more money LanceDB saves compared to memory-intensive alternatives. If you're storing 10 terabytes of vectors, memory-based systems become prohibitively expensive while LanceDB remains economical.
+[confidently] LanceDB is optimized for low TCO 👉 'T-C-O' - Total Cost of Ownership - at scale. [excited] The more data you have, the more money LanceDB saves compared to memory-intensive alternatives. [conversational] If you're storing 10 terabytes of vectors, memory-based systems become prohibitively expensive while LanceDB remains economical.
 #### Infrastructure Flexibility
-You can run LanceDB locally during development with zero cloud costs, then deploy to serverless for production with predictable usage-based pricing. Or self-host on infrastructure you control with just storage costs.
-Let's identify ideal use cases.`
+[pleased] You can run LanceDB locally during development with zero cloud costs, then deploy to serverless for production with predictable usage-based pricing. [conversational] Or self-host on infrastructure you control with just storage costs.
+[cheerfully] Let's identify ideal use cases.`
         },
         {
           id: 67,
@@ -2163,20 +2163,20 @@ Let's identify ideal use cases.`
           backgroundColor: '#383e3f',
           notes: `### LanceDB - Best Use Case
 #### When to Choose LanceDB
-After exploring LanceDB capabilities, let's identify when it's your ideal choice.
+[conversational] After exploring LanceDB capabilities, let's identify when it's your ideal choice.
 #### Cost-Efficient Large-Scale RAG
-LanceDB is ideal for cost-efficient large-scale RAG over data lakes. RAG 👉 'R-A-G' - Retrieval Augmented Generation - applications retrieve relevant context from large corpora before generating responses. When your corpus is massive - millions of documents, images, or other items - storing vectors in memory becomes prohibitively expensive. LanceDB lets you store everything on inexpensive object storage while maintaining acceptable query performance.
+[enthusiastically] LanceDB is ideal for cost-efficient large-scale RAG over data lakes. [lecture] RAG 👉 'R-A-G' - Retrieval Augmented Generation - applications retrieve relevant context from large corpora before generating responses. [conversational] When your corpus is massive - millions of documents, images, or other items - storing vectors in memory becomes prohibitively expensive. [pleased] LanceDB lets you store everything on inexpensive object storage while maintaining acceptable query performance.
 #### Vectors with Source Data
-When vectors are stored alongside source data in data lakes, LanceDB excels. Many organizations store raw data - documents, images, logs - in S3 data lakes. LanceDB can store vectors in the same location, simplifying architecture. No separate vector database to synchronize with your data lake.
+[conversational] When vectors are stored alongside source data in data lakes, LanceDB excels. [storytelling] Many organizations store raw data - documents, images, logs - in S3 data lakes. [pleased] LanceDB can store vectors in the same location, simplifying architecture. No separate vector database to synchronize with your data lake.
 #### Multimodal Datasets
-LanceDB is well-suited for multimodal datasets combining text, images, and other data types. The Lance format efficiently stores different data types together. You can have text embeddings, image embeddings, and metadata in the same table, queryable through unified APIs.
+[excited] LanceDB is well-suited for multimodal datasets combining text, images, and other data types. [lecture] The Lance format efficiently stores different data types together. [conversational] You can have text embeddings, image embeddings, and metadata in the same table, queryable through unified APIs.
 #### Edge and Embedded Scenarios
-For edge and embedded scenarios with storage constraints, LanceDB works well. Maybe you're building an application that runs on devices with limited RAM but reasonable storage. LanceDB's embedded mode lets you include vector search capabilities without requiring a separate database server or massive memory allocation.
+[conversational] For edge and embedded scenarios with storage constraints, LanceDB works well. [storytelling] Maybe you're building an application that runs on devices with limited RAM but reasonable storage. [pleased] LanceDB's embedded mode lets you include vector search capabilities without requiring a separate database server or massive memory allocation.
 #### Cost-Constrained Projects
-Projects with cost constraints but large vector datasets should consider LanceDB. If in-memory solutions are too expensive but you need vector search, LanceDB provides a middle ground.
+[pleased] Projects with cost constraints but large vector datasets should consider LanceDB. [conversational] If in-memory solutions are too expensive but you need vector search, LanceDB provides a middle ground.
 #### Data Science Workflows
-LanceDB fits naturally into data science workflows where vectors live alongside training data in columnar formats.
-Let's look at final considerations.`
+[pleased] LanceDB fits naturally into data science workflows where vectors live alongside training data in columnar formats.
+[cheerfully] Let's look at final considerations.`
         },
         {
           id: 68,
@@ -2197,20 +2197,20 @@ Let's look at final considerations.`
           backgroundColor: '#383e3f',
           notes: `### LanceDB - Notes
 #### Important Details and Integration Points
-We've reached our last database! Let's cover key details about LanceDB.
+[enthusiastically] We've reached our last database! [conversational] Let's cover key details about LanceDB.
 #### Built on Lance Columnar Format
-LanceDB is built on the columnar Lance format for efficient storage and retrieval. Columnar formats store data by column rather than by row - perfect for analytical queries and ML workloads where you often read specific fields across many records. This is fundamentally different from row-oriented databases.
+[lecture] LanceDB is built on the columnar Lance format for efficient storage and retrieval. [conversational] Columnar formats store data by column rather than by row - perfect for analytical queries and ML workloads where you often read specific fields across many records. [pleased] This is fundamentally different from row-oriented databases.
 #### Excellent I/O Locality
-The Lance format provides excellent I/O locality for disk-based operations. Related data is physically stored together on disk, so reading it requires sequential I/O operations rather than seeking all over the disk. This is what enables LanceDB's impressive disk-based performance.
+[lecture] The Lance format provides excellent I/O locality for disk-based operations. [conversational] Related data is physically stored together on disk, so reading it requires sequential I/O operations rather than seeking all over the disk. [excited] This is what enables LanceDB's impressive disk-based performance.
 #### Python and Apache Arrow Integration
-LanceDB integrates seamlessly with Python and Apache Arrow ecosystem. Arrow is a columnar memory format used by pandas, Polars, and many data science tools. LanceDB can read and write Arrow data structures directly, enabling zero-copy data exchange. This integration is huge for data scientists who already work in this ecosystem.
+[enthusiastically] LanceDB integrates seamlessly with Python and Apache Arrow ecosystem. [lecture] Arrow is a columnar memory format used by pandas, Polars, and many data science tools. [pleased] LanceDB can read and write Arrow data structures directly, enabling zero-copy data exchange. [excited] This integration is huge for data scientists who already work in this ecosystem.
 #### Data Science Workflows
-Perfect for data science and analytics workflows. You can query vectors using the same tools you use for data analysis. Generate embeddings in pandas, store them in LanceDB, query them with DuckDB, analyze results with Arrow - everything works together naturally.
+[pleased] Perfect for data science and analytics workflows. [conversational] You can query vectors using the same tools you use for data analysis. [storytelling] Generate embeddings in pandas, store them in LanceDB, query them with DuckDB, analyze results with Arrow - [pleased] everything works together naturally.
 #### Modern Data Stack Integration
-LanceDB fits naturally into the modern data stack alongside tools like DuckDB, Apache Arrow, and Parquet. If your team already works with these technologies, LanceDB is a natural addition.
+[conversational] LanceDB fits naturally into the modern data stack alongside tools like DuckDB, Apache Arrow, and Parquet. [pleased] If your team already works with these technologies, LanceDB is a natural addition.
 #### Embedded Simplicity
-The embedded mode means zero operational overhead for development and testing. Just import the library and start using it.
-Now let's wrap up with our comprehensive comparison!`
+[pleased] The embedded mode means zero operational overhead for development and testing. [conversational] Just import the library and start using it.
+[cheerfully] Now let's wrap up with our comprehensive comparison!`
         }
       ]
     },
@@ -2337,20 +2337,20 @@ Now let's wrap up with our comprehensive comparison!`
           backgroundColor: '#1e4d7d',
           notes: `### Quick Comparison Summary
 #### Bringing It All Together
-Excellent! We've explored all 11 vector databases in detail. Now let's bring everything together with a comprehensive comparison table that lets you see them side by side.
+[enthusiastically] Excellent! We've explored all 11 vector databases in detail. [conversational] Now let's bring everything together with a comprehensive comparison table that lets you see them side by side.
 #### Understanding the Table
-This table summarizes the key characteristics we discussed for each database. Let's walk through what each column means and how to use this for decision-making.
+[lecture] This table summarizes the key characteristics we discussed for each database. [conversational] Let's walk through what each column means and how to use this for decision-making.
 #### Index Type Column
-The Index Type column shows the algorithms each database uses. Proprietary algorithms like Pinecone's are optimized but closed-source. HNSW is the most common choice - it's proven, fast, and well-understood. IVF variants are memory-efficient alternatives. Specialized options like DiskANN, GPU indices, and ACORN-1 serve specific use cases.
+[lecture] The Index Type column shows the algorithms each database uses. [conversational] Proprietary algorithms like Pinecone's are optimized but closed-source. HNSW is the most common choice - it's proven, fast, and well-understood. IVF variants are memory-efficient alternatives. [pleased] Specialized options like DiskANN, GPU indices, and ACORN-1 serve specific use cases.
 #### Scaling Model Column
-The Scaling Model describes how each database grows. "Vertical pods plus replicas" means Pinecone scales up with bigger pods and out with more replicas. "Horizontal sharding" means databases like Weaviate split data across nodes. "Single-node" like Chroma means simpler deployment but limited scale. "Embedded" like LanceDB means it runs in your application.
+[lecture] The Scaling Model describes how each database grows. [conversational] "Vertical pods plus replicas" means Pinecone scales up with bigger pods and out with more replicas. "Horizontal sharding" means databases like Weaviate split data across nodes. "Single-node" like Chroma means simpler deployment but limited scale. "Embedded" like LanceDB means it runs in your application.
 #### Performance Column
-Performance characteristics vary significantly. Some prioritize raw speed with sub-millisecond latency. Others optimize for hybrid queries combining text and vectors. Some excel at filtered searches. Understanding your performance requirements helps narrow choices.
+[conversational] Performance characteristics vary significantly. [lecture] Some prioritize raw speed with sub-millisecond latency. Others optimize for hybrid queries combining text and vectors. Some excel at filtered searches. [conversational] Understanding your performance requirements helps narrow choices.
 #### Cost Column
-Cost models differ dramatically. Fully managed services have monthly minimums but zero operational overhead. Open-source options are free but require infrastructure and expertise. Usage-based pricing scales with actual consumption. Memory-intensive solutions cost more per gigabyte than disk-based alternatives.
+[conversational] Cost models differ dramatically. [lecture] Fully managed services have monthly minimums but zero operational overhead. Open-source options are free but require infrastructure and expertise. Usage-based pricing scales with actual consumption. [conversational] Memory-intensive solutions cost more per gigabyte than disk-based alternatives.
 #### Best Use Case Column
-This is perhaps the most important column - it tells you when each database is the ideal choice. Match these descriptions to your requirements. Need production-grade with easy operations? Pinecone. Already using PostgreSQL? pgvector. Building massive recommendations? Vespa.
-Now let's get specific guidance on choosing!`
+[enthusiastically] This is perhaps the most important column - it tells you when each database is the ideal choice. [conversational] Match these descriptions to your requirements. Need production-grade with easy operations? Pinecone. Already using PostgreSQL? pgvector. Building massive recommendations? Vespa.
+[cheerfully] Now let's get specific guidance on choosing!`
         },
         {
           id: 70,
@@ -2431,22 +2431,22 @@ Now let's get specific guidance on choosing!`
           backgroundColor: '#1e4d7d',
           notes: `### How to Choose the Right Vector Database
 #### Decision Framework
-Perfect! Now we arrive at the most practical slide - how to actually choose the right vector database for your specific needs. Let's walk through this decision framework systematically.
+[enthusiastically] Perfect! Now we arrive at the most practical slide - how to actually choose the right vector database for your specific needs. [conversational] Let's walk through this decision framework systematically.
 #### Production-Grade and Managed Category
-If you need production-grade reliability with managed operations, start here. Pinecone offers the easiest operations with SLA guarantees and predictable latency - perfect when you want to focus on your application rather than database operations. Weaviate provides hybrid search capabilities with multi-modal support and a GraphQL API - ideal when you need complex queries combining vectors with filters. Qdrant delivers high RPS performance - about 4x faster than alternatives - with advanced filtering when raw speed and throughput matter most.
+[lecture] If you need production-grade reliability with managed operations, start here. [pleased] Pinecone offers the easiest operations with SLA guarantees and predictable latency - perfect when you want to focus on your application rather than database operations. [conversational] Weaviate provides hybrid search capabilities with multi-modal support and a GraphQL API - ideal when you need complex queries combining vectors with filters. [confidently] Qdrant delivers high RPS performance - about 4x faster than alternatives - with advanced filtering when raw speed and throughput matter most.
 #### Large-Scale and Enterprise Category
-For large-scale and enterprise deployments, consider these options. Milvus handles billion-scale workloads with flexible index strategies - choose this when you need massive scale and fine-tuned control over performance characteristics. Elasticsearch excels at unified keyword plus semantic search - the right choice when you need both traditional text matching and vector similarity. Vespa provides real-time ranking with ML inference - perfect for sophisticated recommendation systems where complex scoring happens during queries.
+[lecture] For large-scale and enterprise deployments, consider these options. [pleased] Milvus handles billion-scale workloads with flexible index strategies - choose this when you need massive scale and fine-tuned control over performance characteristics. [excited] Elasticsearch excels at unified keyword plus semantic search - the right choice when you need both traditional text matching and vector similarity. [enthusiastically] Vespa provides real-time ranking with ML inference - perfect for sophisticated recommendation systems where complex scoring happens during queries.
 #### Prototyping and Development Category
-For prototyping and development, simplicity wins. Chroma is simple, local-first, with excellent LangChain and LlamaIndex integration - the best starting point for exploring vector search concepts or building MVPs. LanceDB offers embedded deployment with cost-efficient storage for data lakes - choose this for projects where development simplicity and low costs matter more than maximum performance.
+[conversational] For prototyping and development, simplicity wins. [pleased] Chroma is simple, local-first, with excellent LangChain and LlamaIndex integration - the best starting point for exploring vector search concepts or building MVPs. [conversational] LanceDB offers embedded deployment with cost-efficient storage for data lakes - choose this for projects where development simplicity and low costs matter more than maximum performance.
 #### Real-Time and Low-Latency Category
-When real-time performance is critical, consider these. Redis Vector delivers sub-millisecond latency with in-memory speed - the fastest option for applications where every millisecond impacts user experience. Qdrant also appears here with high throughput and minimal latency.
+[conversational] When real-time performance is critical, consider these. [excited] Redis Vector delivers sub-millisecond latency with in-memory speed - the fastest option for applications where every millisecond impacts user experience. [pleased] Qdrant also appears here with high throughput and minimal latency.
 #### Existing Database Integration Category
-If you already have database infrastructure, leverage it. pgvector adds vector search to PostgreSQL with ACID compliance and SQL interface, plus recent 150x performance improvements - perfect if PostgreSQL is already your database. MongoDB unifies JSON operational data and vectors in a single platform - ideal for teams already using MongoDB. Redis and Elasticsearch let you add vectors to existing infrastructure without introducing new systems.
+[conversational] If you already have database infrastructure, leverage it. [enthusiastically] pgvector adds vector search to PostgreSQL with ACID compliance and SQL interface, plus recent 150x performance improvements - perfect if PostgreSQL is already your database. [pleased] MongoDB unifies JSON operational data and vectors in a single platform - ideal for teams already using MongoDB. [conversational] Redis and Elasticsearch let you add vectors to existing infrastructure without introducing new systems.
 #### Cost-Efficiency Focus Category
-When cost is the primary concern, these options minimize expenses. LanceDB offers storage-centric economics with low TCO at scale - optimal when you have massive datasets and can accept slightly higher latency. Chroma is free and open source for development. Weaviate starts at just $25 per month managed - the most affordable managed option.
+[conversational] When cost is the primary concern, these options minimize expenses. [excited] LanceDB offers storage-centric economics with low TCO at scale - optimal when you have massive datasets and can accept slightly higher latency. [pleased] Chroma is free and open source for development. Weaviate starts at just $25 per month managed - the most affordable managed option.
 #### Making Your Decision
-Start by identifying which category matches your primary need, then evaluate specific databases within that category. Consider your team's expertise, existing infrastructure, scale requirements, and budget. Most importantly, start small and iterate - you can always migrate later if your needs change significantly.
-Thank you for joining this comprehensive tour of vector databases! You now have the knowledge to choose confidently.`
+[conversational] Start by identifying which category matches your primary need, then evaluate specific databases within that category. [lecture] Consider your team's expertise, existing infrastructure, scale requirements, and budget. [confidently] Most importantly, start small and iterate - you can always migrate later if your needs change significantly.
+[enthusiastically] Thank you for joining this comprehensive tour of vector databases! You now have the knowledge to choose confidently.`
         }
       ]
     }
