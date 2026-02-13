@@ -24,7 +24,7 @@ export const chunkingTechniquesDeck: Deck = {
               <GSAPAnimated delay={0.2} duration={1.0}>
                 <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval in RAG and NLP applications</h2>
               </GSAPAnimated>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '30px' }}>
                 <GSAPAnimated delay={0.5} duration={0.8}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-file" sizeName="4x" style={{ color: '#3498db' }} />
@@ -82,7 +82,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <GSAPAnimated delay={0.1} duration={0.7}>
-                <div style={{ marginBottom: '30px' }}>
+                <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
                     <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
                     Definition
@@ -101,7 +101,7 @@ export const chunkingTechniquesDeck: Deck = {
     style E fill:#e1bee7`}
                     />
                   </h3>
-                  <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+                  <p style={{ fontSize: '1.2rem',margin: '0px' }}>
                     Chunking is the process of breaking large documents into <strong>smaller, retrievable, semantically coherent units</strong> that preserve context while fitting within model constraints.
                   </p>
                 </div>
@@ -115,7 +115,7 @@ export const chunkingTechniquesDeck: Deck = {
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.1} delay={0.5}>
-                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1rem' }}>
                       <li>Fits content within model context windows</li>
                       <li>Increases retrieval precision and relevance</li>
                       <li>Reduces computational cost and latency</li>
@@ -129,7 +129,7 @@ export const chunkingTechniquesDeck: Deck = {
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.12} delay={0.8}>
-                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1rem' }}>
                       <li>Chunk size (tokens, sentences, paragraphs)</li>
                       <li>Overlap between chunks</li>
                       <li>Boundary determination (semantic vs. structural)</li>
@@ -146,7 +146,7 @@ export const chunkingTechniquesDeck: Deck = {
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.15} delay={0.5}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1.2rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1rem' }}>
                       <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
                         <strong>Better recall/precision in retrieval</strong>
                       </div>
@@ -189,7 +189,7 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#4ad786' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                 <GSAPAnimated delay={0.2} duration={0.8}>
                   <div>
@@ -210,7 +210,7 @@ export const chunkingTechniquesDeck: Deck = {
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.4}>
-                      <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#3498db' }}>
+                      <ul style={{ lineHeight: '1.5', fontSize: '1rem', color: '#3498db' }}>
                         <li>Fixed-Size Chunking</li>
                         <li>Sliding Window Chunking</li>
                         <li>Token-Aware Chunking</li>
@@ -219,21 +219,9 @@ export const chunkingTechniquesDeck: Deck = {
                     <h4 style={{ color: '#2ecc71', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-paragraph" sizeName="2x" darkModeInvert={true} />
                       Sentence/Paragraph-based (4-6)
-                      <MermaidPopover
-                        diagram={`graph TD
-    A[Document] -->|Split| B[Sentence 1]
-    A -->|Split| C[Sentence 2]
-    A -->|Split| D[Sentence 3]
-    B -->|Group| E[Chunk 1]
-    C -->|Group| E
-    D -->|Group| F[Chunk 2]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style F fill:#81c784`}
-                      />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
-                      <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#2ecc71' }}>
+                      <ul style={{ lineHeight: '1.5', fontSize: '1rem', color: '#2ecc71' }}>
                         <li>Sentence-Level Chunking</li>
                         <li>Paragraph-Level Chunking</li>
                         <li>Windowed Sentence Grouping</li>
@@ -260,7 +248,7 @@ export const chunkingTechniquesDeck: Deck = {
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.08} delay={0.5}>
-                      <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#9b59b6' }}>
+                      <ul style={{ lineHeight: '1.5', fontSize: '1rem', color: '#9b59b6' }}>
                         <li>Structure-Aware Chunking</li>
                         <li>Content-Aware Chunking</li>
                         <li>Heading/Title Anchor Chunking</li>
@@ -290,7 +278,7 @@ export const chunkingTechniquesDeck: Deck = {
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
-                      <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#f39c12' }}>
+                      <ul style={{ lineHeight: '1.5', fontSize: '1rem', color: '#f39c12' }}>
                         <li>Semantic Chunking (Embedding-Based)</li>
                         <li>TextTiling</li>
                         <li>Discourse/RST Chunking</li>
@@ -317,7 +305,7 @@ export const chunkingTechniquesDeck: Deck = {
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.12} delay={0.8}>
-                      <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#e67e22' }}>
+                      <ul style={{ lineHeight: '1.5', fontSize: '1rem', color: '#e67e22' }}>
                         <li>Summarization-Based Chunking</li>
                         <li>Audio/ASR Time-Based Chunking</li>
                         <li>Speaker-Turn Chunking</li>
@@ -331,7 +319,7 @@ export const chunkingTechniquesDeck: Deck = {
                 </GSAPAnimated>
               </div>
               <GSAPAnimated delay={1.0} duration={0.8}>
-                <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '1.2rem', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
+                <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '1rem', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
                   <strong>Each technique includes:</strong> Pros, Cons, Best Chunk Size, Overlap Size, Computational Cost, Use Cases, Tooling Support, and Complexity Level
                 </p>
               </GSAPAnimated>
@@ -394,10 +382,13 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.7}>
-                <div><li>Simple, predictable, fast; baseline for A/B tests</li></div>
-                <div><li>Consistent chunk sizes for embedding models</li></div>
-                <div><li>Easy to implement and debug</li></div>
-                <div><li>Predictable storage requirements</li></div>
+                <ul>
+                  <li>Simple, predictable, fast; baseline for A/B tests</li>
+                  <li>Consistent chunk sizes for embedding models</li>
+                  <li>Easy to implement and debug</li>
+                  <li>Predictable storage requirements</li>
+                </ul>
+              
               </GSAPStaggerList>
             </div>
           ),
@@ -440,10 +431,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.7}>
-                <div><li>Ignores semantics; may split sentences</li></div>
-                <div><li>Risk of context dilution at boundaries</li></div>
-                <div><li>Related information may span chunks</li></div>
-                <div><li>Suboptimal for structured documents</li></div>
+                <ul>
+                  <li>Ignores semantics; may split sentences</li>
+                  <li>Risk of context dilution at boundaries</li>
+                  <li>Related information may span chunks</li>
+                  <li>Suboptimal for structured documents</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -473,7 +466,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
               <GSAPAnimated delay={0.3} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-ruler" sizeName="1x" />
+                  <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -495,7 +488,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={0.7} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-link" sizeName="1x" />
+                  <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
                     diagram={`graph TD
@@ -515,7 +508,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.1} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gauge" sizeName="1x" />
+                  <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -553,7 +546,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
                     diagram={`graph TD
@@ -575,26 +568,30 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.6}>
-                <div><li>Logs, FAQs, short documents</li></div>
-                <div><li>Uniform text content</li></div>
-                <div><li>Baseline RAG implementations</li></div>
-                <div><li>Simple knowledge bases</li></div>
+                <ul>
+                  <li>Logs, FAQs, short documents</li>
+                  <li>Uniform text content</li>
+                  <li>Baseline RAG implementations</li>
+                  <li>Simple knowledge bases</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.8} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-wrench" sizeName="1x" />
+                  <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
                   Tooling Support
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
-                <div><li>LangChain Character/Token splitters</li></div>
-                <div><li>LlamaIndex, Haystack</li></div>
-                <div><li>Chroma, Weaviate, Pinecone</li></div>
-                <div><li>Custom implementations (simple)</li></div>
+                <ul>
+                  <li>LangChain Character/Token splitters</li>
+                  <li>LlamaIndex, Haystack</li>
+                  <li>Chroma, Weaviate, Pinecone</li>
+                  <li>Custom implementations (simple)</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.3} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
@@ -657,10 +654,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} duration={0.7}>
-                <div><li>Coherent atomic units; good for precision</li></div>
-                <div><li>Preserves natural language boundaries</li></div>
-                <div><li>Avoids cutting mid-sentence</li></div>
-                <div><li>Each chunk has clear semantic meaning</li></div>
+                <ul>
+                  <li>Coherent atomic units; good for precision</li>
+                  <li>Preserves natural language boundaries</li>
+                  <li>Avoids cutting mid-sentence</li>
+                  <li>Each chunk has clear semantic meaning</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -711,10 +710,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} duration={0.7}>
-                <div><li>Uneven sizes; may be too granular</li></div>
-                <div><li>Short chunks might lack broader context</li></div>
-                <div><li>Variable token counts complicate batching</li></div>
-                <div><li>Requires sentence boundary detection</li></div>
+                <ul>
+                  <li>Uneven sizes; may be too granular</li>
+                  <li>Short chunks might lack broader context</li>
+                  <li>Variable token counts complicate batching</li>
+                  <li>Requires sentence boundary detection</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -746,7 +747,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-ruler" sizeName="1x" />
+                  <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -768,7 +769,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={0.8} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-link" sizeName="1x" />
+                  <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -788,7 +789,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.4} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gauge" sizeName="1x" />
+                  <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -826,7 +827,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.7}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
                     diagram={`graph TD
@@ -848,26 +849,30 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.6}>
-                <div><li>QA over short facts</li></div>
-                <div><li>Classification tasks</li></div>
-                <div><li>Snippet retrieval</li></div>
-                <div><li>FAQ systems and knowledge bases</li></div>
+                <ul>
+                  <li>QA over short facts</li>
+                  <li>Classification tasks</li>
+                  <li>Snippet retrieval</li>
+                  <li>FAQ systems and knowledge bases</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-wrench" sizeName="1x" />
+                  <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
                   Tooling Support
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} duration={0.6}>
-                <div><li>spaCy sentence segmenter</li></div>
-                <div><li>NLTK sent_tokenize</li></div>
-                <div><li>Stanza sentence splitter</li></div>
-                <div><li>syntok and other sentence tokenizers</li></div>
+                <ul>
+                  <li>spaCy sentence segmenter</li>
+                  <li>NLTK sent_tokenize</li>
+                  <li>Stanza sentence splitter</li>
+                  <li>syntok and other sentence tokenizers</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.4} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
@@ -932,10 +937,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} duration={0.7}>
-                <div><li>Natural units; preserves local context</li></div>
-                <div><li>Respects author-defined text boundaries</li></div>
-                <div><li>Maintains topical coherence within paragraphs</li></div>
-                <div><li>Simpler implementation than semantic methods</li></div>
+                <ul>
+                  <li>Natural units; preserves local context</li>
+                  <li>Respects author-defined text boundaries</li>
+                  <li>Maintains topical coherence within paragraphs</li>
+                  <li>Simpler implementation than semantic methods</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -988,11 +995,13 @@ export const chunkingTechniquesDeck: Deck = {
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPStaggerList stagger={0.14} duration={0.7}>
-                <div><li>Paragraphs can be long or inconsistent</li></div>
-                <div><li>Document formatting affects quality</li></div>
-                <div><li>May create uneven chunk sizes</li></div>
-                <div><li>Doesn't work well for documents without clear paragraphs</li></div>
+              <GSAPStaggerList stagger={0.14} duration={0.7}>   
+                <ul>
+                  <li>Paragraphs can be long or inconsistent</li>
+                  <li>Document formatting affects quality</li>
+                  <li>May create uneven chunk sizes</li>
+                  <li>Doesn't work well for documents without clear paragraphs</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1022,7 +1031,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#68ff95', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-ruler" sizeName="1x" />
+                  <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
                     diagram={`graph TD
@@ -1046,7 +1055,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={0.8} duration={0.8}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-link" sizeName="1x" />
+                  <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -1068,7 +1077,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.4} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gauge" sizeName="1x" />
+                  <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -1108,7 +1117,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#68ff95', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
                     diagram={`graph TD
@@ -1130,26 +1139,30 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} duration={0.6}>
-                <div><li>Blogs, reports, knowledge articles</li></div>
-                <div><li>Well-structured documents</li></div>
-                <div><li>Content with clear paragraph delineation</li></div>
-                <div><li>Articles and essays</li></div>
+                <ul>
+                  <li>Blogs, reports, knowledge articles</li>
+                  <li>Well-structured documents</li>
+                  <li>Content with clear paragraph delineation</li>
+                  <li>Articles and essays</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-wrench" sizeName="1x" />
+                  <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
                   Tooling Support
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.6}>
-                <div><li>Markdown/HTML splitters</li></div>
-                <div><li>Regex/newline heuristics</li></div>
-                <div><li>Common text processing libraries</li></div>
-                <div><li>Simple string split on double newlines</li></div>
+                <ul>
+                  <li>Markdown/HTML splitters</li>
+                  <li>Regex/newline heuristics</li>
+                  <li>Common text processing libraries</li>
+                  <li>Simple string split on double newlines</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.5} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
@@ -1217,10 +1230,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.7}>
-                <div><li>Smart fallback separators (\n\n, \n, space, char)</li></div>
-                <div><li>Balances size vs structure preservation</li></div>
-                <div><li>Better respects text boundaries than fixed-size</li></div>
-                <div><li>More natural chunks than character-only splitting</li></div>
+                <ul>
+                  <li>Smart fallback separators (\n\n, \n, space, char)</li>
+                  <li>Balances size vs structure preservation</li>
+                  <li>Better respects text boundaries than fixed-size</li>
+                  <li>More natural chunks than character-only splitting</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1271,10 +1286,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} duration={0.7}>
-                <div><li>Still rule-based; semantics not guaranteed</li></div>
-                <div><li>Requires tuning separator hierarchy</li></div>
-                <div><li>May produce uneven chunk sizes</li></div>
-                <div><li>No awareness of document structure or headings</li></div>
+                <ul>
+                  <li>Still rule-based; semantics not guaranteed</li>
+                  <li>Requires tuning separator hierarchy</li>
+                  <li>May produce uneven chunk sizes</li>
+                  <li>No awareness of document structure or headings</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1306,7 +1323,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
               <GSAPAnimated delay={0.3} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-ruler" sizeName="1x" />
+                  <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -1332,7 +1349,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={0.9} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-link" sizeName="1x" />
+                  <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
                     diagram={`graph TD
@@ -1357,7 +1374,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.5} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gauge" sizeName="1x" />
+                    <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -1395,7 +1412,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
                     diagram={`graph TD
@@ -1417,26 +1434,30 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
-                <div><li>Mixed formatting documents</li></div>
-                <div><li>PDFs post-extraction</li></div>
-                <div><li>Text with varying structure</li></div>
-                <div><li>General-purpose chunking baseline</li></div>
+                <ul>
+                  <li>Mixed formatting documents</li>
+                  <li>PDFs post-extraction</li>
+                  <li>Varying structure</li>
+                  <li>General-purpose chunking baseline</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-wrench" sizeName="1x" />
+                  <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
                   Tooling Support
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.6}>
-                <div><li>LangChain RecursiveCharacterTextSplitter</li></div>
-                <div><li>n8n integration nodes</li></div>
-                <div><li>Snowflake SPLIT_TEXT_RECURSIVE_CHARACTER</li></div>
-                <div><li>Easy to implement custom in any language</li></div>
+                <ul>
+                  <li>LangChain RecursiveCharacterTextSplitter</li>
+                  <li>n8n integration nodes</li>
+                  <li>Snowflake SPLIT_TEXT_RECURSIVE_CHARACTER</li>
+                  <li>Easy to implement custom in any language</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.4} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
@@ -1504,10 +1525,12 @@ export const chunkingTechniquesDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.17} duration={0.7}>
-                <div><li>Respects headers/sections; better coherence</li></div>
-                <div><li>Preserves document structure and hierarchy</li></div>
-                <div><li>Keeps related content together logically</li></div>
-                <div><li>Maintains semantic integrity of document sections</li></div>
+                <ul>
+                  <li>Respects headers/sections; better coherence</li>
+                  <li>Preserves document structure and hierarchy</li>
+                  <li>Keeps related content together logically</li>
+                  <li>Maintains semantic integrity of document sections</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1537,11 +1560,34 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.12}>
-                <li>Parsing/layout extraction can be brittle</li>
-                <li>Requires well-structured documents</li>
-                <li>May produce uneven chunk sizes</li>
-                <li>Quality depends on document formatting</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Inconsistent<br/>Formatting]
+    A --> C[Missing<br/>Structure]
+    A --> D[Uneven<br/>Sections]
+    B --> E[Parsing Fails]
+    C --> E
+    D --> F[Size Issues]
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c
+    style F fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
+                <ul>
+                  <li>Parsing/layout extraction can be brittle</li>
+                  <li>Requires well-structured documents</li>
+                  <li>May produce uneven chunk sizes</li>
+                  <li>Quality depends on document formatting</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1573,21 +1619,27 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.3}>
-                <li>300–1200 tokens (by section)</li>
-                <li>Sizes vary based on document structure and heading levels</li>
+                <ul>
+                  <li>300–1200 tokens (by section)</li>
+                  <li>Sizes vary based on document structure and heading levels</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.5} duration={0.7}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.7}>
-                <li>Minimal across sections</li>
-                <li>Only necessary to maintain cross-sectional references</li>
+                <ul>
+                  <li>Minimal across sections</li>
+                  <li>Only necessary to maintain cross-sectional references</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={1.0}>
-                <li>Medium (structure parsing and analysis requirements)</li>
+                <ul>
+                  <li>Medium (structure parsing and analysis requirements)</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1616,19 +1668,23 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
-                <li>Manuals, whitepapers, SOWs</li>
-                <li>Documentation sites</li>
-                <li>Academic papers with clear sections</li>
-                <li>Technical reports, legal documents</li>
+                <ul>
+                  <li>Manuals, whitepapers, SOWs</li>
+                  <li>Documentation sites</li>
+                  <li>Academic papers with clear sections</li>
+                  <li>Technical reports, legal documents</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.8}>
-                <li>Azure Document Layout</li>
-                <li>Unstructured.io</li>
-                <li>Docling</li>
-                <li>LangChain HTML/MD splitters</li>
+                <ul>
+                  <li>Azure Document Layout</li>
+                  <li>Unstructured.io</li>
+                  <li>Docling</li>
+                  <li>LangChain HTML/MD splitters</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.1} duration={0.7}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
@@ -1663,11 +1719,38 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.18}>
-                <li>Heuristics by content type (lists, bullets, code, tables)</li>
-                <li>Preserves meaning of special content elements</li>
-                <li>Adapts to document formatting patterns</li>
-                <li>Better chunk boundaries for mixed content</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Code Block]
+    A --> C[Table]
+    A --> D[List]
+    A --> E[Prose]
+    B --> F[Content-Aware<br/>Chunking]
+    C --> F
+    D --> F
+    E --> F
+    F --> G[Preserved<br/>Semantics]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#ffd700
+    style G fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.18} duration={0.7}>
+                <ul>
+                  <li>Heuristics by content type (lists, bullets, code, tables)</li>
+                  <li>Preserves meaning of special content elements</li>
+                  <li>Adapts to document formatting patterns</li>
+                  <li>Better chunk boundaries for mixed content</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1695,11 +1778,35 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.16} delay={0.2}>
-                <li>Rules require tuning for different domains</li>
-                <li>Domain-specific heuristics needed</li>
-                <li>Harder to maintain than simpler methods</li>
-                <li>May break on unusual formatting</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Content-Aware<br/>Chunking] --> B[Domain Tuning]
+    A --> C[Heuristic<br/>Development]
+    A --> D[Maintenance<br/>Overhead]
+    B --> E[High Cost]
+    C --> E
+    D --> E
+    E --> F[Edge Cases]
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c
+    style F fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} duration={0.7}>
+                <ul>
+                  <li>Rules require tuning for different domains</li>
+                  <li>Domain-specific heuristics needed</li>
+                  <li>Harder to maintain than simpler methods</li>
+                  <li>May break on unusual formatting</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1731,21 +1838,27 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.3}>
-                <li>200–800 tokens (dynamic)</li>
-                <li>Varies based on content type and complexity</li>
+                <ul>
+                  <li>200–800 tokens (dynamic)</li>
+                  <li>Varies based on content type and complexity</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.5} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.7}>
-                <li>0–15% depending on content type</li>
-                <li>More for complex content, less for structured elements</li>
+                <ul>
+                  <li>0–15% depending on content type</li>
+                  <li>More for complex content, less for structured elements</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.9}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={1.0}>
-                <li>Medium (implementation complexity and processing requirements)</li>
+                <ul>
+                  <li>Medium (implementation complexity and processing requirements)</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1772,19 +1885,23 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <GSAPStaggerList stagger={0.14} delay={0.3}>
-                <li>Ebooks and technical guides</li>
-                <li>Documentation sites and wikis</li>
-                <li>Mixed content with lists/tables/code</li>
-                <li>Formatting-rich documents</li>
+                <ul>
+                  <li>Ebooks and technical guides</li>
+                  <li>Documentation sites and wikis</li>
+                  <li>Mixed content with lists/tables/code</li>
+                  <li>Formatting-rich documents</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={1.0}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.8}>
-                <li>Custom heuristics (often bespoke)</li>
-                <li>Coveo chunking strategies</li>
-                <li>Unstructured.io content extractors</li>
-                <li>Rule-based custom splitters</li>
+                <ul>
+                  <li>Custom heuristics (often bespoke)</li>
+                  <li>Coveo chunking strategies</li>
+                  <li>Unstructured.io content extractors</li>
+                  <li>Rule-based custom splitters</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.0} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
@@ -1819,11 +1936,37 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.2}>
-                <li>Topic-coherent chunks; high retrieval precision</li>
-                <li>Better semantic understanding and context preservation</li>
-                <li>Groups similar content regardless of physical proximity</li>
-                <li>Improved relevance in retrieval results</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Embed Sentences]
+    B --> C[Compute<br/>Similarity]
+    C --> D[Topic 1<br/>Chunk]
+    C --> E[Topic 2<br/>Chunk]
+    C --> F[Topic 3<br/>Chunk]
+    D --> G[Semantic<br/>Coherence]
+    E --> G
+    F --> G
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#81c784
+    style G fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.7}>
+                <ul>
+                  <li>Topic-coherent chunks; high retrieval precision</li>
+                  <li>Better semantic understanding and context preservation</li>
+                  <li>Groups similar content regardless of physical proximity</li>
+                  <li>Improved relevance in retrieval results</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1851,11 +1994,33 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.17} delay={0.2}>
-                <li>Requires embeddings; adds computation cost</li>
-                <li>Tuning similarity thresholds can be challenging</li>
-                <li>Quality depends on embedding model choice</li>
-                <li>More implementation complexity than fixed methods</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Semantic Chunking] --> B[Embedding Cost]
+    A --> C[Threshold Tuning]
+    A --> D[Model Dependency]
+    B --> E[High Complexity]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.17} duration={0.7}>
+                <ul>
+                  <li>Requires embeddings; adds computation cost</li>
+                  <li>Tuning similarity thresholds can be challenging</li>
+                  <li>Quality depends on embedding model choice</li>
+                  <li>More implementation complexity than fixed methods</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1887,21 +2052,28 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.3}>
-                <li>200–600 tokens per semantic unit</li>
-                <li>Varies based on topic cohesion and content density</li>
+                <ul> 
+                  <li>200–600 tokens per semantic unit</li>
+                  <li>Varies based on topic cohesion and content density</li>
+                   </ul>
+                  
               </GSAPStaggerList>
               <GSAPAnimated delay={0.5} duration={0.8}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.7}>
-                <li>0–10% (minimal overlap needed)</li>
-                <li>Semantic boundaries reduce need for significant overlap</li>
+                <ul>
+                  <li>0–10% (minimal overlap needed)</li>
+                  <li>Semantic boundaries reduce need for significant overlap</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={1.0}>
-                <li>Medium–High (embedding generation and similarity calculations add overhead)</li>
+                <ul>
+                  <li>Medium–High (embedding generation and similarity calculations add overhead)</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1930,19 +2102,23 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.3}>
-                <li>Multi-topic documents and research papers</li>
-                <li>Knowledge bases with diverse content</li>
-                <li>Product documentation libraries</li>
-                <li>When retrieval precision is critical</li>
+                <ul>
+                  <li>Multi-topic documents and research papers</li>
+                  <li>Knowledge bases with diverse content</li>
+                  <li>Product documentation libraries</li>
+                  <li>When retrieval precision is critical</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.8}>
-                <li>Sentence-transformers library</li>
-                <li>Pinecone examples and guides</li>
-                <li>Superlinked VectorHub</li>
-                <li>LlamaIndex SemanticSplitter</li>
+                <ul>
+                  <li>Sentence-transformers library</li>
+                  <li>Pinecone examples and guides</li>
+                  <li>Superlinked VectorHub</li>
+                  <li>LlamaIndex SemanticSplitter</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.0} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
@@ -1977,11 +2153,33 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.19} delay={0.1}>
-                <li>Topic segmentation via cohesion drops; classic, explainable</li>
-                <li>Finds natural topic boundaries in text</li>
-                <li>Good for documents with distinct topic shifts</li>
-                <li>Based on linguistic principles of lexical cohesion</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Text] --> B[Analyze<br/>Cohesion]
+    B --> C[Topic 1]
+    B --> D[Cohesion Drop]
+    B --> E[Topic 2]
+    D --> F[Natural<br/>Boundary]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#e74c3c
+    style E fill:#81c784
+    style F fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.19} duration={0.7}>
+                <ul>
+                  <li>Topic segmentation via cohesion drops; classic, explainable</li>
+                  <li>Finds natural topic boundaries in text</li>
+                  <li>Good for documents with distinct topic shifts</li>
+                  <li>Based on linguistic principles of lexical cohesion</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2009,11 +2207,33 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.15} delay={0.3}>
-                <li>Sensitive to parameters; domain variance</li>
-                <li>Can struggle with gradual topic transitions</li>
-                <li>Requires preprocessing and tuning</li>
-                <li>Performance varies with text style and genre</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[TextTiling] --> B[Parameter<br/>Sensitivity]
+    A --> C[Gradual<br/>Transitions]
+    A --> D[Tuning<br/>Required]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul>
+                  <li>Sensitive to parameters; domain variance</li>
+                  <li>Can struggle with gradual topic transitions</li>
+                  <li>Requires preprocessing and tuning</li>
+                  <li>Performance varies with text style and genre</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2045,21 +2265,27 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.3}>
-                <li>Variable by tile/window (often 200–800 tokens)</li>
-                <li>Based on topic boundaries, not fixed size</li>
+                <ul>
+                  <li>Variable by tile/window (often 200–800 tokens)</li>
+                  <li>Based on topic boundaries, not fixed size</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.5} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.7}>
-                <li>None</li>
-                <li>Algorithm itself handles transitions between topics</li>
+                <ul>
+                  <li>None</li>
+                  <li>Algorithm itself handles transitions between topics</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={1.0}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={1.0}>
-                <li>Medium (requires lexical cohesion calculations across text segments)</li>
+                <ul>
+                  <li>Medium (requires lexical cohesion calculations across text segments)</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2088,19 +2314,23 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.3}>
-                <li>Articles, transcripts with topic shifts</li>
-                <li>Academic papers, technical documentation</li>
-                <li>Long-form content with distinct sections</li>
-                <li>Multi-topic document segmentation</li>
+                <ul>
+                  <li>Articles, transcripts with topic shifts</li>
+                  <li>Academic papers, technical documentation</li>
+                  <li>Long-form content with distinct sections</li>
+                  <li>Multi-topic document segmentation</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.8}>
-                <li>NLTK-style implementations</li>
-                <li>Open-source repos (DeepTiling)</li>
-                <li>Custom Python implementations</li>
-                <li>Research-oriented NLP libraries</li>
+                <ul>
+                  <li>NLTK-style implementations</li>
+                  <li>Open-source repos (DeepTiling)</li>
+                  <li>Custom Python implementations</li>
+                  <li>Research-oriented NLP libraries</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.0} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
@@ -2135,11 +2365,37 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.17} delay={0.2}>
-                <li>Uses discourse units (EDUs) and relations for high fidelity semantics</li>
-                <li>Captures rhetorical structure and text organization</li>
-                <li>Preserves argumentative flow and logical connections</li>
-                <li>Excellent for long-form content comprehension</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Text] --> B[Parse EDUs]
+    B --> C[Identify<br/>Relations]
+    C --> D[Elaboration]
+    C --> E[Contrast]
+    C --> F[Evidence]
+    D --> G[Discourse<br/>Structure]
+    E --> G
+    F --> G
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#81c784
+    style G fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.17} duration={0.7}>
+                <ul>
+                  <li>Uses discourse units (EDUs) and relations for high fidelity semantics</li>
+                  <li>Captures rhetorical structure and text organization</li>
+                  <li>Preserves argumentative flow and logical connections</li>
+                  <li>Excellent for long-form content comprehension</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2167,11 +2423,33 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.18} delay={0.3}>
-                <li>Parsers are computationally heavy</li>
-                <li>Not turnkey; requires specialized knowledge</li>
-                <li>Lower throughput than simpler methods</li>
-                <li>Limited availability of production-ready tools</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[RST Chunking] --> B[Heavy<br/>Computation]
+    A --> C[Specialized<br/>Knowledge]
+    A --> D[Low<br/>Throughput]
+    B --> E[High Barriers]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.18} duration={0.7}>
+                <ul>
+                  <li>Parsers are computationally heavy</li>
+                  <li>Not turnkey; requires specialized knowledge</li>
+                  <li>Lower throughput than simpler methods</li>
+                  <li>Limited availability of production-ready tools</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2203,21 +2481,27 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
-                <li>Combine Elementary Discourse Units (EDUs) to ~150–400 tokens</li>
-                <li>Size based on discourse relation boundaries, not fixed counts</li>
+                <ul>
+                  <li>Combine Elementary Discourse Units (EDUs) to ~150–400 tokens</li>
+                  <li>Size based on discourse relation boundaries, not fixed counts</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={1.1}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.8}>
-                <li>None by default (discourse boundaries are respected)</li>
-                <li>Optional minimal overlap when coherence requires it</li>
+                <ul>
+                  <li>None by default (discourse boundaries are respected)</li>
+                  <li>Optional minimal overlap when coherence requires it</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.0} duration={1.1}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={1.1}>
-                <li>High (implementation complexity and heavy processing requirements)</li>
+                <ul>
+                  <li>High (implementation complexity and heavy processing requirements)</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2246,19 +2530,23 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
-                <li>Long-form question answering</li>
-                <li>Summarization grounding</li>
-                <li>Academic papers and legal documents</li>
-                <li>Complex reasoning over structured arguments</li>
+                <ul>
+                  <li>Long-form question answering</li>
+                  <li>Summarization grounding</li>
+                  <li>Academic papers and legal documents</li>
+                  <li>Complex reasoning over structured arguments</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={1.0}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.8}>
-                <li>Research-grade RST parsers</li>
-                <li>Discourse segmentation toolkits</li>
-                <li>Custom NLP pipelines</li>
-                <li>Academic libraries (e.g., NLTK-RST)</li>
+                <ul>
+                  <li>Research-grade RST parsers</li>
+                  <li>Discourse segmentation toolkits</li>
+                  <li>Custom NLP pipelines</li>
+                  <li>Academic libraries (e.g., NLTK-RST)</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={1.0} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
@@ -2293,11 +2581,31 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.16} delay={0.2}>
-                <li>Honors tokenizer limits; predictable fit</li>
-                <li>Avoids truncation by embedding models</li>
-                <li>Matches exact token windows of models</li>
-                <li>More accurate size estimation than characters</li>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[Text] --> B[Tokenize]
+    B --> C[Count Tokens]
+    C --> D[Chunk at<br/>Token Limit]
+    D --> E[Perfect Fit]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} duration={0.7}>
+                <ul>
+                  <li>Honors tokenizer limits; predictable fit</li>
+                  <li>Avoids truncation by embedding models</li>
+                  <li>Matches exact token windows of models</li>
+                  <li>More accurate size estimation than characters</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2325,7 +2633,27 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.12} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Token Chunking] --> B[Splits<br/>Meaning]
+    A --> C[Tokenizer<br/>Variance]
+    A --> D[No Semantic<br/>Awareness]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>May split syntax/meaning; tokenizer variance</li>
                   <li>Different models tokenize differently</li>
@@ -2401,10 +2729,10 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.8}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <h3 style={{ color: '#3498db' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.08} delay={0.35}>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Any embedding pipeline; strict window budgets</li>
                   <li>When using specific models with token limits</li>
                   <li>Cross-model compatibility</li>
@@ -2412,10 +2740,10 @@ export const chunkingTechniquesDeck: Deck = {
                 </ul>
               </GSAPStaggerList>
               <GSAPAnimated delay={0.6} duration={0.8}>
-                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+                <h3 style={{ color: '#9b59b6' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.08} delay={0.85}>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Tiktoken (OpenAI)</li>
                   <li>Hugging Face tokenizers</li>
                   <li>LangChain Token splitter</li>
@@ -2455,7 +2783,26 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.15} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[H1 Section]
+    B --> C[H2 Subsection]
+    B --> D[H2 Subsection]
+    C --> E[Preserve<br/>Hierarchy]
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Strong alignment to document navigation; great for docs sites</li>
                   <li>Preserves document hierarchy and structure</li>
@@ -2484,7 +2831,27 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.1} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Heading Chunking] --> B[Requires<br/>Structure]
+    A --> C[Uneven<br/>Sizes]
+    A --> D[Style<br/>Variance]
+    B --> E[Limitations]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Requires clean headings; won't work for unstructured text</li>
                   <li>Uneven chunk sizes based on section length</li>
@@ -2601,7 +2968,7 @@ graph TD
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.35}>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Markdown documentation and README files</li>
                   <li>API references and technical docs sites</li>
                   <li>Knowledge bases with clear structure</li>
@@ -2612,7 +2979,7 @@ graph TD
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.85}>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Markdown heading parsers</li>
                   <li>GitHub Flavored Markdown (GFM) anchors</li>
                   <li>Static site generators (Jekyll, MkDocs)</li>
@@ -2654,7 +3021,29 @@ graph TD
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.18} delay={0.15}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[HTML/Markdown] --> B[Parse Structure]
+    B --> C[Code Blocks]
+    B --> D[Tables]
+    B --> E[Lists]
+    C --> F[Preserved<br/>Elements]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.18} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Preserves lists, code blocks, tables, and other HTML/Markdown elements</li>
                   <li>Maintains document structure and hierarchy</li>
@@ -2683,7 +3072,27 @@ graph TD
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.14} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Structure Chunking] --> B[Requires<br/>Clean Markup]
+    A --> C[Boilerplate<br/>Noise]
+    A --> D[Parsing<br/>Complexity]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Requires well-structured source documents</li>
                   <li>Boilerplate/noise unless filtered</li>
@@ -2794,7 +3203,7 @@ graph LR
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.35}>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Web pages, docs portals, blogs</li>
                   <li>Markdown documentation repositories</li>
                   <li>Technical blogs and wikis</li>
@@ -2805,7 +3214,7 @@ graph LR
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.8}>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>BeautifulSoup, jsdom for HTML</li>
                   <li>LangChain HTMLTextSplitter</li>
                   <li>Markdown parsers (marked, remark)</li>
@@ -2847,7 +3256,25 @@ For Markdown, parsers like **marked** and **remark** convert Markdown into struc
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.16} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Detect Table]
+    B --> C[Extract<br/>Complete]
+    C --> D[Preserve<br/>Structure]
+    D --> E[Queryable<br/>Data]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Extracts tables intact; supports downstream parsing</li>
                   <li>Preserves tabular relationships and formats</li>
@@ -2876,7 +3303,27 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.11} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Table Chunking] --> B[Format<br/>Variance]
+    A --> C[Formatting<br/>Loss]
+    A --> D[Complex<br/>Tables]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Extraction quality varies across formats</li>
                   <li>Formatting loss risk during conversion</li>
@@ -2988,7 +3435,7 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Financial reports with tabular data</li>
                   <li>Technical specifications documents</li>
                   <li>Benchmarking reports</li>
@@ -2999,7 +3446,7 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.95}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Camelot (for PDF tables)</li>
                   <li>Tabula</li>
                   <li>pdfplumber</li>
@@ -3041,7 +3488,29 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.14} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Source Code] --> B[Parse AST]
+    B --> C[Function]
+    B --> D[Class]
+    B --> E[Module]
+    C --> F[Semantic<br/>Units]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Split by function/class/module; preserves semantics</li>
                   <li>Maintains code integrity and logical structure</li>
@@ -3070,7 +3539,27 @@ Functions often depend on nearby code: imports at the top of the file, type defi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.12} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Code Chunking] --> B[Language<br/>Specific]
+    A --> C[Long<br/>Functions]
+    A --> D[Parser<br/>Dependency]
+    B --> E[Complexity]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Language-specific tuning required</li>
                   <li>Struggles with very long functions</li>
@@ -3187,7 +3676,7 @@ You might also **include essential imports** at the top of each chunk so the cod
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.4}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Code search and documentation</li>
                   <li>RAG on code repositories</li>
                   <li>API assistants and guides</li>
@@ -3198,7 +3687,7 @@ You might also **include essential imports** at the top of each chunk so the cod
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.95}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>LangChain code splitters</li>
                   <li>Tree-sitter parsers</li>
                   <li>Ripgrep + heuristics</li>
@@ -3240,7 +3729,27 @@ You might also **include essential imports** at the top of each chunk so the cod
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.17} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[Sentences] --> B[Window 1:<br/>Sent 1-3]
+    A --> C[Window 2:<br/>Sent 2-4]
+    A --> D[Window 3:<br/>Sent 3-5]
+    B --> E[Sliding<br/>Context]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#ffd700`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.17} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Sentence-coherent with sliding stride; good balance</li>
                   <li>Preserves natural language boundaries</li>
@@ -3269,7 +3778,27 @@ The sliding window approach provides **better context than fixed-size chunks**. 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.13} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Windowed Grouping] --> B[Redundancy]
+    A --> C[Parameter<br/>Tuning]
+    A --> D[Uneven<br/>Sizes]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Redundancy; increases storage requirements</li>
                   <li>Parameter tuning needed (window/stride size)</li>
@@ -3381,7 +3910,7 @@ graph LR
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>News articles</li>
                   <li>Product guides and documentation</li>
                   <li>Transcripts and conversational content</li>
@@ -3392,7 +3921,7 @@ graph LR
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.95}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>spaCy + custom grouping</li>
                   <li>NLTK sentence tokenizers</li>
                   <li>Custom implementations</li>
@@ -3434,7 +3963,26 @@ graph LR
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff8787', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.15} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Content] --> B{Analyze<br/>Complexity}
+    B -->|High| C[Small Chunks]
+    B -->|Low| D[Large Chunks]
+    C --> E[Optimized<br/>Retrieval]
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Sizes adapt to complexity/density; token-efficient</li>
                   <li>Better context preservation for complex content</li>
@@ -3463,7 +4011,27 @@ This approach **optimizes for both retrieval quality and computational efficienc
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff8787', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.13} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Adaptive Chunking] --> B[Complex<br/>Metrics]
+    A --> C[Parameter<br/>Tuning]
+    A --> D[Unpredictable<br/>Storage]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Requires good complexity metric; harder to debug</li>
                   <li>Parameter tuning can be challenging</li>
@@ -3583,7 +4151,7 @@ graph TD
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Mixed-density documents (e.g., textbooks)</li>
                   <li>Technical documentation with varying complexity</li>
                   <li>Documents with both narrative and technical sections</li>
@@ -3594,7 +4162,7 @@ graph TD
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.95}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Custom heuristics (lexical density, perplexity)</li>
                   <li>LangChain custom splitter implementations</li>
                   <li>Text complexity analysis libraries</li>
@@ -3636,7 +4204,25 @@ graph TD
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7af6', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.16} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Chunk] --> B[Generate<br/>Summary]
+    B --> C[Augment<br/>Chunk]
+    C --> D[Enhanced<br/>Retrieval]
+    D --> E[Better<br/>Recall]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Adds summaries/context to chunks; boosts recall</li>
                   <li>Preserves high-level document meaning</li>
@@ -3665,7 +4251,27 @@ For **very long documents**, chunks can feel disconnected from the document's ma
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7af6', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.14} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Summary Chunking] --> B[High Cost]
+    A --> C[Hallucination<br/>Risk]
+    A --> D[Storage<br/>Overhead]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Expensive to generate summaries</li>
                   <li>Risk of summary drift or hallucination</li>
@@ -3773,7 +4379,7 @@ graph TD
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Very long documents (books, reports)</li>
                   <li>Agent memory systems</li>
                   <li>Knowledge distillation</li>
@@ -3784,7 +4390,7 @@ graph TD
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.95}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>LLMs (OpenAI, Anthropic, DBRX)</li>
                   <li>LangChain map-reduce chains</li>
                   <li>LlamaIndex summarization nodes</li>
@@ -3813,33 +4419,6 @@ graph TD
 #### Complexity Level
 [seriously] This is rated **Advanced** because you need **LLM prompting expertise** to generate good summaries consistently, **pipeline optimization** to manage costs and latency, and careful evaluation to ensure summaries improve rather than harm retrieval quality. [cautiously] You're essentially building a multi-stage system with dependencies and potential failure modes at each stage.
 [confidently] Summarization-based chunking is worth the investment for high-value, complex documents where retrieval quality directly impacts business outcomes.`
-        },
-        {
-          id: 71,
-          title: '17. Summarization-Based Chunking - Use Cases & Tools',
-          icon: { name: 'duo-list-check' },
-          content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7af6', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Very long documents (books, reports)</li>
-                <li>Agent memory systems</li>
-                <li>Knowledge distillation</li>
-                <li>Multi-hop reasoning tasks</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>LLMs (OpenAI, Anthropic, DBRX)</li>
-                <li>LangChain map-reduce chains</li>
-                <li>LlamaIndex summarization nodes</li>
-                <li>Anthropic's contextual retrieval</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires LLM prompting expertise and pipeline optimization</p>
-            </div>
-          ),
-          backgroundColor: '#651c60',
-          notes: ''
         }
       ]
     },
@@ -3853,7 +4432,25 @@ graph TD
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#95ff7a', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.17} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Sentences] --> B[Build<br/>Graph]
+    B --> C[Compute<br/>Similarity]
+    C --> D[Community<br/>Detection]
+    D --> E[Topic<br/>Clusters]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#ffd700
+    style D fill:#ffd700
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.17} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Community detection over sentence graph creates topic-pure chunks</li>
                   <li>Captures complex semantic relationships between sentences</li>
@@ -3882,7 +4479,27 @@ graph TD
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#95ff7a', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.13} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Graph Chunking] --> B[Complex<br/>Implementation]
+    A --> C[High<br/>Compute]
+    A --> D[Parameter<br/>Sensitive]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Complex implementation requiring graph algorithms</li>
                   <li>Compute-heavy with large matrices for similarity</li>
@@ -3998,7 +4615,7 @@ graph TD
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.45}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Research papers with multiple topics</li>
                   <li>Multi-topic reports and analyses</li>
                   <li>Complex technical documentation</li>
@@ -4009,7 +4626,7 @@ graph TD
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={1.0}>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>sentence-transformers for embeddings</li>
                   <li>NetworkX/igraph for graph algorithms</li>
                   <li>Scikit-learn clustering implementations</li>
@@ -4051,7 +4668,23 @@ graph TD
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8197ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.15} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[Audio] --> B[Transcribe<br/>with Times]
+    B --> C[Chunk by<br/>Time]
+    C --> D[Timestamp<br/>Sync]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Sync with timestamps; stream-friendly</li>
                   <li>Preserves audio-to-text alignment</li>
@@ -4081,7 +4714,27 @@ graph TD
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8197ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.13} delay={0.25}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Time Chunking] --> B[Cuts<br/>Semantics]
+    A --> C[ASR<br/>Errors]
+    A --> D[Variable<br/>Density]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Time slices may cut semantics; ASR errors propagate</li>
                   <li>Variable information density in segments</li>
@@ -4181,7 +4834,7 @@ Two seconds is usually sufficient because that's about how long it takes to spea
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8197ff', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.2} duration={0.7}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Podcasts, earnings calls, lectures</li>
                   <li>Meeting summarization</li>
                   <li>Video content indexing</li>
@@ -4190,7 +4843,7 @@ Two seconds is usually sufficient because that's about how long it takes to spea
               </GSAPAnimated>
               <GSAPAnimated delay={0.6} duration={0.7}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                <ul style={{ fontSize: '1.1rem' }}>
                   <li>Whisper (OpenAI)</li>
                   <li>AWS Transcribe</li>
                   <li>Google Speech-to-Text</li>
@@ -4233,7 +4886,24 @@ However, it's not Advanced because the concepts are straightforward and excellen
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff81aa', padding: '30px', lineHeight: '2' }}>
-              <GSAPStaggerList stagger={0.16} delay={0.2}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[Conversation] --> B[Speaker A]
+    A --> C[Speaker B]
+    B --> D[Turn-Based<br/>Chunks]
+    C --> D
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#ffd700`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} duration={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Preserves dialog structure and conversation flow</li>
                   <li>Improves speaker attribution in transcripts</li>
@@ -4264,12 +4934,34 @@ However, it's not Advanced because the concepts are straightforward and excellen
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff81aa', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Turn lengths vary significantly (some speakers talk more)</li>
-                <li>Requires speaker diarization preprocessing</li>
-                <li>Speaker detection can be error-prone</li>
-                <li>May combine unrelated topics if same speaker continues</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Speaker Chunking] --> B[Variable<br/>Lengths]
+    A --> C[Diarization<br/>Required]
+    A --> D[Detection<br/>Errors]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Turn lengths vary significantly (some speakers talk more)</li>
+                  <li>Requires speaker diarization preprocessing</li>
+                  <li>Speaker detection can be error-prone</li>
+                  <li>May combine unrelated topics if same speaker continues</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#651c34',
@@ -4331,14 +5023,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff81aa', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Meeting transcripts and summaries</li>
                 <li>Customer support chats and conversations</li>
                 <li>Podcast and interview transcriptions</li>
                 <li>Multi-speaker audio processing</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Pyannote audio diarization library</li>
                 <li>AWS Transcribe with speaker diarization</li>
                 <li>Whisper + diarization pipelines</li>
@@ -4375,12 +5067,33 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffff6f', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tailored to answer spans; high precision for QA</li>
-                <li>Optimized for question-answer retrieval</li>
-                <li>Improves relevance in QA systems</li>
-                <li>Better context for specific questions</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Identify<br/>QA Pairs]
+    B --> C[Question]
+    B --> D[Answer]
+    C --> E[Optimized<br/>Chunks]
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Tailored to answer spans; high precision for QA</li>
+                  <li>Optimized for question-answer retrieval</li>
+                  <li>Improves relevance in QA systems</li>
+                  <li>Better context for specific questions</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#65651c',
@@ -4403,12 +5116,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffff6f', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Needs label generation or heuristics; setup cost</li>
-                <li>Requires understanding of question patterns</li>
-                <li>May not generalize well to non-QA tasks</li>
-                <li>More upfront work to implement properly</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[QA Chunking] --> B[Setup<br/>Cost]
+    A --> C[Pattern<br/>Dependency]
+    A --> D[Limited<br/>Generalization]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Needs label generation or heuristics; setup cost</li>
+                  <li>Requires understanding of question patterns</li>
+                  <li>May not generalize well to non-QA tasks</li>
+                  <li>More upfront work to implement properly</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#65651c',
@@ -4472,14 +5207,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffff6f', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Knowledge bases</li>
                 <li>Policy QA, FAQ systems</li>
                 <li>Support documentation</li>
                 <li>Information extraction from longer texts</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>LlamaIndex QuestionGenerator</li>
                 <li>Rerankers (Cohere, Jina)</li>
                 <li>Custom QA pipelines</li>
@@ -4516,12 +5251,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#aa80ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Simple for PDFs; keeps page context and references</li>
-                <li>Maintains original document's page structure</li>
-                <li>Easy to cite and reference by page number</li>
-                <li>Works well with documents that have page-based organization</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[PDF] --> B[Page 1]
+    A --> C[Page 2]
+    A --> D[Page 3]
+    B --> E[Easy<br/>Citations]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#ffd700`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Simple for PDFs; keeps page context and references</li>
+                  <li>Maintains original document's page structure</li>
+                  <li>Easy to cite and reference by page number</li>
+                  <li>Works well with documents that have page-based organization</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#341c65',
@@ -4544,12 +5301,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#aa80ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Pages aren't semantic units; variable density</li>
-                <li>May split logical content across pages</li>
-                <li>Can be inefficient for dense or sparse pages</li>
-                <li>References may lose context at page boundaries</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Page Chunking] --> B[Not<br/>Semantic]
+    A --> C[Variable<br/>Density]
+    A --> D[Splits<br/>Content]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Pages aren't semantic units; variable density</li>
+                  <li>May split logical content across pages</li>
+                  <li>Can be inefficient for dense or sparse pages</li>
+                  <li>References may lose context at page boundaries</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#341c65',
@@ -4612,14 +5391,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#aa80ff', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Scanned documents</li>
                 <li>Page-referenced citations</li>
                 <li>Legal documents with page numbers</li>
                 <li>Academic papers with page references</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>pdfplumber</li>
                 <li>PyPDF2</li>
                 <li>Unstructured.io</li>
@@ -4656,12 +5435,32 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#82ff96', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Pairs figure/table captions with nearby text</li>
-                <li>Boosts multimodal grounding</li>
-                <li>Preserves visual-textual relationships</li>
-                <li>Enhances retrieval of visual content</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Figure]
+    B --> C[Caption]
+    C --> D[Context]
+    D --> E[Multimodal<br/>Chunk]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Pairs figure/table captions with nearby text</li>
+                  <li>Boosts multimodal grounding</li>
+                  <li>Preserves visual-textual relationships</li>
+                  <li>Enhances retrieval of visual content</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c6528',
@@ -4684,12 +5483,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#82ff96', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Requires reliable layout detection</li>
-                <li>Struggles with complex document layouts</li>
-                <li>Needs tuning of window size around captions</li>
-                <li>Limited to documents with explicit figures/tables</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Caption Chunking] --> B[Layout<br/>Detection]
+    A --> C[Complex<br/>Layouts]
+    A --> D[Tuning<br/>Required]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Requires reliable layout detection</li>
+                  <li>Struggles with complex document layouts</li>
+                  <li>Needs tuning of window size around captions</li>
+                  <li>Limited to documents with explicit figures/tables</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c6528',
@@ -4753,14 +5574,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#82ff96', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Scientific papers with figures</li>
                 <li>Reports with tables and charts</li>
                 <li>Technical documentation with diagrams</li>
                 <li>Educational materials with illustrations</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Unstructured.io</li>
                 <li>DocTR (Document Text Recognition)</li>
                 <li>LayoutParser</li>
@@ -4797,12 +5618,36 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#e086ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Adds filters (section, author, date) to chunks</li>
-                <li>Improves retrieval routing and precision</li>
-                <li>Enables faceted search and filtering</li>
-                <li>Better document provenance tracking</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Chunk] --> B[Add Metadata]
+    B --> C[Author]
+    B --> D[Date]
+    B --> E[Section]
+    C --> F[Enhanced<br/>Retrieval]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Adds filters (section, author, date) to chunks</li>
+                  <li>Improves retrieval routing and precision</li>
+                  <li>Enables faceted search and filtering</li>
+                  <li>Better document provenance tracking</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#521c65',
@@ -4826,12 +5671,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#e086ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Metadata extraction requires additional effort</li>
-                <li>Governance and schema management needed</li>
-                <li>Increased storage requirements</li>
-                <li>Quality depends on metadata accuracy</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Metadata Chunking] --> B[Extraction<br/>Effort]
+    A --> C[Schema<br/>Management]
+    A --> D[Storage<br/>Overhead]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Metadata extraction requires additional effort</li>
+                  <li>Governance and schema management needed</li>
+                  <li>Increased storage requirements</li>
+                  <li>Quality depends on metadata accuracy</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#521c65',
@@ -4895,14 +5762,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#e086ff', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Enterprise search with facets</li>
                 <li>Regulatory/compliance document retrieval</li>
                 <li>Multi-domain knowledge bases</li>
                 <li>Content governance requirements</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>LangChain Document schemas</li>
                 <li>Weaviate with filters</li>
                 <li>Azure Cognitive Search</li>
@@ -4939,12 +5806,36 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff83a2', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Best of multiple methods; adaptable by document type</li>
-                <li>Can handle mixed content in heterogeneous corpora</li>
-                <li>Optimizes for both context and relevance</li>
-                <li>More flexible for enterprise applications</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B{Route}
+    B -->|Code| C[Code Chunking]
+    B -->|Table| D[Table Chunking]
+    B -->|Text| E[Semantic Chunking]
+    C --> F[Optimal<br/>Strategy]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#81c784
+    style F fill:#81c784`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Best of multiple methods; adaptable by document type</li>
+                  <li>Can handle mixed content in heterogeneous corpora</li>
+                  <li>Optimizes for both context and relevance</li>
+                  <li>More flexible for enterprise applications</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#651c2e',
@@ -4967,12 +5858,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff83a2', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>More moving parts; requires evals to tune</li>
-                <li>Higher development and maintenance overhead</li>
-                <li>Harder to debug retrieval issues</li>
-                <li>Requires careful orchestration of techniques</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Hybrid Chunking] --> B[Complex<br/>Orchestration]
+    A --> C[High<br/>Maintenance]
+    A --> D[Debug<br/>Difficulty]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>More moving parts; requires evals to tune</li>
+                  <li>Higher development and maintenance overhead</li>
+                  <li>Harder to debug retrieval issues</li>
+                  <li>Requires careful orchestration of techniques</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#651c2e',
@@ -5038,14 +5951,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff83a2', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Production RAG systems</li>
                 <li>Heterogeneous document collections</li>
                 <li>Enterprise knowledge management</li>
                 <li>Multi-modal content (docs + code + tables)</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>LangChain/LlamaIndex composition</li>
                 <li>Custom pipelines and orchestration</li>
                 <li>MLOps frameworks with pipeline support</li>
@@ -5082,12 +5995,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#78f9ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Preserves continuity and context between chunks</li>
-                <li>Reduces information loss at boundaries</li>
-                <li>Better semantic coherence across transitions</li>
-                <li>Improves retrieval for context-dependent queries</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  Advantages
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[Text] --> B[Window 1]
+    A --> C[Window 2<br/>Overlaps]
+    A --> D[Window 3<br/>Overlaps]
+    B --> E[Continuous<br/>Context]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#ffd700`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Preserves continuity and context between chunks</li>
+                  <li>Reduces information loss at boundaries</li>
+                  <li>Better semantic coherence across transitions</li>
+                  <li>Improves retrieval for context-dependent queries</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c6265',
@@ -5111,12 +6046,34 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#78f9ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Introduces redundancy in storage</li>
-                <li>Increases embedding costs (same content embedded multiple times)</li>
-                <li>Can create duplicated results without filtering</li>
-                <li>Overlap size requires tuning for optimal performance</li>
-              </ul>
+              <GSAPAnimated delay={0.2} duration={0.8}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  Disadvantages
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Sliding Window] --> B[Storage<br/>Redundancy]
+    A --> C[Embedding<br/>Cost]
+    A --> D[Duplicate<br/>Results]
+    B --> E[Challenges]
+    C --> E
+    D --> E
+    style A fill:#4fc3f7
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#e74c3c`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Introduces redundancy in storage</li>
+                  <li>Increases embedding costs (same content embedded multiple times)</li>
+                  <li>Can create duplicated results without filtering</li>
+                  <li>Overlap size requires tuning for optimal performance</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c6265',
@@ -5181,14 +6138,14 @@ Once you have diarization results, the actual chunking is straightforward since 
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#78f9ff', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>Legal documents and contracts</li>
                 <li>Academic papers and research reports</li>
                 <li>Policy documents where cross-references matter</li>
                 <li>Technical specifications with interdependent sections</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.1rem' }}>
                 <li>LangChain sliding window implementations</li>
                 <li>LlamaIndex text splitters with overlap</li>
                 <li>Custom token window implementations</li>
@@ -5370,10 +6327,10 @@ Once you have diarization results, the actual chunking is straightforward since 
                     <SvgIcon iconName="duo-layer-group" sizeName="2x" darkModeInvert={true} />
                     3. Special content types?
                   </h4>
-                  <p><strong>Code →</strong> Code-Aware chunking</p>
-                  <p><strong>Tables →</strong> Table-Aware chunking</p>
-                  <p><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
-                  <p><strong>QA Tasks →</strong> QA-Focused chunking</p>
+                  <p style={{ margin: '0px'}}><strong>Code →</strong> Code-Aware chunking</p>
+                  <p style={{ margin: '0px'}}><strong>Tables →</strong> Table-Aware chunking</p>
+                  <p style={{ margin: '0px'}}><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
+                  <p style={{ margin: '0px'}}><strong>QA Tasks →</strong> QA-Focused chunking</p>
                 </div>
                 <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', color: '#2ecc71' }}>
                   <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
