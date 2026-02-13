@@ -83,10 +83,10 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <div style={{ marginBottom: '30px' }}>
                 </div>
                 <h4>
-                    RAG System Flow
-                    <MermaidPopover
-                      title="RAG Pipeline"
-                      diagram={`flowchart LR
+                  RAG System Flow
+                  <MermaidPopover
+                    title="RAG Pipeline"
+                    diagram={`flowchart LR
     A["❓ User Query"] --> B["🔍 Retrieval<br/>(Metrics 1-4)"]
     B --> C["📋 Context Quality<br/>(Metric 5)"]
     C --> D["🤖 LLM Generation<br/>(Metrics 6-10)"]
@@ -100,8 +100,8 @@ export const ragEvaluationMetricsDeck: Deck = {
     style D fill:#10b981,color:#fff
     style E fill:#81c784,color:#000
     style F fill:#8b5cf6,color:#fff`}
-                    />
-                  </h4>
+                  />
+                </h4>
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '20px', marginBottom: '20px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
@@ -137,7 +137,7 @@ export const ragEvaluationMetricsDeck: Deck = {
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
                   <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '12px', borderRadius: '10px' }}>
                     <div style={{ color: '#0ea5e9', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <SvgIcon iconName="duo-file-lines" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
@@ -209,8 +209,8 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <GSAPStaggerList stagger={0.15} delay={0.5}>
                   <ul>
                     <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
-                  <li>Improves answer completeness by ensuring all relevant information is available</li>
-                  <li>Critical for complex queries requiring multiple evidence pieces</li>
+                    <li>Improves answer completeness by ensuring all relevant information is available</li>
+                    <li>Critical for complex queries requiring multiple evidence pieces</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -282,8 +282,8 @@ You should pay special attention to Recall at K when you're tuning your embeddin
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
                   <ul>
                     <li>≥0.80 for carefully curated question-answer sets</li>
-                  <li>≥0.60 for broad open-domain queries</li>
-                  <li>Higher values critical for comprehensive information needs</li>
+                    <li>≥0.60 for broad open-domain queries</li>
+                    <li>Higher values critical for comprehensive information needs</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -415,8 +415,8 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
                   <ul>
                     <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
-                  <li>Improves answer completeness by ensuring all relevant information is available</li>
-                  <li>Critical for complex queries requiring multiple evidence pieces</li>
+                    <li>Improves answer completeness by ensuring all relevant information is available</li>
+                    <li>Critical for complex queries requiring multiple evidence pieces</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -426,9 +426,9 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
                   <ul>
                     <li>Requires ground truth relevance labels, which can be expensive to obtain</li>
-                  <li>Does not account for the quality or precision of retrieved documents</li>
-                  <li>May incentivize retrieving too many documents, increasing noise</li>
-                  <li>Difficult to optimize when relevant documents are poorly embedded or chunked</li>
+                    <li>Does not account for the quality or precision of retrieved documents</li>
+                    <li>May incentivize retrieving too many documents, increasing noise</li>
+                    <li>Difficult to optimize when relevant documents are poorly embedded or chunked</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -477,9 +477,9 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                 <GSAPStaggerList stagger={0.12} delay={0.5}>
                   <ul>
                     <li>Improves grounding by focusing LLM on relevant information</li>
-                  <li>Reduces irrelevant context that can distract the LLM</li>
-                  <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
-                  <li>Particularly important for smaller models with limited context processing ability</li>
+                    <li>Reduces irrelevant context that can distract the LLM</li>
+                    <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
+                    <li>Particularly important for smaller models with limited context processing ability</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -554,8 +554,8 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
                   <ul>
                     <li>≥0.70 typical for general RAG applications</li>
-                  <li>≥0.85 for systems with small context windows</li>
-                  <li>Higher values critical when LLM context capacity is limited</li>
+                    <li>≥0.85 for systems with small context windows</li>
+                    <li>Higher values critical when LLM context capacity is limited</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -684,9 +684,9 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                 <GSAPStaggerList stagger={0.12} delay={0.3}>
                   <ul>
                     <li>Higher precision improves grounding by focusing LLM on relevant information</li>
-                  <li>Reduces irrelevant context that can distract the LLM</li>
-                  <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
-                  <li>Particularly important for smaller models with limited context processing ability</li>
+                    <li>Reduces irrelevant context that can distract the LLM</li>
+                    <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
+                    <li>Particularly important for smaller models with limited context processing ability</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -696,9 +696,9 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                 <GSAPStaggerList stagger={0.12} delay={0.7}>
                   <ul>
                     <li>High precision can come at the cost of lower recall (missing relevant documents)</li>
-                  <li>Requires ground truth relevance judgments</li>
-                  <li>May be too conservative for complex queries requiring diverse perspectives</li>
-                  <li>Doesn't account for redundancy — multiple similar documents may inflate precision</li>
+                    <li>Requires ground truth relevance judgments</li>
+                    <li>May be too conservative for complex queries requiring diverse perspectives</li>
+                    <li>Doesn't account for redundancy — multiple similar documents may inflate precision</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -747,10 +747,10 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                 <GSAPStaggerList stagger={0.15} delay={0.5}>
                   <ul>
                     <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
-                  <li>Stabilizes answer quality by preventing complete retrieval failures</li>
-                  <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
-                  <li>Critical baseline before optimizing for more nuanced metrics</li>
-                    </ul>
+                    <li>Stabilizes answer quality by preventing complete retrieval failures</li>
+                    <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
+                    <li>Critical baseline before optimizing for more nuanced metrics</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
@@ -826,9 +826,9 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
                   <ul>
                     <li>≥0.95 for FAQs or narrow/specialized corpora</li>
-                  <li>≥0.80 for broad or diverse document collections</li>
-                  <li>Lower values indicate need for embedding model or chunking improvements</li>
-                  </ul> 
+                    <li>≥0.80 for broad or diverse document collections</li>
+                    <li>Lower values indicate need for embedding model or chunking improvements</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -929,9 +929,9 @@ Once you've done this for all your queries, you sum up all the hits—all those 
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
                   <ul>
                     <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
-                  <li>Stabilizes answer quality by preventing complete retrieval failures</li>
-                  <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
-                  <li>Critical baseline before optimizing for more nuanced metrics</li>
+                    <li>Stabilizes answer quality by preventing complete retrieval failures</li>
+                    <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
+                    <li>Critical baseline before optimizing for more nuanced metrics</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -941,9 +941,9 @@ Once you've done this for all your queries, you sum up all the hits—all those 
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
                   <ul>
                     <li>Binary metric doesn't capture how many relevant documents were retrieved</li>
-                  <li>Can be misleadingly high if only marginally relevant documents are retrieved</li>
-                  <li>Doesn't account for quality or ranking position of the hit</li>
-                  <li>May not be sensitive enough for fine-grained optimization</li>
+                    <li>Can be misleadingly high if only marginally relevant documents are retrieved</li>
+                    <li>Doesn't account for quality or ranking position of the hit</li>
+                    <li>May not be sensitive enough for fine-grained optimization</li>
                   </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
@@ -1040,7 +1040,7 @@ Once you've done this for all your queries, you sum up all the hits—all those 
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works <MermaidPopover
-                    diagram={`graph TD
+                  diagram={`graph TD
     A[Reference Answer] -->|Extract Facts| B[Fact Set: F1, F2, F3, F4, F5]
     C[Retrieved Context] -->|Check Presence| D{Which Facts Present?}
     B --> D
@@ -1054,8 +1054,8 @@ Once you've done this for all your queries, you sum up all the hits—all those 
     style E fill:#22c55e
     style F fill:#ef4444
     style G fill:#eab308`}
-                    title="Context Overlap Score Calculation"
-                  /></h3>
+                  title="Context Overlap Score Calculation"
+                /></h3>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <p>Context Overlap Score evaluates how much of the expected answer information is present in the retrieved context. It can be calculated using token overlap, fact coverage, or semantic similarity.</p>
@@ -1067,7 +1067,7 @@ Once you've done this for all your queries, you sum up all the hits—all those 
                     {`Overlap = |Answer facts in context| / |Answer facts|`}
                   </pre>
                   <p>Alternatively: Token/phrase F1 score between reference answer and context, or semantic similarity between expected answer elements and retrieved chunks.</p>
-                  
+
                 </div>
               </GSAPAnimated>
 
@@ -1112,8 +1112,8 @@ Click the diagram icon to see how facts flow from the reference answer through t
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example <GSAPAnimated animation="bounceIn" delay={1.3}>
-                <MermaidPopover
-                  diagram={`sequenceDiagram
+                  <MermaidPopover
+                    diagram={`sequenceDiagram
     participant Q as Query
     participant R as Reference Answer
     participant C as Context
@@ -1132,9 +1132,9 @@ Click the diagram icon to see how facts flow from the reference answer through t
     style R fill:#8b5cf6
     style C fill:#3b82f6
     style E fill:#eab308`}
-                  title="Context Overlap Calculation Flow"
-                />
-              </GSAPAnimated></h3>
+                    title="Context Overlap Calculation Flow"
+                  />
+                </GSAPAnimated></h3>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <p><strong>Query:</strong> "What are the eligibility requirements for program X?"</p>
@@ -1181,8 +1181,8 @@ Click the diagram icon to visualize the flow. You start with the query, define e
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG <GSAPAnimated animation="rotateIn" delay={1.2}>
-                <MermaidPopover
-                  diagram={`graph LR
+                  <MermaidPopover
+                    diagram={`graph LR
     A[Context Overlap Score] --> B[High ≥0.85]
     A --> C[Medium 0.70-0.84]
     A --> D[Low <0.70]
@@ -1207,9 +1207,9 @@ Click the diagram icon to visualize the flow. You start with the query, define e
     style J fill:#ef4444
     style K fill:#ef4444
     style L fill:#ef4444`}
-                  title="How Overlap Scores Affect RAG Quality"
-                />
-              </GSAPAnimated></h3>
+                    title="How Overlap Scores Affect RAG Quality"
+                  />
+                </GSAPAnimated></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.18} duration={0.7} delay={0.3}>
                 <ul>
@@ -1218,7 +1218,7 @@ Click the diagram icon to visualize the flow. You start with the query, define e
                   <li>Identifies specific content gaps in knowledge bases</li>
                 </ul>
               </GSAPStaggerList>
-              
+
 
               <GSAPAnimated animation="slideInBottom" delay={1.5}>
                 <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
@@ -1282,9 +1282,9 @@ Click the diagram icon to visualize the flow. You start with the query, define e
               <GSAPStaggerList stagger={0.12} duration={0.6}>
                 <ul>
                   <li>Improves precision by identifying and removing irrelevant context</li>
-                <li>Reduces hallucinations caused by misleading information</li>
-                <li>Enables continuous monitoring without reference answers</li>
-                <li>Helps identify specific queries with poor retrieval performance</li>
+                  <li>Reduces hallucinations caused by misleading information</li>
+                  <li>Enables continuous monitoring without reference answers</li>
+                  <li>Helps identify specific queries with poor retrieval performance</li>
                 </ul>
               </GSAPStaggerList>
 
@@ -1370,9 +1370,9 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.1} duration={0.5}>
                 <ul>
                   <li>≥0.70 considered good performance</li>
-                <li>≥0.80 indicates strong retrieval alignment</li>
-                <li>Scores &lt;0.50 often signal problematic retrieval</li>
-                <li>Thresholds may vary by domain complexity</li>
+                  <li>≥0.80 indicates strong retrieval alignment</li>
+                  <li>Scores &lt;0.50 often signal problematic retrieval</li>
+                  <li>Thresholds may vary by domain complexity</li>
                 </ul>
               </GSAPStaggerList>
             </div>
@@ -1419,8 +1419,8 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.15} duration={0.7}>
                 <ul>
                   <li>Chunk 1 (password reset): 0.9</li>
-                <li>Chunk 2 (account security): 0.8</li>
-                <li>Chunk 3 (billing info): 0.3</li>
+                  <li>Chunk 2 (account security): 0.8</li>
+                  <li>Chunk 3 (billing info): 0.3</li>
                 </ul>
               </GSAPStaggerList>
               <GSAPAnimated animation="scaleIn" delay={0.6}>
@@ -1474,9 +1474,9 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.12} duration={0.6}>
                 <ul>
                   <li>Improves precision by identifying and removing irrelevant context</li>
-                <li>Reduces hallucinations caused by misleading information</li>
-                <li>Enables continuous monitoring without reference answers</li>
-                <li>Helps identify specific queries with poor retrieval performance</li>
+                  <li>Reduces hallucinations caused by misleading information</li>
+                  <li>Enables continuous monitoring without reference answers</li>
+                  <li>Helps identify specific queries with poor retrieval performance</li>
                 </ul>
               </GSAPStaggerList>
 
@@ -1511,9 +1511,9 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.1} duration={0.5}>
                 <ul>
                   <li>LLM judge quality and consistency can vary across models</li>
-                <li>Adds latency and cost for evaluation (requires additional LLM calls)</li>
-                <li>May not align perfectly with human judgment</li>
-                <li>Requires careful prompt engineering to get reliable scores</li>
+                  <li>Adds latency and cost for evaluation (requires additional LLM calls)</li>
+                  <li>May not align perfectly with human judgment</li>
+                  <li>Requires careful prompt engineering to get reliable scores</li>
                 </ul>
               </GSAPStaggerList>
             </div>
@@ -1564,9 +1564,9 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.13} duration={0.6}>
                 <ul>
                   <li>Lower hallucination rates directly increase trust in the system</li>
-                <li>Reduces misinformation risk and potential legal/reputation damage</li>
-                <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
-                <li>Enables reliable citation of source materials</li>
+                  <li>Reduces misinformation risk and potential legal/reputation damage</li>
+                  <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
+                  <li>Enables reliable citation of source materials</li>
                 </ul>
               </GSAPStaggerList>
 
@@ -1661,8 +1661,8 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.11} duration={0.5}>
                 <ul>
                   <li>&lt;5% for high-stakes applications (medical, legal, financial)</li>
-                <li>&lt;10-15% for general-purpose applications</li>
-                <li>Zero tolerance for critical facts in regulated domains</li>
+                  <li>&lt;10-15% for general-purpose applications</li>
+                  <li>Zero tolerance for critical facts in regulated domains</li>
                 </ul>
               </GSAPStaggerList>
             </div>
@@ -1763,9 +1763,9 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.14} duration={0.6}>
                 <ul>
                   <li>Lower hallucination rates directly increase trust in the system</li>
-                <li>Reduces misinformation risk and potential legal/reputation damage</li>
-                <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
-                <li>Enables reliable citation of source materials</li>
+                  <li>Reduces misinformation risk and potential legal/reputation damage</li>
+                  <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
+                  <li>Enables reliable citation of source materials</li>
                 </ul>
               </GSAPStaggerList>
 
@@ -1805,9 +1805,9 @@ where score_i ∈ [0,1] for each chunk`}
               <GSAPStaggerList stagger={0.12} duration={0.5}>
                 <ul>
                   <li>Claim extraction can be challenging and inconsistent</li>
-                <li>Not all unsupported claims are harmful — some may be reasonable inferences</li>
-                <li>Detection quality depends on the evaluation method used</li>
-                <li>May penalize valid general knowledge not in the specific context</li>
+                  <li>Not all unsupported claims are harmful — some may be reasonable inferences</li>
+                  <li>Detection quality depends on the evaluation method used</li>
+                  <li>May penalize valid general knowledge not in the specific context</li>
                 </ul>
               </GSAPStaggerList>
             </div>
@@ -2856,7 +2856,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
     
     F --> G[Improved RAG System]`}
                 /></h3>
-                
+
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -2987,7 +2987,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
     L -->|15-30%| N[Acceptable - Some Cleanup Possible]
     L -->|>30%| O[Poor - Significant Noise]`}
                 /></h3>
-                
+
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`NoiseDensity = (Irrelevant tokens in context) / (Total context tokens)`}
                 </pre>
@@ -3704,17 +3704,17 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
                     <GSAPStaggerList stagger={0.15} delay={0.4}>
                       <ul>
                         <li>
-                        <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
-                      </li>
-                      <li>
-                        <strong>Context quality</strong> (5) evaluates relevance alignment
-                      </li>
-                      <li>
-                        <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
-                      </li>
-                      <li>
-                        <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
-                      </li>
+                          <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
+                        </li>
+                        <li>
+                          <strong>Context quality</strong> (5) evaluates relevance alignment
+                        </li>
+                        <li>
+                          <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
+                        </li>
+                        <li>
+                          <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
+                        </li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -3729,17 +3729,17 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
                     <GSAPStaggerList stagger={0.15} delay={0.4}>
                       <ul>
                         <li>
-                        Use multiple metrics together for full picture
-                      </li>
-                      <li>
-                        Start with retrieval & faithfulness baselines
-                      </li>
-                      <li>
-                        Continuously monitor in production
-                      </li>
-                      <li>
-                        Balance quality with efficiency constraints
-                      </li>
+                          Use multiple metrics together for full picture
+                        </li>
+                        <li>
+                          Start with retrieval & faithfulness baselines
+                        </li>
+                        <li>
+                          Continuously monitor in production
+                        </li>
+                        <li>
+                          Balance quality with efficiency constraints
+                        </li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
