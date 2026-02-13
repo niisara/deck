@@ -3136,7 +3136,7 @@ r_new = α × P^T × r_old + (1 - α) × s
           backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - Implementation
 
-Let's walk through implementing Personalized PageRank 👉 'pee-pee-arr' for knowledge graph retrieval. This involves graph representation, matrix operations, iterative algorithms, and optimization strategies for production systems.
+[lecture] Let's walk through implementing Personalized PageRank 👉 'pee-pee-arr' for knowledge graph retrieval. This involves graph representation, matrix operations, iterative algorithms, and optimization strategies for production systems.
 
 #### Step 1: Graph Representation and Transition Matrix
 Start by loading or building your graph. Use **sparse matrix representations** (scipy.sparse in Python, or native graph database formats) because most real-world graphs are sparse—each node connects to a tiny fraction of total nodes.
@@ -3204,9 +3204,9 @@ PPR works excellently in combination with other techniques. **PPR + Semantic Sea
 **Pre-ranked + PPR**: Precompute standard PageRank for the entire graph. At query time, multiply PPR scores by PageRank: \`combined = PPR × PageRank\`. This boosts nodes that are both query-relevant (high PPR) and globally important (high PageRank).
 
 #### Real-World Example: Research Paper Discovery
-Imagine a research assistant for computer science. A graduate student asks: "What are the most influential papers on attention mechanisms in NLP 👉 'en-el-pee'?" Your system identifies seed nodes: "Attention Mechanisms," "Natural Language Processing," and the landmark paper "Attention Is All You Need."
+[storytelling] Imagine a research assistant for computer science. A graduate student asks: "What are the most influential papers on attention mechanisms in NLP 👉 'en-el-pee'?" Your system identifies seed nodes: "Attention Mechanisms," "Natural Language Processing," and the landmark paper "Attention Is All You Need."
 
-You run **Personalized PageRank** with these seeds, damping α=0.85. The random walker starts at the seeds and explores the citation graph. Papers cited by many other important papers (including those near the seeds) accumulate high PPR scores. Papers that are far from the seeds or isolated get low scores.
+[conversational] You run **Personalized PageRank** with these seeds, damping α=0.85. The random walker starts at the seeds and explores the citation graph. Papers cited by many other important papers (including those near the seeds) accumulate high PPR scores. Papers that are far from the seeds or isolated get low scores.
 
 The **top-ranked papers** emerge: the original Transformer paper (high PageRank and close to seeds), BERT and GPT 👉 'jee-pee-tee' (highly cited and connected to attention mechanisms), influential follow-up work (structurally connected to the core papers). The results represent the **most authoritative papers** in this specific subfield according to citation structure.
 
@@ -3255,10 +3255,10 @@ Now let's examine benefits and limitations of this powerful technique!`
           backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - Considerations
 
-Let's examine the benefits and limitations of graph walk-based ranking techniques like PageRank 👉 'page-rank' and Personalized PageRank. Understanding these trade-offs helps you decide when this approach is appropriate and how to mitigate its weaknesses.
+[lecture] Let's examine the benefits and limitations of graph walk-based ranking techniques like PageRank 👉 'page-rank' and Personalized PageRank. [reassuringly] Understanding these trade-offs helps you decide when this approach is appropriate and how to mitigate its weaknesses.
 
 #### Benefits: Authority and Robustness
-The defining strength is **identifying authoritative nodes based on global graph structure**. PageRank was designed to find important web pages among billions; it excels at surfacing influential, central, or highly-referenced content. In **citation networks**, it identifies seminal papers. In **knowledge bases**, it finds core concepts. In **entity graphs**, it distinguishes important entities from obscure ones. This **authority signal** is difficult to game or manipulate—it emerges from the collective structure of many links.
+[confidently] The defining strength is **identifying authoritative nodes based on global graph structure**. PageRank was designed to find important web pages among billions; it excels at surfacing influential, central, or highly-referenced content. In **citation networks**, it identifies seminal papers. In **knowledge bases**, it finds core concepts. In **entity graphs**, it distinguishes important entities from obscure ones. This **authority signal** is difficult to game or manipulate—it emerges from the collective structure of many links.
 
 **Robustness to noise** is another major advantage. Unlike local techniques that examine individual edges or neighbors, random walk algorithms **aggregate information across the entire graph**. A few spurious edges don't significantly affect rankings because the algorithm considers thousands of paths and millions of edges. This makes rankings **stable and reliable** even in noisy, automatically-constructed graphs.
 
@@ -3305,7 +3305,7 @@ Use **cascading retrieval**: Start with fast semantic search for candidates, the
 Consider **learning to rank** that uses PPR scores as features alongside semantic similarity, edge weights, and content features. Train a model to predict relevance using all signals, often outperforming any single method.
 
 #### Final Thoughts on Advanced Techniques
-We've now covered ten sophisticated graph retrieval techniques, from basic node-level retrieval to advanced hybrid and algorithmic approaches. Each has a place in the retrieval toolkit. The key is **matching technique to application requirements**—precision vs. recall, latency vs. accuracy, simplicity vs. sophistication. Often, the best systems **combine multiple techniques**, leveraging complementary strengths to deliver robust, high-quality retrieval across diverse queries and domains.
+[pleased] We've now covered ten sophisticated graph retrieval techniques, from basic node-level retrieval to advanced hybrid and algorithmic approaches. [conversational] Each has a place in the retrieval toolkit. The key is **matching technique to application requirements**—precision vs. recall, latency vs. accuracy, simplicity vs. sophistication. [enthusiastically] Often, the best systems **combine multiple techniques**, leveraging complementary strengths to deliver robust, high-quality retrieval across diverse queries and domains.
 
 Ready to explore even more advanced techniques? Our journey through graph retrieval continues!`
         }
@@ -3343,10 +3343,10 @@ Ready to explore even more advanced techniques? Our journey through graph retrie
           backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - Overview
 
-Welcome to **Query Graph Construction**, a sophisticated technique that transforms natural language queries into structured graph representations for precise retrieval. Instead of treating queries as mere text or embeddings, this approach **parses the query into entities and relationships**, building a mini-graph that captures relational intent.
+[conversational] Welcome to **Query Graph Construction**, a sophisticated technique that transforms natural language queries into structured graph representations for precise retrieval. [confidently] Instead of treating queries as mere text or embeddings, this approach **parses the query into entities and relationships**, building a mini-graph that captures relational intent.
 
 #### The Core Idea: Structure from Language
-When a user asks "Which companies that raised Series A funding in 2023 are now hiring machine learning engineers?", there's rich **structured information** embedded in this question. Entities: companies, Series A funding, 2023, machine learning engineers. Relationships: raised (company → funding), hiring (company → engineers), time constraint (funding → 2023). A simple keyword or semantic search might miss the **relational constraints** connecting these entities.
+[storytelling] When a user asks "Which companies that raised Series A funding in 2023 are now hiring machine learning engineers?", there's rich **structured information** embedded in this question. Entities: companies, Series A funding, 2023, machine learning engineers. Relationships: raised (company → funding), hiring (company → engineers), time constraint (funding → 2023). A simple keyword or semantic search might miss the **relational constraints** connecting these entities.
 
 Query Graph Construction **explicitly extracts this structure**. It uses Named Entity Recognition 👉 'en-ee-arr' (NER) to identify entities in the query, Relation Extraction 👉 'arr-ee' (RE) to identify relationships between entities, and graph construction algorithms to build a **query graph**. This mini-graph represents the user's intent as a structured pattern: nodes are query entities, edges are relationships between them.
 
@@ -3463,7 +3463,7 @@ KB Match: NodeX --r1--> NodeY --r2--> NodeZ`}
           backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - How It Works
 
-Let's break down the mechanics of Query Graph Construction step-by-step. This technique involves multiple stages: parsing the query, extracting structure, building the query graph, and matching it against your knowledge base. Understanding each phase helps you implement and debug the system effectively.
+[lecture] Let's break down the mechanics of Query Graph Construction step-by-step. [reassuringly] This technique involves multiple stages: parsing the query, extracting structure, building the query graph, and matching it against your knowledge base. Understanding each phase helps you implement and debug the system effectively.
 
 #### Phase 1: Named Entity Recognition (NER 👉 'en-ee-arr')
 The first step is **entity extraction**. Apply a Named Entity Recognition model to the query text to identify entity mentions. For the query "Which companies that raised Series A funding in 2023 are now hiring machine learning engineers?", NER 👉 'en-ee-arr' should extract:
@@ -3589,7 +3589,7 @@ This structured approach ensures you retrieve exactly the projects matching the 
           backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - Implementation
 
-Now let's get practical. Implementing Query Graph Construction involves choosing the right tools, integrating components, and optimizing for your use case. This section walks through implementation steps, technology choices, and real-world examples.
+[conversational] Now let's get practical. Implementing Query Graph Construction involves choosing the right tools, integrating components, and optimizing for your use case. [confidently] This section walks through implementation steps, technology choices, and real-world examples.
 
 #### Step 1: Named Entity Recognition and Relation Extraction
 Start by selecting or training **NER 👉 'en-ee-arr' and RE 👉 'arr-ee' models** suited to your domain. Off-the-shelf models are a good starting point but often need customization.
@@ -3670,9 +3670,9 @@ A practical stack might include:
 - **API**: FastAPI (Python) exposing an endpoint that takes a natural language query, returns matched subgraphs and explanations.
 
 #### Real-World Example: IT Troubleshooting
-Imagine a query: **"Show database connection errors in production environments"**
+[storytelling] Imagine a query: **"Show database connection errors in production environments"**
 
-**NER extracts**: [database], [connection errors], [production environments].
+[lecture] **NER extracts**: [database], [connection errors], [production environments].
 
 **RE identifies**: 
 - [database] --has_issue--> [connection errors]
@@ -3693,7 +3693,7 @@ MATCH (db:Database)-[:has_issue]->(err:Error {type: 'connection'}),
 RETURN db, err, env
 \`\`\`
 
-**Result**: All production databases currently experiencing connection errors. The system returns specific database instances (e.g., "prod-mysql-01", "prod-postgres-02") with their error details and deployment context. This precise retrieval helps ops teams quickly identify and remediate issues.
+**Result**: All production databases currently experiencing connection errors. [pleased] The system returns specific database instances (e.g., "prod-mysql-01", "prod-postgres-02") with their error details and deployment context. This precise retrieval helps ops teams quickly identify and remediate issues.
 
 #### Best Practices
 - **Start with high-quality NER/RE**: Garbage in, garbage out. Invest in domain adaptation.
@@ -3740,12 +3740,12 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
           backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - Considerations
 
-As with any advanced technique, Query Graph Construction has trade-offs. Understanding its strengths and limitations helps you decide when to apply it and how to mitigate potential challenges.
+[lecture] As with any advanced technique, Query Graph Construction has trade-offs. [reassuringly] Understanding its strengths and limitations helps you decide when to apply it and how to mitigate potential challenges.
 
 #### Benefits: Why This Technique Stands Out
 
 **1. High Precision Through Structural Matching**
-The most significant advantage is **precision**. By matching graph structure, you ensure results satisfy *all* relational constraints specified in the query. If the query asks for "companies that raised Series A funding *and* are hiring ML engineers", only results where the same company entity satisfies both conditions are returned.
+[confidently] The most significant advantage is **precision**. By matching graph structure, you ensure results satisfy *all* relational constraints specified in the query. If the query asks for "companies that raised Series A funding *and* are hiring ML engineers", only results where the same company entity satisfies both conditions are returned.
 
 Traditional **keyword-based retrieval** might return documents mentioning "Series A" and "hiring" but where different companies are involved—false positives. **Semantic search** might retrieve documents about funding or hiring separately but miss the relational constraint linking them. Query Graph Construction enforces these constraints structurally, eliminating such false positives.
 
@@ -3834,7 +3834,7 @@ In practice, Query Graph Construction works best **in combination** with other t
 - **Fallback to simpler methods**: If query graph construction fails (e.g., NER extracts no entities), fall back to keyword or semantic search. This ensures users always get some results.
 - **Augment with PageRank or centrality**: Rank matched subgraphs by node importance. This surfaces authoritative or popular entities when multiple matches exist.
 
-Query Graph Construction is a powerful technique for structured, relational retrieval. It demands investment in entity extraction and schema alignment but rewards you with precision, explainability, and support for complex queries. Use it judiciously—where relational structure matters and extraction quality is achievable—and complement it with other retrieval methods for a robust, flexible system!`
+Query Graph Construction is a powerful technique for structured, relational retrieval. [pleased] It demands investment in entity extraction and schema alignment but rewards you with precision, explainability, and support for complex queries. [warmly] Use it judiciously—where relational structure matters and extraction quality is achievable—and complement it with other retrieval methods for a robust, flexible system!`
         },
       ]
     },
@@ -3870,10 +3870,10 @@ Query Graph Construction is a powerful technique for structured, relational retr
           backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - Overview
 
-Welcome to **Context Path Stitching**, a technique that transforms raw graph retrieval results into polished, narrative-style context for language models. While graph retrieval excels at finding relevant paths and subgraphs, raw graph data—lists of nodes and edges—is not ideal input for LLMs. Context Path Stitching bridges this gap by **weaving multiple paths into coherent prose**.
+[conversational] Welcome to **Context Path Stitching**, a technique that transforms raw graph retrieval results into polished, narrative-style context for language models. [confidently] While graph retrieval excels at finding relevant paths and subgraphs, raw graph data—lists of nodes and edges—is not ideal input for LLMs. Context Path Stitching bridges this gap by **weaving multiple paths into coherent prose**.
 
 #### The Core Idea: From Fragments to Narrative
-Imagine you retrieve three paths from a knowledge graph:
+[storytelling] Imagine you retrieve three paths from a knowledge graph:
 1. **Path A**: Einstein → born_in → Germany → located_in → Europe
 2. **Path B**: Einstein → developed → Theory of Relativity → published_in → 1915
 3. **Path C**: Theory of Relativity → revolutionized → Physics → fundamental_theory
@@ -4016,7 +4016,7 @@ Stitched: "A connects to B, leading to C. Meanwhile, D relates to E, resulting i
           backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - How It Works
 
-Let's walk through the mechanics of Context Path Stitching step-by-step. This process transforms raw graph paths into polished narrative context suitable for LLM consumption. Each phase plays a crucial role in ensuring coherence and readability.
+[lecture] Let's walk through the mechanics of Context Path Stitching step-by-step. [reassuringly] This process transforms raw graph paths into polished narrative context suitable for LLM consumption. Each phase plays a crucial role in ensuring coherence and readability.
 
 #### Phase 1: Path Collection
 Start with **retrieved paths** from your graph retrieval step. These might come from path-based retrieval, neighborhood expansion, traversal, or any other technique. Each path is a sequence of nodes and edges, typically represented as:
@@ -4188,7 +4188,7 @@ Context Path Stitching is a powerful post-processing technique that transforms r
           backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - Implementation
 
-Let's get hands-on with implementing Context Path Stitching. This section covers practical steps, code patterns, technology choices, and real-world examples to help you build an effective stitching pipeline.
+[conversational] Let's get hands-on with implementing Context Path Stitching. [confidently] This section covers practical steps, code patterns, technology choices, and real-world examples to help you build an effective stitching pipeline.
 
 #### Step 1: Retrieve and Collect Paths
 Start with your **graph retrieval results**. These come from whichever graph technique you're using—path-based retrieval, neighborhood expansion, subgraph matching, etc. The key is collecting the raw materials for stitching.
@@ -4475,9 +4475,9 @@ A practical stack for Context Path Stitching:
 - **LLM integration**: LangChain, LlamaIndex, or direct API calls
 
 #### Real-World Example: Research Synthesis
-Imagine synthesizing findings from multiple scientific papers on "effects of sleep deprivation":
+[storytelling] Imagine synthesizing findings from multiple scientific papers on "effects of sleep deprivation":
 
-**Retrieved Paths**:
+[lecture] **Retrieved Paths**:
 1. [Study A (2018)] --found--> [Reduced cognitive performance]
 2. [Study B (2020)] --built_on--> [Study A] --showed--> [Impaired memory]
 3. [Study C (2022)] --confirmed--> [Study B] --extended--> [Linked to mood disorders]
@@ -4500,7 +4500,7 @@ Question: What are the cognitive and psychological effects of sleep deprivation 
 Answer: Recent research indicates that sleep deprivation has significant cognitive and psychological effects. A 2018 study found reduced cognitive performance, which was further supported by 2020 research showing impaired memory consolidation. Most recently, a 2022 study extended these findings, linking chronic sleep deprivation to mood disorders including depression and anxiety. These studies collectively demonstrate the serious impact of insufficient sleep on both cognitive function and mental health.
 \`\`\`
 
-The stitched context provides temporal flow, causal connections, and comprehensive coverage—enabling the LLM to generate a well-supported, structured answer.
+[pleased] The stitched context provides temporal flow, causal connections, and comprehensive coverage—enabling the LLM to generate a well-supported, structured answer.
 
 #### Best Practices and Tips
 - **Precompute when possible**: If paths are retrieved frequently (common queries), precompute and cache stitched contexts. This drastically reduces latency.
@@ -4511,7 +4511,7 @@ The stitched context provides temporal flow, causal connections, and comprehensi
 - **Graceful degradation**: If deduplication or ordering fails (e.g., no timestamps available), fall back to simpler strategies (retrieval order, no transitions). Better to provide raw paths than fail entirely.
 - **Provide attributions**: Include source information (path IDs, node provenance) in the stitched context. This helps users verify facts and understand where information came from.
 
-Context Path Stitching is an art as much as a science. The best implementation depends on your domain, query patterns, and LLM characteristics. Start simple (deduplication + basic ordering + templates), measure impact, and iteratively refine. The result is a powerful capability that transforms graph retrieval into LLM-ready narratives, significantly improving answer quality and user trust!`
+[warmly] Context Path Stitching is an art as much as a science. The best implementation depends on your domain, query patterns, and LLM characteristics. [reassuringly] Start simple (deduplication + basic ordering + templates), measure impact, and iteratively refine. [enthusiastically] The result is a powerful capability that transforms graph retrieval into LLM-ready narratives, significantly improving answer quality and user trust!`
         },
         {
           id: 50,
@@ -4549,12 +4549,12 @@ Context Path Stitching is an art as much as a science. The best implementation d
           backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - Considerations
 
-Context Path Stitching is a powerful post-retrieval transformation, but like all techniques, it has trade-offs. Let's explore its benefits, limitations, and practical considerations to help you decide when and how to apply it.
+[lecture] Context Path Stitching is a powerful post-retrieval transformation, but like all techniques, it has trade-offs. [reassuringly] Let's explore its benefits, limitations, and practical considerations to help you decide when and how to apply it.
 
 #### Benefits: Transforming Graph Data for LLMs
 
 **1. Narrative Coherence Improves LLM Performance**
-The most immediate benefit is **readability**. LLMs are trained on human-written text—articles, books, conversations. They excel when input resembles this training data: coherent, well-structured prose. Raw graph data—lists of triples like "(Einstein, born_in, Germany), (Einstein, developed, Theory_of_Relativity)"—is structurally awkward for LLMs.
+[confidently] The most immediate benefit is **readability**. LLMs are trained on human-written text—articles, books, conversations. They excel when input resembles this training data: coherent, well-structured prose. Raw graph data—lists of triples like "(Einstein, born_in, Germany), (Einstein, developed, Theory_of_Relativity)"—is structurally awkward for LLMs.
 
 Context Path Stitching **transforms graph data into the format LLMs expect**. Stitched context reads like a Wikipedia article or textbook passage. The LLM can parse it effortlessly, understand relationships naturally, and generate fluent answers. Experiments show that well-stitched context can improve LLM answer quality by 20-40% compared to raw triple lists, especially for complex multi-hop questions.
 
@@ -4664,7 +4664,7 @@ Regularly review stitched outputs manually—does the narrative make sense? Are 
 - **Balance verbosity and completeness**: More context isn't always better. Aim for concise, information-dense narratives rather than exhaustive detail.
 - **Provide attributions**: Include source info (node IDs, path provenance) so users can verify facts and trust the output.
 
-Context Path Stitching is a transformative technique when applied thoughtfully. It bridges the gap between structured graph data and natural language LLMs, unlocking the full potential of graph-based retrieval. With careful design, tuning, and maintenance, it delivers coherent, comprehensive, trustworthy context that enables LLMs to generate their best answers!`
+[pleased] Context Path Stitching is a transformative technique when applied thoughtfully. It bridges the gap between structured graph data and natural language LLMs, unlocking the full potential of graph-based retrieval. [warmly] With careful design, tuning, and maintenance, it delivers coherent, comprehensive, trustworthy context that enables LLMs to generate their best answers!`
         },
       ]
     },
@@ -4700,12 +4700,12 @@ Context Path Stitching is a transformative technique when applied thoughtfully. 
           backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - Overview
 
-Welcome to **LLM-Guided Graph Expansion**, the most sophisticated and adaptive technique in our arsenal. Unlike predetermined traversal strategies (fixed hop counts, predefined edge types), this approach **delegates exploration decisions to a language model**. The LLM examines the current state of retrieval, reasons about what's relevant, and decides which edges to follow next—creating a dynamic, intelligent search through the graph.
+[enthusiastically] Welcome to **LLM-Guided Graph Expansion**, the most sophisticated and adaptive technique in our arsenal. [conversational] Unlike predetermined traversal strategies (fixed hop counts, predefined edge types), this approach **delegates exploration decisions to a language model**. [confidently] The LLM examines the current state of retrieval, reasons about what's relevant, and decides which edges to follow next—creating a dynamic, intelligent search through the graph.
 
 #### The Core Idea: Intelligence in Traversal
-Traditional graph retrieval uses **fixed rules**: "Expand 2 hops from this node", "Follow edges of type X", "Retrieve top-k neighbors by similarity". These work well when the retrieval pattern is predictable and well-understood. But what about **complex, open-ended queries** where you don't know in advance which paths will be fruitful?
+[lecture] Traditional graph retrieval uses **fixed rules**: "Expand 2 hops from this node", "Follow edges of type X", "Retrieve top-k neighbors by similarity". These work well when the retrieval pattern is predictable and well-understood. [reassuringly] But what about **complex, open-ended queries** where you don't know in advance which paths will be fruitful?
 
-Example query: "What were the societal impacts of Einstein's work?" This is broad and exploratory. You might start at the Einstein node. From there, should you follow "worked_on" edges to his theories? Or "influenced" edges to later scientists? Or "applied_in" edges to technologies? The "best" path isn't obvious—it depends on what you're trying to discover and what you've found so far.
+[storytelling] Example query: "What were the societal impacts of Einstein's work?" This is broad and exploratory. You might start at the Einstein node. From there, should you follow "worked_on" edges to his theories? Or "influenced" edges to later scientists? Or "applied_in" edges to technologies? The "best" path isn't obvious—it depends on what you're trying to discover and what you've found so far.
 
 LLM-Guided Graph Expansion lets the **LLM decide**. You present the LLM with current nodes and their available edges, along with the query. The LLM reasons: "Given the query about societal impacts, I should explore 'applied_in' edges to see what technologies used Einstein's work, and 'influenced' edges to understand how his ideas shaped society. I'll skip 'published_in' edges since journal publication details aren't directly relevant to societal impact."
 
@@ -4845,7 +4845,7 @@ Step 3: At C → LLM determines sufficient info, stops`}
           backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - How It Works
 
-Let's dive into the mechanics of LLM-Guided Graph Expansion. This is an **iterative, interactive process** where the LLM and graph query engine work together in a loop, with the LLM making strategic decisions at each step. Understanding this loop and how to implement it effectively is key to leveraging this powerful technique.
+[lecture] Let's dive into the mechanics of LLM-Guided Graph Expansion. [conversational] This is an **iterative, interactive process** where the LLM and graph query engine work together in a loop, with the LLM making strategic decisions at each step. [reassuringly] Understanding this loop and how to implement it effectively is key to leveraging this powerful technique.
 
 #### Phase 1: Initialization and Seed Selection
 Start by **identifying seed nodes**—the starting points for exploration. Use techniques from earlier in the deck:
@@ -4955,9 +4955,9 @@ To implement LLM-Guided Expansion, you need:
 - **Optional feedback signals**: If available, pass feedback to the LLM (e.g., "This path didn't yield useful info in the past" or "This edge type is often relevant for queries like this"). This helps the LLM make better decisions.
 
 #### Practical Example Pattern
-Let's walk through a concrete example:
+[storytelling] Let's walk through a concrete example:
 
-**Query**: "How does GPS technology work?"
+[conversational] **Query**: "How does GPS technology work?"
 
 **Iteration 1**:
 - **Current nodes**: GPS Technology (seed from semantic search)
@@ -4980,7 +4980,7 @@ Let's walk through a concrete example:
 **Context**:
 "GPS technology uses a network of 24+ satellites orbiting at 20,200 km altitude. These satellites transmit radio signals to receivers on Earth. To calculate precise positions, GPS must account for time dilation effects predicted by Einstein's Theory of Relativity, because satellite clocks run slightly faster than ground-based clocks due to differences in gravity and velocity. Without relativity corrections, GPS accuracy would degrade by several kilometers per day."
 
-**Answer**: The LLM generates a comprehensive explanation of GPS mechanics, grounded in the explored context.
+[pleased] **Answer**: The LLM generates a comprehensive explanation of GPS mechanics, grounded in the explored context.
 
 #### Advanced Techniques and Optimizations
 **Branching and Pruning**:
@@ -5010,7 +5010,7 @@ Provide the LLM with **rules** to prevent bad decisions: "Never explore edges le
 
 **Token Window Limits**: As exploration progresses, the prompt includes an expanding context (visited nodes, edges, history). This can exceed LLM context limits. Mitigation: **summarize** history at each step (keep only the most recent or relevant nodes), **prune** less important branches, or use **sliding window** (keep only the last N nodes in the prompt).
 
-LLM-Guided Graph Expansion is a sophisticated, powerful technique that brings intelligence and adaptability to graph retrieval. It requires careful implementation, budget management, and guardrails, but the payoff—highly relevant, comprehensive, adaptive retrieval—is substantial for complex, open-ended queries!`
+[confidently] LLM-Guided Graph Expansion is a sophisticated, powerful technique that brings intelligence and adaptability to graph retrieval. [seriously] It requires careful implementation, budget management, and guardrails, but [enthusiastically] the payoff—highly relevant, comprehensive, adaptive retrieval—is substantial for complex, open-ended queries!`
         },
         {
           id: 53,
@@ -5041,7 +5041,7 @@ LLM-Guided Graph Expansion is a sophisticated, powerful technique that brings in
           backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - Implementation
 
-Let's get hands-on with implementing LLM-Guided Graph Expansion. This section covers practical implementation steps, code patterns, optimization strategies, and real-world deployment considerations.
+[conversational] Let's get hands-on with implementing LLM-Guided Graph Expansion. [confidently] This section covers practical implementation steps, code patterns, optimization strategies, and real-world deployment considerations.
 
 #### Step 1: Initialization and Seed Selection
 Begin by **identifying seed nodes** from the query. Use techniques from earlier in the deck:
@@ -5366,9 +5366,9 @@ A practical stack for LLM-Guided Expansion:
 - **Monitoring**: Log all LLM decisions, retrieval results, and final answers. Use tools like Weights & Biases or custom dashboards to track quality and cost.
 
 #### Real-World Example: Interactive Research Assistant
-Imagine a research tool where users explore a knowledge graph of scientific papers interactively.
+[storytelling] Imagine a research tool where users explore a knowledge graph of scientific papers interactively.
 
-**Query 1**: "What are emerging trends in quantum computing?"
+[conversational] **Query 1**: "What are emerging trends in quantum computing?"
 - **Seed**: Quantum computing node
 - **Iteration 1**: LLM explores "research_areas" edges → finds "quantum error correction", "quantum algorithms", "quantum hardware"
 - **Iteration 2**: LLM selects "quantum error correction" as most emerging → explores "recent_papers" edges → finds 2023 breakthroughs
@@ -5382,7 +5382,7 @@ Imagine a research tool where users explore a knowledge graph of scientific pape
 - **Iteration 3**: LLM connects the dots, stops.
 - **Answer**: "Quantum error correction is critical for achieving fault-tolerant quantum computers. Once realized, such computers could break widely-used encryption like RSA, necessitating post-quantum cryptography..."
 
-The system **dynamically adapts** to the evolving conversation, building on previous exploration and shifting focus based on the user's new questions. This adaptive behavior is the hallmark of LLM-guided exploration.
+[pleased] The system **dynamically adapts** to the evolving conversation, building on previous exploration and shifting focus based on the user's new questions. [enthusiastically] This adaptive behavior is the hallmark of LLM-guided exploration.
 
 #### Monitoring and Improvement
 **Log everything**:
@@ -5418,7 +5418,7 @@ def log_exploration(query, state, decision, result):
 - **Combine with heuristics**: Use LLM for high-level decisions (which branch to explore) but heuristics for low-level tasks (ranking neighbors by similarity). This hybrid approach balances intelligence and efficiency.
 - **Provide guardrails**: Limit depth, prevent revisiting nodes, skip clearly irrelevant edges. Don't let the LLM wander aimlessly.
 
-LLM-Guided Graph Expansion is a cutting-edge technique that brings adaptive intelligence to graph retrieval. It's complex to implement and manage, but for high-value, complex queries, it delivers unmatched quality and flexibility. Start with a pilot on a subset of queries, measure impact, and scale gradually as you refine the system!`
+[confidently] LLM-Guided Graph Expansion is a cutting-edge technique that brings adaptive intelligence to graph retrieval. [seriously] It's complex to implement and manage, but [enthusiastically] for high-value, complex queries, it delivers unmatched quality and flexibility. [warmly] Start with a pilot on a subset of queries, measure impact, and scale gradually as you refine the system!`
         },
         {
           id: 54,
@@ -5456,12 +5456,12 @@ LLM-Guided Graph Expansion is a cutting-edge technique that brings adaptive inte
           backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - Considerations
 
-LLM-Guided Graph Expansion is the most sophisticated technique in our toolkit, and with that sophistication comes both remarkable benefits and significant challenges. Let's explore both sides to help you decide when and how to apply this technique.
+[lecture] LLM-Guided Graph Expansion is the most sophisticated technique in our toolkit, and with that sophistication comes both remarkable benefits and significant challenges. [reassuringly] Let's explore both sides to help you decide when and how to apply this technique.
 
 #### Benefits: The Power of Adaptive Intelligence
 
 **1. Intelligent, Context-Aware Exploration**
-The standout benefit is **adaptive reasoning**. Unlike fixed traversal strategies (expand 2 hops, follow all edges of type X), LLM-guided expansion **makes decisions based on context**. The LLM considers: What is the query asking? What have I found so far? What am I still missing? Which next steps are most likely to fill gaps?
+[confidently] The standout benefit is **adaptive reasoning**. Unlike fixed traversal strategies (expand 2 hops, follow all edges of type X), LLM-guided expansion **makes decisions based on context**. The LLM considers: What is the query asking? What have I found so far? What am I still missing? Which next steps are most likely to fill gaps?
 
 This **meta-reasoning** mirrors how human researchers explore knowledge bases. A human wouldn't blindly expand all neighbors—they'd think: "I'm looking for societal impacts, so I should follow 'applied_in' edges to technologies, not 'published_by' edges to journals." The LLM does exactly this, bringing human-like strategic thinking to retrieval.
 
@@ -5491,19 +5491,19 @@ Compare this to black-box heuristics or learned models where it's unclear why ce
 
 #### Limitations: Challenges to Overcome
 
-**1. High Cost and Latency**
+[seriously] **1. High Cost and Latency**
 This is the elephant in the room. LLM-guided expansion requires **multiple LLM API calls per query**—one per iteration. If you explore 5 steps, that's 5 LLM calls. At 1-3 seconds per call, latency adds up to 5-15 seconds, plus graph query time. For real-time chatbots or interactive systems expecting sub-second responses, this is a dealbreaker.
 
 **Cost** scales similarly. Each LLM call costs money (API fees) or compute (self-hosted inference). For high-volume applications (thousands of queries per hour), costs become substantial. If a single query costs $0.05 in LLM calls, 10K queries cost $500—prohibitive at scale.
 
-**Mitigation strategies**:
+[reassuringly] **Mitigation strategies**:
 - **Use smaller, faster models** for decision-making (GPT-3.5, fine-tuned small models) and reserve larger models for final answer generation.
 - **Cache common decision patterns**: If many queries follow similar exploration patterns (e.g., "person biography" queries always explore 'born_in', 'worked_on', 'influenced'), cache these decisions.
 - **Parallel exploration**: Instead of sequential iterations (1 → 2 → 3), explore multiple branches concurrently, reducing the number of sequential LLM calls.
 - **Apply selectively**: Use LLM-guided expansion only for complex, high-value queries. Simple queries use cheaper heuristic methods.
 - **Precomputation**: For predictable query types, precompute exploration paths offline and use LLM-guided expansion only for novel or ambiguous queries.
 
-**2. Unpredictable, Stochastic Behavior**
+[cautiously] **2. Unpredictable, Stochastic Behavior**
 LLMs are **non-deterministic** (even with low temperature, there's variability). The same query might lead to different exploration paths on different runs. Sometimes the LLM makes excellent choices; other times it explores irrelevant branches or gets stuck in loops.
 
 This unpredictability is a **reliability risk**. Users expect consistent results. If one query retrieves comprehensive information and the next (identical) query misses key facts because the LLM made a poor decision, user trust erodes.
@@ -5584,7 +5584,7 @@ Track these metrics to assess LLM-guided expansion:
 - **Decision quality**: Review LLM decision logs—are choices sensible and well-reasoned? Identify common failure patterns.
 - **User satisfaction**: If interactive, do users find the system intelligent and helpful? A/B test LLM-guided vs. simpler methods.
 
-Use these metrics to **iterate**:
+[confidently] Use these metrics to **iterate**:
 - **Refine prompts** based on decision quality.
 - **Adjust budgets** based on cost-vs-quality trade-offs.
 - **Add guardrails** for observed failure patterns.
@@ -5679,13 +5679,13 @@ LLM-Guided Graph Expansion is powerful, complex, and resource-intensive. Use it 
           backgroundColor: '#5b1e1e',
           notes: `### Putting It Together: Patterns and Next Steps
 
-Congratulations! You've journeyed through 13 graph-based retrieval techniques, from simple node-level retrieval to sophisticated LLM 👉 'el-el-em'-guided exploration. Now comes the practical question: **How do you actually use these techniques in real systems?** This closing slide provides guidance on combining techniques, operational best practices, and concrete next steps to get started.
+[warmly] Congratulations! You've journeyed through 13 graph-based retrieval techniques, from simple node-level retrieval to sophisticated LLM 👉 'el-el-em'-guided exploration. [conversational] Now comes the practical question: **How do you actually use these techniques in real systems?** [confidently] This closing slide provides guidance on combining techniques, operational best practices, and concrete next steps to get started.
 
 #### Common Technique Combinations
 
-Real-world retrieval systems rarely use a single technique in isolation. The most effective systems **combine techniques** to leverage their complementary strengths. Here are proven combination patterns:
+[lecture] Real-world retrieval systems rarely use a single technique in isolation. [pleased] The most effective systems **combine techniques** to leverage their complementary strengths. Here are proven combination patterns:
 
-**Hybrid Retrieval: Dense + Graph-Enhanced (7) + BM25 (8)**
+[confidently] **Hybrid Retrieval: Dense + Graph-Enhanced (7) + BM25 (8)**
 This is the **workhorse combo** for general-purpose retrieval. Start with **dense embedding search** (e.g., using vector databases) to cast a wide net based on semantic similarity. Then apply **Graph-Enhanced Scoring (Technique 7)** to boost candidates that are well-connected or central in the knowledge graph—surfacing authoritative or important content. Finally, use **BM25 👉 'bee-em-twenty-five' Re-Ranking (Technique 8)** to ensure exact keyword matches are prioritized, catching cases where semantic search might miss important terms.
 
 This three-stage pipeline balances **recall** (dense search finds many relevant candidates), **authority** (graph scoring promotes quality), and **precision** (BM25 catches exact matches). It's versatile and works across domains—customer support, enterprise search, document retrieval, Q&A systems.
@@ -5700,11 +5700,11 @@ When you need **broad, comprehensive coverage** of a topic, use **Cluster-Based 
 
 This combination is ideal for **report generation**, **literature reviews**, **educational content**, or any scenario where users want a complete picture rather than a single specific answer. The cluster-based approach ensures diverse topics are covered, hierarchical organization provides structure, and neighborhood expansion fills in details.
 
-These are just starting points—experiment with combinations tailored to your domain and query patterns. The key is to **understand each technique's strengths** and **combine them to cover weaknesses** or achieve complementary goals.
+[playfully] These are just starting points—experiment with combinations tailored to your domain and query patterns. [reassuringly] The key is to **understand each technique's strengths** and **combine them to cover weaknesses** or achieve complementary goals.
 
 #### Operational Tips for Production Systems
 
-Moving from concept to production requires **operational discipline**. Here are hard-won lessons for running graph retrieval in real systems:
+[lecture] Moving from concept to production requires **operational discipline**. [confidently] Here are hard-won lessons for running graph retrieval in real systems:
 
 **Cap Neighbors and Manage Fan-Out**
 Graph traversal can **explode in size**. A node with 1000 outgoing edges means 1000 neighbors to consider. If you expand 2 hops, that's potentially a million nodes. **Cap the number of neighbors retrieved per node and per edge type**. For example: "Retrieve max 20 neighbors per node, prioritizing by edge weight or similarity." This prevents runaway expansion and keeps latency predictable.
@@ -5729,12 +5729,12 @@ These **downstream metrics** are what actually matter. Optimize retrieval to max
 
 #### Next Steps: Building Your Graph Retrieval System
 
-You've learned the techniques—now it's time to **build**. Here's a pragmatic roadmap:
+[enthusiastically] You've learned the techniques—now it's time to **build**. [warmly] Here's a pragmatic roadmap:
 
 **Step 1: Pick 2–3 Techniques to Pilot**
 Don't try to implement all 13 techniques at once. Start with **2-3 that best match your use case**. For general Q&A, start with Node-Level Retrieval (1), Neighborhood Expansion (3), and Graph-Enhanced Scoring (7). For complex reasoning, start with Path-Based (4), Traversal-Based (9), and Context Path Stitching (12). For large-scale, choose techniques that scale (Node-Level, Cluster-Based, PPR 👉 'pee-pee-arr').
 
-Implement these pilots, test on real queries, and measure impact. Only once you've validated value should you invest in additional techniques. **Start simple, prove value, scale complexity.**
+[reassuringly] Implement these pilots, test on real queries, and measure impact. Only once you've validated value should you invest in additional techniques. [confidently] **Start simple, prove value, scale complexity.**
 
 **Step 2: Establish Metrics and Budgets**
 Define **success metrics** upfront. For your use case, what does "good retrieval" mean? Accurate answers? Fast response times? Low cost? High user satisfaction? Pick 2-3 primary metrics and track them religiously. Measure before and after implementing graph retrieval to quantify impact.
@@ -5754,42 +5754,42 @@ If you implement **LLM-Guided Expansion (Technique 13)**, which is powerful but 
 - **Timeout enforcement**: If exploration exceeds time budget (e.g., 30 seconds), terminate and return what you have.
 - **Fallback strategies**: If LLM decisions fail (malformed output, nonsensical choices), fall back to heuristic traversal (e.g., follow highest-weighted edges).
 
-These guardrails ensure LLM-guided exploration remains **predictable and reliable** even when the LLM makes poor decisions. Safety first, intelligence second.
+[pleased] These guardrails ensure LLM-guided exploration remains **predictable and reliable** even when the LLM makes poor decisions. Safety first, intelligence second.
 
 #### Philosophy: Iterate Based on Your Specific Context
 
-There's no one-size-fits-all answer to "which technique should I use?" It depends on:
+[conversational] There's no one-size-fits-all answer to "which technique should I use?" [reassuringly] It depends on:
 - **Your graph structure**: Dense, sparse, hierarchical, flat? Different structures favor different techniques.
 - **Your query patterns**: Specific fact-finding, exploratory research, causal reasoning? Each benefits from different approaches.
 - **Your constraints**: Latency, cost, infrastructure—these dictate which techniques are feasible.
 - **Your domain**: Medical, legal, technical, general knowledge—domain characteristics influence technique effectiveness.
 
-The best approach is **empirical**: try techniques, measure results, iterate. Graph-based retrieval is as much **engineering** as it is **science**—you'll discover what works through experimentation and tuning.
+[confidently] The best approach is **empirical**: try techniques, measure results, iterate. [playfully] Graph-based retrieval is as much **engineering** as it is **science**—you'll discover what works through experimentation and tuning.
 
-**Start simple**—use basic techniques (node-level, neighborhood expansion) to establish a baseline. **Measure impact**—track answer quality, latency, cost. **Iterate**—add more sophisticated techniques (path-based, LLM-guided) where baseline performance is insufficient. **Optimize**—tune thresholds, cache, parallelize. **Repeat**—as your data, queries, and requirements evolve.
+[warmly] **Start simple**—use basic techniques (node-level, neighborhood expansion) to establish a baseline. **Measure impact**—track answer quality, latency, cost. **Iterate**—add more sophisticated techniques (path-based, LLM-guided) where baseline performance is insufficient. **Optimize**—tune thresholds, cache, parallelize. **Repeat**—as your data, queries, and requirements evolve.
 
 #### Vision: The Future of Graph-Based Retrieval
 
-Graph-based retrieval is not a static field—it's **rapidly evolving**. Here's where it's headed:
-- **Tighter integration with LLMs**: LLMs will increasingly use graphs natively, not just as external data sources. Graph-aware LLMs that understand relational structure will emerge.
+[enthusiastically] Graph-based retrieval is not a static field—it's **rapidly evolving**. [inspiringly] Here's where it's headed:
+- **Tighter integration with LLMs**: LLMs will increasingly use graphs natively, not just as external data sources. [delighted] Graph-aware LLMs that understand relational structure will emerge.
 - **Learned graph traversal**: Instead of hand-designed heuristics or LLM-guided exploration, **trained models** will learn optimal traversal strategies from data, combining the efficiency of heuristics with the adaptability of LLM-guided approaches.
 - **Real-time graph updates**: As knowledge graphs evolve (new nodes, edges, updates), retrieval systems will adapt in real-time, ensuring answers reflect the latest information.
 - **Multi-modal graphs**: Graphs will include text, images, audio, video—retrieval will span modalities, finding connections across diverse content types.
 - **Agentic retrieval**: Systems won't just retrieve—they'll **reason, plan, and interact**, acting as intelligent research assistants that understand goals and autonomously explore to achieve them.
 
-By mastering the 13 techniques in this deck, you're positioned to leverage these future advances. The fundamentals—understanding graph structure, leveraging relationships, balancing precision and recall, managing resources—will remain relevant even as specific methods evolve.
+[confidently] By mastering the 13 techniques in this deck, you're positioned to leverage these future advances. [inspiringly] The fundamentals—understanding graph structure, leveraging relationships, balancing precision and recall, managing resources—will remain relevant even as specific methods evolve.
 
 #### Final Thoughts: Graph Retrieval as a Craft
 
-Graph-based retrieval is a **craft**—part science (algorithms, metrics, math), part art (domain intuition, prompt engineering, UX design), and part engineering (systems, scale, reliability). Mastery comes from **practice, iteration, and learning from failures**.
+[warmly] Graph-based retrieval is a **craft**—part science (algorithms, metrics, math), part art (domain intuition, prompt engineering, UX design), and part engineering (systems, scale, reliability). [inspiringly] Mastery comes from **practice, iteration, and learning from failures**.
 
-Don't be intimidated by the sophistication of techniques like LLM-Guided Expansion or Query Graph Construction. Start with simpler methods, build confidence, and gradually adopt more advanced approaches as your needs and skills grow. Every production system is a **journey** from simple baselines to refined, optimized pipelines.
+[reassuringly] Don't be intimidated by the sophistication of techniques like LLM-Guided Expansion or Query Graph Construction. [warmly] Start with simpler methods, build confidence, and gradually adopt more advanced approaches as your needs and skills grow. [delighted] Every production system is a **journey** from simple baselines to refined, optimized pipelines.
 
-**Collaborate and share**: The graph retrieval community is vibrant and collaborative. Share your findings, contribute to open-source projects, learn from others' experiences. The best systems are built on the accumulated knowledge of the field.
+[enthusiastically] **Collaborate and share**: The graph retrieval community is vibrant and collaborative. Share your findings, contribute to open-source projects, learn from others' experiences. [pleased] The best systems are built on the accumulated knowledge of the field.
 
-**Remember**: The goal isn't to use the fanciest technique—it's to **deliver value to users**. If simple node-level retrieval + neighborhood expansion solves your users' problems, that's success. Only add complexity when it demonstrably improves outcomes. **Start simple, measure impact, iterate.**
+[confidently] **Remember**: The goal isn't to use the fanciest technique—it's to **deliver value to users**. [warmly] If simple node-level retrieval + neighborhood expansion solves your users' problems, that's success. [reassuringly] Only add complexity when it demonstrably improves outcomes. **Start simple, measure impact, iterate.**
 
-You now have a comprehensive toolkit for graph-based retrieval. Go forth and build intelligent, reliable, graph-powered systems that provide precise, contextual, explainable answers. The future of retrieval is relational—you're now equipped to lead it. Good luck, and happy building!`
+[inspiringly] You now have a comprehensive toolkit for graph-based retrieval. [enthusiastically] Go forth and build intelligent, reliable, graph-powered systems that provide precise, contextual, explainable answers. [warmly] The future of retrieval is relational—you're now equipped to lead it. [delighted] Good luck, and happy building!`
         },
       ]
     }
