@@ -25,9 +25,9 @@ sample-deck.tsx
 sentiment-analysis-deck.tsx
 text-preprocessing-deck.tsx
 vector-databases-deck.tsx
-vector-indexing-deck.tsx
 
-In the above file mentioned do the following:
+
+vector-indexing-deck.tsx for this file do the following:
 
 ## Purpose
 Add interactive MermaidPopover diagrams as inline clickable badges to slides, making technical concepts more engaging and visual during presentations without adding vertical space or requiring scrolling.
