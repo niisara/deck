@@ -194,7 +194,7 @@ flowchart LR
 Each technique targets one or more of these stages. The key insight is that you don't need to apply all eleven — pick the ones that address your biggest bottleneck first.
 
 #### 🎯 Key Takeaway
-[confidently] The key idea is simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. [energetic] Now let's dive into each technique, starting with smaller embedding models...`
+[confidently] The key idea is simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. Now let's dive into each technique, starting with smaller embedding models...`
         }
       ]
     },
@@ -1718,8 +1718,8 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           notes: `### 34. Re-Ranking — When to Use
 When should you add a lightweight reranker to your pipeline? Here are the key scenarios.
 
-[seriously] #### 🎯 Quality-Critical Applications
-[pleased] If your RAG system needs to provide highly accurate answers — like in medical, legal, or financial contexts — a reranker significantly improves the precision of your top results. The few milliseconds it adds are well worth the quality gain.
+#### 🎯 Quality-Critical Applications
+[seriously] If your RAG system needs to provide highly accurate answers — like in medical, legal, or financial contexts — a reranker significantly improves the precision of your top results. The few milliseconds it adds are well worth the quality gain.
 
 #### 📊 When Vector Search Isn't Precise Enough
 [cautiously] Vector similarity search is good at finding semantically related content, but it sometimes ranks results poorly. A cross-encoder reranker understands the actual relationship between the query and each result, giving much better ordering.
