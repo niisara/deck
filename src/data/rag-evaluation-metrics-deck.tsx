@@ -60,18 +60,18 @@ export const ragEvaluationMetricsDeck: Deck = {
           ),
           backgroundColor: '#231f6f',
           notes: `### 13 Underused RAG Evaluation Metrics
-Welcome everyone! Today we're diving into something crucial but often overlooked in the world of RAG systems—evaluation metrics. If you're building a Retrieval-Augmented Generation 👉 'RAG' system, you've probably wondered: "Is my system actually working well? How do I know if my retrieval is good enough? Is my AI making things up?"
+[cheerfully] Welcome everyone! [excited] Today we're diving into something crucial but often overlooked in the world of RAG systems—evaluation metrics. If you're building a Retrieval-Augmented Generation 👉 'RAG' system, you've probably wondered: [quizzically] "Is my system actually working well? How do I know if my retrieval is good enough? Is my AI making things up?"
 
 ####  Why This Matters
-Think of RAG systems like this: they're basically AI assistants that look up information before answering your questions, kind of like how you might search through your notes before taking an exam. But here's the thing—if your retrieval system is bringing back the wrong notes, or if your AI is hallucinating facts that aren't in those notes, you're in trouble. That's where evaluation metrics come in.
+[storytelling] Think of RAG systems like this: they're basically AI assistants that look up information before answering your questions, kind of like how you might search through your notes before taking an exam. [seriously] But here's the thing—if your retrieval system is bringing back the wrong notes, or if your AI is hallucinating facts that aren't in those notes, you're in trouble. [confidently] That's where evaluation metrics come in.
 
 ####  What We'll Cover
-We're going to explore **thirteen powerful metrics** that most teams don't use, but absolutely should. These metrics are organized into four logical categories that mirror how a RAG system actually works. First, we'll look at **Retrieval Metrics** (metrics one through four)—these tell us if we're finding the right documents. Then **Context Quality** (metric five)—is what we found actually useful? Next, **Answer Quality** (metrics six through ten)—is the AI generating good, truthful responses? And finally, **Efficiency Metrics** (metrics eleven through thirteen)—is our system fast and cost-effective?
+[energetic] We're going to explore **thirteen powerful metrics** that most teams don't use, but absolutely should. [lecture] These metrics are organized into four logical categories that mirror how a RAG system actually works. First, we'll look at **Retrieval Metrics** (metrics one through four)—these tell us if we're finding the right documents. Then **Context Quality** (metric five)—is what we found actually useful? Next, **Answer Quality** (metrics six through ten)—is the AI generating good, truthful responses? And finally, **Efficiency Metrics** (metrics eleven through thirteen)—is our system fast and cost-effective?
 
 ####  Who This Is For
-This presentation is perfect for beginners and freshers getting into RAG systems. Don't worry if you're new to this—I'll explain everything in simple terms with real examples. By the end, you'll have a comprehensive cheat-sheet for measuring and improving your RAG systems.
+[warmly] This presentation is perfect for beginners and freshers getting into RAG systems. [reassuringly] Don't worry if you're new to this—I'll explain everything in simple terms with real examples. By the end, you'll have a comprehensive cheat-sheet for measuring and improving your RAG systems.
 
-Let's get started by understanding what a RAG system actually looks like!`
+[enthusiastically] Let's get started by understanding what a RAG system actually looks like!`
         },
         {
           id: 2,
@@ -174,18 +174,18 @@ Let's get started by understanding what a RAG system actually looks like!`
           ),
           backgroundColor: '#231f6f',
           notes: `### RAG System Overview
-Now that we understand why evaluation matters, let's see how a RAG system actually works and where each metric fits in.
+[conversational] Now that we understand why evaluation matters, let's see how a RAG system actually works and where each metric fits in.
 
 ####  The RAG Pipeline
-Think of a RAG system like a research assistant working through a clear pipeline. When you ask a question, it first **searches** for relevant documents (that's the retrieval stage, measured by metrics one through four), then it **evaluates** whether those documents are actually useful (context quality, metric five), and finally it **writes** an answer based on what it found (generation, metrics six through ten). Throughout this whole process, we also care about **efficiency**—is it fast and cost-effective? That's what metrics eleven through thirteen address.
+[storytelling] Think of a RAG system like a research assistant working through a clear pipeline. When you ask a question, it first **searches** for relevant documents (that's the retrieval stage, measured by metrics one through four), then it **evaluates** whether those documents are actually useful (context quality, metric five), and finally it **writes** an answer based on what it found (generation, metrics six through ten). Throughout this whole process, we also care about **efficiency**—is it fast and cost-effective? That's what metrics eleven through thirteen address.
 
 ####  The Four Categories
-Our thirteen metrics map perfectly to this pipeline. **Retrieval Quality Metrics** (one through four) tell us if we're finding the right documents in the first place. Are we getting good coverage? Are the documents actually relevant? **Context Quality** (metric five) is like a quality check—an LLM 👉 'ell-em-em' or Large Language Model evaluates whether the retrieved content is genuinely useful for answering the query. **Answer Quality Metrics** (six through ten) focus on the final output—is the AI being truthful, complete, and specific? And **Efficiency Metrics** (eleven through thirteen) ensure we're not wasting tokens or money on irrelevant content.
+[lecture] Our thirteen metrics map perfectly to this pipeline. **Retrieval Quality Metrics** (one through four) tell us if we're finding the right documents in the first place. Are we getting good coverage? Are the documents actually relevant? [confidently] **Context Quality** (metric five) is like a quality check—an LLM 👉 'ell-em-em' or Large Language Model evaluates whether the retrieved content is genuinely useful for answering the query. **Answer Quality Metrics** (six through ten) focus on the final output—is the AI being truthful, complete, and specific? And **Efficiency Metrics** (eleven through thirteen) ensure we're not wasting tokens or money on irrelevant content.
 
 ####  Why This Structure?
-This organization helps you **diagnose problems precisely**. If your answers are bad, is it because you're retrieving the wrong documents? Or maybe you're retrieving the right documents but the LLM is ignoring them? Or perhaps the context is too noisy and inefficient? Each category answers a different diagnostic question, making it much easier to fix issues when they arise.
+[excited] This organization helps you **diagnose problems precisely**. [quizzically] If your answers are bad, is it because you're retrieving the wrong documents? Or maybe you're retrieving the right documents but the LLM is ignoring them? Or perhaps the context is too noisy and inefficient? [pleased] Each category answers a different diagnostic question, making it much easier to fix issues when they arise.
 
-Let's dive into the first category—**Retrieval Quality Metrics**—starting with Retrieval Recall at K.`
+[enthusiastically] Let's dive into the first category—**Retrieval Quality Metrics**—starting with Retrieval Recall at K.`
         }
       ]
     },
@@ -220,24 +220,24 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           ),
           backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — Overview
-Alright, let's dive into our first metric! This is Retrieval Recall at K 👉 'recall at kay', and it's one of the most fundamental metrics you need to understand.
+[excited] Alright, let's dive into our first metric! This is Retrieval Recall at K 👉 'recall at kay', and it's one of the most fundamental metrics you need to understand.
 
 ####  What Is Retrieval Recall@K?
-Think of Recall at K like this: imagine you're a librarian, and a student asks you to find all the books about climate change. There are ten relevant books in the library, but you only bring back seven of them. Your recall would be seven out of ten, or seventy percent. In RAG systems, Retrieval Recall at K measures how many of the relevant documents you actually managed to retrieve in your top-K results. The "K" just means the number of documents you're looking at—maybe your top five, top ten, or top twenty results.
+[storytelling] Think of Recall at K like this: imagine you're a librarian, and a student asks you to find all the books about climate change. There are ten relevant books in the library, but you only bring back seven of them. Your recall would be seven out of ten, or seventy percent. [lecture] In RAG systems, Retrieval Recall at K measures how many of the relevant documents you actually managed to retrieve in your top-K results. The "K" just means the number of documents you're looking at—maybe your top five, top ten, or top twenty results.
 
 ####  Why Does This Matter?
-Here's the critical insight: if your retrieval system misses important documents, your LLM has no choice but to either ignore parts of the question or, worse, make things up to fill the gaps. This is called "omission-driven hallucination," and it's a huge problem in RAG systems. High recall means you're giving your LLM all the puzzle pieces it needs to construct a complete, accurate answer.
+[seriously] Here's the critical insight: if your retrieval system misses important documents, your LLM has no choice but to either ignore parts of the question or, worse, make things up to fill the gaps. [cautiously] This is called "omission-driven hallucination," and it's a huge problem in RAG systems. [confidently] High recall means you're giving your LLM all the puzzle pieces it needs to construct a complete, accurate answer.
 
 ####  When to Use This
-You should pay special attention to Recall at K when you're tuning your embedding models—these are the neural networks that convert text into mathematical vectors for similarity search. It's also crucial when you're adjusting your chunking strategies, meaning how you break up your documents into smaller pieces. If you notice your system giving incomplete answers or hallucinating to fill knowledge gaps, low recall is often the culprit.
+You should pay special attention to Recall at K when you're tuning your embedding models—these are the neural networks that convert text into mathematical vectors for similarity search. It's also crucial when you're adjusting your chunking strategies, meaning how you break up your documents into smaller pieces. [concerned] If you notice your system giving incomplete answers or hallucinating to fill knowledge gaps, low recall is often the culprit.
 
 ####  The Good Stuff
-The beauty of high recall is that it directly reduces hallucinations and improves answer completeness. For complex queries that require pulling together information from multiple sources, high recall is absolutely critical. You can't answer a multi-faceted question if you only retrieve one or two of the five relevant documents.
+[pleased] The beauty of high recall is that it directly reduces hallucinations and improves answer completeness. For complex queries that require pulling together information from multiple sources, high recall is absolutely critical. You can't answer a multi-faceted question if you only retrieve one or two of the five relevant documents.
 
 ####  The Problems
-The main challenge with recall is that it requires ground truth labels—you need to know in advance which documents are actually relevant, and creating these labels can be expensive and time-consuming. Also, recall by itself doesn't tell you about quality—you could retrieve all the relevant documents but also retrieve a ton of junk. Finally, optimizing purely for recall might push you to retrieve too many documents, increasing noise and costs.
+[disappointed] The main challenge with recall is that it requires ground truth labels—you need to know in advance which documents are actually relevant, and creating these labels can be expensive and time-consuming. Also, recall by itself doesn't tell you about quality—you could retrieve all the relevant documents but also retrieve a ton of junk. Finally, optimizing purely for recall might push you to retrieve too many documents, increasing noise and costs.
 
-Now let's see how this metric actually works under the hood!`
+[conversational] Now let's see how this metric actually works under the hood!`
         },
         {
           id: 4,
@@ -287,24 +287,24 @@ Now let's see how this metric actually works under the hood!`
           ),
           backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — How It Works
-Now let's break down the mechanics of how we actually calculate this metric. Don't worry if math isn't your strong suit—this is simpler than it looks!
+[lecture] Now let's break down the mechanics of how we actually calculate this metric. [reassuringly] Don't worry if math isn't your strong suit—this is simpler than it looks!
 
 ####  The Core Question
-Recall at K answers one fundamental question: "Of all the relevant documents that exist in our database, what percentage did we successfully retrieve in our top-K results?" It's all about coverage—are we catching everything we should be catching?
+[confidently] Recall at K answers one fundamental question: [quizzically] "Of all the relevant documents that exist in our database, what percentage did we successfully retrieve in our top-K results?" It's all about coverage—are we catching everything we should be catching?
 
 ####  The Formula Explained
-The formula is Recall at K equals the absolute value of Rel intersection TopK, divided by the absolute value of Rel. Let me translate that into English. "Rel" means all the relevant documents in your entire corpus—think of this as the complete set of documents that should be retrieved for a given query. "TopK" means the top-K results your retrieval system actually returned. The "intersection" symbol just means "documents that appear in both sets"—so we're counting how many relevant documents made it into your top-K results. Then we divide by the total number of relevant documents to get a percentage.
+[conversational] The formula is Recall at K equals the absolute value of Rel intersection TopK, divided by the absolute value of Rel. Let me translate that into English. "Rel" means all the relevant documents in your entire corpus—think of this as the complete set of documents that should be retrieved for a given query. "TopK" means the top-K results your retrieval system actually returned. The "intersection" symbol just means "documents that appear in both sets"—so we're counting how many relevant documents made it into your top-K results. Then we divide by the total number of relevant documents to get a percentage.
 
 ####  A Visual Example
-Imagine your corpus has exactly ten documents about climate change that are relevant to the query. Your retrieval system returns the top five results, and three of those five are from the relevant set. Your Recall at five would be three divided by ten, which equals zero point three or thirty percent. That's pretty low—you missed seven relevant documents!
+[storytelling] Imagine your corpus has exactly ten documents about climate change that are relevant to the query. Your retrieval system returns the top five results, and three of those five are from the relevant set. Your Recall at five would be three divided by ten, which equals zero point three or thirty percent. [disappointed] That's pretty low—you missed seven relevant documents!
 
 ####  Target Benchmarks
-So what's a good score? For carefully curated question-answer sets where you've hand-labeled everything, you should aim for at least zero point eight or eighty percent recall. For broad, open-domain queries where relevance is fuzzier, sixty percent or higher is acceptable. The key insight is that for comprehensive information needs—like answering "What are all the symptoms of disease X?"—you really need high recall. Missing even a few relevant documents can lead to incomplete or misleading answers.
+[quizzically] So what's a good score? [lecture] For carefully curated question-answer sets where you've hand-labeled everything, you should aim for at least zero point eight or eighty percent recall. For broad, open-domain queries where relevance is fuzzier, sixty percent or higher is acceptable. [seriously] The key insight is that for comprehensive information needs—like answering "What are all the symptoms of disease X?"—you really need high recall. Missing even a few relevant documents can lead to incomplete or misleading answers.
 
 ####  Why These Targets?
-These benchmarks come from years of information retrieval research and practical experience. Below sixty percent recall, you're missing so much relevant information that your LLM is forced to fill gaps, leading to hallucinations. Above eighty percent, you've captured most of what matters, and the cost of chasing that last twenty percent often isn't worth it.
+[confidently] These benchmarks come from years of information retrieval research and practical experience. [cautiously] Below sixty percent recall, you're missing so much relevant information that your LLM is forced to fill gaps, leading to hallucinations. [pleased] Above eighty percent, you've captured most of what matters, and the cost of chasing that last twenty percent often isn't worth it.
 
-Next, let's see this in action with a concrete example!`
+[conversational] Next, let's see this in action with a concrete example!`
         },
         {
           id: 5,
@@ -364,24 +364,24 @@ Next, let's see this in action with a concrete example!`
           ),
           backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — Implementation
-Let's walk through a concrete example to really solidify your understanding of how Recall at K works in practice.
+[conversational] Let's walk through a concrete example to really solidify your understanding of how Recall at K works in practice.
 
 ####  The Scenario
-Imagine you're building a medical information RAG system, and a user asks, "What are the side effects of medication X?" Now, you've done your homework and labeled your corpus, and you know there are exactly four documents in your database that discuss side effects of this medication. Let's call them Document A (covering primary side effects), Document B (rare side effects), Document C (drug interactions), and Document D (long-term effects).
+[storytelling] Imagine you're building a medical information RAG system, and a user asks, "What are the side effects of medication X?" Now, you've done your homework and labeled your corpus, and you know there are exactly four documents in your database that discuss side effects of this medication. Let's call them Document A (covering primary side effects), Document B (rare side effects), Document C (drug interactions), and Document D (long-term effects).
 
 ####  What Happens During Retrieval
 You run your retrieval system with K equals five, meaning you ask for the top five most relevant documents. Your system returns five results: Document A, Document B, Document Z (which turns out to be about a totally different medication), Document C, and Document Y (which is about dietary recommendations, not side effects). So out of your top five results, three are from the set of relevant documents, and two are noise.
 
 ####  The Calculation
-Now we calculate Recall at five. We have three relevant documents in our top-K results (A, B, and C), and the total number of relevant documents in the corpus is four. Three divided by four equals zero point seventy-five, or seventy-five percent. Notice that Document D about long-term effects was completely missed—it didn't make it into the top five at all. This means if the LLM only has access to these top five documents, it has no information about long-term effects and might either skip that aspect or hallucinate something to fill the gap.
+[lecture] Now we calculate Recall at five. We have three relevant documents in our top-K results (A, B, and C), and the total number of relevant documents in the corpus is four. Three divided by four equals zero point seventy-five, or seventy-five percent. [concerned] Notice that Document D about long-term effects was completely missed—it didn't make it into the top five at all. This means if the LLM only has access to these top five documents, it has no information about long-term effects and might either skip that aspect or hallucinate something to fill the gap.
 
 ####  Step-by-Step Process
-Here's how you'd implement this in practice. First, before you even start retrieval, you need ground truth labels identifying which documents are relevant for each query. This is usually done through human annotation or using a reference dataset. Second, run your retrieval system as normal, fetching the top-K results. Third, count how many of those top-K results are in your set of relevant documents—this is just set intersection. Finally, divide that count by the total number of relevant documents to get your score. Most RAG frameworks have built-in evaluation tools that can automate this process.
+[confidently] Here's how you'd implement this in practice. First, before you even start retrieval, you need ground truth labels identifying which documents are relevant for each query. This is usually done through human annotation or using a reference dataset. Second, run your retrieval system as normal, fetching the top-K results. Third, count how many of those top-K results are in your set of relevant documents—this is just set intersection. Finally, divide that count by the total number of relevant documents to get your score. Most RAG frameworks have built-in evaluation tools that can automate this process.
 
 ####  What This Tells You
-A score of seventy-five percent isn't terrible, but it means you're missing twenty-five percent of relevant information. In a medical context, that missing twenty-five percent could be critical. This low recall would be a red flag that you need to tune your embedding model, adjust your chunking strategy, or increase your K parameter to retrieve more documents.
+[cautiously] A score of seventy-five percent isn't terrible, but it means you're missing twenty-five percent of relevant information. [seriously] In a medical context, that missing twenty-five percent could be critical. This low recall would be a red flag that you need to tune your embedding model, adjust your chunking strategy, or increase your K parameter to retrieve more documents.
 
-Now let's talk about when Recall at K is most useful and what its limitations are!`
+[conversational] Now let's talk about when Recall at K is most useful and what its limitations are!`
         },
         {
           id: 6,
@@ -428,24 +428,24 @@ Now let's talk about when Recall at K is most useful and what its limitations ar
           ),
           backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — Considerations
-We've covered what Recall at K is and how to calculate it. Now let's talk about the bigger picture—when should you use it, and what are its limitations?
+[conversational] We've covered what Recall at K is and how to calculate it. Now let's talk about the bigger picture—when should you use it, and what are its limitations?
 
 ####  The Positive Impact on RAG Systems
-High recall has a profound impact on your RAG system's quality. When you have high recall, you're giving your LLM all the relevant information it needs, which directly translates to better, more complete answers. Think of it like preparing for an exam—if you bring all your relevant notes, you can answer comprehensively. If you forget half your notes, you're going to struggle and might guess at answers. The same principle applies here. High recall is especially critical for complex queries that need information from multiple sources. For example, if someone asks "Compare the efficacy of treatments A, B, and C for condition X," you need to retrieve documents about all three treatments. Missing even one means your comparison is incomplete.
+[pleased] High recall has a profound impact on your RAG system's quality. When you have high recall, you're giving your LLM all the relevant information it needs, which directly translates to better, more complete answers. [storytelling] Think of it like preparing for an exam—if you bring all your relevant notes, you can answer comprehensively. If you forget half your notes, you're going to struggle and might guess at answers. The same principle applies here. [seriously] High recall is especially critical for complex queries that need information from multiple sources. For example, if someone asks "Compare the efficacy of treatments A, B, and C for condition X," you need to retrieve documents about all three treatments. Missing even one means your comparison is incomplete.
 
 ####  When to Use This Metric
-You should actively monitor Recall at K in several scenarios. First, when you're tuning your embedding models—these are the neural networks that convert text into vectors for similarity search. If you switch from one embedding model to another and your recall drops, that's a red flag. Second, when you're experimenting with chunking strategies—how you break up documents matters a lot. If your chunks are too small or too large, recall can suffer. Third, if users are complaining about incomplete answers or if you notice the LLM hallucinating to fill knowledge gaps, check your recall first. It's often the root cause.
+You should actively monitor Recall at K in several scenarios. [lecture] First, when you're tuning your embedding models—these are the neural networks that convert text into vectors for similarity search. [cautiously] If you switch from one embedding model to another and your recall drops, that's a red flag. Second, when you're experimenting with chunking strategies—how you break up documents matters a lot. If your chunks are too small or too large, recall can suffer. [concerned] Third, if users are complaining about incomplete answers or if you notice the LLM hallucinating to fill knowledge gaps, check your recall first. It's often the root cause.
 
 ####  The Good Stuff
-The benefits are clear: reduced hallucinations, improved completeness, and more trustworthy answers. Recall at K gives you a direct line of sight into whether your retrieval system is doing its job. It's also relatively straightforward to interpret—a score of seventy percent means you're getting seventy percent of what you should be getting. No complex statistics needed.
+[pleased] The benefits are clear: reduced hallucinations, improved completeness, and more trustworthy answers. [confidently] Recall at K gives you a direct line of sight into whether your retrieval system is doing its job. It's also relatively straightforward to interpret—a score of seventy percent means you're getting seventy percent of what you should be getting. No complex statistics needed.
 
 ####  The Problems
-But Recall at K isn't perfect. The biggest challenge is that it requires ground truth labels. Someone has to manually identify which documents are relevant for each query, and this is expensive and time-consuming. For large-scale systems, this can be prohibitive. Second, recall doesn't tell you about precision—you could have perfect recall but also retrieve tons of irrelevant documents, overwhelming your LLM with noise. Third, optimizing purely for recall can be dangerous. You might end up retrieving way too many documents just to chase a perfect score, which increases costs, latency, and context window usage. Finally, if your documents are poorly embedded or chunked to begin with, improving recall can be nearly impossible without fixing those underlying issues first.
+[disappointed] But Recall at K isn't perfect. The biggest challenge is that it requires ground truth labels. Someone has to manually identify which documents are relevant for each query, and this is expensive and time-consuming. For large-scale systems, this can be prohibitive. [cautiously] Second, recall doesn't tell you about precision—you could have perfect recall but also retrieve tons of irrelevant documents, overwhelming your LLM with noise. Third, optimizing purely for recall can be dangerous. You might end up retrieving way too many documents just to chase a perfect score, which increases costs, latency, and context window usage. Finally, if your documents are poorly embedded or chunked to begin with, improving recall can be nearly impossible without fixing those underlying issues first.
 
 ####  A Balanced Approach
-The key is to use Recall at K as one metric among many. Don't optimize for recall alone—balance it with precision, efficiency, and answer quality. Think of it as a diagnostic tool: low recall tells you that retrieval is missing important documents, but it doesn't tell you how to fix it or whether fixing it will actually improve your end-to-end system performance.
+[confidently] The key is to use Recall at K as one metric among many. Don't optimize for recall alone—balance it with precision, efficiency, and answer quality. Think of it as a diagnostic tool: low recall tells you that retrieval is missing important documents, but it doesn't tell you how to fix it or whether fixing it will actually improve your end-to-end system performance.
 
-Alright, let's move on to our second metric—Retrieval Precision at K!`
+[enthusiastically] Alright, let's move on to our second metric—Retrieval Precision at K!`
         }
       ]
     },
