@@ -30,13 +30,13 @@ export const llmCachingDeck: Deck = {
           content: (
             <div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0}>
-                <div style={{ fontSize: '2rem', marginBottom: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '1rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <SvgIcon iconName="duo-microchip" sizeName="2x" style={{ marginRight: '1rem' }} darkModeInvert={true} />
                   LLM CACHING PATTERNS
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
+                <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '1rem' }}>
                   Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers.
                 </div>
               </GSAPAnimated>
@@ -76,10 +76,10 @@ export const llmCachingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
                   <div>
-                    <div style={{ color: '#e06c75', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-chart-line" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ color: '#e06c75', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong style={{ fontSize: '2rem' }}>Cost Drivers</strong>
                     </div>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -90,8 +90,8 @@ export const llmCachingDeck: Deck = {
                   </div>
 
                   <div>
-                    <div style={{ color: '#98c379', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong style={{ fontSize: '2rem' }}>What Caching Saves</strong>
                     </div>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -106,8 +106,8 @@ export const llmCachingDeck: Deck = {
               <GSAPAnimated animation="slideInRight" delay={0.3}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                   <div>
-                    <div style={{ color: '#61dafb', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-network-wired" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-network-wired" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong style={{ fontSize: '2rem' }}>
                         Caching Layers
                         <MermaidPopover
@@ -132,8 +132,8 @@ export const llmCachingDeck: Deck = {
                   </div>
 
                   <div>
-                    <div style={{ color: '#c678dd', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ color: '#c678dd', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong style={{ fontSize: '2rem' }}>Key Performance Indicators</strong>
                     </div>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -149,7 +149,7 @@ export const llmCachingDeck: Deck = {
               <GSAPAnimated animation="bounceIn" delay={0.5}>
                 <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong style={{ fontSize: '2rem' }}>Caching Principles:</strong>
                   </div>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -207,7 +207,7 @@ How do you know if your caching strategy is working? [confidently] Four key metr
           icon: { name: 'duo-brain' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -328,7 +328,7 @@ We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassu
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -389,7 +389,7 @@ We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassu
           icon: { name: 'duo-magnifying-glass' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -514,7 +514,7 @@ You also include **k**, which is the number of results requested, and any **filt
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -582,7 +582,7 @@ You also include **k**, which is the number of results requested, and any **filt
           icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -724,7 +724,7 @@ You also keep templates in **application-level memory for high-access frequency 
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="fadeIn" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -802,7 +802,7 @@ You also keep templates in **application-level memory for high-access frequency 
           icon: { name: 'duo-message-square' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -958,7 +958,7 @@ You **eliminate repeated expensive inference calls**, which not only saves money
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1049,7 +1049,7 @@ You also need **content classification** to determine appropriate TTLs 👉 'tee
           icon: { name: 'duo-scissors' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -1184,7 +1184,7 @@ Let's examine these trade-offs more closely on the next slide.`
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="fadeIn" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1281,7 +1281,7 @@ It's less valuable in **small corpora or highly unique content** where there's m
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -1423,7 +1423,7 @@ Let's look at the strengths and limitations on the next slide.`
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1508,7 +1508,7 @@ Let's move on to the next pattern, where we'll see another model-level caching t
           icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -1661,7 +1661,7 @@ Let's explore the trade-offs in more detail on the next slide.`
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="fadeIn" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1763,7 +1763,7 @@ You can also layer logit cache beneath **semantic similarity cache**. The semant
           icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -1887,7 +1887,7 @@ Let's look at the strengths and limitations in more detail on the next slide.`
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1956,10 +1956,10 @@ Fourth, this pattern is **not effective for templates with user-generated or hig
         {
           id: 19,
           title: 'Pattern 9: Tool Call Cache',
-          icon: { name: 'duo-wrench' },
+          icon: { name: 'duo-gear' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -2080,7 +2080,7 @@ Let's dive deeper into the trade-offs on the next slide.`
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2191,7 +2191,7 @@ It's less valuable in **highly personalized, unique tool calls** where every req
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -2329,7 +2329,7 @@ You also have **privacy and compliance concerns**. Session data often contains p
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2401,7 +2401,7 @@ And fourth, you need **data retention and deletion mechanisms**. You can't keep 
           icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
@@ -2538,7 +2538,7 @@ Let's examine the strengths and limitations on the next slide.`
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.5}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2625,7 +2625,7 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           icon: { name: 'duo-compress' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -2702,7 +2702,7 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
@@ -2751,7 +2751,7 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           icon: { name: 'duo-check-circle' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -2830,7 +2830,7 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           title: 'Strengths and Limitations',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
@@ -2881,54 +2881,54 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
-                  <div style={{ color: '#61dafb', marginBottom: '0.8rem' }}>
+                  <div style={{ color: '#61dafb' }}>
                     <SvgIcon iconName="duo-network-wired" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Layer Your Caches Strategically</strong>
                   </div>
-                  <div style={{ fontSize: '1.2rem' }}>
+                  <div style={{ fontSize: '1rem' }}>
                     Input (embeddings/prompts), retrieval (results/ranking), generation (KV/logits), memory (session/user), outputs (answers/summaries) — each layer has distinct benefits and implementation patterns.
                   </div>
                 </div>
 
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.8rem' }}>
+                  <div style={{ color: '#98c379' }}>
                     <SvgIcon iconName="duo-key" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Nail the Cache Keys</strong>
                   </div>
-                  <div style={{ fontSize: '1.2rem' }}>
+                  <div style={{ fontSize: '1rem' }}>
                     Include versions, model IDs, corpus snapshot IDs, filters, and decoding params in cache keys to avoid inconsistencies and ensure correct cache hits.
                   </div>
                 </div>
 
                 <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-                  <div style={{ color: '#e5c07b', marginBottom: '0.8rem' }}>
+                  <div style={{ color: '#e5c07b' }}>
                     <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Freshness First</strong>
                   </div>
-                  <div style={{ fontSize: '1.2rem' }}>
+                  <div style={{ fontSize: '1rem' }}>
                     Combine TTL-based expiration with event-based invalidation on corpus or template updates to balance performance with data freshness requirements.
                   </div>
                 </div>
 
                 <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
-                  <div style={{ color: '#c678dd', marginBottom: '0.8rem' }}>
+                  <div style={{ color: '#c678dd' }}>
                     <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Measure Relentlessly</strong>
                   </div>
-                  <div style={{ fontSize: '1.2rem' }}>
+                  <div style={{ fontSize: '1rem' }}>
                     Hit rate × miss cost → savings; track p95 latency improvements and staleness incidents to continuously optimize your cache strategies.
                   </div>
                 </div>
 
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e06c75' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.8rem' }}>
+                  <div style={{ color: '#e06c75' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Start Simple, Scale Gradually</strong>
                   </div>
-                  <div style={{ fontSize: '1.2rem' }}>
+                  <div style={{ fontSize: '1rem' }}>
                     Begin with exact-match and retrieval caches for early wins; add semantic similarity and KV/logit layers as your system matures and scale grows.
                   </div>
                 </div>
