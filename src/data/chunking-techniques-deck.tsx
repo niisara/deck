@@ -1225,24 +1225,24 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c3765',
-          notes: `### 16. Recursive Character Text Splitting - Pros
-Now we're getting clever! Recursive character text splitting is like fixed-size chunking with a brain. Let me explain why it's so popular.
+          notes: `### Recursive Character Text Splitting - Pros
+[excited] Now we're getting clever! [conversational] Recursive character text splitting is like fixed-size chunking with a brain. Let me explain why it's so popular.
 
 #### Smart Fallback Strategy
-The magic is in the **smart fallback separators**. The algorithm tries to split on **double newlines** (paragraphs) first. If that creates chunks too large or too small, it falls back to **single newlines** (sentence endings or line breaks). Still not right? Try **spaces** (word boundaries). As a last resort, split by **characters**. This hierarchy of separators means you're always trying to split at the most natural boundary possible for the target chunk size.
+[enthusiastically] The magic is in the **smart fallback separators**. [lecture] The algorithm tries to split on **double newlines** (paragraphs) first. If that creates chunks too large or too small, it falls back to **single newlines** (sentence endings or line breaks). Still not right? Try **spaces** (word boundaries). As a last resort, split by **characters**. [pleased] This hierarchy of separators means you're always trying to split at the most natural boundary possible for the target chunk size.
 
-Think of it like cutting a cake: you'd prefer to cut along the frosting lines (paragraphs), but if the pieces would be too big, you cut smaller portions at natural points (sentences), and only if absolutely necessary do you cut through the middle of a decoration (mid-word).
+[storytelling] Think of it like cutting a cake: you'd prefer to cut along the frosting lines (paragraphs), but if the pieces would be too big, you cut smaller portions at natural points (sentences), and only if absolutely necessary do you cut through the middle of a decoration (mid-word).
 
 #### The Best of Both Worlds
-This approach **balances size vs structure preservation**. You get the predictability of fixed-size chunks – every chunk is roughly the same size – but with much better respect for text structure. You're not blindly counting tokens and cutting; you're looking for natural breaking points within your target size range. It's like smart rounding: you want chunks near 500 tokens, but you'll take 480 or 520 if it means splitting at a paragraph break instead of mid-sentence.
+[confidently] This approach **balances size vs structure preservation**. You get the predictability of fixed-size chunks – every chunk is roughly the same size – but with much better respect for text structure. [lecture] You're not blindly counting tokens and cutting; you're looking for natural breaking points within your target size range. [storytelling] It's like smart rounding: you want chunks near 500 tokens, but you'll take 480 or 520 if it means splitting at a paragraph break instead of mid-sentence.
 
 #### Structure Awareness
-It **better respects text boundaries than fixed-size** chunking. When possible, it keeps paragraphs together. When paragraphs are too large, it keeps sentences together. When sentences are too large, it keeps words together. Only when absolutely necessary does it split awkwardly. This means the vast majority of your chunks will have clean, natural boundaries.
+[pleased] It **better respects text boundaries than fixed-size** chunking. When possible, it keeps paragraphs together. When paragraphs are too large, it keeps sentences together. When sentences are too large, it keeps words together. [confidently] Only when absolutely necessary does it split awkwardly. This means the vast majority of your chunks will have clean, natural boundaries.
 
 #### Natural Reading Experience
-The result is **more natural chunks than character-only splitting**. When a user retrieves a chunk, it reads like an excerpt, not like random text that got chopped mid-thought. This improves both the AI's ability to understand the chunk and the end user's experience when they see the retrieved content.
+[enthusiastically] The result is **more natural chunks than character-only splitting**. When a user retrieves a chunk, it reads like an excerpt, not like random text that got chopped mid-thought. [pleased] This improves both the AI's ability to understand the chunk and the end user's experience when they see the retrieved content.
 
-Recursive splitting gives you production-ready chunking that works well across diverse content types without manual tuning.`
+[warmly] Recursive splitting gives you production-ready chunking that works well across diverse content types without manual tuning.`
         },
         {
           id: 17,
@@ -1279,24 +1279,24 @@ Recursive splitting gives you production-ready chunking that works well across d
             </div>
           ),
           backgroundColor: '#1c3765',
-          notes: `### 17. Recursive Character Text Splitting - Cons
-Even with its cleverness, recursive character splitting has limitations. Let's be clear about what it *can't* do.
+          notes: `### Recursive Character Text Splitting - Cons
+[cautiously] Even with its cleverness, recursive character splitting has limitations. [seriously] Let's be clear about what it *can't* do.
 
 #### Still Just Rules
-It's **still rule-based**, which means **semantics are not guaranteed**. The algorithm doesn't understand meaning. It doesn't know that "Chapter 3: Security Best Practices" should stay with the content below it. It doesn't realize that splitting between "The API returns a 200 status code" and "when the request succeeds" breaks a logical thought into two pieces. It's just looking for newlines and spaces – it has zero comprehension of what the text means.
+[disappointed] It's **still rule-based**, which means **semantics are not guaranteed**. [lecture] The algorithm doesn't understand meaning. It doesn't know that "Chapter 3: Security Best Practices" should stay with the content below it. It doesn't realize that splitting between "The API returns a 200 status code" and "when the request succeeds" breaks a logical thought into two pieces. [firmly] It's just looking for newlines and spaces – it has zero comprehension of what the text means.
 
-Think of it like organizing books by size rather than by topic. Sure, you can fit them neatly on the shelf, but you might separate volumes of the same series.
+[storytelling] Think of it like organizing books by size rather than by topic. Sure, you can fit them neatly on the shelf, but you might separate volumes of the same series.
 
 #### Tuning Overhead
-You need to **tune the separator hierarchy** for your specific content. The default order (\\n\\n, \\n, space, character) works well for prose, but what if you're chunking code? You might want to prioritize different separators. What if you're processing poetry where single newlines are meaningful? You'll need to adjust. This tuning isn't terribly complex, but it's not zero-effort either. Different document types may need different separator strategies.
+[cautiously] You need to **tune the separator hierarchy** for your specific content. [conversational] The default order (\\n\\n, \\n, space, character) works well for prose, but what if you're chunking code? You might want to prioritize different separators. What if you're processing poetry where single newlines are meaningful? You'll need to adjust. [lecture] This tuning isn't terribly complex, but it's not zero-effort either. Different document types may need different separator strategies.
 
 #### Size Inconsistency
-It **may produce uneven chunk sizes**. While it aims for a target size, the actual chunks can vary significantly based on where natural break points occur. If there's no paragraph break within your target range, you might get a 600-token chunk followed by a 300-token chunk. This is often acceptable, but if you need strict size consistency (like for batching embedding calls efficiently), this variability can be problematic.
+[concerned] It **may produce uneven chunk sizes**. While it aims for a target size, the actual chunks can vary significantly based on where natural break points occur. [storytelling] If there's no paragraph break within your target range, you might get a 600-token chunk followed by a 300-token chunk. [conversational] This is often acceptable, but if you need strict size consistency (like for batching embedding calls efficiently), this variability can be problematic.
 
 #### Structure Blindness
-Crucially, there's **no awareness of document structure or headings**. The splitter doesn't know that "### Installation" is a heading that signals a new section. It doesn't understand that a bulleted list should stay together. It doesn't recognize that a code block or table should remain intact. It treats everything as flat text with newlines and spaces. For documents with rich structure – technical docs with lots of headings, tables, and code – this blindness can lead to awkward splits.
+[seriously] Crucially, there's **no awareness of document structure or headings**. The splitter doesn't know that "### Installation" is a heading that signals a new section. It doesn't understand that a bulleted list should stay together. It doesn't recognize that a code block or table should remain intact. [disappointed] It treats everything as flat text with newlines and spaces. For documents with rich structure – technical docs with lots of headings, tables, and code – this blindness can lead to awkward splits.
 
-Despite these limitations, recursive character splitting is often the "good enough" solution that beats simple fixed-size chunking without requiring the complexity of truly semantic approaches.`
+[conversational] Despite these limitations, recursive character splitting is often the "good enough" solution that beats simple fixed-size chunking without requiring the complexity of truly semantic approaches.`
         },
         {
           id: 18,
@@ -1369,23 +1369,23 @@ Despite these limitations, recursive character splitting is often the "good enou
             </div>
           ),
           backgroundColor: '#1c3765',
-          notes: `### 18. Recursive Character Text Splitting - Configuration
-Let's configure recursive character splitting for optimal performance. The settings here are flexible but important.
+          notes: `### Recursive Character Text Splitting - Configuration
+[lecture] Let's configure recursive character splitting for optimal performance. [conversational] The settings here are flexible but important.
 
 #### Choosing Your Target Chunk Size
-For **chunk size**, we're looking at **400 to 800 tokens** typically. This is larger than sentence or paragraph chunking because the recursive approach gives you more control – you can afford larger targets knowing the algorithm will find natural breaks within that range. Start with **600 tokens** as a reasonable default that works well for most embedding models.
+[conversational] For **chunk size**, we're looking at **400 to 800 tokens** typically. [lecture] This is larger than sentence or paragraph chunking because the recursive approach gives you more control – you can afford larger targets knowing the algorithm will find natural breaks within that range. [confidently] Start with **600 tokens** as a reasonable default that works well for most embedding models.
 
-The optimal size **depends on document structure and separator frequency**. If your documents have frequent paragraph breaks (like blog posts), you can use larger targets because the algorithm will find lots of breaking points. If you're working with dense technical prose that has fewer natural breaks, you might need smaller targets to ensure chunks don't grow too large. Always evaluate with your actual documents!
+[lecture] The optimal size **depends on document structure and separator frequency**. [storytelling] If your documents have frequent paragraph breaks (like blog posts), you can use larger targets because the algorithm will find lots of breaking points. If you're working with dense technical prose that has fewer natural breaks, you might need smaller targets to ensure chunks don't grow too large. [seriously] Always evaluate with your actual documents!
 
 #### Overlap for Context Preservation
-**Overlap size** should be **50 to 150 tokens**, which typically means **10 to 20 percent** of your chunk size. This is similar to fixed-size chunking, but there's a nuance: use **higher overlap around 20 percent** when working with **complex content that has many separators**. Why? Because the recursive algorithm might split at different levels (paragraph vs sentence vs word), and more overlap ensures context is preserved across these varying boundary types.
+[conversational] **Overlap size** should be **50 to 150 tokens**, which typically means **10 to 20 percent** of your chunk size. [lecture] This is similar to fixed-size chunking, but there's a nuance: use **higher overlap around 20 percent** when working with **complex content that has many separators**. [conversational] Why? Because the recursive algorithm might split at different levels (paragraph vs sentence vs word), and more overlap ensures context is preserved across these varying boundary types.
 
-For example, with a 600-token target and 120-token overlap (20%), you ensure that information near chunk boundaries is captured in both adjacent chunks, regardless of whether you split on a paragraph or sentence boundary.
+[storytelling] For example, with a 600-token target and 120-token overlap (20%), you ensure that information near chunk boundaries is captured in both adjacent chunks, regardless of whether you split on a paragraph or sentence boundary.
 
 #### Processing Efficiency
-The **computational cost is Low**. You're doing **simple string operations** – checking for separators and splitting. It's **slightly more than fixed-size** chunking because you're checking multiple separator types, but we're talking microseconds difference per chunk. The recursive logic adds negligible overhead. You can still process millions of documents efficiently.
+[pleased] The **computational cost is Low**. You're doing **simple string operations** – checking for separators and splitting. [conversational] It's **slightly more than fixed-size** chunking because you're checking multiple separator types, but we're talking microseconds difference per chunk. The recursive logic adds negligible overhead. [confidently] You can still process millions of documents efficiently.
 
-These configurations give you a robust, general-purpose chunking strategy that works well across diverse document types without specialized tuning.`
+[warmly] These configurations give you a robust, general-purpose chunking strategy that works well across diverse document types without specialized tuning.`
         },
         {
           id: 19,
@@ -1446,27 +1446,27 @@ These configurations give you a robust, general-purpose chunking strategy that w
             </div>
           ),
           backgroundColor: '#1c3765',
-          notes: `### 19. Recursive Character Text Splitting - Use Cases & Tools
-When should you reach for recursive character splitting, and what makes it so popular in production systems? Let's explore.
+          notes: `### Recursive Character Text Splitting - Use Cases & Tools
+[conversational] When should you reach for recursive character splitting, and what makes it so popular in production systems? Let's explore.
 
 #### The Swiss Army Knife of Chunking
-Recursive character splitting excels with **mixed formatting documents**. You know those documents that have some paragraphs, some lists, some code blocks, some tables – basically a formatting free-for-all? This is where recursive splitting shines. It adapts to whatever structure it finds, trying to split intelligently regardless of formatting consistency.
+[enthusiastically] Recursive character splitting excels with **mixed formatting documents**. [storytelling] You know those documents that have some paragraphs, some lists, some code blocks, some tables – basically a formatting free-for-all? This is where recursive splitting shines. [pleased] It adapts to whatever structure it finds, trying to split intelligently regardless of formatting consistency.
 
-It's particularly valuable for **PDFs post-extraction**. After you extract text from a PDF, the formatting is often messy. Paragraph breaks might be inconsistent, tables might be flattened into text, and you might have random line breaks where the PDF had page breaks. Recursive splitting handles this chaos gracefully by trying multiple separator strategies until it finds one that works.
+[confidently] It's particularly valuable for **PDFs post-extraction**. [conversational] After you extract text from a PDF, the formatting is often messy. Paragraph breaks might be inconsistent, tables might be flattened into text, and you might have random line breaks where the PDF had page breaks. [pleased] Recursive splitting handles this chaos gracefully by trying multiple separator strategies until it finds one that works.
 
-**Text with varying structure** – like concatenated documents from multiple sources, scraped web content, or user-generated content – is another perfect fit. You can't predict the formatting, so you need a technique that adapts. That's recursive splitting's superpower.
+[lecture] **Text with varying structure** – like concatenated documents from multiple sources, scraped web content, or user-generated content – is another perfect fit. [conversational] You can't predict the formatting, so you need a technique that adapts. That's recursive splitting's superpower.
 
-It's also the recommended **general-purpose chunking baseline**. If you're unsure which technique to use, start here. It's better than fixed-size for almost all use cases, simpler than semantic approaches, and works reliably across diverse content.
+[confidently] It's also the recommended **general-purpose chunking baseline**. If you're unsure which technique to use, start here. It's better than fixed-size for almost all use cases, simpler than semantic approaches, and works reliably across diverse content.
 
 #### Excellent Ecosystem Support
-The **tooling support is outstanding**. **LangChain's RecursiveCharacterTextSplitter** is probably the most widely used chunking implementation in the world. It's battle-tested, well-documented, and handles edge cases beautifully. **n8n integration nodes** provide no-code access to this technique. Even **Snowflake** has built it into their database as SPLIT_TEXT_RECURSIVE_CHARACTER – that's how fundamental it is!
+[enthusiastically] The **tooling support is outstanding**. **LangChain's RecursiveCharacterTextSplitter** is probably the most widely used chunking implementation in the world. It's battle-tested, well-documented, and handles edge cases beautifully. [pleased] **n8n integration nodes** provide no-code access to this technique. Even **Snowflake** has built it into their database as SPLIT_TEXT_RECURSIVE_CHARACTER – that's how fundamental it is!
 
-And if you need a custom implementation, it's **easy to implement in any language**. The recursive logic is straightforward: try separator A, if chunks are too big try separator B, and so on. You can code it from scratch in an afternoon.
+[conversational] And if you need a custom implementation, it's **easy to implement in any language**. The recursive logic is straightforward: try separator A, if chunks are too big try separator B, and so on. [playfully] You can code it from scratch in an afternoon.
 
 #### Accessibility
-The **complexity level is Beginner**. Despite the "recursive" in the name, it's conceptually simple and requires **minimal tuning**. Most implementations work great with default settings. This makes it ideal for teams that want better results than fixed-size chunking without investing in complex NLP pipelines.
+[confidently] The **complexity level is Beginner**. Despite the "recursive" in the name, it's conceptually simple and requires **minimal tuning**. Most implementations work great with default settings. [pleased] This makes it ideal for teams that want better results than fixed-size chunking without investing in complex NLP pipelines.
 
-Next, we'll look at structure-aware chunking, which takes document understanding to the next level by explicitly parsing document hierarchy.`
+[warmly] Next, we'll look at structure-aware chunking, which takes document understanding to the next level by explicitly parsing document hierarchy.`
         }
       ]
     },
