@@ -24,7 +24,7 @@ export const ragEvaluationMetricsDeck: Deck = {
           content: (
             <div>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0}>
-                <div style={{ fontSize: '1.5rem', marginBottom: '30px', color: '#0ea5e9' }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '20px', color: '#0ea5e9' }}>
                   <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                   A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems
                 </div>
@@ -32,20 +32,20 @@ export const ragEvaluationMetricsDeck: Deck = {
               <GSAPAnimated animation="fadeIn" delay={0.4}>
                 <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
                   <GSAPStaggerList stagger={0.15} duration={0.7} delay={0.6}>
-                    <div>
-                      <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong>Retrieval Metrics</strong> — Metrics 1-4
                     </div>
-                    <div>
-                      <SvgIcon iconName="duo-file-lines" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-file-lines" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong>Context Quality</strong> — Metric 5
                     </div>
-                    <div>
-                      <SvgIcon iconName="duo-message" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-message" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong>Answer Quality</strong> — Metrics 6-10
                     </div>
-                    <div>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       <strong>Efficiency Metrics</strong> — Metrics 11-13
                     </div>
                   </GSAPStaggerList>
@@ -58,7 +58,7 @@ export const ragEvaluationMetricsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#231f6f',
+          backgroundColor: '#0c0a37',
           notes: `### 13 Underused RAG Evaluation Metrics
 [cheerfully] Welcome everyone! [excited] Today we're diving into something crucial but often overlooked in the world of RAG systems—evaluation metrics. If you're building a Retrieval-Augmented Generation 👉 'RAG' system, you've probably wondered: [quizzically] "Is my system actually working well? How do I know if my retrieval is good enough? Is my AI making things up?"
 
@@ -81,7 +81,8 @@ export const ragEvaluationMetricsDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.8', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '30px' }}>
-                  <h4>
+                </div>
+                <h4>
                     RAG System Flow
                     <MermaidPopover
                       title="RAG Pipeline"
@@ -101,16 +102,15 @@ export const ragEvaluationMetricsDeck: Deck = {
     style F fill:#8b5cf6,color:#fff`}
                     />
                   </h4>
-                </div>
               </GSAPAnimated>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '20px', marginBottom: '20px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <div style={{ color: '#3b82f6', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Retrieval Quality Metrics (1-4)</strong>
+                  <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '12px', borderRadius: '10px' }}>
+                    <div style={{ color: '#3b82f6', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                      <strong style={{ fontSize: '1.6rem' }}>Retrieval Quality Metrics (1-4)</strong>
                     </div>
-                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1rem' }}>
                       <li>Retrieval Recall@K: Coverage of relevant information</li>
                       <li>Retrieval Precision@K: Relevance of retrieved chunks</li>
                       <li>Hit Rate: At least one relevant document in top-K</li>
@@ -119,27 +119,13 @@ export const ragEvaluationMetricsDeck: Deck = {
                   </div>
                 </GSAPAnimated>
 
-                <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <div style={{ color: '#0ea5e9', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-file-lines" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Context Quality Metric (5)</strong>
-                    </div>
-                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
-                      <li>Context Relevance Score: LLM-judged relevance of context to query</li>
-                    </ul>
-                  </div>
-                </GSAPAnimated>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <div style={{ color: '#10b981', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-message" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Answer Quality Metrics (6-10)</strong>
+                  <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '10px' }}>
+                    <div style={{ color: '#10b981', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-message" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                      <strong style={{ fontSize: '1.6rem' }}>Answer Quality Metrics (6-10)</strong>
                     </div>
-                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1rem' }}>
                       <li>Hallucination Rate: Frequency of unsupported claims</li>
                       <li>Grounded Answer Score: Correct citation of retrieved facts</li>
                       <li>Faithfulness Score: Answer follows from context</li>
@@ -148,14 +134,28 @@ export const ragEvaluationMetricsDeck: Deck = {
                     </ul>
                   </div>
                 </GSAPAnimated>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '12px', borderRadius: '10px' }}>
+                    <div style={{ color: '#0ea5e9', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-file-lines" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                      <strong style={{ fontSize: '1.6rem' }}>Context Quality Metric (5)</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1rem' }}>
+                      <li>Context Relevance Score: LLM-judged relevance of context to query</li>
+                    </ul>
+                  </div>
+                </GSAPAnimated>
 
                 <GSAPAnimated animation="slideInRight" delay={0.5}>
-                  <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <div style={{ color: '#8b5cf6', marginBottom: '1rem' }}>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Efficiency Metrics (11-13)</strong>
+                  <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '12px', borderRadius: '10px' }}>
+                    <div style={{ color: '#8b5cf6', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                      <strong style={{ fontSize: '1.6rem' }}>Efficiency Metrics (11-13)</strong>
                     </div>
-                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1rem' }}>
                       <li>Noise Density: Irrelevant token percentage</li>
                       <li>Context Compression Efficiency: Information density in prompt</li>
                       <li>Latency-Cost Tradeoff Score: Efficiency under constraints</li>
@@ -165,14 +165,14 @@ export const ragEvaluationMetricsDeck: Deck = {
               </div>
 
               <GSAPAnimated animation="bounceIn" delay={0.7}>
-                <div style={{ marginTop: '2rem', textAlign: 'left', fontStyle: 'italic', fontSize: '1.6rem' }}>
-                  <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                <div style={{ marginTop: '20px', textAlign: 'left', fontStyle: 'italic', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                   Goal: Diagnose failures precisely (missed retrieval vs. ungrounded reasoning vs. inefficient context)
                 </div>
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#231f6f',
+          backgroundColor: '#0c0a37',
           notes: `### RAG System Overview
 [conversational] Now that we understand why evaluation matters, let's see how a RAG system actually works and where each metric fits in.
 
@@ -205,11 +205,13 @@ export const ragEvaluationMetricsDeck: Deck = {
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.5}>
-                  <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
+                  <ul>
+                    <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
                   <li>Improves answer completeness by ensuring all relevant information is available</li>
                   <li>Critical for complex queries requiring multiple evidence pieces</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
@@ -246,7 +248,7 @@ You should pay special attention to Recall at K when you're tuning your embeddin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-                <h3>How It Works
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works
                   <MermaidPopover
                     title="Recall@K Calculation Process"
                     diagram={`flowchart TD
@@ -276,11 +278,13 @@ You should pay special attention to Recall at K when you're tuning your embeddin
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <h3>Target Values</h3>
+                <h3 style={{ paddingBottom: '14px' }}>Target Values</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
-                  <li>≥0.80 for carefully curated question-answer sets</li>
+                  <ul>
+                    <li>≥0.80 for carefully curated question-answer sets</li>
                   <li>≥0.60 for broad open-domain queries</li>
                   <li>Higher values critical for comprehensive information needs</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -313,7 +317,7 @@ You should pay special attention to Recall at K when you're tuning your embeddin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-                <h3>Example
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example
                   <MermaidPopover
                     title="Recall@K Example Visualization"
                     diagram={`graph TD
@@ -390,7 +394,7 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG
                   <MermaidPopover
                     title="Impact of High vs Low Recall"
                     diagram={`graph LR
@@ -409,19 +413,23 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
-                  <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
+                  <ul>
+                    <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
                   <li>Improves answer completeness by ensuring all relevant information is available</li>
                   <li>Critical for complex queries requiring multiple evidence pieces</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
-                  <li>Requires ground truth relevance labels, which can be expensive to obtain</li>
+                  <ul>
+                    <li>Requires ground truth relevance labels, which can be expensive to obtain</li>
                   <li>Does not account for the quality or precision of retrieved documents</li>
                   <li>May incentivize retrieving too many documents, increasing noise</li>
                   <li>Difficult to optimize when relevant documents are poorly embedded or chunked</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -465,12 +473,14 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
                 <GSAPStaggerList stagger={0.12} delay={0.5}>
-                  <li>Improves grounding by focusing LLM on relevant information</li>
+                  <ul>
+                    <li>Improves grounding by focusing LLM on relevant information</li>
                   <li>Reduces irrelevant context that can distract the LLM</li>
                   <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
                   <li>Particularly important for smaller models with limited context processing ability</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
@@ -507,7 +517,7 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3>How It Works
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works
                   <MermaidPopover
                     title="Precision@K vs Recall@K"
                     diagram={`graph LR
@@ -540,11 +550,13 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3>Target Values</h3>
+                <h3 style={{ paddingBottom: '14px' }}>Target Values</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
-                  <li>≥0.70 typical for general RAG applications</li>
+                  <ul>
+                    <li>≥0.70 typical for general RAG applications</li>
                   <li>≥0.85 for systems with small context windows</li>
                   <li>Higher values critical when LLM context capacity is limited</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -577,7 +589,7 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-                <h3>Example
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example
                   <MermaidPopover
                     title="Precision@K Example"
                     diagram={`graph TD
@@ -648,7 +660,7 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG
                   <MermaidPopover
                     title="Precision-Recall Trade-off"
                     diagram={`graph TD
@@ -670,20 +682,24 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.12} delay={0.3}>
-                  <li>Higher precision improves grounding by focusing LLM on relevant information</li>
+                  <ul>
+                    <li>Higher precision improves grounding by focusing LLM on relevant information</li>
                   <li>Reduces irrelevant context that can distract the LLM</li>
                   <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
                   <li>Particularly important for smaller models with limited context processing ability</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
                 <GSAPStaggerList stagger={0.12} delay={0.7}>
-                  <li>High precision can come at the cost of lower recall (missing relevant documents)</li>
+                  <ul>
+                    <li>High precision can come at the cost of lower recall (missing relevant documents)</li>
                   <li>Requires ground truth relevance judgments</li>
                   <li>May be too conservative for complex queries requiring diverse perspectives</li>
                   <li>Doesn't account for redundancy — multiple similar documents may inflate precision</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -727,12 +743,14 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.5}>
-                  <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
+                  <ul>
+                    <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
                   <li>Stabilizes answer quality by preventing complete retrieval failures</li>
                   <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
                   <li>Critical baseline before optimizing for more nuanced metrics</li>
+                    </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
@@ -769,7 +787,7 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-                <h3>How It Works
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works
                   <MermaidPopover
                     title="Hit Rate Binary Evaluation"
                     diagram={`flowchart TD
@@ -804,11 +822,13 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <h3>Target Values</h3>
+                <h3 style={{ paddingBottom: '14px' }}>Target Values</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
-                  <li>≥0.95 for FAQs or narrow/specialized corpora</li>
+                  <ul>
+                    <li>≥0.95 for FAQs or narrow/specialized corpora</li>
                   <li>≥0.80 for broad or diverse document collections</li>
                   <li>Lower values indicate need for embedding model or chunking improvements</li>
+                  </ul> 
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -884,7 +904,7 @@ Once you've done this for all your queries, you sum up all the hits—all those 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG
                   <MermaidPopover
                     title="Hit Rate Impact on RAG Pipeline"
                     diagram={`flowchart LR
@@ -907,20 +927,24 @@ Once you've done this for all your queries, you sum up all the hits—all those 
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
-                  <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
+                  <ul>
+                    <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
                   <li>Stabilizes answer quality by preventing complete retrieval failures</li>
                   <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
                   <li>Critical baseline before optimizing for more nuanced metrics</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
                 <GSAPStaggerList stagger={0.15} delay={0.7}>
-                  <li>Binary metric doesn't capture how many relevant documents were retrieved</li>
+                  <ul>
+                    <li>Binary metric doesn't capture how many relevant documents were retrieved</li>
                   <li>Can be misleadingly high if only marginally relevant documents are retrieved</li>
                   <li>Doesn't account for quality or ranking position of the hit</li>
                   <li>May not be sensitive enough for fine-grained optimization</li>
+                  </ul>
                 </GSAPStaggerList>
               </GSAPAnimated>
             </div>
@@ -972,12 +996,14 @@ Once you've done this for all your queries, you sum up all the hits—all those 
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} duration={0.6} delay={0.7}>
-                <div><li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li></div>
-                <div><li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li></div>
-                <div><li>Identifies specific content gaps in knowledge bases</li></div>
+                <ul>
+                  <li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li>
+                  <li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li>
+                  <li>Identifies specific content gaps in knowledge bases</li>
+                </ul>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="bounceIn" delay={1.5}>
@@ -1013,20 +1039,7 @@ Once you've done this for all your queries, you sum up all the hits—all those 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
-                <h3>How It Works</h3>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <p>Context Overlap Score evaluates how much of the expected answer information is present in the retrieved context. It can be calculated using token overlap, fact coverage, or semantic similarity.</p>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="scaleIn" delay={0.7}>
-                <div>
-                  <h3>Formula</h3>
-                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                    {`Overlap = |Answer facts in context| / |Answer facts|`}
-                  </pre>
-                  <p>Alternatively: Token/phrase F1 score between reference answer and context, or semantic similarity between expected answer elements and retrieved chunks.</p>
-                  <MermaidPopover
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works <MermaidPopover
                     diagram={`graph TD
     A[Reference Answer] -->|Extract Facts| B[Fact Set: F1, F2, F3, F4, F5]
     C[Retrieved Context] -->|Check Presence| D{Which Facts Present?}
@@ -1042,17 +1055,31 @@ Once you've done this for all your queries, you sum up all the hits—all those 
     style F fill:#ef4444
     style G fill:#eab308`}
                     title="Context Overlap Score Calculation"
-                  />
+                  /></h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <p>Context Overlap Score evaluates how much of the expected answer information is present in the retrieved context. It can be calculated using token overlap, fact coverage, or semantic similarity.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.7}>
+                <div>
+                  <h3>Formula</h3>
+                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                    {`Overlap = |Answer facts in context| / |Answer facts|`}
+                  </pre>
+                  <p>Alternatively: Token/phrase F1 score between reference answer and context, or semantic similarity between expected answer elements and retrieved chunks.</p>
+                  
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={1.1}>
-                <h3>Target Values</h3>
+                <h3 style={{ paddingBottom: '14px' }}>Target Values</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.6} delay={1.3}>
-                <div><li>≥0.70 for general use cases</li></div>
-                <div><li>≥0.85 for high-stakes applications</li></div>
-                <div><li>Context window size often limits feasible target values</li></div>
+                <ul>
+                  <li>≥0.70 for general use cases</li>
+                  <li>≥0.85 for high-stakes applications</li>
+                  <li>Context window size often limits feasible target values</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1084,18 +1111,7 @@ Click the diagram icon to see how facts flow from the reference answer through t
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <h3>Example</h3>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <p><strong>Query:</strong> "What are the eligibility requirements for program X?"</p>
-              </GSAPAnimated>
-              <GSAPStaggerList stagger={0.2} duration={0.6} delay={0.5}>
-                <div><p>Reference answer requires 5 key facts about eligibility</p></div>
-                <div><p>Retrieved context contains only 4 of these facts</p></div>
-                <div><p><strong>Context Overlap Score = 4/5 = 0.80</strong></p></div>
-              </GSAPStaggerList>
-
-              <GSAPAnimated animation="bounceIn" delay={1.3}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example <GSAPAnimated animation="bounceIn" delay={1.3}>
                 <MermaidPopover
                   diagram={`sequenceDiagram
     participant Q as Query
@@ -1118,8 +1134,16 @@ Click the diagram icon to see how facts flow from the reference answer through t
     style E fill:#eab308`}
                   title="Context Overlap Calculation Flow"
                 />
+              </GSAPAnimated></h3>
               </GSAPAnimated>
-
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p><strong>Query:</strong> "What are the eligibility requirements for program X?"</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.6} delay={0.5}>
+                <div><p>Reference answer requires 5 key facts about eligibility</p></div>
+                <div><p>Retrieved context contains only 4 of these facts</p></div>
+                <div><p><strong>Context Overlap Score = 4/5 = 0.80</strong></p></div>
+              </GSAPStaggerList>
               <GSAPAnimated animation="slideInRight" delay={1.6}>
                 <h3>How to Calculate</h3>
               </GSAPAnimated>
@@ -1156,15 +1180,7 @@ Click the diagram icon to visualize the flow. You start with the query, define e
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              </GSAPAnimated>
-              <GSAPStaggerList stagger={0.18} duration={0.7} delay={0.3}>
-                <div><li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li></div>
-                <div><li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li></div>
-                <div><li>Identifies specific content gaps in knowledge bases</li></div>
-              </GSAPStaggerList>
-
-              <GSAPAnimated animation="rotateIn" delay={1.2}>
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG <GSAPAnimated animation="rotateIn" delay={1.2}>
                 <MermaidPopover
                   diagram={`graph LR
     A[Context Overlap Score] --> B[High ≥0.85]
@@ -1193,16 +1209,27 @@ Click the diagram icon to visualize the flow. You start with the query, define e
     style L fill:#ef4444`}
                   title="How Overlap Scores Affect RAG Quality"
                 />
+              </GSAPAnimated></h3>
               </GSAPAnimated>
+              <GSAPStaggerList stagger={0.18} duration={0.7} delay={0.3}>
+                <ul>
+                  <li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li>
+                  <li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li>
+                  <li>Identifies specific content gaps in knowledge bases</li>
+                </ul>
+              </GSAPStaggerList>
+              
 
               <GSAPAnimated animation="slideInBottom" delay={1.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} duration={0.6} delay={1.7}>
-                <div><li>Requires reference answers, which can be expensive to create at scale</li></div>
-                <div><li>Sensitive to how facts are decomposed (granularity varies)</li></div>
-                <div><li>Doesn't measure whether the LLM actually uses the available context</li></div>
-                <div><li>May not capture semantic equivalence if using token-based matching</li></div>
+                <ul>
+                  <li>Requires reference answers, which can be expensive to create at scale</li>
+                  <li>Sensitive to how facts are decomposed (granularity varies)</li>
+                  <li>Doesn't measure whether the LLM actually uses the available context</li>
+                  <li>May not capture semantic equivalence if using token-based matching</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1250,13 +1277,15 @@ Click the diagram icon to visualize the flow. You start with the query, define e
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
-                <li>Improves precision by identifying and removing irrelevant context</li>
+                <ul>
+                  <li>Improves precision by identifying and removing irrelevant context</li>
                 <li>Reduces hallucinations caused by misleading information</li>
                 <li>Enables continuous monitoring without reference answers</li>
                 <li>Helps identify specific queries with poor retrieval performance</li>
+                </ul>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
@@ -1339,10 +1368,12 @@ where score_i ∈ [0,1] for each chunk`}
                 <h3>Target Values</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.5}>
-                <li>≥0.70 considered good performance</li>
+                <ul>
+                  <li>≥0.70 considered good performance</li>
                 <li>≥0.80 indicates strong retrieval alignment</li>
                 <li>Scores &lt;0.50 often signal problematic retrieval</li>
                 <li>Thresholds may vary by domain complexity</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1386,9 +1417,11 @@ where score_i ∈ [0,1] for each chunk`}
                 <p>LLM relevance scores for 3 retrieved chunks:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.7}>
-                <li>Chunk 1 (password reset): 0.9</li>
+                <ul>
+                  <li>Chunk 1 (password reset): 0.9</li>
                 <li>Chunk 2 (account security): 0.8</li>
                 <li>Chunk 3 (billing info): 0.3</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated animation="scaleIn" delay={0.6}>
                 <p><strong>Context Relevance = (0.9 + 0.8 + 0.3) / 3 = 0.67</strong></p>
@@ -1436,13 +1469,15 @@ where score_i ∈ [0,1] for each chunk`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Impact on RAG</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
-                <li>Improves precision by identifying and removing irrelevant context</li>
+                <ul>
+                  <li>Improves precision by identifying and removing irrelevant context</li>
                 <li>Reduces hallucinations caused by misleading information</li>
                 <li>Enables continuous monitoring without reference answers</li>
                 <li>Helps identify specific queries with poor retrieval performance</li>
+                </ul>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInTop" delay={0.55}>
@@ -1471,13 +1506,15 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.6}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.5}>
-                <li>LLM judge quality and consistency can vary across models</li>
+                <ul>
+                  <li>LLM judge quality and consistency can vary across models</li>
                 <li>Adds latency and cost for evaluation (requires additional LLM calls)</li>
                 <li>May not align perfectly with human judgment</li>
                 <li>Requires careful prompt engineering to get reliable scores</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1522,13 +1559,15 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} duration={0.6}>
-                <li>Lower hallucination rates directly increase trust in the system</li>
+                <ul>
+                  <li>Lower hallucination rates directly increase trust in the system</li>
                 <li>Reduces misinformation risk and potential legal/reputation damage</li>
                 <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
                 <li>Enables reliable citation of source materials</li>
+                </ul>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="bounceIn" delay={0.7}>
@@ -1617,12 +1656,14 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.65}>
-                <h3>Target Values</h3>
+                <h3 style={{ paddingBottom: '14px' }}>Target Values</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} duration={0.5}>
-                <li>&lt;5% for high-stakes applications (medical, legal, financial)</li>
+                <ul>
+                  <li>&lt;5% for high-stakes applications (medical, legal, financial)</li>
                 <li>&lt;10-15% for general-purpose applications</li>
                 <li>Zero tolerance for critical facts in regulated domains</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1717,13 +1758,15 @@ where score_i ∈ [0,1] for each chunk`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Impact on RAG</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} duration={0.6}>
-                <li>Lower hallucination rates directly increase trust in the system</li>
+                <ul>
+                  <li>Lower hallucination rates directly increase trust in the system</li>
                 <li>Reduces misinformation risk and potential legal/reputation damage</li>
                 <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
                 <li>Enables reliable citation of source materials</li>
+                </ul>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInTop" delay={0.6}>
@@ -1757,13 +1800,15 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.65}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.5}>
-                <li>Claim extraction can be challenging and inconsistent</li>
+                <ul>
+                  <li>Claim extraction can be challenging and inconsistent</li>
                 <li>Not all unsupported claims are harmful — some may be reasonable inferences</li>
                 <li>Detection quality depends on the evaluation method used</li>
                 <li>May penalize valid general knowledge not in the specific context</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -1859,7 +1904,7 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="rotateIn" delay={0.3}>
-                <h3>Formula
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula
                   <MermaidPopover
                     title="Citation Verification Process"
                     diagram={`graph TD
@@ -1995,7 +2040,7 @@ Now let's discuss the broader implications and limitations of this metric.`
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInBottom" delay={0.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations
+                <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Limitations & Considerations
                   <MermaidPopover
                     title="Impact Flow"
                     diagram={`graph LR
@@ -2121,7 +2166,7 @@ Now let's discuss the broader implications and limitations of this metric.`
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <h3>Formula
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula
                   <MermaidPopover
                     title="Faithfulness Evaluation Process"
                     diagram={`graph TD
@@ -2267,7 +2312,7 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInBottom" delay={0.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations
+                <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Limitations & Considerations
                   <MermaidPopover
                     title="Trade-offs & Considerations"
                     diagram={`graph TD
@@ -2400,7 +2445,7 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <h3>Formula
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula
                   <MermaidPopover
                     title="Completeness Evaluation Flow"
                     diagram={`graph TD
@@ -2552,7 +2597,7 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPStaggerList>
 
               <GSAPAnimated animation="bounceIn" delay={0.5}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations
+                <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Limitations & Considerations
                   <MermaidPopover
                     title="Completeness Trade-offs"
                     diagram={`graph TD
@@ -2685,8 +2730,7 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" duration={0.9} delay={0.4}>
-                <h3>Formula</h3>
-                <MermaidPopover
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Calculation Flow"
                   diagram={`graph TB
     A[Answer Generated] --> B{Choose Method}
@@ -2707,7 +2751,7 @@ Now let's explore the broader implications and trade-offs of this metric.`
     
     G --> M[Final Specificity Score]
     L --> M`}
-                />
+                /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`Option 1: LLM-judged specificity score [0-1]
 Option 2: Info-density = (# named entities + numbers) / answer tokens`}
@@ -2797,8 +2841,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" duration={0.8} delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-                <MermaidPopover
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Impact Diagram"
                   diagram={`graph LR
     A[High Specificity] --> B[Actionable Outputs]
@@ -2812,7 +2855,8 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
     E --> F
     
     F --> G[Improved RAG System]`}
-                />
+                /></h3>
+                
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -2917,8 +2961,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.5}>
-                <h3>Formula</h3>
-                <MermaidPopover
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Noise Detection Process"
                   diagram={`graph TB
     A[Retrieved Context] --> B[Analyze Each Chunk]
@@ -2943,7 +2986,8 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
     L -->|<15%| M[Excellent - Minimal Noise]
     L -->|15-30%| N[Acceptable - Some Cleanup Possible]
     L -->|>30%| O[Poor - Significant Noise]`}
-                />
+                /></h3>
+                
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`NoiseDensity = (Irrelevant tokens in context) / (Total context tokens)`}
                 </pre>
@@ -3037,8 +3081,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-                <MermaidPopover
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Impact Flow"
                   diagram={`graph LR
     A[Low Noise Density] --> B[Reduced LLM Distraction]
@@ -3055,7 +3098,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
     G --> J
     H --> J
     I --> J`}
-                />
+                /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3163,8 +3206,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.4}>
-                <h3>Formula</h3>
-                <MermaidPopover
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Compression Process"
                   diagram={`graph TB
     A[Baseline Context] --> B[Measure Coverage]
@@ -3193,7 +3235,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
     O --> P{Quality Check}
     P -->|Coverage Maintained| Q[Success!]
     P -->|Coverage Dropped| R[Adjust & Retry]`}
-                />
+                /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`CCE = Coverage_τ / Tokens
 - OR -
@@ -3288,8 +3330,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-                <MermaidPopover
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Efficiency Trade-offs"
                   diagram={`graph TD
     A[Context Compression] --> B{Benefits}
@@ -3314,7 +3355,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
     
     K -->|Positive| L[Deploy Compression]
     K -->|Negative| M[Optimize or Skip]`}
-                />
+                /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3425,8 +3466,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="rotateIn" duration={1} delay={0.4}>
-                <h3>Formula</h3>
-                <MermaidPopover
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Tradeoff Calculation"
                   diagram={`graph TB
     A[Set Constraints] --> B[Latency Budget]
@@ -3454,7 +3494,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
     N -->|≥0.85| O[Excellent Efficiency]
     N -->|0.70-0.84| P[Good Efficiency]
     N -->|<0.70| Q[Needs Optimization]`}
-                />
+                /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]`}
                 </pre>
@@ -3507,7 +3547,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.1}>
                 <h3>Example</h3>
-                <p><strong>Given:</strong></p>
+                <p style={{ marginBottom: '0px' }}><strong>Given:</strong></p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3561,8 +3601,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-                <MermaidPopover
+                <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Complete Trade-off Matrix"
                   diagram={`graph TB
     A[LCTS Framework] --> B[Latency Budget]
@@ -3588,7 +3627,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
     
     L --> M[Optimized RAG System]
     M --> N[Production Success]`}
-                />
+                /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3658,12 +3697,13 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <div style={{ color: '#3b82f6', marginBottom: '1rem' }}>
+                    <div style={{ color: '#3b82f6' }}>
                       <SvgIcon iconName="duo-chart-line" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>Key Takeaways</strong>
                     </div>
                     <GSAPStaggerList stagger={0.15} delay={0.4}>
-                      <li>
+                      <ul>
+                        <li>
                         <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
                       </li>
                       <li>
@@ -3675,18 +3715,20 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
                       <li>
                         <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
                       </li>
+                      </ul>
                     </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
 
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
                   <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <div style={{ color: '#10b981', marginBottom: '1rem' }}>
+                    <div style={{ color: '#10b981' }}>
                       <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>Best Practices</strong>
                     </div>
                     <GSAPStaggerList stagger={0.15} delay={0.4}>
-                      <li>
+                      <ul>
+                        <li>
                         Use multiple metrics together for full picture
                       </li>
                       <li>
@@ -3698,6 +3740,7 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
                       <li>
                         Balance quality with efficiency constraints
                       </li>
+                      </ul>
                     </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
@@ -3705,11 +3748,11 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
 
               <GSAPAnimated animation="scaleIn" delay={0.6}>
                 <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px', marginBottom: '1.5rem' }}>
-                  <div style={{ color: '#8b5cf6', marginBottom: '1rem' }}>
+                  <div style={{ color: '#8b5cf6' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Implementation Roadmap</strong>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '1.2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '1rem' }}>
                     <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                       <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
                         Phase 1: Foundation
@@ -3733,8 +3776,8 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.8}>
-                <div style={{ padding: '1.5rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left', fontSize: '1.2rem' }}>
-                  <SvgIcon iconName="duo-circle-info" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                <div style={{ padding: '14px', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                  <SvgIcon iconName="duo-circle-info" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                   <strong>Remember:</strong> No single metric tells the full story. Use combinations to diagnose root causes: missed retrieval vs. ungrounded reasoning vs. inefficient context.
                 </div>
               </GSAPAnimated>
