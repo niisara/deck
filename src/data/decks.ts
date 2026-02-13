@@ -28,7 +28,7 @@ import { chunkingTechniquesDeck } from './chunking-techniques-deck';
 import { vectorDatabasesDeck } from './vector-databases-deck';
 import { deathDeck } from './death-deck';
 
-const isProd = import.meta.env.VITE_IS_PROD === 'true';
+// const isProd = import.meta.env.VITE_IS_PROD === 'true';
 
 export const decks = [
   deathDeck,

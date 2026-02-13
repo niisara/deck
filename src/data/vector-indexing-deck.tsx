@@ -193,27 +193,30 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Flat Index Search Process"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph LR
+    A["🔍 Query Vector"] --> B["Compare to Vector 1"]
+    A --> C["Compare to Vector 2"]
+    A --> D["Compare to Vector 3"]
+    A --> E["Compare to Vector N"]
+    B --> F["📊 Calculate Distance"]
+    C --> F
+    D --> F
+    E --> F
+    F --> G["✅ Return Top K"]
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+    style G fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#ff6b35', marginBottom: '15px' }}>The simplest vector index with exact search guarantees</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                     <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                    <MermaidPopover
-                      diagram={`graph LR
-    A[Query Vector] --> B[Compare to Vector 1]
-    A --> C[Compare to Vector 2]
-    A --> D[Compare to Vector 3]
-    A --> E[Compare to Vector N]
-    B --> F[Calculate Distance]
-    C --> F
-    D --> F
-    E --> F
-    F --> G[Return Top K]
-    style A fill:#4fc3f7
-    style F fill:#81c784
-    style G fill:#ffd700`}
-                      title="Flat Index Search Process"
-                    />
                     <p style={{ marginTop: '5px' }}>No index; raw vectors stored contiguously in memory. Each query computes distance against all vectors in the collection. Often accelerated with SIMD instructions or GPU computation for performance.</p>
                   </div>
 
@@ -373,22 +376,26 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="flipCard" delay={0.3}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="HNSW Multi-Layer Navigation"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["🚀 Entry Point"] --> B["Layer 2: Coarse"]
+    B --> C["Layer 1: Medium"]
+    C --> D["Layer 0: Fine - All Vectors"]
+    D --> E["🔀 Navigate through neighbors"]
+    E --> F["✅ Find Nearest"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#00d4ff' }}>Hierarchical Navigable Small World - High-recall approximate nearest neighbor search</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
-                    <MermaidPopover
-                      diagram={`graph TD
-    A[Entry Point] --> B[Layer 2: Coarse]
-    B --> C[Layer 1: Medium]
-    C --> D[Layer 0: Fine - All Vectors]
-    D --> E[Navigate through neighbors]
-    E --> F[Find Nearest]
-    style A fill:#4fc3f7
-    style D fill:#81c784
-    style F fill:#ffd700`}
-                      title="HNSW Multi-Layer Navigation"
-                    />
+                    <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                     <p style={{ marginTop: '5px' }}>Hierarchical navigable small-world graph with multi-layer proximity graph structure. Key parameters include M (max connections per node), efConstruction (search width during build), and efSearch (search width during query).</p>
                   </div>
 
@@ -549,23 +556,27 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="IVF Clustering and Search"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["📊 K-means Clustering"] --> B["Create nlist Centroids"]
+    B --> C["Assign Vectors to Clusters"]
+    C --> D["✅ Build Inverted Lists"]
+    E["🔍 Query"] --> F["Find nprobe Nearest Centroids"]
+    F --> G["🔎 Search Within Those Lists"]
+    G --> H["✅ Return Top K"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style H fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#4ecdc4', marginBottom: '15px' }}>A coarse quantization-based approach for efficient vector indexing and retrieval</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
-                    <MermaidPopover
-                      diagram={`graph TD
-    A[K-means Clustering] --> B[Create nlist Centroids]
-    B --> C[Assign Vectors to Clusters]
-    C --> D[Build Inverted Lists]
-    E[Query] --> F[Find nprobe Nearest Centroids]
-    F --> G[Search Within Those Lists]
-    G --> H[Return Top K]
-    style A fill:#4fc3f7
-    style D fill:#81c784
-    style H fill:#ffd700`}
-                      title="IVF Clustering and Search"
-                    />
+                    <strong style={{ color: '#81c784' }}>Index Structure:</strong>
                     <p style={{ marginTop: '5px' }}>Coarse quantizer (k-means) with nlist clusters; vectors assigned to inverted lists; probe nprobe lists during search; typically performs exhaustive search within retrieved lists (often using Flat search).</p>
                   </div>
 
@@ -725,24 +736,28 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" delay={0.4}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="IVF+PQ Compression Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["📊 IVF Clustering"] --> B["🔧 Compute Residuals"]
+    B --> C["✂️ Split into M Subspaces"]
+    C --> D["📦 Quantize Each Subspace"]
+    D --> E["✅ Store PQ Codes"]
+    F["🔍 Query"] --> G["Find Nearest Centroids"]
+    G --> H["📋 Lookup Table Distance"]
+    H --> I["✅ Return Top K"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style I fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#ffc300', marginBottom: '15px' }}>Inverted File Index combined with Product Quantization for efficient vector compression</h3>
 
                   <div style={{ marginBottom: '12px', marginTop: '15px' }}>
-                    <MermaidPopover
-                      diagram={`graph TD
-    A[IVF Clustering] --> B[Compute Residuals]
-    B --> C[Split into M Subspaces]
-    C --> D[Quantize Each Subspace]
-    D --> E[Store PQ Codes]
-    F[Query] --> G[Find Nearest Centroids]
-    G --> H[Lookup Table Distance]
-    H --> I[Return Top K]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style I fill:#ffd700`}
-                      title="IVF+PQ Compression Pipeline"
-                    />
+                    <strong style={{ color: '#ffb74d' }}>Index Structure:</strong>
                     <p style={{ marginTop: '3px' }}>IVF coarse quantizer (k-means clustering) plus PQ codes for residuals. Stores compact codes instead of raw vectors. Uses lookup tables (LUT) and Asymmetric Distance Computation (ADC) for efficient scoring. Optional refine step can leverage raw vectors for higher precision.</p>
                   </div>
 
@@ -901,24 +916,28 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="flipCard" delay={0.2}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Annoy Random Projection Trees"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["🌲 Build Forest of Trees"] --> B["✂️ Random Hyperplane Splits"]
+    B --> C["Tree 1"]
+    B --> D["Tree 2"]
+    B --> E["Tree N"]
+    F["🔍 Query"] --> G["🔎 Traverse Each Tree"]
+    G --> H["📋 Collect Candidates"]
+    H --> I["✅ Sort and Return Top K"]
+    style A fill:#4fc3f7,color:#000
+    style H fill:#81c784,color:#000
+    style I fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#9b59b6', marginBottom: '15px' }}>Approximate Nearest Neighbors Oh Yeah - Simple and Efficient Vector Search</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
-                    <MermaidPopover
-                      diagram={`graph TD
-    A[Build Forest of Trees] --> B[Random Hyperplane Splits]
-    B --> C[Tree 1]
-    B --> D[Tree 2]
-    B --> E[Tree N]
-    F[Query] --> G[Traverse Each Tree]
-    G --> H[Collect Candidates]
-    H --> I[Sort and Return Top K]
-    style A fill:#4fc3f7
-    style H fill:#81c784
-    style I fill:#ffd700`}
-                      title="Annoy Random Projection Trees"
-                    />
+                    <strong style={{ color: '#ba68c8' }}>Index Structure:</strong>
                     <p style={{ marginTop: '5px' }}>Forest of random projection trees where each tree partitions vectors based on random hyperplanes. Index can be saved to disk and memory-mapped for efficient loading. Primarily supports angular (cosine) and Euclidean distance metrics.</p>
                   </div>
 
@@ -1083,22 +1102,26 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ScaNN Multi-Stage Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["📊 Partitioning"] --> B["🔀 K-means/Tree"]
+    B --> C["📦 Quantization"]
+    C --> D["✅ Asymmetric Hashing"]
+    D --> E["🔧 Re-ranking"]
+    E --> F["✅ Top K Results"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
 
                   <div style={{ marginBottom: '12px', marginTop: '15px' }}>
-                    <MermaidPopover
-                      diagram={`graph TD
-    A[Partitioning] --> B[K-means/Tree]
-    B --> C[Quantization]
-    C --> D[Asymmetric Hashing]
-    D --> E[Re-ranking]
-    E --> F[Top K Results]
-    style A fill:#4fc3f7
-    style D fill:#81c784
-    style F fill:#ffd700`}
-                      title="ScaNN Multi-Stage Pipeline"
-                    />
+                    <strong style={{ color: '#ba68c8' }}>Index Structure:</strong>
                     <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. ScaNN uses a multi-stage architecture:</p>
                     <ul>
                       <li>Partitioning</li>
@@ -1213,7 +1236,26 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ fontSize: '1.8rem' }}>
+                <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="LSH Hash Table Structure"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["🔍 Input Vector"] --> B["Hash Function 1"]
+    A --> C["Hash Function 2"]
+    A --> D["Hash Function L"]
+    B --> E["📋 Table 1 Buckets"]
+    C --> F["📋 Table 2 Buckets"]
+    D --> G["📋 Table L Buckets"]
+    H["🔍 Query"] --> I["Hash to Buckets"]
+    I --> J["📊 Collect Candidates"]
+    J --> K["✅ Return Top K"]
+    style A fill:#4fc3f7,color:#000
+    style J fill:#81c784,color:#000
+    style K fill:#ffd700,color:#000`}
+                    />
+                  </div>
                   <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>Probabilistic algorithm for approximate nearest neighbor search using hash collisions</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
@@ -1310,7 +1352,24 @@ export const vectorIndexingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '1.8rem' }}>
+              <div style={{ fontSize: '1.8rem', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Graph-Based ANN Navigation"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    A["🚀 Entry Point"] --> B["🔀 Navigate Graph"]
+    B --> C["🔎 Greedy Beam Search"]
+    C --> D["🔄 Traverse Neighbors"]
+    D --> E["✅ Find Nearest"]
+    F["💾 DiskANN: SSD Storage"] --> G["📋 Small RAM Graph"]
+    G --> B
+    style A fill:#4fc3f7,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000`}
+                  />
+                </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '15px' }}>Navigable proximity graphs with controlled out-degree for efficient ANN search</h3>
 
                 <div style={{ display: 'flex', gap: '20px', marginBottom: '12px', fontSize: '1.2rem' }}>
