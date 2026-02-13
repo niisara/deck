@@ -31,20 +31,20 @@ export const queryRewritingDeck: Deck = {
                 <h2 style={{ marginBottom: '40px' }}>Practical patterns, prompts, and examples for better retrieval</h2>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.5}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '50px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '30px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-pen-to-square" sizeName="4x" style={{ color: '#3498db' }} />
-                    <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Rewrite</p>
+                    <p style={{ marginTop: '15px', marginBottom: '0px', fontSize: '1.2rem' }}>Rewrite</p>
                   </div>
                   <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#2ecc71' }} />
-                    <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrieve</p>
+                    <p style={{ marginTop: '15px', marginBottom: '0px', fontSize: '1.2rem' }}>Retrieve</p>
                   </div>
                   <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-bullseye" sizeName="4x" style={{ color: '#f39c12' }} />
-                    <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Precision</p>
+                    <p style={{ marginTop: '15px', marginBottom: '0px', fontSize: '1.2rem' }}>Precision</p>
                   </div>
                 </div>
               </GSAPAnimated>
@@ -77,15 +77,15 @@ export const queryRewritingDeck: Deck = {
                   </h3>
                   <ul style={{ lineHeight: '2' }}>
                     <li><strong>Vague or underspecified queries</strong><br />
-                      <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Users often submit queries that lack sufficient detail for accurate retrieval</span></li>
+                      <span style={{ fontSize: '1rem', opacity: 0.9 }}>Users often submit queries that lack sufficient detail for accurate retrieval</span></li>
                     <li><strong>Vocabulary/ontology mismatch</strong><br />
-                      <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>User phrasing differs from corpus terminology, creating semantic gaps</span></li>
+                      <span style={{ fontSize: '1rem', opacity: 0.9 }}>User phrasing differs from corpus terminology, creating semantic gaps</span></li>
                     <li><strong>Long/complex questions harming recall</strong><br />
-                      <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Multi-part questions dilute key search terms, reducing retrieval effectiveness</span></li>
+                      <span style={{ fontSize: '1rem', opacity: 0.9 }}>Multi-part questions dilute key search terms, reducing retrieval effectiveness</span></li>
                     <li><strong>Conversational context loss in follow-ups</strong><br />
-                      <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Follow-up queries lack critical context from previous conversation turns</span></li>
+                      <span style={{ fontSize: '1rem', opacity: 0.9 }}>Follow-up queries lack critical context from previous conversation turns</span></li>
                     <li><strong>Hallucinations from poor context</strong><br />
-                      <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Insufficient retrieval leads to LLM hallucinations and incorrect answers</span></li>
+                      <span style={{ fontSize: '1rem', opacity: 0.9 }}>Insufficient retrieval leads to LLM hallucinations and incorrect answers</span></li>
                   </ul>
                 </div></GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4}><div>
@@ -93,7 +93,7 @@ export const queryRewritingDeck: Deck = {
                     <SvgIcon iconName="duo-check-double" sizeName="2x" darkModeInvert={true} />
                     Outcomes
                   </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '30px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '10px' }}>
                     <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', borderLeft: '4px solid #2ecc71' }}>
                       <strong>Higher recall in retrieval</strong>
                     </div>
@@ -138,7 +138,7 @@ export const queryRewritingDeck: Deck = {
                     <h4 style={{ color: '#3498db' }}>Recall@k</h4>
                   </div>
                   <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>15-40%</p>
-                  <p>Improvement in relevant document retrieval</p>
+                  <p style={{ margin: '0px' }}>Improvement in relevant document retrieval</p>
                 </div>
                 <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px', color: '#9b59b6', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -146,7 +146,7 @@ export const queryRewritingDeck: Deck = {
                     <h4 style={{ color: '#9b59b6' }}>MRR/NDCG</h4>
                   </div>
                   <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>10-25%</p>
-                  <p>Boost in ranking quality metrics</p>
+                  <p style={{ margin: '0px' }}>Boost in ranking quality metrics</p>
                 </div>
                 <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px', color: '#2ecc71', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -154,7 +154,7 @@ export const queryRewritingDeck: Deck = {
                     <h4 style={{ color: '#2ecc71' }}>Grounded-rate</h4>
                   </div>
                   <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>20-45%</p>
-                  <p>More answers properly grounded in retrieved context</p>
+                  <p style={{ margin: '0px' }}>More answers properly grounded in retrieved context</p>
                 </div>
                 <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px', color: '#f39c12', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -162,10 +162,10 @@ export const queryRewritingDeck: Deck = {
                     <h4 style={{ color: '#f39c12' }}>Eval pass@1</h4>
                   </div>
                   <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>15-30%</p>
-                  <p>Improvement in single-attempt success rate</p>
+                  <p style={{ margin: '0px' }}>Improvement in single-attempt success rate</p>
                 </div>
               </div></GSAPAnimated>
-              <GSAPAnimated animation="slideInBottom" delay={0.6}><div style={{ padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
+              <GSAPAnimated animation="slideInBottom" delay={0.6}><div style={{ padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center', fontSize: '1.2rem' }}>
                 <strong>💡 Key Benefits:</strong> Improves top-k recall, reduces off-topic retrieval, boosts QA accuracy, enables domain/temporal disambiguation
               </div></GSAPAnimated>
             </div>
@@ -187,7 +187,7 @@ export const queryRewritingDeck: Deck = {
             <div style={{ margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3 style={{ paddingBottom: '30px' }}>
+                <h3 style={{ paddingBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   Step-by-Step Process
                   <MermaidPopover
                     title="Query Rewriting Workflow"
@@ -206,15 +206,15 @@ export const queryRewritingDeck: Deck = {
                 </h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
-                <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#3498db' }}>
+                <div style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#3498db' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#3498db', marginBottom: '10px' }}>1</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ color: '#3498db' }} />
                     <h4 style={{ marginTop: '10px', color: '#3498db' }}>Parse Intent & Context</h4>
                   </div>
-                  <p style={{ marginTop: '8px' }}>Extract user intent and relevant contextual information from history and user profile</p>
+                  <p style={{ margin: '8px' }}>Extract user intent and relevant contextual information from history and user profile</p>
                 </div>
-                <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#9b59b6' }}>
+                <div style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#9b59b6' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#9b59b6', marginBottom: '10px' }}>2</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ color: '#9b59b6' }} />
@@ -222,7 +222,7 @@ export const queryRewritingDeck: Deck = {
                   </div>
                   <p style={{ marginTop: '8px' }}>Select appropriate rule-based, ML-based, or agent-based approach for query transformation</p>
                 </div>
-                <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#2ecc71' }}>
+                <div style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#2ecc71' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#2ecc71', marginBottom: '10px' }}>3</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" style={{ color: '#2ecc71' }} />
@@ -230,7 +230,7 @@ export const queryRewritingDeck: Deck = {
                   </div>
                   <p style={{ marginTop: '8px' }}>Apply one or more rewriting strategies based on query type and identified intent</p>
                 </div>
-                <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#f39c12' }}>
+                <div style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#f39c12' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#f39c12', marginBottom: '10px' }}>4</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ color: '#f39c12' }} />
@@ -238,7 +238,7 @@ export const queryRewritingDeck: Deck = {
                   </div>
                   <p style={{ marginTop: '8px' }}>Execute retrieval using hybrid search methods (sparse + dense) and reranking</p>
                 </div>
-                <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#e67e22' }}>
+                <div style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#e67e22' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#e67e22', marginBottom: '10px' }}>5</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-clipboard-check" sizeName="2x" style={{ color: '#e67e22' }} />
@@ -246,17 +246,14 @@ export const queryRewritingDeck: Deck = {
                   </div>
                   <p style={{ marginTop: '8px' }}>Evaluate retrieved content coverage; iterate if needed using Iter-RetGen approach</p>
                 </div>
-                <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#e74c3c' }}>
+                <div style={{ textAlign: 'center', padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#e74c3c' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#e74c3c', marginBottom: '10px' }}>6</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-chart-column" sizeName="2x" style={{ color: '#e74c3c' }} />
+                    <SvgIcon iconName="duo-chart-bar" sizeName="2x" style={{ color: '#e74c3c' }} />
                     <h4 style={{ marginTop: '10px', color: '#e74c3c' }}>Log & Adapt</h4>
                   </div>
                   <p style={{ marginTop: '8px' }}>Capture feedback and performance metrics to continuously improve rewriting policy</p>
                 </div>
-              </div></GSAPAnimated>
-              <GSAPAnimated animation="slideInBottom" delay={0.6}><div style={{ padding: '15px', backgroundColor: 'rgba(149, 165, 166, 0.15)', borderRadius: '8px', fontSize: '1.2rem' }}>
-                <strong>🛡️ Guardrails:</strong> Token/cost caps for LLM rewriting operations • Evaluation gates for rewritten query quality • Traceability of transformations for debugging • Timeout handling for complex rewrites • Fallback mechanisms to original query
               </div></GSAPAnimated>
             </div>
           ),
@@ -370,17 +367,17 @@ For complex questions: **Query Decomposition** splits them into sub-questions. *
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Bridge vocabulary gaps, increase recall with synonyms/related terms, and improve retrieval for sparse queries</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Bridge vocabulary gaps, increase recall with synonyms/related terms, and improve retrieval for sparse queries</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', marginTop: '20px', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Simple implementation</li>
                 <li>Cost-effective approach</li>
                 <li>Significant recall improvement</li>
                 <li>Works with existing search engines</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Ideal for scenarios with:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <ul>
                 <li>Low recall performance</li>
                 <li>Sparse or short queries</li>
                 <li>Domain-specific terminology</li>
@@ -405,7 +402,7 @@ For complex questions: **Query Decomposition** splits them into sub-questions. *
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                 How Query Expansion Works
                 <MermaidPopover
                   title="Query Expansion Flow"
@@ -422,7 +419,7 @@ For complex questions: **Query Decomposition** splits them into sub-questions. *
                 />
               </h3></GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}><p>Add semantically related keywords and entities through multiple approaches:</p></GSAPAnimated>
-              <GSAPAnimated animation="slideInLeft" delay={0.4}><ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}><ul style={{ fontSize: '1.2rem' }}>
                 <li><strong>Thesaurus/dictionary lookups</strong> - Traditional synonym expansion using linguistic databases</li>
                 <li><strong>Embedding-based similarity</strong> - Use vector embeddings to find semantically similar terms</li>
                 <li><strong>Pseudo-relevance feedback</strong> - Extract terms from top initial retrieval results</li>
@@ -456,7 +453,7 @@ flowchart LR
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Heuristic+LLM approach: extract keyphrases and synonyms; append as OR/boost terms</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -491,13 +488,13 @@ Here's a practical implementation pattern you can use right away.
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "flu treatment"<br />
                 <strong>After:</strong> "flu treatment" OR "influenza therapy" OR "antiviral medication" OR "oseltamivir" OR "flu remedies" OR "fever reduction"
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '30px', fontSize: '2rem', paddingBottom: '10px' }}>Considerations</h3>
+              <ul>
                 <li>Can dilute precision without reranking</li>
                 <li>Risk of query drift</li>
                 <li>Less effective for ambiguous queries</li>
@@ -527,17 +524,17 @@ But there are gotchas. **Precision can drop** if you add too many terms without 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Make queries clearer, self-contained, and unambiguous to enhance retrieval precision</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Make queries clearer, self-contained, and unambiguous to enhance retrieval precision</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', marginTop: '40px', fontSize: '2rem' }}>Benefits</h3>
+              <ul style={{ fontSize: '1.2rem' }}>
                 <li>Improved precision in results</li>
                 <li>Reduces irrelevant document hits</li>
                 <li>Better response in multi-turn chats</li>
                 <li>Self-contained queries for caching</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Best applied to:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Conversational follow-up queries</li>
                 <li>Terse or vague user questions</li>
                 <li>Multi-turn interactions</li>
@@ -562,9 +559,9 @@ But there are gotchas. **Precision can drop** if you add too many terms without 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Reformulation Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Query Reformulation Works</h3></GSAPAnimated>
               <p>Rephrase queries with complete information by adding:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Full entity names and identifiers</strong> - Replace pronouns and abbreviations with complete names</li>
                 <li><strong>Explicit constraints and qualifiers</strong> - Add missing conditions and requirements</li>
                 <li><strong>Contextual information from history</strong> - Integrate relevant context from conversation</li>
@@ -586,9 +583,9 @@ Here's how reformulation works in practice.
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Clean, self-contained rewrite that preserves original intent</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Rewrite the user query to be explicit and standalone,
@@ -599,7 +596,7 @@ Conversation Context: {history}
 Rewritten Query:
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def reformulate_query(query, history):
     context = summarize_conversation_history(history)
@@ -625,13 +622,13 @@ In the implementation, you first summarize the conversation history to extract t
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "What about pricing?"<br />
                 <strong>After:</strong> "What is the pricing for the Pro plan of Acme API in 2024?"
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '20px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Requires access to conversation context</li>
                 <li>Risk of over-specification</li>
                 <li>May introduce assumptions</li>
@@ -661,17 +658,17 @@ The sweet spot? Use reformulation for **every follow-up query in chat** scenario
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Handle multi-hop/complex questions that require multiple pieces of information to answer completely</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Handle multi-hop/complex questions that require multiple pieces of information to answer completely</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', marginTop: '40px', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Better coverage of complex topics</li>
                 <li>Improved reasoning capabilities</li>
                 <li>Each sub-question can be precisely answered</li>
                 <li>Reduces hallucinations on complex queries</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Best for questions that involve:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <ul>
                 <li>Multi-entity relationships</li>
                 <li>Multi-step reasoning</li>
                 <li>Compare/contrast scenarios</li>
@@ -696,9 +693,9 @@ When a user asks "Compare Snowflake vs BigQuery costs for 10 TB per month," that
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Decomposition Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Query Decomposition Works</h3></GSAPAnimated>
               <p>Breaks complex queries into simpler sub-questions through an orchestrated workflow:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Split original query into atomic sub-questions</strong> - Identify independent components of the complex question</li>
                 <li><strong>Retrieve relevant passages for each sub-query</strong> - Execute separate retrieval for focused information needs</li>
                 <li><strong>Answer each sub-question independently</strong> - Generate targeted responses using retrieved context</li>
@@ -720,9 +717,9 @@ First, you **split the original query into atomic sub-questions**. These should 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Plan → retrieve → answer → combine workflow</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template for decomposition
 """
 Decompose the following question into 2-5 simpler sub-questions that, when
@@ -731,7 +728,7 @@ Return a numbered list of sub-questions without additional explanation.
 Main question: {query}
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def answer_with_decomposition(query):
     sub_questions = llm.generate(decompose_prompt, query=query)
@@ -759,13 +756,13 @@ Here's how to implement decomposition in practice.
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "Compare Snowflake vs BigQuery costs for 10 TB/month"<br />
                 <strong>After:</strong> 1. What is Snowflake's pricing model and costs for 10 TB/month? 2. What is BigQuery's pricing model and costs for 10 TB/month? 3. What compute resources would be needed for this data volume? 4. How do the pricing structures compare for this workload?
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '20px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Multiple retrieval calls increase latency</li>
                 <li>Requires orchestration complexity</li>
                 <li>Higher token usage and costs</li>
@@ -796,17 +793,17 @@ Here's a real-world example of decomposition in action.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Improve retrieval via abstraction and first principles thinking, allowing better information access for complex or specific queries</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Improve retrieval via abstraction and first principles thinking, allowing better information access for complex or specific queries</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Robust to query wording variations</li>
                 <li>Better generalization across concepts</li>
                 <li>Improves coverage of relevant information</li>
                 <li>Helps understand fundamental principles</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Best applied when:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <ul>
                 <li>Specific but under-retrieving queries</li>
                 <li>Reasoning-heavy or conceptual topics</li>
                 <li>Technical questions needing broader context</li>
@@ -831,9 +828,9 @@ When a user asks "How to fix CUDA OOM with Llama 3.1 70B?" 👉 'lah-mah three-p
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Step-Back Prompting Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Step-Back Prompting Works</h3></GSAPAnimated>
               <p>Generate high-level concepts, then retrieve with that summary:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Extract underlying principles from specific query</strong> - Identify fundamental concepts behind the question</li>
                 <li><strong>Identify broader concepts and frameworks</strong> - Connect to relevant theoretical foundations</li>
                 <li><strong>Create a more general retrieval query</strong> - Formulate abstract query terms</li>
@@ -855,9 +852,9 @@ You take the specific query and ask the LLM to **extract the underlying principl
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Step-back summary → retrieval query pattern</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Step back: derive 3–5 high-level concepts underlying:
@@ -866,7 +863,7 @@ Then produce a concise retrieval query based on these
 concepts that would help answer the original question.
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def step_back_query(original_query):
     abstract_concepts = llm.generate(
@@ -893,13 +890,13 @@ def step_back_query(original_query):
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "How to fix CUDA OOM with Llama 3.1 70B?"<br />
                 <strong>After:</strong> "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints"
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '20px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Risk of over-abstraction</li>
                 <li>Needs good reranker to filter results</li>
                 <li>May lose specificity for narrow queries</li>
@@ -929,18 +926,18 @@ The rule of thumb: use step-back prompting when specific queries fail, but alway
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Improve retrieval quality by embedding a synthetic document that provides a hypothetical answer to the query, bridging the semantic gap</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Improve retrieval quality by embedding a synthetic document that provides a hypothetical answer to the query, bridging the semantic gap</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Strong recall gains in dense retrieval</li>
                 <li>Works with existing embedding models</li>
                 <li>No fine-tuning required</li>
                 <li>Bridges vocabulary gaps effectively</li>
                 <li>Zero-shot capability for new domains</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Particularly effective for:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <ul>
                 <li>Low recall in dense retrieval systems</li>
                 <li>Zero-shot domain applications</li>
                 <li>Queries with vocabulary mismatch</li>
@@ -966,9 +963,9 @@ HyDE shines when you have **low recall in dense retrieval**, for **zero-shot dom
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How HyDE Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How HyDE Works</h3></GSAPAnimated>
               <p>Instead of embedding the query directly:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>LLM generates a hypothetical answer document</strong> - Create synthetic document as if answering the query</li>
                 <li><strong>This synthetic document is embedded</strong> - Use embedding model to vectorize the hypothetical answer</li>
                 <li><strong>Retrieval uses this embedding to find similar real documents</strong> - Search for documents semantically similar to the answer</li>
@@ -990,9 +987,9 @@ First, the **LLM generates a hypothetical answer document** — a fake but plaus
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Generate hypothetical document → embed → retrieve</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Write a 120-200 word passage that would likely answer the following query.
@@ -1001,7 +998,7 @@ Do not include phrases like "according to" or "based on research".
 Query: {query}
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def hyde_retrieval(query, top_k=5):
     # Generate hypothetical document
@@ -1031,18 +1028,18 @@ One practical tip: you can generate **multiple hypothetical documents** with dif
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "causal ml uplift modeling tutorial"<br />
                 <strong>After (Hypothetical Document):</strong>
-                <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+                <ul>
                   <li>Uplift modeling is a machine learning technique that predicts the causal impact of a treatment on individual behavior. Unlike traditional ML models that predict outcomes, uplift models focus on incremental impact. The process involves collecting data with treatment and control groups, feature engineering, and model training.</li>
                   <li>Key steps include: 1) Split data into treatment/control groups, 2) Feature transformation with interaction terms, 3) Model training with algorithms like random forests or neural networks, 4) Evaluation using metrics like AUUC or Qini coefficient.</li>
                   <li>Common applications include marketing campaign optimization, personalized medicine, and customer retention strategies...</li>
                 </ul>
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Extra token usage and latency</li>
                 <li>Pseudo-doc bias if poorly guided</li>
                 <li>Quality depends on LLM's knowledge</li>
@@ -1073,17 +1070,17 @@ Use HyDE when dense retrieval underperforms. For simple keyword queries, it's ov
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Cover diverse intents/phrases to improve recall and handle query ambiguity by exploring different interpretations of user intent</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Cover diverse intents/phrases to improve recall and handle query ambiguity by exploring different interpretations of user intent</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', marginTop: '40px', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Robust to query ambiguity</li>
                 <li>Higher hit-rate for relevant documents</li>
                 <li>Better coverage of different aspects</li>
                 <li>Handles vocabulary mismatches</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ marginTop: '40px', fontSize: '2rem' }}>When to Use</h3>
               <p>Best suited for:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Ambiguous or underspecified queries</li>
                 <li>Heterogeneous document corpora</li>
                 <li>Tasks requiring breadth of coverage</li>
@@ -1108,9 +1105,9 @@ Instead of sending one query to your retrieval system, you generate **multiple d
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Multi-Query Generation Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Multi-Query Generation Works</h3></GSAPAnimated>
               <p>Generate multiple alternative query formulations:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Generate k diverse query variants</strong> - Create multiple formulations exploring different angles</li>
                 <li><strong>Retrieve documents for each variant</strong> - Execute separate retrieval for each query version</li>
                 <li><strong>Union results from all queries</strong> - Combine documents from all retrievals</li>
@@ -1133,9 +1130,9 @@ First, you **generate k diverse query variants** — typically three to five alt
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Generate diverse query variants, retrieve separately, then combine results</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Generate 5 diverse phrasings covering different
@@ -1146,7 +1143,7 @@ of queries, numbered 1-5, without explanations.
 Avoid duplicates or minor variations.
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def multi_query_retrieve(query):
     variants = llm.generate(prompt, query=query)
@@ -1174,11 +1171,11 @@ A practical optimization: run the retrieval calls **in parallel**. Since each va
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "LLM eval methods"<br />
                 <strong>After:</strong>
-                <ul style={{ marginTop: '10px', fontSize: '1.2rem' }}>
+                <ul>
                   <li>"evaluation frameworks for large language models"</li>
                   <li>"LLM benchmarks and testing methodologies"</li>
                   <li>"automatic evaluation prompts for language models"</li>
@@ -1186,8 +1183,8 @@ A practical optimization: run the retrieval calls **in parallel**. Since each va
                   <li>"RAG evaluation metrics and techniques"</li>
                 </ul>
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Increased cost and latency</li>
                 <li>Requires deduplication and fusion</li>
                 <li>More complex implementation</li>
@@ -1218,17 +1215,17 @@ Here's a great example of multi-query in action.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Make follow-up queries standalone and self-contained by incorporating conversation context and session history</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Make follow-up queries standalone and self-contained by incorporating conversation context and session history</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Significant quality improvement in chat</li>
                 <li>Reduces context window waste</li>
                 <li>Enables effective RAG on follow-ups</li>
                 <li>Preserves conversation flow</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Ideal for:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Conversational chatbots</li>
                 <li>Multi-turn question answering</li>
                 <li>Session-based search interfaces</li>
@@ -1253,9 +1250,9 @@ In a conversation, users naturally use pronouns and references: "Tell me about i
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Context-Aware Rewriting Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Context-Aware Rewriting Works</h3></GSAPAnimated>
               <p>Inject relevant contextual elements into the query:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Entities mentioned in previous turns</strong> - Replace pronouns with specific entity references</li>
                 <li><strong>Constraints established earlier</strong> - Include previously defined parameters and filters</li>
                 <li><strong>References to prior answers</strong> - Connect to relevant information from conversation</li>
@@ -1277,9 +1274,9 @@ Here's how context-aware rewriting works in practice.
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Rewrite follow-up queries using conversation history to make them self-contained</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Given the conversation history below, rewrite the follow-up
@@ -1291,7 +1288,7 @@ Follow-up query: {query}
 Standalone query:
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def context_aware_rewrite(query, history):
     conversation = format_history(history)
@@ -1318,13 +1315,13 @@ One important consideration: **how much history to include**. Sending the entire
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "And its limits?"<br />
                 <strong>After:</strong> "What are the 2024 rate limits for the Acme Pro API we discussed above?"
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Needs careful context selection</li>
                 <li>Potential privacy concerns</li>
                 <li>Can overspecify in some cases</li>
@@ -1354,17 +1351,17 @@ Be careful with **context selection** — picking the wrong context can lead to 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Resolve ambiguity in user queries before retrieval to improve precision and relevance of results</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Resolve ambiguity in user queries before retrieval to improve precision and relevance of results</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Significantly improves precision</li>
                 <li>Better user alignment and satisfaction</li>
                 <li>Reduces irrelevant results</li>
                 <li>Educates users on query formulation</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Ideal for scenarios with:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Short or vague queries</li>
                 <li>Ambiguous terms with multiple meanings</li>
                 <li>Missing contextual constraints</li>
@@ -1389,9 +1386,9 @@ Instead of silently rewriting the query, the system **detects ambiguity** and as
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Clarification Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Query Clarification Works</h3></GSAPAnimated>
               <p>The system:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Detects missing constraints or ambiguities</strong> - Analyze query for undefined terms or parameters</li>
                 <li><strong>Asks 1-2 targeted clarifying questions</strong> - Present specific options to disambiguate</li>
                 <li><strong>Proposes default interpretations when appropriate</strong> - Suggest common interpretations</li>
@@ -1413,9 +1410,9 @@ First, it **detects missing constraints or ambiguities** by analyzing the query 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Clarify→rewrite→retrieve workflow</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template for clarification
 """
 Analyze the query: "{query}"
@@ -1424,7 +1421,7 @@ If there are multiple possible interpretations, propose
 2 options for the user to choose from.
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation flow
 def clarify_query(query):
     ambiguity = detect_ambiguity(query)
@@ -1451,15 +1448,15 @@ In the implementation, you first run an ambiguity detector. If the ambiguity sco
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example - Interactive Clarification Flow</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example - Interactive Clarification Flow</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>User Query:</strong> "Apple pay policy"<br />
                 <strong>System Clarification:</strong> "Do you mean Apple Inc.'s payment policies or the fruit industry's payment policies? For Apple Inc., which region are you interested in?"<br /><br />
                 <strong>User Response:</strong> "Apple Inc., United States"<br />
                 <strong>Rewritten Query:</strong> "Apple Inc. digital payment policies and terms for Apple Pay service in the United States"
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+                <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Adds interaction step (latency)</li>
                 <li>Requires timeout handling</li>
                 <li>May frustrate users seeking quick answers</li>
@@ -1489,18 +1486,18 @@ Here's query clarification in a real scenario.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Add explicit constraints (time, source, locale, format) to focus retrieval on relevant document subsets</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Add explicit constraints (time, source, locale, format) to focus retrieval on relevant document subsets</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>High precision retrieval</li>
                 <li>Faster reranking (smaller candidate pool)</li>
                 <li>Better for enterprise/compliance use cases</li>
                 <li>Supports structured data sources</li>
                 <li>Combines well with BM25/keyword search</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Best for scenarios requiring high precision:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Enterprise search systems</li>
                 <li>Data analytics applications</li>
                 <li>Compliance and audit searches</li>
@@ -1526,9 +1523,9 @@ Query specification is about adding **structured constraints** to your query —
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Specification Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Query Specification Works</h3></GSAPAnimated>
               <p>Expand queries with structured filters and fielded search terms:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Time range specifications</strong> - Constrain results to specific date ranges</li>
                 <li><strong>Source/domain constraints</strong> - Limit to specific sites or domains</li>
                 <li><strong>File type filters</strong> - Target specific document formats</li>
@@ -1552,9 +1549,9 @@ Query specification works by expanding queries with structured search operators.
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Detect constraints → annotate query with explicit field filters</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.8rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Add explicit constraints for time range, document type, source,
@@ -1567,7 +1564,7 @@ Use search operators like:
 - entity:"Exact Name" for entity disambiguation
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.8rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def specify_query(query):
     # Extract entities and intent
@@ -1596,12 +1593,12 @@ One important note: this strategy works best with search engines that support fi
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "GDPR fines"<br />
                 <strong>After:</strong> "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf entity:\"data protection authority\""
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Risk of over-filtering (false negatives)</li>
                 <li>Requires field support in search system</li>
@@ -1633,17 +1630,17 @@ One important note: this strategy works best with search engines that support fi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Map user language to domain ontology/taxonomy, bridging the vocabulary gap between natural language queries and specialized terminology</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Map user language to domain ontology/taxonomy, bridging the vocabulary gap between natural language queries and specialized terminology</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Closes vocabulary gap between users and experts</li>
                 <li>Significantly improves recall in domain searches</li>
                 <li>Reduces "zero results" scenarios</li>
                 <li>Works well with both sparse and dense retrieval</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Best applied for domains with:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Specialized jargon (medical, legal, technical)</li>
                 <li>Product/SKU catalogs and e-commerce</li>
                 <li>Academic/scientific search</li>
@@ -1668,9 +1665,9 @@ Users speak one language, domain experts speak another. A patient says "heart at
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Semantic Bridging Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Semantic Bridging Works</h3></GSAPAnimated>
               <p>Expand/translate queries to canonical terms through:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Domain-specific ontology lookups</strong> - Match terms to formal taxonomies and classifications</li>
                 <li><strong>Terminology mapping (layman → expert)</strong> - Translate colloquial terms to technical vocabulary</li>
                 <li><strong>Synonym expansion with field expertise</strong> - Add domain-appropriate synonyms and related terms</li>
@@ -1692,9 +1689,9 @@ First, **domain-specific ontology lookups** match user terms to formal taxonomie
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>Ontology lookup + LLM normalization approach</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.8rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Map terms in the following query to canonical ontology labels.
@@ -1703,7 +1700,7 @@ Query: {query}
 Domain knowledge: {ontology_context}
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.8rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def semantic_bridge(query, domain):
     ontology = fetch_domain_ontology(domain)
@@ -1732,13 +1729,13 @@ A practical tip: build and maintain a **curated mapping dictionary** for your mo
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "heart attack treatment"<br />
                 <strong>After:</strong> "myocardial infarction (MI) management" OR "acute coronary syndrome therapy" OR "thrombolysis" OR "PCI" OR "cardiac revascularization"
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+                <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <ul>
                 <li>Requires curated domain ontology</li>
                 <li>Risk of ontology drift over time</li>
                 <li>May over-expand in ambiguous cases</li>
@@ -1768,17 +1765,17 @@ Here's a perfect medical example.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Improve retrieval by turning a query into a pseudo-document that reflects likely relevant content</h3></GSAPAnimated>
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Improve retrieval by turning a query into a pseudo-document that reflects likely relevant content</h3></GSAPAnimated>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Strong recall improvement</li>
                 <li>Richer semantic matching</li>
                 <li>Works well with dense retrieval</li>
                 <li>Bridges vocabulary gaps</li>
               </ul>
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <p>Best applied when:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <ul>
                 <li>Sparse or short queries lack context</li>
                 <li>Using dense or hybrid retrieval systems</li>
                 <li>Technical domains with specific terminology</li>
@@ -1803,9 +1800,9 @@ Query2Doc turns a query into a **pseudo-document** that mimics the style and con
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query2Doc Works</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>How Query2Doc Works</h3></GSAPAnimated>
               <p>Generate a document-style expansion of the query that:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li><strong>Mimics the style and content of relevant passages</strong> - Generated text resembles actual documents</li>
                 <li><strong>Contains key terms and relationships</strong> - Includes domain-specific vocabulary and connections</li>
                 <li><strong>Creates a richer representation for matching</strong> - Provides more semantic signal than query alone</li>
@@ -1827,9 +1824,9 @@ Query2Doc turns a query into a **pseudo-document** that mimics the style and con
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Implementation Pattern</h3></GSAPAnimated>
               <p>LLM document expansion → embed → retrieve</p>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.8rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
 """
 Write a 150-word pseudo-document that would appear in
@@ -1838,7 +1835,7 @@ terminology and technical concepts but stay factual.
 Query: {query}
 """`}
               </pre>
-              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+              <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.8rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Implementation example
 def query2doc(query):
     pseudo_doc = llm.generate(prompt, query=query)
@@ -1864,12 +1861,12 @@ A practical optimization: you can concatenate the original query with the pseudo
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "vector DB HNSW tuning"<br />
                 <strong>After (Pseudo-doc):</strong> "HNSW (Hierarchical Navigable Small World) is a graph-based indexing algorithm used in vector databases for approximate nearest neighbor search. Key tuning parameters include M (maximum connections per node), which controls graph connectivity; efConstruction (search width during build) affecting index quality; and efSearch (search width during query) balancing speed vs recall. Proper tuning requires understanding the tradeoff between index build time, search latency, and recall performance..."
               </div>
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Token-heavy approach</li>
                 <li>Risk of introducing hallucinations</li>
@@ -1900,9 +1897,9 @@ Here's Query2Doc in practice.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Self-refine queries via iterative retrieve→generate cycles to improve coverage and accuracy for complex questions</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Self-refine queries via iterative retrieve→generate cycles to improve coverage and accuracy for complex questions</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Better coverage without over-fetching</li>
                 <li>Progressive refinement of answers</li>
@@ -1911,8 +1908,8 @@ Here's Query2Doc in practice.
                 <li>More comprehensive final responses</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Hard questions requiring comprehensive info</li>
                 <li>Incomplete initial context</li>
                 <li>Multi-step reasoning requirements</li>
@@ -1937,9 +1934,9 @@ Here's Query2Doc in practice.
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Alternates between answer drafts and targeted follow-up queries</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Alternates between answer drafts and targeted follow-up queries</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Initial response identifies knowledge gaps</li>
                 <li>System generates targeted follow-up queries</li>
                 <li>Retrieves additional context on specific points</li>
@@ -1963,7 +1960,7 @@ Here's Query2Doc in practice.
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Given the current answer draft and identified gaps below,
@@ -1974,7 +1971,7 @@ Return only the follow-up queries without explanations.
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`def iter_retgen(query, max_iterations=3):
   draft = generate_initial_answer(query)
@@ -2002,7 +1999,7 @@ Return only the follow-up queries without explanations.
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Start:</strong> Initial query: "What are effective LLM guardrails?"<br />
                 <strong>Iter 1:</strong> Draft mentions input filtering. Follow-up: "prompt injection prevention techniques"<br />
@@ -2010,8 +2007,8 @@ Return only the follow-up queries without explanations.
                 <strong>Final:</strong> Comprehensive answer covering filtering, RLHF, sandboxing, output checking and monitoring
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Orchestration complexity</li>
                 <li>Increased latency</li>
                 <li>Higher token/API costs</li>
@@ -2042,18 +2039,18 @@ Here's ITER-RETGEN solving a complex question.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Standardize rewrites for recurring intents and query patterns to ensure consistency and quality</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Standardize rewrites for recurring intents and query patterns to ensure consistency and quality</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Consistent query quality</li>
                 <li>Fast execution (low latency)</li>
                 <li>Predictable behavior</li>
                 <li>Enforces standardized formats</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Customer support & documentation QA</li>
                 <li>E-commerce product search</li>
                 <li>Specialized domain knowledge</li>
@@ -2078,9 +2075,9 @@ Here's ITER-RETGEN solving a complex question.
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Fill predefined domain templates based on intent types</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Fill predefined domain templates based on intent types</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Lookup templates (product, document, person)</li>
                 <li>Comparison templates (A vs B by attribute)</li>
                 <li>Troubleshooting templates (error + system)</li>
@@ -2102,7 +2099,7 @@ There are several common template types. **Lookup templates** for finding specif
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Intent={intent}. Fill template with slots from: {query}.
@@ -2114,7 +2111,7 @@ Available templates:
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`def template_rewrite(query):
   intent = classify_intent(query)
@@ -2140,14 +2137,14 @@ One practical tip: start with five to ten templates covering your most common qu
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "compare s3 vs gcs pricing"<br />
                 <strong>After:</strong> "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1–10 TB, standard tier, 2024"
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Rigid structure limits flexibility</li>
                 <li>Requires template maintenance</li>
                 <li>Struggles with novel queries</li>
@@ -2177,10 +2174,10 @@ Here's template-based rewriting in action.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Disambiguate and ground queries to specific entities, resolving ambiguity and improving retrieval precision for entity-focused questions</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Disambiguate and ground queries to specific entities, resolving ambiguity and improving retrieval precision for entity-focused questions</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Significantly improves precision</li>
                 <li>Enables knowledge graph integration</li>
                 <li>Solves homonym/polysemy issues</li>
@@ -2188,8 +2185,8 @@ Here's template-based rewriting in action.
                 <li>Reduces irrelevant results</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Knowledge graph integration</li>
                 <li>Product catalogs and search</li>
                 <li>People/places/organization queries</li>
@@ -2215,9 +2212,9 @@ When a user searches "jaguar speed," what do they mean? The animal? The car? The
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Extract entities → link to knowledge base → enrich with attributes → reformulate query</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Extract entities → link to knowledge base → enrich with attributes → reformulate query</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Named Entity Recognition (NER) extraction</li>
                 <li>Entity linking to knowledge base IDs</li>
                 <li>Entity enrichment with attributes</li>
@@ -2239,7 +2236,7 @@ First, **NER extraction** identifies all entities in the query — people, organ
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Identify all entities in the following query.
@@ -2252,7 +2249,7 @@ Query: {query}
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`def entity_rewrite(query):
   # Extract entities
@@ -2282,14 +2279,14 @@ A practical alternative: if you don't have a full knowledge base, you can use th
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "jaguar speed"<br />
                 <strong>After:</strong> "Jaguar (animal:Panthera onca) top speed; exclude Jaguar (brand:automobile manufacturer)"
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Requires knowledge graph/entity database</li>
                 <li>Complex entity linking system needed</li>
                 <li>May struggle with novel/unknown entities</li>
@@ -2320,18 +2317,18 @@ Here's entity-centric rewriting solving the classic ambiguity problem.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Make time references explicit and current, ensuring retrieval of temporally relevant information and reducing outdated results</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Make time references explicit and current, ensuring retrieval of temporally relevant information and reducing outdated results</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Reduces stale/outdated search results</li>
                 <li>Significant relevance gains for time-sensitive topics</li>
                 <li>Improves specificity of versioned documentation</li>
                 <li>Handles implicit temporal context automatically</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>News and current events</li>
                 <li>Product pricing and availability queries</li>
                 <li>API documentation and changelog searches</li>
@@ -2357,9 +2354,9 @@ When a user asks for "latest OpenAI API quotas," what does "latest" mean? Today?
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Resolves and enhances temporal aspects through time normalization + recency boost</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Resolves and enhances temporal aspects through time normalization + recency boost</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Relative time normalization (e.g., "yesterday" → specific date)</li>
                 <li>Adding explicit date ranges</li>
                 <li>Boosting recency for time-sensitive topics</li>
@@ -2381,7 +2378,7 @@ This is surprisingly impactful. [storytelling] Consider a search for "Python bes
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Normalize any relative time expressions in the query below to absolute dates.
@@ -2392,7 +2389,7 @@ Query: {query}
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`def temporal_rewrite(query):
   current_date = datetime.now().strftime("%Y-%m-%d")
@@ -2421,14 +2418,14 @@ A practical tip: you can implement basic temporal rewriting with **simple regex 
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "latest OpenAI API quotas"<br />
                 <strong>After:</strong> "OpenAI API rate limits as of 2025-11; changes in 2024–2025"
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Requires fresh/updated index</li>
                 <li>May miss historically relevant information</li>
                 <li>Needs fine-tuning for specific domains</li>
@@ -2458,18 +2455,18 @@ Here's temporal rewriting in action.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Translate lay terms to domain jargon and fields, improving retrieval precision for specialized knowledge domains</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Translate lay terms to domain jargon and fields, improving retrieval precision for specialized knowledge domains</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>High precision in specialized corpora</li>
                 <li>Better matching to expert terminology</li>
                 <li>Improved semantic relevance</li>
                 <li>Efficient filtering via field constraints</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Legal research and case law</li>
                 <li>Medical/healthcare information retrieval</li>
                 <li>Financial/investment analysis</li>
@@ -2495,9 +2492,9 @@ While semantic bridging maps terms to ontologies, domain-specific rewriting **fu
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Maps query terms to domain-specific terminology and applies field-specific filters</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Maps query terms to domain-specific terminology and applies field-specific filters</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Specialized domain lexicons/ontologies</li>
                 <li>Field-specific constraints and filters</li>
                 <li>Terminology standardization</li>
@@ -2519,8 +2516,8 @@ While semantic bridging maps terms to ontologies, domain-specific rewriting **fu
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
-              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
+              <pre style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
                 {`"""
 Rewrite the following query using domain-appropriate
 terminology for {domain}. Preserve the original intent
@@ -2531,8 +2528,8 @@ Domain: {domain}
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
+              <pre style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
                 {`def domain_specific_rewrite(query, domain):
   # Load domain ontology
   ontology = load_domain_ontology(domain)
@@ -2564,14 +2561,14 @@ A practical consideration: you can build lightweight domain ontologies by extrac
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "blood thinner side effects"<br />
                 <strong>After:</strong> "anticoagulant adverse effects: warfarin, DOACs (apixaban, rivaroxaban), hemorrhagic complications field:pharmacology"
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Requires domain-specific knowledge/lexicons</li>
                 <li>Harder to maintain across evolving domains</li>
                 <li>May over-specialize simple queries</li>
@@ -2601,18 +2598,18 @@ Here's a medical example.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Match rewriting strategy to specific task types, improving retrieval performance by applying the most appropriate transformation for each intent</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Match rewriting strategy to specific task types, improving retrieval performance by applying the most appropriate transformation for each intent</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Centralized policy control</li>
                 <li>Highly scalable across domains</li>
                 <li>Adapts to varied query patterns</li>
                 <li>Can optimize for different metrics per intent</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Mixed query workloads</li>
                 <li>Systems with agent-based routing</li>
                 <li>Enterprise search with diverse needs</li>
@@ -2637,9 +2634,9 @@ Instead of applying the same rewriting strategy to every query, intent classific
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Classify query into intent categories, then apply specific strategies</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Classify query into intent categories, then apply specific strategies</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Lookup → entity-centric rewriting</li>
                 <li>Compare → multi-query & structured expansion</li>
                 <li>Troubleshoot → step-back & domain-specific</li>
@@ -2661,8 +2658,8 @@ Instead of applying the same rewriting strategy to every query, intent classific
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
-              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
+              <pre style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
                 {`"""
 Classify the intent of the following query into one category:
 - lookup (factual information)
@@ -2675,8 +2672,8 @@ Query: {query}
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
+              <pre style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
                 {`def intent_based_rewrite(query):
   # Classify intent
   intent = intent_classifier.predict(query)
@@ -2704,14 +2701,14 @@ A practical tip: start with a simple rule-based classifier using keyword pattern
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "fix 500 error nginx"<br />
                 <strong>After:</strong> Intent: troubleshoot → "Nginx 500 error troubleshooting steps for Ubuntu 22.04 - common causes, log file analysis, and configuration fixes"
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Requires high-accuracy intent model</li>
                 <li>Complex intent taxonomy needs maintenance</li>
                 <li>Multi-intent queries challenging</li>
@@ -2742,18 +2739,18 @@ Here's intent-based routing in action.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Maximize diversity among rewrites to cover multiple facets of a query, ensuring comprehensive coverage for ambiguous topics</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Maximize diversity among rewrites to cover multiple facets of a query, ensuring comprehensive coverage for ambiguous topics</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Comprehensive coverage across facets</li>
                 <li>Improves recall for complex topics</li>
                 <li>Better handles ambiguous queries</li>
                 <li>Surfaces different perspectives</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Broad, ambiguous topics</li>
                 <li>Exploratory search needs</li>
                 <li>Multiple potential interpretations</li>
@@ -2778,9 +2775,9 @@ Regular multi-query generation creates multiple query variants, but they can end
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Generate queries with explicit diversity constraints</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Generate queries with explicit diversity constraints</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Produce multiple rewrites covering different angles</li>
                 <li>Apply diversity penalties to minimize overlap</li>
                 <li>Use controlled sampling techniques</li>
@@ -2802,7 +2799,7 @@ Regular multi-query generation creates multiple query variants, but they can end
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Produce 6 diverse rewrites of the following query.
@@ -2816,7 +2813,7 @@ Query: {query}
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`def generate_diverse_queries(query):
   rewrites = llm.generate(prompt, query=query)
@@ -2843,11 +2840,11 @@ A practical tip: you can also use **maximal marginal relevance** (MMR 👉 'em-e
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "data governance framework"<br />
                 <strong>After:</strong>
-                <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+                <ul>
                   <li>1. "enterprise data governance policies and standards documentation"</li>
                   <li>2. "software tools implementing data governance controls"</li>
                   <li>3. "regulatory compliance aspects of information management"</li>
@@ -2857,8 +2854,8 @@ A practical tip: you can also use **maximal marginal relevance** (MMR 👉 'em-e
                 </ul>
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Fusion/dedup cost</li>
                 <li>Requires careful reranking</li>
                 <li>Higher token usage</li>
@@ -2888,18 +2885,18 @@ Here's DMQR tackling a broad topic.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Learn from user interactions (clicks, ratings, session data) to intelligently refine queries based on what worked for similar users</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Learn from user interactions (clicks, ratings, session data) to intelligently refine queries based on what worked for similar users</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Improves over time with usage</li>
                 <li>User-aligned and personalized</li>
                 <li>Adapts to changing content/trends</li>
                 <li>Leverages collective intelligence</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Production systems with telemetry</li>
                 <li>High-volume search applications</li>
                 <li>Domain-specific search engines</li>
@@ -2924,9 +2921,9 @@ Here's DMQR tackling a broad topic.
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Uses feedback signals to improve queries</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Uses feedback signals to improve queries</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Promote terms/entities from clicked documents</li>
                 <li>Suppress noise terms with low engagement</li>
                 <li>Apply collaborative filtering techniques</li>
@@ -2948,7 +2945,7 @@ It **promotes terms and entities from clicked documents** — if users consisten
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Given these clicked documents and user ratings:
@@ -2960,7 +2957,7 @@ Return only the refined query without explanation.
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`def feedback_rewrite(query, click_history):
   positive_docs = get_clicked_docs(click_history)
@@ -2990,15 +2987,15 @@ A practical consideration: you need a **minimum volume threshold** before feedba
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "vector database comparison"<br />
                 <strong>After:</strong> "vector database comparison HNSW vs IVF FAISS Qdrant Milvus efSearch time-accuracy tradeoff"<br />
                 <p style={{ marginTop: '10px' }}>User clicked on docs about HNSW/FAISS index types and specific DB implementations</p>
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Requires data pipeline/telemetry</li>
                 <li>Cold-start issues for new queries</li>
                 <li>Privacy considerations for feedback</li>
@@ -3028,18 +3025,18 @@ Here's feedback-based rewriting learning from user behavior.
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Use compact, reusable prompts to standardize query rewrites across different types of questions with minimal engineering effort</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Use compact, reusable prompts to standardize query rewrites across different types of questions with minimal engineering effort</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Fast to deploy with minimal setup</li>
                 <li>Highly flexible across query types</li>
                 <li>Easy to update and refine</li>
                 <li>Works with any capable LLM</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Quick wins without complex pipelines</li>
                 <li>Rapid prototyping and testing</li>
                 <li>Low engineering implementation lift</li>
@@ -3064,9 +3061,9 @@ Perfect for **quick wins without complex pipelines**, **rapid prototyping and te
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Utilizes well-crafted system prompts and few-shot examples</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Utilizes well-crafted system prompts and few-shot examples</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Enforce consistent style and structure</li>
                 <li>Include critical information fields</li>
                 <li>Guide LLM to maintain specific patterns</li>
@@ -3088,8 +3085,8 @@ Perfect for **quick wins without complex pipelines**, **rapid prototyping and te
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
-              <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
+              <pre style={{ fontSize: '0.7rem', lineHeight: '1.6' }}>
                 {`"""
 Rewrite the following query to be explicit, self-contained,
 and retrieval-optimized.
@@ -3107,8 +3104,8 @@ QUERY: {query}
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
+              <pre style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
                 {`def prompt_based_rewrite(query, context=None):
   system_prompt = "You are a query optimization expert."
   result = llm.generate(
@@ -3136,14 +3133,14 @@ QUERY: {query}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "api auth"<br />
                 <strong>After:</strong> "OAuth 2.0 authentication for Acme API docs 2024, guide/tutorial with implementation examples"
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Prompt drift over time</li>
                 <li>Quality varies by LLM capability</li>
                 <li>Less structured than rule-based systems</li>
@@ -3173,18 +3170,18 @@ Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Choose the best rewrite strategy per query context, optimizing performance across diverse query types</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Choose the best rewrite strategy per query context, optimizing performance across diverse query types</h3></GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px     ' }}>
+              <h3 style={{ color: '#2ecc71', fontSize: '2rem' }}>Benefits</h3>
+              <ul>
                 <li>Balanced quality/cost optimization</li>
                 <li>Robust across diverse query types</li>
                 <li>Self-improving with feedback</li>
                 <li>Flexible scaling of compute resources</li>
               </ul>
 
-              <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <ul>
                 <li>Heterogeneous query workloads</li>
                 <li>Variable cost/latency constraints</li>
                 <li>Production systems with metrics</li>
@@ -3209,9 +3206,9 @@ Let's see how it selects strategies.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Uses a policy model or agent to select among strategies</h3></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Uses a policy model or agent to select among strategies</h3></GSAPAnimated>
 
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <ul>
                 <li>Query characteristics (length, ambiguity)</li>
                 <li>Conversation context/history</li>
                 <li>Past performance signals</li>
@@ -3233,8 +3230,8 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
-              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3 style={{ fontSize: '2rem' }}>Prompt Template</h3></GSAPAnimated>
+              <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                 {`"""
 Given the following query and signals:
 Query: {query}
@@ -3249,8 +3246,8 @@ Signals:
 """`}
               </pre>
 
-              <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <h3 style={{ fontSize: '2rem' }}>Implementation</h3>
+              <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                 {`class AdaptiveQueryRewriter:
   def rewrite(self, query, state):
     signals = self.extract_signals(query, state)
@@ -3277,7 +3274,7 @@ Let's see a final example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3 style={{ fontSize: '2rem' }}>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Query:</strong> "apple"<br />
                 <strong>Policy:</strong> Ambiguous short query → Clarification Strategy<br />
@@ -3286,8 +3283,8 @@ Let's see a final example.`
                 <strong>Policy:</strong> Complex multi-entity → Decomposition Strategy
               </div>
 
-              <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2rem', marginTop: '10px   ' }}>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Weaknesses / Considerations</h3>
+              <ul>
                 <li>Requires policy training</li>
                 <li>Needs evaluation feedback loop</li>
                 <li>More complex orchestration</li>
