@@ -743,24 +743,24 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
           ),
           backgroundColor: '#1f6f28',
           notes: `### Hit Rate — Overview
-Welcome to our third metric: Hit Rate! This is often called the "minimum success criterion" for retrieval systems, and you'll see why in just a moment.
+[cheerfully] Welcome to our third metric: Hit Rate! [excited] This is often called the "minimum success criterion" for retrieval systems, and you'll see why in just a moment.
 
 ####  What Is Hit Rate?
-Think of Hit Rate as a yes-or-no question: "Did we find at least one good document?" That's it. It's beautifully simple. If your system retrieves ten documents for a query and even just one of them is relevant, that counts as a hit. If all ten are irrelevant, that's a miss. Hit Rate tells you the fraction of your queries where you managed to retrieve at least something useful in your top-K 👉 'top kay' results.
+[storytelling] Think of Hit Rate as a yes-or-no question: [quizzically] "Did we find at least one good document?" [playfully] That's it. It's beautifully simple. If your system retrieves ten documents for a query and even just one of them is relevant, that counts as a hit. If all ten are irrelevant, that's a miss. [lecture] Hit Rate tells you the fraction of your queries where you managed to retrieve at least something useful in your top-K 👉 'top kay' results.
 
 ####  Why This Matters for RAG
-Here's the thing: if your retrieval system completely whiffs and returns zero relevant documents, your LLM is flying blind. It has nothing to ground its response in, so you're almost guaranteed to get a hallucinated or "I don't know" response. Hit Rate ensures that your generator has at least one anchor point, one piece of relevant evidence to build from. It's the bare minimum for stable answer quality.
+[seriously] Here's the thing: if your retrieval system completely whiffs and returns zero relevant documents, your LLM is flying blind. It has nothing to ground its response in, so you're almost guaranteed to get a hallucinated or "I don't know" response. [confidently] Hit Rate ensures that your generator has at least one anchor point, one piece of relevant evidence to build from. It's the bare minimum for stable answer quality.
 
 ####  When to Use This
-Hit Rate is your go-to metric for production guardrails—you want to make sure that at least some relevant information makes it through for every query. It's perfect for quick health checks of your retrieval system, like a smoke test. Use it when designing fallback strategies for cases where retrieval struggles. And importantly, establish a good baseline Hit Rate before you start optimizing for more sophisticated metrics like precision or MRR 👉 'M R R'.
+[lecture] Hit Rate is your go-to metric for production guardrails—you want to make sure that at least some relevant information makes it through for every query. It's perfect for quick health checks of your retrieval system, like a smoke test. Use it when designing fallback strategies for cases where retrieval struggles. And importantly, establish a good baseline Hit Rate before you start optimizing for more sophisticated metrics like precision or MRR 👉 'M R R'.
 
 ####  Pros
-The good stuff: Hit Rate prevents catastrophic retrieval failures where you get absolutely nothing useful. It's a critical early warning signal—if your Hit Rate is low, you know immediately that you need to expand your knowledge base, generate synthetic training data, or fundamentally rethink your retrieval approach. It's also incredibly easy to understand and compute.
+[pleased] The good stuff: Hit Rate prevents catastrophic retrieval failures where you get absolutely nothing useful. It's a critical early warning signal—if your Hit Rate is low, you know immediately that you need to expand your knowledge base, generate synthetic training data, or fundamentally rethink your retrieval approach. It's also incredibly easy to understand and compute.
 
 ####  Cons
-The problems: Hit Rate is a very coarse metric. It treats "found one marginally relevant document" the same as "found ten highly relevant documents." It doesn't care about quality, it doesn't care about ranking position, and it won't help you with fine-grained optimization. Once you've got a decent Hit Rate, you need other metrics to actually improve your system.
+[disappointed] The problems: Hit Rate is a very coarse metric. It treats "found one marginally relevant document" the same as "found ten highly relevant documents." It doesn't care about quality, it doesn't care about ranking position, and it won't help you with fine-grained optimization. [conversational] Once you've got a decent Hit Rate, you need other metrics to actually improve your system.
 
-Let's see how this binary success metric actually works!`
+[enthusiastically] Let's see how this binary success metric actually works!`
         },
         {
           id: 12,
@@ -815,24 +815,24 @@ Let's see how this binary success metric actually works!`
           ),
           backgroundColor: '#1f6f28',
           notes: `### Hit Rate — How It Works
-Now let's break down the mechanics of how Hit Rate is actually calculated. Don't worry, it's refreshingly simple compared to some other metrics!
+[conversational] Now let's break down the mechanics of how Hit Rate is actually calculated. [reassuringly] Don't worry, it's refreshingly simple compared to some other metrics!
 
 ####  The Binary Decision
-Here's how it works: For each query in your test set, you run your retrieval system and get back your top-K results—maybe the top five or top ten documents. Then you ask one simple question: "Is at least one of these documents relevant?" If yes, you record a hit, which is a one. If no, you record a miss, which is a zero. That's the binary part—there's no middle ground, no partial credit.
+[lecture] Here's how it works: For each query in your test set, you run your retrieval system and get back your top-K results—maybe the top five or top ten documents. Then you ask one simple question: [quizzically] "Is at least one of these documents relevant?" [confidently] If yes, you record a hit, which is a one. If no, you record a miss, which is a zero. That's the binary part—there's no middle ground, no partial credit.
 
 ####  The Calculation
-Once you've done this for all your queries, you sum up all the hits—all those ones—and divide by the total number of queries. That gives you your Hit Rate. The formula you see here uses an indicator function, which is just a fancy mathematical way of saying "this returns one if the condition is true, zero otherwise." The condition is whether the intersection of relevant documents and your top-K results is greater than or equal to one.
+Once you've done this for all your queries, you sum up all the hits—all those ones—and divide by the total number of queries. That gives you your Hit Rate. [conversational] The formula you see here uses an indicator function, which is just a fancy mathematical way of saying "this returns one if the condition is true, zero otherwise." The condition is whether the intersection of relevant documents and your top-K results is greater than or equal to one.
 
 ####  What the Numbers Mean
-So what should you aim for? If you're working with FAQs 👉 'frequently asked questions' or a highly specialized corpus where queries are well-matched to your content, you want a Hit Rate of at least ninety-five percent. For broader or more diverse document collections where queries might be more varied, aim for at least eighty percent. If you're seeing lower values, that's a red flag—you probably need to improve your embedding model or rethink your chunking strategy.
+[quizzically] So what should you aim for? [lecture] If you're working with FAQs 👉 'frequently asked questions' or a highly specialized corpus where queries are well-matched to your content, you want a Hit Rate of at least ninety-five percent. For broader or more diverse document collections where queries might be more varied, aim for at least eighty percent. [cautiously] If you're seeing lower values, that's a red flag—you probably need to improve your embedding model or rethink your chunking strategy.
 
 ####  The Indicator Function
-That indicator function in the formula is doing something clever: it checks if the size of the intersection between relevant documents and your top-K is at least one. The intersection symbol means "what's in both sets," and if that intersection has at least one document, boom, you get a hit. Otherwise, you get a miss.
+[lecture] That indicator function in the formula is doing something clever: it checks if the size of the intersection between relevant documents and your top-K is at least one. The intersection symbol means "what's in both sets," and if that intersection has at least one document, boom, you get a hit. Otherwise, you get a miss.
 
 ####  Why Binary Works
-The beauty of this binary approach is that it's incredibly robust and easy to compute. You don't need to worry about edge cases or complex scoring—either you found something or you didn't. This makes Hit Rate a fantastic early-stage diagnostic metric.
+[pleased] The beauty of this binary approach is that it's incredibly robust and easy to compute. You don't need to worry about edge cases or complex scoring—either you found something or you didn't. This makes Hit Rate a fantastic early-stage diagnostic metric.
 
-Now let's look at a concrete example to make this crystal clear!`
+[enthusiastically] Now let's look at a concrete example to make this crystal clear!`
         },
         {
           id: 13,
@@ -855,27 +855,27 @@ Now let's look at a concrete example to make this crystal clear!`
           ),
           backgroundColor: '#1f6f28',
           notes: `### Hit Rate — Implementation
-Let's walk through a concrete example so you can see exactly how this works in practice.
+[conversational] Let's walk through a concrete example so you can see exactly how this works in practice.
 
 ####  The Scenario
-Imagine you're running a RAG system for a software company's product documentation. You've put together a test set of one hundred real user queries—questions that actual customers asked your support team. Now you want to know: how often does your retrieval system find at least one useful document for these queries? Let's find out.
+[storytelling] Imagine you're running a RAG system for a software company's product documentation. You've put together a test set of one hundred real user queries—questions that actual customers asked your support team. [quizzically] Now you want to know: how often does your retrieval system find at least one useful document for these queries? Let's find out.
 
 ####  Running the Test
-You take each of those one hundred queries and run them through your retrieval system, asking for the top-ten results each time. That's your top-K—K equals ten. Now comes the simple but crucial part: for each query, you manually check or use a pre-labeled dataset to determine whether at least one of those ten documents is actually relevant to the question.
+[lecture] You take each of those one hundred queries and run them through your retrieval system, asking for the top-ten results each time. That's your top-K—K equals ten. Now comes the simple but crucial part: for each query, you manually check or use a pre-labeled dataset to determine whether at least one of those ten documents is actually relevant to the question.
 
 ####  The Results
-In this example, you find that ninety-two of your one hundred queries successfully retrieved at least one relevant document. That means eight queries completely missed—they got ten results, but none of them were actually helpful. So your Hit Rate at ten is ninety-two divided by one hundred, which equals zero point ninety-two, or ninety-two percent.
+[conversational] In this example, you find that ninety-two of your one hundred queries successfully retrieved at least one relevant document. [disappointed] That means eight queries completely missed—they got ten results, but none of them were actually helpful. So your Hit Rate at ten is ninety-two divided by one hundred, which equals zero point ninety-two, or ninety-two percent.
 
 ####  Interpreting This Result
-Is ninety-two percent good? For product documentation with well-defined queries, it's decent but not great. Those eight misses represent eight cases where a customer would get a completely hallucinated or unhelpful answer because the retrieval system failed to find any grounding information. You'd probably want to dig into those eight failures, understand why they missed, and improve your system to catch them.
+[quizzically] Is ninety-two percent good? [cautiously] For product documentation with well-defined queries, it's decent but not great. Those eight misses represent eight cases where a customer would get a completely hallucinated or unhelpful answer because the retrieval system failed to find any grounding information. [confidently] You'd probably want to dig into those eight failures, understand why they missed, and improve your system to catch them.
 
 ####  Step-by-Step Process
-Let me repeat the calculation process because it's so simple yet powerful: First, for each query, run retrieval and get your top-K results. Second, check if at least one of those K documents is relevant—this gives you a one for hit or zero for miss. Third, sum up all those ones and zeros. Fourth, divide by the total number of queries. That's your Hit Rate. No complex math, no weighting schemes, just a straightforward success-or-failure count.
+[lecture] Let me repeat the calculation process because it's so simple yet powerful: First, for each query, run retrieval and get your top-K results. Second, check if at least one of those K documents is relevant—this gives you a one for hit or zero for miss. Third, sum up all those ones and zeros. Fourth, divide by the total number of queries. [pleased] That's your Hit Rate. No complex math, no weighting schemes, just a straightforward success-or-failure count.
 
 ####  Practical Tips
-When you're implementing this yourself, make sure you're consistent about what "relevant" means. Are you checking if the document contains the answer? If it's on the right topic? If it would help a human answer the question? Define this clearly up front, because consistency in your relevance judgments is what makes this metric meaningful.
+[seriously] When you're implementing this yourself, make sure you're consistent about what "relevant" means. [quizzically] Are you checking if the document contains the answer? If it's on the right topic? If it would help a human answer the question? [firmly] Define this clearly up front, because consistency in your relevance judgments is what makes this metric meaningful.
 
-Now let's talk about the broader impact and some important limitations you need to be aware of!`
+[enthusiastically] Now let's talk about the broader impact and some important limitations you need to be aware of!`
         },
         {
           id: 14,
@@ -927,30 +927,30 @@ Now let's talk about the broader impact and some important limitations you need 
           ),
           backgroundColor: '#1f6f28',
           notes: `### Hit Rate — Considerations
-Let's wrap up Hit Rate by talking about its real-world impact on your RAG system and the important limitations you need to keep in mind.
+[conversational] Let's wrap up Hit Rate by talking about its real-world impact on your RAG system and the important limitations you need to keep in mind.
 
 ####  Impact on RAG Systems
-The primary impact of Hit Rate is that it ensures your LLM has at least one anchor point for grounding its responses. Think of it like this: if you're writing an essay and you have zero sources, you're just making stuff up. But if you have even one good source, you can at least build something factual around it. High Hit Rate stabilizes answer quality by preventing those catastrophic cases where retrieval completely fails and the LLM has nothing to work with.
+[lecture] The primary impact of Hit Rate is that it ensures your LLM has at least one anchor point for grounding its responses. [storytelling] Think of it like this: if you're writing an essay and you have zero sources, you're just making stuff up. But if you have even one good source, you can at least build something factual around it. [pleased] High Hit Rate stabilizes answer quality by preventing those catastrophic cases where retrieval completely fails and the LLM has nothing to work with.
 
 ####  Early Warning System
-A low Hit Rate is one of the clearest signals that something is fundamentally wrong with your retrieval setup. It might mean your knowledge base doesn't actually contain the information users are asking about—in which case you need to expand it or generate synthetic data to fill the gaps. Or it could mean your embedding model is mismatched to your domain, your chunking strategy is breaking up important information in weird ways, or your queries need preprocessing. Whatever the cause, fix Hit Rate first before you worry about precision or ranking quality.
+[cautiously] A low Hit Rate is one of the clearest signals that something is fundamentally wrong with your retrieval setup. It might mean your knowledge base doesn't actually contain the information users are asking about—in which case you need to expand it or generate synthetic data to fill the gaps. Or it could mean your embedding model is mismatched to your domain, your chunking strategy is breaking up important information in weird ways, or your queries need preprocessing. [firmly] Whatever the cause, fix Hit Rate first before you worry about precision or ranking quality.
 
 ####  Why It's a Baseline Metric
-Hit Rate is what we call a baseline metric because it measures the absolute minimum requirement: did we get anything useful at all? It's like checking if a car engine starts before you worry about fuel efficiency or acceleration. You need a solid Hit Rate foundation before it makes sense to optimize for more nuanced metrics like MRR 👉 'M R R' or NDCG 👉 'N D C G'.
+[lecture] Hit Rate is what we call a baseline metric because it measures the absolute minimum requirement: did we get anything useful at all? [storytelling] It's like checking if a car engine starts before you worry about fuel efficiency or acceleration. [confidently] You need a solid Hit Rate foundation before it makes sense to optimize for more nuanced metrics like MRR 👉 'M R R' or NDCG 👉 'N D C G'.
 
 ####  The Binary Nature Problem
-Now, here's the big limitation: Hit Rate is binary, which means it treats all hits equally. Imagine two scenarios. In scenario A, you retrieve ten documents and exactly one of them is marginally relevant—maybe it mentions the topic but doesn't really help answer the question. In scenario B, you retrieve ten documents and eight of them are highly relevant, perfectly answering different aspects of the query. Both scenarios get the exact same Hit Rate of one hundred percent! The metric can't tell them apart.
+[disappointed] Now, here's the big limitation: Hit Rate is binary, which means it treats all hits equally. [storytelling] Imagine two scenarios. In scenario A, you retrieve ten documents and exactly one of them is marginally relevant—maybe it mentions the topic but doesn't really help answer the question. In scenario B, you retrieve ten documents and eight of them are highly relevant, perfectly answering different aspects of the query. [frustrated] Both scenarios get the exact same Hit Rate of one hundred percent! The metric can't tell them apart.
 
 ####  Missing the Quality Picture
-Hit Rate also doesn't care about where in your results the relevant document appears. Finding one relevant document in position one is treated the same as finding it in position ten, even though the first scenario is obviously better for your RAG system. And it doesn't capture the quality or relevance strength of the documents you found—a perfectly matching document counts the same as one that's barely on-topic.
+[cautiously] Hit Rate also doesn't care about where in your results the relevant document appears. Finding one relevant document in position one is treated the same as finding it in position ten, even though the first scenario is obviously better for your RAG system. And it doesn't capture the quality or relevance strength of the documents you found—a perfectly matching document counts the same as one that's barely on-topic.
 
 ####  When Hit Rate Isn't Enough
-Once you've achieved a decent Hit Rate—say, above eighty or ninety percent—it stops being a useful optimization target. At that point, you're hitting something relevant for most queries, and you need finer-grained metrics to actually improve your system. You need to know things like: are you retrieving enough relevant documents? Are the most relevant ones ranked highly? Are you also retrieving a lot of irrelevant junk? Hit Rate can't answer any of those questions.
+[conversational] Once you've achieved a decent Hit Rate—say, above eighty or ninety percent—it stops being a useful optimization target. At that point, you're hitting something relevant for most queries, and you need finer-grained metrics to actually improve your system. [quizzically] You need to know things like: are you retrieving enough relevant documents? Are the most relevant ones ranked highly? Are you also retrieving a lot of irrelevant junk? Hit Rate can't answer any of those questions.
 
 ####  The Right Tool for the Job
-The key takeaway is this: Hit Rate is a fantastic health check and a critical baseline, but it's not a silver bullet. Use it to ensure your retrieval system is working at a fundamental level, then graduate to more sophisticated metrics for optimization. Think of it as the first line of defense, not your only line of defense.
+[confidently] The key takeaway is this: Hit Rate is a fantastic health check and a critical baseline, but it's not a silver bullet. Use it to ensure your retrieval system is working at a fundamental level, then graduate to more sophisticated metrics for optimization. Think of it as the first line of defense, not your only line of defense.
 
-And that's Hit Rate! Simple, powerful, but with important limitations that you need to understand to use it effectively.`
+[pleased] And that's Hit Rate! Simple, powerful, but with important limitations that you need to understand to use it effectively.`
         }
       ]
     },
