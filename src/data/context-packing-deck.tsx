@@ -36,20 +36,20 @@ export const contextPackingDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
                 <div style={{ fontSize: '1.2rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <div>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     When and how to pack context for retrieval-augmented generation
                   </div>
-                  <div>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     Practical workflows for 13 techniques with examples
                   </div>
-                  <div>
-                    <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     Trade-offs, risks, and implementation tips
                   </div>
-                  <div>
-                    <SvgIcon iconName="duo-users-group" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-users-group" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong>Audience:</strong> ML engineers, data/knowledge engineers, LLM application builders
                   </div>
                 </div>
@@ -74,57 +74,59 @@ export const contextPackingDeck: Deck = {
           title: 'Overview / Table of Contents',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '0.5rem' }}></div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
-                <div>
-                  <div style={{ color: '#e06c75', marginBottom: '0.8rem' }}>
-                    <SvgIcon iconName="duo-scissors" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Chunking & Windowing</strong>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#e06c75', marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-scissors" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Chunking & Windowing</strong>
+                    </div>
+                    <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <div><strong>1)</strong> Semantic Chunking</div>
+                      <div><strong>2)</strong> Dynamic Sliding Window</div>
+                      <div><strong>3)</strong> Parent–Child Context Packing</div>
+                    </div>
                   </div>
-                  <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <div><strong>1)</strong> Semantic Chunking</div>
-                    <div><strong>2)</strong> Dynamic Sliding Window</div>
-                    <div><strong>3)</strong> Parent–Child Context Packing</div>
-                  </div>
-                </div>
 
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.8rem' }}>
-                    <SvgIcon iconName="duo-compress" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Summarization & Compression</strong>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-compress" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Summarization & Compression</strong>
+                    </div>
+                    <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <div><strong>4)</strong> Context Summarization Before Packing</div>
+                      <div><strong>5)</strong> Hybrid Local + Global Summaries</div>
+                      <div><strong>7)</strong> Passage Compression (LLM Shortening)</div>
+                    </div>
                   </div>
-                  <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <div><strong>4)</strong> Context Summarization Before Packing</div>
-                    <div><strong>5)</strong> Hybrid Local + Global Summaries</div>
-                    <div><strong>7)</strong> Passage Compression (LLM Shortening)</div>
-                  </div>
-                </div>
 
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.8rem' }}>
-                    <SvgIcon iconName="duo-ranking-star" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Relevance & Optimization</strong>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-ranking-star" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Relevance & Optimization</strong>
+                    </div>
+                    <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <div><strong>6)</strong> Relevance Weighted Packing</div>
+                      <div><strong>11)</strong> Token-Budget Aware Packing</div>
+                      <div><strong>12)</strong> Adaptive k Retrieval (Variable Cutoff)</div>
+                    </div>
                   </div>
-                  <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <div><strong>6)</strong> Relevance Weighted Packing</div>
-                    <div><strong>11)</strong> Token-Budget Aware Packing</div>
-                    <div><strong>12)</strong> Adaptive k Retrieval (Variable Cutoff)</div>
-                  </div>
-                </div>
 
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.8rem' }}>
-                    <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                    <strong>Structure & Deduplication</strong>
-                  </div>
-                  <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <div><strong>8)</strong> Answer-conditioned Retrieval / Packing</div>
-                    <div><strong>9)</strong> Table / Structured Context Packing</div>
-                    <div><strong>10)</strong> Semantic Deduplication</div>
-                    <div><strong>13)</strong> Chain-of-Context Packing (CoC)</div>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                      <strong>Structure & Deduplication</strong>
+                    </div>
+                    <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <div><strong>8)</strong> Answer-conditioned Retrieval / Packing</div>
+                      <div><strong>9)</strong> Table / Structured Context Packing</div>
+                      <div><strong>10)</strong> Semantic Deduplication</div>
+                      <div><strong>13)</strong> Chain-of-Context Packing (CoC)</div>
+                    </div>
                   </div>
                 </div>
               </GSAPStaggerList>
@@ -162,7 +164,7 @@ These **reshape and clean** context — Answer-conditioned, Table/Structured, Se
           title: '1) Semantic Chunking',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -252,7 +254,7 @@ Let's look at how to implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -286,7 +288,7 @@ Now let's weigh the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -335,7 +337,7 @@ Now let's weigh the trade-offs...`
           title: '2) Dynamic Sliding Window',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -427,7 +429,7 @@ Let's see how to implement it...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -457,7 +459,7 @@ Let's look at the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -505,7 +507,7 @@ Let's look at the trade-offs...`
           title: '3) Parent–Child Context Packing',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -597,7 +599,7 @@ Let's see the implementation...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -627,7 +629,7 @@ Let's discuss the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -678,7 +680,7 @@ Let's discuss the trade-offs...`
           title: '4) Context Summarization Before Packing',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -768,7 +770,7 @@ Let's implement it...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -798,7 +800,7 @@ Let's look at the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -849,7 +851,7 @@ Let's look at the trade-offs...`
           title: '5) Hybrid Local + Global Summaries',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -941,7 +943,7 @@ Let's implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -971,7 +973,7 @@ Let's discuss the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1020,7 +1022,7 @@ Let's discuss the trade-offs...`
           title: '6) Relevance Weighted Packing',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -1110,7 +1112,7 @@ Let's implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1140,7 +1142,7 @@ Let's look at the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1191,7 +1193,7 @@ Let's look at the trade-offs...`
           title: '7) Passage Compression (LLM Shortening)',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -1281,7 +1283,7 @@ Let's see how to build this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1311,7 +1313,7 @@ Let's look at the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1362,7 +1364,7 @@ Let's look at the trade-offs...`
           title: '8) Answer-conditioned Retrieval / Packing',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -1452,7 +1454,7 @@ Let's implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1482,7 +1484,7 @@ Let's see the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1531,7 +1533,7 @@ Let's see the trade-offs...`
           title: '9) Table / Structured Context Packing',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -1621,7 +1623,7 @@ Let's see how to implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1651,7 +1653,7 @@ Let's look at the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1702,7 +1704,7 @@ Let's look at the trade-offs...`
           title: '10) Semantic Deduplication',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -1792,7 +1794,7 @@ Let's implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1822,7 +1824,7 @@ Let's see the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -1873,7 +1875,7 @@ Let's see the trade-offs...`
           title: '11) Token-Budget Aware Packing',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -1965,7 +1967,7 @@ Let's implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1995,7 +1997,7 @@ Let's see the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2046,7 +2048,7 @@ Let's see the trade-offs...`
           title: '12) Adaptive k Retrieval (Variable Cutoff)',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -2136,7 +2138,7 @@ Let's see how to implement this...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -2166,7 +2168,7 @@ Let's look at the trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2217,7 +2219,7 @@ Let's look at the trade-offs...`
           title: '13) Chain-of-Context Packing (CoC)',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div>
@@ -2307,7 +2309,7 @@ Let's see the implementation...`
           title: 'Implementation Steps',
           content: (
             <div>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInTop">
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -2337,7 +2339,7 @@ Let's discuss the final trade-offs...`
           title: 'Pros & Cons',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0}>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
@@ -2388,10 +2390,10 @@ Let's wrap up with our summary and best practices...`
           title: 'Summary / Best Practices',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="scaleIn">
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <div style={{ color: '#98c379', marginBottom: '1rem' }}>
+                <div>
+                  <div style={{ color: '#98c379' }}>
                     <SvgIcon iconName="duo-check-circle" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Key Takeaways</strong>
                   </div>
@@ -2399,8 +2401,8 @@ Let's wrap up with our summary and best practices...`
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.3}>
                 <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #61dafb', marginBottom: '1rem' }}>
-                  <div style={{ marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong>Combine techniques</strong>
                   </div>
                   <div style={{ fontSize: '1.2rem' }}>
@@ -2408,8 +2410,8 @@ Let's wrap up with our summary and best practices...`
                   </div>
                 </div>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #98c379', marginBottom: '1rem' }}>
-                  <div style={{ marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong>Track token budget</strong>
                   </div>
                   <div style={{ fontSize: '1.2rem' }}>
@@ -2417,8 +2419,8 @@ Let's wrap up with our summary and best practices...`
                   </div>
                 </div>
                 <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b', marginBottom: '1rem' }}>
-                  <div style={{ marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong>Add hierarchy</strong>
                   </div>
                   <div style={{ fontSize: '1.2rem' }}>
@@ -2426,8 +2428,8 @@ Let's wrap up with our summary and best practices...`
                   </div>
                 </div>
                 <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
-                  <div style={{ marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-link" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-link" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong>Optimize order</strong>
                   </div>
                   <div style={{ fontSize: '1.2rem' }}>
@@ -2456,11 +2458,10 @@ Let's close with practical implementation tips...`
           title: 'Implementation Tips',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}></div>
-
+              <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="bounceIn">
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <div style={{ color: '#e5c07b', marginBottom: '1rem' }}>
+                <div>
+                  <div style={{ color: '#e5c07b' }}>
                     <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Implementation Tips</strong>
                   </div>
@@ -2474,7 +2475,7 @@ Let's close with practical implementation tips...`
 
               <GSAPAnimated animation="fadeIn" delay={0.5}>
                 <div>
-                  <div style={{ color: '#61dafb', marginBottom: '1rem' }}>
+                  <div style={{ color: '#61dafb' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                     <strong>Next Steps</strong>
                   </div>
