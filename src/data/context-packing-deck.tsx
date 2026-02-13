@@ -63,11 +63,11 @@ export const contextPackingDeck: Deck = {
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 13 Context Packing Techniques
-Welcome everyone! Today we're diving into **13 Context Packing Techniques** — practical strategies to help you get the *best possible answers* from your **RAG** 👉 'rag' (Retrieval-Augmented Generation) pipelines.
+[excited] [cheerfully] Welcome everyone! Today we're diving into **13 Context Packing Techniques** — practical strategies to help you get the *best possible answers* from your **RAG** 👉 'rag' (Retrieval-Augmented Generation) pipelines.
 #### Why does this matter?
-Think of it like packing a suitcase — you have *limited space* (token budget), and you want to fit the most *useful* items (context). Pack poorly, and your LLM gives bad answers. Pack smartly, and you get *precise*, *grounded* responses.
-> Quick poll: How many of you have hit a token limit and had your prompt truncated? That's exactly what we're solving today.
-We'll cover **when** to use each technique, **how** it works, and the **trade-offs** involved. Let's jump in!`
+[conversational] Think of it like packing a suitcase — you have *limited space* (token budget), and you want to fit the most *useful* items (context). [cautiously] Pack poorly, and your LLM gives bad answers. [confidently] Pack smartly, and you get *precise*, *grounded* responses.
+> [playfully] Quick poll: How many of you have hit a token limit and had your prompt truncated? [enthusiastically] That's exactly what we're solving today.
+[energetic] We'll cover **when** to use each technique, **how** it works, and the **trade-offs** involved. Let's jump in!`
         },
         {
           id: 2,
@@ -139,17 +139,17 @@ We'll cover **when** to use each technique, **how** it works, and the **trade-of
           ),
           backgroundColor: '#6b1d1d',
           notes: `### Overview / Table of Contents
-Here's our roadmap for the session. We've organized the 13 techniques into **four categories**:
+[confidently] Here's our roadmap for the session. We've organized the 13 techniques into **four categories**:
 #### 🔴 Chunking & Windowing
-These are your *foundation* techniques — how you **break up** documents before anything else. Semantic Chunking, Dynamic Sliding Window, and Parent–Child Packing.
+[lecture] These are your *foundation* techniques — how you **break up** documents before anything else. Semantic Chunking, Dynamic Sliding Window, and Parent–Child Packing.
 #### 🟢 Summarization & Compression
 These techniques **shrink** content — Context Summarization, Hybrid Local+Global, and Passage Compression.
 #### 🔵 Relevance & Optimization
 These **prioritize** what goes into context — Relevance Weighted, Token-Budget Aware, and Adaptive k Retrieval.
 #### 🟣 Structure & Deduplication
 These **reshape and clean** context — Answer-conditioned, Table/Structured, Semantic Dedup, and Chain-of-Context.
-> Notice: The numbering isn't sequential within categories — that's intentional. We ordered by *learning progression*.
-**Key insight:** The best systems *combine* multiple techniques. Let's start with the first one!`
+> [conversational] Notice: The numbering isn't sequential within categories — that's intentional. We ordered by *learning progression*.
+[inspiringly] **Key insight:** The best systems *combine* multiple techniques. Let's start with the first one!`
         }
       ]
     },
@@ -225,11 +225,11 @@ These **reshape and clean** context — Answer-conditioned, Table/Structured, Se
           ),
           backgroundColor: '#6b351d',
           notes: `### 1) Semantic Chunking
-Let's start with **Semantic Chunking** — the *foundation* of good context packing.
+[confidently] Let's start with **Semantic Chunking** — the *foundation* of good context packing.
 #### 🎯 Goal
-The goal is to **preserve meaning boundaries**. Imagine reading a book where someone ripped pages in the middle of sentences — that's what fixed-size chunking does. *Semantic chunking* cuts at natural boundaries instead.
+[lecture] The goal is to **preserve meaning boundaries**. [storytelling] Imagine reading a book where someone ripped pages in the middle of sentences — [disappointed] that's what fixed-size chunking does. [pleased] *Semantic chunking* cuts at natural boundaries instead.
 #### ⚙️ How It Works
-We segment documents by **semantics** — headings, paragraphs, discourse markers, code blocks, and lists.
+[conversational] We segment documents by **semantics** — headings, paragraphs, discourse markers, code blocks, and lists.
 \`\`\`mermaid
 flowchart LR
     A["📄 Raw Document"] --> B["�� Detect Boundaries"]
@@ -242,9 +242,9 @@ The document flows through boundary detection, gets split into meaningful chunks
 #### 📅 When to Use
 Perfect for **manuals**, **policies**, **code docs**, and **FAQs** — anything with *clear structural markers*.
 #### 📝 Example
-**Before:** A fixed 512-token window splits mid-sentence, losing meaning.
-**After:** Chunks align to sections and code blocks — each chunk is self-contained.
-> Think about your own documents — where do the natural "breaks" occur?
+[cautiously] **Before:** A fixed 512-token window splits mid-sentence, losing meaning.
+[pleased] **After:** Chunks align to sections and code blocks — each chunk is self-contained.
+> [quizzically] Think about your own documents — where do the natural "breaks" occur?
 Let's look at how to implement this...`
         },
         {
@@ -269,7 +269,7 @@ Let's look at how to implement this...`
           ),
           backgroundColor: '#6b351d',
           notes: `### Implementation Steps — Semantic Chunking
-Here's how you'd actually *build* semantic chunking:
+[lecture] Here's how you'd actually *build* semantic chunking:
 #### Step 1: Parse document structure
 Use an HTML/Markdown parser to identify headings, lists, code fences, and paragraph breaks.
 #### Step 2: Detect semantic units
@@ -278,7 +278,7 @@ Group content under each heading or structural marker as a single *semantic unit
 Set a soft minimum (e.g., 100 tokens) and maximum (e.g., 800 tokens). If a unit is too small, merge with neighbors. If too large, split at sub-boundaries.
 #### Step 4: Attach metadata and index
 Tag each chunk with source, section title, and position. Index into your vector store.
-> Pro tip: Start with heading-based splitting — it's the easiest win and covers 80% of cases.
+> [warmly] Pro tip: Start with heading-based splitting — it's the easiest win and covers 80% of cases.
 Now let's weigh the trade-offs...`
         },
         {
@@ -317,12 +317,12 @@ Now let's weigh the trade-offs...`
           backgroundColor: '#6b351d',
           notes: `### Pros & Cons — Semantic Chunking
 #### ✅ Pros
-- **Higher precision**: Each chunk contains a *complete* thought, so retrieval is more accurate
+[pleased] - **Higher precision**: Each chunk contains a *complete* thought, so retrieval is more accurate
 - **Fewer cross-chunk dependencies**: Less need to fetch neighboring chunks for context
 #### ❌ Cons
-- **Variable chunk sizes**: Chunks vary in length, which complicates token budget planning and caching strategies
-> Ask yourself: Is your content well-structured enough for semantic chunking? If yes, start here.
-Next up: what if chunks *still* lose context at boundaries? That's where **Dynamic Sliding Window** comes in...`
+[cautiously] - **Variable chunk sizes**: Chunks vary in length, which complicates token budget planning and caching strategies
+> [conversational] Ask yourself: Is your content well-structured enough for semantic chunking? If yes, start here.
+[confidently] Next up: what if chunks *still* lose context at boundaries? That's where **Dynamic Sliding Window** comes in...`
         }
       ]
     },
@@ -399,9 +399,9 @@ Next up: what if chunks *still* lose context at boundaries? That's where **Dynam
           ),
           backgroundColor: '#6b521d',
           notes: `### 2) Dynamic Sliding Window
-Now let's tackle **Dynamic Sliding Window** — solving the problem of *lost context at boundaries*.
+[enthusiastically] Now let's tackle **Dynamic Sliding Window** — solving the problem of *lost context at boundaries*.
 #### 🎯 Goal
-**Maintain continuity** across chunk boundaries. Even with semantic chunking, sometimes the answer *spans* two chunks.
+[lecture] **Maintain continuity** across chunk boundaries. [conversational] Even with semantic chunking, sometimes the answer *spans* two chunks.
 #### ⚙️ How It Works
 When you retrieve a chunk, you also grab its **neighbors** — the previous and next chunks — creating a *sliding window* of context.
 \`\`\`mermaid
@@ -417,9 +417,9 @@ Think of it like reading a paragraph — you need the sentence before and after 
 #### 📅 When to Use
 Great for **narratives**, **procedures**, **legal texts**, and **research papers** where ideas flow across boundaries.
 #### 📝 Example
-**Before:** Step 3 of a procedure is retrieved, but Step 2 (which defines key terms) is missing.
-**After:** Include Step 2 + Step 3 together for complete understanding.
-> Have you ever retrieved a chunk that referenced "the above" or "as mentioned" with no context? That's this problem.
+[disappointed] **Before:** Step 3 of a procedure is retrieved, but Step 2 (which defines key terms) is missing.
+[pleased] **After:** Include Step 2 + Step 3 together for complete understanding.
+> [playfully] Have you ever retrieved a chunk that referenced "the above" or "as mentioned" with no context? [amused] That's this problem.
 Let's see how to implement it...`
         },
         {
@@ -443,13 +443,13 @@ Let's see how to implement it...`
           ),
           backgroundColor: '#6b521d',
           notes: `### Implementation Steps — Dynamic Sliding Window
-#### Step 1: Choose window size and stride
+[lecture] #### Step 1: Choose window size and stride
 Decide how many neighbor chunks to include (e.g., ±1 or ±2). The *stride* is how much chunks overlap during indexing.
 #### Step 2: On retrieval, include ±N neighbors
 When a chunk scores high, automatically fetch its adjacent chunks from the index.
 #### Step 3: Deduplicate overlaps and respect token budget
 If multiple retrieved chunks share neighbors, merge and deduplicate. Always check total tokens.
-> Pro tip: Start with ±1 neighbor — it adds context without blowing up your token budget.
+> [warmly] Pro tip: Start with ±1 neighbor — it adds context without blowing up your token budget.
 Let's look at the trade-offs...`
         },
         {
@@ -487,12 +487,12 @@ Let's look at the trade-offs...`
           backgroundColor: '#6b521d',
           notes: `### Pros & Cons — Dynamic Sliding Window
 #### ✅ Pros
-- **Better coreference and flow**: Pronouns and references resolve correctly when surrounding context is included
+[pleased] - **Better coreference and flow**: Pronouns and references resolve correctly when surrounding context is included
 #### ❌ Cons
-- **Token overhead**: Including neighbors increases token usage — sometimes significantly with large windows
+[cautiously] - **Token overhead**: Including neighbors increases token usage — sometimes significantly with large windows
 - **Higher redundancy**: Overlapping windows may include the same text multiple times
-> Consider: How much does your content rely on cross-chunk references? The more it does, the more valuable this technique.
-Next: What if we add *hierarchical* context instead of just neighbors? Enter **Parent–Child Context Packing**...`
+> [conversational] Consider: How much does your content rely on cross-chunk references? The more it does, the more valuable this technique.
+[excited] Next: What if we add *hierarchical* context instead of just neighbors? Enter **Parent–Child Context Packing**...`
         }
       ]
     },
@@ -569,9 +569,9 @@ Next: What if we add *hierarchical* context instead of just neighbors? Enter **P
           ),
           backgroundColor: '#556b1d',
           notes: `### 3) Parent–Child Context Packing
-Let's explore **Parent–Child Context Packing** — adding *hierarchical context* to disambiguate details.
+[enthusiastically] Let's explore **Parent–Child Context Packing** — adding *hierarchical context* to disambiguate details.
 #### 🎯 Goal
-**Disambiguate details** with hierarchical context. Sometimes a chunk makes no sense without knowing *which section* it belongs to.
+[lecture] **Disambiguate details** with hierarchical context. [conversational] Sometimes a chunk makes no sense without knowing *which section* it belongs to.
 #### ⚙️ How It Works
 Pack the **child chunk** (the specific detail) plus its **parent summary** (section or chapter overview).
 \`\`\`mermaid
@@ -587,9 +587,9 @@ Think of it like a table of contents — the child is a paragraph, the parent is
 #### 📅 When to Use
 Ideal for **structured docs**, **API references**, and **code repos** where hierarchy matters.
 #### 📝 Example
-**Before:** An API method chunk about \`POST /users\` has no auth context — the LLM hallucinates auth steps.
-**After:** Method chunk + parent "Authentication" section summary = grounded answer.
-> How many of your documents have a natural hierarchy? Most technical docs do!
+[disappointed] **Before:** An API method chunk about \`POST /users\` has no auth context — the LLM hallucinates auth steps.
+[pleased] **After:** Method chunk + parent "Authentication" section summary = grounded answer.
+> [playfully] How many of your documents have a natural hierarchy? [enthusiastically] Most technical docs do!
 Let's see the implementation...`
         },
         {
@@ -613,13 +613,13 @@ Let's see the implementation...`
           ),
           backgroundColor: '#556b1d',
           notes: `### Implementation Steps — Parent–Child Context Packing
-#### Step 1: Build TOC tree (doc → section → paragraph)
+[lecture] #### Step 1: Build TOC tree (doc → section → paragraph)
 Parse your documents into a hierarchy — document, sections, subsections, paragraphs.
 #### Step 2: Precompute parent summaries
 Generate or extract a short summary for each section/chapter. Cache these for reuse.
 #### Step 3: On child retrieval, attach parent summary
 When a paragraph chunk is retrieved, prepend its parent section summary. Optionally include sibling cues (e.g., "This section also covers X, Y").
-> Pro tip: Store the parent-child relationships in your metadata — it makes retrieval-time packing trivial.
+> [warmly] Pro tip: Store the parent-child relationships in your metadata — it makes retrieval-time packing trivial.
 Let's discuss the trade-offs...`
         },
         {
@@ -659,13 +659,13 @@ Let's discuss the trade-offs...`
           backgroundColor: '#556b1d',
           notes: `### Pros & Cons — Parent–Child Context Packing
 #### ✅ Pros
-- **Reduces hallucinations**: The LLM has broader context, so it's less likely to make up information
+[pleased] - **Reduces hallucinations**: The LLM has broader context, so it's less likely to make up information
 - **Improves grounding**: Answers are tied to specific sections, making citations easier
 #### ❌ Cons
-- **Requires preprocessing**: You need to build and maintain the document tree structure
+[cautiously] - **Requires preprocessing**: You need to build and maintain the document tree structure
 - **Summaries can drift stale**: If the document changes, parent summaries may become outdated
-> Think about it: Is the upfront preprocessing cost worth the reduction in hallucinations? For most production systems, *yes*.
-Next: What if your content is just *too long*? Let's look at **Context Summarization**...`
+> [conversational] Think about it: Is the upfront preprocessing cost worth the reduction in hallucinations? [confidently] For most production systems, *yes*.
+[enthusiastically] Next: What if your content is just *too long*? Let's look at **Context Summarization**...`
         }
       ]
     },
@@ -741,7 +741,7 @@ Next: What if your content is just *too long*? Let's look at **Context Summariza
           ),
           backgroundColor: '#1d6b1f',
           notes: `### 4) Context Summarization Before Packing
-Now we're entering **summarization territory**. **Context Summarization Before Packing** is about fitting *long content* into *tight budgets*.
+[confidently] Now we're entering **summarization territory**. [lecture] **Context Summarization Before Packing** is about fitting *long content* into *tight budgets*.
 #### 🎯 Goal
 **Fit long sections within tight token budgets** by summarizing before packing.
 #### ⚙️ How It Works
@@ -758,9 +758,9 @@ Think of it like reading a book review instead of the whole book — you get the
 #### 📅 When to Use
 Essential for **policies**, **reports**, and **multi-document answers** where sources are verbose.
 #### 📝 Example
-**Before:** A 2,000-token policy chunk eats half your context budget.
-**After:** A 150-token summary captures the key rules and dates — leaving room for other evidence.
-> How much of your retrieved content is actually *relevant* to the answer? Summarization keeps only what matters.
+[disappointed] **Before:** A 2,000-token policy chunk eats half your context budget.
+[pleased] **After:** A 150-token summary captures the key rules and dates — leaving room for other evidence.
+> [quizzically] How much of your retrieved content is actually *relevant* to the answer? [confidently] Summarization keeps only what matters.
 Let's implement it...`
         },
         {
@@ -784,13 +784,13 @@ Let's implement it...`
           ),
           backgroundColor: '#1d6b1f',
           notes: `### Implementation Steps — Context Summarization
-#### Step 1: Select long candidates
+[lecture] #### Step 1: Select long candidates
 Identify chunks exceeding a length threshold (e.g., >500 tokens).
 #### Step 2: Summarize with rules/LLM; cap length
 Use rule-based extractive methods or an LLM to produce summaries. Set a target length cap (e.g., 150 tokens).
 #### Step 3: Validate and cache summaries for reuse
 Check that summaries preserve key facts (dates, numbers, entities). Cache them so you don't re-summarize on every query.
-> Pro tip: Use extractive summarization for factual content (numbers, dates) and abstractive for narrative content.
+> [warmly] Pro tip: Use extractive summarization for factual content (numbers, dates) and abstractive for narrative content.
 Let's look at the trade-offs...`
         },
         {
@@ -830,13 +830,13 @@ Let's look at the trade-offs...`
           backgroundColor: '#1d6b1f',
           notes: `### Pros & Cons — Context Summarization
 #### ✅ Pros
-- **Higher density**: More information per token — you fit more evidence into the same budget
+[pleased] - **Higher density**: More information per token — you fit more evidence into the same budget
 - **Faster inference**: Shorter prompts mean faster LLM responses and lower cost
 #### ❌ Cons
-- **Summarization loss or bias**: Key details may be dropped, or the summary may introduce bias
+[cautiously] - **Summarization loss or bias**: Key details may be dropped, or the summary may introduce bias
 - **Extra compute cost**: Running summarization models adds latency and cost to your pipeline
-> Key question: Can you afford to lose some detail for better coverage? If your answers need *exact quotes*, summarization may not be ideal.
-Next: What if you need *both* the big picture AND specific details? That's **Hybrid Local + Global Summaries**...`
+> [conversational] Key question: Can you afford to lose some detail for better coverage? If your answers need *exact quotes*, summarization may not be ideal.
+[excited] Next: What if you need *both* the big picture AND specific details? That's **Hybrid Local + Global Summaries**...`
         }
       ]
     },
@@ -913,9 +913,9 @@ Next: What if you need *both* the big picture AND specific details? That's **Hyb
           ),
           backgroundColor: '#1d6b4d',
           notes: `### 5) Hybrid Local + Global Summaries
-**Hybrid Local + Global Summaries** gives you the best of both worlds — *big picture* context AND *specific details*.
+[enthusiastically] **Hybrid Local + Global Summaries** gives you the best of both worlds — *big picture* context AND *specific details*.
 #### 🎯 Goal
-**Preserve the big picture** while keeping crucial details accessible.
+[lecture] **Preserve the big picture** while keeping crucial details accessible.
 #### ⚙️ How It Works
 Combine a short **global summary** (document-level overview) with the top **local snippets** (specific passages).
 \`\`\`mermaid
@@ -931,9 +931,9 @@ Think of it like a news article — the headline (global) tells you the story, a
 #### 📅 When to Use
 Perfect for **mixed queries** that need both an overall understanding AND specific details.
 #### 📝 Example
-**Before:** Only local snippets are packed — the LLM misses the broader context and gives a narrow answer.
-**After:** An 80-token global summary + 2–3 local quotes = comprehensive, grounded response.
-> Think about search queries like "Tell me about the refund policy and the specific deadline" — you need both levels.
+[disappointed] **Before:** Only local snippets are packed — the LLM misses the broader context and gives a narrow answer.
+[pleased] **After:** An 80-token global summary + 2–3 local quotes = comprehensive, grounded response.
+> [conversational] Think about search queries like "Tell me about the refund policy and the specific deadline" — you need both levels.
 Let's implement this...`
         },
         {
@@ -957,13 +957,13 @@ Let's implement this...`
           ),
           backgroundColor: '#1d6b4d',
           notes: `### Implementation Steps — Hybrid Local + Global
-#### Step 1: Compute document-level global summary
+[lecture] #### Step 1: Compute document-level global summary
 Generate a concise summary of the entire document (or corpus section). This captures themes, key topics, and scope.
 #### Step 2: Retrieve local passages
 Use standard vector retrieval to find the most relevant specific passages.
 #### Step 3: Pack [Global] first, then [Local extracts] with citations
 Structure the context as: [Global Summary] followed by [Local Extract 1], [Local Extract 2], etc. Add source citations to each local extract.
-> Pro tip: Label sections clearly — e.g., "[Overview]" and "[Detail 1]" — so the LLM knows which is which.
+> [warmly] Pro tip: Label sections clearly — e.g., "[Overview]" and "[Detail 1]" — so the LLM knows which is which.
 Let's discuss the trade-offs...`
         },
         {
@@ -1002,12 +1002,12 @@ Let's discuss the trade-offs...`
           backgroundColor: '#1d6b4d',
           notes: `### Pros & Cons — Hybrid Local + Global
 #### ✅ Pros
-- **Balanced coverage and precision**: The global summary provides context, local snippets provide evidence
+[pleased] - **Balanced coverage and precision**: The global summary provides context, local snippets provide evidence
 #### ❌ Cons
-- **Prep overhead**: You need to generate and maintain global summaries for each document
+[cautiously] - **Prep overhead**: You need to generate and maintain global summaries for each document
 - **Potential contradictions**: The global summary and local details might sometimes conflict — you need reconciliation logic
-> Consider: For customer-facing RAG systems, this technique is often a *game-changer* because users ask both broad and specific questions.
-Next: Let's talk about **prioritizing** which chunks make the cut — **Relevance Weighted Packing**...`
+> [inspiringly] Consider: For customer-facing RAG systems, this technique is often a *game-changer* because users ask both broad and specific questions.
+[confidently] Next: Let's talk about **prioritizing** which chunks make the cut — **Relevance Weighted Packing**...`
         }
       ]
     },
@@ -1083,9 +1083,9 @@ Next: Let's talk about **prioritizing** which chunks make the cut — **Relevanc
           ),
           backgroundColor: '#1d5d6b',
           notes: `### 6) Relevance Weighted Packing
-**Relevance Weighted Packing** is about *prioritization* — making sure the *best* chunks get packed first.
+[confidently] **Relevance Weighted Packing** is about *prioritization* — making sure the *best* chunks get packed first.
 #### 🎯 Goal
-**Maximize utility** by prioritizing high-relevance chunks within your token budget.
+[lecture] **Maximize utility** by prioritizing high-relevance chunks within your token budget.
 #### ⚙️ How It Works
 Rank all candidate chunks by a **relevance score**, then **pack the highest-scoring** ones first until the budget is filled.
 \`\`\`mermaid
@@ -1100,9 +1100,9 @@ Think of it like a talent show — the best performers go on stage first, and wh
 #### 📅 When to Use
 Essential when you have **tight token budgets** or **noisy corpora** with lots of low-quality content.
 #### 📝 Example
-**Before:** Arbitrary top-k retrieval — some low-relevance chunks waste valuable tokens.
-**After:** Highest-scoring, diverse set of chunks fills the budget efficiently.
-> How do you currently decide which chunks make the cut? If it's just "top 5," you're leaving quality on the table.
+[disappointed] **Before:** Arbitrary top-k retrieval — some low-relevance chunks waste valuable tokens.
+[pleased] **After:** Highest-scoring, diverse set of chunks fills the budget efficiently.
+> [quizzically] How do you currently decide which chunks make the cut? [seriously] If it's just "top 5," you're leaving quality on the table.
 Let's implement this...`
         },
         {
@@ -1126,13 +1126,13 @@ Let's implement this...`
           ),
           backgroundColor: '#1d5d6b',
           notes: `### Implementation Steps — Relevance Weighted Packing
-#### Step 1: Score by similarity + recency + source quality
+[lecture] #### Step 1: Score by similarity + recency + source quality
 Combine multiple signals: vector similarity score, document freshness, and source authority/quality rating.
 #### Step 2: Optional MMR/diversity
 Apply **Maximal Marginal Relevance** 👉 'M-M-R' to ensure diversity — avoid packing 5 chunks that all say the same thing.
 #### Step 3: Greedy pack until budget filled
 Iterate through ranked chunks, adding each if it fits the remaining token budget. Stop when full.
-> Pro tip: Weight recency higher for rapidly changing domains (news, support tickets) and similarity higher for static knowledge bases.
+> [warmly] Pro tip: Weight recency higher for rapidly changing domains (news, support tickets) and similarity higher for static knowledge bases.
 Let's look at the trade-offs...`
         },
         {
@@ -1172,13 +1172,13 @@ Let's look at the trade-offs...`
           backgroundColor: '#1d5d6b',
           notes: `### Pros & Cons — Relevance Weighted Packing
 #### ✅ Pros
-- **Better hit rate**: More of your context window contains *useful* information
+[pleased] - **Better hit rate**: More of your context window contains *useful* information
 - **Fewer irrelevant tokens**: Noisy, off-topic chunks get filtered out
 #### ❌ Cons
-- **Can exclude necessary low-scoring context**: Sometimes a chunk with a low similarity score contains crucial background info
+[cautiously] - **Can exclude necessary low-scoring context**: Sometimes a chunk with a low similarity score contains crucial background info
 - **Bias risk**: If your scoring favors certain sources, you may systematically miss others
-> Key insight: Relevance scoring is only as good as your embedding model and scoring function. Invest time in tuning these.
-Next up: What if chunks are just *too long*? Let's **compress** them with **Passage Compression**...`
+> [seriously] Key insight: Relevance scoring is only as good as your embedding model and scoring function. Invest time in tuning these.
+[enthusiastically] Next up: What if chunks are just *too long*? Let's **compress** them with **Passage Compression**...`
         }
       ]
     },
@@ -1271,9 +1271,9 @@ Think of it like an editor condensing a long article into bullet points — same
 #### 📅 When to Use
 Great for **support chats**, **logs**, and **verbose prose** where most words are filler.
 #### 📝 Example
-**Before:** A 300-token paragraph with lots of preamble and repetition.
-**After:** An 80-token bullet list with just the key facts — 73% compression!
-> Imagine fitting 4x more evidence into the same context window. That's the power of compression.
+[disappointed] **Before:** A 300-token paragraph with lots of preamble and repetition.
+[excited] **After:** An 80-token bullet list with just the key facts — 73% compression!
+> [enthusiastically] Imagine fitting 4x more evidence into the same context window. That's the power of compression.
 Let's see how to build this...`
         },
         {
@@ -1297,13 +1297,13 @@ Let's see how to build this...`
           ),
           backgroundColor: '#1d366b',
           notes: `### Implementation Steps — Passage Compression
-#### Step 1: Define compression prompt/constraints
+[lecture] #### Step 1: Define compression prompt/constraints
 Create a prompt template: "Compress the following passage into concise bullets. Preserve all dates, numbers, entity names, and causal relationships."
 #### Step 2: Compress retrieved chunks; keep citations/IDs
 Run the compressor on each retrieved chunk. Maintain a mapping from compressed text back to the original source for citation.
 #### Step 3: Enforce length caps; cache results
 Set a maximum length per compressed chunk. Cache compressed versions so you don't reprocess the same chunk repeatedly.
-> Pro tip: Test compression quality by comparing LLM answers using original vs. compressed context — if answers degrade, dial back compression.
+> [warmly] Pro tip: Test compression quality by comparing LLM answers using original vs. compressed context — if answers degrade, dial back compression.
 Let's look at the trade-offs...`
         },
         {
@@ -1343,13 +1343,13 @@ Let's look at the trade-offs...`
           backgroundColor: '#1d366b',
           notes: `### Pros & Cons — Passage Compression
 #### ✅ Pros
-- **Fit more evidence**: Dramatically increase the amount of evidence in your context window
+[pleased] - **Fit more evidence**: Dramatically increase the amount of evidence in your context window
 - **Faster inference**: Shorter prompts = faster and cheaper LLM responses
 #### ❌ Cons
-- **Information loss**: The compressor might drop subtle but important details
+[cautiously] - **Information loss**: The compressor might drop subtle but important details
 - **Extra LLM cost/latency**: Running a compression step adds time and cost to each query
-> Balance check: If your RAG system is latency-sensitive, consider pre-compressing at index time rather than query time.
-Next: What if you could be *smarter* about what to retrieve based on the *type* of answer needed? That's **Answer-conditioned Retrieval**...`
+> [conversational] Balance check: If your RAG system is latency-sensitive, consider pre-compressing at index time rather than query time.
+[excited] Next: What if you could be *smarter* about what to retrieve based on the *type* of answer needed? That's **Answer-conditioned Retrieval**...`
         }
       ]
     },
@@ -1425,9 +1425,9 @@ Next: What if you could be *smarter* about what to retrieve based on the *type* 
           ),
           backgroundColor: '#1d206b',
           notes: `### 8) Answer-conditioned Retrieval / Packing
-**Answer-conditioned Retrieval** flips the script — instead of just matching the *question*, we consider the *type of answer* we need.
+[confidently] **Answer-conditioned Retrieval** flips the script — instead of just matching the *question*, we consider the *type of answer* we need.
 #### 🎯 Goal
-**Include only fields relevant to the answer type** — don't waste tokens on irrelevant content.
+[lecture] **Include only fields relevant to the answer type** — don't waste tokens on irrelevant content.
 #### ⚙️ How It Works
 First, **predict the answer schema** (is it a date? a boolean? a code snippet?), then **filter context** to include only relevant fields.
 \`\`\`mermaid
@@ -1442,9 +1442,9 @@ Think of it like a doctor ordering specific tests based on symptoms — you don'
 #### 📅 When to Use
 Best for **forms**, **finance**, **SLAs**, and **code Q&A** where answers have predictable shapes.
 #### 📝 Example
-**Before:** The full policy text is packed for a "refund deadline" question — most of it is irrelevant.
-**After:** Only date clauses and policy table fields are packed — laser-focused context.
-> How often do your users ask questions with predictable answer formats? If often, this technique is gold.
+[disappointed] **Before:** The full policy text is packed for a "refund deadline" question — most of it is irrelevant.
+[pleased] **After:** Only date clauses and policy table fields are packed — laser-focused context.
+> [playfully] How often do your users ask questions with predictable answer formats? If often, this technique is gold.
 Let's implement this...`
         },
         {
@@ -1468,13 +1468,13 @@ Let's implement this...`
           ),
           backgroundColor: '#1d206b',
           notes: `### Implementation Steps — Answer-conditioned Retrieval
-#### Step 1: Classify query → answer type
+[lecture] #### Step 1: Classify query → answer type
 Build a classifier (rule-based or ML) that predicts: boolean, date, number, code, list, explanation, etc.
 #### Step 2: Map to fields/templates
 Create templates for each answer type — e.g., for "date" queries, extract date fields, effective periods, and deadlines.
 #### Step 3: Retrieve and pack only relevant fields
 Use the template to filter which fields/columns/sections to include in the context window.
-> Pro tip: Start with a simple rule-based classifier (keyword matching) and upgrade to ML as your query volume grows.
+> [warmly] Pro tip: Start with a simple rule-based classifier (keyword matching) and upgrade to ML as your query volume grows.
 Let's see the trade-offs...`
         },
         {
@@ -1513,12 +1513,12 @@ Let's see the trade-offs...`
           backgroundColor: '#1d206b',
           notes: `### Pros & Cons — Answer-conditioned Retrieval
 #### ✅ Pros
-- **Efficient and accurate**: Only relevant fields are packed — no wasted tokens, higher answer precision
+[pleased] - **Efficient and accurate**: Only relevant fields are packed — no wasted tokens, higher answer precision
 #### ❌ Cons
-- **Misclassification risk**: If the query type is classified wrong, you'll pack the wrong fields entirely
+[cautiously] - **Misclassification risk**: If the query type is classified wrong, you'll pack the wrong fields entirely
 - **Needs schema mapping**: You have to build and maintain answer-type templates for each domain
-> Consider: This technique works best in *structured domains* where answers follow predictable patterns. For open-ended Q&A, it's less useful.
-Next: Let's **structure** our context for maximum density — **Table / Structured Context Packing**...`
+> [conversational] Consider: This technique works best in *structured domains* where answers follow predictable patterns. For open-ended Q&A, it's less useful.
+[enthusiastically] Next: Let's **structure** our context for maximum density — **Table / Structured Context Packing**...`
         }
       ]
     },
@@ -1594,9 +1594,9 @@ Next: Let's **structure** our context for maximum density — **Table / Structur
           ),
           backgroundColor: '#331d6b',
           notes: `### 9) Table / Structured Context Packing
-**Table / Structured Context Packing** is about *reformatting* your context for maximum information density.
+[confidently] **Table / Structured Context Packing** is about *reformatting* your context for maximum information density.
 #### 🎯 Goal
-**Increase information density** by converting prose into structured formats.
+[lecture] **Increase information density** by converting prose into structured formats.
 #### ⚙️ How It Works
 Convert verbose passages into **compact bullets**, **key-value rows**, or **mini-tables** that pack more info per token.
 \`\`\`mermaid
@@ -1611,9 +1611,9 @@ Think of it like converting a long email into a spreadsheet — same data, much 
 #### 📅 When to Use
 Ideal for **specs**, **product catalogs**, **schedules**, and **APIs** — anywhere data has repeating fields.
 #### 📝 Example
-**Before:** Long paragraphs describing product features, specs, and limits.
-**After:** A clean field-value list: "Max Users: 100 | Storage: 50GB | API Rate: 1000/min"
-> How much of your content could be restructured as key-value pairs? You'd be surprised!
+[disappointed] **Before:** Long paragraphs describing product features, specs, and limits.
+[pleased] **After:** A clean field-value list: "Max Users: 100 | Storage: 50GB | API Rate: 1000/min"
+> [quizzically] How much of your content could be restructured as key-value pairs? You'd be surprised!
 Let's see how to implement this...`
         },
         {
@@ -1637,13 +1637,13 @@ Let's see how to implement this...`
           ),
           backgroundColor: '#331d6b',
           notes: `### Implementation Steps — Structured Context Packing
-#### Step 1: Extract entities/fields
+[lecture] #### Step 1: Extract entities/fields
 Use NER (Named Entity Recognition) or regex to identify key fields like names, dates, quantities, and categories.
 #### Step 2: Normalize units and names
 Standardize formats — e.g., "10 GB" vs "10240 MB" → choose one consistent representation.
 #### Step 3: Pack as structured rows with provenance
 Format as key-value pairs or mini-tables. Always include source references so the LLM can cite.
-> Pro tip: LLMs are *very* good at reading structured formats like JSON, Markdown tables, or YAML — use them!
+> [warmly] Pro tip: LLMs are *very* good at reading structured formats like JSON, Markdown tables, or YAML — use them!
 Let's look at the trade-offs...`
         },
         {
@@ -1683,13 +1683,13 @@ Let's look at the trade-offs...`
           backgroundColor: '#331d6b',
           notes: `### Pros & Cons — Structured Context Packing
 #### ✅ Pros
-- **High density**: Pack significantly more information per token than prose
+[pleased] - **High density**: Pack significantly more information per token than prose
 - **Consistent formatting**: LLMs parse structured data more reliably than unstructured text
 #### ❌ Cons
-- **Conversion effort**: Transforming prose to structured format requires NLP pipelines or manual rules
+[cautiously] - **Conversion effort**: Transforming prose to structured format requires NLP pipelines or manual rules
 - **Nuance may be lost**: Prose carries tone, caveats, and qualifications that structured formats may drop
-> Key question: Is your content *already* semi-structured (e.g., product specs, API docs)? If so, this is an easy win.
-Next: What about *duplicate* content wasting your token budget? Enter **Semantic Deduplication**...`
+> [conversational] Key question: Is your content *already* semi-structured (e.g., product specs, API docs)? If so, this is an easy win.
+[enthusiastically] Next: What about *duplicate* content wasting your token budget? Enter **Semantic Deduplication**...`
         }
       ]
     },
@@ -1765,9 +1765,9 @@ Next: What about *duplicate* content wasting your token budget? Enter **Semantic
           ),
           backgroundColor: '#691d6b',
           notes: `### 10) Semantic Deduplication
-**Semantic Deduplication** 👉 'semantic dee-dup' — is about removing *redundant* chunks that say the same thing.
+[confidently] **Semantic Deduplication** 👉 'semantic dee-dup' — is about removing *redundant* chunks that say the same thing.
 #### 🎯 Goal
-**Remove overlapping or near-duplicate chunks** before packing to save tokens.
+[lecture] **Remove overlapping or near-duplicate chunks** before packing to save tokens.
 #### ⚙️ How It Works
 Use **clustering** or **similarity thresholds** to detect and drop duplicate chunks, keeping only the best representative.
 \`\`\`mermaid
@@ -1782,9 +1782,9 @@ Think of it like cleaning your photo library — delete the duplicates, keep the
 #### 📅 When to Use
 Essential for **scraped web content**, **versioned docs**, and **mirrored content** where duplicates are common.
 #### 📝 Example
-**Before:** The same paragraph appears from 3 different sources, wasting 2/3 of your token budget on repeats.
-**After:** A single representative chunk with citations to all three sources.
-> How much of your corpus is duplicated? In web-scraped data, it can be *over 30%*.
+[disappointed] **Before:** The same paragraph appears from 3 different sources, wasting 2/3 of your token budget on repeats.
+[pleased] **After:** A single representative chunk with citations to all three sources.
+> [seriously] How much of your corpus is duplicated? In web-scraped data, it can be *over 30%*.
 Let's implement this...`
         },
         {
@@ -1808,13 +1808,13 @@ Let's implement this...`
           ),
           backgroundColor: '#691d6b',
           notes: `### Implementation Steps — Semantic Deduplication
-#### Step 1: Embed chunks; compute similarities
+[lecture] #### Step 1: Embed chunks; compute similarities
 Generate embeddings for all chunks and compute pairwise cosine similarity scores.
 #### Step 2: Cluster or use MinHash/Jaccard
 Group similar chunks using clustering algorithms, or use **MinHash** 👉 'min-hash' / **Jaccard similarity** for faster approximate dedup on large corpora.
 #### Step 3: Keep highest quality/most recent representative
 From each cluster, keep the chunk with the best quality signal (freshness, source authority, completeness).
-> Pro tip: Set your similarity threshold conservatively (e.g., 0.9+) to avoid accidentally merging chunks that look similar but have important differences.
+> [warmly] Pro tip: Set your similarity threshold conservatively (e.g., 0.9+) to avoid accidentally merging chunks that look similar but have important differences.
 Let's see the trade-offs...`
         },
         {
@@ -1854,13 +1854,13 @@ Let's see the trade-offs...`
           backgroundColor: '#691d6b',
           notes: `### Pros & Cons — Semantic Deduplication
 #### ✅ Pros
-- **Saves tokens**: Eliminate redundant content and fit more *unique* information
+[pleased] - **Saves tokens**: Eliminate redundant content and fit more *unique* information
 - **Reduces noise**: Less repetition means the LLM focuses on *distinct* evidence
 #### ❌ Cons
-- **Might drop subtle differences**: Two chunks that seem similar might have important nuances
+[cautiously] - **Might drop subtle differences**: Two chunks that seem similar might have important nuances
 - **Extra compute**: Pairwise similarity computation can be expensive for large corpora
-> Consider: For production systems, run dedup at *index time* (not query time) to avoid latency overhead.
-Next: Let's talk about the *meta-technique* — **Token-Budget Aware Packing**...`
+> [conversational] Consider: For production systems, run dedup at *index time* (not query time) to avoid latency overhead.
+[confidently] Next: Let's talk about the *meta-technique* — **Token-Budget Aware Packing**...`
         }
       ]
     },
@@ -1937,9 +1937,9 @@ Next: Let's talk about the *meta-technique* — **Token-Budget Aware Packing**..
           ),
           backgroundColor: '#6b1d3b',
           notes: `### 11) Token-Budget Aware Packing
-**Token-Budget Aware Packing** is the *meta-technique* — it guarantees everything fits within your model's context window.
+[confidently] **Token-Budget Aware Packing** is the *meta-technique* — it guarantees everything fits within your model's context window.
 #### 🎯 Goal
-**Guarantee** that packed context fits within the model's context window — no truncation, no surprises.
+[lecture] **Guarantee** that packed context fits within the model's context window — no truncation, no surprises.
 #### ⚙️ How It Works
 **Track tokens** as you pack, and **greedily add** chunks. When over budget, **compress** or **skip**.
 \`\`\`mermaid
@@ -1955,9 +1955,9 @@ Think of it like packing a suitcase with a weight limit — you check each item 
 #### 📅 When to Use
 **Every RAG system** should have this. It's especially critical for **multi-source retrieval** with variable chunk sizes.
 #### 📝 Example
-**Before:** Prompt gets truncated at runtime because nobody tracked total tokens.
-**After:** 4 chunks + 2 compressed chunks fit neatly within a 4k-token budget.
-> Raise your hand if you've been bitten by unexpected truncation. This technique prevents that.
+[disappointed] **Before:** Prompt gets truncated at runtime because nobody tracked total tokens.
+[pleased] **After:** 4 chunks + 2 compressed chunks fit neatly within a 4k-token budget.
+> [playfully] Raise your hand if you've been bitten by unexpected truncation. [seriously] This technique prevents that.
 Let's implement this...`
         },
         {
@@ -1981,13 +1981,13 @@ Let's implement this...`
           ),
           backgroundColor: '#6b1d3b',
           notes: `### Implementation Steps — Token-Budget Aware Packing
-#### Step 1: Set budget and headroom
+[lecture] #### Step 1: Set budget and headroom
 Reserve space for the system prompt, user query, and expected answer length. Your *packing budget* is what's left.
 #### Step 2: Iterate ranked candidates; add if fits
 Walk through your ranked chunks. For each, count tokens and add it if there's room.
 #### Step 3: Fallback: compress or skip
 If a high-value chunk doesn't fit, try compressing it (Technique 7). If it *still* doesn't fit, skip it.
-> Pro tip: Always reserve at least 20% of your context for the answer — otherwise the LLM has no room to "think."
+> [warmly] Pro tip: Always reserve at least 20% of your context for the answer — otherwise the LLM has no room to "think."
 Let's see the trade-offs...`
         },
         {
@@ -2027,13 +2027,13 @@ Let's see the trade-offs...`
           backgroundColor: '#6b1d3b',
           notes: `### Pros & Cons — Token-Budget Aware Packing
 #### ✅ Pros
-- **Predictable behavior**: You *know* the context will fit — no runtime surprises
+[pleased] - **Predictable behavior**: You *know* the context will fit — no runtime surprises
 - **Avoids truncation**: Critical information is never silently cut off
 #### ❌ Cons
-- **Greedy may be suboptimal**: Packing the first chunk that fits might not be the globally optimal selection
+[cautiously] - **Greedy may be suboptimal**: Packing the first chunk that fits might not be the globally optimal selection
 - **Added logic**: More code to maintain in your pipeline — token counting, budget tracking, fallback logic
-> Key insight: This isn't optional — it's *essential*. Every production RAG system needs token-budget awareness.
-Next: What if you could *adjust* how many chunks you retrieve based on query complexity? That's **Adaptive k**...`
+> [seriously] Key insight: This isn't optional — it's *essential*. Every production RAG system needs token-budget awareness.
+[enthusiastically] Next: What if you could *adjust* how many chunks you retrieve based on query complexity? That's **Adaptive k**...`
         }
       ]
     },
@@ -2109,9 +2109,9 @@ Next: What if you could *adjust* how many chunks you retrieve based on query com
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 12) Adaptive k Retrieval (Variable Cutoff)
-**Adaptive k Retrieval** 👉 'adaptive-K' — dynamically adjusts *how many* chunks you retrieve based on query complexity.
+[enthusiastically] **Adaptive k Retrieval** 👉 'adaptive-K' — dynamically adjusts *how many* chunks you retrieve based on query complexity.
 #### 🎯 Goal
-**Use fewer or more chunks** depending on query complexity — don't use a one-size-fits-all approach.
+[lecture] **Use fewer or more chunks** depending on query complexity — don't use a one-size-fits-all approach.
 #### ⚙️ How It Works
 **Estimate query complexity** and adjust k (the number of retrieved chunks). Stop when adding more chunks gives diminishing returns.
 \`\`\`mermaid
@@ -2126,9 +2126,9 @@ Think of it like studying for an exam — easy questions need one page of notes,
 #### 📅 When to Use
 Best when you handle a **mix of query types** — from simple factoid lookups to complex multi-hop questions.
 #### 📝 Example
-**Before:** Fixed k=5 for every query — overkill for simple questions, insufficient for complex ones.
-**After:** k=2 for an exact error message match; k=8 for a broad policy overview.
-> What's your current k value? If it's hardcoded, you're leaving performance on the table.
+[disappointed] **Before:** Fixed k=5 for every query — overkill for simple questions, insufficient for complex ones.
+[pleased] **After:** k=2 for an exact error message match; k=8 for a broad policy overview.
+> [quizzically] What's your current k value? [seriously] If it's hardcoded, you're leaving performance on the table.
 Let's see how to implement this...`
         },
         {
@@ -2152,13 +2152,13 @@ Let's see how to implement this...`
           ),
           backgroundColor: '#6b1d1d',
           notes: `### Implementation Steps — Adaptive k Retrieval
-#### Step 1: Measure entropy/score distribution
+[lecture] #### Step 1: Measure entropy/score distribution
 Look at the retrieval score distribution — a steep drop means the query is specific (low k). A flat distribution means the query is broad (high k).
 #### Step 2: Map to k
 Use thresholds or a learned function to map score distributions to k values. E.g., entropy < 0.3 → k=2, entropy > 0.7 → k=8.
 #### Step 3: Rerank and pack
 After retrieving k chunks, rerank them (optionally with a cross-encoder) and pack using your token budget.
-> Pro tip: Log your k values and corresponding answer quality scores to build a dataset for tuning the mapping function.
+> [warmly] Pro tip: Log your k values and corresponding answer quality scores to build a dataset for tuning the mapping function.
 Let's look at the trade-offs...`
         },
         {
@@ -2198,13 +2198,13 @@ Let's look at the trade-offs...`
           backgroundColor: '#6b1d1d',
           notes: `### Pros & Cons — Adaptive k Retrieval
 #### ✅ Pros
-- **Efficient**: Doesn't waste tokens on unnecessary chunks for simple queries
+[pleased] - **Efficient**: Doesn't waste tokens on unnecessary chunks for simple queries
 - **Better recall when needed**: Complex queries get more evidence, improving answer quality
 #### ❌ Cons
-- **Requires tuning**: The complexity-to-k mapping needs calibration for your specific domain
+[cautiously] - **Requires tuning**: The complexity-to-k mapping needs calibration for your specific domain
 - **Misestimation risk**: If complexity estimation is wrong, you'll retrieve too few or too many chunks
-> Consider: Start with a simple heuristic (score distribution shape) and refine with user feedback over time.
-And now, our final technique — the most sophisticated one: **Chain-of-Context Packing**...`
+> [conversational] Consider: Start with a simple heuristic (score distribution shape) and refine with user feedback over time.
+[excited] And now, our final technique — the most sophisticated one: **Chain-of-Context Packing**...`
         }
       ]
     },
@@ -2280,9 +2280,9 @@ And now, our final technique — the most sophisticated one: **Chain-of-Context 
           ),
           backgroundColor: '#1d3d6b',
           notes: `### 13) Chain-of-Context Packing (CoC)
-Our final technique — **Chain-of-Context Packing** 👉 'CoC' — is the most *sophisticated*. It *orders* context to match the LLM's reasoning flow.
+[enthusiastically] Our final technique — **Chain-of-Context Packing** 👉 'CoC' — is the most *sophisticated*. It *orders* context to match the LLM's reasoning flow.
 #### 🎯 Goal
-**Order context to match reasoning flow** — present evidence in the order the LLM needs to think through the problem.
+[lecture] **Order context to match reasoning flow** — present evidence in the order the LLM needs to think through the problem.
 #### ⚙️ How It Works
 Arrange evidence as **reasoning steps**: definitions → constraints → evidence → counterpoints, matching how the LLM would naturally reason.
 \`\`\`mermaid
@@ -2297,9 +2297,9 @@ Think of it like building a legal argument — you start with the law, then prec
 #### 📅 When to Use
 Essential for **multi-hop QA**, **legal/medical reasoning**, and **root-cause analysis** — anywhere the *order* of evidence matters.
 #### 📝 Example
-**Before:** Mixed, distracting context order — the LLM jumps between unrelated facts.
-**After:** Law → precedents → case facts → exceptions — the LLM follows a clear reasoning path.
-> Have you ever noticed that *reordering* the same context changes the LLM's answer? That's why CoC matters.
+[disappointed] **Before:** Mixed, distracting context order — the LLM jumps between unrelated facts.
+[pleased] **After:** Law → precedents → case facts → exceptions — the LLM follows a clear reasoning path.
+> [seriously] Have you ever noticed that *reordering* the same context changes the LLM's answer? [confidently] That's why CoC matters.
 Let's see the implementation...`
         },
         {
@@ -2323,13 +2323,13 @@ Let's see the implementation...`
           ),
           backgroundColor: '#1d3d6b',
           notes: `### Implementation Steps — Chain-of-Context Packing
-#### Step 1: Draft reasoning steps from the query
+[lecture] #### Step 1: Draft reasoning steps from the query
 Analyze the query to identify the logical steps needed to answer it. E.g., "Is this refund valid?" → check policy, check date, check exceptions.
 #### Step 2: Group retrieved chunks per step
 Assign each retrieved chunk to a reasoning step based on its content.
 #### Step 3: Pack in step order with labels and citations
 Order the context following the reasoning steps. Add labels like "[Step 1: Policy]", "[Step 2: Date Check]" so the LLM can follow along.
-> Pro tip: For complex queries, use an LLM to generate the reasoning plan — it's faster and more accurate than hand-coding rules.
+> [warmly] Pro tip: For complex queries, use an LLM to generate the reasoning plan — it's faster and more accurate than hand-coding rules.
 Let's discuss the final trade-offs...`
         },
         {
@@ -2369,12 +2369,12 @@ Let's discuss the final trade-offs...`
           backgroundColor: '#1d3d6b',
           notes: `### Pros & Cons — Chain-of-Context Packing
 #### ✅ Pros
-- **Better chain-of-thought alignment**: The LLM's reasoning follows a clear path, producing more coherent answers
+[pleased] - **Better chain-of-thought alignment**: The LLM's reasoning follows a clear path, producing more coherent answers
 - **Clearer answers**: Users get well-structured, step-by-step explanations
 #### ❌ Cons
-- **Overhead to plan**: Generating a reasoning plan adds latency and complexity
+[cautiously] - **Overhead to plan**: Generating a reasoning plan adds latency and complexity
 - **Needs accurate step mapping**: If chunks are assigned to the wrong reasoning step, the LLM may get confused
-> Final thought: CoC is the *capstone* technique. Start with simpler techniques and add CoC when your queries demand complex reasoning.
+> [inspiringly] Final thought: CoC is the *capstone* technique. Start with simpler techniques and add CoC when your queries demand complex reasoning.
 Let's wrap up with our summary and best practices...`
         }
       ]
@@ -2490,15 +2490,15 @@ Let's close with practical implementation tips...`
           ),
           backgroundColor: '#1d6b38',
           notes: `### Implementation Tips & Next Steps
-Here's your action plan for taking these techniques into production:
+[lecture] Here's your action plan for taking these techniques into production:
 #### 💡 Implementation Tips
-- **Cache everything** — summaries, compressions, dedup results. Don't recompute on every query.
+[conversational] - **Cache everything** — summaries, compressions, dedup results. Don't recompute on every query.
 - **Measure with answer-grounding and citation metrics** — track whether answers actually use the packed context.
 - **Start simple** — begin with fixed k and relevance scoring, then iterate with adaptive k and CoC.
 #### 🚀 Next Steps
-1. **Pilot on one corpus** — pick your messiest data source and A/B test two packing variants
+[enthusiastically] 1. **Pilot on one corpus** — pick your messiest data source and A/B test two packing variants
 2. **Instrument everything** — track latency, cost, and answer quality for each technique
-> Thank you! Questions? Remember: context packing is a *journey*, not a destination. Start with one technique today and build from there.
+> [warmly] [inspiringly] Thank you! Questions? Remember: context packing is a *journey*, not a destination. Start with one technique today and build from there.
 **Prepared by:** Nisar A | **niisar.com**`
         }
       ]
