@@ -194,7 +194,7 @@ flowchart LR
 Each technique targets one or more of these stages. The key insight is that you don't need to apply all eleven — pick the ones that address your biggest bottleneck first.
 
 #### 🎯 Key Takeaway
-[confidently] The key simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. Now let's dive into each technique, starting with smaller embedding models...`
+[confidently] The key idea is simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. [energetic] Now let's dive into each technique, starting with smaller embedding models...`
         }
       ]
     },
@@ -231,7 +231,7 @@ Each technique targets one or more of these stages. The key insight is that you 
 [energetic] Let's start with our first technique — using **smaller embedding models**. The goal here is straightforward: reduce the time it takes to convert text into numerical vectors, while keeping your retrieval quality acceptable.
 
 #### 🎯 What's the Goal?
-[lecture] When you When you embed a query or a document, you're running it through a neural network. Bigger models like OpenAI's text-embedding-ada-002 👉 'text embedding ada oh-oh-two' produce great embeddings, but they're slow. Smaller models can give you 2x to 10x (two x to ten x) speedups with only a minor drop in recall.
+[lecture] When you embed a query or a document, you're running it through a neural network. Bigger models like OpenAI's text-embedding-ada-002 👉 'text embedding ada oh-oh-two' produce great embeddings, but they're slow. [pleased] Smaller models can give you 2x to 10x (two x to ten x) speedups with only a minor drop in recall.
 
 #### 💡 Think of It This Way
 Imagine you have two translators. One is a world-class expert who takes five minutes per page. The other is a skilled professional who takes thirty seconds per page and gets ninety-five percent of the nuances right. For most practical purposes, the faster translator is the better choice.
@@ -432,7 +432,7 @@ The good stuff: You get **2x to 10x (two x to ten x) faster inference**, which i
 The problems: There's a **potential recall drop on nuanced queries** — very subtle semantic differences might be missed by smaller models. You **may underperform on long-tail cases** where rare vocabulary or domain-specific jargon is involved. There's a **reindexing cost** when switching models — you need to re-embed all your documents, which can be expensive for large corpora. And there might be **multilingual performance gaps** if the smaller model wasn't trained on enough data in your target languages.
 
 #### ⚖️ The Verdict
-[reassuringly] For mostroduction use cases, the speed gains far outweigh the minor quality trade-offs. Start with a smaller model and only move to a larger one if you can measure a meaningful quality difference on your specific data. Now let's move to our second technique — reducing chunk size...`
+[reassuringly] For most production use cases, the speed gains far outweigh the minor quality trade-offs. Start with a smaller model and only move to a larger one if you can measure a meaningful quality difference on your specific data. Now let's move to our second technique — reducing chunk size...`
         }
       ]
     },
@@ -506,8 +506,8 @@ When should you consider reducing your chunk size? Here are the key scenarios wh
 #### 📝 Dense, Factual Content
 If your documents contain lots of specific facts, definitions, or data points packed closely together, smaller chunks help isolate each fact. Think technical documentation, legal contracts, or medical records.
 
-[seriously] #### 🎯 Precision-Critical Applications
-When your users need exact answers rather than general summaries, smaller chunks reduce the noise. For example, a customer support bot answering "what's the return policy for electronics?" doesn't need the entire policy document — just the relevant paragraph.
+#### 🎯 Precision-Critical Applications
+[seriously] When your users need exact answers rather than general summaries, smaller chunks reduce the noise. For example, a customer support bot answering "what's the return policy for electronics?" doesn't need the entire policy document — just the relevant paragraph.
 
 #### 💰 Token Cost Optimization
 Since LLMs charge per token, sending smaller, more relevant chunks means lower costs per query. If you're processing thousands of queries daily, this adds up to significant savings.
@@ -751,7 +751,7 @@ When your embeddings are high quality and your data is well-organized, the top 3
 #### 💰 Cost-Sensitive Applications
 Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tokens each, that's 2,000 tokens of context. Cutting to 3 chunks saves you 1,400 tokens per query — that's a 70% reduction in context token costs.
 
-[reassuringly] #### 🔄 Simple Question-Answering
+#### 🔄 Simple Question-Answering
 [reassuringly] For straightforward factual questions like "What is the return policy?" or "When was the company founded?", the answer is almost always in the top 1-2 results. Fetching more is wasteful.
 
 [conversational] Let's see the mechanics of how this optimization works...`
@@ -1891,7 +1891,7 @@ Even though reranking adds a step, the improved result quality means less noise 
 [lecture] The problems: **Adds a processing step** that requires GPU or CPU resources. **Model hosting overhead** — you need to serve the reranking model somewhere, which adds infrastructure complexity. **Latency scales with candidate count** — reranking 20 results takes 4x longer than reranking 5. **Potential single point of failure** if the reranker service goes down. And **diminishing returns** — if your vector search is already very precise, reranking adds latency without much quality gain.
 
 #### 🎯 The Verdict
-[reassuringly] For mostroduction RAG systems, adding a lightweight reranker on top-5 results is one of the highest-ROI optimizations. The quality improvement often outweighs the small latency cost, and in many cases, the net effect is actually faster responses. Now let's move to technique eight — context compression...`
+[reassuringly] For most production RAG systems, adding a lightweight reranker on top-5 results is one of the highest-ROI optimizations. The quality improvement often outweighs the small latency cost, and in many cases, the net effect is actually faster responses. Now let's move to technique eight — context compression...`
         }
       ]
     },
@@ -2709,14 +2709,14 @@ Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation l
           notes: `### 54. Smaller LLM — When to Use
 When can you safely switch to a smaller LLM without hurting quality? Here are the key scenarios.
 
-[reassuringly] #### 📝 Simple Question-Answering
+#### 📝 Simple Question-Answering
 [reassuringly] For straightforward factual queries where the answer is directly in the retrieved chunks, smaller models excel. Questions like "What are the business hours?" or "What's the price of product X?" don't need GPT-4's reasoning power.
 
 #### 🎯 Well-Defined Output Formats
-When your responses follow a predictable structure — short answers, specific formats, or template-based replies — smaller models are just as capable. They struggle more with creative or open-ended generation.
+[conversational] When your responses follow a predictable structure — short answers, specific formats, or template-based replies — smaller models are just as capable. They struggle more with creative or open-ended generation.
 
-[seriously] #### ⚡ Latency-Critical Applications
-When your users expect sub-second responses, a smaller model generating at 100 tokens per second is far better than a large model at 20 tokens per second, even if the large model produces slightly more polished prose.
+#### ⚡ Latency-Critical Applications
+[seriously] When your users expect sub-second responses, a smaller model generating at 100 tokens per second is far better than a large model at 20 tokens per second, even if the large model produces slightly more polished prose.
 
 #### 💰 High Query Volume with Budget Constraints
 At scale, the cost difference between GPT-4 and a self-hosted 7B model is enormous. If you're processing millions of queries per month, the savings can be hundreds of thousands of dollars.
@@ -2882,7 +2882,7 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
 [lecture] The problems: **Quality gap for complex reasoning** — smaller models struggle with multi-step reasoning, nuanced analysis, and creative generation. **Fine-tuning investment** — creating training data and fine-tuning requires significant engineering effort. **Infrastructure management** — self-hosting means you're responsible for GPU provisioning, scaling, and reliability. **Model selection churn** — the small model landscape evolves rapidly, and today's best option may be obsolete in months. And **evaluation complexity** — measuring quality differences between models requires robust evaluation frameworks.
 
 #### 🎯 The Bottom Line
-[reassuringly] For mostroduction RAG use cases, a well-chosen small model delivers 80-95% of large model quality at a fraction of the cost and latency. The key is thorough evaluation on your specific data and use cases. And with that, we've covered all eleven techniques! Let's wrap up with key takeaways...`
+[reassuringly] For most production RAG use cases, a well-chosen small model delivers 80-95% of large model quality at a fraction of the cost and latency. The key is thorough evaluation on your specific data and use cases. [warmly] And with that, we've covered all eleven techniques! Let's wrap up with key takeaways...`
         }
       ]
     },
