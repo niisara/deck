@@ -2233,7 +2233,7 @@ Let's look at additional important details.`
                   <thead>
                     <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
                       <th style={{ padding: '8px', border: '1px solid #555', fontSize: '1.4rem' }}>Database</th>
-                      <th style={{ padding: '8px', border: '1px solid #555', fontSize: '1.4rem'}}>Index Type</th>
+                      <th style={{ padding: '8px', border: '1px solid #555', fontSize: '1.4rem' }}>Index Type</th>
                       <th style={{ padding: '8px', border: '1px solid #555', fontSize: '1.4rem' }}>Scaling Model</th>
                       <th style={{ padding: '8px', border: '1px solid #555', fontSize: '1.4rem' }}>Performance</th>
                       <th style={{ padding: '8px', border: '1px solid #555', fontSize: '1.4rem' }}>Cost</th>
@@ -2357,7 +2357,7 @@ Let's look at additional important details.`
                       <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
                       Production-Grade & Managed
                     </h4>
-                    <ul style={{fontSize: '1rem', color: '#3498db' }}>
+                    <ul style={{ fontSize: '1rem', color: '#3498db' }}>
                       <li><strong>Pinecone:</strong> Easy ops, SLA guarantees, predictable latency</li>
                       <li><strong>Weaviate:</strong> Hybrid search, multi-modal, GraphQL API</li>
                       <li><strong>Qdrant:</strong> High RPS (4x faster), advanced filtering</li>
@@ -2368,7 +2368,7 @@ Let's look at additional important details.`
                       <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
                       Large-Scale & Enterprise
                     </h4>
-                    <ul style={{fontSize: '1rem', color: '#f39c12' }}>
+                    <ul style={{ fontSize: '1rem', color: '#f39c12' }}>
                       <li><strong>Milvus:</strong> Billion-scale, flexible index strategies</li>
                       <li><strong>Elasticsearch:</strong> Unified keyword + semantic search</li>
                       <li><strong>Vespa:</strong> Real-time ranking with ML inference</li>
@@ -2379,7 +2379,7 @@ Let's look at additional important details.`
                       <SvgIcon iconName="duo-code" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
                       Prototyping & Development
                     </h4>
-                    <ul style={{fontSize: '1rem', color: '#2ecc71' }}>
+                    <ul style={{ fontSize: '1rem', color: '#2ecc71' }}>
                       <li><strong>Chroma:</strong> Simple, local-first, LangChain/LlamaIndex integration</li>
                       <li><strong>LanceDB:</strong> Embedded, cost-efficient for data lakes</li>
                     </ul>
@@ -2389,7 +2389,7 @@ Let's look at additional important details.`
                       <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
                       Real-Time & Low-Latency
                     </h4>
-                    <ul style={{fontSize: '1rem', color: '#9b59b6' }}>
+                    <ul style={{ fontSize: '1rem', color: '#9b59b6' }}>
                       <li><strong>Redis Vector:</strong> Sub-millisecond, in-memory speed</li>
                       <li><strong>Qdrant:</strong> High throughput with minimal latency</li>
                     </ul>
@@ -2399,7 +2399,7 @@ Let's look at additional important details.`
                       <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
                       Existing Database Integration
                     </h4>
-                    <ul style={{fontSize: '1rem', color: '#afc336' }}>
+                    <ul style={{ fontSize: '1rem', color: '#afc336' }}>
                       <li><strong>pgvector:</strong> ACID compliance, SQL interface, 150x improvement</li>
                       <li><strong>MongoDB:</strong> Unified JSON + vectors in single platform</li>
                       <li><strong>Redis/Elasticsearch:</strong> Add vectors to existing infrastructure</li>
@@ -2410,7 +2410,7 @@ Let's look at additional important details.`
                       <SvgIcon iconName="duo-dollar-sign" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
                       Cost-Efficiency Focus
                     </h4>
-                    <ul style={{fontSize: '1rem', color: '#e74c3c' }}>
+                    <ul style={{ fontSize: '1rem', color: '#e74c3c' }}>
                       <li><strong>LanceDB:</strong> Storage-centric, low TCO at scale</li>
                       <li><strong>Chroma:</strong> Free open source for development</li>
                       <li><strong>Weaviate:</strong> Starting at $25/mo managed</li>
