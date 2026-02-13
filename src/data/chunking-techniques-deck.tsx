@@ -1592,7 +1592,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: `### 22. Structure-Aware Chunking - Configuration
+          notes: `### Structure-Aware Chunking - Configuration
 [conversational] Now let's get practical and talk numbers. How do you actually configure structure-aware chunking for real-world use?
 
 #### Best Chunk Size
@@ -1637,7 +1637,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: `### 23. Structure-Aware Chunking - Use Cases & Tools
+          notes: `### Structure-Aware Chunking - Use Cases & Tools
 [conversational] Let's explore where structure-aware chunking really shines and what tools can help you implement it effectively.
 
 #### Perfect Use Cases
@@ -1672,7 +1672,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: `### 24. Content-Aware Chunking - Pros
+          notes: `### Content-Aware Chunking - Pros
 [pleased] Welcome to content-aware chunking, a sophisticated approach that understands *what* type of content it's dealing with, not just *where* to split. Let's explore why this technique is so powerful.
 
 #### Intelligent Content Recognition
@@ -1704,7 +1704,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: `### 25. Content-Aware Chunking - Cons
+          notes: `### Content-Aware Chunking - Cons
 [cautiously] While content-aware chunking is intelligent, that intelligence comes with practical challenges. Let's be honest about where this technique struggles.
 
 #### Domain-Specific Tuning
@@ -1750,7 +1750,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: `### 26. Content-Aware Chunking - Configuration
+          notes: `### Content-Aware Chunking - Configuration
 [conversational] Let's talk numbers and practical settings. How do you configure content-aware chunking for production use?
 
 #### Dynamic Chunk Sizing
@@ -1793,7 +1793,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: `### 27. Content-Aware Chunking - Use Cases & Tools
+          notes: `### Content-Aware Chunking - Use Cases & Tools
 [conversational] Now let's see where content-aware chunking really earns its keep, and what tools can help you implement it without building everything from scratch.
 
 #### Ideal Applications
@@ -1828,7 +1828,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: `### 28. Semantic Chunking (Embedding-Based) - Pros
+          notes: `### Semantic Chunking (Embedding-Based) - Pros
 [excited] Now we're entering advanced territory! Semantic chunking uses embeddings to understand meaning, not just structure. This is where AI meets chunking strategy.
 
 #### Topic Coherence and Precision
@@ -1860,7 +1860,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: `### 29. Semantic Chunking (Embedding-Based) - Cons
+          notes: `### Semantic Chunking (Embedding-Based) - Cons
 [cautiously] With great power comes great complexity. Let's talk about the real challenges you'll face with semantic chunking.
 
 #### Computational Requirements
@@ -1906,7 +1906,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: `### 30. Semantic Chunking (Embedding-Based) - Configuration
+          notes: `### Semantic Chunking (Embedding-Based) - Configuration
 [conversational] Let's get practical about configuring semantic chunking for production systems. The numbers matter here!
 
 #### Semantic Unit Sizing
@@ -1951,7 +1951,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: `### 31. Semantic Chunking (Embedding-Based) - Use Cases & Tools
+          notes: `### Semantic Chunking (Embedding-Based) - Use Cases & Tools
 [conversational] When should you invest in semantic chunking, and what tools make it easier? Let's explore the sweet spots and practical implementation paths.
 
 #### Prime Use Cases
@@ -1986,7 +1986,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: `### 32. TextTiling - Pros
+          notes: `### TextTiling - Pros
 [pleased] TextTiling is a classic algorithm from computational linguistics that's stood the test of time. Let's explore why this technique remains relevant decades after its invention.
 
 #### Explainable Topic Segmentation
@@ -2018,7 +2018,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: `### 33. TextTiling - Cons
+          notes: `### TextTiling - Cons
 [cautiously] TextTiling is powerful but finicky. Let's be realistic about where this classic algorithm shows its age and limitations.
 
 #### Parameter Sensitivity
@@ -2064,7 +2064,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: `### 34. TextTiling - Configuration
+          notes: `### TextTiling - Configuration
 [conversational] Let's talk about the practical settings for TextTiling. This algorithm is unique because it's *driven by content*, not by arbitrary size limits.
 
 #### Dynamic Size by Topic
@@ -2109,7 +2109,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: `### 35. TextTiling - Use Cases & Tools
+          notes: `### TextTiling - Use Cases & Tools
 [conversational] Where does TextTiling shine, and how can you actually implement it? Let's explore the practical landscape.
 
 #### Ideal Scenarios
@@ -2144,7 +2144,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: `### 36. Discourse / RST Chunking - Pros
+          notes: `### Discourse / RST Chunking - Pros
 [excited] Now we're entering the cutting edge of linguistic analysis! Discourse and RST (Rhetorical Structure Theory) chunking represents the most sophisticated understanding of how text is organized. Let's explore why this is so powerful.
 
 #### Deep Semantic Understanding
@@ -2176,7 +2176,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: `### 37. Discourse / RST Chunking - Cons
+          notes: `### Discourse / RST Chunking - Cons
 [cautiously] The sophistication of RST chunking comes with serious practical challenges. This is not an approach for the faint of heart or tight deadlines!
 
 #### Computational Intensity
@@ -2222,7 +2222,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: `### 38. Discourse / RST Chunking - Configuration
+          notes: `### Discourse / RST Chunking - Configuration
 [conversational] How do you actually configure RST chunking? The settings here reflect its unique linguistic foundation.
 
 #### EDU-Based Sizing
@@ -2267,7 +2267,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: `### 39. Discourse / RST Chunking - Use Cases & Tools
+          notes: `### Discourse / RST Chunking - Use Cases & Tools
 [conversational] When is the computational and intellectual investment in RST chunking actually worthwhile? Let's identify the high-value scenarios.
 
 #### Premium Applications
@@ -2302,7 +2302,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: `### 40. Token-Aware Chunking - Pros
+          notes: `### Token-Aware Chunking - Pros
 [conversational] Let's shift gears to a more practical, engineering-focused approach. Token-aware chunking addresses a real problem: making sure your chunks actually fit in your models' context windows!
 
 #### Tokenizer Alignment
@@ -2336,7 +2336,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: `### 41. Token-Aware Chunking - Cons
+          notes: `### Token-Aware Chunking - Cons
 [conversational] Now let's talk about the downsides of token-aware chunking, because like everything in engineering, there are trade-offs.
 #### The Splitting Problem
 [cautiously] The biggest issue is that **tokens don't care about meaning**. [storytelling] Think about it this way, tokenizers are like scissors that cut based on character patterns, not ideas. [concerned] They might split right in the middle of a variable name or a sentence, breaking the semantic flow. [storytelling] It's like cutting a book based on word count instead of chapter endings. You might end up with half a sentence in one chunk and the other half in another.
@@ -2383,7 +2383,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: `### 42. Token-Aware Chunking - Configuration
+          notes: `### Token-Aware Chunking - Configuration
 [conversational] Let's get practical and talk about the recommended settings for token-aware chunking. These are battle-tested defaults from production systems.
 #### Best Chunk Size
 [lecture] For chunk size, the sweet spot is **256 to 1024 tokens**. Now, this isn't arbitrary. The key principle here is to **match your embedding model's context window**. [conversational] If you're using OpenAI's text-embedding-ada-002, that's 8192 tokens, but you typically want chunks smaller than the full window. Around 512 tokens is a common choice because it's large enough to capture meaningful context but small enough to stay focused.
@@ -2429,7 +2429,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: `### 43. Token-Aware Chunking - Use Cases & Tools
+          notes: `### Token-Aware Chunking - Use Cases & Tools
 [conversational] Now let's explore where token-aware chunking really shines and the tools that make it easy to implement.
 #### Use Cases
 [lecture] Token-aware chunking is incredibly versatile. It works for **any embedding pipeline** where you need predictable chunk sizes. [conversational] This makes it perfect for production RAG systems where you have **strict token budgets** or context window limits. Think of scenarios like OpenAI's embeddings where you pay per token, or when you're constrained by model input limits.
@@ -2466,7 +2466,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: `### 44. Heading / Title Anchor Chunking - Pros
+          notes: `### Heading / Title Anchor Chunking - Pros
 [pleased] Moving on to technique number 11, heading-based chunking. This is one of my favorite approaches for structured documents because it respects the author's original intent.
 #### Document Navigation Alignment
 [enthusiastically] The biggest advantage here is **strong alignment to how documents are naturally organized**. When an author writes a technical document or README, they deliberately create sections with headings. [lecture] These headings mark topic boundaries, create logical groupings, and guide the reader through the content. [confidently] By chunking on headings, you're essentially saying "I trust the author knew what they were doing." [delighted] This makes it **perfect for documentation sites**, API references, and any content where structure matters.
@@ -2495,7 +2495,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: `### 45. Heading / Title Anchor Chunking - Cons
+          notes: `### Heading / Title Anchor Chunking - Cons
 [cautiously] Of course, heading-based chunking isn't perfect. Let's talk about when it breaks down and what challenges you'll face.
 #### Clean Structure Requirement
 [firmly] The fundamental limitation is that you **need clean, consistent headings**. [disappointed] If your documents are free-flowing prose without clear structure, like novels or stream-of-consciousness writing, this approach simply won't work. You can't chunk on headings that don't exist! [concerned] Even worse is inconsistent heading usage, where one author uses H2 for major sections and another uses H3. Your chunking strategy falls apart.
@@ -2562,7 +2562,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: `### 46. Heading / Title Anchor Chunking - Configuration
+          notes: `### Heading / Title Anchor Chunking - Configuration
 [conversational] Let's dial in the practical settings for heading-based chunking so you can implement this effectively.
 #### Best Chunk Size
 [lecture] Unlike fixed-size chunking, heading-based chunks are **section-bounded**, meaning the chunk size is determined by your document structure rather than an arbitrary number. In practice, sections typically range from **200 to 1200 tokens**. [playfully] That's quite a range, right? [conversational] A short "Overview" section might be 200 tokens, while a detailed "API Reference" section could hit 1200 tokens or more.
@@ -2626,7 +2626,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: `### 47. Heading / Title Anchor Chunking - Use Cases & Tools
+          notes: `### Heading / Title Anchor Chunking - Use Cases & Tools
 [conversational] Now let's explore the ideal scenarios for heading-based chunking and the tooling ecosystem that supports it.
 #### Use Cases
 [enthusiastically] This technique absolutely shines for **Markdown documentation and README files**. [storytelling] Think about every GitHub repo you've seen, they all have structured READMEs with clear headings. [pleased] By chunking on those headings, you preserve the logical flow that the maintainers carefully crafted.
@@ -2665,7 +2665,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: `### 48. Markdown / HTML Structure Chunking - Pros
+          notes: `### Markdown / HTML Structure Chunking - Pros
 [pleased] Let's dive into technique 12, which takes the heading-based approach and supercharges it by considering the full structural markup of documents.
 #### Element Preservation
 [enthusiastically] The magic here is that you **preserve special elements intact**. [lecture] Think about code blocks, tables, bullet lists, numbered lists, and blockquotes. These aren't just text; they have semantic meaning tied to their formatting. [seriously] A code block split in half becomes useless. A table with missing rows loses its data integrity. [confidently] By chunking based on HTML or Markdown structure, you keep these elements whole and meaningful.
@@ -2694,7 +2694,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: `### 49. Markdown / HTML Structure Chunking - Cons
+          notes: `### Markdown / HTML Structure Chunking - Cons
 [cautiously] Now let's be real about the challenges you'll face with structure-based chunking.
 #### Structure Dependency
 [firmly] The fundamental requirement is **well-structured source documents**. [concerned] If your HTML is malformed with unclosed tags, missing elements, or inconsistent nesting, parsers will struggle or produce garbage. [disappointed] Similarly, if your Markdown doesn't follow consistent conventions, you'll get unreliable results. You're at the mercy of the document quality, which in the real world can be quite variable.
@@ -2757,7 +2757,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: `### 50. Markdown / HTML Structure Chunking - Configuration
+          notes: `### Markdown / HTML Structure Chunking - Configuration
 [conversational] Let's get into the practical configuration for structure-based chunking to help you implement this effectively.
 #### Best Chunk Size
 [lecture] Chunks are **element-grouped**, typically ranging from **300 to 900 tokens**. [playfully] What does element-grouped mean? [conversational] Instead of counting characters or tokens arbitrarily, you're grouping based on structural elements. A single paragraph might be 150 tokens, perfect for one chunk. A section element containing multiple paragraphs might be 600 tokens, still a great chunk. A complex article with code examples could hit 900 tokens.
@@ -2819,7 +2819,7 @@ graph LR
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: `### 51. Markdown / HTML Structure Chunking - Use Cases & Tools
+          notes: `### Markdown / HTML Structure Chunking - Use Cases & Tools
 [conversational] Let's explore where structure-based chunking excels and the tools that make implementation practical.
 #### Use Cases
 [enthusiastically] This approach is perfect for **web pages, documentation portals, and blogs**. Any content published to the web typically has HTML structure, and leveraging that structure during chunking preserves the author's formatting intentions. [conversational] Think of Medium articles, company blogs, or news sites where headings, lists, and code blocks carry important meaning.
@@ -2858,7 +2858,7 @@ For Markdown, parsers like **marked** and **remark** convert Markdown into struc
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: `### 52. Table-Aware Chunking - Pros
+          notes: `### Table-Aware Chunking - Pros
 [enthusiastically] Moving to technique 13, table-aware chunking. This is a specialized approach that's critical when your documents contain structured data in tables.
 #### Intact Table Extraction
 [confidently] The primary benefit is **extracting tables as complete units**. [lecture] Tables are fundamentally different from narrative text. They have rows, columns, headers, and cell relationships that define their meaning. [seriously] Split a table across multiple chunks and you lose the ability to understand those relationships. [pleased] Table-aware chunking recognizes tables as atomic units and keeps them together, which means downstream systems can actually parse and query the data meaningfully.
@@ -2887,7 +2887,7 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: `### 53. Table-Aware Chunking - Cons
+          notes: `### Table-Aware Chunking - Cons
 [cautiously] Now let's discuss the practical challenges of table-aware chunking that you need to consider.
 #### Format Variability
 [concerned] **Table extraction quality varies dramatically** across document formats. Extracting tables from HTML is relatively straightforward since tables have explicit markup. But PDF tables? That's a nightmare. PDFs store tables as positioned text fragments, not structured data. [seriously] Tools have to infer table structure from spatial layout, which is error-prone. Excel sheets are easier but have their own quirks with merged cells and formulas.
@@ -2951,7 +2951,7 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: `### 54. Table-Aware Chunking - Configuration
+          notes: `### Table-Aware Chunking - Configuration
 [lecture] Let's configure table-aware chunking for optimal results in production systems.
 #### Best Chunk Size
 [conversational] The approach here is fundamentally different: **per table chunking**. Each table becomes one chunk, regardless of its size. In practice, most tables fall into the **100 to 500 token range**, which works well for embedding models. A small pricing table with 3 products might be 100 tokens when converted to Markdown format. A benchmark comparison table with 10 rows and 8 columns could reach 500 tokens.
@@ -3013,7 +3013,7 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: `### 55. Table-Aware Chunking - Use Cases & Tools
+          notes: `### Table-Aware Chunking - Use Cases & Tools
 [conversational] Let's explore the ideal scenarios for table-aware chunking and the practical tools that make it feasible.
 #### Use Cases
 [enthusiastically] This technique is essential for **financial reports** that are packed with tables showing revenue breakdowns, balance sheets, cash flow statements, and comparative analyses. Users asking financial questions expect to retrieve actual numbers organized in their original tabular context.
@@ -3052,7 +3052,7 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: `### 56. Code-Aware Chunking - Pros
+          notes: `### Code-Aware Chunking - Pros
 [enthusiastically] Technique 14 is code-aware chunking, designed specifically for source code repositories and technical documentation containing code examples.
 #### Semantic Structure Preservation
 [confidently] The key advantage is **splitting by logical code units**: functions, classes, and modules. [lecture] Code isn't random text; it has deep structure. A function is a complete unit of logic with inputs, processing, and outputs. A class encapsulates related data and methods. [pleased] By chunking along these boundaries, you **preserve semantic meaning**. You never split a function in half, which would make the code incomprehensible and useless for retrieval.
@@ -3081,7 +3081,7 @@ Functions often depend on nearby code: imports at the top of the file, type defi
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: `### 57. Code-Aware Chunking - Cons
+          notes: `### Code-Aware Chunking - Cons
 [cautiously] Let's discuss the challenges and limitations of code-aware chunking that you'll need to navigate.
 #### Language-Specific Requirements
 [concerned] The biggest challenge is that **each programming language requires specific handling**. Python uses indentation for structure, JavaScript uses braces and semicolons, Go has its own conventions. [seriously] You need language-specific parsers that understand the syntax and can identify function and class boundaries. This means maintaining separate logic for Python, JavaScript, Java, C++, Rust, and every other language in your codebase. That's significant engineering overhead.
@@ -3147,7 +3147,7 @@ Functions often depend on nearby code: imports at the top of the file, type defi
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: `### 58. Code-Aware Chunking - Configuration
+          notes: `### Code-Aware Chunking - Configuration
 [lecture] Let's configure code-aware chunking to balance completeness with embedding model constraints.
 #### Best Chunk Size
 [conversational] The approach is **function or class-based** rather than fixed-size. In practice, most functions fall into **200 to 800 tokens**, which translates to roughly **50 to 150 lines of code**. A small utility function might be 50 lines, while a more complex method with error handling and validation could reach 150 lines.
@@ -3212,7 +3212,7 @@ You might also **include essential imports** at the top of each chunk so the cod
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: `### 59. Code-Aware Chunking - Use Cases & Tools
+          notes: `### Code-Aware Chunking - Use Cases & Tools
 [conversational] Let's explore the scenarios where code-aware chunking is essential and the mature tooling that supports it.
 #### Use Cases
 [enthusiastically] **Code search and documentation** is the primary use case. Think of GitHub's code search or internal developer portals where engineers need to find specific functions or understand how APIs work. Code-aware chunking ensures search results are complete functions rather than fragments.
@@ -3251,7 +3251,7 @@ You might also **include essential imports** at the top of each chunk so the cod
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: `### 60. Windowed Sentence Grouping - Pros
+          notes: `### Windowed Sentence Grouping - Pros
 [enthusiastically] Technique 15, windowed sentence grouping, offers an elegant middle ground between simplicity and semantic awareness.
 #### Sentence Coherence with Stride
 [lecture] The approach uses a **sliding window that moves sentence by sentence** rather than character by character. You might take 3 sentences for one chunk, then move forward by 1 sentence and take the next 3. [pleased] This creates overlapping chunks that respect natural language boundaries. It's like reading a paragraph with a sliding attention window, never cutting sentences in half.
@@ -3280,7 +3280,7 @@ The sliding window approach provides **better context than fixed-size chunks**. 
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: `### 61. Windowed Sentence Grouping - Cons
+          notes: `### Windowed Sentence Grouping - Cons
 [cautiously] Let's examine the practical challenges that come with windowed sentence grouping.
 #### Storage Redundancy
 [concerned] The **overlapping windows create significant redundancy**. If your stride is 1 sentence and your window is 3 sentences, each sentence (except those at document edges) appears in 3 different chunks. [disappointed] This triples your storage requirements! For large document collections, this overhead adds up quickly in terms of database size, embedding costs, and indexing time. You're paying three times to embed and store essentially the same content.
@@ -3344,7 +3344,7 @@ The sliding window approach provides **better context than fixed-size chunks**. 
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: `### 62. Windowed Sentence Grouping - Configuration
+          notes: `### Windowed Sentence Grouping - Configuration
 [lecture] Let's configure windowed sentence grouping for optimal balance between context and efficiency.
 #### Best Chunk Size
 [conversational] The typical configuration is **2 to 5 sentences per window**, which translates to roughly **100 to 300 tokens**. [lecture] Why this range? Two sentences is usually the minimum to maintain coherent context, anything less and you're just retrieving isolated statements. Five sentences captures a complete paragraph's worth of information in most documents.
@@ -3406,7 +3406,7 @@ graph LR
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: `### 63. Windowed Sentence Grouping - Use Cases & Tools
+          notes: `### Windowed Sentence Grouping - Use Cases & Tools
 [conversational] Let's explore the ideal scenarios for windowed sentence grouping and the practical tools that make implementation straightforward.
 #### Use Cases
 [enthusiastically] **News articles** are perfect for this approach. They're written in clear, complete sentences with logical flow from one to the next. The sliding window captures that flow naturally, ensuring retrieved chunks maintain the article's narrative arc.
@@ -3445,7 +3445,7 @@ graph LR
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 64. Adaptive Length Chunking - Pros
+          notes: `### Adaptive Length Chunking - Pros
 [enthusiastically] Technique 16, adaptive length chunking, represents a more sophisticated approach that dynamically adjusts chunk sizes based on content characteristics.
 #### Dynamic Size Adaptation
 [pleased] The core innovation is that **chunk sizes adapt to content complexity and information density**. Dense, technical sections get smaller chunks to maintain focus and clarity. Simple, narrative sections get larger chunks since they're easier to embed and retrieve effectively. [delighted] This creates a more **token-efficient system** because you're not wasting tokens on oversized simple chunks or losing information in undersized complex ones.
@@ -3474,7 +3474,7 @@ This approach **optimizes for both retrieval quality and computational efficienc
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 65. Adaptive Length Chunking - Cons
+          notes: `### Adaptive Length Chunking - Cons
 [cautiously] Let's examine the practical challenges that make adaptive chunking more demanding to implement and maintain.
 #### Complexity Metric Challenge
 [concerned] The fundamental challenge is **defining a good complexity metric**. How do you measure whether content is "complex" or "simple"? [lecture] You might use lexical diversity, perplexity from a language model, average sentence length, vocabulary difficulty, or domain-specific terminology density. [firmly] Each metric has trade-offs, and **there's no universal answer**. Finding the right metric for your specific domain requires experimentation and domain expertise.
@@ -3543,7 +3543,7 @@ This approach **optimizes for both retrieval quality and computational efficienc
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 66. Adaptive Length Chunking - Configuration
+          notes: `### Adaptive Length Chunking - Configuration
 [lecture] Let's configure adaptive chunking with practical parameters that balance quality and complexity.
 #### Dynamic Chunk Sizing
 [conversational] The chunk size range is **200 to 1000 tokens**, dynamically determined by complexity analysis. [seriously] For **high-complexity content** like dense technical specifications, mathematical proofs, or legal language, target **200 to 400 tokens**. This keeps chunks focused on manageable information units that embed well and retrieve precisely.
@@ -3608,7 +3608,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 67. Adaptive Length Chunking - Use Cases & Tools
+          notes: `### Adaptive Length Chunking - Use Cases & Tools
 [conversational] Let's explore where adaptive chunking provides the most value and the tools needed to implement it effectively.
 #### Use Cases
 [enthusiastically] **Mixed-density documents like textbooks** are perfect candidates. Textbooks have simple introductory chapters, dense technical chapters, worked examples, and summary sections. Adaptive chunking can handle this variety gracefully, sizing chunks appropriately for each section's complexity.
@@ -3647,7 +3647,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#651c60',
-          notes: `### 68. Summarization-Based Chunking - Pros
+          notes: `### Summarization-Based Chunking - Pros
 [enthusiastically] Technique 17, summarization-based chunking, adds an intelligent layer by augmenting chunks with AI-generated summaries.
 #### Summary Augmentation for Recall
 [pleased] The key innovation is **adding summaries or contextual descriptions to each chunk**, dramatically **boosting recall** in retrieval. [lecture] When someone searches for a concept, they might not use the exact words from the original text. But if each chunk has a summary highlighting its key concepts, semantic search can match against those summaries even when specific terms don't appear in the original content. [conversational] It's like adding index cards to your chunks.
@@ -3676,7 +3676,7 @@ For **very long documents**, chunks can feel disconnected from the document's ma
             </div>
           ),
           backgroundColor: '#651c60',
-          notes: `### 69. Summarization-Based Chunking - Cons
+          notes: `### Summarization-Based Chunking - Cons
 [cautiously] Let's address the significant challenges and costs associated with summarization-based chunking.
 #### Generation Cost
 [concerned] The most obvious challenge is that **generating summaries is expensive**. You need to call an LLM for every chunk or section in your document collection. [seriously] If you have 10,000 documents with 50 chunks each, that's 500,000 LLM calls. Even with cheaper models, this adds up quickly in both cost and time. [disappointed] Processing a large corpus might take hours or days and cost hundreds or thousands of dollars in API fees.
@@ -3738,7 +3738,7 @@ For **very long documents**, chunks can feel disconnected from the document's ma
             </div>
           ),
           backgroundColor: '#651c60',
-          notes: `### 70. Summarization-Based Chunking - Configuration
+          notes: `### Summarization-Based Chunking - Configuration
 [lecture] Let's configure summarization-based chunking to balance quality with the inevitable computational costs.
 #### Chunk Size with Summaries
 [conversational] Start with a **base chunk of 400 to 800 tokens** from your chosen chunking strategy, whether that's fixed-size, semantic, or structural. Then add a **brief summary of 50 to 150 tokens**. [seriously] The summary should capture the chunk's main topic, key points, and how it relates to the broader document. Keep it concise because the summary will be embedded along with the original content.
@@ -3798,7 +3798,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#651c60',
-          notes: `### 71. Summarization-Based Chunking - Use Cases & Tools
+          notes: `### Summarization-Based Chunking - Use Cases & Tools
 [conversational] Let's explore the scenarios where summarization-based chunking justifies its costs and the tools that make implementation practical.
 #### Use Cases
 [enthusiastically] **Very long documents** like books and comprehensive reports are prime candidates. When a single document has hundreds of pages, chunks can feel isolated from the overall narrative. [pleased] Summaries provide essential grounding that connects each chunk to the document's broader themes and structure. Users querying these documents get much better context in retrieved results.
@@ -3864,7 +3864,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#2b651c',
-          notes: `### 72. Graph-Based Semantic Chunking - Pros
+          notes: `### Graph-Based Semantic Chunking - Pros
 [enthusiastically] Technique 18, graph-based semantic chunking, represents one of the most sophisticated approaches using graph theory and embeddings.
 #### Topic-Pure Chunks via Community Detection
 [pleased] The core innovation is building a **sentence graph where edges represent semantic similarity**, then applying **community detection algorithms** to identify clusters. [delighted] These clusters become chunks. The beauty is that **chunks are topic-pure** because they're grouped by semantic cohesion rather than arbitrary boundaries. [confidently] Sentences discussing authentication cluster together, even if they're separated in the original text.
@@ -3893,7 +3893,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#2b651c',
-          notes: `### 73. Graph-Based Semantic Chunking - Cons
+          notes: `### Graph-Based Semantic Chunking - Cons
 [cautiously] Let's discuss the significant implementation and computational challenges of graph-based chunking.
 #### Implementation Complexity
 [seriously] The **implementation is genuinely complex** and requires expertise in graph algorithms. [concerned] You need to embed every sentence, compute pairwise similarities to build the graph, apply community detection or clustering algorithms like Louvain or Label Propagation, and map the results back to chunks. [firmly] Each step has parameters to tune and edge cases to handle. This isn't something you implement in an afternoon; it's a multi-week engineering effort.
@@ -3959,7 +3959,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#2b651c',
-          notes: `### 74. Graph-Based Semantic Chunking - Configuration
+          notes: `### Graph-Based Semantic Chunking - Configuration
 [lecture] Let's configure graph-based chunking with practical parameters based on research and production implementations.
 #### Variable Community Sizes
 [conversational] Chunks are **variable-sized based on community detection**, typically ranging from **150 to 600 tokens**. [lecture] The size isn't predetermined; it emerges from the **graph structure and topic cohesion**. A tightly-knit topic with many related sentences forms a larger chunk. A standalone concept mentioned briefly forms a smaller chunk.
@@ -4023,7 +4023,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#2b651c',
-          notes: `### 75. Graph-Based Semantic Chunking - Use Cases & Tools
+          notes: `### Graph-Based Semantic Chunking - Use Cases & Tools
 [conversational] Let's explore where graph-based chunking provides maximum value and the specialized tools required for implementation.
 #### Use Cases
 [enthusiastically] **Research papers** are ideal candidates because they naturally contain multiple topics: background, methodology, results, discussion. [pleased] These topics interweave throughout the paper but have distinct semantic identities. Graph-based chunking can automatically identify and group content by these underlying topics without relying on section headings.
@@ -4062,7 +4062,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#1c2965',
-          notes: `### 76. Audio / ASR Time-Based Chunking - Pros
+          notes: `### Audio / ASR Time-Based Chunking - Pros
 [enthusiastically] Technique 19 shifts to audio and transcription content, using time as the chunking dimension.
 #### Timestamp Synchronization
 [pleased] The primary advantage is perfect **synchronization with timestamps**. When you chunk a podcast transcript by time intervals, each chunk has start and end timestamps that map directly to the audio. [delighted] This means when users find relevant information, you can link them to that exact moment in the audio file. "The answer to your question is at 23:47 in the podcast." That's incredibly valuable for user experience.
@@ -4092,7 +4092,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#1c2965',
-          notes: `### 77. Audio / ASR Time-Based Chunking - Cons
+          notes: `### Audio / ASR Time-Based Chunking - Cons
 [cautiously] While time-based chunking aligns naturally with audio content, it introduces challenges around semantic boundaries and quality dependencies.
 #### Semantic Fragmentation
 [concerned] The fundamental problem is that **time slices don't respect semantic boundaries**. A 30-second chunk might start mid-sentence or split a complete thought across two chunks. [disappointed] Someone might be explaining a complex concept that takes 45 seconds, and your 30-second chunks will cut it awkwardly. The retrieved chunk loses coherence because it contains incomplete ideas.
@@ -4159,7 +4159,7 @@ graph TD
             </div>
           ),
           backgroundColor: '#1c2965',
-          notes: `### 78. Audio / ASR Time-Based Chunking - Configuration
+          notes: `### Audio / ASR Time-Based Chunking - Configuration
 [lecture] Let's examine the practical parameters for implementing time-based audio chunking effectively.
 #### Best Chunk Size
 [conversational] The recommended range is **15 to 60 seconds of audio**, which typically translates to **150 to 500 tokens** of transcribed text. [lecture] Why this range? At the lower end, 15 seconds is usually enough to capture a complete thought or statement in most speech. At the upper end, 60 seconds keeps chunks manageable for processing and retrieval without overwhelming users with too much content.
@@ -4204,7 +4204,7 @@ Two seconds is usually sufficient because that's about how long it takes to spea
             </div>
           ),
           backgroundColor: '#1c2965',
-          notes: `### 79. Audio / ASR Time-Based Chunking - Use Cases & Tools
+          notes: `### Audio / ASR Time-Based Chunking - Use Cases & Tools
 [conversational] Now let's examine where time-based audio chunking excels and the tools that make implementation practical.
 #### Use Cases and Examples
 [enthusiastically] **Podcasts, earnings calls, and lectures** are perfect candidates. These are long-form audio content where users often need to find and jump to specific moments. [pleased] A user searching for "what did the CEO say about revenue growth" can retrieve the relevant chunk and immediately seek to that timestamp in the audio. The time-based structure aligns perfectly with how users consume this content.
@@ -4244,7 +4244,7 @@ However, it's not Advanced because the concepts are straightforward and excellen
             </div>
           ),
           backgroundColor: '#651c34',
-          notes: `### 80. Speaker-Turn Chunking - Pros
+          notes: `### Speaker-Turn Chunking - Pros
 [enthusiastically] Technique 20, speaker-turn chunking, organizes audio transcripts by who is speaking, creating chunks that align with conversational structure.
 #### Dialog Structure Preservation
 [pleased] The primary advantage is that speaker-turn chunking **preserves the natural dialog structure** and **conversation flow**. [lecture] When someone asks a question and another person answers, those utterances belong together semantically, even if they're from different speakers. [confidently] By chunking at speaker turns, you keep **question-answer pairs intact**, which is crucial for understanding conversational content.
@@ -4273,7 +4273,7 @@ However, it's not Advanced because the concepts are straightforward and excellen
             </div>
           ),
           backgroundColor: '#651c34',
-          notes: `### 81. Speaker-Turn Chunking - Cons
+          notes: `### Speaker-Turn Chunking - Cons
 [cautiously] Let's examine the practical challenges that come with speaker-turn chunking in real-world audio processing scenarios.
 #### Variable Turn Lengths
 [concerned] The fundamental challenge is that **speaker turn lengths vary dramatically**. [lecture] Some speakers give one-sentence answers while others deliver five-minute monologues. [disappointed] In a podcast, the host might ask brief questions while the guest provides lengthy, detailed responses. This creates **highly variable chunk sizes**, which can be problematic if your embedding model or retrieval system performs best with consistent chunk lengths.
@@ -4311,7 +4311,7 @@ However, it's not Advanced because the concepts are straightforward and excellen
             </div>
           ),
           backgroundColor: '#651c34',
-          notes: `### 82. Speaker-Turn Chunking - Configuration
+          notes: `### Speaker-Turn Chunking - Configuration
 [lecture] Let's explore the optimal configurations for implementing speaker-turn chunking in your audio processing pipeline.
 #### Best Chunk Size
 [conversational] The recommended approach is **per turn or grouped 2-3 turns, typically around 100-300 tokens**. [lecture] A single speaker turn often works well if speakers tend to give focused, coherent responses. However, if you have very short turns like "yes" or "I agree," you might group 2-3 consecutive turns from the same speaker to create more substantial chunks.
@@ -4349,7 +4349,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#651c34',
-          notes: `### 83. Speaker-Turn Chunking - Use Cases & Tools
+          notes: `### Speaker-Turn Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where speaker-turn chunking shines and the tools that make it possible.
 #### Use Cases and Examples
 [pleased] **Meeting transcripts and summaries** are a prime use case. [lecture] In corporate meetings, knowing who suggested an action item, who raised concerns, or who agreed to take ownership matters enormously. [conversational] Speaker-turn chunks let you build features like "Show me everything Sarah said in this meeting" or "Find all decisions made by the VP."
@@ -4384,7 +4384,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#65651c',
-          notes: `### 84. QA-Focused Chunking - Pros
+          notes: `### QA-Focused Chunking - Pros
 [enthusiastically] Technique 21, QA-focused chunking, is purpose-built for question-answering systems, optimizing chunks specifically for retrieval accuracy in QA scenarios.
 #### Tailored Answer Spans
 [pleased] The core advantage is that chunks are **tailored to answer spans**, providing **high precision for QA** tasks. [lecture] Instead of arbitrary boundaries, you identify potential answer-bearing passages and create chunks around them. [delighted] This means when someone asks a question, your retrieval system is more likely to return a chunk that contains a complete, relevant answer.
@@ -4412,7 +4412,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#65651c',
-          notes: `### 85. QA-Focused Chunking - Cons
+          notes: `### QA-Focused Chunking - Cons
 [cautiously] While QA-focused chunking excels for question-answering, it comes with significant implementation challenges and limitations.
 #### Label Generation Requirements
 [concerned] The biggest challenge is that it **requires label generation or sophisticated heuristics**. [seriously] You need to identify potential question-answer pairs in your documents. [lecture] This might mean using question generation models to create synthetic questions for each passage, or developing heuristics to recognize QA patterns in structured documents like FAQs.
@@ -4451,7 +4451,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#65651c',
-          notes: `### 86. QA-Focused Chunking - Configuration
+          notes: `### QA-Focused Chunking - Configuration
 [lecture] Let's explore the configuration parameters that make QA-focused chunking effective for question-answering systems.
 #### Best Chunk Size
 [conversational] The recommended size is **100-400 tokens around candidate answers**. [lecture] This range is designed to **capture complete answer contexts**. [seriously] You want enough text to include the answer itself plus surrounding context that helps understand it, but not so much that you dilute the focus with irrelevant information.
@@ -4490,7 +4490,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#65651c',
-          notes: `### 87. QA-Focused Chunking - Use Cases & Tools
+          notes: `### QA-Focused Chunking - Use Cases & Tools
 [enthusiastically] Let's explore the ideal applications for QA-focused chunking and the tools that enable it.
 #### Use Cases and Examples
 [pleased] **Knowledge bases** are a natural fit for QA-focused chunking. [lecture] Corporate knowledge bases typically contain articles structured around answering specific questions. [conversational] By chunking around answer boundaries, you ensure that when an employee asks "How do I submit an expense report?" they get a chunk containing the complete procedure, not arbitrary fragments.
@@ -4525,7 +4525,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#341c65',
-          notes: `### 88. Page-Preservation Chunking - Pros
+          notes: `### Page-Preservation Chunking - Pros
 [pleased] Technique 22, page-preservation chunking, is beautifully simple and highly practical for PDF documents where page numbers carry meaning.
 #### Simplicity for PDFs
 [delighted] This approach is **simple for PDFs** and **keeps page context and references intact**. [lecture] When your source documents are already paginated, using pages as chunk boundaries requires minimal processing. [conversational] You extract text page by page, and each page becomes a chunk. No complex boundary detection needed.
@@ -4553,7 +4553,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#341c65',
-          notes: `### 89. Page-Preservation Chunking - Cons
+          notes: `### Page-Preservation Chunking - Cons
 [cautiously] While page-preservation chunking offers simplicity, it comes with significant semantic and efficiency drawbacks.
 #### Pages Aren't Semantic Units
 [concerned] The fundamental problem is that **pages aren't semantic units**. [seriously] Pages are arbitrary divisions based on paper size and formatting, not meaning. [lecture] A page boundary might occur mid-sentence, mid-paragraph, or in the middle of an important concept. [disappointed] This completely ignores the semantic structure of the content.
@@ -4591,7 +4591,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#341c65',
-          notes: `### 90. Page-Preservation Chunking - Configuration
+          notes: `### Page-Preservation Chunking - Configuration
 [lecture] Let's examine the configuration approach for page-preservation chunking and how to handle its inherent variability.
 #### Best Chunk Size
 [conversational] The chunk size is **per page with variable tokens**. [seriously] You don't control the chunk size directly—it's determined by how much content is on each page. [lecture] **Typically ranges from 300-1200 tokens depending on page density**. A title page or chapter intro might be 200-300 tokens, while a dense technical page could be 1000-1200 tokens.
@@ -4630,7 +4630,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#341c65',
-          notes: `### 91. Page-Preservation Chunking - Use Cases & Tools
+          notes: `### Page-Preservation Chunking - Use Cases & Tools
 [enthusiastically] Let's explore when page-preservation chunking is the right choice and the tools that make it work.
 #### Use Cases and Examples
 [pleased] **Scanned documents** are a perfect match for page-preservation chunking. [lecture] When you OCR scanned documents, they're inherently page-based. [conversational] Historical records, old reports, scanned books—these are all naturally paginated, and preserving page structure maintains consistency with the physical originals.
@@ -4665,7 +4665,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6528',
-          notes: `### 92. Caption + Context Chunking - Pros
+          notes: `### Caption + Context Chunking - Pros
 [enthusiastically] Technique 23, caption plus context chunking, bridges the gap between visual and textual content in documents.
 #### Figure and Table Caption Pairing
 [pleased] The core strength is that it **pairs figure and table captions with nearby text**, creating semantically rich chunks. [lecture] Scientific papers, technical reports, and business documents often have figures, charts, diagrams, and tables that are described or referenced in surrounding paragraphs. [delighted] By creating chunks that include both the caption and the explanatory text, you preserve the relationship between visual and textual information.
@@ -4693,7 +4693,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6528',
-          notes: `### 93. Caption + Context Chunking - Cons
+          notes: `### Caption + Context Chunking - Cons
 [cautiously] While caption plus context chunking excels with visual content, it faces significant technical and practical challenges.
 #### Layout Detection Requirements
 [concerned] The technique **requires reliable layout detection** to identify figures, tables, and their captions. [seriously] This is non-trivial in PDFs and other document formats. [lecture] You need to distinguish figures from body text, identify caption text (which might be in different fonts or positions), and determine which paragraphs discuss each figure.
@@ -4731,7 +4731,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6528',
-          notes: `### 94. Caption + Context Chunking - Configuration
+          notes: `### Caption + Context Chunking - Configuration
 [lecture] Let's explore how to configure caption plus context chunking for optimal visual-textual integration.
 #### Best Chunk Size
 [conversational] The recommended size is **100-400 tokens near the caption**, designed to **include caption text plus surrounding explanatory paragraphs**. [lecture] The caption itself might only be 10-30 tokens: "Figure 3: System Architecture Diagram." But the value comes from including text that references or explains the figure.
@@ -4771,7 +4771,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6528',
-          notes: `### 95. Caption + Context Chunking - Use Cases & Tools
+          notes: `### Caption + Context Chunking - Use Cases & Tools
 [enthusiastically] Let's explore the ideal applications for caption plus context chunking and the tools that enable visual-textual integration.
 #### Use Cases and Examples
 [pleased] **Scientific papers with figures** are the quintessential use case. [lecture] Research papers rely heavily on figures to present experimental results, diagrams, and visualizations. [conversational] A biology paper might have "Figure 2: Cell division stages" with several paragraphs discussing each stage. [confidently] Caption plus context chunking ensures that searches for "cell division" or "mitosis" retrieve chunks containing both the figure caption and its detailed explanation.
@@ -4806,7 +4806,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#521c65',
-          notes: `### 96. Metadata-Aware Chunking - Pros
+          notes: `### Metadata-Aware Chunking - Pros
 [enthusiastically] Technique 24, metadata-aware chunking, enhances basic chunking by enriching chunks with contextual metadata that dramatically improves retrieval capabilities.
 #### Metadata Enrichment
 [pleased] The core advantage is that it **adds filters like section, author, date, and more to chunks**, creating a multi-dimensional retrieval space. [lecture] Instead of just searching by semantic similarity, you can filter by document properties. [delighted] This transforms your retrieval system from a simple vector search into a sophisticated knowledge base with faceted search capabilities.
@@ -4835,7 +4835,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#521c65',
-          notes: `### 97. Metadata-Aware Chunking - Cons
+          notes: `### Metadata-Aware Chunking - Cons
 [cautiously] While metadata enriches chunking significantly, it introduces operational complexity and overhead that must be carefully managed.
 #### Metadata Extraction Effort
 [concerned] **Metadata extraction requires additional effort** beyond simple text chunking. [seriously] You need to identify, extract, and validate metadata fields from your documents. [lecture] This might involve parsing document headers, extracting author information from file properties, determining section hierarchies, or using NLP to classify document types.
@@ -4874,7 +4874,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#521c65',
-          notes: `### 98. Metadata-Aware Chunking - Configuration
+          notes: `### Metadata-Aware Chunking - Configuration
 [lecture] Let's examine how to configure metadata-aware chunking as an enhancement layer on top of your base chunking strategy.
 #### Best Chunk Size
 [conversational] Chunk size should **inherit from your base chunking method**, typically **300-800 tokens**. [lecture] Metadata-aware chunking is not about determining chunk boundaries—it's about enriching chunks with contextual information. [confidently] You use whatever chunking strategy makes sense for your content (sentence-based, paragraph-based, semantic, etc.), and then layer metadata on top.
@@ -4913,7 +4913,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#521c65',
-          notes: `### 99. Metadata-Aware Chunking - Use Cases & Tools
+          notes: `### Metadata-Aware Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where metadata-aware chunking provides maximum value and the tools that support it.
 #### Use Cases and Examples
 [pleased] **Enterprise search with facets** is the premier use case. [lecture] Large organizations have thousands or millions of documents across departments, projects, and time periods. [conversational] Employees need to find "marketing reports from Q4 2023 about product launches in Europe" or "technical specifications authored by the infrastructure team." [confidently] Metadata-aware chunking enables these precise, multi-dimensional queries that would be impossible with pure semantic search.
@@ -4948,7 +4948,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#651c2e',
-          notes: `### 100. Hybrid Chunking - Pros
+          notes: `### Hybrid Chunking - Pros
 [enthusiastically] Technique 25, hybrid chunking, represents the pinnacle of flexibility by combining multiple chunking strategies to handle diverse content optimally.
 #### Best of Multiple Methods
 [delighted] Hybrid chunking gives you the **best of multiple methods**, making it **adaptable by document type**. [lecture] Instead of forcing one chunking strategy on all content, you apply different strategies to different document types or even different sections within documents. [pleased] Code gets code-aware chunking, narrative text gets semantic chunking, structured documents get heading-anchor chunking—each optimized for its content type.
@@ -4976,7 +4976,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#651c2e',
-          notes: `### 101. Hybrid Chunking - Cons
+          notes: `### Hybrid Chunking - Cons
 [cautiously] While hybrid chunking offers maximum flexibility, it introduces significant complexity and operational challenges.
 #### Complexity and Moving Parts
 [concerned] Hybrid chunking has **more moving parts** and **requires evaluations to tune** properly. [seriously] You're not managing one chunking strategy but multiple strategies, routing logic, and their interactions. [lecture] Each component needs configuration, testing, and tuning. You need to decide when to use which strategy, how to handle edge cases, and how to compose strategies effectively.
@@ -5017,7 +5017,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#651c2e',
-          notes: `### 102. Hybrid Chunking - Configuration
+          notes: `### Hybrid Chunking - Configuration
 [lecture] Configuring hybrid chunking requires understanding how component strategies interact and compose to create effective chunks.
 #### Best Chunk Size
 [conversational] Chunk size **varies based on component techniques** you're combining. [lecture] There's no single "best" size because different strategies have different optimal sizes. [seriously] The key is ensuring that **after composition, chunks typically land in the 300-800 token range**.
@@ -5056,7 +5056,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#651c2e',
-          notes: `### 103. Hybrid Chunking - Use Cases & Tools
+          notes: `### Hybrid Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where hybrid chunking truly shines and the tools that make it practical to implement.
 #### Use Cases and Examples
 [confidently] **Production RAG systems** are the primary use case for hybrid chunking. [lecture] Production systems need to handle diverse queries, varied content types, and real-world messiness. [pleased] A single chunking strategy rarely delivers optimal results across all these dimensions. Hybrid approaches provide the flexibility to adapt to real-world complexity.
@@ -5091,7 +5091,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6265',
-          notes: `### 104. Sliding Window Chunking - Pros
+          notes: `### Sliding Window Chunking - Pros
 [enthusiastically] Technique 26, sliding window chunking, addresses one of the most critical challenges in text chunking—maintaining context continuity across chunk boundaries.
 #### Continuity and Context Preservation
 [pleased] Sliding window chunking **preserves continuity and context between chunks** through deliberate overlap. [lecture] By ensuring each chunk shares some content with adjacent chunks, you create a smooth transition that maintains narrative flow. [delighted] When a concept spans multiple chunks, the overlap ensures no chunk boundary completely severs that concept.
@@ -5120,7 +5120,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6265',
-          notes: `### 105. Sliding Window Chunking - Cons
+          notes: `### Sliding Window Chunking - Cons
 [cautiously] While sliding window chunking improves context, it creates practical challenges around cost, storage, and result management.
 #### Storage Redundancy
 [concerned] Sliding windows **introduce redundancy in storage**. [seriously] By design, the same content appears in multiple chunks. [lecture] With 20% overlap, roughly 20% of your content is duplicated across chunks. [disappointed] This means 20% more storage costs in your vector database and 20% more embedding storage. For large document collections, this adds up significantly.
@@ -5159,7 +5159,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6265',
-          notes: `### 106. Sliding Window Chunking - Configuration
+          notes: `### Sliding Window Chunking - Configuration
 [lecture] Let's examine the configuration parameters that make sliding window chunking effective for context preservation.
 #### Best Chunk Size
 [conversational] The recommended size is **300-800 tokens for each window**, with **larger sizes for complex documents with long contextual dependencies**. [lecture] This range balances having enough content to be meaningful while remaining small enough for effective embedding and retrieval.
@@ -5199,7 +5199,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#1c6265',
-          notes: `### 107. Sliding Window Chunking - Use Cases & Tools
+          notes: `### Sliding Window Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where sliding window chunking delivers the most value and the tools that implement it effectively.
 #### Use Cases and Examples
 [pleased] **Legal documents and contracts** are ideal for sliding window chunking. [lecture] Legal language is dense, precise, and highly interconnected. Clauses reference other clauses, definitions build on each other, and context is crucial for interpretation. [confidently] Overlapping chunks ensure that when a clause references "the aforementioned conditions," those conditions appear in the same chunk or in the overlap.
@@ -5302,7 +5302,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#104928',
-          notes: `### 108. Quick Reference: Default Sizing & Overlap
+          notes: `### Quick Reference: Default Sizing & Overlap
 [confidently] Let's consolidate the default configurations across all 26 chunking techniques into a practical quick reference.
 #### Default Configuration Table
 [lecture] This table provides **tested defaults for the most commonly used chunking techniques**. [pleased] These aren't arbitrary numbers—they represent battle-tested configurations from production RAG systems and research literature. [conversational] Think of these as excellent starting points that you'll tune for your specific needs.
@@ -5344,7 +5344,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#104928',
-          notes: `### 109. Selection Guide: Decision Flow - Part 1
+          notes: `### Selection Guide: Decision Flow - Part 1
 [confidently] Let's walk through a practical decision framework for choosing the right chunking strategy for your specific needs.
 #### Document Structure Decision
 [lecture] The first critical question is: **Is your document structure reliable?** [conversational] By this we mean, are there consistent headings, sections, HTML tags, or Markdown structure you can depend on? [pleased] **If yes**, you should leverage that structure with **structure-aware chunking like Heading-Anchor, Markdown/HTML processing, or general structure-aware approaches**.
@@ -5392,7 +5392,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#104928',
-          notes: `### 110. Selection Guide: Decision Flow - Part 2
+          notes: `### Selection Guide: Decision Flow - Part 2
 [confidently] Let's continue with specialized content considerations and practical recommendations by document type.
 #### Special Content Types
 [conversational] The third question addresses **special content types**. [lecture] Different content modalities require different chunking approaches. [pleased] **For code**, use **code-aware chunking** that respects function boundaries, classes, and syntactic structure. **For tables**, use **table-aware chunking** that keeps table structure intact and adds context from surrounding text.
@@ -5468,7 +5468,7 @@ Once you have diarization results, the actual chunking is straightforward since 
             </div>
           ),
           backgroundColor: '#104928',
-          notes: `### 111. Best Practices & Key Takeaways
+          notes: `### Best Practices & Key Takeaways
 [warmly] We've journeyed through 26 chunking techniques, and now let's crystallize the essential insights that will guide your implementation decisions.
 #### Key Takeaways
 [inspiringly] Remember, **there's no one-size-fits-all solution** in chunking. [confidently] Every document collection, every use case, every query pattern has unique characteristics that influence what works best. [warmly] The teams that succeed are those who choose strategies based on their specific document types and goals, not on what's trendy or complex.
