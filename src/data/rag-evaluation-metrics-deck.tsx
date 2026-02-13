@@ -481,24 +481,24 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
           ),
           backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — Overview
-Moving on from Recall, let's talk about its complementary twin—Retrieval Precision at K. While recall asks "Did we find everything?", precision asks "Is what we found actually good?"
+[conversational] Moving on from Recall, let's talk about its complementary twin—Retrieval Precision at K. [quizzically] While recall asks "Did we find everything?", precision asks "Is what we found actually good?"
 
 ####  What Is Retrieval Precision@K?
-Think of precision like quality control in manufacturing. If you're building a car and you order a hundred parts, precision tells you what percentage of those hundred parts are actually usable versus defective. In RAG systems, Precision at K measures the relevance purity of your retrieved documents. Out of the K documents you retrieved, how many are actually relevant to the query? If you retrieve ten documents but only seven are relevant, your precision is seventy percent.
+[storytelling] Think of precision like quality control in manufacturing. If you're building a car and you order a hundred parts, precision tells you what percentage of those hundred parts are actually usable versus defective. [lecture] In RAG systems, Precision at K measures the relevance purity of your retrieved documents. Out of the K documents you retrieved, how many are actually relevant to the query? If you retrieve ten documents but only seven are relevant, your precision is seventy percent.
 
 ####  Why This Matters
-Here's the key difference from recall: recall cares about completeness, but precision cares about cleanliness. Low precision means you're polluting your LLM's context with irrelevant junk. Imagine trying to study for an exam while someone keeps handing you random notes from completely different subjects—that's what low precision does to your LLM. The model gets distracted by tangential information, which can lead to hallucinations or off-topic answers.
+[confidently] Here's the key difference from recall: recall cares about completeness, but precision cares about cleanliness. [cautiously] Low precision means you're polluting your LLM's context with irrelevant junk. [storytelling] Imagine trying to study for an exam while someone keeps handing you random notes from completely different subjects—that's what low precision does to your LLM. The model gets distracted by tangential information, which can lead to hallucinations or off-topic answers.
 
 ####  When to Use This
-Precision becomes critical in several scenarios. First, when you're working with tight token budgets—if your context window is limited, you can't afford to waste tokens on irrelevant documents. Second, if you're using smaller language models with limited context processing ability, high precision helps them focus on what matters. Third, when you're fine-tuning reranking models—these are secondary models that reorder your initial retrieval results to improve relevance. Precision tells you how well your reranker is working.
+[lecture] Precision becomes critical in several scenarios. First, when you're working with tight token budgets—if your context window is limited, you can't afford to waste tokens on irrelevant documents. Second, if you're using smaller language models with limited context processing ability, high precision helps them focus on what matters. Third, when you're fine-tuning reranking models—these are secondary models that reorder your initial retrieval results to improve relevance. Precision tells you how well your reranker is working.
 
 ####  The Good Stuff
-High precision means your LLM gets clean, focused context. This directly improves grounding—the LLM sticks to the facts in the retrieved documents instead of wandering off into speculation. It reduces hallucination risk because the model isn't exposed to confusing or tangential information. And it's especially important for smaller models that struggle to filter out noise on their own.
+[pleased] High precision means your LLM gets clean, focused context. This directly improves grounding—the LLM sticks to the facts in the retrieved documents instead of wandering off into speculation. It reduces hallucination risk because the model isn't exposed to confusing or tangential information. And it's especially important for smaller models that struggle to filter out noise on their own.
 
 ####  The Problems
-But here's the catch: there's often a trade-off between precision and recall. You can achieve perfect precision by only retrieving one document that you're absolutely certain is relevant, but then your recall will be terrible. Also, like recall, precision requires ground truth labels—someone has to judge whether each document is relevant or not. And precision doesn't account for redundancy. If you retrieve ten documents that all say the exact same thing, you'd have perfect precision, but you're wasting context on repetition.
+[cautiously] But here's the catch: there's often a trade-off between precision and recall. You can achieve perfect precision by only retrieving one document that you're absolutely certain is relevant, but then your recall will be terrible. [disappointed] Also, like recall, precision requires ground truth labels—someone has to judge whether each document is relevant or not. And precision doesn't account for redundancy. If you retrieve ten documents that all say the exact same thing, you'd have perfect precision, but you're wasting context on repetition.
 
-Let's dive into how precision is calculated!`
+[enthusiastically] Let's dive into how precision is calculated!`
         },
         {
           id: 8,
@@ -551,24 +551,24 @@ Let's dive into how precision is calculated!`
           ),
           backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — How It Works
-Let's break down the calculation for Precision at K and understand how it differs from recall.
+[lecture] Let's break down the calculation for Precision at K and understand how it differs from recall.
 
 ####  The Core Question
-Precision at K answers: "Of the K documents I retrieved, what percentage are actually relevant?" Notice how this is fundamentally different from recall. Recall asks "How much did I find of everything?" while precision asks "How clean is what I found?"
+[confidently] Precision at K answers: [quizzically] "Of the K documents I retrieved, what percentage are actually relevant?" Notice how this is fundamentally different from recall. Recall asks "How much did I find of everything?" while precision asks "How clean is what I found?"
 
 ####  The Formula Explained
-The formula is Precision at K equals the absolute value of Rel intersection TopK, divided by K. Let me unpack this. The numerator—Rel intersection TopK—is the number of relevant documents in your top-K results. This is the same numerator we used for recall! But here's the key difference: the denominator. For precision, we divide by K, the number of documents we actually retrieved. For recall, we divided by the total number of relevant documents in the entire corpus. This distinction is crucial.
+[conversational] The formula is Precision at K equals the absolute value of Rel intersection TopK, divided by K. Let me unpack this. The numerator—Rel intersection TopK—is the number of relevant documents in your top-K results. This is the same numerator we used for recall! [excited] But here's the key difference: the denominator. For precision, we divide by K, the number of documents we actually retrieved. For recall, we divided by the total number of relevant documents in the entire corpus. This distinction is crucial.
 
 ####  The Difference in Practice
-Let's say you retrieve five documents, three of which are relevant. Your precision is three divided by five, which equals zero point six or sixty percent. But what if there are twenty relevant documents total in your corpus? Your recall would be three divided by twenty, which is only fifteen percent. Same retrieval result, but very different scores! This illustrates the trade-off: you can have high precision with low recall (you're picky but you miss stuff), or high recall with low precision (you cast a wide net but catch a lot of junk).
+[storytelling] Let's say you retrieve five documents, three of which are relevant. Your precision is three divided by five, which equals zero point six or sixty percent. But what if there are twenty relevant documents total in your corpus? Your recall would be three divided by twenty, which is only fifteen percent. [pleased] Same retrieval result, but very different scores! This illustrates the trade-off: you can have high precision with low recall (you're picky but you miss stuff), or high recall with low precision (you cast a wide net but catch a lot of junk).
 
 ####  Target Benchmarks
-For general RAG applications, aim for precision of at least seventy percent. This means at least seven out of every ten retrieved documents should be relevant. For systems with small context windows—maybe you're using a model with only four thousand tokens of context—you need higher precision, at least eighty-five percent. Every wasted token hurts when space is tight. The target also depends on your domain: in medical or legal applications where accuracy is critical, you might want ninety percent or higher precision.
+[lecture] For general RAG applications, aim for precision of at least seventy percent. This means at least seven out of every ten retrieved documents should be relevant. [seriously] For systems with small context windows—maybe you're using a model with only four thousand tokens of context—you need higher precision, at least eighty-five percent. Every wasted token hurts when space is tight. The target also depends on your domain: in medical or legal applications where accuracy is critical, you might want ninety percent or higher precision.
 
 ####  Why These Targets?
-These benchmarks balance practicality with quality. Below seventy percent precision, you're wasting too much of your context window on noise, which confuses the LLM and increases hallucination risk. Above ninety percent, you're probably being too conservative, missing out on potentially useful documents to maintain that ultra-high bar. The sweet spot for most applications is between seventy-five and eighty-five percent.
+[confidently] These benchmarks balance practicality with quality. [cautiously] Below seventy percent precision, you're wasting too much of your context window on noise, which confuses the LLM and increases hallucination risk. Above ninety percent, you're probably being too conservative, missing out on potentially useful documents to maintain that ultra-high bar. [pleased] The sweet spot for most applications is between seventy-five and eighty-five percent.
 
-Now let's see a concrete example!`
+[conversational] Now let's see a concrete example!`
         },
         {
           id: 9,
@@ -622,24 +622,24 @@ Now let's see a concrete example!`
           ),
           backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — Implementation
-Let's walk through a practical example to see how Precision at K works in a real scenario.
+[conversational] Let's walk through a practical example to see how Precision at K works in a real scenario.
 
 ####  The Scenario
-Imagine you're building a customer support RAG system for a software company. A user submits the query, "How to reset account password?" Your retrieval system is configured to return the top five most relevant documents. After running the retrieval, you get back five documents: a comprehensive password reset guide, a step-by-step reset tutorial, an article about the login page structure, a guide on security tips for password resets, and a troubleshooting document about common reset errors.
+[storytelling] Imagine you're building a customer support RAG system for a software company. A user submits the query, "How to reset account password?" Your retrieval system is configured to return the top five most relevant documents. After running the retrieval, you get back five documents: a comprehensive password reset guide, a step-by-step reset tutorial, an article about the login page structure, a guide on security tips for password resets, and a troubleshooting document about common reset errors.
 
 ####  Labeling for Relevance
-Now comes the key step: you need to evaluate each of these five documents for relevance to the query. The password reset guide? Clearly relevant—it directly answers the question. The step-by-step tutorial? Also relevant. The login page article? This one's tricky—it mentions passwords, but it's really about how the login interface works, not about resetting passwords. This is irrelevant noise. The security tips guide? Relevant—it helps users reset passwords safely. The troubleshooting document? Relevant—it addresses problems users might encounter during resets. So we have four relevant documents and one irrelevant one.
+[lecture] Now comes the key step: you need to evaluate each of these five documents for relevance to the query. The password reset guide? [confidently] Clearly relevant—it directly answers the question. The step-by-step tutorial? Also relevant. [puzzled] The login page article? This one's tricky—it mentions passwords, but it's really about how the login interface works, not about resetting passwords. This is irrelevant noise. [pleased] The security tips guide? Relevant—it helps users reset passwords safely. The troubleshooting document? Relevant—it addresses problems users might encounter during resets. So we have four relevant documents and one irrelevant one.
 
 ####  The Calculation
-Precision at five equals four divided by five, which equals zero point eight or eighty percent. This is pretty good! It means that eighty percent of what we retrieved is actually useful, and only twenty percent is noise. The LLM will have to sift through that one irrelevant document, but the signal-to-noise ratio is still healthy.
+[confidently] Precision at five equals four divided by five, which equals zero point eight or eighty percent. [pleased] This is pretty good! It means that eighty percent of what we retrieved is actually useful, and only twenty percent is noise. The LLM will have to sift through that one irrelevant document, but the signal-to-noise ratio is still healthy.
 
 ####  Implementation Steps
-Here's how you'd implement this in your system. First, run your retrieval to get the top-K results—in this case, top five. Second, for each document, apply a relevance judgment. This can be done manually by human annotators, or you can use an LLM-as-a-judge approach where another model evaluates relevance. Third, count the number of relevant documents. Fourth, divide by K to get your precision score. Most RAG evaluation frameworks automate steps three and four.
+[lecture] Here's how you'd implement this in your system. First, run your retrieval to get the top-K results—in this case, top five. Second, for each document, apply a relevance judgment. This can be done manually by human annotators, or you can use an LLM-as-a-judge approach where another model evaluates relevance. Third, count the number of relevant documents. Fourth, divide by K to get your precision score. Most RAG evaluation frameworks automate steps three and four.
 
 ####  What This Tells You
-A precision of eighty percent tells you that your retrieval is reasonably clean, but there's room for improvement. That irrelevant document about the login page suggests your embedding model might be conflating "login" with "password reset" due to shared vocabulary. You might improve precision by using a reranker—a secondary model that reorders results based on deeper semantic understanding. Or you could adjust your chunking strategy to make documents more semantically distinct.
+[conversational] A precision of eighty percent tells you that your retrieval is reasonably clean, but there's room for improvement. [cautiously] That irrelevant document about the login page suggests your embedding model might be conflating "login" with "password reset" due to shared vocabulary. [confidently] You might improve precision by using a reranker—a secondary model that reorders results based on deeper semantic understanding. Or you could adjust your chunking strategy to make documents more semantically distinct.
 
-Let's look at when precision is most important and what its limitations are!`
+[enthusiastically] Let's look at when precision is most important and what its limitations are!`
         },
         {
           id: 10,
@@ -690,24 +690,24 @@ Let's look at when precision is most important and what its limitations are!`
           ),
           backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — Considerations
-Now let's discuss the strategic implications of precision—when to optimize for it and what trade-offs you're making.
+[conversational] Now let's discuss the strategic implications of precision—when to optimize for it and what trade-offs you're making.
 
 ####  The Positive Impact on RAG Systems
-High precision is like having a well-organized library where every book on the shelf is exactly what you need. When your LLM receives high-precision context, it can ground its answers in clean, relevant information without getting distracted by noise. This is especially powerful for smaller language models—say, models with seven billion parameters or fewer—that don't have the capacity to intelligently filter out irrelevant information on their own. High precision also directly reduces hallucination risk because the model isn't exposed to tangential information that might confuse it or lead it astray.
+[storytelling] High precision is like having a well-organized library where every book on the shelf is exactly what you need. When your LLM receives high-precision context, it can ground its answers in clean, relevant information without getting distracted by noise. [confidently] This is especially powerful for smaller language models—say, models with seven billion parameters or fewer—that don't have the capacity to intelligently filter out irrelevant information on their own. [pleased] High precision also directly reduces hallucination risk because the model isn't exposed to tangential information that might confuse it or lead it astray.
 
 ####  When to Use This Metric
-You should prioritize precision in several key scenarios. First, when you're operating under tight token budgets. If your context window is limited to four thousand tokens, you can't afford to waste a single token on irrelevant documents. Every document must count. Second, when you're using smaller or less capable models that struggle with noisy context. Third, when you're evaluating or fine-tuning reranking models—these secondary models that reorder your initial retrieval results. Precision tells you if your reranker is successfully filtering out noise. Fourth, when your application requires concise, focused responses rather than comprehensive exploration of a topic.
+[lecture] You should prioritize precision in several key scenarios. [seriously] First, when you're operating under tight token budgets. If your context window is limited to four thousand tokens, you can't afford to waste a single token on irrelevant documents. Every document must count. Second, when you're using smaller or less capable models that struggle with noisy context. Third, when you're evaluating or fine-tuning reranking models—these secondary models that reorder your initial retrieval results. Precision tells you if your reranker is successfully filtering out noise. Fourth, when your application requires concise, focused responses rather than comprehensive exploration of a topic.
 
 ####  The Good Stuff
-High precision makes your RAG system more reliable and efficient. Your LLM spends less time processing irrelevant information, which means faster responses and lower costs. The answers tend to be more focused and less prone to wandering off topic. For production systems, high precision is often more important than high recall because it's better to give a focused, accurate answer based on a few highly relevant documents than to give a confused or hallucinated answer based on a mix of relevant and irrelevant documents.
+[pleased] High precision makes your RAG system more reliable and efficient. Your LLM spends less time processing irrelevant information, which means faster responses and lower costs. The answers tend to be more focused and less prone to wandering off topic. [confidently] For production systems, high precision is often more important than high recall because it's better to give a focused, accurate answer based on a few highly relevant documents than to give a confused or hallucinated answer based on a mix of relevant and irrelevant documents.
 
 ####  The Problems
-But precision comes with significant trade-offs. The most fundamental is the precision-recall trade-off: if you only retrieve documents you're absolutely certain are relevant, your precision will be high, but you'll miss a lot of relevant documents, making your recall low. This is a classic dilemma in information retrieval. Second, like recall, precision requires ground truth judgments—someone has to label what's relevant and what's not. Third, high precision can be too conservative for complex queries that benefit from diverse perspectives. Sometimes exposure to tangentially related information actually helps the LLM synthesize a better answer. Fourth, precision doesn't account for redundancy. If you retrieve ten documents that all say the exact same thing, your precision might be perfect, but you're wasting context on repetition instead of diversity.
+[cautiously] But precision comes with significant trade-offs. The most fundamental is the precision-recall trade-off: if you only retrieve documents you're absolutely certain are relevant, your precision will be high, but you'll miss a lot of relevant documents, making your recall low. This is a classic dilemma in information retrieval. [disappointed] Second, like recall, precision requires ground truth judgments—someone has to label what's relevant and what's not. Third, high precision can be too conservative for complex queries that benefit from diverse perspectives. Sometimes exposure to tangentially related information actually helps the LLM synthesize a better answer. Fourth, precision doesn't account for redundancy. If you retrieve ten documents that all say the exact same thing, your precision might be perfect, but you're wasting context on repetition instead of diversity.
 
 ####  Finding the Balance
-The key is to not optimize for precision in isolation. Monitor both precision and recall together, and understand that different use cases require different balances. For factual question answering where you need focused, accurate responses, lean toward higher precision. For open-ended research queries where you want comprehensive coverage, lean toward higher recall. Most importantly, always evaluate the end-to-end impact on answer quality—sometimes a bit more noise is worth it if it means capturing critical information.
+[confidently] The key is to not optimize for precision in isolation. Monitor both precision and recall together, and understand that different use cases require different balances. For factual question answering where you need focused, accurate responses, lean toward higher precision. For open-ended research queries where you want comprehensive coverage, lean toward higher recall. [seriously] Most importantly, always evaluate the end-to-end impact on answer quality—sometimes a bit more noise is worth it if it means capturing critical information.
 
-Next up, let's talk about Hit Rate—a simpler but equally important metric!`
+[enthusiastically] Next up, let's talk about Hit Rate—a simpler but equally important metric!`
         }
       ]
     },
