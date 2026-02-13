@@ -60,7 +60,7 @@ export const graphRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#291e5b',
+          backgroundColor: '#191335',
           notes: `### 13 Graph-Based Retrieval Techniques
 
 [cheerfully] Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
@@ -86,7 +86,8 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
           content: (
             <div style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
-                <h4>
+              </div>
+              <h4>
                   Technique Categories
                   <MermaidPopover
                     title="Graph Retrieval Technique Landscape"
@@ -120,8 +121,7 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
     style E fill:#ffb74d,color:#000`}
                   />
                 </h4>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '1.2rem', marginTop: '14px' }}>
                 <GSAPStaggerList stagger={0.08} duration={0.6}>
                   <div style={{ marginBottom: '0.7rem' }}>
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>1</span>
@@ -151,6 +151,8 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>7</span>
                     <strong>Graph + Dense Vector Hybrid</strong> — Combine embeddings with connectivity
                   </div>
+                </GSAPStaggerList>
+                <GSAPStaggerList stagger={0.08} duration={0.6}>
                   <div style={{ marginBottom: '0.7rem' }}>
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>8</span>
                     <strong>Graph + BM25 👉 'bee-em-twenty-five' Hybrid</strong> — Validate with keyword BM25
@@ -179,7 +181,7 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
               </div>
             </div>
           ),
-          backgroundColor: '#291e5b',
+          backgroundColor: '#191335',
           notes: `### Overview: 13 Techniques at a Glance
 
 [lecture] Let's take a bird's eye view of all thirteen techniques we'll be covering today. This roadmap will help you understand how these techniques relate to each other and when you might choose one over another.
@@ -220,7 +222,7 @@ The remaining techniques combine graphs with other technologies or add sophistic
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>High precision</li>
                   <li>Simple</li>
                   <li>Fast</li>
@@ -259,7 +261,7 @@ Now let's see exactly how this technique works under the hood!`
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Node-Level Retrieval Flow"
@@ -321,13 +323,13 @@ Now let's look at the practical implementation steps!`
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Embed query and search node index (title+embedding)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Rank by combined exact match + embedding similarity
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Return top-k nodes and their attached chunks
                   </div>
                 </GSAPStaggerList>
@@ -429,7 +431,7 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Trust-aware ranking based on relationship strength</li>
                   <li>Interpretable results via explicit weights</li>
                   <li>Nuanced prioritization of connections</li>
@@ -473,7 +475,7 @@ Now let's see exactly how this technique works in practice!`
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Edge-Weighted Retrieval Process"
@@ -553,16 +555,16 @@ Let's look at practical implementation steps!`
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Identify seed nodes from query (embedding match or entity linking)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Retrieve neighbors with edge weights; compute combined score = weight × relevance
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Apply normalization and optional hop decay
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Rank by combined score and return top-k nodes with content
                   </div>
                 </GSAPStaggerList>
@@ -682,7 +684,7 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Simple implementation with immediate context</li>
                   <li>Contextual richness beyond isolated nodes</li>
                   <li>Low-latency 1-hop queries</li>
@@ -735,7 +737,7 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Neighborhood Expansion Process"
@@ -828,19 +830,19 @@ Return A + context from neighbors`}
               <GSAPAnimated animation="bounceIn" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Find top seed node(s) via embedding or entity matching
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Execute 1-hop graph query with edge/node type filters
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Apply relevance filtering and per-type capacity caps (e.g., max 5 examples)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Deduplicate neighbors and aggregate with seed content
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>5.</strong> Structure and return enriched context
                   </div>
                 </GSAPStaggerList>
@@ -983,7 +985,7 @@ Return A + context from neighbors`}
 
               <GSAPAnimated animation="slideInTop" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Supports complex reasoning and inference chains</li>
                   <li>Provides traceable evidence paths</li>
                   <li>Discovers indirect connections between concepts</li>
@@ -1040,7 +1042,7 @@ Return A + context from neighbors`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Path-Based Retrieval Process"
@@ -1127,19 +1129,19 @@ Multi-hop reasoning chain`}
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Extract source and target concepts from query (entity linking or embedding)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Find corresponding seed nodes in graph for each concept
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Run pathfinding algorithm (BFS 👉 'bee-eff-ess', Dijkstra, A-star) with constraints (max L hops, edge types)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Score candidate paths: length + edge weights + semantic relevance
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>5.</strong> Rank paths and return best k paths with node content and relationship types
                   </div>
                 </GSAPStaggerList>
@@ -1322,7 +1324,7 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Broad, topic-coherent coverage</li>
                   <li>Reduces narrow bias</li>
                   <li>Handles exploratory queries</li>
@@ -1369,7 +1371,7 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Community Detection & Retrieval"
@@ -1455,16 +1457,16 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Pre-compute communities using Louvain 👉 'loo-VANE', Leiden 👉 'LIE-den', or clustering
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Map query to best cluster via community embeddings or seed node lookup
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Rank nodes within cluster by centrality/similarity, return top-k
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Aggregate chunks/content for comprehensive summary
                   </div>
                 </GSAPStaggerList>
@@ -1590,7 +1592,7 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Precise granularity control</li>
                   <li>Structured, organized summaries</li>
                   <li>Scalable for large hierarchies</li>
@@ -1639,7 +1641,7 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Hierarchical Retrieval Process"
@@ -1732,16 +1734,16 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Build hierarchy with parent-child edges and level metadata
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Classify query specificity (high-level vs. detailed)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Match to appropriate level, expand children or roll-up to parent
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Prune irrelevant branches, return structured results with breadcrumbs
                   </div>
                 </GSAPStaggerList>
@@ -1875,7 +1877,7 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Best of both worlds: semantic + structural</li>
                   <li>Better precision/recall balance</li>
                   <li>Robust to query variations</li>
@@ -1928,7 +1930,7 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Hybrid Retrieval Process"
@@ -2034,16 +2036,16 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Embed query, retrieve top-k from vector index
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Identify seed nodes, expand via graph traversal
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Compute hybrid scores (α × semantic + β × structural)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Rank by fused score, return top results
                   </div>
                 </GSAPStaggerList>
@@ -2197,7 +2199,7 @@ Where:
 
               <GSAPAnimated animation="rotateIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Keyword precision with structural context</li>
                   <li>Reduces false positives from semantic similarity</li>
                   <li>Handles technical terminology and exact codes</li>
@@ -2250,7 +2252,7 @@ Where:
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Graph + BM25 Hybrid Process"
@@ -2361,19 +2363,19 @@ Your **graph database** stores the structural data—nodes, edges, relationships
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Build inverted index on node text content for BM25 scoring
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Identify seed nodes, perform graph expansion (1-2 hops)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Execute BM25 search with query keywords, retrieve top candidates
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Merge results with fusion strategy (intersection/union/weighted)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>5.</strong> Normalize and combine scores, re-rank by final score
                   </div>
                 </GSAPStaggerList>
@@ -2539,7 +2541,7 @@ Your **graph database** stores the structural data—nodes, edges, relationships
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Precision-focused exploration with semantic filtering</li>
                   <li>Adaptive traversal depth based on relevance</li>
                   <li>Avoids noisy or weak connections</li>
@@ -2594,7 +2596,7 @@ Your **graph database** stores the structural data—nodes, edges, relationships
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Semantic Graph Traversal Process"
@@ -2707,19 +2709,19 @@ A → D (sim=0.45, skip) | Stop at threshold τ=0.70`}
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Embed query and all nodes; store embeddings in searchable format
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Identify seed nodes from query (entity linking or semantic search)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Initialize traversal (BFS/DFS queue), set threshold τ and budget
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> For each neighbor, compute similarity; expand if ≥ τ, skip otherwise
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>5.</strong> Continue until budget exhausted; rank results by similarity scores
                   </div>
                 </GSAPStaggerList>
@@ -2913,7 +2915,7 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Identify authoritative or central nodes</li>
                   <li>Global importance signal across entire graph</li>
                   <li>Proven, mathematically grounded algorithms</li>
@@ -2976,7 +2978,7 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Personalized PageRank Process"
@@ -3109,19 +3111,19 @@ r_new = α × P^T × r_old + (1 - α) × s
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>1.</strong> Build adjacency matrix and compute transition matrix P
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>2.</strong> Identify seed nodes from query (entity linking or search)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>3.</strong> Initialize rank vector r = personalization vector s (seeds)
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>4.</strong> Iterate: r = α × P^T × r + (1-α) × s until convergence
                   </div>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '10px', fontSize: '1.2rem' }}>
                     <strong>5.</strong> Sort nodes by PPR 👉 'pee-pee-arr' scores, return top-k with content
                   </div>
                 </GSAPStaggerList>
@@ -3328,7 +3330,7 @@ Ready to explore even more advanced techniques? Our journey through graph retrie
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Capture structured, relational query intent</li>
                   <li>Highly precise matches based on graph structure</li>
                   <li>Explainable results (graph isomorphism)</li>
@@ -3399,7 +3401,7 @@ Now let's see how Query Graph Construction works in practice!`
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="flipCard" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Query Graph Construction Process"
@@ -3571,7 +3573,7 @@ This structured approach ensures you retrieve exactly the projects matching the 
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.15}>
-                <ul style={{ fontSize: '1.1rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li><strong>1. NER 👉 'en-ee-arr' & RE 👉 'arr-ee':</strong> Apply domain-adapted models to extract entities and relations from query. Use spaCy 👉 'space-ee', Transformers, or custom models.</li>
                   <li><strong>2. Build Query Graph:</strong> Create nodes for entities, edges for relations. Add attribute constraints (e.g., date &gt; X, type = Y).</li>
                   <li><strong>3. Entity Linking:</strong> Map query entities to KB 👉 'kay-bee' nodes using fuzzy matching, embeddings, or disambiguation models.</li>
@@ -3715,7 +3717,7 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.12}>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>High Precision:</strong> Structural matching ensures results satisfy all relational constraints—no false positives from keyword overlap.</li>
                   <li><strong>Explainable Results:</strong> Graph mappings show exactly why each result was retrieved (entity A matches node X, relation B matches edge Y).</li>
                   <li><strong>Complex Query Support:</strong> Naturally handles multi-hop, multi-constraint queries that are difficult for semantic search.</li>
@@ -3728,7 +3730,7 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.9} stagger={0.12}>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>NER/RE Quality Dependency:</strong> Extraction errors cascade—if entities or relations are missed, matching fails. Requires domain-adapted models.</li>
                   <li><strong>Computational Complexity:</strong> Subgraph isomorphism is NP-complete. Needs indexing, candidate filtering, or approximate matching for large KBs.</li>
                   <li><strong>Query Complexity Required:</strong> Only beneficial when queries have clear relational structure. Overkill for simple keyword searches.</li>
@@ -3855,7 +3857,7 @@ Query Graph Construction is a powerful technique for structured, relational retr
 
               <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Transform disjoint paths into readable narratives</li>
                   <li>Provide comprehensive, connected context</li>
                   <li>Reduce LLM hallucinations via coherent evidence</li>
@@ -3953,7 +3955,7 @@ Now let's see how Context Path Stitching operates in practice!`
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="Context Path Stitching Process"
@@ -4170,7 +4172,7 @@ Context Path Stitching is a powerful post-processing technique that transforms r
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.15}>
-                <ul style={{ fontSize: '1.1rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li><strong>1. Retrieve & Collect:</strong> Get top-k paths from graph retrieval (path-based, traversal, etc.). Include node texts and metadata.</li>
                   <li><strong>2. Deduplicate Nodes:</strong> Build entity registry using node IDs. Merge repeated nodes, keeping first detailed mention, using pronouns/short references for subsequent mentions.</li>
                   <li><strong>3. Order Logically:</strong> Apply temporal sort (timestamps), causal ordering (dependency graph), or topical grouping (similarity clustering). Choose based on domain.</li>
@@ -4524,7 +4526,7 @@ Answer: Recent research indicates that sleep deprivation has significant cogniti
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.12}>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>Narrative Coherence:</strong> Transforms raw graph triples into flowing, readable prose that LLMs 👉 'el-el-ems' process naturally—dramatically improving answer quality.</li>
                   <li><strong>Reduced Hallucinations:</strong> Well-organized, complete context gives LLMs less reason to "fill gaps" with generated content—answers stay grounded in facts.</li>
                   <li><strong>Comprehensive Coverage:</strong> Combines information from multiple paths into a unified view, avoiding fragmentation and ensuring complete answers.</li>
@@ -4537,7 +4539,7 @@ Answer: Recent research indicates that sleep deprivation has significant cogniti
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.9} stagger={0.12}>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>Additional Latency:</strong> Post-processing (deduplication, ordering, text generation) adds time. Needs optimization for real-time applications.</li>
                   <li><strong>Quality Depends on Heuristics:</strong> Poor ordering or transition choices create confusing narratives. Requires domain-specific tuning and iteration.</li>
                   <li><strong>Can Be Verbose:</strong> Stitching many paths may exceed LLM 👉 'el-el-em' context limits. Need length control and summarization.</li>
@@ -4685,7 +4687,7 @@ Regularly review stitched outputs manually—does the narrative make sense? Are 
 
               <GSAPAnimated animation="slideInTop" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Intelligent, adaptive exploration under budget constraints</li>
                   <li>Focuses on most promising areas of the graph</li>
                   <li>Handles open-ended, exploratory queries gracefully</li>
@@ -4776,7 +4778,7 @@ Now let's see how LLM-Guided Graph Expansion operates in practice!`
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h3>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     How It Works
                     <MermaidPopover
                       title="LLM-Guided Graph Expansion Process"
@@ -5023,7 +5025,7 @@ Provide the LLM with **rules** to prevent bad decisions: "Never explore edges le
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.15}>
-                <ul style={{ fontSize: '1.1rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>1. Initialize:</strong> Identify seed nodes (entity linking or semantic search). Set budget (max steps: 5-10, max tokens: 5K). Initialize visited set and context accumulator.</li>
                   <li><strong>2. Main Loop:</strong> For each iteration: (a) Get current nodes' outgoing edges with previews, (b) Prompt LLM 👉 'el-el-em' with query, current state, edges, budget, (c) LLM selects edges with reasoning, (d) Retrieve selected neighbors.</li>
                   <li><strong>3. Update State:</strong> Add retrieved nodes to visited set and context. Update current nodes. Check budget and LLM completion signal.</li>
@@ -5431,7 +5433,7 @@ def log_exploration(query, state, decision, result):
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.12}>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>Intelligent Adaptability:</strong> LLM 👉 'el-el-em' reasons about relevance, exploring promising areas and skipping irrelevant branches—far more flexible than fixed traversal rules.</li>
                   <li><strong>Handles Open-Ended Queries:</strong> Naturally adapts to broad, exploratory questions where the "right" retrieval path isn't predetermined.</li>
                   <li><strong>Budget-Aware Exploration:</strong> LLM considers remaining budget and strategically allocates it, maximizing information gain within constraints.</li>
@@ -5444,7 +5446,7 @@ def log_exploration(query, state, decision, result):
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.9} stagger={0.12}>
-                <ul style={{ fontSize: '1.2rem' }}>
+                <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>High Cost & Latency:</strong> Multiple LLM 👉 'el-el-em' calls per query (one per iteration) add significant time (1-3s each) and cost—prohibitive at large scale.</li>
                   <li><strong>Unpredictable Behavior:</strong> LLM decisions are stochastic; may explore poorly or miss important paths. Needs guardrails and fallbacks.</li>
                   <li><strong>Token Consumption:</strong> Each iteration's prompt includes growing context. Can quickly exceed token limits or become costly.</li>
