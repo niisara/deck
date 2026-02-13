@@ -885,10 +885,10 @@ You also keep templates in **application-level memory for high-access frequency 
           ),
           backgroundColor: '#1d6b42',
           notes: `### Pattern 4: RAG Answer Cache
-Welcome to Pattern 4, the **RAG Answer Cache** 👉 'rag answer cache'. This is where we cache at the highest level of abstraction: the complete generated answers from your LLM, including all citations and context. While the previous patterns cached individual components like embeddings or retrieval results, this pattern caches the final output that your users actually see.
+[cheerfully] Welcome to Pattern 4, the **RAG Answer Cache** 👉 'rag answer cache'. [excited] This is where we cache at the highest level of abstraction: the complete generated answers from your LLM, including all citations and context. [conversational] While the previous patterns cached individual components like embeddings or retrieval results, this pattern caches the final output that your users actually see.
 
 #### What Gets Cached
-In this pattern, we cache the **final LLM answer with citations, conditioned on the query**. This is the complete response that your RAG 👉 'rag' system generates after retrieving context and prompting the model. Think of it as caching the entire output of your RAG pipeline. When a user asks "What is our refund policy?" your system retrieves relevant documents from your knowledge base, constructs a prompt with that context, generates an answer from the LLM, and adds citations pointing back to source documents. All of that, the complete package, gets cached.
+[lecture] In this pattern, we cache the **final LLM answer with citations, conditioned on the query**. This is the complete response that your RAG 👉 'rag' system generates after retrieving context and prompting the model. [storytelling] Think of it as caching the entire output of your RAG pipeline. When a user asks "What is our refund policy?" your system retrieves relevant documents from your knowledge base, constructs a prompt with that context, generates an answer from the LLM, and adds citations pointing back to source documents. [confidently] All of that, the complete package, gets cached.
 
 \\\`\\\`\\\`mermaid
 flowchart LR
@@ -905,53 +905,53 @@ flowchart LR
     style D fill:#ffcdd2,color:#000
 \\\`\\\`\\\`
 
-The flow is elegant. A query comes in, you generate or retrieve its embedding, and perform a **similarity search** against previously cached queries. Here's where it gets interesting: instead of checking for exact matches like Pattern 1, this pattern uses **semantic similarity**. If the similarity score is above your threshold, maybe zero-point-nine on a cosine similarity scale, you return the cached response. If it's below threshold, you generate a new response, store it with its query embedding, and return it.
+[conversational] The flow is elegant. A query comes in, you generate or retrieve its embedding, and perform a **similarity search** against previously cached queries. [excited] Here's where it gets interesting: instead of checking for exact matches like Pattern 1, this pattern uses **semantic similarity**. [lecture] If the similarity score is above your threshold, maybe zero-point-nine on a cosine similarity scale, you return the cached response. If it's below threshold, you generate a new response, store it with its query embedding, and return it.
 
-We're caching **complete generated responses including the retrieved context set**. This means not just the answer text, but metadata about which documents were retrieved and used. This is crucial for debugging and for cache invalidation. If document seventeen in your knowledge base gets updated, you can invalidate all cached answers that referenced it.
+We're caching **complete generated responses including the retrieved context set**. [seriously] This means not just the answer text, but metadata about which documents were retrieved and used. This is crucial for debugging and for cache invalidation. [storytelling] If document seventeen in your knowledge base gets updated, you can invalidate all cached answers that referenced it.
 
-We also cache the **full response with source document references**. Citations are part of the value. Your users need to know where information came from, especially in domains like legal, medical, or financial services where trustworthiness is critical.
+[confidently] We also cache the **full response with source document references**. Citations are part of the value. [firmly] Your users need to know where information came from, especially in domains like legal, medical, or financial services where trustworthiness is critical.
 
 #### The Semantic Similarity Advantage
-This is fundamentally different from exact-match caching. Consider two queries: "How's the weather today?" and "What's it like outside right now?" They're phrased differently, but they're semantically identical. With semantic caching, both queries would match the same cached answer because their embeddings are nearly identical in vector space. This dramatically increases your cache hit rate compared to exact-match approaches.
+[enthusiastically] This is fundamentally different from exact-match caching. [storytelling] Consider two queries: "How's the weather today?" and "What's it like outside right now?" They're phrased differently, but they're semantically identical. [pleased] With semantic caching, both queries would match the same cached answer because their embeddings are nearly identical in vector space. This dramatically increases your cache hit rate compared to exact-match approaches.
 
-However, it also introduces complexity. You need to choose a **similarity threshold** carefully. Set it too high, like zero-point-nine-nine, and you'll only match near-exact duplicates, defeating the purpose. Set it too low, like zero-point-seven, and you risk serving cached answers for queries that are similar but not identical, leading to incorrect or irrelevant responses.
+[cautiously] However, it also introduces complexity. You need to choose a **similarity threshold** carefully. [concerned] Set it too high, like zero-point-nine-nine, and you'll only match near-exact duplicates, defeating the purpose. Set it too low, like zero-point-seven, and you risk serving cached answers for queries that are similar but not identical, leading to incorrect or irrelevant responses.
 
 #### The Cache Key Strategy
-The cache key here is comprehensive: \\\`hash(query_norm + context_doc_ids/hashes) + prompt_version + model + decoding_params\\\`. Let's break this down. The \\\`query_norm\\\` is your normalized query text. We normalize to handle variations in capitalization, whitespace, and punctuation. The \\\`context_doc_ids\\\` or \\\`context_doc_hashes\\\` capture which documents were retrieved and used in generating the answer. This is critical because the same query with different context should produce different answers.
+[lecture] The cache key here is comprehensive: \\\`hash(query_norm + context_doc_ids/hashes) + prompt_version + model + decoding_params\\\`. Let's break this down. The \\\`query_norm\\\` is your normalized query text. We normalize to handle variations in capitalization, whitespace, and punctuation. [seriously] The \\\`context_doc_ids\\\` or \\\`context_doc_hashes\\\` capture which documents were retrieved and used in generating the answer. This is critical because the same query with different context should produce different answers.
 
-The \\\`prompt_version\\\` tracks changes to your prompt template. If you update your system prompt or instruction format, you need to invalidate cached answers generated with the old prompt. The \\\`model\\\` parameter is obvious: answers from **GPT-4 👉 'G-P-T four'** shouldn't be conflated with answers from **Claude 👉 'Clawed'** or **Gemini 👉 'Gem-in-eye'**. And \\\`decoding_params\\\` includes things like temperature, top-p, and other sampling parameters. Different parameters can produce meaningfully different answers even from the same model and prompt.
+[conversational] The \\\`prompt_version\\\` tracks changes to your prompt template. If you update your system prompt or instruction format, you need to invalidate cached answers generated with the old prompt. [lecture] The \\\`model\\\` parameter is obvious: answers from **GPT-4 👉 'G-P-T four'** shouldn't be conflated with answers from **Claude 👉 'Clawed'** or **Gemini 👉 'Gem-in-eye'**. And \\\`decoding_params\\\` includes things like temperature, top-p, and other sampling parameters. Different parameters can produce meaningfully different answers even from the same model and prompt.
 
-Including **all context sources** in the key is non-negotiable. If you don't, you'll get cache hits when the underlying context has changed, serving stale or incorrect information.
+[firmly] Including **all context sources** in the key is non-negotiable. If you don't, you'll get cache hits when the underlying context has changed, serving stale or incorrect information.
 
 #### Storage Architecture
-For storage, we use **Redis 👉 'red-iss' for hot cache items**. Complete answers with citations can be several kilobytes each, but they're still small enough to store in memory. Redis gives you sub-millisecond access times, which is essential for maintaining low latency.
+[lecture] For storage, we use **Redis 👉 'red-iss' for hot cache items**. Complete answers with citations can be several kilobytes each, but they're still small enough to store in memory. [confidently] Redis gives you sub-millisecond access times, which is essential for maintaining low latency.
 
-For **high-value queries** that you know will be repeated often, you can use a **durable key-value store or database** like DynamoDB 👉 'die-nam-oh-dee-bee' or PostgreSQL 👉 'post-gres'. This provides persistence beyond what in-memory stores offer. If your Redis instance crashes, you lose your cache. With a durable store, you don't.
+[conversational] For **high-value queries** that you know will be repeated often, you can use a **durable key-value store or database** like DynamoDB 👉 'die-nam-oh-dee-bee' or PostgreSQL 👉 'post-gres'. [reassuringly] This provides persistence beyond what in-memory stores offer. If your Redis instance crashes, you lose your cache. With a durable store, you don't.
 
-Critical point: **encrypt if sensitive data is included**. Unlike embedding vectors, which are opaque, cached answers contain readable text. If that text includes personal information, financial data, or other sensitive content, you must encrypt it at rest. This adds overhead but is non-negotiable for compliance with regulations like **GDPR 👉 'gee-dee-pee-are'** or **HIPAA 👉 'hip-pa'**.
+[firmly] Critical point: **encrypt if sensitive data is included**. [seriously] Unlike embedding vectors, which are opaque, cached answers contain readable text. If that text includes personal information, financial data, or other sensitive content, you must encrypt it at rest. This adds overhead but is non-negotiable for compliance with regulations like **GDPR 👉 'gee-dee-pee-are'** or **HIPAA 👉 'hip-pa'**.
 
 #### Time-to-Live Configuration
-We use a **medium TTL 👉 'tee-tee-el', typically one to seven days**. This is shorter than embedding caches but longer than retrieval result caches. Why? Because answers reference specific content that may change, but they're expensive to regenerate. You want to balance freshness with cost savings.
+[lecture] We use a **medium TTL 👉 'tee-tee-el', typically one to seven days**. This is shorter than embedding caches but longer than retrieval result caches. [conversational] Why? Because answers reference specific content that may change, but they're expensive to regenerate. You want to balance freshness with cost savings.
 
-More importantly, you implement **event-based invalidation on any source document change**. If document one-hundred-twenty in your knowledge base gets updated, you need to invalidate all cached answers that cited that document. This requires maintaining an index mapping from document IDs to cached answer keys. It's additional complexity, but it's essential for correctness.
+[seriously] More importantly, you implement **event-based invalidation on any source document change**. If document one-hundred-twenty in your knowledge base gets updated, you need to invalidate all cached answers that cited that document. [cautiously] This requires maintaining an index mapping from document IDs to cached answer keys. It's additional complexity, but it's essential for correctness.
 
-You also need **content-dependent staleness policies**. Some answers are time-sensitive. If a user asks "What's our current promotion?" the answer might change weekly. Other answers are stable. "What's the boiling point of water?" won't change. Your caching system should understand these distinctions, either through metadata tags or heuristics.
+[lecture] You also need **content-dependent staleness policies**. Some answers are time-sensitive. [storytelling] If a user asks "What's our current promotion?" the answer might change weekly. Other answers are stable. "What's the boiling point of water?" won't change. [conversational] Your caching system should understand these distinctions, either through metadata tags or heuristics.
 
 #### When This Pattern Shines
-The **strengths** are substantial. You get **large cost and latency savings** by avoiding expensive LLM inference calls. Generating an answer might cost you a few cents and take two to three seconds. Serving from cache costs fractions of a cent and takes milliseconds. At scale, this adds up to thousands or tens of thousands of dollars saved monthly.
+[pleased] The **strengths** are substantial. [excited] You get **large cost and latency savings** by avoiding expensive LLM inference calls. [lecture] Generating an answer might cost you a few cents and take two to three seconds. Serving from cache costs fractions of a cent and takes milliseconds. [enthusiastically] At scale, this adds up to thousands or tens of thousands of dollars saved monthly.
 
-This pattern is **ideal for FAQs and static knowledge domains**. If you're building a customer support bot for a SaaS product, many queries will be variations of the same questions: "How do I reset my password?" "What payment methods do you accept?" "Where's my order?" These questions don't change frequently, and caching their answers is extremely valuable.
+[pleased] This pattern is **ideal for FAQs and static knowledge domains**. [storytelling] If you're building a customer support bot for a SaaS product, many queries will be variations of the same questions: "How do I reset my password?" "What payment methods do you accept?" "Where's my order?" [confidently] These questions don't change frequently, and caching their answers is extremely valuable.
 
 You **eliminate repeated expensive inference calls**, which not only saves money but also reduces load on your LLM API provider, avoiding rate limits and improving reliability.
 
 #### The Limitations
-But there are significant trade-offs. This pattern is **brittle to small context changes**. If your retrieval system returns a slightly different set of documents, the cache key changes, and you miss the cache. Even if the final answer would have been identical, you regenerate it. This limits cache hit rates in systems with non-deterministic retrieval.
+[cautiously] But there are significant trade-offs. [concerned] This pattern is **brittle to small context changes**. If your retrieval system returns a slightly different set of documents, the cache key changes, and you miss the cache. [disappointed] Even if the final answer would have been identical, you regenerate it. This limits cache hit rates in systems with non-deterministic retrieval.
 
-There's also **storage overhead for complete responses**. Answers with citations can be several kilobytes each. If you're caching millions of answers, that's gigabytes of storage. This is manageable but non-trivial, especially if you're encrypting everything.
+[seriously] There's also **storage overhead for complete responses**. Answers with citations can be several kilobytes each. If you're caching millions of answers, that's gigabytes of storage. This is manageable but non-trivial, especially if you're encrypting everything.
 
-Finally, **freshness guarantees are required**. Serving stale answers is worse than being slow. If your knowledge base updates frequently, you need sophisticated invalidation logic to ensure users never get outdated information. This adds operational complexity and development effort.
+[firmly] Finally, **freshness guarantees are required**. Serving stale answers is worse than being slow. [concerned] If your knowledge base updates frequently, you need sophisticated invalidation logic to ensure users never get outdated information. This adds operational complexity and development effort.
 
-Let's examine these trade-offs more closely on the next slide.`
+[conversational] Let's examine these trade-offs more closely on the next slide.`
         },
         {
           id: 10,
