@@ -60,19 +60,19 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `### 1. 26 Chunking Techniques & Cheat Sheet
-Welcome to this comprehensive guide on chunking techniques! Today we're diving into one of the most critical yet underappreciated topics in modern AI systems.
+          notes: `### 26 Chunking Techniques & Cheat Sheet
+[cheerfully] Welcome to this comprehensive guide on chunking techniques! [excited] Today we're diving into one of the most critical yet underappreciated topics in modern AI systems.
 
 #### What We'll Cover
-We're exploring **26 different chunking techniques** that are essential for building high-quality RAG systems and NLP applications. Think of chunking as the art of breaking down large documents into bite-sized pieces that computers can actually understand and retrieve efficiently. It's like organizing a massive library so you can find exactly the book, chapter, or even the paragraph you need in seconds.
+[conversational] We're exploring **26 different chunking techniques** that are essential for building high-quality RAG systems and NLP applications. [storytelling] Think of chunking as the art of breaking down large documents into bite-sized pieces that computers can actually understand and retrieve efficiently. It's like organizing a massive library so you can find exactly the book, chapter, or even the paragraph you need in seconds.
 
 #### The Pipeline
-Look at this visual workflow on the screen. We start with a **document**, apply various **chunking strategies**, and end up with **retrievable units** that power your AI system. Each step matters because poor chunking leads to poor retrieval, which leads to poor AI responses. It's that foundational.
+[lecture] Look at this visual workflow on the screen. We start with a **document**, apply various **chunking strategies**, and end up with **retrievable units** that power your AI system. [seriously] Each step matters because poor chunking leads to poor retrieval, which leads to poor AI responses. It's that foundational.
 
 #### Why This Matters
-Whether you're building a chatbot, a semantic search engine, or any RAG application, the quality of your chunking directly impacts the quality of your results. We'll explore practical defaults, trade-offs, and real-world use cases for each technique.
+[confidently] Whether you're building a chatbot, a semantic search engine, or any RAG application, the quality of your chunking directly impacts the quality of your results. [enthusiastically] We'll explore practical defaults, trade-offs, and real-world use cases for each technique.
 
-Let's begin this journey by understanding what chunking really means and why it's so crucial for modern AI systems.`
+[warmly] Let's begin this journey by understanding what chunking really means and why it's so crucial for modern AI systems.`
         },
         {
           id: 2,
@@ -166,22 +166,22 @@ Let's begin this journey by understanding what chunking really means and why it'
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `### 2. What is Chunking and Why It Matters
-Now let's define what we mean by chunking and explore why it's absolutely critical for modern AI systems.
+          notes: `### What is Chunking and Why It Matters
+[conversational] Now let's define what we mean by chunking and explore why it's absolutely critical for modern AI systems.
 
 #### The Core Definition
-At its heart, **chunking** is the process of breaking large documents into smaller, retrievable, semantically coherent units. Think of it like slicing a pizza. You want each slice to be the right size, contain a good mix of toppings, and be easy to pick up and eat. Similarly, each chunk needs to be the right size for your model, contain complete thoughts or concepts, and be easy for your system to retrieve and understand.
+[lecture] At its heart, **chunking** is the process of breaking large documents into smaller, retrievable, semantically coherent units. [storytelling] Think of it like slicing a pizza. You want each slice to be the right size, contain a good mix of toppings, and be easy to pick up and eat. [playfully] Similarly, each chunk needs to be the right size for your model, contain complete thoughts or concepts, and be easy for your system to retrieve and understand.
 
 #### Why It's Critical
-First, chunking helps us **fit content within model context windows**. Most language models have limits, like 4,096 or 8,192 tokens. If you try to stuff a 50-page document into that window, you're out of luck. Second, smaller chunks **increase retrieval precision**. When someone asks a question, you want to return the exact relevant paragraph, not an entire 20-page chapter. Third, it **reduces computational costs**. Processing 500 tokens is much cheaper than processing 5,000 tokens. And finally, it **combats the "lost-in-the-middle" effect**, where LLMs struggle to pay attention to information buried in the middle of long contexts.
+[confidently] First, chunking helps us **fit content within model context windows**. Most language models have limits, like 4,096 or 8,192 tokens. [cautiously] If you try to stuff a 50-page document into that window, you're out of luck. [enthusiastically] Second, smaller chunks **increase retrieval precision**. When someone asks a question, you want to return the exact relevant paragraph, not an entire 20-page chapter. Third, it **reduces computational costs**. Processing 500 tokens is much cheaper than processing 5,000 tokens. [seriously] And finally, it **combats the "lost-in-the-middle" effect**, where LLMs struggle to pay attention to information buried in the middle of long contexts.
 
 #### Key Variables to Consider
-When you're designing your chunking strategy, you need to think about several variables. What's your **chunk size**? Are you counting tokens, sentences, or paragraphs? How much **overlap** do you want between consecutive chunks? How do you determine **boundaries**, based on semantic meaning or structural markers like headings? What type of **content** are you working with, text, tables, code, or audio? And what **metadata** should you attach to each chunk to make retrieval more effective?
+[lecture] When you're designing your chunking strategy, you need to think about several variables. What's your **chunk size**? Are you counting tokens, sentences, or paragraphs? How much **overlap** do you want between consecutive chunks? How do you determine **boundaries**, based on semantic meaning or structural markers like headings? What type of **content** are you working with, text, tables, code, or audio? And what **metadata** should you attach to each chunk to make retrieval more effective?
 
 #### The Ultimate Goals
-All of this effort is in service of four key outcomes. We want **better recall and precision** in our retrieval systems. We want **more faithful grounding** of LLM outputs, so they don't hallucinate or make things up. We want **faster information loops** for AI agents that need to query and reason quickly. And we want to **optimize storage and embedding costs** because at scale, those expenses add up fast.
+[inspiringly] All of this effort is in service of four key outcomes. We want **better recall and precision** in our retrieval systems. We want **more faithful grounding** of LLM outputs, so they don't hallucinate or make things up. We want **faster information loops** for AI agents that need to query and reason quickly. And we want to **optimize storage and embedding costs** because at scale, those expenses add up fast.
 
-The diagram on screen shows the basic chunking pipeline. A large document flows in, gets split into chunks, and those chunks get embedded into a vector database for retrieval. Simple, right? But as we'll see, there are many ways to slice that pizza, and each approach has its own trade-offs.`
+[conversational] The diagram on screen shows the basic chunking pipeline. A large document flows in, gets split into chunks, and those chunks get embedded into a vector database for retrieval. Simple, right? [playfully] But as we'll see, there are many ways to slice that pizza, and each approach has its own trade-offs.`
         },
         {
           id: 3,
@@ -338,28 +338,28 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `### 3. Overview of 26 Techniques
-Let's get the big picture! We have **26 chunking techniques** organized into five major categories. Think of this as your chunking toolkit where each tool has a specific purpose.
+          notes: `### Overview of 26 Techniques
+[enthusiastically] Let's get the big picture! [excited] We have **26 chunking techniques** organized into five major categories. [conversational] Think of this as your chunking toolkit where each tool has a specific purpose.
 
 #### Fixed and Token-Based Techniques
-The first category includes techniques 1 through 3. These are your **fixed-size, sliding window, and token-aware** methods. They're the simplest approaches, kind of like using a ruler to measure and cut. You decide on a size, maybe 256 characters or 512 tokens, and you split your text accordingly. Simple and fast, but they don't care about meaning or structure.
+[lecture] The first category includes techniques 1 through 3. These are your **fixed-size, sliding window, and token-aware** methods. [storytelling] They're the simplest approaches, kind of like using a ruler to measure and cut. You decide on a size, maybe 256 characters or 512 tokens, and you split your text accordingly. [cautiously] Simple and fast, but they don't care about meaning or structure.
 
 #### Sentence and Paragraph-Based Techniques
-Next up, techniques 4 through 6 work with **sentences and paragraphs**. These methods respect linguistic boundaries. Instead of cutting mid-sentence, they split at natural points like periods or paragraph breaks. It's like cutting paper along the dotted lines instead of randomly. The result? Chunks that actually make sense when you read them.
+[conversational] Next up, techniques 4 through 6 work with **sentences and paragraphs**. These methods respect linguistic boundaries. Instead of cutting mid-sentence, they split at natural points like periods or paragraph breaks. [storytelling] It's like cutting paper along the dotted lines instead of randomly. [pleased] The result? Chunks that actually make sense when you read them.
 
 #### Structure-Aware Techniques
-The middle category, techniques 7 through 13, is where things get interesting. These are **structure-aware** methods that understand your document's organization. Got headings? Markdown formatting? HTML tags? Tables? Code blocks? These techniques know how to handle them properly. For example, if you have a section titled "Introduction" followed by three paragraphs, a structure-aware chunker keeps that heading with its content. Smart, right?
+[excited] The middle category, techniques 7 through 13, is where things get interesting. [lecture] These are **structure-aware** methods that understand your document's organization. Got headings? Markdown formatting? HTML tags? Tables? Code blocks? These techniques know how to handle them properly. [storytelling] For example, if you have a section titled "Introduction" followed by three paragraphs, a structure-aware chunker keeps that heading with its content. [playfully] Smart, right?
 
 #### Semantic and Adaptive Techniques
-Techniques 14 through 19 are the **semantic and adaptive** methods. These are the brainy ones that use embeddings and machine learning to understand meaning. They look at semantic similarity, discourse structure, and even graph relationships between concepts. Instead of just looking at structure, they understand context. These techniques answer questions like "Where does this topic end and the next one begin?"
+[confidently] Techniques 14 through 19 are the **semantic and adaptive** methods. [enthusiastically] These are the brainy ones that use embeddings and machine learning to understand meaning. [lecture] They look at semantic similarity, discourse structure, and even graph relationships between concepts. Instead of just looking at structure, they understand context. These techniques answer questions like "Where does this topic end and the next one begin?"
 
 #### Special-Purpose Techniques
-Finally, techniques 20 through 26 are **special-purpose** methods for unique scenarios. Working with audio transcripts? There's speaker-turn chunking. Got images and captions? There's caption plus context chunking. Need to generate QA pairs? There's a technique for that too. And if no single method works, hybrid chunking lets you combine multiple approaches.
+[conversational] Finally, techniques 20 through 26 are **special-purpose** methods for unique scenarios. Working with audio transcripts? There's speaker-turn chunking. Got images and captions? There's caption plus context chunking. Need to generate QA pairs? There's a technique for that too. And if no single method works, hybrid chunking lets you combine multiple approaches.
 
 #### What You'll Learn for Each
-For every single technique, we'll cover the same set of attributes. You'll learn the pros and cons, the best chunk size to use, how much overlap to apply, the computational cost, ideal use cases, which tools support it, and the complexity level. By the end, you'll know exactly which technique to reach for in any situation.
+[lecture] For every single technique, we'll cover the same set of attributes. You'll learn the pros and cons, the best chunk size to use, how much overlap to apply, the computational cost, ideal use cases, which tools support it, and the complexity level. [confidently] By the end, you'll know exactly which technique to reach for in any situation.
 
-The diagrams on screen show simplified workflows for each category. Let's dive deeper into each technique, starting with the simplest approaches!`
+[warmly] The diagrams on screen show simplified workflows for each category. Let's dive deeper into each technique, starting with the simplest approaches!`
         }
       ]
     },
@@ -402,19 +402,19 @@ The diagrams on screen show simplified workflows for each category. Let's dive d
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 4. Fixed-Size Chunking - Pros
-Now we dive into our first technique! Fixed-size chunking is the bread and butter of document processing, and understanding its strengths sets the foundation for everything else.
+          notes: `### Fixed-Size Chunking - Pros
+[excited] Now we dive into our first technique! [conversational] Fixed-size chunking is the bread and butter of document processing, and understanding its strengths sets the foundation for everything else.
 
 #### The Beauty of Simplicity
-Fixed-size chunking is **simple, predictable, and fast**. Think of it like slicing a loaf of bread with a ruler – every slice is exactly the same width. This makes it the perfect **baseline for A/B tests** because you can compare other techniques against something consistent and reproducible. When you're starting a new RAG project, this is where you begin. Simple, right?
+[pleased] Fixed-size chunking is **simple, predictable, and fast**. [storytelling] Think of it like slicing a loaf of bread with a ruler – every slice is exactly the same width. [lecture] This makes it the perfect **baseline for A/B tests** because you can compare other techniques against something consistent and reproducible. When you're starting a new RAG project, this is where you begin. [playfully] Simple, right?
 
 #### Consistency is Key
-One huge advantage is **consistent chunk sizes for embedding models**. Most embedding models work best when you feed them uniform input lengths. It's like packing boxes of the same size – they stack perfectly and you know exactly how much space you need. Your embeddings become comparable and your storage requirements become predictable, which is gold for production systems.
+[confidently] One huge advantage is **consistent chunk sizes for embedding models**. Most embedding models work best when you feed them uniform input lengths. [storytelling] It's like packing boxes of the same size – they stack perfectly and you know exactly how much space you need. [pleased] Your embeddings become comparable and your storage requirements become predictable, which is gold for production systems.
 
 #### Developer-Friendly
-Here's what developers love: it's **easy to implement and debug**. You can write a fixed-size chunker in 10 lines of code. When something goes wrong, you can trace exactly where each chunk came from. No complex parsing, no NLP libraries, no mysterious behavior. Just count characters or tokens and split. The **predictable storage requirements** mean you can estimate costs before you even start processing documents.
+[enthusiastically] Here's what developers love: it's **easy to implement and debug**. You can write a fixed-size chunker in 10 lines of code. When something goes wrong, you can trace exactly where each chunk came from. [lecture] No complex parsing, no NLP libraries, no mysterious behavior. Just count characters or tokens and split. The **predictable storage requirements** mean you can estimate costs before you even start processing documents.
 
-This simplicity makes fixed-size chunking the go-to choice when you need something working yesterday, or when your documents are fairly uniform and don't have complex structure.`
+[conversational] This simplicity makes fixed-size chunking the go-to choice when you need something working yesterday, or when your documents are fairly uniform and don't have complex structure.`
         },
         {
           id: 5,
@@ -448,22 +448,22 @@ This simplicity makes fixed-size chunking the go-to choice when you need somethi
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 5. Fixed-Size Chunking - Cons
-But what about the downsides? Every technique has trade-offs, and fixed-size chunking has some significant ones you need to understand.
+          notes: `### Fixed-Size Chunking - Cons
+[cautiously] But what about the downsides? [seriously] Every technique has trade-offs, and fixed-size chunking has some significant ones you need to understand.
 
 #### The Semantic Blindness Problem
-Fixed-size chunking **ignores semantics entirely**. It's like cutting a book page with scissors at exactly 5 inches – you don't care if you're mid-word, mid-sentence, or mid-thought. The chunker just counts tokens and splits. This means you can absolutely **split sentences** right in the middle. Imagine a sentence like "The company's revenue grew by 47% in Q4 due to strong product adoption" getting split into "The company's revenue grew by 47%" and "in Q4 due to strong product adoption." Neither chunk tells the complete story!
+[disappointed] Fixed-size chunking **ignores semantics entirely**. [storytelling] It's like cutting a book page with scissors at exactly 5 inches – you don't care if you're mid-word, mid-sentence, or mid-thought. The chunker just counts tokens and splits. [concerned] This means you can absolutely **split sentences** right in the middle. Imagine a sentence like "The company's revenue grew by 47% in Q4 due to strong product adoption" getting split into "The company's revenue grew by 47%" and "in Q4 due to strong product adoption." Neither chunk tells the complete story!
 
 #### Context Gets Lost at Boundaries
-There's a **risk of context dilution at boundaries**. When you split mechanically, critical context that spans across your boundary line gets separated. Think of it like tearing a photograph in half – each half makes less sense without the other. In retrieval, this means you might miss the full answer because it's split across two chunks that don't rank high enough individually.
+[cautiously] There's a **risk of context dilution at boundaries**. When you split mechanically, critical context that spans across your boundary line gets separated. [storytelling] Think of it like tearing a photograph in half – each half makes less sense without the other. [seriously] In retrieval, this means you might miss the full answer because it's split across two chunks that don't rank high enough individually.
 
 #### Related Content Gets Separated
-**Related information may span chunks**. If you're documenting an API endpoint and the request format is in chunk 1 but the response format is in chunk 2, users searching for "how does this API work" might only get half the picture. This is frustrating for both the retrieval system and the end user.
+[disappointed] **Related information may span chunks**. If you're documenting an API endpoint and the request format is in chunk 1 but the response format is in chunk 2, users searching for "how does this API work" might only get half the picture. [firmly] This is frustrating for both the retrieval system and the end user.
 
 #### Structure Gets Ignored
-Finally, it's **suboptimal for structured documents**. If you have a document with headers, sections, bullet points, and tables, fixed-size chunking treats it like one long string. It doesn't respect that "Chapter 3: Security" should probably stay together, or that a bulleted list belongs in the same chunk.
+[cautiously] Finally, it's **suboptimal for structured documents**. If you have a document with headers, sections, bullet points, and tables, fixed-size chunking treats it like one long string. It doesn't respect that "Chapter 3: Security" should probably stay together, or that a bulleted list belongs in the same chunk.
 
-Despite these limitations, fixed-size chunking still has its place – you just need to know when to use it and when to reach for something more sophisticated.`
+[conversational] Despite these limitations, fixed-size chunking still has its place – you just need to know when to use it and when to reach for something more sophisticated.`
         },
         {
           id: 6,
@@ -527,23 +527,23 @@ Despite these limitations, fixed-size chunking still has its place – you just 
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 6. Fixed-Size Chunking - Configuration
-Now let's talk about the practical side: how do you actually configure fixed-size chunking? These numbers matter more than you might think.
+          notes: `### Fixed-Size Chunking - Configuration
+[lecture] Now let's talk about the practical side: how do you actually configure fixed-size chunking? [seriously] These numbers matter more than you might think.
 
 #### Finding the Sweet Spot for Chunk Size
-The **best chunk size** is typically **300 to 1000 tokens**, and we recommend **starting with 512**. Why 512? It's a nice power of two that works well with most embedding models and captures enough context without becoming unwieldy. Think of it as the "Goldilocks zone" – not too small, not too large, just right for most use cases.
+[conversational] The **best chunk size** is typically **300 to 1000 tokens**, and we recommend **starting with 512**. [playfully] Why 512? It's a nice power of two that works well with most embedding models and captures enough context without becoming unwieldy. [storytelling] Think of it as the "Goldilocks zone" – not too small, not too large, just right for most use cases.
 
-But here's the nuance: this **varies by embedding model and content density**. If you're using an embedding model that was trained on shorter sequences, like 256 tokens, you might want smaller chunks. If your content is very dense technical documentation, you might need larger chunks to capture complete concepts. Always check your embedding model's documentation – many are optimized for specific input lengths.
+[lecture] But here's the nuance: this **varies by embedding model and content density**. If you're using an embedding model that was trained on shorter sequences, like 256 tokens, you might want smaller chunks. If your content is very dense technical documentation, you might need larger chunks to capture complete concepts. [confidently] Always check your embedding model's documentation – many are optimized for specific input lengths.
 
 #### Overlap: The Secret Sauce
-**Overlap size** is crucial and often overlooked. We recommend **10 to 20 percent of your chunk size**, which translates to about **50 to 150 tokens**. Let me explain why this matters.
+[enthusiastically] **Overlap size** is crucial and often overlooked. We recommend **10 to 20 percent of your chunk size**, which translates to about **50 to 150 tokens**. [lecture] Let me explain why this matters.
 
-Without overlap, if important information sits right at a chunk boundary, you risk splitting it awkwardly. With overlap, you create a buffer zone where adjacent chunks share some content. This **helps preserve context across chunk boundaries**. Imagine a sentence that starts at token 510 in a 512-token chunk – without overlap, it gets brutally cut off. With 50 tokens of overlap, the next chunk captures the complete sentence.
+[conversational] Without overlap, if important information sits right at a chunk boundary, you risk splitting it awkwardly. With overlap, you create a buffer zone where adjacent chunks share some content. This **helps preserve context across chunk boundaries**. [storytelling] Imagine a sentence that starts at token 510 in a 512-token chunk – without overlap, it gets brutally cut off. With 50 tokens of overlap, the next chunk captures the complete sentence.
 
 #### Computational Cost: A Key Advantage
-The **computational cost is low**. You're basically just counting and splitting strings. No machine learning models, no complex NLP parsing, no heavy lifting. This means you can process millions of documents quickly and cheaply. For many applications, this alone makes fixed-size chunking attractive.
+[pleased] The **computational cost is low**. You're basically just counting and splitting strings. No machine learning models, no complex NLP parsing, no heavy lifting. [confidently] This means you can process millions of documents quickly and cheaply. For many applications, this alone makes fixed-size chunking attractive.
 
-These configurations give you a solid starting point, but remember: always test with your actual data and embedding model!`
+[conversational] These configurations give you a solid starting point, but remember: always test with your actual data and embedding model!`
         },
         {
           id: 7,
@@ -604,25 +604,25 @@ These configurations give you a solid starting point, but remember: always test 
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: `### 7. Fixed-Size Chunking - Use Cases & Tools
-When should you actually use fixed-size chunking, and what tools make it easy? Let's get practical.
+          notes: `### Fixed-Size Chunking - Use Cases & Tools
+[conversational] When should you actually use fixed-size chunking, and what tools make it easy? Let's get practical.
 
 #### Perfect Use Cases
-Fixed-size chunking shines for **logs, FAQs, and short documents**. Why? These types of content are typically **uniform** – log entries follow patterns, FAQ answers are roughly similar in length, and short documents don't have complex hierarchical structure. You're not losing much by splitting mechanically because there wasn't much structure to preserve in the first place.
+[lecture] Fixed-size chunking shines for **logs, FAQs, and short documents**. [storytelling] Why? These types of content are typically **uniform** – log entries follow patterns, FAQ answers are roughly similar in length, and short documents don't have complex hierarchical structure. [conversational] You're not losing much by splitting mechanically because there wasn't much structure to preserve in the first place.
 
-It's also ideal for **baseline RAG implementations**. When you're starting a new project, you want something working quickly so you can iterate. Fixed-size chunking gets you there fast. You can always upgrade to more sophisticated techniques later once you've measured baseline performance.
+[confidently] It's also ideal for **baseline RAG implementations**. When you're starting a new project, you want something working quickly so you can iterate. Fixed-size chunking gets you there fast. You can always upgrade to more sophisticated techniques later once you've measured baseline performance.
 
-**Simple knowledge bases** are another sweet spot. If you have a collection of straightforward articles or documentation without deep nesting or complex cross-references, fixed-size chunking often works just fine.
+[conversational] **Simple knowledge bases** are another sweet spot. If you have a collection of straightforward articles or documentation without deep nesting or complex cross-references, fixed-size chunking often works just fine.
 
 #### Excellent Tooling Support
-The **tooling support is fantastic** because this is such a fundamental technique. **LangChain** provides Character and Token splitters that are battle-tested and easy to use. **LlamaIndex** and **Haystack** both have robust implementations. All major vector databases like **Chroma, Weaviate, and Pinecone** support or integrate with fixed-size chunking out of the box.
+[pleased] The **tooling support is fantastic** because this is such a fundamental technique. **LangChain** provides Character and Token splitters that are battle-tested and easy to use. **LlamaIndex** and **Haystack** both have robust implementations. [lecture] All major vector databases like **Chroma, Weaviate, and Pinecone** support or integrate with fixed-size chunking out of the box.
 
-And here's the kicker: **custom implementations are simple**. If you don't want dependencies, you can write your own fixed-size chunker in an afternoon. It's just string slicing with some token counting. This simplicity means you're never locked into a particular framework.
+[enthusiastically] And here's the kicker: **custom implementations are simple**. If you don't want dependencies, you can write your own fixed-size chunker in an afternoon. [playfully] It's just string slicing with some token counting. This simplicity means you're never locked into a particular framework.
 
 #### Beginner-Friendly
-The **complexity level is Beginner**. If you're new to RAG or document processing, this is where you start. You don't need to understand linguistics, document structure parsing, or semantic similarity. You just need to count and split. This low barrier to entry is why fixed-size chunking remains the most popular technique despite its limitations.
+[confidently] The **complexity level is Beginner**. If you're new to RAG or document processing, this is where you start. You don't need to understand linguistics, document structure parsing, or semantic similarity. [conversational] You just need to count and split. This low barrier to entry is why fixed-size chunking remains the most popular technique despite its limitations.
 
-Now let's move on to our next technique, which addresses some of these semantic blindness issues by respecting sentence boundaries.`
+[warmly] Now let's move on to our next technique, which addresses some of these semantic blindness issues by respecting sentence boundaries.`
         }
       ]
     },
@@ -665,22 +665,22 @@ Now let's move on to our next technique, which addresses some of these semantic 
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 8. Sentence-Level Chunking - Pros
-Let's level up our chunking game! Sentence-level chunking respects the fundamental building blocks of language, and that brings some serious advantages.
+          notes: `### Sentence-Level Chunking - Pros
+[excited] Let's level up our chunking game! [conversational] Sentence-level chunking respects the fundamental building blocks of language, and that brings some serious advantages.
 
 #### Coherent Atomic Units
-Sentence-level chunking gives you **coherent atomic units**. Each chunk is a complete thought or idea, which is fantastic for **precision**. Think about it: when you search for "how do I reset my password," you want the exact sentence that explains the process, not half a sentence that got cut off mid-thought. Sentences are the smallest units of complete meaning in language, so chunking by sentences ensures each retrievable piece actually makes sense on its own.
+[lecture] Sentence-level chunking gives you **coherent atomic units**. Each chunk is a complete thought or idea, which is fantastic for **precision**. [storytelling] Think about it: when you search for "how do I reset my password," you want the exact sentence that explains the process, not half a sentence that got cut off mid-thought. [confidently] Sentences are the smallest units of complete meaning in language, so chunking by sentences ensures each retrievable piece actually makes sense on its own.
 
 #### Respecting Natural Language
-This approach **preserves natural language boundaries**. Unlike fixed-size chunking that treats text as a stream of tokens, sentence-level chunking respects how humans actually write and organize thoughts. Writers deliberately end sentences at meaningful points – that's what a period means! By honoring these boundaries, you're working with the natural structure of language rather than fighting against it.
+[pleased] This approach **preserves natural language boundaries**. Unlike fixed-size chunking that treats text as a stream of tokens, sentence-level chunking respects how humans actually write and organize thoughts. [lecture] Writers deliberately end sentences at meaningful points – that's what a period means! By honoring these boundaries, you're working with the natural structure of language rather than fighting against it.
 
 #### No More Awkward Cuts
-You **avoid cutting mid-sentence**, which is a huge quality-of-life improvement for retrieval. Imagine retrieving "The API endpoint is located at https://api.exam" – that's useless! With sentence-level chunking, you get complete sentences like "The API endpoint is located at https://api.example.com/v1/users." The full information is preserved.
+[enthusiastically] You **avoid cutting mid-sentence**, which is a huge quality-of-life improvement for retrieval. [storytelling] Imagine retrieving "The API endpoint is located at https://api.exam" – that's useless! [pleased] With sentence-level chunking, you get complete sentences like "The API endpoint is located at https://api.example.com/v1/users." The full information is preserved.
 
 #### Clear Semantic Meaning
-**Each chunk has clear semantic meaning**. When a user retrieves a chunk, they get a complete idea. This is especially powerful for QA systems where you want to show exact answers. A sentence like "The company was founded in 2015" is perfect – it's a complete fact that can stand alone without additional context.
+[confidently] **Each chunk has clear semantic meaning**. When a user retrieves a chunk, they get a complete idea. [lecture] This is especially powerful for QA systems where you want to show exact answers. A sentence like "The company was founded in 2015" is perfect – it's a complete fact that can stand alone without additional context.
 
-This semantic integrity makes sentence-level chunking excellent for applications where precision matters more than broad context.`
+[conversational] This semantic integrity makes sentence-level chunking excellent for applications where precision matters more than broad context.`
         },
         {
           id: 9,
@@ -719,24 +719,24 @@ This semantic integrity makes sentence-level chunking excellent for applications
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 9. Sentence-Level Chunking - Cons
-But sentence-level chunking isn't perfect. Let's talk about where this approach struggles.
+          notes: `### Sentence-Level Chunking - Cons
+[cautiously] But sentence-level chunking isn't perfect. [seriously] Let's talk about where this approach struggles.
 
 #### The Uneven Size Problem
-Sentences have **uneven sizes**. Some sentences are short: "It works." That's just two tokens! Other sentences are complex and long: "The system processes the incoming requests by first validating the authentication headers, then parsing the JSON payload, and finally executing the appropriate database queries based on the request type." That's 30+ tokens. This variability creates challenges for embedding models that work best with consistent input lengths.
+[disappointed] Sentences have **uneven sizes**. [storytelling] Some sentences are short: "It works." That's just two tokens! Other sentences are complex and long: "The system processes the incoming requests by first validating the authentication headers, then parsing the JSON payload, and finally executing the appropriate database queries based on the request type." That's 30+ tokens. [concerned] This variability creates challenges for embedding models that work best with consistent input lengths.
 
-The chunks **may be too granular**. A single sentence often doesn't contain enough information to be useful in isolation. For example, "See Table 3 for details" is a complete sentence, but it's meaningless without the broader context of what Table 3 shows. You end up with lots of tiny, not-very-useful chunks.
+[cautiously] The chunks **may be too granular**. A single sentence often doesn't contain enough information to be useful in isolation. [storytelling] For example, "See Table 3 for details" is a complete sentence, but it's meaningless without the broader context of what Table 3 shows. [disappointed] You end up with lots of tiny, not-very-useful chunks.
 
 #### Context Loss
-**Short chunks might lack broader context**. Imagine a technical document where one sentence says "The timeout is 30 seconds." Without the surrounding context about *what* has a 30-second timeout, this chunk is nearly useless for retrieval. Users need the full picture, not isolated facts.
+[concerned] **Short chunks might lack broader context**. [storytelling] Imagine a technical document where one sentence says "The timeout is 30 seconds." Without the surrounding context about *what* has a 30-second timeout, this chunk is nearly useless for retrieval. [firmly] Users need the full picture, not isolated facts.
 
 #### Practical Complications
-**Variable token counts complicate batching**. When you're processing thousands of chunks for embedding, having wildly different sizes makes batching inefficient. You either pad everything to the longest length (wasting compute) or use dynamic batching (adding complexity).
+[cautiously] **Variable token counts complicate batching**. When you're processing thousands of chunks for embedding, having wildly different sizes makes batching inefficient. [conversational] You either pad everything to the longest length (wasting compute) or use dynamic batching (adding complexity).
 
 #### Implementation Complexity
-You **need sentence boundary detection**, which sounds simple but isn't always. Consider: "Dr. Smith works at example.com. She started in Jan. 2023." Where do sentences end? After "com."? After "Jan."? You need proper NLP tools like spaCy or NLTK, which adds dependencies and processing overhead compared to simple character-based splitting.
+[lecture] You **need sentence boundary detection**, which sounds simple but isn't always. [storytelling] Consider: "Dr. Smith works at example.com. She started in Jan. 2023." Where do sentences end? After "com."? After "Jan."? [seriously] You need proper NLP tools like spaCy or NLTK, which adds dependencies and processing overhead compared to simple character-based splitting.
 
-Despite these challenges, sentence-level chunking remains valuable when precision matters more than broad context – you just need to be aware of its limitations.`
+[conversational] Despite these challenges, sentence-level chunking remains valuable when precision matters more than broad context – you just need to be aware of its limitations.`
         },
         {
           id: 10,
@@ -800,23 +800,23 @@ Despite these challenges, sentence-level chunking remains valuable when precisio
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 10. Sentence-Level Chunking - Configuration
-Let's get into the specifics of configuring sentence-level chunking for optimal results.
+          notes: `### Sentence-Level Chunking - Configuration
+[lecture] Let's get into the specifics of configuring sentence-level chunking for optimal results.
 
 #### Finding the Right Sentence Count
-For **chunk size**, we recommend **1 to 3 sentences**, which typically translates to **50 to 150 tokens**. One sentence is very granular – great for pinpoint precision but often lacks context. Three sentences provide better context – the first might introduce a topic, the second provides the main point, and the third offers details or examples. This creates chunks that are self-contained yet informative.
+[conversational] For **chunk size**, we recommend **1 to 3 sentences**, which typically translates to **50 to 150 tokens**. [storytelling] One sentence is very granular – great for pinpoint precision but often lacks context. Three sentences provide better context – the first might introduce a topic, the second provides the main point, and the third offers details or examples. [pleased] This creates chunks that are self-contained yet informative.
 
-The optimal number **depends on sentence complexity and domain**. In technical documentation with long, detailed sentences, even one sentence might be enough. For chatty blog posts with short, punchy sentences, you'll want to group 3-4 together to get meaningful chunks. Always look at your actual content!
+[lecture] The optimal number **depends on sentence complexity and domain**. In technical documentation with long, detailed sentences, even one sentence might be enough. For chatty blog posts with short, punchy sentences, you'll want to group 3-4 together to get meaningful chunks. [confidently] Always look at your actual content!
 
 #### To Overlap or Not to Overlap?
-**Overlap** is **optional** with sentence-level chunking, typically **1 sentence** if you use it at all. Here's why: sentences are natural boundaries. Unlike fixed-size chunking where you might split mid-thought, sentence boundaries are clean breaks. The information in sentence 1 is complete; sentence 2 starts something new.
+[conversational] **Overlap** is **optional** with sentence-level chunking, typically **1 sentence** if you use it at all. [lecture] Here's why: sentences are natural boundaries. Unlike fixed-size chunking where you might split mid-thought, sentence boundaries are clean breaks. The information in sentence 1 is complete; sentence 2 starts something new.
 
-That said, **overlap is often unnecessary** because **sentences form natural boundaries**. If your sentences are well-written and self-contained, there's no need to duplicate content. However, if sentences heavily reference each other (like in academic writing with lots of "this shows that" and "furthermore"), a 1-sentence overlap can help preserve that connectivity.
+[confidently] That said, **overlap is often unnecessary** because **sentences form natural boundaries**. If your sentences are well-written and self-contained, there's no need to duplicate content. [cautiously] However, if sentences heavily reference each other (like in academic writing with lots of "this shows that" and "furthermore"), a 1-sentence overlap can help preserve that connectivity.
 
 #### Processing Requirements
-The **computational cost is Medium**. You need **sentence segmentation processing**, which means running text through NLP libraries like spaCy or NLTK. This is more expensive than simple character counting but still quite fast – we're talking milliseconds per document, not seconds. The main cost is the initial setup and loading of the sentence segmentation model.
+[lecture] The **computational cost is Medium**. You need **sentence segmentation processing**, which means running text through NLP libraries like spaCy or NLTK. [conversational] This is more expensive than simple character counting but still quite fast – we're talking milliseconds per document, not seconds. The main cost is the initial setup and loading of the sentence segmentation model.
 
-These configurations strike a balance between precision and context, making sentence-level chunking practical for real-world applications.`
+[confidently] These configurations strike a balance between precision and context, making sentence-level chunking practical for real-world applications.`
         },
         {
           id: 11,
@@ -877,27 +877,27 @@ These configurations strike a balance between precision and context, making sent
             </div>
           ),
           backgroundColor: '#651c1c',
-          notes: `### 11. Sentence-Level Chunking - Use Cases & Tools
-When does sentence-level chunking shine, and what tools should you reach for? Let's explore the practical applications.
+          notes: `### Sentence-Level Chunking - Use Cases & Tools
+[conversational] When does sentence-level chunking shine, and what tools should you reach for? Let's explore the practical applications.
 
 #### Ideal Use Cases
-Sentence-level chunking is perfect for **QA over short facts**. When users ask "When was the company founded?" or "What's the return policy?", they want a specific sentence as the answer. You don't need a whole paragraph – just the one sentence that contains the fact. This is why sentence chunking dominates in fact-based QA systems.
+[lecture] Sentence-level chunking is perfect for **QA over short facts**. [storytelling] When users ask "When was the company founded?" or "What's the return policy?", they want a specific sentence as the answer. You don't need a whole paragraph – just the one sentence that contains the fact. [pleased] This is why sentence chunking dominates in fact-based QA systems.
 
-It's also excellent for **classification tasks**. If you're building a system to categorize support tickets or classify document sentiment, individual sentences are often the right granularity. Each sentence expresses one sentiment or topic, making classification more accurate than trying to classify a big mixed chunk.
+[conversational] It's also excellent for **classification tasks**. If you're building a system to categorize support tickets or classify document sentiment, individual sentences are often the right granularity. [lecture] Each sentence expresses one sentiment or topic, making classification more accurate than trying to classify a big mixed chunk.
 
-**Snippet retrieval** is another sweet spot. Think of how Google shows you the exact sentence that matches your query. That's sentence-level retrieval in action. Users see precisely the information they searched for without having to parse through paragraphs.
+[confidently] **Snippet retrieval** is another sweet spot. [storytelling] Think of how Google shows you the exact sentence that matches your query. That's sentence-level retrieval in action. Users see precisely the information they searched for without having to parse through paragraphs.
 
-**FAQ systems and knowledge bases** benefit enormously. FAQs are literally questions paired with answer sentences or short answer groups. Chunking at the sentence level aligns perfectly with this natural structure.
+[pleased] **FAQ systems and knowledge bases** benefit enormously. FAQs are literally questions paired with answer sentences or short answer groups. Chunking at the sentence level aligns perfectly with this natural structure.
 
 #### Robust Tooling
-The **tooling support is mature and battle-tested**. **spaCy's sentence segmenter** is incredibly fast and accurate, handling edge cases like abbreviations and decimal numbers. **NLTK's sent_tokenize** is the classic solution, well-documented and reliable. **Stanza** provides multilingual support with great accuracy. And there are specialized tools like **syntok** that focus specifically on sentence tokenization.
+[enthusiastically] The **tooling support is mature and battle-tested**. **spaCy's sentence segmenter** is incredibly fast and accurate, handling edge cases like abbreviations and decimal numbers. **NLTK's sent_tokenize** is the classic solution, well-documented and reliable. [lecture] **Stanza** provides multilingual support with great accuracy. And there are specialized tools like **syntok** that focus specifically on sentence tokenization.
 
-These tools handle the tricky stuff – distinguishing "Dr." from a sentence-ending period, dealing with quotes and parentheses, and respecting language-specific rules.
+[confidently] These tools handle the tricky stuff – distinguishing "Dr." from a sentence-ending period, dealing with quotes and parentheses, and respecting language-specific rules.
 
 #### Skill Level Required
-The **complexity level is Beginner to Intermediate**. The *concept* is simple – split by sentences. But the *implementation* requires some NLP preprocessing. You need to understand how to integrate spaCy or NLTK, handle their models, and deal with edge cases. Not rocket science, but a step up from simple string splitting.
+[conversational] The **complexity level is Beginner to Intermediate**. The *concept* is simple – split by sentences. [cautiously] But the *implementation* requires some NLP preprocessing. You need to understand how to integrate spaCy or NLTK, handle their models, and deal with edge cases. [playfully] Not rocket science, but a step up from simple string splitting.
 
-Next, we'll look at paragraph-level chunking, which gives us even more context while still respecting natural document boundaries.`
+[warmly] Next, we'll look at paragraph-level chunking, which gives us even more context while still respecting natural document boundaries.`
         }
       ]
     },
