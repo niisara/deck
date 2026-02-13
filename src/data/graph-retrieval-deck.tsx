@@ -75,7 +75,7 @@ This deck is designed for **RAG engineers** building retrieval-augmented generat
 [confidently] By the end of this presentation, you'll have a comprehensive **cheat-sheet** covering thirteen distinct graph-based retrieval techniques. For each technique, we'll explore **when to use it**, **how it works**, **implementation steps**, and the **pros and cons** you need to consider. This isn't just theory; it's practical knowledge you can apply immediately.
 
 #### Our Approach
-[warmly] We're keeping things **simple and visual**. No overwhelming complexity, no intimidating mathematical formulas. Just clear explanations, straightforward diagrams, and real-world guidance. Think of this as your friendly companion guide to navigating the world of graph-based retrieval.
+We're keeping things **simple and visual**. No overwhelming complexity, no intimidating mathematical formulas. Just clear explanations, straightforward diagrams, and real-world guidance. [warmly] Think of this as your friendly companion guide to navigating the world of graph-based retrieval.
 
 [energetic] Let's get started with an overview of all thirteen techniques!`
         },
@@ -354,7 +354,9 @@ When a query arrives, **embed the query** using the same embedding model you use
 Select the **top k nodes**, typically the top 1-5 depending on your application. For each selected node, retrieve its **attached content chunks**. These might be definitions, explanations, related paragraphs, or linked documents. Return this content to your downstream system, whether that's an LLM 👉 'el-el-em' generating an answer or a user interface displaying results.
 
 #### Real-World Example
-[storytelling] Imagine you're building a technical documentation assistant. A user types "What is GraphRAG 👉 'graf-rag'?" Your system embeds this query, searches the node index, and finds the node titled "GraphRAG" with a very high similarity score. This node has attached content explaining that GraphRAG is a retrieval-augmented generation technique that uses knowledge graphs. [pleased] Your system returns this precise definition, and the LLM uses it to generate a helpful, accurate response. The user gets exactly what they needed, quickly and without irrelevant information.
+[storytelling] Imagine you're building a technical documentation assistant. A user types "What is GraphRAG 👉 'graf-rag'?" Your system embeds this query, searches the node index, and finds the node titled "GraphRAG" with a very high similarity score. This node has attached content explaining that GraphRAG is a retrieval-augmented generation technique that uses knowledge graphs. 
+
+[pleased] Your system returns this precise definition, and the LLM uses it to generate a helpful, accurate response. The user gets exactly what they needed, quickly and without irrelevant information.
 
 #### Implementation Tips
 Use a **vector database** like Pinecone, Weaviate, or Chroma for efficient similarity search at scale. Implement **caching** for frequently accessed nodes to reduce latency. Consider a **fallback strategy**: if no node scores above a confidence threshold, fall back to traditional document search. **Monitor** which queries fail to match nodes well; this feedback helps you identify missing entities or poor alias coverage.
@@ -594,7 +596,9 @@ Before ranking, **normalize edge weights** if they're on different scales. If so
 #### Real-World Example: Academic Research Assistant
 [storytelling] Imagine building a literature review tool. A researcher asks "What are the key papers on transformer architectures?" Your system identifies "Transformer Models" as the seed node. It retrieves connected papers with edge weights representing citation counts: "Attention Is All You Need" (weight=15,000), "BERT 👉 'bert'" (weight=12,500), "GPT 👉 'jee-pee-tee' Architecture" (weight=8,000), and several others with lower counts.
 
-You normalize these citation counts to a 0-1 scale. You compute query relevance by comparing each paper's abstract embedding to the query. [pleased] "Attention Is All You Need" scores 0.95 on relevance, giving it a combined score of 0.95 × 1.0 = 0.95. Papers are ranked by combined score, and the top 5 are returned. The researcher gets the most influential, relevant papers first—exactly what they need.
+You normalize these citation counts to a 0-1 scale. You compute query relevance by comparing each paper's abstract embedding to the query. "Attention Is All You Need" scores 0.95 on relevance, giving it a combined score of 0.95 × 1.0 = 0.95. 
+
+[pleased] Papers are ranked by combined score, and the top 5 are returned. The researcher gets the most influential, relevant papers first—exactly what they need.
 
 #### Implementation Tips
 Use **database indexes** on edge weight fields for faster retrieval. **Cache** normalized weights if your graph structure is stable. Implement **A/B testing** to tune your combination formula and decay factors. **Log** edge weights and scores for each query to identify patterns where the ranking fails. Consider **different combination strategies**: multiplicative (weight × relevance), additive (α×weight + β×relevance), or learned weights if you have ground truth ranking data.
