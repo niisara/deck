@@ -30,7 +30,7 @@ export const promptEngineeringDeck: Deck = {
                 <h2 style={{ marginBottom: '30px', fontSize: '2.5rem', color: '#e5c07b' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '30px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
                     <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
@@ -50,7 +50,7 @@ export const promptEngineeringDeck: Deck = {
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.6}>
-                <p style={{ marginTop: '20px', fontSize: '2rem' }}>
+                <p style={{ marginTop: '0px', fontSize: '2rem' }}>
                   For Practitioners, Data Scientists & Product Engineers
                 </p>
               </GSAPAnimated>
@@ -183,7 +183,7 @@ Each technique gets multiple slides covering the definition, how it works, when 
                 <p>Ask the model to perform a task with clear instructions and no examples.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -297,7 +297,7 @@ When writing your zero-shot prompts, think about *what*, *how*, and *for whom*. 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -343,7 +343,7 @@ Finally, remember that **model capability significantly impacts zero-shot perfor
                 <p>Guide the model with a few labeled examples to shape outputs.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -461,7 +461,7 @@ The good news is that few-shot learning is **universally supported** across mode
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -510,7 +510,7 @@ Finally, remember that **bad examples teach bad patterns**. If your examples hav
                 <p>Ask the model to reason step-by-step before the final answer.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -629,7 +629,7 @@ GPT-4, Claude 3.5, and Gemini 1.5 are the **gold standard** for CoT. They can ma
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -678,7 +678,7 @@ Models can be clever in ways you don't want. Sometimes they'll "fake" reasoning 
                 <p>Specify abstract structure, syntax, and format rather than content-specific examples.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -799,7 +799,7 @@ That final instruction — "Populate schema only" — is crucial. It tells the m
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -848,7 +848,7 @@ Meta prompting gives great **structural control but less content guidance**. You
                 <p>Sample multiple CoT paths and select the majority/most consistent answer.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -967,7 +967,7 @@ Start with **5-7 samples** and temperature around **0.7-0.8**. Higher temperatur
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1013,7 +1013,7 @@ Self-consistency requires **orchestration code** to manage multiple API calls, c
                 <p>First ask the model to generate background facts, then answer using those facts.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1132,7 +1132,7 @@ How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few an
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1181,7 +1181,7 @@ Finally, remember that generated knowledge comes from the model's **training dat
                 <p>Break a task into subtasks across multiple prompts where outputs feed subsequent prompts.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1301,7 +1301,7 @@ Prod uction chains need **error handling at each stage**. What if Stage 2 receiv
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1350,7 +1350,7 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
                 <p>Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam).</p>
               </GSAPAnimated>
               <GSAPAnimated animation="rotateIn" delay={0.5}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.6}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1483,7 +1483,7 @@ Don't reach for Tree of Thoughts for simple problems where chain-of-thought woul
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="flipCard" delay={0.15}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.4}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1541,7 +1541,7 @@ If you do implement ToT in production, here are success patterns: (1) start with
                 <p>Retrieve external documents and condition the model on them to ground responses.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.6}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1677,7 +1677,7 @@ When you move from prototype to production, consider: **Indexing strategy** — 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1732,7 +1732,7 @@ Here's how to improve RAG systems: **1) Hybrid search** — combine vector searc
                 <p>Use a frozen LLM to auto-generate multi-step reasoning and interleave tool calls with observations.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.7}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1884,7 +1884,7 @@ This is why ART is "Advanced" complexity — it's not just the prompt, it's the 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="rotateIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -1959,7 +1959,7 @@ ART is *powerful* but not magic. It's best for complex, open-ended tasks where a
                 <p>Automatically generate and rank candidate instructions based on I/O demonstrations.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.4}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.6}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2090,7 +2090,7 @@ Pro tip: Start small! Begin with 5-10 candidates and 50 validation examples. Onc
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="scaleIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2138,7 +2138,7 @@ When to use APE anyway: Despite these limitations, APE is incredibly valuable wh
                 <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2255,7 +2255,7 @@ But [sigh] here's the payoff: once you have this infrastructure, it becomes a co
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="rotateIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.4}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2316,7 +2316,7 @@ The bottom line? Active-Prompt is like having a continuously improving expert on
                 <p>Use a small policy model to generate instance-specific hints to steer a larger LLM.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.9}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2471,7 +2471,7 @@ Start simple. Before building a trainable policy model, try a **rule-based stimu
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="bounceIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.5}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2541,7 +2541,7 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
                 <p>Model writes code as intermediate steps and delegates execution to an interpreter.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.9}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2623,7 +2623,7 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="bounceIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -2657,13 +2657,14 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
                 <p>Interleave reasoning traces with actions and observations (think→act→observe loops).</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.9}>
-                <div><li>Transparent action-reasoning trajectory plus answer</li></div>
-                <div><li>Dynamic adaptation based on observations</li></div>
-                <div><li>Grounded reasoning with external information</li></div>
-                <div><li>Interpretable decision-making process</li></div>
+                <ul><li>Transparent action-reasoning trajectory plus answer</li>
+                <li>Dynamic adaptation based on observations</li>
+                <li>Grounded reasoning with external information</li>
+                <li>Interpretable decision-making process</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated animation="slideInBottom" delay={1.5}>
                 <p style={{ marginTop: '20px' }}>Best for knowledge-intensive QA, web tasks, and interactive environments. Combines reasoning with actions in a continuous loop.</p>
@@ -2794,13 +2795,15 @@ Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="bounceIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.4}>
-                <div><li>Tool dependency - quality depends on tool reliability</li></div>
-                <div><li>Cascading errors from bad observations</li></div>
-                <div><li>Can get stuck in reasoning loops</li></div>
-                <div><li>Requires careful action space design</li></div>
+                <ul>
+                  <li>Tool dependency - quality depends on tool reliability</li>
+                  <li>Cascading errors from bad observations</li>
+                  <li>Can get stuck in reasoning loops</li>
+                  <li>Requires careful action space design</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -2848,21 +2851,15 @@ To succeed with ReAct: keep your tool set focused and well-documented, validate 
                 <p>Agents self-evaluate outcomes and write linguistic feedback to improve future attempts.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" duration={0.6} delay={0.6}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
-                <div><ul style={{ fontSize: '1.2rem' }}>
+                <ul>
                   <li>Iteratively improved outputs guided by self-feedback</li>
-                </ul></div>
-                <div><ul style={{ fontSize: '1.2rem' }}>
                   <li>Learn from failures without model retraining</li>
-                </ul></div>
-                <div><ul style={{ fontSize: '1.2rem' }}>
                   <li>Accumulate experience across episodes</li>
-                </ul></div>
-                <div><ul style={{ fontSize: '1.2rem' }}>
                   <li>Self-improvement through reflection</li>
-                </ul></div>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated animation="fadeIn" delay={1.5}>
                 <p style={{ marginTop: '20px' }}>Best for trial-and-error tasks, code development, planning scenarios, and multi-episode agents. Self-critique drives iterative improvement.</p>
@@ -2964,21 +2961,15 @@ One pro tip: if you're building a production system with Reflexion, set up a mem
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="flipCard" duration={1} delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} duration={0.7}>
-                <div><ul style={{ fontSize: '1.2rem' }}>
+                <ul>
                   <li>Feedback quality varies with model capability</li>
-                </ul></div>
-                <div><ul style={{ fontSize: '1.2rem' }}>
                   <li>May entrench mistakes without external validation</li>
-                </ul></div>
-                <div><ul style={{ fontSize: '1.2rem' }}>
                   <li>Can increase token usage significantly</li>
-                </ul></div>
-                <div><ul style={{ fontSize: '1.2rem' }}>
                   <li>Risk of self-reinforcing incorrect assumptions</li>
-                </ul></div>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
@@ -3014,7 +3005,7 @@ So when should you use Reflexion despite these limitations? When you have a capa
                 <p>Combine vision (and/or audio) with text in step-by-step reasoning.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.6}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.9}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -3169,7 +3160,7 @@ Make sure you're using the vision-enabled API endpoints. For example, with OpenA
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="slideInBottom" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.4}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -3253,7 +3244,7 @@ That said, when you *do* need to reason about visual information — charts, dia
                 <p>Use graphs/knowledge graphs to structure context and reasoning for LLMs.</p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.9}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -3369,7 +3360,7 @@ The beauty is that the reasoning path is explicit and auditable. You can show th
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <GSAPAnimated animation="bounceIn" delay={0}>
-                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <h3 style={{ color: '#e74c3c', paddingBottom: '14px' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.4}>
                 <ul style={{ fontSize: '1.2rem' }}>
@@ -3411,18 +3402,18 @@ Now let's talk about the challenges, because graph prompting is powerful but not
               <div style={{ marginBottom: '30px' }}></div>
               <GSAPAnimated animation="scaleIn" delay={0}>
                 <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-chart-bar" sizeName="3x" darkModeInvert={true} />
                   Complexity & Use Case Matrix
                 </h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1rem' }}>
                   <thead>
                     <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
-                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
-                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
-                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '1.2rem' }}>Complexity</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '1.2rem' }}>Techniques</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '1.2rem' }}>Best For</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '1.2rem' }}>Infrastructure Needs</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -3448,18 +3439,18 @@ Now let's talk about the challenges, because graph prompting is powerful but not
                 </table>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} delay={0.7}>
-                <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+                <div style={{ marginTop: '10px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
                     <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+                    <p style={{ fontSize: '1rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
                   </div>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
                     <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
+                    <p style={{ fontSize: '1rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
                   </div>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
                     <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
+                    <p style={{ fontSize: '1rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
                   </div>
                 </div>
               </GSAPStaggerList>
