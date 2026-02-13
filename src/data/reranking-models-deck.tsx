@@ -28,16 +28,16 @@ export const rerankingModelsDeck: Deck = {
           content: (
             <div>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <p style={{ fontSize: '1em', marginTop: '10px' }}>
+                <p style={{ fontSize: '2.2rem', marginTop: '10px' }}>
                   Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation
                 </p>
               </GSAPAnimated>
               <div style={{ marginTop: '20px', display: 'flex', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.4}>
-                  <div style={{ padding: '20px 30px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <SvgIcon iconName="duo-magnifying-glass" sizeName="3x" darkModeInvert={true} />
+                  <div style={{ padding: '20px 20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                    <SvgIcon iconName="duo-magnifying-glass" sizeName="3x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <div style={{ textAlign: 'left' }}>
-                      <div style={{ fontSize: '2rem' }}>Retrieve</div>
+                      <div style={{ fontSize: '1.6rem' }}>Retrieve</div>
                     </div>
                   </div>
                 </GSAPAnimated>
@@ -45,10 +45,10 @@ export const rerankingModelsDeck: Deck = {
                   <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={0.8}>
-                  <div style={{ padding: '20px 30px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="3x" darkModeInvert={true} />
+                  <div style={{ padding: '20px 20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                    <SvgIcon iconName="duo-list-ol" sizeName="3x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <div style={{ textAlign: 'left' }}>
-                      <div style={{ fontSize: '2rem' }}>Re-Rank</div>
+                      <div style={{ fontSize: '1.6rem' }}>Re-Rank</div>
                     </div>
                   </div>
                 </GSAPAnimated>
@@ -56,10 +56,10 @@ export const rerankingModelsDeck: Deck = {
                   <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={1.2}>
-                  <div style={{ padding: '20px 30px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="3x" darkModeInvert={true} />
+                  <div style={{ padding: '20px 20px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="3x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <div style={{ textAlign: 'left' }}>
-                      <div style={{ fontSize: '2rem' }}>Generate</div>
+                      <div style={{ fontSize: '1.6rem' }}>Generate</div>
                     </div>
                   </div>
                 </GSAPAnimated>
@@ -117,12 +117,12 @@ export const rerankingModelsDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px', marginTop: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#4fc3f7', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
-                      <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
+                    <h3 style={{ color: '#4fc3f7', paddingBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       Two-Stage Architecture
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
-                      <p><strong>Stage 1 (Recall):</strong> Cast a wide net</p>
+                      <p style={{ margin: '0px' }}><strong>Stage 1 (Recall):</strong> Cast a wide net</p>
                       <GSAPStaggerList stagger={0.1} delay={0.5}>
                         <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
                           <li>BM25 / bi-encoder / hybrid retrieval</li>
@@ -130,7 +130,7 @@ export const rerankingModelsDeck: Deck = {
                           <li>May include semantically similar but less relevant results</li>
                         </ul>
                       </GSAPStaggerList>
-                      <p style={{ marginTop: '10px' }}><strong>Stage 2 (Precision):</strong> Filter the signal from noise</p>
+                      <p style={{ marginTop: '10px', marginBottom: '0px' }}><strong>Stage 2 (Precision):</strong> Filter the signal from noise</p>
                       <GSAPStaggerList stagger={0.1} delay={0.8}>
                         <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
                           <li>Cross-encoders, late interaction, fusion methods</li>
@@ -143,8 +143,8 @@ export const rerankingModelsDeck: Deck = {
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4}>
                   <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#81c784', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
-                      <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
+                    <h3 style={{ color: '#81c784', paddingBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       Key Benefits
                     </h3>
                     <GSAPStaggerList stagger={0.12} delay={0.6}>
@@ -356,7 +356,7 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -428,9 +428,9 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment:</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment:</p>
                     <GSAPStaggerList stagger={0.1} delay={0.4}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Balance between semantic understanding and computational efficiency</li>
                         <li>Production-ready reranking without heavy GPU requirements</li>
                         <li>Improved latency while maintaining competitive accuracy</li>
@@ -441,9 +441,9 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
                 <GSAPAnimated animation="flipCard" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Knowledge distillation from larger BERT models into compact architecture:</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Knowledge distillation from larger BERT models into compact architecture:</p>
                     <GSAPStaggerList stagger={0.12} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Uses MiniLM/DistilBERT techniques to compress model while preserving ranking capabilities</li>
                         <li>Fine-tuned specifically on MS MARCO passage ranking dataset (8.8M query-passage pairs)</li>
                       </ul>
@@ -454,7 +454,7 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                         <li>When deployment efficiency and response time matter</li>
                         <li>For English-centric search applications</li>
                         <li>In production systems with moderate hardware</li>
@@ -467,8 +467,8 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
                 <GSAPAnimated animation="slideInBottom" delay={0.5}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p>Input: Query-document pairs (same as standard cross-encoders)</p>
-                    <pre style={{ marginTop: '5px', fontSize: '1rem', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query-document pairs (same as standard cross-encoders)</p>
+                    <pre style={{ marginTop: '5px', fontSize: '0.8rem', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
                       {`from sentence_transformers import CrossEncoder
 
 model = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
@@ -478,8 +478,8 @@ pairs = [
 ]
 `}
                     </pre>
-                    <p>Output: Calibrated relevance scores</p>
-                    <pre style={{ marginTop: '5px', fontSize: '1rem', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Calibrated relevance scores</p>
+                    <pre style={{ marginTop: '5px', fontSize: '0.8rem', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
                       {`scores = model.predict(pairs)
 # [0.87, 0.65]  # Higher = more relevant`}
                     </pre>
@@ -600,7 +600,7 @@ pairs = [
                 />
               </h4>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}>
@@ -685,9 +685,9 @@ pairs = [
                     <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>High-accuracy pointwise generative reranking approach that frames relevance as a text generation problem.</p>
+                  <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>High-accuracy pointwise generative reranking approach that frames relevance as a text generation problem.</p>
                   <GSAPStaggerList stagger={0.1} delay={0.6}>
-                  <ul>
+                  <ul style={{ fontSize: '1rem' }}>
                     <li>Provides superior accuracy through generative assessment</li>
                     <li>Offers strong zero-shot and few-shot capabilities</li>
                     <li>Better handles complex semantic relationships than classification-only models</li>
@@ -702,8 +702,8 @@ pairs = [
                     <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>T5 encoder-decoder predicts "true" or "false" tokens for relevance. Higher P("true") = Higher relevance score.</p>
-                  <p>Key mechanism: Convert relevance judgment into a text generation task, predicting "true" or "false" tokens</p>
+                  <p style={{ marginTop: '5px', fontSize: '1rem' }}>T5 encoder-decoder predicts "true" or "false" tokens for relevance. Higher P("true") = Higher relevance score.</p>
+                  <p style={{ margin: '0px', fontSize: '1rem' }}>Key mechanism: Convert relevance judgment into a text generation task, predicting "true" or "false" tokens</p>
                 </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.8}>
@@ -714,7 +714,7 @@ pairs = [
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                   <GSAPStaggerList stagger={0.08} delay={1.1}>
-                  <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                  <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                     <li>Web search and QA datasets where accuracy is paramount</li>
                     <li>When higher latency is acceptable for better precision</li>
                     <li>For transfer learning across domains (zero/few-shot)</li>
@@ -731,12 +731,12 @@ pairs = [
                     <SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                  <p>Input: Formatted text prompt combining query and document</p>
-                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                  <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Formatted text prompt combining query and document</p>
+                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                     {`prompt = f"Query: {query} Document: {document} Relevant?"`}
                   </pre>
-                  <p>Output: Probability of generating "true" token as relevance score</p>
-                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                  <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Probability of generating "true" token as relevance score</p>
+                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                     {`score = model.predict(prompt)  
 # Higher probability of "true" = higher relevance`}
                   </pre>
@@ -784,7 +784,7 @@ pairs = [
                     <p style={{ margin: '0px' }}><strong>Query:</strong> "What is FiD in RAG?"</p>
                     <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.6}>
-                    <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                    <ul style={{ paddingLeft: '18px' }}>
                       <li>A) Fusion-in-Decoder definition</li>
                       <li>B) Generic RAG overview</li>
                       <li>C) Document retrieval methods</li>
@@ -795,7 +795,7 @@ pairs = [
                   <GSAPAnimated animation="slideInRight" delay={0.5}>
                   <div>
                     <p><strong>Ranking:</strong></p>
-                    <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                    <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px', fontSize: '1.2rem' }}>
                       <GSAPAnimated animation="bounceIn" delay={0.9}>
                       <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.91 → A) Fusion-in-Decoder definition</div>
                       </GSAPAnimated>
@@ -843,7 +843,7 @@ pairs = [
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}>
@@ -928,9 +928,9 @@ pairs = [
                     <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Strong transformer-based reranking without the complexity and overhead of encoder-decoder architectures.</p>
+                  <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Strong transformer-based reranking without the complexity and overhead of encoder-decoder architectures.</p>
                   <GSAPStaggerList stagger={0.1} delay={0.6}>
-                  <ul>
+                  <ul style={{ fontSize: '1rem' }}>
                     <li>Provides efficient relevance scoring for passages</li>
                     <li>Offers semantic understanding beyond keyword matching</li>
                     <li>Balances accuracy and computational efficiency</li>
@@ -945,13 +945,13 @@ pairs = [
                     <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses BERT architecture with a classification head to output relevance scores:</p>
+                  <p style={{ marginTop: '5px', marginBottom: '0px', fontSize: '1rem' }}>Uses BERT architecture with a classification head to output relevance scores:</p>
                   <GSAPStaggerList stagger={0.15} delay={0.7}>
-                  <ul>
+                  <ul style={{ fontSize: '1rem' }}>
                     <li>Single-pass pointwise scoring for query-document pairs</li>
                   </ul>
                   </GSAPStaggerList>
-                  <p>Key mechanism: [CLS] query [SEP] document [SEP] → BERT → classification head → relevance score</p>
+                  <p style={{ margin: '0px', fontSize: '1rem', marginTop: '4px' }}>Key mechanism: [CLS] query [SEP] document [SEP] → BERT → classification head → relevance score</p>
                 </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.8}>
@@ -962,7 +962,7 @@ pairs = [
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                   <GSAPStaggerList stagger={0.09} delay={1.1}>
-                  <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                  <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                     <li>Classic Information Retrieval (IR) pipelines</li>
                     <li>When you have medium latency budgets</li>
                     <li>Primarily for English-language corpora</li>
@@ -979,14 +979,14 @@ pairs = [
                     <SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                     </GSAPAnimated>
                     <span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                  <p>Input: Query and document pairs as text</p>
+                  <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query and document pairs as text</p>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
                     {`inputs = {
   "query": "TLS vs mTLS security",
   "documents": ["doc1_text", "doc2_text", ...] 
 }`}
                   </pre>
-                  <p>Output: Relevance scores or binary classifications (relevant/not relevant)</p>
+                  <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Relevance scores or binary classifications (relevant/not relevant)</p>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
                     {`scores = [0.87, 0.42, ...]  # Higher = more relevant`}
                   </pre>
@@ -1093,7 +1093,7 @@ pairs = [
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}>
@@ -1174,9 +1174,9 @@ pairs = [
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Provides precise token-level matching between queries and documents while maintaining efficiency and scalability.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Provides precise token-level matching between queries and documents while maintaining efficiency and scalability.</p>
                     <GSAPStaggerList stagger={0.12} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Balances deep semantic understanding with computational efficiency</li>
                         <li>Preserves term-specific representations instead of single-vector compression</li>
                         <li>Enables fine-grained contextual matching across tokens</li>
@@ -1187,15 +1187,15 @@ pairs = [
                 <GSAPAnimated animation="slideInRight" delay={0.4}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.5}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Employs late interaction pattern: encodes queries and documents independently, but performs fine-grained token-level matching.</p>
-                    <p>Key mechanism: MaxSim operation matches each query token to its most similar document token, then aggregates scores</p>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Employs late interaction pattern: encodes queries and documents independently, but performs fine-grained token-level matching.</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Key mechanism: MaxSim operation matches each query token to its most similar document token, then aggregates scores</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.7}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.15} delay={0.8}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.95rem' }}>
                         <li>When term-by-term alignment is important (technical/medical content)</li>
                         <li>For long documents where specific sections may be relevant</li>
                         <li>When you need balance between efficiency and deep matching</li>
@@ -1208,13 +1208,13 @@ pairs = [
                 <GSAPAnimated animation="slideInTop" delay={0.8}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.9}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p>Input: Query tokens and document tokens (as separate embeddings)</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query tokens and document tokens (as separate embeddings)</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
                       {`query_embeddings = model.encode_query(query)  # [Q tokens × dim]
 doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
                     </pre>
-                    <p>Output: MaxSim-based relevance score from token interactions</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: MaxSim-based relevance score from token interactions</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
                       {`score = colbert.score(query_embeddings, doc_embeddings)
  # Scalar score`}
                     </pre>
@@ -1307,7 +1307,7 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="bounceIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -1380,9 +1380,9 @@ The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than s
                 <GSAPAnimated animation="slideInTop" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Enables fast and efficient rescoring of documents using strong sentence embeddings while maintaining reasonable accuracy.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Enables fast and efficient rescoring of documents using strong sentence embeddings while maintaining reasonable accuracy.</p>
                     <GSAPStaggerList stagger={0.1} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Provides efficient alternative to computationally intensive cross-encoders</li>
                         <li>Balances speed and accuracy for high-throughput applications</li>
                         <li>Supports multilingual reranking (depending on checkpoint)</li>
@@ -1393,15 +1393,15 @@ The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than s
                 <GSAPAnimated animation="slideInBottom" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.4}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Processes query and documents separately with same encoder, then computes similarity.</p>
-                    <p>Key mechanism: Encode query_emb and doc_emb independently → compute cosine similarity → rerank top-K</p>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Processes query and documents separately with same encoder, then computes similarity.</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Key mechanism: Encode query_emb and doc_emb independently → compute cosine similarity → rerank top-K</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                         <li>Low-latency applications where speed is critical</li>
                         <li>CPU-only environments without GPU acceleration</li>
                         <li>High-throughput systems requiring efficient scaling</li>
@@ -1415,8 +1415,8 @@ The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than s
                 <GSAPAnimated animation="slideInRight" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.7}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p>Input: Query and document texts processed separately</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query and document texts processed separately</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                       {`// Encode separately
 query_emb = model.encode(query)
 doc_embs = [model.encode(doc) for doc in documents]
@@ -1425,8 +1425,8 @@ doc_embs = [model.encode(doc) for doc in documents]
 scores = [cosine_similarity(query_emb, doc_emb) 
           for doc_emb in doc_embs]`}
                     </pre>
-                    <p>Output: Similarity scores between -1 and 1 (typically normalized to 0-1)</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Similarity scores between -1 and 1 (typically normalized to 0-1)</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                       {`scores = [0.87, 0.65, 0.42, ...]  # Higher = more relevant`}
                     </pre>
                   </div>
@@ -1518,7 +1518,7 @@ scores = [cosine_similarity(query_emb, doc_emb)
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="scaleIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -1593,9 +1593,9 @@ The caching story is compelling too. Encode your entire document corpus once, st
                 <GSAPAnimated animation="slideInBottom" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Leverages large language models' reasoning capabilities to perform sophisticated relevance ranking beyond traditional re-rankers.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Leverages large language models' reasoning capabilities to perform sophisticated relevance ranking beyond traditional re-rankers.</p>
                     <GSAPStaggerList stagger={0.13} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Handles complex, multi-criteria document evaluation</li>
                         <li>Performs listwise ranking rather than just pairwise comparisons</li>
                         <li>Zero-shot adaptation to new domains without retraining</li>
@@ -1607,15 +1607,15 @@ The caching story is compelling too. Encode your entire document corpus once, st
                 <GSAPAnimated animation="slideInTop" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.4}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a large language model's reasoning abilities to evaluate and rank document relevance.</p>
-                    <p>Key mechanism: Prompt LLM to compare documents → reason about relevance → output ordered ranking</p>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Uses a large language model's reasoning abilities to evaluate and rank document relevance.</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Key mechanism: Prompt LLM to compare documents → reason about relevance → output ordered ranking</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.5}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.15} delay={0.7}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                         <li>High-stakes QA applications where accuracy trumps cost</li>
                         <li>For ambiguous or multi-hop queries requiring reasoning</li>
                         <li>When dealing with new domains without training data</li>
@@ -1628,8 +1628,8 @@ The caching story is compelling too. Encode your entire document corpus once, st
                 <GSAPAnimated animation="slideInLeft" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.7}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p style={{ margin: '0px' }}>Input: Query and numbered documents list in a prompt</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query and numbered documents list in a prompt</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.7rem' }}>
                       {`prompt = f"""
 Rank these passages based on relevance to query: 
 "{query}"
@@ -1639,8 +1639,8 @@ Rank these passages based on relevance to query:
 Return ranking as: [3, 1, 2, ...]
 """`}
                     </pre>
-                    <p>Output: Ordered list of document IDs based on relevance</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Ordered list of document IDs based on relevance</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.7rem' }}>
                       {`[3, 1, 5, 2, 4]  # Most to least relevant`}
                     </pre>
                   </div>
@@ -1736,7 +1736,7 @@ Return ranking as: [3, 1, 2, ...]
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="scaleIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -1809,9 +1809,9 @@ Return ranking as: [3, 1, 2, ...]
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Combines multiple ranking signals into a single, unified ranking without requiring relevance scores or training.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Combines multiple ranking signals into a single, unified ranking without requiring relevance scores or training.</p>
                     <GSAPStaggerList stagger={0.15} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Effectively merges results from diverse retrieval methods (BM25, dense, etc.)</li>
                         <li>Creates robust rankings that benefit from the strengths of each underlying system</li>
                         <li>Improves overall ranking quality without adding new models</li>
@@ -1822,13 +1822,13 @@ Return ranking as: [3, 1, 2, ...]
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.4}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a simple yet effective formula to combine rankings based on document positions:</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Uses a simple yet effective formula to combine rankings based on document positions:</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                       {`RRF(d) = Σ₍ᵣ∈R₎ 1 / (k + rankᵣ(d))`}
                     </pre>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>Where:</strong></p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}><strong>Where:</strong></p>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
-                      <ul>
+                      <ul style={{ fontSize: '0.9rem' }}>
                         <li>d = document being ranked</li>
                         <li>R = set of ranking systems being fused</li>
                         <li>k = constant (typically 60) to manage highly ranked items</li>
@@ -1841,7 +1841,7 @@ Return ranking as: [3, 1, 2, ...]
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9rem' }}>
                         <li>When combining multiple retrieval methods (e.g., BM25 + neural)</li>
                         <li>For heterogeneous document collections with varying characteristics</li>
                         <li>As a simple baseline before implementing more complex re-rankers</li>
@@ -1854,14 +1854,14 @@ Return ranking as: [3, 1, 2, ...]
                 <GSAPAnimated animation="slideInTop" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.7}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p>Input: Multiple ranked lists of documents from different systems</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Multiple ranked lists of documents from different systems</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                       {`ranker_1 = ["doc_A", "doc_C", "doc_B", ...]
 ranker_2 = ["doc_B", "doc_A", "doc_D", ...]
 ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                     </pre>
-                    <p>Output: A single, fused ranking of documents</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: A single, fused ranking of documents</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.9rem' }}>
                       {`rrf_ranking = ["doc_A", "doc_B", "doc_C", ...]`}
                     </pre>
                   </div>
@@ -1924,9 +1924,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                         <p style={{ margin: '0px' }}><strong>Ranking:</strong></p>
                         <div style={{ display: 'flex', gap: '20px' }}>
                           <div>
-                            <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>BM25 Rank:</strong></p>
+                            <p style={{ marginTop: '5px', fontSize: '1rem' }}><strong>BM25 Rank:</strong></p>
                             <GSAPStaggerList stagger={0.15} delay={0.7}>
-                              <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                              <ul style={{ paddingLeft: '18px', fontSize: '0.9rem' }}>
                                 <li>DocA: 2</li>
                                 <li>DocB: 1</li>
                                 <li>DocC: 5</li>
@@ -1934,9 +1934,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                             </GSAPStaggerList>
                           </div>
                           <div>
-                            <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>Dense Rank:</strong></p>
+                            <p style={{ marginTop: '5px', fontSize: '1rem' }}><strong>Dense Rank:</strong></p>
                             <GSAPStaggerList stagger={0.15} delay={0.9}>
-                              <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                              <ul style={{ paddingLeft: '18px', fontSize: '0.9rem' }}>
                                 <li>DocA: 3</li>
                                 <li>DocB: 4</li>
                                 <li>DocC: 1</li>
@@ -1945,9 +1945,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                           </div>
 
                           <div>
-                            <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>Hybrid Rank:</strong></p>
+                            <p style={{ marginTop: '5px', fontSize: '1rem' }}><strong>Hybrid Rank:</strong></p>
                             <GSAPStaggerList stagger={0.15} delay={1.1}>
-                              <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                              <ul style={{ paddingLeft: '18px', fontSize: '0.9rem' }}>
                                 <li>DocA: 1</li>
                                 <li>DocB: 3</li>
                                 <li>DocC: 4</li>
@@ -1956,9 +1956,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                           </div>
 
                           <div>
-                            <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>RRF Score:</strong></p>
+                            <p style={{ marginTop: '5px', fontSize: '1rem' }}><strong>RRF Score:</strong></p>
                             <GSAPStaggerList stagger={0.2} delay={1.3}>
-                              <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                              <ul style={{ paddingLeft: '18px', fontSize: '0.9rem' }}>
                                 <li>DocA: 0.044</li>
                                 <li>DocB: 0.038</li>
                                 <li>DocC: 0.037</li>
@@ -2001,7 +2001,7 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="rotateIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -2076,9 +2076,9 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
                 <GSAPAnimated animation="slideInTop" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Enables more effective multi-document evidence fusion with a specialized encoder-decoder architecture that processes many documents simultaneously.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Enables more effective multi-document evidence fusion with a specialized encoder-decoder architecture that processes many documents simultaneously.</p>
                     <GSAPStaggerList stagger={0.15} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '0.9rem' }}>
                         <li>Combines information from multiple passages in the decoder stage</li>
                         <li>Improves answers requiring evidence from multiple sources</li>
                         <li>Provides implicit document ranking through attention mechanisms</li>
@@ -2089,14 +2089,14 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
                 <GSAPAnimated animation="slideInBottom" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.4}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a specialized fusion architecture for handling multiple documents.</p>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Uses a specialized fusion architecture for handling multiple documents.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                         <li>Multi-hop question answering requiring facts from multiple documents</li>
                         <li>Complex queries where information synthesis is needed</li>
                         <li>When implicit document ranking/scoring is desired as a side effect</li>
@@ -2109,7 +2109,7 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
                 <GSAPAnimated animation="slideInRight" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.7}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p style={{ margin: '0px' }}>Input: Query and multiple document passages</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query and multiple document passages</p>
                     <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
                       {`inputs = {
   "query": "Who founded X and what year?",
@@ -2117,15 +2117,12 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
     "John Smith founded...", 
     "Company X was established in 1995...",
     ...
-  ]
-}`}
+  ]}`}
                     </pre>
-                    <p style={{ margin: '0px' }}>Output: Generated answer and optional document salience scores</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Generated answer and optional document salience scores</p>
                     <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
-                      {`output = {
-  "answer": "John Smith founded X in 1995",
-  "doc_scores": [0.8, 0.7, 0.2, ...] # Optional
-}`}
+                      {`output = { "answer": "John Smith founded X in 1995",
+  "doc_scores": [0.8, 0.7, 0.2, ...] # Optional}`}
                     </pre>
                   </div>
                 </GSAPAnimated>
@@ -2224,7 +2221,7 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInTop" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="bounceIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -2300,9 +2297,9 @@ The reranking capability, while useful, is indirect - you're extracting attentio
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Dense Passage Retrieval (DPR) as a re-ranker provides efficient semantic matching specifically optimized for question-answering tasks.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Dense Passage Retrieval (DPR) as a re-ranker provides efficient semantic matching specifically optimized for question-answering tasks.</p>
                     <GSAPStaggerList stagger={0.15} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Overcomes lexical matching limitations of traditional retrievers</li>
                         <li>Enables fast semantic similarity scoring for candidate documents</li>
                         <li>Bridges the gap between simple vector search and expensive cross-encoders</li>
@@ -2313,15 +2310,15 @@ The reranking capability, while useful, is indirect - you're extracting attentio
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.4}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a dual-encoder architecture fine-tuned on question-answer pairs.</p>
-                    <p>Key mechanism: Independent encoding → vector similarity → score-based reranking</p>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Uses a dual-encoder architecture fine-tuned on question-answer pairs.</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Key mechanism: Independent encoding → vector similarity → score-based reranking</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                         <li>Open-domain question answering systems</li>
                         <li>Low-latency reranking after initial retrieval</li>
                         <li>When domain knowledge can be incorporated via fine-tuning</li>
@@ -2334,21 +2331,18 @@ The reranking capability, while useful, is indirect - you're extracting attentio
                 <GSAPAnimated animation="slideInBottom" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.7}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p style={{ margin: '0px' }}>Input: Query embedding and passage embeddings</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query embedding and passage embeddings</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.7rem' }}>
                       {`query_embedding = query_encoder(query)
 passage_embeddings = [passage_encoder(p) for p in passages]
-
-# For reranking
-scores = []
+# For reranking scores = []
 for emb in passage_embeddings:
     score = cosine_similarity(query_embedding, emb)
     scores.append(score)`}
                     </pre>
-                    <p style={{ margin: '0px' }}>Output: Similarity scores for reranking passages</p>
-                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
-                      {`ranked_passages = [p for _, p in 
-                  sorted(zip(scores, passages), 
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Similarity scores for reranking passages</p>
+                    <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.7rem' }}>
+                      {`ranked_passages = [p for _, p in sorted(zip(scores, passages), 
                   key=lambda x: x[0], reverse=True)]`}
                     </pre>
                   </div>
@@ -2450,7 +2444,7 @@ for emb in passage_embeddings:
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInTop" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="scaleIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -2528,9 +2522,9 @@ Integration is straightforward - every major vector database supports **DPR** �
                 <GSAPAnimated animation="rotateIn" delay={0.2}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.3}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Combines lexical precision of keyword matching with semantic reasoning capabilities to create a robust, explainable ranking system.</p>
+                    <p style={{ marginTop: '5px', marginBottom: '4px', fontSize: '1rem' }}>Combines lexical precision of keyword matching with semantic reasoning capabilities to create a robust, explainable ranking system.</p>
                     <GSAPStaggerList stagger={0.15} delay={0.5}>
-                      <ul>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Bridges the gap between traditional search and neural approaches</li>
                         <li>Reduces hallucination risk through strong keyword grounding</li>
                         <li>Improves relevance for keyword-heavy and technical content</li>
@@ -2541,15 +2535,15 @@ Integration is straightforward - every major vector database supports **DPR** �
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.4}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
-                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Two-stage pipeline that leverages both traditional IR and advanced neural methods.</p>
-                    <p>Key mechanism: BM25 provides initial keyword-based retrieval → LLM analyzes semantic meaning and reranks considering both relevance and BM25 scores</p>
+                    <p style={{ marginTop: '5px', fontSize: '1rem' }}>Two-stage pipeline that leverages both traditional IR and advanced neural methods.</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Key mechanism: BM25 provides initial keyword-based retrieval → LLM analyzes semantic meaning and reranks considering both relevance and BM25 scores</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
-                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
+                      <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
                         <li>Technical or specialized domains with domain-specific terminology</li>
                         <li>When exact keyword matching is crucial (e.g., error codes, product IDs)</li>
                         <li>Content with structured or semi-structured format</li>
@@ -2562,22 +2556,19 @@ Integration is straightforward - every major vector database supports **DPR** �
                 <GSAPAnimated animation="slideInTop" delay={0.6}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.7}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
-                    <p>Input: Query, documents with BM25 scores, and optional embedding similarities</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Input: Query, documents with BM25 scores, and optional embedding similarities</p>
                     <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
                       {`hybrid_inputs = {
   "query": "error E101 on firmware v2.3",
-  "documents": [
-    {"content": "...", "bm25_score": 0.85},
+  "documents": [ {"content": "...", "bm25_score": 0.85},
     {"content": "...", "bm25_score": 0.72},
-  ]
-}`}
+  ]}`}
                     </pre>
-                    <p>Output: Reranked documents with combined relevance scores</p>
+                    <p style={{ margin: '0px', fontSize: '1rem' }}>Output: Reranked documents with combined relevance scores</p>
                     <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
                       {`results = [
   {"doc_id": 3, "score": 0.89, "bm25": 0.72, "llm": 0.95},
-  {"doc_id": 1, "score": 0.76, "bm25": 0.85, "llm": 0.70},
-]`}
+  {"doc_id": 1, "score": 0.76, "bm25": 0.85, "llm": 0.70},]`}
                     </pre>
                   </div>
                 </GSAPAnimated>
@@ -2678,7 +2669,7 @@ Integration is straightforward - every major vector database supports **DPR** �
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><GSAPAnimated animation="bounceIn" delay={0.3}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /></GSAPAnimated> <strong>Strengths:</strong></p>
@@ -2755,7 +2746,7 @@ The explainability is genuinely valuable. You can tell users "This document matc
               </div>
               <div style={{ overflowX: 'auto' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.2}>
-                  <table style={{ width: '100%', fontSize: '1.2rem', borderCollapse: 'collapse' }}>
+                  <table style={{ width: '100%', fontSize: '1rem', borderCollapse: 'collapse' }}>
                     <thead>
                       <tr style={{ background: 'rgba(79, 195, 247, 0.2)', borderBottom: '2px solid rgba(79, 195, 247, 0.5)' }}>
                         <th style={{ padding: '10px', textAlign: 'left' }}>Model Type</th>
@@ -2803,41 +2794,12 @@ The explainability is genuinely valuable. You can tell users "This document matc
                   </table>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.4}>
-                  <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                  <div style={{ marginTop: '16px', padding: '15px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '8px' }}>
+                    <h3 style={{ color: '#ffb74d', paddingBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
                       <GSAPAnimated animation="rotateIn" delay={0.5}>
-                        <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
-                      Key Performance Metrics
-                    </h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px', fontSize: '1.2rem' }}>
-                      <GSAPAnimated animation="scaleIn" delay={0.6}>
-                        <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
-                          <div>Latency Impact</div>
-                          <div style={{ fontWeight: 'bold', color: '#4fc3f7', marginTop: '5px' }}>+200-500ms</div>
-                          <div>Per reranking pass</div>
-                        </div>
-                      </GSAPAnimated>
-                      <GSAPAnimated animation="scaleIn" delay={0.7}>
-                        <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
-                          <div>Accuracy Gain</div>
-                          <div style={{ fontWeight: 'bold', color: '#81c784', marginTop: '5px' }}>+20-35%</div>
-                          <div>Precision improvement</div>
-                        </div>
-                      </GSAPAnimated>
-                      <GSAPAnimated animation="scaleIn" delay={0.8}>
-                        <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
-                          <div>Optimal Depth</div>
-                          <div style={{ fontWeight: 'bold', color: '#ffb74d', marginTop: '5px' }}>20-50 → 5-10</div>
-                          <div>Retrieve → Rerank</div>
-                        </div>
-                      </GSAPAnimated>
-                    </div>
-                  </div>
-                </GSAPAnimated>
-                <GSAPAnimated animation="bounceIn" delay={0.9}>
-                  <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
-                    <MermaidPopover
+                      Key Performance Metrics <MermaidPopover
                       diagram={`graph TD
     A[Which Model Should I Choose?] --> B{Need maximum<br/>accuracy?}
     B -->|Yes| C{Have GPU<br/>resources?}
@@ -2867,6 +2829,41 @@ The explainability is genuinely valuable. You can tell users "This document matc
     style N fill:#f06292`}
                       title="Model Selection Decision Tree"
                     />
+                    </h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px', fontSize: '0.9rem' }}>
+                      <GSAPAnimated animation="scaleIn" delay={0.6}>
+                        <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
+                          <div>Latency Impact</div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                            <div style={{ fontWeight: 'bold', color: '#4fc3f7', marginTop: '5px' }}>+200-500ms</div>
+                          <div>Per reranking pass</div>
+                            </div>
+                        </div>
+                      </GSAPAnimated>
+                      <GSAPAnimated animation="scaleIn" delay={0.7}>
+                        <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
+                          <div>Accuracy Gain</div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                            <div style={{ fontWeight: 'bold', color: '#81c784', marginTop: '5px' }}>+20-35%</div>
+                          <div>Precision improvement</div>
+                          </div>
+                        </div>
+                      </GSAPAnimated>
+                      <GSAPAnimated animation="scaleIn" delay={0.8}>
+                        <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
+                          <div>Optimal Depth</div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                            <div style={{ fontWeight: 'bold', color: '#ffb74d', marginTop: '5px' }}>20-50 → 5-10</div>
+                          <div>Retrieve → Rerank</div>
+                          </div>
+                        </div>
+                      </GSAPAnimated>
+                    </div>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="bounceIn" delay={0.9}>
+                  <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+                    
                   </div>
                 </GSAPAnimated>
               </div>
@@ -2908,15 +2905,15 @@ The explainability is genuinely valuable. You can tell users "This document matc
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.6rem' }}>
                       <GSAPAnimated animation="rotateIn" delay={0.3}>
-                        <SvgIcon iconName="duo-star" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-star" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Default / General Purpose
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                       <p><strong>ms-marco-MiniLM-L-6-v2</strong></p>
-                      <p>
+                      <p style={{ margin: '0px' }}>
                         Rerank top-20→top-5 with this cross-encoder for best accuracy/speed balance
                       </p>
                     </div>
@@ -2924,15 +2921,15 @@ The explainability is genuinely valuable. You can tell users "This document matc
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
                   <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.6rem' }}>
                       <GSAPAnimated animation="scaleIn" delay={0.4}>
-                        <SvgIcon iconName="duo-globe" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-globe" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Multilingual & Non-English
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                       <p><strong>BGE Reranker / LLM-as-Ranker</strong></p>
-                      <p>
+                      <p style={{ margin: '0px' }}>
                         BGE for efficiency, LLM-as-ranker for rare languages with complex reasoning
                       </p>
                     </div>
@@ -2940,15 +2937,15 @@ The explainability is genuinely valuable. You can tell users "This document matc
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
                   <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.6rem' }}>
                       <GSAPAnimated animation="bounceIn" delay={0.6}>
-                        <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       High Throughput / Low Cost
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                       <p><strong>E5/DPR + RRF + BM25</strong></p>
-                      <p>
+                      <p style={{ margin: '0px' }}>
                         Bi-encoder cosine rerank + RRF with BM25 for robust baseline at scale
                       </p>
                     </div>
@@ -2956,15 +2953,15 @@ The explainability is genuinely valuable. You can tell users "This document matc
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.6}>
                   <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <h3 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.6rem' }}>
                       <GSAPAnimated animation="flipCard" delay={0.7}>
-                        <SvgIcon iconName="duo-file-lines" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-file-lines" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Long Documents & Term Alignment
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                       <p><strong>ColBERT/v2</strong></p>
-                      <p>
+                      <p style={{ margin: '0px' }}>
                         Optimized for fine-grained token-level matching across passages
                       </p>
                     </div>
@@ -2972,15 +2969,15 @@ The explainability is genuinely valuable. You can tell users "This document matc
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.8}>
                   <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#f06292', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <h3 style={{ color: '#f06292', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.6rem' }}>
                       <GSAPAnimated animation="rotateIn" delay={0.9}>
-                        <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-brain" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Complex Reasoning / Multi-Hop QA
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                       <p><strong>LLM-as-Ranker / FiD</strong></p>
-                      <p>
+                      <p style={{ margin: '0px' }}>
                         When relationships between documents matter; consider distilling for production
                       </p>
                     </div>
@@ -2988,15 +2985,15 @@ The explainability is genuinely valuable. You can tell users "This document matc
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.9}>
                   <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '8px' }}>
-                    <h3 style={{ color: '#64b5f6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <h3 style={{ color: '#64b5f6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.6rem' }}>
                       <GSAPAnimated animation="scaleIn" delay={1.0}>
-                        <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-sliders" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Hybrid Robust Baseline
                     </h3>
                     <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                       <p><strong>BM25 + Dense + RRF</strong></p>
-                      <p>
+                      <p style={{ margin: '0px' }}>
                         Add cross-encoder for top-10 refinement; balances keyword precision with semantics
                       </p>
                     </div>
