@@ -1581,7 +1581,7 @@ Let's look at additional important details.`
           content: (
             <GSAPAnimated animation="scaleIn" delay={0.3}>
               <div style={{ textAlign: 'left', margin: '0 auto', color: '#d96518', padding: '20px' }}>
-                  <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
+                <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <strong>Large-scale recommendation systems</strong> and search applications requiring complex ranking logic. Ideal for <strong>multimodal/tensor pipelines</strong> where search, ranking, and inference must happen in real-time within a single platform.
                 </p>
               </div>
@@ -1774,7 +1774,7 @@ Let's look at additional important details.`
           content: (
             <GSAPAnimated animation="bounceIn" delay={0.2}>
               <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px' }}>
-                  <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
+                <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Applications requiring <strong>ACID compliance with vector search</strong> capabilities. Ideal for systems with modest vector volumes that benefit from SQL interface and transactional guarantees. Perfect for developers who want to integrate vectors into existing relational data models.
                 </p>
               </div>
@@ -1965,7 +1965,7 @@ Let's look at additional important details.`
           content: (
             <GSAPAnimated animation="fadeIn" delay={0.2}>
               <div style={{ textAlign: 'left', margin: '0 auto', color: '#17b35a', padding: '20px' }}>
-                  <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
+                <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Applications needing to <strong>unify operational JSON data and embeddings</strong> in a single platform. Ideal for teams already using MongoDB seeking to add vector capabilities without additional infrastructure. Perfect for app development requiring both structured data and semantic search.
                 </p>
               </div>
