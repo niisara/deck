@@ -84,7 +84,7 @@ export const chunkingTechniquesDeck: Deck = {
               <GSAPAnimated delay={0.1} duration={0.7}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
+                    <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                     Definition
                     <MermaidPopover
                       diagram={`graph LR
@@ -106,11 +106,11 @@ export const chunkingTechniquesDeck: Deck = {
                   </p>
                 </div>
               </GSAPAnimated>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginTop: '25px' }}>
                 <div>
                   <GSAPAnimated delay={0.3} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-check-circle" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-check-circle" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Why It's Important
                     </h4>
                   </GSAPAnimated>
@@ -124,7 +124,7 @@ export const chunkingTechniquesDeck: Deck = {
                   </GSAPStaggerList>
                   <GSAPAnimated delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-sliders" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Key Variables
                     </h4>
                   </GSAPAnimated>
@@ -141,12 +141,12 @@ export const chunkingTechniquesDeck: Deck = {
                 <div>
                   <GSAPAnimated delay={0.3} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Desired Outcomes
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.15} delay={0.5}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1rem', marginTop: '10px' }}>
                       <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
                         <strong>Better recall/precision in retrieval</strong>
                       </div>
@@ -194,7 +194,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <GSAPAnimated delay={0.2} duration={0.8}>
                   <div>
                     <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-ruler" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Fixed/Token-based (1-3)
                       <MermaidPopover
                         diagram={`graph TD
@@ -217,7 +217,7 @@ export const chunkingTechniquesDeck: Deck = {
                       </ul>
                     </GSAPStaggerList>
                     <h4 style={{ color: '#2ecc71', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-paragraph" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-paragraph" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Sentence/Paragraph-based (4-6)
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
@@ -232,7 +232,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <GSAPAnimated delay={0.3} duration={0.8}>
                   <div>
                     <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-sitemap" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Structure-aware (7-13)
                       <MermaidPopover
                         diagram={`graph TD
@@ -263,7 +263,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <GSAPAnimated delay={0.4} duration={0.8}>
                   <div>
                     <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-brain" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Semantic/Adaptive (14-19)
                       <MermaidPopover
                         diagram={`graph TD
@@ -288,7 +288,7 @@ export const chunkingTechniquesDeck: Deck = {
                       </ul>
                     </GSAPStaggerList>
                     <h4 style={{ color: '#e67e22', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-wand-sparkles" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-wand-sparkles" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Special-Purpose (20-26)
                       <MermaidPopover
                         diagram={`graph LR
@@ -363,7 +363,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
                     diagram={`graph LR
@@ -415,7 +415,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
                     diagram={`graph TD
@@ -466,7 +466,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
               <GSAPAnimated delay={0.3} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-ruler" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -488,7 +488,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={0.7} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-link" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
                     diagram={`graph TD
@@ -508,7 +508,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.1} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-gauge" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -546,7 +546,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
                     diagram={`graph TD
@@ -577,7 +577,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
               <GSAPAnimated delay={0.8} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-toolbox" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Tooling Support
                 </h3>
               </GSAPAnimated>
@@ -591,12 +591,12 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
               <GSAPAnimated delay={1.3} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
               <GSAPAnimated delay={1.5} duration={0.6}>
-                <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Required expertise and implementation difficulty</p>
+                <p style={{ margin: '0px' }}><strong>Beginner</strong> - Required expertise and implementation difficulty</p>
               </GSAPAnimated>
             </div>
           ),
@@ -635,7 +635,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <GSAPAnimated delay={0.3} duration={0.9}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
                     diagram={`graph LR
@@ -689,7 +689,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
                     diagram={`graph TD
@@ -747,7 +747,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-ruler" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -769,7 +769,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={0.8} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-link" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
                     diagram={`graph LR
@@ -789,7 +789,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.4} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-gauge" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -827,7 +827,7 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <GSAPAnimated delay={0.2} duration={0.7}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
                     diagram={`graph TD
@@ -858,7 +858,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
               <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-toolbox" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Tooling Support
                 </h3>
               </GSAPAnimated>
@@ -872,12 +872,12 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
               <GSAPAnimated delay={1.4} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
               <GSAPAnimated delay={1.6} duration={0.6}>
-                <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Simple concept with some NLP preprocessing</p>
+                <p style={{ margin: '0px' }}><strong>Beginner–Intermediate</strong> - Simple concept with some NLP preprocessing</p>
               </GSAPAnimated>
             </div>
           ),
