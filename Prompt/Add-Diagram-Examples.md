@@ -23,8 +23,8 @@ rag-latency-deck.tsx
 reranking-models-deck.tsx
 sample-deck.tsx
 sentiment-analysis-deck.tsx
-text-preprocessing-deck.tsx
-vector-databases-deck.tsx
+
+
 
 
 vector-indexing-deck.tsx for this file do the following:
