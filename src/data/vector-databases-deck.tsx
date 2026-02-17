@@ -707,7 +707,30 @@ Let's look at additional important details.`
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="bounceIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#9434bd', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#9434bd', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Qdrant Quantization Options"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Quant["🔧 Quantization Methods"]
+        Scalar["Scalar<br/>Reduce Precision<br/>💾 Moderate Savings"]
+        Product["Product<br/>Sub-vector Compression<br/>💾 Good Savings"]
+        Binary["Binary<br/>0s and 1s<br/>⚡ 40x Faster!"]
+    end
+    
+    HNSW["📊 Optimized HNSW"] --> Quant
+    Payload["🔖 Payload-Aware<br/>Filtering"] --> Quant
+    
+    Quant --> Result["✅ Efficient Search<br/>💰 Lower Memory Cost"]
+    
+    style HNSW fill:#4fc3f7,color:#000
+    style Payload fill:#e1bee7,color:#000
+    style Quant fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Binary fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Result fill:#ffd700,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Optimized HNSW algorithm with payload-aware filtering for efficient vector search. Supports multiple quantization methods including <strong>scalar, product, and binary quantization</strong> for memory efficiency and improved search performance.
                 </p>
@@ -1061,7 +1084,32 @@ Let's look at additional important details.`
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="slideInLeft" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#ed311f', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#ed311f', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Chroma's Simple Architecture"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+flowchart LR
+    App["📱 Your App"] --> Chroma["Chroma<br/>Single Node"]
+    
+    Chroma --> HNSW["HNSW Index<br/>⚡ Fast Search"]
+    Chroma --> Meta["Metadata Store<br/>🔖 Filtering"]
+    Chroma --> Disk["💾 Local Disk<br/>Persistence"]
+    
+    Result["✅ Simple + Fast<br/>No Cluster Complexity"]
+    
+    HNSW --> Result
+    Meta --> Result
+    Disk --> Result
+    
+    style App fill:#4fc3f7,color:#000
+    style Chroma fill:#e1bee7,color:#000
+    style HNSW fill:#81c784,color:#000
+    style Meta fill:#fff9c4,color:#000
+    style Disk fill:#e3f2fd,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   HNSW-based vector indexing optimized for single-node deployment. Focused on <strong>simplicity and ease of use</strong> rather than complex indexing configurations. Supports both vector embeddings and associated metadata for retrieval.
                 </p>
@@ -1250,7 +1298,39 @@ Let's look at additional important details.`
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="scaleIn" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#0bc7a2', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#0bc7a2', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Redis Vector Store Architecture"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Redis["🔴 Redis Core"]
+        KV["Key-Value Store<br/>⚡ In-Memory Speed"]
+        DS["Native Data Structures<br/>Strings, Lists, Sets, etc."]
+    end
+    
+    subgraph Search["🔍 RediSearch Module"]
+        HNSW["HNSW Index<br/>Approximate Search"]
+        Flat["Flat Index<br/>Exact Search"]
+        Text["Full-Text Search"]
+    end
+    
+    Redis --> Search
+    
+    Query["🔎 Hybrid Query"] --> Redis
+    Query --> Search
+    
+    Result["✅ Vector + Text + Filters<br/>All in One Query"]
+    
+    Search --> Result
+    Redis --> Result
+    
+    style Redis fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Search fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Implements <strong>HNSW and Flat indexes</strong> via the RediSearch module. Uniquely combines efficient vector search with Redis's native data structures. Supports hybrid search combining both text and vector similarity in the same query for more precise results.
                 </p>
