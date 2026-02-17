@@ -69,10 +69,11 @@ export const guruPujaDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1008',
-          notes: `Apavitraḥ pavitro vā
-Sarvāvasthāṁ gato'pi vā
-Yaḥ smaret Puṇḍarīkākṣaṁ
-Sa bāhyābhyantaraḥ śuciḥ
+          notes: `
+Apavitraḥ = impure; pavitro = pure; vā = or
+Sarvāvasthāṁ = in all conditions; gato'pi = even having gone; vā = or
+Yaḥ = whoever; smaret = remembers; Puṇḍarīkākṣaṁ = the lotus-eyed one (Vishnu)
+Sa = he; bāhya = externally; abhyantaraḥ = internally; śuciḥ = pure
 
 Translation:
 Whether pure or impure, or in whatever condition one may be, one who remembers the lotus-eyed Lord becomes pure both externally and internally.`
@@ -107,13 +108,14 @@ Whether pure or impure, or in whatever condition one may be, one who remembers t
             </div>
           ),
           backgroundColor: '#1a1008',
-          notes: `Nārāyaṇaṁ Padmabhavaṁ Vasiṣṭhaṁ
-Śaktiṁ ca tatputra Parāśaraṁ ca
-Vyāsaṁ Śukaṁ Gauḍapādaṁ mahāntaṁ
-Govinda Yogīndram athāsya śiṣyam
+          notes: `
+Nārāyaṇaṁ = Narayana (Vishnu); Padmabhavaṁ = lotus-born (Brahma); Vasiṣṭhaṁ = Vasishta
+Śaktiṁ = Shakti; ca = and; tatputra = his son; Parāśaraṁ = Parashara; ca = and
+Vyāsaṁ = Vyasa; Śukaṁ = Shuka; Gauḍapādaṁ = Gaudapada; mahāntaṁ = the great
+Govinda = Govinda; Yogīndram = king of yogis; atha = and; asya = his; śiṣyam = disciple
 
 Translation:
-I salute Narayana, Padmabhava (Brahma), Vasishta, Shakti and his son Parashara, Vyasa, Shuka, the great Gaudapada, and the disciple of Govinda Yogindra.`
+I salute Narayana, the lotus-born Brahma, Vasishta, Shakti and his son Parashara, Vyasa, Shuka, the great Gaudapada, and the disciple of Govinda Yogindra.`
         },
         {
           id: 4,
@@ -130,10 +132,11 @@ I salute Narayana, Padmabhava (Brahma), Vasishta, Shakti and his son Parashara, 
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Śrī Śaṅkarācāryam athāsya Padma
-pādaṁ ca Hastāmalakaṁ ca śiṣyam
-Taṁ Troṭakaṁ Vārtikakāram anyān
-asmad gurūn santatam ānato'smi
+          notes: `
+Śrī = sacred; Śaṅkarācāryam = Shankaracharya; atha = and; asya = his
+Padmapādaṁ = Padmapada (lotus-footed); ca = and; Hastāmalakaṁ = Hastamalaka; ca = and; śiṣyam = disciple
+Taṁ = that; Troṭakaṁ = Trotaka; Vārtikakāram = Vartikakara (author of Vartika); anyān = others
+asmad = our; gurūn = Gurus; santatam = continuously; ānato'smi = I bow
 
 Translation:
 I salute Sri Shankaracharya and his disciples — Padmapada, Hastamalaka, Trotaka, and Vartikakara. I bow continuously to all the Gurus in this lineage.`
@@ -161,13 +164,14 @@ I salute Sri Shankaracharya and his disciples — Padmapada, Hastamalaka, Trotak
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Śruti Smṛti Purāṇānāṁ
-ālayaṁ karuṇālayam
-Namāmi Bhagavatpādaṁ
-Śaṅkaraṁ lokśaṅkaram
+          notes: `
+Śruti = Vedas; Smṛti = remembered scriptures; Purāṇānāṁ = of the Puranas
+ālayaṁ = abode; karuṇālayam = abode of compassion
+Namāmi = I bow; Bhagavatpādaṁ = to Bhagavatpada (divine-footed one)
+Śaṅkaraṁ = Shankara (auspicious one); loka = world; śaṅkaram = one who brings auspiciousness
 
 Translation:
-I bow to Shankara, the abode of the Vedas, Smritis, and Puranas, the abode of compassion, Bhagavatpada — Shankara, who brings auspiciousness to the world.`
+I bow to Bhagavatpada Shankara, the abode of the Vedas, Smritis, and Puranas, the abode of compassion — Shankara, who brings auspiciousness to the world.`
         },
         {
           id: 6,
@@ -184,13 +188,14 @@ I bow to Shankara, the abode of the Vedas, Smritis, and Puranas, the abode of co
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Śaṅkaraṁ Śaṅkarācāryaṁ
-Keśavaṁ Bādarāyaṇam
-Sūtra bhāṣya kṛtau vande
-Bhagavantau punaḥ punaḥ
+          notes: `
+Śaṅkaraṁ = Shankara; Śaṅkarācāryaṁ = Shankaracharya
+Keśavaṁ = Keshava (Vyasa); Bādarāyaṇam = Badarayana (Vyasa's name)
+Sūtra = sutras; bhāṣya = commentary; kṛtau = the two authors; vande = I salute
+Bhagavantau = the two divine ones; punaḥ punaḥ = again and again
 
 Translation:
-I salute again and again the two divine ones — Shankaracharya and Keshava Badarayana (Vyasa) — the authors of the Sutras and the commentary.`
+I salute again and again the two divine ones — Shankaracharya and Vyasa Badarayana — the authors of the Sutras and the commentary.`
         }
       ]
     },
@@ -215,10 +220,11 @@ I salute again and again the two divine ones — Shankaracharya and Keshava Bada
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Yadvāre nikhilā nilimpa pariṣad
-siddhiṁ vidatte'niśam
-Śrīmat Śrī laśitaṁ Jagad Guru padaṁ
-natvātma tṛptiṁ gataḥ
+          notes: `
+Yadvāre = at whose door; nikhilā = entire; nilimpa = celestial beings; pariṣad = assembly
+siddhiṁ = perfection; vidatte = attains; aniśam = perpetually
+Śrīmat = illustrious; Śrī = sacred; laśitaṁ = resplendent; Jagad = world; Guru = teacher; padaṁ = seat
+natvā = having bowed; ātma = self; tṛptiṁ = fulfillment; gataḥ = attained
 
 Translation:
 At whose doorway the entire assembly of celestial beings perpetually attains perfection, that illustrious seat of the Jagadguru — having bowed before it, one attains inner fulfillment.`
@@ -238,10 +244,11 @@ At whose doorway the entire assembly of celestial beings perpetually attains per
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Lokājñāna payodha pāṭanadhuraṁ
-Śrī Śaṅkaraṁ śarmadam
-Brahmānanda Sarasvatīṁ ca Śrī Brahmaṁ
-dhyāyāmi jyotirmayam
+          notes: `
+Loka = worldly; ajñāna = ignorance; payodha = cloud; pāṭana = dispelling; dhuraṁ = capable of
+Śrī = sacred; Śaṅkaraṁ = Shankara; śarmadam = bestower of bliss
+Brahmānanda = bliss of Brahman; Sarasvatīṁ = Saraswati; ca = and; Śrī Brahmaṁ = Sri Brahma
+dhyāyāmi = I meditate upon; jyotirmayam = made of light, luminous
 
 Translation:
 The one capable of dispelling the dense clouds of worldly ignorance, Sri Shankara the bestower of bliss, Brahmananda Saraswati and Sri Brahma — I meditate upon that luminous being, made of light.`
@@ -276,10 +283,11 @@ The one capable of dispelling the dense clouds of worldly ignorance, Sri Shankar
             </div>
           ),
           backgroundColor: '#1a1008',
-          notes: `Gurur Brahmā Gurur Viṣṇuḥ
-Gurur devo Maheśvaraḥ
-Guruḥ sākṣāt paraṁ Brahma
-tasmai Śrī Gurave namaḥ
+          notes: `
+Guruḥ = Guru; Brahmā = Brahma (creator); Guruḥ = Guru; Viṣṇuḥ = Vishnu (preserver)
+Guruḥ = Guru; devaḥ = Lord; Maheśvaraḥ = Maheshwara (Shiva, the great lord)
+Guruḥ = Guru; sākṣāt = directly, verily; paraṁ = supreme; Brahma = Brahman (ultimate reality)
+tasmai = to that; Śrī = sacred; Gurave = Guru; namaḥ = salutations
 
 Translation:
 The Guru is Brahma, the Guru is Vishnu, the Guru is Lord Maheshwara. The Guru is verily the Supreme Brahman itself. Salutations to that Guru.`
@@ -299,10 +307,11 @@ The Guru is Brahma, the Guru is Vishnu, the Guru is Lord Maheshwara. The Guru is
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Akhaṇḍa maṇḍalākāraṁ
-vyāptaṁ yena carācaram
-Tat padaṁ darśitaṁ yena
-tasmai Śrī Gurave namaḥ
+          notes: `
+Akhaṇḍa = unbroken, whole; maṇḍala = circle; ākāraṁ = form, shape
+vyāptaṁ = pervaded; yena = by whom; cara = moving; acaram = unmoving
+Tat = that (supreme); padaṁ = state, reality; darśitaṁ = revealed, shown; yena = by whom
+tasmai = to that; Śrī = sacred; Gurave = Guru; namaḥ = salutations
 
 Translation:
 The one whose form pervades the entire unbroken circle of creation — all that moves and all that is still — to that Guru who reveals that supreme state, salutations.`
@@ -322,10 +331,11 @@ The one whose form pervades the entire unbroken circle of creation — all that 
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Śrī Brahmānandaṁ parama sukhadaṁ
-kevalaṁ jñāna mūrtim
-Viśvātītaṁ gagana sadṛśaṁ
-tattvamasyādi lakṣyam
+          notes: `
+Śrī = sacred; Brahmānandaṁ = bliss of Brahman; parama = supreme; sukhadaṁ = bestower of happiness
+kevalaṁ = pure, absolute; jñāna = knowledge; mūrtim = embodiment
+Viśvātītaṁ = beyond the universe; gagana = sky; sadṛśaṁ = resembling, like
+tattvamasi = "Thou art That"; ādi = and other (mahavakyas); lakṣyam = goal, target
 
 Translation:
 The bliss of Brahman, the bestower of supreme happiness, the embodiment of pure knowledge, beyond the universe, vast like the sky, the goal indicated by "Tat Tvam Asi" — Thou art That.`
@@ -345,10 +355,11 @@ The bliss of Brahman, the bestower of supreme happiness, the embodiment of pure 
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Ekaṁ nityaṁ vimalam acalaṁ
-sarvadhi sākṣi bhūtam
-bhāvātītaṁ triguṇa rahitaṁ
-Sadguruṁ taṁ namāmi
+          notes: `
+Ekaṁ = one; nityaṁ = eternal; vimalam = pure, stainless; acalaṁ = immovable
+sarvadhi = of all intellects; sākṣi = witness; bhūtam = being
+bhāvātītaṁ = beyond all states of being; triguṇa = three gunas (sattva, rajas, tamas); rahitaṁ = free from
+Sadguruṁ = the true Guru; taṁ = that; namāmi = I salute
 
 Translation:
 The One, Eternal, Pure, Immovable, the Witness of all intellects, beyond all states of being, free from the three Gunas — I salute that Sadguru.`
@@ -376,10 +387,11 @@ The One, Eternal, Pure, Immovable, the Witness of all intellects, beyond all sta
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1008',
-          notes: `Ajñāna timirāndhasya
-jñānāñjana śalākayā
-Cakṣur unmīlitaṁ yena
-tasmai Śrī Gurave namaḥ
+          notes: `
+Ajñāna = ignorance; timira = darkness; andhasya = of one who is blinded
+jñāna = knowledge; añjana = collyrium (eye medicine); śalākayā = with the stick/applicator
+Cakṣuḥ = eyes; unmīlitaṁ = opened; yena = by whom
+tasmai = to that; Śrī = sacred; Gurave = Guru; namaḥ = salutations
 
 Translation:
 To the one who opens the eyes blinded by the darkness of ignorance, with the collyrium stick of knowledge — to that Guru, salutations.`
