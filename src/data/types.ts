@@ -33,7 +33,7 @@ export interface Deck {
   id: string;
   name: string;
   description: string;
-  category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Personal' | 'Other';
+  category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Personal' | 'Inner Intelligence' | 'Other';
   theme?: RevealTheme;
   slides: Slide[];
   slideGroups?: SlideGroup[]; // Optional: if provided, use groups instead of flat slides
