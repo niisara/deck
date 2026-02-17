@@ -1513,7 +1513,31 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.2}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="LSH Hash Table Strategy"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 Vector"] --> B["Hash Function 1"]
+    A --> C["Hash Function 2"]
+    A --> D["Hash Function L"]
+    
+    B --> E["Table 1:<br/>Bucket #42"]
+    C --> F["Table 2:<br/>Bucket #17"]
+    D --> G["Table L:<br/>Bucket #89"]
+    
+    H["🔍 Query"] --> I["Hash to<br/>All Tables"]
+    I --> J["Collect<br/>Candidates"]
+    J --> K["✅ Return<br/>Top K"]
+    
+    style A fill:#4fc3f7,color:#000
+    style H fill:#e1bee7,color:#000
+    style J fill:#ffd700,color:#000
+    style K fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
@@ -1541,7 +1565,31 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="LSH Parameter Tuning Guide"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["⚙️ Parameters"] --> B["L: Tables"]
+    A --> C["k: Hashes/Table"]
+    
+    B --> D{"Goal?"}
+    D -->|"High Recall"| E["⬆️ More Tables<br/>⚠️ More Memory"]
+    D -->|"Fast Search"| F["⬇️ Fewer Tables<br/>⚡ Quicker"]
+    
+    C --> G{"Trade-off?"}
+    G -->|"Selectivity"| H["⬆️ Higher k<br/>Fewer Collisions"]
+    G -->|"Coverage"| I["⬇️ Lower k<br/>More Collisions"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#ffd700,color:#000
+    style H fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.13}>
                       <ul>
@@ -1615,7 +1663,31 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Graph-ANN vs DiskANN Architecture"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph NSG["NSG/Vamana: In-Memory"]
+        A["📊 All Vectors<br/>in RAM"]
+        B["Graph Edges<br/>in RAM"]
+        A --> C["✅ Fast Access<br/>⚠️ RAM Limited"]
+    end
+    
+    subgraph DiskANN["DiskANN: SSD-Based"]
+        D["📀 Vectors<br/>on SSD"]
+        E["💾 Graph Core<br/>in RAM"]
+        D --> F["✅ Billion-Scale<br/>💾 Low RAM"]
+    end
+    
+    style NSG fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style DiskANN fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style C fill:#fff9c4,color:#000
+    style F fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.16}>
                       <ul>
@@ -1643,7 +1715,28 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" delay={0.3}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Graph-ANN Build & Tuning Process"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🏗️ Build"] --> B["Create Initial<br/>Graph"]
+    B --> C["Pruning<br/>Strategy"]
+    C --> D["Optimize<br/>Connectivity"]
+    
+    E["⚙️ Tuning"] --> F{"Parameter?"}
+    F -->|"Degree"| G["⬆️ Higher<br/>Better Recall<br/>⚠️ More Memory"]
+    F -->|"Beam Width"| H["⬆️ Wider<br/>Better Recall<br/>⚠️ Slower"]
+    
+    style A fill:#4fc3f7,color:#000
+    style E fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000
+    style G fill:#ffd700,color:#000
+    style H fill:#fff9c4,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.14}>
                       <ul>
@@ -1711,7 +1804,32 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInBottom" delay={0.2}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="MIH Binary Vector Search"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 Binary Vector<br/>101110..."] --> B["Split into<br/>m Sub-codes"]
+    B --> C["Sub-code 1:<br/>101"]
+    B --> D["Sub-code 2:<br/>110"]
+    B --> E["Sub-code m:<br/>010"]
+    
+    C --> F["Hash Table 1"]
+    D --> G["Hash Table 2"]
+    E --> H["Hash Table m"]
+    
+    I["🔍 Query"] --> J["Search Each<br/>Hash Table"]
+    J --> K["Hamming<br/>Distance"]
+    K --> L["✅ Top K<br/>Matches"]
+    
+    style A fill:#4fc3f7,color:#000
+    style I fill:#e1bee7,color:#000
+    style K fill:#ffd700,color:#000
+    style L fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
@@ -1739,7 +1857,29 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="MIH Parameter & Architecture"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["⚙️ Configuration"] --> B["Binarization<br/>Quality"]
+    B --> C["✅ High Quality<br/>Better Accuracy"]
+    
+    D["Parameter m"] --> E{"Trade-off?"}
+    E -->|"High m"| F["⬆️ More Tables<br/>⚠️ More Memory<br/>✅ Better Recall"]
+    E -->|"Low m"| G["⬇️ Fewer Tables<br/>💾 Less Memory<br/>⚡ Faster"]
+    
+    H["🔧 Hardware"] --> I["GPU-Friendly<br/>XOR + Popcount"]
+    I --> J["✅ Very Fast<br/>Binary Ops"]
+    
+    style A fill:#4fc3f7,color:#000
+    style C fill:#c8e6c9,color:#000
+    style F fill:#ffd700,color:#000
+    style J fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.13}>
                       <ul>
