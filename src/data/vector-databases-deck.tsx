@@ -1555,7 +1555,39 @@ graph TB
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="bounceIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#1888d1', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#1888d1', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Elasticsearch Vector Capabilities"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Lucene["🔍 Apache Lucene Base"]
+        HNSW["HNSW<br/>Proven Algorithm"]
+    end
+    
+    subgraph ES["🔎 Elasticsearch Enhancements"]
+        Compress["Compression<br/>& Quantization"]
+        DiskBBQ["DiskBBQ<br/>💾 Memory Efficient"]
+        ACORN["ACORN-1<br/>⚡ Filtered Search"]
+    end
+    
+    Lucene --> ES
+    
+    Query["🔎 Vector Query"] --> Lucene
+    Query --> ES
+    
+    Result["✅ Fast Vector Search<br/>+ Full-Text + Filters"]
+    
+    ES --> Result
+    
+    style Lucene fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style ES fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style DiskBBQ fill:#fff9c4,color:#000
+    style ACORN fill:#ffd700,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Result fill:#81c784,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Built on Lucene HNSW implementation with additional compression and quantization options. Features DiskBBQ for memory-efficient vector storage and ACORN-1 algorithm specifically optimized for filtered vector search performance.
                 </p>
@@ -1746,7 +1778,33 @@ graph TB
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="fadeIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#d96518', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#d96518', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Vespa's Unified Engine"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Engine["🔧 Vespa Unified Engine"]
+        HNSW["HNSW<br/>Vector Index"]
+        Tensor["Tensor Operations<br/>Advanced Compute"]
+        Text["Text Search"]
+        Struct["Structured Data"]
+    end
+    
+    Query["🔎 Complex Query"] --> Engine
+    
+    Engine --> Rank["📊 Custom Ranking<br/>ML Inference"]
+    
+    Rank --> Result["✅ Sophisticated Search<br/>Beyond Simple Similarity"]
+    
+    style Engine fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style HNSW fill:#81c784,color:#000
+    style Tensor fill:#ffd700,color:#000
+    style Rank fill:#e1bee7,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   HNSW with <strong>tensor operations</strong> for advanced vector search. Uniquely supports vectors, text, and structured data in a single unified engine. Uses tensor compute framework allowing complex operations beyond simple vector search.
                 </p>
@@ -2390,7 +2448,43 @@ graph TB
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="bounceIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="LanceDB Storage-Optimized Architecture"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Lance["📦 Lance Columnar Format"]
+        Col["Columnar Storage<br/>Efficient Reads"]
+        IVF["IVF-PQ<br/>💾 Compressed"]
+    end
+    
+    subgraph Storage["💾 Storage Options"]
+        S3["S3/Object Storage<br/>💰 Low Cost"]
+        NVMe["NVMe SSD<br/>⚡ Fast Local"]
+    end
+    
+    subgraph Deploy["🚀 Deployment"]
+        Embed["Embedded<br/>In-Process"]
+        Cloud["Serverless<br/>Cloud"]
+    end
+    
+    Lance --> Storage
+    Storage --> Deploy
+    
+    Query["🔎 Query"] --> Lance
+    
+    Result["✅ Disk-Based<br/>Cost-Effective Scale"]
+    
+    Deploy --> Result
+    
+    style Lance fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Storage fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Deploy fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Result fill:#ffd700,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Uses <strong>IVF-PQ and disk-optimized ANN algorithms</strong> over the Lance columnar format. Supports hybrid search combining vector and traditional search methods. Provides robust metadata filters for refined search results alongside vector similarity.
                 </p>
