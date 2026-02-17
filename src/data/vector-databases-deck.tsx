@@ -192,7 +192,7 @@ export const vectorDatabasesDeck: Deck = {
                   <MermaidPopover
                     title="Pinecone Index Types and Optimization"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph PodTypes["🗂️ Pod Families"]
         P1["p1: Graph-based<br/>⚡ High Performance"]
         P2["p2: Graph-based<br/>🚀 Maximum Speed"]
@@ -249,7 +249,7 @@ Let's see how Pinecone scales as your needs grow.`
                   <MermaidPopover
                     title="Pinecone Scaling Options"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
-graph TB
+flowchart TB
     subgraph Vertical["📈 Vertical Scaling"]
         V1["x1 Pod"] --> V2["x2 Pod"]
         V2 --> V4["x4 Pod"]
@@ -474,7 +474,7 @@ Let's look at some additional considerations and tips.`
                   <MermaidPopover
                     title="Weaviate Hybrid Search Architecture"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Vector["🔍 Vector Indices"]
         HNSW["HNSW<br/>Approximate NN<br/>⚡ Fast"]
         Flat["Flat<br/>Exact Search<br/>✅ Accurate"]
@@ -530,7 +530,7 @@ Let's see how Weaviate handles growth and scaling.`
                   <MermaidPopover
                     title="Weaviate Scaling Strategies"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
-graph TB
+flowchart TB
     subgraph Horizontal["📊 Horizontal Scaling"]
         H1["Sharding<br/>💾 Data Distribution"]
         H2["Replication<br/>🔄 High Availability"]
@@ -712,7 +712,7 @@ Let's look at additional important details.`
                   <MermaidPopover
                     title="Qdrant Quantization Options"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Quant["🔧 Quantization Methods"]
         Scalar["Scalar<br/>Reduce Precision<br/>💾 Moderate Savings"]
         Product["Product<br/>Sub-vector Compression<br/>💾 Good Savings"]
@@ -912,7 +912,7 @@ graph TB
                   <MermaidPopover
                     title="Milvus Index Options"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
-graph TB
+flowchart TB
     subgraph Exact["✅ Exact Search"]
         FLAT["FLAT<br/>Perfect Accuracy<br/>Slower"]
     end
@@ -1339,7 +1339,7 @@ flowchart LR
                   <MermaidPopover
                     title="Redis Vector Store Architecture"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Redis["🔴 Redis Core"]
         KV["Key-Value Store<br/>⚡ In-Memory Speed"]
         DS["Native Data Structures<br/>Strings, Lists, Sets, etc."]
@@ -1560,7 +1560,7 @@ graph TB
                   <MermaidPopover
                     title="Elasticsearch Vector Capabilities"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Lucene["🔍 Apache Lucene Base"]
         HNSW["HNSW<br/>Proven Algorithm"]
     end
@@ -1783,7 +1783,7 @@ graph TB
                   <MermaidPopover
                     title="Vespa's Unified Engine"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Engine["🔧 Vespa Unified Engine"]
         HNSW["HNSW<br/>Vector Index"]
         Tensor["Tensor Operations<br/>Advanced Compute"]
@@ -2002,7 +2002,7 @@ graph TB
                   <MermaidPopover
                     title="PostgreSQL + pgvector Architecture"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph PG["🐘 PostgreSQL Core"]
         SQL["SQL Engine<br/>Joins, Aggregations"]
         BTR["B-tree, GiST, GIN<br/>Scalar Indices"]
@@ -2224,7 +2224,7 @@ graph TB
                   <MermaidPopover
                     title="MongoDB Vector Search Integration"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Mongo["🍃 MongoDB Document Model"]
         Doc["JSON Document<br/>{name, price, vector}"]
         Idx["Traditional Indices<br/>Text, Geo, etc."]
@@ -2453,7 +2453,7 @@ graph TB
                   <MermaidPopover
                     title="LanceDB Storage-Optimized Architecture"
                     diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TB
+flowchart TB
     subgraph Lance["📦 Lance Columnar Format"]
         Col["Columnar Storage<br/>Efficient Reads"]
         IVF["IVF-PQ<br/>💾 Compressed"]
