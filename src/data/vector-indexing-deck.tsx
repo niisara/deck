@@ -703,7 +703,30 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.35}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="IVF Use Case Scenarios"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 Requirements?"] --> B{"Large Dataset?"}
+    B -->|"✅ 10M-1B"| C{"Dynamic Data?"}
+    B -->|"❌ Small"| D["Consider Flat"]
+    C -->|"✅ Yes"| E["✅ Use IVF"]
+    C -->|"No"| F{"Memory OK?"}
+    F -->|"✅ Yes"| G["Consider HNSW"]
+    F -->|"❌ Limited"| E
+    
+    E --> H["⚡ Tune nprobe<br/>for speed/recall"]
+    
+    style A fill:#4fc3f7,color:#000
+    style E fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style D fill:#ffcdd2,color:#000
+    style G fill:#fff9c4,color:#000
+    style H fill:#ffd700,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.2}>
                       <ul>
@@ -753,7 +776,32 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="IVF Configuration Workflow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 Training Phase"] --> B["Run K-means"]
+    B --> C["Generate nlist<br/>Centroids"]
+    C --> D["Assign Vectors<br/>to Clusters"]
+    
+    E["⚙️ Tuning"] --> F{"Balance?"}
+    F -->|"Speed"| G["⬇️ Lower nprobe"]
+    F -->|"Recall"| H["⬆️ Higher nprobe"]
+    
+    D --> I["🔍 Query Time"]
+    I --> J["Find nprobe<br/>Nearest Centroids"]
+    J --> K["Search Within<br/>Selected Lists"]
+    
+    style A fill:#4fc3f7,color:#000
+    style E fill:#e1bee7,color:#000
+    style I fill:#fff9c4,color:#000
+    style G fill:#81c784,color:#000
+    style H fill:#ffd700,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.16}>
                       <ul>
@@ -880,7 +928,30 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.3}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="IVF+PQ Billion-Scale Compression"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 1B Vectors<br/>2TB RAM"] --> B["Apply IVF<br/>Clustering"]
+    B --> C["Apply PQ<br/>Compression"]
+    C --> D["💾 64GB RAM<br/>32x Compression"]
+    
+    E["🔍 Query"] --> F["Find nprobe<br/>Clusters"]
+    F --> G["LUT Distance<br/>Computation"]
+    G --> H["Top K<br/>Candidates"]
+    H --> I{"Refine?"}
+    I -->|"✅ Yes"| J["Exact Distance<br/>on Originals"]
+    I -->|"No"| K["✅ Return Results"]
+    
+    style A fill:#ffcdd2,color:#000
+    style D fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style G fill:#ffd700,color:#000
+    style K fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.17}>
                       <ul>
@@ -930,7 +1001,30 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" delay={0.35}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="IVF+PQ Parameter Optimization"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["⚙️ Configuration"] --> B{"Goal?"}
+    B -->|"Better Recall"| C["✅ Options"]
+    B -->|"Less Memory"| D["💾 Reduce m<br/>Fewer subspaces"]
+    B -->|"Faster Search"| E["⚡ Lower nprobe"]
+    
+    C --> F["Use OPQ<br/>Rotation"]
+    C --> G["Add Refine<br/>Stage"]
+    C --> H["Increase nprobe"]
+    
+    style A fill:#4fc3f7,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000
+    style G fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.19}>
                       <ul>
