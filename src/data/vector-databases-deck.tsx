@@ -1,6 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const vectorDatabasesDeck: Deck = {
   id: 'vector-databases-deck',
@@ -186,7 +187,37 @@ export const vectorDatabasesDeck: Deck = {
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="slideInLeft" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Pinecone Index Types and Optimization"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph PodTypes["🗂️ Pod Families"]
+        P1["p1: Graph-based<br/>⚡ High Performance"]
+        P2["p2: Graph-based<br/>🚀 Maximum Speed"]
+        S1["s1: Storage-optimized<br/>💾 Cost-effective"]
+    end
+    
+    subgraph Features["🔧 Optimization Features"]
+        ANN["Approximate Nearest Neighbor"]
+        Quant["Vector Quantization"]
+        Graph["Graph Connections"]
+    end
+    
+    PodTypes --> Features
+    
+    Result["✅ Fast, Scalable Vector Search"]
+    Features --> Result
+    
+    style PodTypes fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style P1 fill:#4fc3f7,color:#000
+    style P2 fill:#81c784,color:#000
+    style S1 fill:#ffd700,color:#000
+    style Features fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Proprietary ANN algorithms with specialized index families (p1, p2, s1). Uses graph-based approaches for performance indexes and different structures for storage optimization. Supports various quantization options based on tier selection.
                 </p>
@@ -213,7 +244,36 @@ Let's see how Pinecone scales as your needs grow.`
           icon: { name: 'duo-arrows-maximize' },
           content: (
             <GSAPAnimated animation="slideInRight" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Pinecone Scaling Options"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Vertical["📈 Vertical Scaling"]
+        V1["x1 Pod"] --> V2["x2 Pod"]
+        V2 --> V4["x4 Pod"]
+        V4 --> V8["x8 Pod"]
+        VNote["✅ Zero Downtime<br/>💾 More Capacity"]
+    end
+    
+    subgraph Horizontal["📊 Horizontal Scaling"]
+        H1["1 Replica"] --> H2["2 Replicas"]
+        H2 --> H3["3+ Replicas"]
+        HNote["⚡ Higher QPS<br/>🔄 Load Distribution"]
+    end
+    
+    Start["🚀 Starting Point"] --> Vertical
+    Start --> Horizontal
+    Vertical --> Result["✅ Optimized for Data Size<br/>& Query Volume"]
+    Horizontal --> Result
+    
+    style Vertical fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Horizontal fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Start fill:#4fc3f7,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <strong>Vertical scaling:</strong> Increase pod size (x1→x2→x4→x8) with zero downtime.<br /><br />
                   <strong>Horizontal scaling:</strong> Add replicas to increase throughput (QPS) or create new indexes from collections to expand capacity or change pod types.
@@ -239,7 +299,30 @@ Next, let's look at the actual performance you can expect.`
           icon: { name: 'duo-gauge-high' },
           content: (
             <GSAPAnimated animation="fadeIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Pinecone Performance Characteristics"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+flowchart LR
+    Query["🔍 Query"] --> Search["⚡ Vector Search"]
+    Search --> P2{"Pod Type?"}
+    P2 -->|p2| Fast["🚀 <50ms<br/>Maximum Speed"]
+    P2 -->|p1| Good["⚡ <50ms<br/>High Performance"]
+    P2 -->|s1| OK["💾 Good Speed<br/>Optimized Storage"]
+    
+    Fast --> Result["✅ Consistent Latency<br/>Linear QPS Scaling"]
+    Good --> Result
+    OK --> Result
+    
+    style Query fill:#4fc3f7,color:#000
+    style Search fill:#e1bee7,color:#000
+    style Fast fill:#81c784,color:#000
+    style Good fill:#c8e6c9,color:#000
+    style OK fill:#fff9c4,color:#000
+    style Result fill:#ffd700,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Delivers consistently low latency (sub-50ms queries typical) even at scale. p2 indexes offer highest performance. QPS scales linearly with replica count. Optimized for production workloads with consistent latency under load.
                 </p>
@@ -293,7 +376,33 @@ Let's explore when Pinecone is the best choice.`
           icon: { name: 'duo-bullseye' },
           content: (
             <GSAPAnimated animation="bounceIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="When to Choose Pinecone"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Start["🤔 Your Requirements"] --> Q1{"Need Managed<br/>Infrastructure?"}
+    Q1 -->|Yes| Q2{"Production-Grade<br/>Application?"}
+    Q1 -->|No| Other["Consider Self-Hosted<br/>Options"]
+    
+    Q2 -->|Yes| Q3{"Need SLA<br/>Guarantees?"}
+    Q2 -->|No| Maybe["Maybe Pinecone<br/>or Alternatives"]
+    
+    Q3 -->|Yes| Q4{"High QPS<br/>Requirements?"}
+    Q3 -->|No| Consider["Consider Other<br/>Options"]
+    
+    Q4 -->|Yes| Perfect["✅ Pinecone is<br/>Perfect Choice!"]
+    Q4 -->|No| Good["✅ Pinecone is<br/>Good Choice"]
+    
+    style Start fill:#4fc3f7,color:#000
+    style Perfect fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
+    style Good fill:#81c784,color:#000
+    style Other fill:#ffcdd2,color:#000
+    style Consider fill:#fff9c4,color:#000
+    style Maybe fill:#e1bee7,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Production-grade vector search applications requiring <strong>easy operations, SLA guarantees, and predictable latency</strong>. Ideal for scenarios needing rapid scale-out capabilities and managed infrastructure. Well-suited for high QPS requirements with enterprise support needs.
                 </p>
@@ -360,7 +469,36 @@ Let's look at some additional considerations and tips.`
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="scaleIn" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#24b15f', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#24b15f', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Weaviate Hybrid Search Architecture"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Vector["🔍 Vector Indices"]
+        HNSW["HNSW<br/>Approximate NN<br/>⚡ Fast"]
+        Flat["Flat<br/>Exact Search<br/>✅ Accurate"]
+    end
+    
+    subgraph Text["📝 Inverted Index"]
+        Inv["Text & Properties<br/>Fast Filtering"]
+    end
+    
+    Query["🔎 User Query"] --> Vector
+    Query --> Text
+    
+    Vector --> Hybrid["🎯 Hybrid Search"]
+    Text --> Hybrid
+    
+    Hybrid --> Result["✅ Vector Similarity<br/>+ Metadata Filtering"]
+    
+    style Vector fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Text fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Hybrid fill:#e1bee7,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Primary vector indices: <strong>HNSW</strong> (Hierarchical Navigable Small World) for approximate nearest neighbors and <strong>Flat</strong> for exact search. Also uses inverted index for fast filtering on text and structured data properties. Combination enables efficient hybrid search.
                 </p>
@@ -387,7 +525,41 @@ Let's see how Weaviate handles growth and scaling.`
           icon: { name: 'duo-arrows-maximize' },
           content: (
             <GSAPAnimated animation="rotateIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#24b15f', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#24b15f', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Weaviate Scaling Strategies"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Horizontal["📊 Horizontal Scaling"]
+        H1["Sharding<br/>💾 Data Distribution"]
+        H2["Replication<br/>🔄 High Availability"]
+        H1 --> H2
+    end
+    
+    subgraph Vertical["📈 Vertical Scaling"]
+        V1["Instance Size<br/>⬆️ More CPU/RAM"]
+    end
+    
+    subgraph Memory["💾 Memory Efficiency"]
+        M1["Not All in RAM<br/>💰 Cost Savings"]
+    end
+    
+    Start["🚀 Weaviate"] --> Horizontal
+    Start --> Vertical
+    Start --> Memory
+    
+    Horizontal --> Cloud["☁️ Cloud-Native<br/>High Availability"]
+    Vertical --> Cloud
+    Memory --> Cloud
+    
+    style Horizontal fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Vertical fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Memory fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Start fill:#4fc3f7,color:#000
+    style Cloud fill:#ffd700,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Horizontal scaling through sharding and replication across nodes. Vertical scaling via instance sizing selection. Does not require all vectors to reside in RAM, allowing for efficient memory usage. Supports cloud-native deployments with high availability.
                 </p>
