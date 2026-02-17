@@ -263,7 +263,27 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="When to Choose Flat Indexing"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 Dataset Size?"] --> B{"< 10M vectors?"}
+    B -->|"✅ Yes"| C["🎯 Need 100% Recall?"]
+    B -->|"❌ No"| D["Consider ANN"]
+    C -->|"✅ Yes"| E["✅ Use Flat"]
+    C -->|"No"| F["🔄 High Updates?"]
+    F -->|"✅ Yes"| E
+    F -->|"No"| G["Consider HNSW"]
+    
+    style A fill:#4fc3f7,color:#000
+    style E fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style D fill:#ffcdd2,color:#000
+    style G fill:#fff9c4,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
@@ -315,7 +335,25 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Flat Index Implementation Advantages"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔧 Simple Code"] --> B["📊 Any Metric"]
+    B --> C["🌐 Easy Scale"]
+    C --> D["⚡ GPU Ready"]
+    D --> E["🎯 Hybrid Use"]
+    
+    style A fill:#c8e6c9,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#4fc3f7,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.12}>
                       <ul>
@@ -440,7 +478,28 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInRight" delay={0.2}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="HNSW Use Case Decision Tree"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📊 Workload Type?"] --> B{"Read-Heavy?"}
+    B -->|"✅ Yes"| C["⚡ Low Latency?"]
+    B -->|"❌ No"| D["Consider IVF"]
+    C -->|"✅ Yes"| E{"High Recall?"}
+    C -->|"No"| F["Consider LSH"]
+    E -->|"✅ 98%+"| G["✅ Use HNSW"]
+    E -->|"Lower OK"| H["Consider Annoy"]
+    
+    style A fill:#4fc3f7,color:#000
+    style G fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style D fill:#fff9c4,color:#000
+    style F fill:#ffcdd2,color:#000
+    style H fill:#e3f2fd,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.18}>
                       <ul>
@@ -490,7 +549,34 @@ export const vectorIndexingDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="HNSW Parameter Tuning Guide"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🎯 Goal?"] --> B{"High Recall?"}
+    B -->|"✅ Yes"| C["⬆️ Increase M<br/>⬆️ Increase efSearch"]
+    B -->|"No"| D{"Fast Build?"}
+    D -->|"✅ Yes"| E["⬇️ Lower efConstruction"]
+    D -->|"No"| F{"Low Memory?"}
+    F -->|"✅ Yes"| G["⬇️ Lower M"]
+    F -->|"No"| H["⚡ Optimize efSearch"]
+    
+    C --> I["✅ 98%+ Recall<br/>⚠️ More Memory"]
+    E --> J["⚡ Faster Build<br/>⚠️ Lower Quality"]
+    G --> K["💾 Less Memory<br/>⚠️ Lower Recall"]
+    
+    style A fill:#4fc3f7,color:#000
+    style C fill:#c8e6c9,color:#000
+    style E fill:#fff9c4,color:#000
+    style G fill:#e3f2fd,color:#000
+    style I fill:#81c784,color:#000
+    style J fill:#ffd700,color:#000
+    style K fill:#e1bee7,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.14}>
                       <ul>
