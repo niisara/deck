@@ -5,7 +5,7 @@ export const deathDeck: Deck = {
   id: 'death-deck',
   name: 'Death',
   description: 'A confrontational meditation on mortality and physical decay',
-  category: 'Personal',
+  category: 'Inner Intelligence',
   theme: 'black',
   slides: [],
   slideGroups: [

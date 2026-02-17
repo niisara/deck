@@ -2,20 +2,21 @@ import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 interface NavigationProps {
-  selectedCategory: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Other' | 'All';
-  onCategoryChange: (category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Other' | 'All') => void;
+  selectedCategory: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All';
+  onCategoryChange: (category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All') => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
 }
 
 function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchChange }: NavigationProps) {
-  const categories: Array<'All' | 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Other'> = [
+  const categories: Array<'All' | 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other'> = [
     'All',
     'NLP',
     'RAG',
     'Fine Tuning',
     'Agent',
     'Demo',
+    'Inner Intelligence',
     'Other'
   ];
 

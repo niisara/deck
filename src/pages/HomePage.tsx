@@ -6,7 +6,7 @@ import './HomePage.css';
 
 function HomePage() {
   const location = useLocation();
-  const [selectedCategory, setSelectedCategory] = useState<'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Other' | 'All'>('NLP');
+  const [selectedCategory, setSelectedCategory] = useState<'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All'>('NLP');
   const [searchQuery, setSearchQuery] = useState('');
 
   // Check if we're navigating back with a category state
