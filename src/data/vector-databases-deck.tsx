@@ -907,7 +907,43 @@ graph TB
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="fadeIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#df8739', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#df8739', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Milvus Index Options"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Exact["✅ Exact Search"]
+        FLAT["FLAT<br/>Perfect Accuracy<br/>Slower"]
+    end
+    
+    subgraph Approximate["⚡ Approximate Search"]
+        HNSW["HNSW<br/>Graph-Based<br/>Fast"]
+        IVF["IVF Family<br/>Inverted File<br/>Memory Efficient"]
+    end
+    
+    subgraph Special["🚀 Special Cases"]
+        DISKANN["DISKANN<br/>Disk-Based<br/>Massive Scale"]
+        GPU["GPU Variants<br/>GPU-Accelerated<br/>Ultra Fast"]
+    end
+    
+    subgraph Scalar["📝 Hybrid Search"]
+        INV["INVERTED<br/>Text Search"]
+        BMP["BITMAP<br/>Categorical"]
+    end
+    
+    Query["🔎 Query"] --> Exact
+    Query --> Approximate
+    Query --> Special
+    Query --> Scalar
+    
+    style Exact fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Approximate fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Special fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Scalar fill:#e1bee7,color:#000
+    style Query fill:#4fc3f7,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Multiple specialized options: <strong>FLAT, IVF_FLAT, IVF_SQ8, IVF_PQ, IVF_RABITQ, HNSW, DISKANN, and GPU variants</strong>. Also supports scalar indexes (INVERTED, BITMAP, etc.) for structured data filtering and hybrid searches.
                 </p>
@@ -1903,7 +1939,38 @@ graph TB
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="slideInLeft" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="PostgreSQL + pgvector Architecture"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph PG["🐘 PostgreSQL Core"]
+        SQL["SQL Engine<br/>Joins, Aggregations"]
+        BTR["B-tree, GiST, GIN<br/>Scalar Indices"]
+    end
+    
+    subgraph PGV["📦 pgvector Extension"]
+        HNSW["HNSW<br/>Fast Approximate"]
+        IVF["IVFFlat<br/>Memory Efficient"]
+    end
+    
+    PG --> PGV
+    
+    Query["🔎 SQL Query"] --> PG
+    Query --> PGV
+    
+    Result["✅ Vectors + SQL<br/>All in One Database"]
+    
+    PG --> Result
+    PGV --> Result
+    
+    style PG fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style PGV fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Result fill:#ffd700,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   Vector indices: <strong>HNSW and IVFFlat</strong> via pgvector extension. Standard PostgreSQL B-tree, GiST, GIN indices for scalar filtering and metadata. Both approximate and exact vector search supported with different performance trade-offs.
                 </p>
@@ -2094,7 +2161,43 @@ graph TB
           icon: { name: 'duo-diagram-project' },
           content: (
             <GSAPAnimated animation="scaleIn" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#17b35a', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#17b35a', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="MongoDB Vector Search Integration"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Mongo["🍃 MongoDB Document Model"]
+        Doc["JSON Document<br/>{name, price, vector}"]
+        Idx["Traditional Indices<br/>Text, Geo, etc."]
+    end
+    
+    subgraph Vector["🔍 Vector Search"]
+        HNSW["HNSW Index<br/>Vector Similarity"]
+    end
+    
+    subgraph Atlas["☁️ Atlas Infrastructure"]
+        Scale["Auto Sharding<br/>& Replication"]
+    end
+    
+    Mongo --> Vector
+    Mongo --> Atlas
+    Vector --> Atlas
+    
+    Query["🔎 Hybrid Query"] --> Mongo
+    Query --> Vector
+    
+    Result["✅ Vectors + Documents<br/>Native Integration"]
+    
+    Atlas --> Result
+    
+    style Mongo fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Vector fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Atlas fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Query fill:#4fc3f7,color:#000
+    style Result fill:#ffd700,color:#000`}
+                  />
+                </div>
                 <p style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   HNSW-based vector indexes within MongoDB Atlas with <strong>native integration into document data model</strong>. Supports hybrid relevance scoring combining vector similarity with traditional document data. Vector search built on top of Atlas' proven indexing infrastructure.
                 </p>
