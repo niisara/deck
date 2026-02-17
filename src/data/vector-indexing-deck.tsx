@@ -1152,7 +1152,28 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Annoy Deployment Advantages"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🚀 Build Once"] --> B["Save to Disk"]
+    B --> C["💾 Memory Map"]
+    C --> D["⚡ Fast Startup<br/><1s cold start"]
+    
+    E["📦 Deployment"] --> F["Simple File"]
+    F --> G["No Dependencies"]
+    G --> H["CDN Cacheable"]
+    H --> I["✅ Serverless<br/>Ready"]
+    
+    style A fill:#4fc3f7,color:#000
+    style D fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style I fill:#81c784,color:#000
+    style H fill:#ffd700,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
@@ -1205,7 +1226,29 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Annoy Parameter Tuning"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["⚙️ n_trees"] --> B{"Goal?"}
+    B -->|"High Recall"| C["⬆️ 100+ trees<br/>⚠️ More Memory"]
+    B -->|"Balanced"| D["✅ 50 trees<br/>Good Default"]
+    B -->|"Fast Build"| E["⬇️ 10-20 trees<br/>⚡ Quick"]
+    
+    F["🔍 search_k"] --> G{"Trade-off?"}
+    G -->|"Accuracy"| H["⬆️ Higher search_k<br/>⚠️ Slower"]
+    G -->|"Speed"| I["⬇️ Lower search_k<br/>⚡ Faster"]
+    
+    style A fill:#4fc3f7,color:#000
+    style F fill:#e1bee7,color:#000
+    style D fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style C fill:#ffd700,color:#000
+    style E fill:#81c784,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.17}>
                       <ul>
@@ -1328,7 +1371,27 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.25}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ScaNN Multi-Stage Search Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Query"] --> B["Stage 1:<br/>Partition"]
+    B --> C["Find Relevant<br/>Clusters"]
+    C --> D["Stage 2:<br/>Quantize"]
+    D --> E["Fast Distance<br/>via LUT"]
+    E --> F["Stage 3:<br/>Re-rank"]
+    F --> G["✅ Top K<br/>High Precision"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style D fill:#fff9c4,color:#000
+    style F fill:#ffd700,color:#000
+    style G fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.14}>
                       <ul>
@@ -1358,7 +1421,29 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" delay={0.3}>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ScaNN Configuration Strategy"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📚 Training"] --> B["Sample Data"]
+    B --> C["Learn Partitions<br/>& Codebooks"]
+    
+    D["⚙️ Configuration"] --> E{"Metric?"}
+    E -->|"Cosine/IP"| F["✅ Use ScaNN<br/>Optimized"]
+    E -->|"L2/Other"| G["Consider<br/>Alternatives"]
+    
+    H["🚀 Deployment"] --> I["TensorFlow<br/>Serving"]
+    I --> J["✅ High QPS<br/>Production"]
+    
+    style A fill:#4fc3f7,color:#000
+    style D fill:#e1bee7,color:#000
+    style F fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style J fill:#ffd700,color:#000
+                      `}
+                    />
+                  </div>
                   <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.16}>
                       <ul>
