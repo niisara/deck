@@ -188,28 +188,44 @@ export const textPreprocessingDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
                   <div>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="1. Tokenization Goal"
+                          diagram={`graph LR
     A[Raw Text] --> B[Tokenizer]
     B --> C[Token Array]
     style A fill:#4fc3f7
     style B fill:#ffd700
-    style C fill:#81c784`} />
-                    </h4>
+    style C fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Split text into meaningful units (tokens) such as words, subwords, or sentences.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                    </div>
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="1. Tokenization How It Works"
+                          diagram={`graph TD
     A[Input: Hello World!] --> B{Method?}
     B -->|Whitespace| C[Hello, World!]
     B -->|BPE| D[Hel, lo, Wor, ld, !]
     style A fill:#4fc3f7
     style B fill:#ffd700
     style C fill:#81c784
-    style D fill:#81c784`} />
-                    </h4>
+    style D fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -288,9 +304,11 @@ graph TD
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="1. Tokenization Pros"
+                        diagram={`graph LR
     A[Raw Text] --> B[Tokenization]
     B --> C[ML Ready]
     B --> D[Search Ready]
@@ -299,29 +317,43 @@ graph TD
     style B fill:#ffd700
     style C fill:#81c784
     style D fill:#81c784
-    style E fill:#81c784`} />
-                  </h4>
+    style E fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Enables downstream NLP tasks</li>
                     <li>Handles OOV with subwords</li>
                     <li>Standardizes input format</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                  </div>
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="1. Tokenization Cons"
+                        diagram={`graph TD
     A[Issues] --> B[Lost Context]
     A --> C[Language Challenges]
     A --> D[Longer Sequences]
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Can lose spacing/punctuation nuance</li>
                     <li>Language/script-specific challenges</li>
                     <li>Subwords may lengthen sequences</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -379,19 +411,29 @@ graph LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.9}>
                   <div>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="2. Lowercasing Goal"
+                          diagram={`graph LR
     A["Hello WORLD"] --> B[Lowercase]
     B --> C["hello world"]
     style A fill:#4fc3f7
     style B fill:#ffd700
-    style C fill:#81c784`} />
-                    </h4>
+    style C fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Reduce case-related variance to shrink vocabulary and improve robustness.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                    </div>
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="2. Lowercasing How It Works"
+                          diagram={`graph TD
     A[Mixed Case Text] --> B{Method}
     B -->|.lower| C[lowercase]
     B -->|.casefold| D[case-folded]
@@ -400,9 +442,15 @@ graph LR
     style B fill:#ffd700
     style C fill:#81c784
     style D fill:#81c784
-    style E fill:#e1bee7`} />
-                    </h4>
+    style E fill:#e1bee7`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Convert text to lowercase or Unicode casefolding for broader equivalence.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -482,9 +530,11 @@ graph TD
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.7}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="2. Lowercasing Pros"
+                        diagram={`graph TD
     A[Benefits] --> B[Smaller Vocabulary]
     A --> C[Better Generalization]
     A --> D[Simpler Matching]
@@ -495,28 +545,42 @@ graph TD
     style C fill:#81c784
     style D fill:#81c784
     style E fill:#e1bee7
-    style F fill:#e1bee7`} />
-                  </h4>
+    style F fill:#e1bee7`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Smaller vocab</li>
                     <li>Improved generalization</li>
                     <li>Simpler matching</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                  </div>
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="2. Lowercasing Cons"
+                        diagram={`graph LR
     A[Lost Information] --> B["US vs us"]
     A --> C["Apple vs apple"]
     A --> D["WHO vs who"]
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Loses case signals (named entities, sentence starts)</li>
                     <li>Can harm tasks relying on casing</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -584,21 +648,31 @@ graph LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.3} duration={1.0}>
                   <div>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="3. Unicode Normalization Goal"
+                          diagram={`graph LR
     A["é (U+00E9)"] --> N[Normalize]
     B["é (U+0065+0301)"] --> N
     N --> C["Canonical Form"]
     style A fill:#4fc3f7
     style B fill:#4fc3f7
     style N fill:#ffd700
-    style C fill:#81c784`} />
-                    </h4>
+    style C fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Ensure canonical representation of characters to avoid duplicate forms.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                    </div>
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="3. Unicode Normalization How It Works"
+                          diagram={`graph TD
     A[Text] --> B{Unicode Form}
     B -->|NFC| C[Composed]
     B -->|NFD| D[Decomposed]
@@ -609,9 +683,15 @@ graph LR
     style C fill:#81c784
     style D fill:#81c784
     style E fill:#e1bee7
-    style F fill:#e1bee7`} />
-                    </h4>
+    style F fill:#e1bee7`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose/compatibility-normalize.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -703,35 +783,51 @@ graph LR
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.9}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="3. Unicode Normalization Pros"
+                        diagram={`graph TD
     A[Benefits] --> B[Stable Comparisons]
     A --> C[No Duplicates]
     A --> D[Safer Processing]
     style A fill:#81c784
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Stable comparisons</li>
                     <li>Fewer hidden duplicates</li>
                     <li>Safer tokenization</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                  </div>
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="3. Unicode Normalization Cons"
+                        diagram={`graph LR
     A[NFKC Risk] --> B[Changed Appearance]
     A --> C[Lost Semantics]
     style A fill:#ffcdd2
     style B fill:#ffcdd2
-    style C fill:#ffcdd2`} />
-                  </h4>
+    style C fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>NFKC may alter appearance/semantics</li>
                     <li>Grapheme cluster edge cases</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -799,19 +895,29 @@ graph TD
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <GSAPAnimated animation="slideInBottom" delay={0.2} duration={0.8}>
                   <div>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="4. Whitespace Normalization Goal"
+                          diagram={`graph LR
     A["Hello    World  "] --> B[Normalize]
     B --> C["Hello World"]
     style A fill:#4fc3f7
     style B fill:#ffd700
-    style C fill:#81c784`} />
-                    </h4>
+    style C fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Standardize spacing to make token boundaries predictable.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                    </div>
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="4. Whitespace Normalization How It Works"
+                          diagram={`graph TD
     A[Messy Spacing] --> B[Collapse Spaces]
     B --> C[Normalize Newlines]
     C --> D[Trim Edges]
@@ -820,9 +926,15 @@ graph TD
     style B fill:#ffd700
     style C fill:#ffd700
     style D fill:#ffd700
-    style E fill:#81c784`} />
-                    </h4>
+    style E fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Collapse multiple spaces; normalize tabs/newlines; trim leading/trailing whitespace.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -929,37 +1041,53 @@ graph LR
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="bounceIn" delay={0.3} duration={0.9}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="4. Whitespace Normalization Pros"
+                        diagram={`graph LR
     A[Clean Text] --> B[Better Tokens]
     A --> C[Consistent Parse]
     A --> D[Fewer Bugs]
     style A fill:#81c784
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Cleaner tokens</li>
                     <li>Consistent parsing</li>
                     <li>Fewer edge cases</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                  </div>
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="4. Whitespace Normalization Cons"
+                        diagram={`graph TD
     A[Lost Info] --> B[Table Layout]
     A --> C[Code Format]
     A --> D[Alignment]
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>May lose layout cues (tables, code)</li>
                     <li>Affects alignment-sensitive text</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1046,19 +1174,29 @@ Not              an              accident
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
                   <div>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="5. Punctuation Normalization Goal"
+                          diagram={`graph LR
     A[""'--..."] --> B[Normalize]
     B --> C["Standard Punctuation"]
     style A fill:#4fc3f7
     style B fill:#ffd700
-    style C fill:#81c784`} />
-                    </h4>
+    style C fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Reduce punctuation variants and noise.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                    </div>
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="5. Punctuation Normalization How It Works"
+                          diagram={`graph TD
     A[Smart Quotes] --> B[Map to Straight]
     C[Multiple Dashes] --> D[Unify Hyphens]
     E[Repeated!!!] --> F[Collapse]
@@ -1067,9 +1205,15 @@ Not              an              accident
     style C fill:#4fc3f7
     style D fill:#81c784
     style E fill:#4fc3f7
-    style F fill:#81c784`} />
-                    </h4>
+    style F fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -1157,35 +1301,51 @@ Let's look at the tradeoffs next.`
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="rotateIn" delay={0.2} duration={1.0}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="5. Punctuation Normalization Pros"
+                        diagram={`graph LR
     A[Normalized] --> B[Consistent Tokens]
     A --> C[Better Matching]
     A --> D[Clean Splits]
     style A fill:#81c784
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Fewer token variants</li>
                     <li>Better matching</li>
                     <li>Improved sentence splitting</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                  </div>
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="5. Punctuation Normalization Cons"
+                        diagram={`graph TD
     A[Risks] --> B[Language Issues]
     A --> C[Lost Emotion]
     style A fill:#ffcdd2
     style B fill:#ffcdd2
-    style C fill:#ffcdd2`} />
-                  </h4>
+    style C fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Language/script-specific</li>
                     <li>May remove emotive or semantic cues</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1252,31 +1412,47 @@ graph LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="6. Stopword Removal Goal"
+                          diagram={`graph LR
     A[Raw Tokens] --> B{Filter}
     B --> C[Content Words]
     B --> D[Stopwords]
     style A fill:#4fc3f7
     style C fill:#81c784
-    style D fill:#ffcdd2`} />
-                    </h4>
+    style D fill:#ffcdd2`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Remove very frequent function words that add little topical value.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="6. Stopword Removal How It Works"
+                          diagram={`graph TD
     A[Token Stream] --> B[Load Stopword List]
     B --> C{Token in list?}
     C -->|Yes| D[Remove]
     C -->|No| E[Keep]
     style A fill:#4fc3f7
     style E fill:#81c784
-    style D fill:#ffcdd2`} />
-                    </h4>
+    style D fill:#ffcdd2`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Filter tokens against a language-specific stopword list.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1365,17 +1541,25 @@ graph LR
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <GSAPAnimated animation="bounceIn" delay={0.2} duration={0.9}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="6. Stopword Removal Pros"
+                        diagram={`graph TD
     A[Stopword Removal] --> B[Reduced Dimensions]
     A --> C[Faster Training]
     A --> D[Better Topic Signal]
     style A fill:#ffd700
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -1385,17 +1569,25 @@ graph LR
                   </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="bounceIn" delay={0.9} duration={0.9}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="6. Stopword Removal Cons"
+                        diagram={`graph TD
     A[Stopword Removal] --> B[Meaning Loss]
     A --> C[Breaks Sequences]
     A --> D[Domain Issues]
     style A fill:#ffd700
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -1483,23 +1675,33 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="7. Light Stopword Trimming Goal"
+                          diagram={`graph LR
     A[All Tokens] --> B[Light Filter]
     B --> C[Keep Most Words]
     B --> D[Remove Only Generic]
     style A fill:#4fc3f7
     style C fill:#81c784
     style D fill:#ffcdd2
-    style B fill:#ffd700`} />
-                    </h4>
+    style B fill:#ffd700`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Conservatively remove only the most generic function words while keeping nuance.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="rotateIn" delay={0.4} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="7. Light Stopword Trimming How It Works"
+                          diagram={`graph TD
     A[Tokens] --> B{Check Minimal List}
     B -->|Generic| C[Remove]
     B -->|Important| D[Keep]
@@ -1508,9 +1710,15 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
     style A fill:#4fc3f7
     style D fill:#81c784
     style E fill:#e1bee7
-    style F fill:#e1bee7`} />
-                    </h4>
+    style F fill:#e1bee7`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1621,17 +1829,25 @@ Use TF-IDF or document frequency to identify words that appear in almost every d
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="7. Light Stopword Trimming Pros"
+                        diagram={`graph TD
     A[Light Trimming] --> B[Preserves Meaning]
     A --> C[Reduces Noise]
     A --> D[Safe for Sentiment]
     style A fill:#ffd700
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -1640,17 +1856,25 @@ Use TF-IDF or document frequency to identify words that appear in almost every d
                   </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="flipCard" delay={0.9} duration={1.0}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="7. Light Stopword Trimming Cons"
+                        diagram={`graph TD
     A[Light Trimming] --> B[Needs Tuning]
     A --> C[Some Noise Remains]
     A --> D[Short Text Risk]
     style A fill:#ffd700
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -1763,9 +1987,11 @@ graph LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="8. Stemming Goal"
+                          diagram={`graph LR
     A[running] --> B[run]
     C[runs] --> B
     D[runner] --> B
@@ -1774,14 +2000,22 @@ graph LR
     style C fill:#4fc3f7
     style D fill:#4fc3f7
     style E fill:#4fc3f7
-    style B fill:#81c784`} />
-                    </h4>
+    style B fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Reduce inflected words to stems to merge variants.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="scaleIn" delay={0.4} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="8. Stemming How It Works"
+                          diagram={`graph TD
     A[Word] --> B{Apply Rules}
     B --> C[Strip -ing]
     B --> D[Strip -ed]
@@ -1791,9 +2025,15 @@ graph LR
     E --> F
     style A fill:#4fc3f7
     style F fill:#81c784
-    style B fill:#ffd700`} />
-                    </h4>
+    style B fill:#ffd700`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="scaleIn" delay={0.6} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1912,15 +2152,23 @@ graph TD
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.8}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="8. Stemming Pros"
+                        diagram={`graph LR
     A[Stemming] --> B[Smaller Vocabulary]
     A --> C[Handles Inflections]
     style A fill:#ffd700
     style B fill:#81c784
-    style C fill:#81c784`} />
-                  </h4>
+    style C fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.6}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -1929,17 +2177,25 @@ graph TD
                   </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="slideInBottom" delay={0.8} duration={0.8}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="8. Stemming Cons"
+                        diagram={`graph TD
     A[Stemming] --> B[Non-words: happi]
     A --> C[Over-stemming: univers]
     A --> D[Under-stemming: alumni]
     style A fill:#ffd700
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.6}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -2072,9 +2328,11 @@ graph TD
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="9. Lemmatization Goal"
+                          diagram={`graph LR
     A[better] --> B[good]
     C[running] --> D[run]
     E[was] --> F[be]
@@ -2086,23 +2344,37 @@ graph TD
     style B fill:#81c784
     style D fill:#81c784
     style F fill:#81c784
-    style H fill:#81c784`} />
-                    </h4>
+    style H fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Map tokens to dictionary base forms (lemmas).</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.4} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="9. Lemmatization How It Works"
+                          diagram={`graph TD
     A[Word + POS] --> B[Morphological Analysis]
     B --> C[Dictionary Lookup]
     C --> D[Lemma]
     style A fill:#4fc3f7
     style B fill:#ffd700
     style C fill:#e1bee7
-    style D fill:#81c784`} />
-                    </h4>
+    style D fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Morphological analysis using lexicons and POS/context.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.6} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -2262,17 +2534,25 @@ lemmas = [token.lemma_ for token in doc]
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="9. Lemmatization Pros"
+                        diagram={`graph TD
     A[Lemmatization] --> B[Real Words]
     A --> C[High Accuracy]
     A --> D[Handles Irregulars]
     style A fill:#ffd700
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -2282,17 +2562,25 @@ lemmas = [token.lemma_ for token in doc]
                   </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="bounceIn" delay={0.9} duration={1.0}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="9. Lemmatization Cons"
+                        diagram={`graph TD
     A[Lemmatization] --> B[Slower Processing]
     A --> C[Needs Resources]
     A --> D[Domain Shift Errors]
     style A fill:#ffd700
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -2441,9 +2729,11 @@ Use neither when:
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="10. Part-of-Speech Tagging Goal"
+                          diagram={`graph LR
     A[I] --> B[PRON]
     C[love] --> D[VERB]
     E[fast] --> F[ADJ]
@@ -2455,23 +2745,37 @@ Use neither when:
     style B fill:#81c784
     style D fill:#e1bee7
     style F fill:#ffd700
-    style H fill:#81c784`} />
-                    </h4>
+    style H fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="10. Part-of-Speech Tagging How It Works"
+                          diagram={`graph TD
     A[Sentence] --> B[Context Analysis]
     B --> C[HMM/CRF/Neural Model]
     C --> D[POS Tags]
     style A fill:#4fc3f7
     style B fill:#ffd700
     style C fill:#e1bee7
-    style D fill:#81c784`} />
-                    </h4>
+    style D fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -2664,17 +2968,25 @@ for token in doc:
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.9}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="10. Part-of-Speech Tagging Pros"
+                        diagram={`graph TD
     A[POS Tagging] --> B[Syntax Awareness]
     A --> C[Better Lemmatization]
     A --> D[Rich Features]
     style A fill:#ffd700
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -2683,17 +2995,25 @@ for token in doc:
                   </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.9}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="10. Part-of-Speech Tagging Cons"
+                        diagram={`graph TD
     A[POS Tagging] --> B[Error Propagation]
     A --> C[Domain Variance]
     A --> D[Ambiguity Issues]
     style A fill:#ffd700
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -2861,32 +3181,48 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="bounceIn" delay={0.2} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="11. N-gram Generation Goal"
+                          diagram={`graph TD
     A["I love NLP"] --> B["Unigrams: I, love, NLP"]
     A --> C["Bigrams: I love, love NLP"]
     A --> D["Trigrams: I love NLP"]
     style A fill:#4fc3f7
     style B fill:#81c784
     style C fill:#e1bee7
-    style D fill:#ffd700`} />
-                    </h4>
+    style D fill:#ffd700`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Capture local context by creating contiguous token sequences.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="bounceIn" delay={0.4} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="11. N-gram Generation How It Works"
+                          diagram={`graph LR
     A[Tokens] --> B[Sliding Window]
     B --> C[Generate n-grams]
     C --> D[Prune/Weight]
     style A fill:#4fc3f7
     style B fill:#ffd700
     style C fill:#e1bee7
-    style D fill:#81c784`} />
-                    </h4>
+    style D fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -3072,15 +3408,23 @@ N-grams are a simple, interpretable, and effective way to capture local context 
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="11. N-gram Generation Pros"
+                        diagram={`graph LR
     A[N-grams] --> B[Word Order]
     A --> C[Context Capture]
     style A fill:#ffd700
     style B fill:#81c784
-    style C fill:#81c784`} />
-                  </h4>
+    style C fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -3089,17 +3433,25 @@ N-grams are a simple, interpretable, and effective way to capture local context 
                   </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="slideInRight" delay={0.8} duration={0.8}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="11. N-gram Generation Cons"
+                        diagram={`graph TD
     A[N-grams] --> B["10K words  to  500K bigrams"]
     A --> C[Sparse Features]
     A --> D[Brittle Matching]
     style A fill:#ffd700
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
+                  </div>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -3279,9 +3631,11 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="12. Phrase Detection Goal"
+                          diagram={`graph LR
     A["New York City"] --> B["New_York_City"]
     C["machine learning"] --> D["machine_learning"]
     E["ice cream"] --> F["ice_cream"]
@@ -3290,23 +3644,37 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
     style E fill:#4fc3f7
     style B fill:#81c784
     style D fill:#81c784
-    style F fill:#81c784`} />
-                    </h4>
+    style F fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        Goal
+                      </h4>
                     <p style={{ margin: '0px' }}>Treat multiword expressions as single units (e.g., "New York").</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="flipCard" delay={0.4} duration={1.0}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="12. Phrase Detection How It Works"
+                          diagram={`graph TD
     A[Compute PMI/T-score] --> B[Set Threshold]
     B --> C[Join High-Score Pairs]
     C --> D[Iterate for Longer]
     style A fill:#ffd700
     style B fill:#e1bee7
     style C fill:#81c784
-    style D fill:#81c784`} />
-                    </h4>
+    style D fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="flipCard" delay={0.6} duration={1.0}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -3530,38 +3898,54 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="12. Phrase Detection Pros"
+                        diagram={`graph LR
     A[Phrase Detection] --> B[Better Semantics]
     A --> C[Reduces Fragmentation]
     A --> D[Improves Retrieval]
     style A fill:#4fc3f7
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Better semantics</li>
                     <li>Reduces fragmentation</li>
                     <li>Improves retrieval and topics</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                  </div>
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="12. Phrase Detection Cons"
+                        diagram={`graph LR
     A[Challenges] --> B[Threshold Tuning]
     A --> C[Domain Dependence]
     A --> D[False Matches]
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Threshold tuning</li>
                     <li>Domain dependence</li>
                     <li>False positives/negatives</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -3601,9 +3985,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Fix misspellings to improve readability and model input quality.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="13. Spell Correction How It Works"
+                          diagram={`graph TD
     A[Misspelled Word] --> B[Generate Candidates]
     B --> C[Edit Distance 1-2]
     B --> D[Phonetic Similarity]
@@ -3612,9 +3998,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     E --> F[Context Check]
     F --> G[Best Correction]
     style A fill:#4fc3f7
-    style G fill:#81c784`} />
-                    </h4>
+    style G fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -3672,9 +4064,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                     <li>Cleaner features</li>
                     <li>Better downstream accuracy</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="13. Spell Correction Cons"
+                        diagram={`graph LR
     A[Risks] --> B[Overcorrection]
     A --> C[Language Specific]
     A --> D[Computation Cost]
@@ -3683,13 +4077,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Overcorrection risk</li>
                     <li>Language/locale-specific</li>
                     <li>Computational overhead</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -3729,9 +4129,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Correct systematic errors from optical character recognition.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="14. OCR Error Correction How It Works"
+                          diagram={`graph TD
     A[Scanned Image] --> B[OCR Engine]
     B --> C[Raw Text with Errors]
     C --> D["rn → m"]
@@ -3743,9 +4145,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     G --> H[Corrected Text]
     style A fill:#4fc3f7
     style C fill:#ffcdd2
-    style H fill:#81c784`} />
-                    </h4>
+    style H fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -3852,9 +4260,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph LR
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="15. Contraction Expansion How It Works"
+                          diagram={`graph LR
     A["don't"] --> B[Regex Match]
     B --> C[Dictionary Lookup]
     C --> D["do not"]
@@ -3864,9 +4274,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#4fc3f7
     style E fill:#4fc3f7
     style D fill:#81c784
-    style H fill:#81c784`} />
-                    </h4>
+    style H fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Regex + mapping dictionary; optional context-aware models.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -3916,21 +4332,29 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="15. Contraction Expansion Pros"
+                        diagram={`graph TD
     A[Contraction Expansion] --> B[Clearer Negation]
     A --> C[Consistent Tokens]
     B --> D["don't → do not"]
     C --> E[Smaller Vocabulary]
     style A fill:#4fc3f7
     style B fill:#81c784
-    style C fill:#81c784`} />
-                  </h4>
+    style C fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Clearer negation and syntax</li>
                     <li>More consistent tokens</li>
                   </ul>
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
@@ -3979,9 +4403,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Standardize numeric expressions for comparability and reduced sparsity.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="16. Number Normalization How It Works"
+                          diagram={`graph TD
     A["123,456"] --> B[Parse Format]
     C["123.456"] --> B
     D["one hundred"] --> B
@@ -3993,9 +4419,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style C fill:#4fc3f7
     style D fill:#4fc3f7
     style F fill:#81c784
-    style I fill:#81c784`} />
-                    </h4>
+    style I fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -4054,9 +4486,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                     <li>Eases matching</li>
                     <li>Reduces vocab size</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="16. Number Normalization Cons"
+                        diagram={`graph LR
     A[Challenges] --> B[Loss of Precision]
     A --> C[Unit Complexity]
     A --> D[Context Sensitivity]
@@ -4065,13 +4499,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Potential loss of precision</li>
                     <li>Unit handling is tricky</li>
                     <li>Context-sensitive</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4111,9 +4551,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="17. Special Character Filtering How It Works"
+                          diagram={`graph TD
     A[Raw Text] --> B{Unicode Category}
     B --> C[Letters] 
     B --> D[Emojis]
@@ -4126,9 +4568,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     H --> G
     style A fill:#4fc3f7
     style G fill:#81c784
-    style I fill:#ffcdd2`} />
-                    </h4>
+    style I fill:#ffcdd2`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -4234,9 +4682,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Remove template-like non-content (headers, footers, nav, ads).</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="18. Removing Boilerplate Text How It Works"
+                          diagram={`graph TD
     A[Web Page] --> B[Parse HTML/DOM]
     B --> C[Header]
     B --> D[Navigation]
@@ -4251,9 +4701,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#4fc3f7
     style E fill:#81c784
     style I fill:#81c784
-    style H fill:#ffcdd2`} />
-                    </h4>
+    style H fill:#ffcdd2`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -4312,9 +4768,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                     <li>Cleaner corpora</li>
                     <li>Better topic and summarization performance</li>
                   </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="18. Removing Boilerplate Text Cons"
+                        diagram={`graph LR
     A[Risks] --> B[Remove Real Content]
     A --> C[Site-Specific Rules]
     A --> D[Complex Layouts]
@@ -4323,13 +4781,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#ffcdd2
     style B fill:#ffcdd2
     style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
-                  </h4>
+    style D fill:#ffcdd2`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Cons
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Risk of removing content</li>
                     <li>Site-specific maintenance</li>
                     <li>Complex layouts</li>
                   </ul>
+                  </div>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4371,9 +4835,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="19. Removing Duplicate Sentences How It Works"
+                          diagram={`graph TD
     A[Sentence 1] --> B[Normalize]
     C[Sentence 2] --> D[Normalize]
     B --> E[Hash/Embed]
@@ -4385,9 +4851,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#4fc3f7
     style C fill:#4fc3f7
     style H fill:#ffcdd2
-    style I fill:#81c784`} />
-                    </h4>
+    style I fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -4496,9 +4968,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Split text into sentences for sentence-level processing.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="20. Sentence Boundary Segmentation How It Works"
+                          diagram={`graph TD
     A[Dr. Smith arrived.] --> B{Period after Dr.?}
     B -->|Abbreviation| C[Don't Split]
     A --> D{Period after arrived?}
@@ -4508,9 +4982,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#4fc3f7
     style F fill:#4fc3f7
     style E fill:#81c784
-    style H fill:#81c784`} />
-                    </h4>
+    style H fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -4560,9 +5040,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="20. Sentence Boundary Segmentation Pros"
+                        diagram={`graph LR
     A[Benefits] --> B[Sentence-Level Features]
     A --> C[Manageable Chunks]
     A --> D[Better Alignment]
@@ -4572,13 +5054,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#81c784
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Enables sentence-level features</li>
                     <li>Manageable chunks</li>
                     <li>Better downstream alignment</li>
                   </ul>
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
@@ -4626,9 +5114,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       Goal
                     </h4>
                     <p style={{ margin: '0px' }}>Identify language and route/filter text accordingly.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                                        <div style={{ position: 'relative', marginBottom: '12px' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover 
+                          title="21. Language Detection and Filtering How It Works"
+                          diagram={`graph TD
     A[Mixed Text] --> B[Character n-grams]
     B --> C[Frequency Analysis]
     C --> D{Language Classifier}
@@ -4638,9 +5128,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     E --> H[Route to EN Pipeline]
     style A fill:#4fc3f7
     style E fill:#81c784
-    style H fill:#81c784`} />
-                    </h4>
+    style H fill:#81c784`} 
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        How It Works
+                      </h4>
                     <p style={{ margin: '0px' }}>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
@@ -4691,9 +5187,11 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.9}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                                    <div style={{ position: 'relative', marginBottom: '12px' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover 
+                        title="21. Language Detection and Filtering Pros"
+                        diagram={`graph TD
     A[Language Detection] --> B[Clean Datasets]
     A --> C[Correct Routing]
     A --> D[Better Performance]
@@ -4703,13 +5201,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#4fc3f7
     style B fill:#81c784
     style C fill:#81c784
-    style D fill:#81c784`} />
-                  </h4>
+    style D fill:#81c784`} 
+                      />
+                    </div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Pros
+                    </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Cleaner mono-lingual datasets</li>
                     <li>Correct model routing</li>
                     <li>Better performance</li>
                   </ul>
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
