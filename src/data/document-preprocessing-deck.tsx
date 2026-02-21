@@ -1813,7 +1813,35 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Stemming vs Lemmatization: Word Normalization"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Input["Input Word Forms"]
+        W1["🏃 running"]
+        W2["📚 studies"]
+        W3["🧠 better"]
+    end
+    subgraph Stem["Stemming (Porter) — fast, crude"]
+        S1["run"]
+        S2["studi ❌"]
+        S3["better"]
+    end
+    subgraph Lemma["Lemmatization (WordNet) — accurate"]
+        L1["run"]
+        L2["study ✅"]
+        L3["good ✅"]
+    end
+    W1 --> S1 & L1
+    W2 --> S2 & L2
+    W3 --> S3 & L3
+    style Input fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Stem fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Lemma fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                      />
+                    </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                       When to Use
@@ -1932,7 +1960,25 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                     <li>Statistical and linguistic features for candidate scoring</li>
                   </ul>
                 </div>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Keyphrase Extraction Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Doc["📄 Document Text"] --> Cand["Candidate Phrases\n(noun chunks / n-grams)"]
+    Cand --> Score{"Scoring Methods"}
+    Score -->|TF-IDF| S1["🔢 Statistical Score"]
+    Score -->|TextRank| S2["🕸️ Graph Score"]
+    Score -->|Embeddings| S3["🧠 Semantic Score"]
+    S1 & S2 & S3 --> Rank["📊 Ranked Candidates"]
+    Rank --> MMR["MMR Deduplication"]
+    MMR --> Out["🏷️ Top Keyphrases\n(metadata tags)"]
+    style Doc fill:#4fc3f7,color:#000
+    style Rank fill:#e1bee7,color:#000
+    style Out fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                     When to Use
@@ -2050,7 +2096,26 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                     <li>Custom entity type recognition through additional training</li>
                   </ul>
                 </div>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="NER: Text → Tagged Entities"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Text["📝 'Tim Cook leads Apple in Cupertino'"] --> NER["NER Model\n(spaCy / BERT)"]
+    subgraph Entities["Tagged Entities"]
+        P["👤 Tim Cook → PERSON"]
+        O["🏢 Apple → ORG"]
+        L["📍 Cupertino → LOC"]
+    end
+    NER --> Entities
+    Entities --> Meta["💾 Structured Metadata\n{text, type, start, end}"]
+    style Text fill:#4fc3f7,color:#000
+    style NER fill:#e1bee7,color:#000
+    style Entities fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Meta fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                     When to Use
@@ -2169,7 +2234,26 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                     <li>Retrieval frequency tracking to identify unused chunks</li>
                   </ul>
                 </div>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Dead Chunk Detection: Quality Scoring Flow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Chunk["📦 Chunk"] --> Q1{"Length ≥ 50\nchars?"}
+    Q1 -->|No| D1["🗑️ Too Short"]
+    Q1 -->|Yes| Q2{"Alpha Ratio\n≥ 50%?"}
+    Q2 -->|No| D2["🗑️ Artifacts /\nSymbols"]
+    Q2 -->|Yes| Q3{"Entropy\n≥ 2.5 bits?"}
+    Q3 -->|No| D3["🗑️ Low Info\nDensity"]
+    Q3 -->|Yes| Keep["✅ Keep &\nIndex"]
+    style Chunk fill:#4fc3f7,color:#000
+    style Keep fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style D1 fill:#ffcdd2,stroke:#c62828,color:#000
+    style D2 fill:#ffcdd2,stroke:#c62828,color:#000
+    style D3 fill:#ffcdd2,stroke:#c62828,color:#000`}
+                    />
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                     When to Use
@@ -2351,7 +2435,29 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                     <li>Generate summaries at different granularities (1-2 sentences)</li>
                   </ul>
                 </div>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Chunk Summary Metadata Generation"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Chunk["📄 Full Chunk\n(500 tokens)"] --> A{"Method?"}
+    A -->|LLM call| B["📝 Abstractive\n'This covers B-tree indexing...'"]
+    A -->|TextRank| C["📑 Extractive\nTop sentences"]
+    B & C --> Store
+    subgraph Store["💾 Stored Metadata"]
+        S1["summary: text (50-100 tokens)"]
+        S2["keyphrases: list"]
+        S3["entities: list"]
+    end
+    Store --> Rank["⚡ Fast Re-ranking\n(no full chunk read)"]
+    style Chunk fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style Store fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Rank fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                     When to Use
@@ -2542,7 +2648,33 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                     <li>Bidirectional mappings (variant → canonical form)</li>
                   </ul>
                 </div>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Synonym Normalization: Variants → Canonical"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    V1["💬 heart attack"]
+    V2["💬 MI"]
+    V3["💬 acute coronary\nevent"]
+    V4["💬 myocardial\ninfarction"]
+    Dict["📖 Domain Dictionary\n(UMLS / Custom)"]
+    Canon["✅ Canonical:\nmyocardial infarction"]
+    V1 --> Dict
+    V2 --> Dict
+    V3 --> Dict
+    V4 --> Dict
+    Dict --> Canon
+    Canon --> Index["🔍 Consistent\nSearch & Analytics"]
+    style V1 fill:#fff9c4,color:#000
+    style V2 fill:#fff9c4,color:#000
+    style V3 fill:#fff9c4,color:#000
+    style V4 fill:#fff9c4,color:#000
+    style Dict fill:#e1bee7,color:#000
+    style Canon fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Index fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                     When to Use
@@ -2759,7 +2891,27 @@ Maintain **transparency** by logging all normalizations and providing user inter
                     <li>Store as structured metadata alongside content chunks</li>
                   </ul>
                 </div>
-                <div>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Temporal Labeling: Document → Time Metadata"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Doc["📄 Document\n'Updated Jan 2024\nAPI v2.3.1'"] --> Parse["Date & Version\nExtraction"]
+    Parse --> Norm["Normalize to ISO 8601"]
+    subgraph Meta["📋 Structured Metadata"]
+        D1["source_date: 2024-01-15"]
+        D2["content_date: 2024-01-01"]
+        D3["version: v2.3.1"]
+        D4["valid_until: 2025-01-01"]
+    end
+    Norm --> Meta
+    Meta --> Filter["⏰ Time-Aware Retrieval\n(freshness filtering)"]
+    style Doc fill:#4fc3f7,color:#000
+    style Meta fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Filter fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                     When to Use
