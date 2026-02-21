@@ -1,5 +1,4 @@
 export type { Slide, Deck, RevealTheme } from './types';
-import { sampleDeck } from './sample-deck';
 import { nerMetricsDeck } from './ner-metrics-deck';
 import { embeddingQualityDeck } from './embedding-quality-deck';
 import { nerTrainingDeck } from './ner-training-deck';
@@ -34,7 +33,6 @@ const isProd = import.meta.env.VITE_IS_PROD === 'true';
 export const decks = [
   guruPujaDeck,
   deathDeck,
-  sampleDeck,
   nerMetricsDeck,
   embeddingQualityDeck,
   nerTrainingDeck,
