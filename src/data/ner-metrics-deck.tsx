@@ -81,14 +81,11 @@ export const nerMetricsDeck: Deck = {
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0em' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                    <SvgIcon iconName="duo-key" sizeName="2x" darkModeInvert={true} />
-                    <h4>
-                      Key Notation
-                      <MermaidPopover
-                        title="NER Entity Structure"
-                        diagram={`flowchart LR
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="NER Entity Structure"
+                      diagram={`flowchart LR
     A["📝 Sentence"] --> B["🔍 NER Model"]
     B --> C["👤 PERSON"]
     B --> D["🏢 ORG"]
@@ -98,8 +95,11 @@ export const nerMetricsDeck: Deck = {
     style C fill:#81c784,color:#000
     style D fill:#81c784,color:#000
     style E fill:#81c784,color:#000`}
-                      />
-                    </h4>
+                    />
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-key" sizeName="2x" darkModeInvert={true} />
+                    <h4>Key Notation</h4>
                   </div>
                   <ul>
                     <li><strong>TP:</strong> predicted entity exactly matches a gold entity (span + type)</li>
@@ -301,7 +301,30 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Precision: Gaming the Metric"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Safe["🎯 'Safe' Model (Gaming)"]
+        S1["Guesses 1 entity"]
+        S2["Gets it right"]
+        S3["Precision = 1/1 = 100% ✅"]
+        S4["But missed 9 others ❌"]
+        S1 --> S2 --> S3 --> S4
+    end
+    subgraph Good["🏆 Balanced Model"]
+        G1["Guesses 10 entities"]
+        G2["8 correct, 2 wrong"]
+        G3["Precision = 8/10 = 80%"]
+        G4["AND finds most entities ✅"]
+        G1 --> G2 --> G3 --> G4
+    end
+    style Safe fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Good fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
@@ -478,7 +501,30 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="flipCard" duration={0.9} delay={0.1}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Recall: Gaming the Metric"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph SpamFilter["📧 Spam Filter (100% Recall)"]
+        SF1["Mark EVERY email as spam"]
+        SF2["Recall = 100% ✅"]
+        SF3["But 0% Precision ❌"]
+        SF4["Real emails blocked! 💀"]
+        SF1 --> SF2 --> SF3 --> SF4
+    end
+    subgraph Balanced["✅ Balanced Filter"]
+        BF1["Mark likely spam only"]
+        BF2["Recall = 80%"]
+        BF3["Precision = 85%"]
+        BF4["Actually useful! 🎉"]
+        BF1 --> BF2 --> BF3 --> BF4
+    end
+    style SpamFilter fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Balanced fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
@@ -664,7 +710,37 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="F1 Trap: Same Score, Different Models"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph ModelA["Model A: Finds Many"]
+        A1["Precision: 60%"]
+        A2["Recall: 90%"]
+        A3["F1: 72%"]
+        A4["More finds, more mistakes"]
+        A1 --> A3
+        A2 --> A3
+        A3 --> A4
+    end
+    subgraph ModelB["Model B: Very Careful"]
+        B1["Precision: 90%"]
+        B2["Recall: 60%"]
+        B3["F1: 72%"]
+        B4["Fewer finds, very accurate"]
+        B1 --> B3
+        B2 --> B3
+        B3 --> B4
+    end
+    ModelA -.- Same["⚠️ Same F1 = 72%\nBut completely different behavior!"]
+    ModelB -.- Same
+    style ModelA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style ModelB fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#000
+    style Same fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
@@ -873,7 +949,33 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Exact Match: All-or-Nothing Problem"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Bad["❌ 0 Correct Out of 10"]
+        B1["Predicted: 'the Microsoft'"]
+        B2["Gold: 'Microsoft'"]
+        B3["EM = 0"]
+        B1 --> B3
+        B2 --> B3
+    end
+    subgraph Close["😔 9 Correct Out of 10"]
+        C1["9 perfect entities"]
+        C2["1 wrong boundary"]
+        C3["EM = 0"]
+        C1 --> C3
+        C2 --> C3
+    end
+    Bad -.- Same["⚠️ Both score ZERO\nEM can't distinguish them!"]
+    Close -.- Same
+    style Bad fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Close fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style Same fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
@@ -1054,7 +1156,29 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Partial Match: τ Threshold Comparison"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Span["🔍 Span: 'New York City' (3 tokens)"]
+        Pred["🤖 Pred: 'New York' (2 tokens)"]
+        Calc["Overlap=2, Union=3, IoU=67%"]
+        Pred --> Calc
+    end
+    Calc --> T1{"τ = 0.3?"}
+    Calc --> T2{"τ = 0.5?"}
+    Calc --> T3{"τ = 0.8?"}
+    T1 -->|"67% ≥ 30%"| M1["✅ Match"]
+    T2 -->|"67% ≥ 50%"| M2["✅ Match"]
+    T3 -->|"67% < 80%"| M3["❌ No Match"]
+    style Span fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style M1 fill:#c8e6c9,color:#000
+    style M2 fill:#c8e6c9,color:#000
+    style M3 fill:#ffcdd2,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
@@ -1240,7 +1364,25 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Entity Accuracy: Diagnostic Detective"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Start["🔍 F1 = 40% — Something is Wrong!"]
+    Start --> Check{"Check Entity\nLevel Accuracy"}
+    Check -->|"Accuracy = 90%"| FindProblem["❌ Finding Problem\n(Model can't detect spans)"]
+    Check -->|"Accuracy = 45%"| LabelProblem["❌ Labeling Problem\n(Wrong types assigned)"]
+    FindProblem --> FixFind["🔧 Fix: More detection\ntraining data"]
+    LabelProblem --> FixLabel["🔧 Fix: Better label\nguidelines"]
+    style Start fill:#ffcdd2,color:#000
+    style FindProblem fill:#fff3e0,color:#000
+    style LabelProblem fill:#fff3e0,color:#000
+    style FixFind fill:#c8e6c9,color:#000
+    style FixLabel fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
@@ -1426,7 +1568,36 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" duration={0.9} delay={0.1}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Confusion Matrix: Real Story — F1 75% → 82%"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Problem["🔍 Confusion Matrix Revealed"]
+        P1["'Boston General Hospital'"]
+        P2["Gold: FACILITY"]
+        P3["Predicted: LOC (40% of cases!)"]
+        P1 --> P2
+        P1 --> P3
+    end
+    subgraph Fix["🔧 The Fix"]
+        F1["Updated labeling guidelines"]
+        F2["Added FACILITY examples"]
+        F3["Retrained model"]
+        F1 --> F2 --> F3
+    end
+    subgraph Result["📊 Result"]
+        R1["Before: F1 = 75%"]
+        R2["After: F1 = 82% 🎉"]
+        R1 --> R2
+    end
+    Problem --> Fix --> Result
+    style Problem fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Fix fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
@@ -1493,11 +1664,11 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h4>
-                  Metric Selection Guide
-                  <MermaidPopover
-                    title="When to Use Each Metric"
-                    diagram={`flowchart TB
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="When to Use Each Metric"
+                      diagram={`flowchart TB
     A["🚀 Start Here"] --> B{"What do you need?"}
     B -->|"Standard Report"| C["📊 Precision + Recall + F1"]
     B -->|"Production Gate"| D["💯 Exact Match"]
@@ -1508,8 +1679,10 @@ flowchart TB
     style D fill:#ffd700,color:#000
     style E fill:#e1bee7,color:#000
     style F fill:#ffcdd2,color:#000`}
-                  />
-                </h4>
+                    />
+                  </div>
+                  <h4>Metric Selection Guide</h4>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.75em', padding: '0.2em 0' }}>📊 Use <strong>micro Precision/Recall/F1</strong> with exact matching for standard reporting</div>
@@ -1569,7 +1742,34 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0em' }}>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Horror Story: 95% Accuracy vs 40% Entity F1"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Sentence["📝 1000-Word Sentence"]
+        W["950 non-entity tokens (O)"]
+        E["50 entity tokens"]
+    end
+    subgraph WrongMetric["❌ Token Accuracy (WRONG)"]
+        WM1["Model misses ALL entities"]
+        WM2["950/1000 = 95% 'accuracy'"]
+        WM3["Deployed! 😱"]
+        WM1 --> WM2 --> WM3
+    end
+    subgraph RightMetric["✅ Entity F1 (CORRECT)"]
+        RM1["0 entities found correctly"]
+        RM2["F1 = 0% — Model is broken!"]
+        RM3["Do NOT deploy! 🛑"]
+        RM1 --> RM2 --> RM3
+    end
+    Sentence --> WrongMetric
+    Sentence --> RightMetric
+    style WrongMetric fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style RightMetric fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ color: '#E74C3C' }} />
                     <h4>Don'ts</h4>
@@ -1620,7 +1820,23 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
-                <h4>Action Items</h4>
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="NER Evaluation Workflow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["⚙️ Set Eval Config\n(matching, τ, averaging)"] --> B["🧪 Add Unit Tests\n(exact, partial, errors)"]
+    B --> C["📊 Automate Reports\n(F1 + per-class + matrix)"]
+    C --> D["📝 Document\n(metrics, results, issues)"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000`}
+                    />
+                  </div>
+                  <h4>Action Items</h4>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.7}>
                 <div style={{ fontSize: '0.8em', padding: '0.3em 0' }}>1. <strong>Set evaluation config</strong> — matching type, threshold, averaging</div>
