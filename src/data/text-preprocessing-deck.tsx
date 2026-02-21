@@ -210,11 +210,26 @@ export const textPreprocessingDeck: Deck = {
     style D fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Almost always as an early step before feature extraction or modeling</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Tokenization: When to Apply"
+                          diagram={`flowchart LR
+    A["📄 Raw Text"] --> B["✂️ Tokenize"]
+    B --> C["📊 Features"]
+    C --> D["🤖 Model"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Almost always as an early step before feature extraction or modeling</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.8}>
@@ -403,11 +418,30 @@ graph LR
     style E fill:#e1bee7`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Convert text to lowercase or Unicode casefolding for broader equivalence.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Case-insensitive tasks (IR, topic modeling) or noisy user text.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Lowercasing: Use Cases"
+                          diagram={`graph TB
+    subgraph Apply["✅ Apply Lowercasing"]
+        A["🔍 IR / Search"]
+        B["🗂️ Topic Modeling"]
+        C["📱 Social Media Text"]
+    end
+    subgraph Skip["⚠️ Be Careful"]
+        D["🏷️ NER (Apple vs apple)"]
+        E["❓ QA (IT vs it)"]
+    end
+    style Apply fill:#c8e6c9,stroke:#4caf50,color:#000
+    style Skip fill:#fff9c4,stroke:#f57c00,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Case-insensitive tasks (IR, topic modeling) or noisy user text.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.5} duration={0.8}>
@@ -612,11 +646,31 @@ graph LR
     style F fill:#e1bee7`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose/compatibility-normalize.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Mixed sources, accented characters, search/dedup pipelines, cross-platform data.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Unicode Normalization: Use Cases"
+                          diagram={`graph TB
+    subgraph Sources["Mixed Data Sources"]
+        A["🌐 Web Scrape"]
+        B["📧 Email (Windows)"]
+        C["📱 Mobile (iOS)"]
+    end
+    Sources --> D["🔧 NFC Normalize"]
+    D --> E["✅ Consistent Text"]
+    D --> F["🔍 Dedup Works"]
+    style Sources fill:#e3f2fd,stroke:#1976d2,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Mixed sources, accented characters, search/dedup pipelines, cross-platform data.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.6} duration={0.8}>
@@ -823,11 +877,30 @@ graph TD
     style E fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Collapse multiple spaces; normalize tabs/newlines; trim leading/trailing whitespace.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Before tokenization; after OCR; logs and scraped text.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Whitespace Normalization: When to Apply"
+                          diagram={`flowchart LR
+    A["📷 OCR Output"] --> D["🧹 Whitespace Norm"]
+    B["📋 Server Logs"] --> D
+    C["�� Web Scrape"] --> D
+    D --> E["✂️ Tokenize"]
+    E --> F["📊 Pipeline"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#ffcdd2,color:#000
+    style C fill:#ffcdd2,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Before tokenization; after OCR; logs and scraped text.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.5} duration={0.7}>
@@ -1070,11 +1143,31 @@ Not              an              accident
     style F fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Punctuation Normalization: Use Cases"
+                          diagram={`graph TB
+    subgraph UGC["Noisy UGC Input"]
+        A["Hello!!!"]
+        B["It’s…great"]
+        C["multi--dash"]
+    end
+    UGC --> D["🔧 Punct Norm"]
+    D --> E["✂️ Tokenize"]
+    D --> F["📊 Features"]
+    style UGC fill:#ffcdd2,stroke:#c62828,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.8}>
@@ -1279,11 +1372,31 @@ graph LR
                     <p style={{ margin: '0px' }}>Filter tokens against a language-specific stopword list.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Stopword Removal: Best Use Cases"
+                          diagram={`graph TB
+    subgraph Use["✅ Great For"]
+        A["📦 Bag of Words"]
+        B["📈 TF-IDF"]
+        C["🗂️ Topic Modeling"]
+        D["🔍 IR / Search"]
+    end
+    subgraph Avoid["⚠️ Avoid When"]
+        E["💬 Sentiment (not bad)"]
+        F["🧠 Deep Learning"]
+    end
+    style Use fill:#c8e6c9,stroke:#4caf50,color:#000
+    style Avoid fill:#fff9c4,stroke:#f57c00,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -1513,11 +1626,31 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
                     <p style={{ margin: '0px' }}>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Sentiment, short texts, tasks sensitive to negation/modality.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Light Stopword Trimming: When to Use"
+                          diagram={`graph TB
+    subgraph Preserved["✅ Preserved Tokens"]
+        A["not bad → kept"]
+        B["very good → kept"]
+        C["don’t → kept"]
+    end
+    subgraph Removed["🗑️ Removed Tokens"]
+        D["the, a, an"]
+    end
+    Preserved --> E["😊 Sentiment: Accurate"]
+    style Preserved fill:#c8e6c9,stroke:#4caf50,color:#000
+    style Removed fill:#ffcdd2,stroke:#c62828,color:#000
+    style E fill:#81c784,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Sentiment, short texts, tasks sensitive to negation/modality.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -1796,11 +1929,33 @@ graph LR
                     <p style={{ margin: '0px' }}>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="scaleIn" delay={0.6} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>IR, topic modeling, when lexical precision is not critical.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Stemming: When to Use"
+                          diagram={`flowchart TB
+    A{"Need exact word forms?"}
+    A -->|"No - use Stemming"| B["✅ Stemming
+running→run
+Faster!"]
+    A -->|"Yes - use Lemma"| C["➡️ Lemmatization
+better→good"]
+    subgraph GoodFor["✅ Best For"]
+        D["🔍 IR / Search"]
+        E["🗂️ Topic Model"]
+    end
+    B --> GoodFor
+    style B fill:#c8e6c9,color:#000
+    style C fill:#fff9c4,color:#000
+    style GoodFor fill:#e3f2fd,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>IR, topic modeling, when lexical precision is not critical.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -2105,11 +2260,31 @@ graph TD
                     <p style={{ margin: '0px' }}>Morphological analysis using lexicons and POS/context.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.6} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Need precise base forms; linguistic analysis; better semantic grouping.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Lemmatization: When to Use"
+                          diagram={`graph TB
+    subgraph Use["✅ Best For"]
+        A["🔬 Linguistic Analysis"]
+        B["📚 QA Systems"]
+        C["🧠 Semantic Search"]
+    end
+    subgraph Comp["⚖️ Accuracy vs Stemming"]
+        E["better → good ✅"]
+        F["running → run ✅"]
+        G["was → be ✅"]
+    end
+    style Use fill:#c8e6c9,stroke:#4caf50,color:#000
+    style Comp fill:#e3f2fd,stroke:#1976d2,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Need precise base forms; linguistic analysis; better semantic grouping.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -2474,11 +2649,30 @@ Use neither when:
                     <p style={{ margin: '0px' }}>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Before lemmatization, parsing, NER, feature engineering.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="POS Tagging: Pipeline Position"
+                          diagram={`flowchart LR
+    A["✂️ Tokenize"] --> B["🏷️ POS Tag"]
+    B --> C["📖 Lemmatize"]
+    B --> D["🔍 NER"]
+    B --> E["🌳 Parsing"]
+    B --> F["⚙️ Features"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Before lemmatization, parsing, NER, feature engineering.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -2889,11 +3083,31 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
                     <p style={{ margin: '0px' }}>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.9}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Linear models, IR, text classification, feature engineering.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="N-gram Generation: Use Cases"
+                          diagram={`graph TB
+    A["I love NLP"] --> B["Bigrams:
+I_love, love_NLP"]
+    B --> C["📊 Feature Matrix"]
+    C --> D["🤖 Linear Model"]
+    C --> E["🔍 IR Search"]
+    C --> F["📁 Text Classifier"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Linear models, IR, text classification, feature engineering.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -3309,11 +3523,30 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
                     <p style={{ margin: '0px' }}>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="flipCard" delay={0.6} duration={1.0}>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Phrase Detection: When to Apply"
+                          diagram={`graph TB
+    subgraph Before["Before Detection"]
+        A["New York City"] 
+        B["machine learning"]
+    end
+    Before --> D["🔍 Phrase Detect"]
+    D --> E["New_York_City ✅"]
+    D --> F["machine_learning ✅"]
+    E --> H["🔍 IR & Entity Tasks"]
+    style Before fill:#ffcdd2,stroke:#c62828,color:#000
+    style D fill:#ffd700,color:#000
+    style H fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -3615,11 +3848,34 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style G fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>User-generated content, noisy forms, query logs.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Spell Correction: Use Cases"
+                          diagram={`graph TB
+    subgraph Sources["📥 Input Sources"]
+        A["�� UGC / Social"]
+        B["📋 Noisy Forms"]
+        C["🔍 Query Logs"]
+    end
+    Sources --> D["🔧 Spell Correct"]
+    D --> E["✅ +10-30% Accuracy"]
+    subgraph Avoid["⚠️ Be Careful With"]
+        F["🏥 Medical Terms"]
+        G["💻 Code / Variables"]
+    end
+    style Sources fill:#e3f2fd,stroke:#1976d2,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#c8e6c9,color:#000
+    style Avoid fill:#fff9c4,stroke:#f57c00,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>User-generated content, noisy forms, query logs.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.9}>
@@ -3746,11 +4002,34 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style H fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Scanned books, PDFs, historical documents.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="OCR Error Correction: Use Cases"
+                          diagram={`graph TB
+    subgraph Sources["📥 Document Sources"]
+        A["📚 Scanned Books"]
+        B["📄 Legacy PDFs"]
+        C["📜 Historical Docs"]
+    end
+    Sources --> D["📸 OCR Engine"]
+    D --> E["⚠️ Raw OCR Text
+rn→m, l→I errors"]
+    E --> F["🔧 OCR Correction"]
+    F --> G["✅ Clean Text
+10-20% → 1-2% error"]
+    style Sources fill:#e3f2fd,stroke:#1976d2,color:#000
+    style E fill:#ffcdd2,color:#000
+    style F fill:#ffd700,color:#000
+    style G fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Scanned books, PDFs, historical documents.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.5} duration={1.0}>
@@ -3867,11 +4146,34 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style H fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Regex + mapping dictionary; optional context-aware models.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Sentiment, rule-based parsing, tasks expecting full forms.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Contraction Expansion: Use Cases"
+                          diagram={`graph TB
+    subgraph Before["Before Expansion"]
+        A["I don’t like it"]
+    end
+    Before --> C["🔧 Expand"]
+    C --> D["I do not like it"]
+    D --> F["😤 Negative Sentiment
+Detected Correctly"]
+    subgraph Use["✅ Best For"]
+        G["😊 Sentiment Analysis"]
+        H["📝 Rule-Based Parsing"]
+    end
+    style Before fill:#ffcdd2,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#c8e6c9,color:#000
+    style Use fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Sentiment, rule-based parsing, tasks expecting full forms.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.4} duration={0.9}>
@@ -3996,11 +4298,31 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style I fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>De-identification, aggregation, generalization in models.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Number Normalization: Use Cases"
+                          diagram={`graph TB
+    subgraph Strategy["Choose Strategy"]
+        A{"Purpose?"}
+    end
+    A -->|"Privacy"| B["🔒 Mask: 42 → NUM"]
+    A -->|"Aggregation"| C["📊 Standardize:
+5K → 5000"]
+    A -->|"Cross-unit"| D["⚖️ Convert:
+5ft → 1.52m"]
+    style A fill:#e3f2fd,color:#000
+    style B fill:#c8e6c9,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>De-identification, aggregation, generalization in models.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.5} duration={1.0}>
@@ -4129,11 +4451,31 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style I fill:#ffcdd2`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Formal documents, security sanitization, systems with limited character sets.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Special Character Filtering: Use Cases"
+                          diagram={`graph TB
+    subgraph Apply["✅ Apply Filtering"]
+        A["📃 Formal Docs
+(Legal/Medical)"]
+        B["🔒 Security Sanitization"]
+        C["�� Legacy Systems (ASCII)"]
+    end
+    subgraph Preserve["⚠️ Preserve When Meaningful"]
+        D["😠 = Negative Sentiment"]
+        E["🔥 = Strong Emotion"]
+    end
+    style Apply fill:#c8e6c9,stroke:#4caf50,color:#000
+    style Preserve fill:#fff9c4,stroke:#f57c00,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Formal documents, security sanitization, systems with limited character sets.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.8}>
@@ -4254,11 +4596,33 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style H fill:#ffcdd2`} />
                     </h4>
                     <p style={{ margin: '0px' }}>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Web/news scraping, emails, PDFs, templated reports.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Boilerplate Removal: Use Cases"
+                          diagram={`graph TB
+    subgraph Input["📥 Raw Sources"]
+        A["🌐 Web Scrape"]
+        B["📧 Emails"]
+        C["📄 PDFs / Reports"]
+    end
+    Input --> D["🧹 Boilerplate Removal"]
+    D --> E["❌ Header / Footer"]
+    D --> F["❌ Nav / Ads"]
+    D --> G["✅ Main Content"]
+    style Input fill:#e3f2fd,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#ffcdd2,color:#000
+    style F fill:#ffcdd2,color:#000
+    style G fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Web/news scraping, emails, PDFs, templated reports.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.9}>
@@ -4388,11 +4752,30 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style I fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Dataset building, deduplication before training/evaluation.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Duplicate Removal: When to Apply"
+                          diagram={`graph TB
+    subgraph Problem["⚠️ Without Dedup"]
+        A["Same sentence 100× → Bias"]
+        B["Train/Test overlap → Leakage"]
+    end
+    Problem --> C["🔧 Dedup Pipeline"]
+    C --> D["✅ Clean Dataset"]
+    D --> E["🤖 Train"]
+    D --> F["📊 Evaluate"]
+    style Problem fill:#ffcdd2,stroke:#c62828,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Dataset building, deduplication before training/evaluation.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.5} duration={0.9}>
@@ -4511,11 +4894,28 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style H fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Summarization, translation, sentiment at sentence granularity.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Sentence Segmentation: Use Cases"
+                          diagram={`flowchart TB
+    A["📄 Document"] --> B["✂️ Sentence Segmentation"]
+    B --> C["📝 Summarization"]
+    B --> D["🌍 Translation"]
+    B --> E["😊 Sentence-level Sentiment"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Summarization, translation, sentiment at sentence granularity.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.5} duration={1.0}>
@@ -4641,11 +5041,30 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style H fill:#81c784`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      When to Use
-                    </h4>
-                    <p style={{ margin: '0px' }}>Multilingual corpora; language-specific pipelines or content moderation.</p>
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Language Detection: Use Cases"
+                          diagram={`graph TB
+    A["🌍 Mixed Language Stream"] --> B["🔍 Detect Language"]
+    B --> C["🇬🇧 English → EN Pipeline"]
+    B --> D["🇪🇸 Spanish → ES Pipeline"]
+    B --> E["🇫🇷 French → FR Pipeline"]
+    B --> F["❓ Unknown → Filter"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#ffcdd2,color:#000`}
+                        />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                        <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                        When to Use
+                      </h4>
+                      <p style={{ margin: '0px' }}>Multilingual corpora; language-specific pipelines or content moderation.</p>
+                    </div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={0.5} duration={1.0}>
