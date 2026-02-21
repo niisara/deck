@@ -249,7 +249,24 @@ export const productionRagDeck: Deck = {
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Basic RAG: When to Use"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Query Type?"] --> B{"Complexity?"}
+    B -->|"Simple"| C["✅ Basic RAG\nFAQs / Wikis"]
+    B -->|"Complex"| D["🔄 Use Advanced\nPattern"]
+    C --> E["✅ Small Corpus\n<1K docs"]
+    C --> F["✅ POC / MVP"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -286,7 +303,24 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Basic RAG: Simple But Effective Flow"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    Q["❓ Query"] --> R["🔍 Retrieve\nTop-K"]
+    R --> G["🤖 Generate\nAnswer"]
+    subgraph Perf["Performance"]
+        T["⏱️ ~1-3s\nEnd-to-End"]
+        A["✅ 80-90%\nAccuracy"]
+    end
+    G --> Perf
+    style Q fill:#4fc3f7,color:#000
+    style G fill:#81c784,color:#000
+    style Perf fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -396,7 +430,25 @@ export const productionRagDeck: Deck = {
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={0.5}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Re-Ranking: Precision Funnel"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Retrieve\nTop 100-300"] --> B["⚖️ Cross-Encoder\nReranker"]
+    B --> C["🎯 Top 5-10\nPrecise Results"]
+    subgraph Use["Best For"]
+        D["🏢 Enterprise QA"]
+        E["🎯 High Precision"]
+    end
+    C --> Use
+    style A fill:#e3f2fd,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#c8e6c9,color:#000
+    style Use fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -433,7 +485,29 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.2}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Re-Ranking: Precision Improvement"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 100 Candidates\nFrom Vector DB"] --> B["⚖️ Cross-Encoder\nReranker"]
+    B --> C["🎯 Top 10\nPrecise Matches"]
+    subgraph Before["Without Reranking"]
+        X["❌ 60% Precision"]
+    end
+    subgraph After["With Reranking"]
+        Y["✅ 85% Precision\n+25% Gain"]
+    end
+    C --> After
+    A --> Before
+    style A fill:#e3f2fd,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#c8e6c9,color:#000
+    style After fill:#c8e6c9,color:#000,stroke:#4caf50
+    style Before fill:#ffcdd2,color:#000,stroke:#c62828`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -541,7 +615,26 @@ export const productionRagDeck: Deck = {
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.5}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Query Rewriting: Bridging User Language to Docs"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["😕 'cancel\nmy thing'"] --> B["🔄 Rewrite\n+Expand"]
+    B --> C["✅ 'subscription\ncancellation'"]
+    C --> D["📈 Better\nHit Rate"]
+    subgraph Ideal["Best For"]
+        E["🌍 Varied Phrasing"]
+        F["🏢 Domain Terms"]
+    end
+    D --> Ideal
+    style A fill:#ffcdd2,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#c8e6c9,color:#000
+    style Ideal fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -581,7 +674,28 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.2}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Query Rewriting: Handling Real User Language"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["😕 'Why is my\ncode slow?'"] --> B["🔄 Rewrite\n+Expand"]
+    B --> C["✅ 'Python performance\noptimization techniques'"]
+    C --> D["📈 Better\nHit Rate"]
+    subgraph Before["Before Rewrite"]
+        X["❌ 40% Match Rate"]
+    end
+    subgraph After["After Rewrite"]
+        Y["✅ 75% Match Rate"]
+    end
+    style A fill:#ffcdd2,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#c8e6c9,color:#000
+    style After fill:#c8e6c9,color:#000,stroke:#4caf50
+    style Before fill:#ffcdd2,color:#000,stroke:#c62828`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -702,7 +816,23 @@ export const productionRagDeck: Deck = {
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Multi-Query Retrieval: Coverage Through Diversity"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Complex\nQuestion"] --> B["🔄 Generate\n3 Variants"]
+    B --> C["Query 1:\nTechnical"]
+    B --> D["Query 2:\nConceptual"]
+    B --> E["Query 3:\nPractical"]
+    C --> F["🔀 RRF Fusion\n📈 Better Recall"]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1rem' }}>
@@ -767,7 +897,24 @@ The citation and source tracking system becomes more complex here because you ne
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Multi-Query: Better Recall Through Diversity"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Original Query"] --> V1["Variant 1:\nTechnical"]
+    Q --> V2["Variant 2:\nConceptual"]
+    Q --> V3["Variant 3:\nPractical"]
+    V1 --> R["🔀 RRF Fusion"]
+    V2 --> R
+    V3 --> R
+    R --> Out["📈 Better Recall\nDiverse Coverage"]
+    style Q fill:#4fc3f7,color:#000
+    style R fill:#ffd700,color:#000
+    style Out fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -904,7 +1051,22 @@ The pattern **reduces chunking dependency**. If your chunking strategy isn't per
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.4}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="HyDE: Vocabulary Bridge for Zero-Shot Retrieval"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["❓ Short Query:\n'JWT security'"] --> B["🤖 LLM Generates\nHypothetical Answer"]
+    B --> C["📄 'Use HMAC\nrotate keys...'"]
+    C --> D["🔍 Embed &\nSearch"]
+    D --> E["✅ Domain-matched\nDocuments"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -980,7 +1142,22 @@ For **multi-lingual retrieval**, HyDE can generate a hypothetical answer in the 
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.3}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="HyDE: Zero-Shot Vocabulary Bridge"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["❓ 'JWT security'"] --> B["🤖 Hypothetical\nAnswer Generation"]
+    B --> C["📄 'Use HMAC-SHA256,\nrotate keys every 24h...'"]
+    C --> D["🔍 Embed &\nSearch Corpus"]
+    D --> E["✅ Real Docs\nVocabulary Matched"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -1116,7 +1293,25 @@ Another approach is **selective HyDE**: use simple heuristics to detect when a q
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.4}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Parent-Child Retrieval: Precision + Context"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Parent["📄 Parent Section (800 tokens)"]
+        subgraph Child["🎯 Child Chunk (200 tokens)"]
+            M["Precise Match!"]
+        end
+        P1["...intro context..."]
+        P2["...related details..."]
+    end
+    Child --> R["↩️ Return Full\nParent for Context"]
+    style Parent fill:#e3f2fd,color:#000,stroke:#1976d2
+    style Child fill:#c8e6c9,color:#000,stroke:#388e3c
+    style R fill:#ffd700,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -1209,7 +1404,21 @@ Some systems use **multi-level hierarchies**: grandparent to parent to child. Th
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.3}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Parent-Child: Precision Match + Rich Context"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Query"] --> C["🎯 Small Child Chunk\nMatches Precisely\n(200 tokens)"]
+    C --> P["📄 Full Parent Section\nLoaded for Context\n(800 tokens)"]
+    P --> A["✅ Precise Match\n+ Full Context\nBetter Answer"]
+    style Q fill:#4fc3f7,color:#000
+    style C fill:#c8e6c9,color:#000,stroke:#388e3c
+    style P fill:#e3f2fd,color:#000,stroke:#1976d2
+    style A fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -1363,7 +1572,21 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.4}>
-                  <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="GraphRAG: Multi-Hop Relationship Reasoning"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    Q["❓ 'Who funded\nCompany X?'"] --> E["🏢 Company X"]
+    E -->|"FUNDED_BY"| I["💰 Investor A"]
+    I -->|"ALSO_FUNDED"| C["🏢 Company Y"]
+    C -->|"ACQUIRED"| Z["🏢 Company Z"]
+    style Q fill:#4fc3f7,color:#000
+    style I fill:#ffd700,color:#000
+    style Z fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1rem' }}>
@@ -1461,7 +1684,25 @@ This ingestion complexity is significant but pays dividends at query time.
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                  <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="GraphRAG: Multi-Hop Relationship Traversal"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    Q["❓ 'Who invested in\nCompany X?'"] --> E["🏢 Company X"]
+    E -->|"FUNDED_BY"| I["💰 Investor A"]
+    I -->|"ALSO_FUNDED"| C["🏢 Company Y"]
+    C -->|"COMPETES_WITH"| Z["🏢 Company Z"]
+    subgraph Result["Explainable Path"]
+        P["Hop 1 → Hop 2 → Hop 3"]
+    end
+    Z --> Result
+    style Q fill:#4fc3f7,color:#000
+    style I fill:#ffd700,color:#000
+    style Result fill:#c8e6c9,color:#000,stroke:#4caf50`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -1636,7 +1877,24 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Agentic RAG: Multi-Tool Orchestration"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Business Query"] --> A["🤖 Agent\nOrchestrates"]
+    A --> T1["🔍 Search\nDocs"]
+    A --> T2["📊 Query\nLive DB"]
+    A --> T3["🌐 Call\nExternal API"]
+    T1 --> S["✅ Rich Answer\nWith Live Data"]
+    T2 --> S
+    T3 --> S
+    style A fill:#e1bee7,color:#000
+    style Q fill:#4fc3f7,color:#000
+    style S fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1rem' }}>
@@ -1749,7 +2007,24 @@ Maintaining this toolset is ongoing work as APIs evolve and new tools are added.
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="scaleIn" delay={0.3}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Agentic RAG: Dynamic Multi-Tool Orchestration"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Complex Query:\n'Compare Q3 sales\nvs competitors'"] --> A["🤖 Agent\nOrchestrates Plan"]
+    A --> T1["🔍 Search\nDocs"]
+    A --> T2["📊 Query\nLive DB"]
+    A --> T3["🌐 External\nAPI Data"]
+    T1 --> S["✅ Rich Answer\nWith Live + Static Data"]
+    T2 --> S
+    T3 --> S
+    style A fill:#e1bee7,color:#000
+    style Q fill:#4fc3f7,color:#000
+    style S fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -1906,7 +2181,27 @@ Some teams implement **agent fallback**: try standard RAG first, invoke agents o
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.6}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="RAG + Fine-Tuned: Investment vs. Return"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📚 Domain Docs\n+Examples"] --> B["🎓 Fine-Tune LLM"]
+    B --> C["🤖 Domain Expert\nLLM"]
+    D["🔍 RAG Retrieval"] --> E["✅ Expert Answer\nConsistent Format"]
+    C --> E
+    subgraph Ideal["Best For"]
+        F["🏢 High Volume\n>500K/mo"]
+        G["⚖️ Regulated\nIndustries"]
+    end
+    E --> Ideal
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style E fill:#c8e6c9,color:#000
+    style Ideal fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -2006,7 +2301,27 @@ The fine-tuned model then uses RAG-retrieved context but interprets and responds
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.3}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="RAG + Fine-Tuned: Compounding Quality Benefits"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📚 Domain Docs"] --> FT["🎓 Fine-Tune LLM\n(Format + Knowledge)"]
+    FT --> M["🤖 Domain-Expert\nModel"]
+    R["🔍 RAG Context"] --> Out["✅ Expert Answer\nConsistent Format\nLower Cost/Query"]
+    M --> Out
+    subgraph Gain["At Scale 500K+/mo"]
+        G1["💰 -40% Token Cost"]
+        G2["📈 +20% Quality"]
+    end
+    Out --> Gain
+    style FT fill:#e1bee7,color:#000
+    style M fill:#ffd700,color:#000
+    style Out fill:#c8e6c9,color:#000
+    style Gain fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -2175,7 +2490,23 @@ This de-risks the investment while building toward the hybrid ideal.
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.5}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Multi-Step Retrieval: Iterative Evidence Gathering"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Multi-hop Question:\n'Compare A's Q3 to\nB's last launch'"] --> S1["Step 1:\nRetrieve Context A"]
+    S1 --> S2["Step 2:\nRefine & Retrieve B"]
+    S2 --> S3["Step 3:\nConnect & Analyze"]
+    S3 --> A["✅ Evidence-backed\nComprehensive Answer"]
+    style Q fill:#4fc3f7,color:#000
+    style S1 fill:#fff9c4,color:#000
+    style S2 fill:#fff9c4,color:#000
+    style S3 fill:#fff9c4,color:#000
+    style A fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
                       <ul style={{ fontSize: '1rem' }}>
@@ -2215,7 +2546,28 @@ This de-risks the investment while building toward the hybrid ideal.
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.2}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Multi-Step Retrieval: Solving Compositional Questions"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ 'What drug treats diseases\nlinked to gene X?'"] --> S1["Step 1: Find\nGene X diseases"]
+    S1 --> S2["Step 2: Find\ndrug treatments"]
+    S2 --> S3["Step 3: Verify\ninteractions"]
+    S3 --> A["✅ Evidence-backed\nAnswer with Sources"]
+    subgraph Gain["vs Single-Shot RAG"]
+        G["📈 30-50%\nAccuracy Gain"]
+    end
+    A --> Gain
+    style Q fill:#4fc3f7,color:#000
+    style S1 fill:#fff9c4,color:#000
+    style S2 fill:#fff9c4,color:#000
+    style S3 fill:#fff9c4,color:#000
+    style A fill:#c8e6c9,color:#000
+    style Gain fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
@@ -2320,7 +2672,21 @@ This de-risks the investment while building toward the hybrid ideal.
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={0.5}>
-                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Context Compression: Signal Over Noise"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📚 10 Full Docs\n10K tokens\n(Noise + Signal)"] --> B["🗜️ Context\nCompressor"]
+    B --> C["✨ 20 Snippets\n2K tokens\n(Pure Signal)"]
+    C --> D["🤖 LLM\n67% ↓ Failures\n80% ↓ Tokens"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
                       <ul style={{ fontSize: '1rem' }}>
@@ -2359,7 +2725,26 @@ This de-risks the investment while building toward the hybrid ideal.
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
-                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Context Compression: More Signal, Fewer Tokens"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📚 10 Full Docs\n10K tokens\n(Noise + Signal)"] --> B["🗜️ Context\nCompressor"]
+    B --> C["✨ 20 Snippets\n2K tokens\n(Pure Signal)"]
+    C --> D["🤖 LLM"]
+    subgraph Result["Impact"]
+        R1["✅ 67% ↓ Failures"]
+        R2["✅ 80% ↓ Tokens"]
+    end
+    D --> Result
+    style A fill:#ffcdd2,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#c8e6c9,color:#000
+    style Result fill:#c8e6c9,color:#000,stroke:#4caf50`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
