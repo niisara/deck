@@ -32,6 +32,7 @@ FILES=(
 )
 
 LOG_FILE="/home/nisar/.openclaw/workspace/deck/mermaid-popover-cron.log"
+PROMPT_FILE="/home/nisar/.openclaw/workspace/deck/Prompt/mermaid-popover-prompt.txt"
 cd /home/nisar/.openclaw/workspace/deck
 
 echo "=== Starting MermaidPopover batch job at $(date) ===" >> $LOG_FILE
@@ -43,16 +44,18 @@ for i in "${!FILES[@]}"; do
   
   echo "[$(date)] Processing file $FILE_NUM/$TOTAL: $FILE" >> $LOG_FILE
   
-  # Run copilot for this file
-  copilot --model claude-sonnet-4.6 --add-dir . --allow-all-tools --no-ask-user -p "In src/data/$FILE: Add MermaidPopover badges to Best Use Case / Use Cases / Notes / Configuration slides using NEW pattern: parent div with position: 'relative', badge in div with position: 'absolute', top: '-5px', right: 0. No h4 wrapper. Add relevant diagrams based on slide content. Use colors: success=#c8e6c9, error=#ffcdd2, warning=#fff9c4, info=#e3f2fd, input=#4fc3f7, result=#81c784" >> $LOG_FILE 2>&1
+  # Run copilot for this file using full prompt from file
+  # Note: $(cat) expands file contents once - backticks in output are NOT re-evaluated by bash
+  copilot --model claude-sonnet-4.6 --add-dir . --allow-all-tools --no-ask-user \
+    -p "In src/data/$FILE: $(cat "$PROMPT_FILE")" >> $LOG_FILE 2>&1
   
   EXIT_CODE=$?
   echo "[$(date)] Finished $FILE - exit code: $EXIT_CODE" >> $LOG_FILE
   
-  # Wait 20 minutes before next file (except after last file)
+  # Wait 30 seconds before next file (except after last file)
   if [ $i -lt $(($TOTAL - 1)) ]; then
-    echo "[$(date)] Waiting 20 minutes before next file..." >> $LOG_FILE
-    sleep 1200
+    echo "[$(date)] Waiting 30 seconds before next file..." >> $LOG_FILE
+    sleep 30
   fi
 done
 
