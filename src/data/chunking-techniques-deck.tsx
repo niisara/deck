@@ -1616,7 +1616,23 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.7}>
-                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Structure-Aware: Variable Section Sizes"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Document] --> B[H1 Section<br/>500-1200 tokens]
+    A --> C[H2 Section<br/>300-800 tokens]
+    C --> D[H3 Section<br/>200-500 tokens]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#81c784,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.3}>
                 <ul>
@@ -1665,7 +1681,29 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.8}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Structure-Aware: Doc Types to Retrieval"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Manuals] --> E[Structure-Aware<br/>Chunking]
+    B[Whitepapers] --> E
+    C[Docs Sites] --> E
+    D[Legal Docs] --> E
+    E --> F[Section Chunks<br/>+ Metadata]
+    F --> G[Retrieval]
+    style A fill:#e3f2fd,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C fill:#e3f2fd,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000
+    style G fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul>
@@ -1835,7 +1873,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.9}>
-                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Content-Aware: Dynamic 200-800 Token Sizing"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Mixed Document] --> B{Detect<br/>Content Type}
+    B -->|Code| C[200-400 tokens<br/>Code Chunk]
+    B -->|Table| D[150-300 tokens<br/>Table Chunk]
+    B -->|Prose| E[400-800 tokens<br/>Prose Chunk]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.3}>
                 <ul>
@@ -1883,7 +1939,29 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Content-Aware: Mixed Doc Chunking"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Mixed Document] --> B{Detect<br/>Content Type}
+    B --> C[Code Block]
+    B --> D[Table]
+    B --> E[Prose]
+    C --> F[Appropriate Chunk]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#e3f2fd,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <GSAPStaggerList stagger={0.14} delay={0.3}>
                 <ul>
                   <li>Ebooks and technical guides</li>
@@ -2049,7 +2127,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.8}>
-                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Semantic Chunking: Cosine Similarity Boundaries"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Sentences] --> B[Embed<br/>Sentences]
+    B --> C{Cosine<br/>Similarity Drop?}
+    C -->|Yes| D[Topic Boundary<br/>200-600 tokens]
+    C -->|No| E[Continue<br/>Grouping]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#e3f2fd,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.3}>
                 <ul>
@@ -2099,7 +2195,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.9}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Semantic Chunking: Multi-topic Doc Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Multi-topic Doc] --> B[Embed Sentences]
+    B --> C[Detect Similarity<br/>Drops]
+    C --> D[Semantic Chunks]
+    D --> E[Vector DB]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.3}>
                 <ul>
@@ -2262,7 +2376,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={1.0}>
-                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="TextTiling: Lexical Cohesion Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Text] --> B[Sliding<br/>Windows]
+    B --> C[Lexical Cohesion<br/>Scores]
+    C --> D[Topic<br/>Boundaries]
+    D --> E[Variable Chunks<br/>200-800 tokens]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.3}>
                 <ul>
@@ -2311,7 +2443,23 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.9}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="TextTiling: Topic Shift Detection"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Article with<br/>Topic Shifts] --> B[TextTiling<br/>Algorithm]
+    B --> C[Cohesion<br/>Analysis]
+    C --> D[Coherent<br/>Topic Chunks]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.3}>
                 <ul>
@@ -2478,7 +2626,31 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={1.1}>
-                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="RST Chunking: EDU to Discourse Structure"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Text] --> B[EDU<br/>Segmentation]
+    B --> C{Rhetorical<br/>Relations}
+    C --> D[Elaboration]
+    C --> E[Evidence]
+    C --> F[Contrast]
+    D --> G[150-400 token<br/>Chunks]
+    E --> G
+    F --> G
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#e3f2fd,color:#000
+    style F fill:#e3f2fd,color:#000
+    style G fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul>
@@ -2527,7 +2699,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={1.0}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="RST: Long-form Doc to QA Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Long-form Doc] --> B[RST Parser]
+    B --> C[Discourse Tree]
+    C --> D[Coherent Argument<br/>Chunks]
+    D --> E[QA / Summarization]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <ul>
@@ -2683,7 +2873,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
               <GSAPAnimated delay={0.15} duration={0.7}>
-                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Token-Aware: Text to Embedding Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Text] --> B[Tokenizer<br/>Tiktoken/HF]
+    B --> C[256-1024 Token<br/>Chunks]
+    C --> D[10-20%<br/>Overlap]
+    D --> E[Embedding<br/>Model]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.3}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
@@ -2729,7 +2937,25 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.8}>
-                <h3 style={{ color: '#3498db' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Token-Aware: Tiktoken/HuggingFace Workflow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Any Text] --> B[Tiktoken /<br/>HuggingFace]
+    B --> C[Token Chunks]
+    C --> D[Embedding<br/>Pipeline]
+    D --> E[Vector Store]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.08} delay={0.35}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -2965,7 +3191,25 @@ graph TD
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
               <GSAPAnimated delay={0.1} duration={0.9}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Heading-Anchor: Docs Site Chunking"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Docs Site] --> B{Heading<br/>Anchors}
+    B --> C[H1 Chunk<br/>+ heading metadata]
+    B --> D[H2 Chunk<br/>+ heading metadata]
+    B --> E[H3 Chunk<br/>+ heading metadata]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.35}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -3200,7 +3444,23 @@ graph LR
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
               <GSAPAnimated delay={0.15} duration={0.8}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Markdown-Aware: Preserve Structure Elements"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Markdown Doc] --> B[Detect Headers<br/>Code Blocks<br/>Lists/Tables]
+    B --> C[300-800 Token<br/>Chunks]
+    C --> D[Preserved<br/>Markdown Elements]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.35}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -3432,7 +3692,26 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.1} duration={1.0}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Table-Aware: Header+Rows with Context"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Doc with Tables] --> B[Detect Tables]
+    B --> C[Table Chunk<br/>header + rows]
+    B --> D[Context Chunk<br/>surrounding text]
+    C --> E[Vector DB]
+    D --> E
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -3673,7 +3952,26 @@ You might also **include essential imports** at the top of each chunk so the cod
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.15} duration={0.95}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Code-Aware: AST Parser to Chunks"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Code File] --> B[AST Parser]
+    B --> C[Function<br/>Boundaries]
+    B --> D[Class<br/>Boundaries]
+    C --> E[400 token Chunk<br/>with docstring]
+    D --> E
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.4}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -3907,7 +4205,25 @@ graph LR
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.15} duration={1.1}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Sentence Grouping: Sliding Window Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Text] --> B[Sentence<br/>Tokenizer]
+    B --> C[Window of<br/>3-5 Sentences]
+    C --> D[Overlapping<br/>Chunks]
+    D --> E[Embedding<br/>Pipeline]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -4148,7 +4464,26 @@ graph TD
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff8787', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.15} duration={0.9}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Adaptive Length: Complexity-Based Sizing"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Document] --> B{Analyze<br/>Complexity}
+    B -->|Dense/Technical| C[Small Chunks<br/>200-400 tokens]
+    B -->|Narrative/Simple| D[Large Chunks<br/>600-1000 tokens]
+    C --> E[Optimized<br/>Retrieval]
+    D --> E
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -4376,7 +4711,26 @@ graph TD
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7af6', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.15} duration={0.9}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Summarization-Based: Dual-Level Retrieval"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Long Doc] --> B[LLM Summary]
+    A --> C[Original Chunks]
+    B --> D[Summary-Indexed]
+    C --> D
+    D --> E[Dual-Level<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e3f2fd,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -4612,7 +4966,25 @@ graph TD
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#95ff7a', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.15} duration={1.0}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Graph-Based: Community Detection Chunking"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Sentences] --> B[Build<br/>Similarity Graph]
+    B --> C[Community<br/>Detection]
+    C --> D[Topic Clusters]
+    D --> E[Graph-Based<br/>Chunks]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.45}>
                 <ul style={{ fontSize: '1.1rem' }}>
@@ -4833,7 +5205,25 @@ Two seconds is usually sufficient because that's about how long it takes to spea
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8197ff', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated delay={0.2} duration={0.7}>
-                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Audio/ASR: Time-Based Chunking Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Audio] --> B[ASR<br/>Transcription]
+    B --> C[Time-Based<br/>Chunks]
+    C --> D[Timestamp<br/>Metadata]
+    D --> E[Searchable<br/>Segments]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+                </div>
                 <ul style={{ fontSize: '1.1rem' }}>
                   <li>Podcasts, earnings calls, lectures</li>
                   <li>Meeting summarization</li>
@@ -4985,7 +5375,25 @@ However, it's not Advanced because the concepts are straightforward and excellen
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff81aa', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Speaker-Turn: Diarization to Chunks"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Conversation] --> B[Speaker<br/>Diarization]
+    B --> C[100-300 token<br/>Turn Chunks]
+    C --> D[0-1 Turn<br/>Overlap]
+    D --> E[Embedding<br/>Model]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Per turn or grouped 2–3 turns (~100–300 tokens)</li>
                 <li>Adaptive to conversation dynamics and speaker patterns</li>
@@ -5022,7 +5430,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff81aa', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Speaker-Turn: Multi-Speaker Retrieval"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Multi-Speaker<br/>Audio] --> B[Speaker<br/>Diarization]
+    B --> C[Turn-Based<br/>Chunks]
+    C --> D[Speaker<br/>Attribution]
+    D --> E[Retrieval by<br/>Speaker]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Meeting transcripts and summaries</li>
                 <li>Customer support chats and conversations</li>
@@ -5168,7 +5594,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffff6f', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="QA-Focused: Answer-Boundary Chunking"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Document] --> B[Identify<br/>QA Pairs]
+    B --> C[Question<br/>Context]
+    C --> D[100-400 token<br/>Answer Chunk]
+    D --> E[QA-Optimized<br/>Index]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>100–400 tokens around candidate answers</li>
                 <li>Sized to capture complete answer contexts</li>
@@ -5206,7 +5650,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffff6f', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="QA-Focused: Knowledge Base Retrieval"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Knowledge Base] --> B[QA Chunking]
+    B --> C[Answer Chunks]
+    C --> D[Question-Answer<br/>Pairs]
+    D --> E[High-Precision<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Knowledge bases</li>
                 <li>Policy QA, FAQ systems</li>
@@ -5352,7 +5814,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#aa80ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Page-Preservation: PDF Page Chunking"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[PDF Page] --> B[Preserve<br/>Page Boundary]
+    B --> C[~500 token<br/>Page Chunk]
+    C --> D[Page Number<br/>Metadata]
+    D --> E[Citation-Ready<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Per page (variable tokens)</li>
                 <li>Typically ranges from 300-1200 tokens depending on page density</li>
@@ -5390,7 +5870,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#aa80ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Page-Preservation: Page-Referenced Retrieval"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[PDF Document] --> B[Page Extraction]
+    B --> C[Page Chunks]
+    C --> D[page_num +<br/>doc_id Metadata]
+    D --> E[Page-Referenced<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Scanned documents</li>
                 <li>Page-referenced citations</li>
@@ -5534,7 +6032,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#82ff96', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Caption+Context: Layout-Aware Chunking"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Document] --> B[Layout<br/>Analysis]
+    B --> C[Caption<br/>Detection]
+    C --> D[Caption +<br/>Context Window]
+    D --> E[100-400 token<br/>Chunk]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>100–400 tokens near caption</li>
                 <li>Include caption text plus surrounding explanatory paragraphs</li>
@@ -5573,7 +6089,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#82ff96', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Caption+Context: Figure-Referenced Retrieval"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Scientific Paper] --> B[Figure Detection]
+    B --> C[Caption + Context]
+    C --> D[Visual Chunk]
+    D --> E[Figure-Referenced<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Scientific papers with figures</li>
                 <li>Reports with tables and charts</li>
@@ -5723,7 +6257,26 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#e086ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Metadata-Aware: Chunk + Metadata Enrichment"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Document] --> B[Base Chunking<br/>300-800 tokens]
+    A --> C[Metadata<br/>Extraction]
+    B --> D[Chunk +<br/>Metadata]
+    C --> D
+    D --> E[Filtered<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#81c784,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Inherit from base chunking method (e.g., 300–800 tokens)</li>
                 <li>Metadata is orthogonal to chunk size decisions</li>
@@ -5761,7 +6314,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#e086ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Metadata-Aware: Enterprise Filtered Search"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Enterprise Docs] --> B[Metadata<br/>Enrichment]
+    B --> C[author, date,<br/>dept, tags]
+    C --> D[Filtered Vector<br/>Search]
+    D --> E[Precise<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Enterprise search with facets</li>
                 <li>Regulatory/compliance document retrieval</li>
@@ -5910,7 +6481,29 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff83a2', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Hybrid Chunking: Route by Content Type"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TD
+    A[Document] --> B{Content<br/>Type?}
+    B -->|Structured| C[Structure-Aware<br/>300-800 tokens]
+    B -->|Code| D[Code-Aware<br/>400 tokens]
+    B -->|Narrative| E[Semantic<br/>400-600 tokens]
+    C --> F[Unified Index]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e3f2fd,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#e3f2fd,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Varies based on component techniques</li>
                 <li>E.g., structure-aware for sections + semantic refinement within sections</li>
@@ -5950,7 +6543,29 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff83a2', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Hybrid: Mixed Corpus Pipeline"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Mixed Corpus] --> B{Route by<br/>Doc Type}
+    B --> C[Markdown<br/>Splitter]
+    B --> D[Code<br/>Splitter]
+    B --> E[Semantic<br/>Splitter]
+    C --> F[Hybrid Index]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Production RAG systems</li>
                 <li>Heterogeneous document collections</li>
@@ -6098,7 +6713,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#78f9ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Sliding Window: Overlapping Context Chunks"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Text] --> B[Window<br/>300-800 tokens]
+    B --> C[Slide with<br/>15-30% Overlap]
+    C --> D[Overlapping<br/>Chunks]
+    D --> E[Embedding<br/>Model]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </div>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>300–800 tokens for each window</li>
                 <li>Larger sizes for complex documents with long contextual dependencies</li>
@@ -6137,7 +6770,25 @@ Once you have diarization results, the actual chunking is straightforward since 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#78f9ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Sliding Window: Cross-Reference Preservation"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Legal / Academic<br/>Document] --> B[Sliding Window]
+    B --> C[Overlapping<br/>Context Chunks]
+    C --> D[Cross-Reference<br/>Preservation]
+    D --> E[High-Context<br/>Retrieval]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </div>
               <ul style={{ fontSize: '1.1rem' }}>
                 <li>Legal documents and contracts</li>
                 <li>Academic papers and research reports</li>
