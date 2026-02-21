@@ -366,7 +366,19 @@ flowchart LR
               </div>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Pipeline Order: Normalize First"
+                      diagram={`flowchart LR
+    A["📝 Raw Input"] --> B["🧹 Normalize"]
+    B --> C["🔍 Lookup"]
+    C --> D["🔀 Fuzzy Match"]
+    D --> E["🧮 Vectorize"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#81c784,stroke:#4caf50,stroke-width:3px,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -531,7 +543,22 @@ flowchart LR
               </div>
 
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Unicode Normalization: Multilingual Unification"
+                      diagram={`flowchart TB
+    subgraph Input["Variant Inputs"]
+        A["café (NFC: é = 1 char)"]
+        B["cafe\u0301 (NFD: e + ◌́)"]
+        C["CAFÉ (uppercase)"]
+    end
+    Input --> D["🔄 NFKC + case fold"]
+    D --> E["✅ cafe"]
+    style D fill:#e1bee7,color:#000
+    style E fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -698,7 +725,25 @@ flowchart TB
               </div>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Fuzzy Matching Use Cases"
+                      diagram={`graph TB
+    subgraph Names["👤 Name Typos"]
+        A["'Jon Smith'"] --> A2["'John Smith' ✅"]
+    end
+    subgraph OCR["🖨️ OCR Noise"]
+        B["'0rder #123'"] --> B2["'Order #123' ✅"]
+    end
+    subgraph Dedup["🗂️ Deduplication"]
+        C["'Microsft Corp'"] --> C2["'Microsoft Corp' ✅"]
+    end
+    style A2 fill:#81c784,color:#000
+    style B2 fill:#81c784,color:#000
+    style C2 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -868,7 +913,25 @@ flowchart LR
               </div>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Token Similarity: Multi-Word Entity Use Cases"
+                      diagram={`graph TB
+    subgraph Products["🛍️ Product Titles"]
+        P1["'Apple iPhone 15 Pro'"] --> P2["'iPhone 15 Pro by Apple' ✅"]
+    end
+    subgraph Orgs["🏢 Org Names"]
+        O1["'IBM Corp'"] --> O2["'International Business Machines' ✅"]
+    end
+    subgraph Addr["📍 Addresses"]
+        A1["'123 Main St, NY'"] --> A2["'123 Main Street New York' ✅"]
+    end
+    style P2 fill:#81c784,color:#000
+    style O2 fill:#81c784,color:#000
+    style A2 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -1037,7 +1100,26 @@ flowchart TB
               </div>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Gazetteer: Closed-World Domain Examples"
+                      diagram={`graph TB
+    subgraph Meds["💊 Medications"]
+        M1["'aspirin'"] --> M2["NDC-12345 ✅"]
+        M3["'ibuprofen'"] --> M4["NDC-67890 ✅"]
+    end
+    subgraph Locs["📍 Locations"]
+        L1["'NYC'"] --> L2["geo_nyc_001 ✅"]
+    end
+    subgraph SKUs["📦 Product SKUs"]
+        S1["'Widget Pro'"] --> S2["SKU-W-PRO ✅"]
+    end
+    style M2 fill:#81c784,color:#000
+    style L2 fill:#81c784,color:#000
+    style S2 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -1204,7 +1286,27 @@ flowchart LR
               </div>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Synonym Mapping: When Aliases Matter"
+                      diagram={`graph TB
+    subgraph Brand["🏷️ Brand Aliases"]
+        B1["'Big Blue'"] --> B2["IBM ✅"]
+        B3["'Mickey D\\'s'"] --> B4["McDonald\\'s ✅"]
+    end
+    subgraph Finance["💰 Financial Abbrevs"]
+        F1["'JPM'"] --> F2["JPMorgan Chase ✅"]
+    end
+    subgraph Medical["💊 Medical Abbrevs"]
+        A1["'MI'"] --> A2["Myocardial Infarction ✅"]
+    end
+    style B2 fill:#81c784,color:#000
+    style B4 fill:#81c784,color:#000
+    style F2 fill:#81c784,color:#000
+    style A2 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -1372,7 +1474,25 @@ flowchart TB
               </div>
 
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Rule-Based Context: Structured Docs & Compliance"
+                      diagram={`flowchart TB
+    subgraph Structured["📄 Structured Documents"]
+        S1["Medical Record"] --> S2{"Section: Diagnosis"}
+        S2 -->|"'cold'"| S3["🦠 Illness (not temp) ✅"]
+    end
+    subgraph Compliance["⚖️ Compliance"]
+        C1["Financial Report"] --> C2{"Rule: $ nearby"}
+        C2 -->|"'Apple'"| C3["🏢 Apple Inc. ✅"]
+        C2 -->|"explainable"| C4["Audit Log ✅"]
+    end
+    style S3 fill:#81c784,color:#000
+    style C3 fill:#81c784,color:#000
+    style C4 fill:#e3f2fd,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -1541,7 +1661,28 @@ flowchart TB
               </div>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Embeddings: Cross-Lingual & Semantic Matching"
+                      diagram={`graph TB
+    subgraph CrossLingual["🌍 Cross-Lingual"]
+        X1["'München'"] --> X3["✅ Match"]
+        X2["'Munich'"] --> X3
+    end
+    subgraph Abbrev["📝 Abbreviations"]
+        A1["'MIT'"] --> A3["✅ Match"]
+        A2["'Massachusetts Institute of Technology'"] --> A3
+    end
+    subgraph Semantic["🧠 Semantic Paraphrase"]
+        S1["'heart attack'"] --> S3["✅ Match"]
+        S2["'myocardial infarction'"] --> S3
+    end
+    style X3 fill:#81c784,color:#000
+    style A3 fill:#81c784,color:#000
+    style S3 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -1716,7 +1857,23 @@ flowchart LR
               </div>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Entity Linking: Open-Domain Enrichment"
+                      diagram={`flowchart LR
+    A["📰 Open-Domain Text"] --> B["'Paris'"]
+    B --> C{"Link to KB"}
+    C --> D["🗼 Paris, France Q90"]
+    D --> E["Population: 2.1M"]
+    D --> F["Country: France"]
+    D --> G["Timezone: CET"]
+    style D fill:#4fc3f7,color:#000
+    style E fill:#e3f2fd,color:#000
+    style F fill:#e3f2fd,color:#000
+    style G fill:#e3f2fd,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -1890,7 +2047,25 @@ flowchart LR
               </div>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Graph Disambiguation: Mutual Constraints"
+                      diagram={`graph TD
+    subgraph NewsArticle["📰 News Article Mentions"]
+        M1["'Apple'"] --> A1["Apple Inc. ✅"]
+        M1 --> A2["Apple fruit ❌"]
+        M2["'Tim Cook'"] --> B1["Tim Cook (CEO) ✅"]
+        M3["'WWDC'"] --> C1["Apple Conference ✅"]
+    end
+    A1 --- B1
+    A1 --- C1
+    style A1 fill:#81c784,color:#000
+    style B1 fill:#81c784,color:#000
+    style C1 fill:#81c784,color:#000
+    style A2 fill:#ffcdd2,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -2057,7 +2232,25 @@ graph TD
               </div>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="PageRank: Dense KB & Relational Context"
+                      diagram={`graph LR
+    subgraph TechDoc["📰 Tech Article"]
+        M1["'Apple'"] --> A1["Apple Inc.\nPR: 0.42 ✅"]
+        M1 --> A2["Apple fruit\nPR: 0.08 ❌"]
+        M2["'iPhone'"] --> I["iPhone Q5765\nPR: 0.31"]
+        M3["'AAPL'"] --> S["NASDAQ: AAPL\nPR: 0.28"]
+    end
+    A1 --- I
+    A1 --- S
+    style A1 fill:#81c784,color:#000
+    style A2 fill:#ffcdd2,color:#000
+    style I fill:#e3f2fd,color:#000
+    style S fill:#e3f2fd,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -2227,7 +2420,27 @@ graph LR
               </div>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Ontology Mapping: Regulated Domain Coding"
+                      diagram={`flowchart LR
+    subgraph Health["🏥 Healthcare (ICD/SNOMED)"]
+        H1["'heart attack'"] --> H2["ICD-10: I21 ✅"]
+        H3["'high blood pressure'"] --> H4["ICD-10: I10 ✅"]
+    end
+    subgraph Finance["💰 Finance (NAICS)"]
+        F1["'software company'"] --> F2["NAICS: 541511 ✅"]
+    end
+    subgraph Pharma["💊 Pharma (NDC)"]
+        P1["'aspirin 500mg'"] --> P2["NDC: 12345-678 ✅"]
+    end
+    style H2 fill:#81c784,color:#000
+    style H4 fill:#81c784,color:#000
+    style F2 fill:#81c784,color:#000
+    style P2 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
@@ -2402,7 +2615,26 @@ graph TD
               </div>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="LLM Disambiguation: Complex Context Use Cases"
+                      diagram={`flowchart TB
+    subgraph FewShot["🎯 Few-Shot / Zero-Shot"]
+        Z1["New domain"] --> Z2["2-3 examples in prompt ✅"]
+    end
+    subgraph Complex["🧩 Complex Context"]
+        C1["'She worked at Apple before\njoining the orchard'"] --> C2["🤖 LLM reads full context"]
+        C2 --> C3["Apple Inc. (prev job)\nApple fruit (orchard) ✅"]
+    end
+    subgraph LongDoc["📄 Long Documents"]
+        L1["Mention on page 5"] --> L2["Context from page 1 ✅"]
+    end
+    style Z2 fill:#81c784,color:#000
+    style C3 fill:#81c784,color:#000
+    style L2 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-calendar-check" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>When to Use</strong>
