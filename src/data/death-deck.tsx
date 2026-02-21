@@ -1,5 +1,6 @@
 import type { Deck } from './types';
 import { GSAPAnimated } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const deathDeck: Deck = {
   id: 'death-deck',
@@ -44,7 +45,24 @@ This body. These hands. These lungs. This heartbeat.
           id: 2,
           title: 'The body will fail — not heroically',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="How Speech Failure Unfolds"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["💭 Thought is crystal clear"] --> B["🗣️ Mouth won't cooperate"]
+    B --> C["Others jump in, finish your sentences"]
+    C --> D{"Do they get it right?"}
+    D -->|"Yes"| E["Partial relief — but it wasn't yours"]
+    D -->|"No"| F["You are corrected about your own intentions"]
+    F --> G["🤐 You nod — correcting them is too tiring"]
+    style A fill:#e3f2fd,color:#000
+    style G fill:#ffcdd2,color:#000
+    style F fill:#fff9c4,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '0.9em' }}>
                   One day, your words will not come out right.
@@ -255,7 +273,23 @@ Not someday.
           id: 6,
           title: 'Your mind will betray you quietly',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Cognitive Decline: The Quiet Theft"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🧠 Forget the word for common things"] --> B["Call children by wrong names"]
+    B --> C["Forget you made the mistake"]
+    C --> D["Tell the same story 3× in one hour"]
+    D --> E["😶 People smile patiently — exchange glances"]
+    E --> F["You don't notice"]
+    F --> G["💨 The you that remembers fades before the you that exists"]
+    style A fill:#e3f2fd,color:#000
+    style E fill:#fff9c4,color:#000
+    style G fill:#ffcdd2,color:#000`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '0.9em' }}>
                   You will forget the word for common things.
@@ -554,7 +588,25 @@ Not someday.
           id: 12,
           title: 'Your organs will fail in sequence',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Organ Failure Cascade"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    K["🫘 Kidneys filter less"] --> L["🫀 Liver processes slower"]
+    L --> Lu["🫁 Lungs capture less oxygen"]
+    Lu --> T["⚗️ Toxins build up in blood"]
+    T --> M["Metal taste • Breath smells of decay"]
+    M --> F["💧 Body retains fluid"]
+    F --> S["Ankles swell • Belly distends"]
+    S --> D["☠️ You look pregnant with your own death"]
+    style K fill:#e3f2fd,color:#000
+    style T fill:#fff9c4,color:#000
+    style S fill:#ffcdd2,color:#000
+    style D fill:#1a1a1a,color:#fff`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '0.9em' }}>
                   Your kidneys will filter less.<br/>
@@ -850,7 +902,24 @@ Not someday.
           id: 18,
           title: 'People will visit less and less',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="The Disappearing Visit Timeline"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🌹 At first — visits often, flowers, hours"] --> B["📅 Then once a week"]
+    B --> C["📆 Then once a month"]
+    C --> D["🎄 Then holidays only"]
+    D --> E["📵 Then not at all"]
+    E --> F["📞 Waiting by the phone for calls that don't come"]
+    F --> G["You won't blame them. But you will notice."]
+    style A fill:#c8e6c9,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#ffcdd2,color:#000
+    style G fill:#1a1a1a,color:#fff`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '0.9em' }}>
                   At first, they will visit often.
@@ -1142,7 +1211,23 @@ In the darkness at 3 AM.
           id: 24,
           title: 'You will be afraid of falling',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="The Fall Chain — 20-30% One-Year Mortality"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🚶 One Fall\n(wet floor, loose rug,\nuneven pavement)"] --> B["🦴 Broken Hip"]
+    B --> C["🛏️ Bedridden"]
+    C --> D["🫁 Pneumonia"]
+    D --> E["💀 Death"]
+    style A fill:#fff9c4,color:#000
+    style B fill:#ffcdd2,color:#000
+    style C fill:#ffcdd2,color:#000
+    style D fill:#c62828,color:#fff
+    style E fill:#1a1a1a,color:#fff`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '0.9em' }}>
                   Every step will be a calculation.
@@ -2140,7 +2225,29 @@ Piece by piece.
           id: 44,
           title: 'You will lose your roles',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Identity Stripped Away — Role by Role"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Was["Who You Were"]
+        W1["💼 Worker"] --- W2["🏠 Provider"] --- W3["💪 Strong"]
+    end
+    subgraph Becomes["Who You Become"]
+        B1["🪑 Retired"] --- B2["🤲 Needs providing for"] --- B3["🩹 Weak"]
+    end
+    subgraph Left["What Remains"]
+        L1["❓ Who am I without them?"]
+        L2["🔇 No answer."]
+    end
+    Was --> Becomes
+    Becomes --> Left
+    style Was fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Becomes fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Left fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '0.9em' }}>
                   You were a worker. Then you retired.<br/>
