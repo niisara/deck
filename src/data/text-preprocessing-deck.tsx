@@ -9,6 +9,11 @@ export const textPreprocessingDeck: Deck = {
   description: 'From tokenization to language detection with practical cheat sheets',
   category: 'NLP',
   theme: 'moon',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -18,6 +23,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 1,
           center: true,
+          backgroundImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80',
           title: '21 Text Preprocessing Techniques',
           content: (
             <div style={{ color: '#fff' }}>

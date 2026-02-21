@@ -13,7 +13,7 @@ export const llmCachingDeck: Deck = {
   theme: 'black',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -41,7 +41,7 @@ export const llmCachingDeck: Deck = {
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.6}>
-                <div>
+                <div style={{ color: '#ffffff' }}>
                   <p><strong>Prepared by:</strong> Nisar A</p>
                   <p><strong>Date:</strong> November 7, 2025</p>
                   <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
@@ -50,8 +50,8 @@ export const llmCachingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#6b1d1d',
+          backgroundImage: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80',
           notes: `### 13 Caching Patterns That Save Cost in LLM Systems
-[cheerfully] Welcome everyone! [excited] Today we're going to explore one of the most practical topics in production **LLM 👉 'el-el-em'** systems: caching patterns that can dramatically reduce both your costs and latency.
 
 #### Why This Matters
 [conversational] Building **LLM systems** is expensive. Every API call costs money, and every millisecond of latency impacts user experience. [pleased] But here's the good news: most applications show significant repetition in queries, retrieval operations, and even generation patterns. [confidently] That's where intelligent caching comes in.

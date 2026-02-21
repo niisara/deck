@@ -9,6 +9,11 @@ export const chunkingTechniquesDeck: Deck = {
   description: 'Practical guidance for high-quality retrieval in RAG and NLP applications',
   category: 'RAG',
   theme: 'moon',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -60,6 +65,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
+          backgroundImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
           notes: `### 26 Chunking Techniques & Cheat Sheet
 [cheerfully] Welcome to this comprehensive guide on chunking techniques! [excited] Today we're diving into one of the most critical yet underappreciated topics in modern AI systems.
 

@@ -13,9 +13,10 @@ export const ragLatencyDeck: Deck = {
   theme: 'black',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    color: 'white',
   },
   slides: [],
   slideGroups: [
@@ -59,6 +60,7 @@ export const ragLatencyDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
+          backgroundImage: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&q=80',
           backgroundColor: '#1d5a6b',
           notes: `### 11 Techniques to Reduce RAG Latency
 [cheerfully] Welcome everyone! [excited] Today we're going to tackle one of the most critical challenges in production RAG systems — **latency** 👉 'LAY-ten-see'. If you've ever built a RAG pipeline and wondered why it takes so long to return answers, this presentation is for you.

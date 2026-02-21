@@ -11,6 +11,11 @@ export const featureExtractionDeck: Deck = {
   description: 'Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders',
   category: 'NLP',
   theme: 'night',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -53,6 +58,7 @@ export const featureExtractionDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a5247',
+          backgroundImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80',
           notes: `### 13 Feature Extraction Techniques
 [cheerfully] Welcome everyone! [excited] Today we're going to walk through **thirteen different feature extraction techniques** that are absolutely essential for working with text in NLP and machine learning.
 

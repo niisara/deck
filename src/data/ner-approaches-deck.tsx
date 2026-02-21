@@ -26,7 +26,7 @@ export const nerApproachesDeck: Deck = {
           title: 'Named Entity Recognition Approaches',
           center: true,
           content: (
-            <div>
+            <div style={{ color: '#ffffff' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p style={{ fontSize: '2rem', marginTop: '30px' }}>
                   A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
@@ -68,6 +68,7 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#162d6b',
+          backgroundImage: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80',
           notes: `### Named Entity Recognition Approaches
 [cheerfully] Welcome everyone! [excited] Today we're going to explore one of the most fundamental tasks in Natural Language Processing: **Named Entity Recognition**, or NER for short.
 

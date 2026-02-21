@@ -11,7 +11,7 @@ export const queryRewritingDeck: Deck = {
   theme: 'moon',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -55,6 +55,7 @@ export const queryRewritingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
+          backgroundImage: 'https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80',
           backgroundColor: '#2C3E50',
           notes: `### 21 Query Rewriting Strategies for RAG
 [cheerfully] Welcome everyone! Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. [conversational] RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. [seriously] But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.

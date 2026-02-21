@@ -9,6 +9,11 @@ export const metadataEnrichmentDeck: Deck = {
   description: 'Cheat-sheets, patterns, and practical implementations',
   category: 'RAG',
   theme: 'moon',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -40,6 +45,7 @@ export const metadataEnrichmentDeck: Deck = {
             </div>
           ),
           backgroundColor: '#14283d',
+          backgroundImage: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=1920&q=80',
           notes: `### 9 Metadata Enrichment Tricks
 [cheerfully] Welcome everyone! [excited] Today we're diving into one of the most powerful yet often overlooked aspects of building effective RAG systems: **metadata enrichment**. Think of metadata as the secret sauce that transforms your basic document search into an intelligent, context-aware retrieval system.
 

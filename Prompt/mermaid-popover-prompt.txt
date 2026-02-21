@@ -61,3 +61,8 @@ backgroundImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w
 | Space / Science | galaxy, cosmos, dark space minimal |
 
 Always append `?w=1920&q=80` to the Unsplash photo URL for optimal load performance.
+
+
+Important: do not use same image in two deck.. alway use uniquebackground image.
+
+when image is dark for deck make font white

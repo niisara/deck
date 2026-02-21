@@ -11,7 +11,7 @@ export const rerankingModelsDeck: Deck = {
   theme: 'night',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -71,7 +71,9 @@ export const rerankingModelsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
+          backgroundImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
           backgroundColor: '#1f3263',
+          color: '#ffffff',
           notes: `### Introduction - 11 Re-Ranking Models to Improve RAG Accuracy
 
 [cheerfully] Welcome everyone! [excited] Today we're diving into something that can dramatically boost the accuracy of your **RAG** 👉 'rag' systems - that's **Retrieval-Augmented Generation**. [conversational] Think of RAG 👉 'rag' as a smart assistant that first looks up information and then uses it to generate answers.

@@ -11,7 +11,7 @@ export const vectorDatabasesDeck: Deck = {
   theme: 'moon',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1488229297570-58520851e868?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -72,6 +72,7 @@ export const vectorDatabasesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
+          backgroundImage: 'https://images.unsplash.com/photo-1488229297570-58520851e868?w=1920&q=80',
           backgroundColor: '#2a217b',
           notes: `### Vector Databases Cheat Sheet
 #### Welcome

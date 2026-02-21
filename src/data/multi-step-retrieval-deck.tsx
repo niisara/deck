@@ -9,6 +9,12 @@ export const multiStepRetrievalDeck: Deck = {
   description: 'Retrieve → Generate → Retrieve - A comprehensive guide to techniques that improve RAG through multi-step processes',
   category: 'RAG',
   theme: 'night',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: '#ffffff',
+  },
   slides: [],
   slideGroups: [
     {
@@ -43,6 +49,8 @@ export const multiStepRetrievalDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1e2f5d',
+          backgroundImage: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1920&q=80',
+          color: '#ffffff',
           notes: `### Multi-Step Retrieval Strategies
 
 #### Welcome and Introduction

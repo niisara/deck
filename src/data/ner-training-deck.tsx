@@ -11,7 +11,7 @@ export const nerTrainingDeck: Deck = {
   theme: 'moon',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -40,7 +40,7 @@ export const nerTrainingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+          backgroundImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
           notes: `### 9 Custom NER Training Tips for Domain-Specific Use Cases
 [cheerfully] [excited] Welcome everyone! Today we're going to explore something really exciting in the world of Natural Language Processing, or NLP. We'll be talking about **Named Entity Recognition**, commonly called NER.
 #### 🎯 What is NER?

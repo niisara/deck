@@ -11,7 +11,7 @@ export const nerMetricsDeck: Deck = {
   theme: 'night',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -45,6 +45,7 @@ export const nerMetricsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
+          backgroundImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80',
           notes: `### 7 Evaluation Metrics for NER Models
 [cheerfully] Welcome everyone, I'm really glad you're here today! [energetic] Let's kick things off with something super simple.
 

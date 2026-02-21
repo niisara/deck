@@ -11,7 +11,7 @@ export const parentChildRetrievalDeck: Deck = {
   theme: 'night',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -64,7 +64,7 @@ export const parentChildRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80',
+          backgroundImage: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80',
           notes: `### Parent–Child Retrieval Designs for RAG
 
 [energetic] Welcome to this comprehensive guide on parent-child retrieval patterns for RAG 👉 'rag' systems! [excited] Today we're diving into eleven powerful design patterns that can dramatically improve your retrieval-augmented generation pipelines by solving one of the most common problems in production RAG 👉 'rag' systems: providing the right amount of context at the right time.

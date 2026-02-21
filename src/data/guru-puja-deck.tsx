@@ -10,7 +10,9 @@ export const guruPujaDeck: Deck = {
   theme: 'black',
   slides: [],
   cardStyle: {
-    background: 'linear-gradient(135deg, #b8860b 0%, #8b4513 50%, #d4a017 100%)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     color: '#fff',
   },
   slideGroups: [
@@ -37,6 +39,7 @@ export const guruPujaDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
+          backgroundImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
           backgroundColor: '#1a1008',
           notes: `Isha Guru Pooja is a sacred invocation chanted in the Isha Yoga tradition. It is an offering of gratitude to the entire lineage of Gurus — from Narayana to Adi Shankaracharya and beyond — recognizing that the light of knowledge has been passed down through an unbroken chain of masters.`
         }

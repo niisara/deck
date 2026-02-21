@@ -11,10 +11,9 @@ export const documentPreprocessingDeck: Deck = {
   theme: 'moon',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+    backgroundImage: 'url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
   slides: [],
   slideGroups: [
@@ -69,6 +68,7 @@ export const documentPreprocessingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
+          backgroundImage: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80',
           backgroundColor: '#6b2121',
           notes: `### 17 Document Preprocessing Techniques
 [cheerfully] Welcome everyone! [excited] Today we're diving into seventeen practical document preprocessing techniques that you absolutely need to know. Whether you're building a search engine, training a machine learning model, or just trying to make sense of messy text data, these techniques will be your best friends.

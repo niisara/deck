@@ -9,6 +9,11 @@ export const hybridSearchDeck: Deck = {
   description: 'A practical cheat sheet for combining lexical and semantic search to build more powerful retrieval systems',
   category: 'RAG',
   theme: 'night',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -63,6 +68,7 @@ export const hybridSearchDeck: Deck = {
             </div>
           ),
           backgroundColor: '#172e6b',
+          backgroundImage: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80',
           notes: `### 11 Hybrid Search Patterns
 ####  Welcome
 [cheerfully] [warmly] Hello everyone! [excited] Today we're diving into something really exciting – **hybrid search patterns**. [reassuringly] If you're new to search systems, don't worry. We'll break everything down into simple concepts.

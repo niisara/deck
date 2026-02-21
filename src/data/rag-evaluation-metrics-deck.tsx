@@ -11,6 +11,11 @@ export const ragEvaluationMetricsDeck: Deck = {
   description: 'A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems',
   category: 'RAG',
   theme: 'sky',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -59,6 +64,7 @@ export const ragEvaluationMetricsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0c0a37',
+          backgroundImage: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80',
           notes: `### 13 Underused RAG Evaluation Metrics
 [cheerfully] Welcome everyone! [excited] Today we're diving into something crucial but often overlooked in the world of RAG systems—evaluation metrics. If you're building a Retrieval-Augmented Generation 👉 'RAG' system, you've probably wondered: [quizzically] "Is my system actually working well? How do I know if my retrieval is good enough? Is my AI making things up?"
 

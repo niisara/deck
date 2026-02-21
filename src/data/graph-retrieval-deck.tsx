@@ -13,7 +13,7 @@ export const graphRetrievalDeck: Deck = {
   theme: 'sky',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -61,9 +61,8 @@ export const graphRetrievalDeck: Deck = {
             </div>
           ),
           backgroundColor: '#191335',
-          notes: `### 13 Graph-Based Retrieval Techniques
-
-[cheerfully] Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
+          backgroundImage: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80',
+          notes: `[cheerfully] Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
 
 #### What Are Graph-Based Retrieval Techniques?
 Traditional search relies on finding individual documents that match your query. But what if you want to understand **relationships** between concepts? [storytelling] What if you need to trace **connections** between entities? That's where graph-based retrieval shines. Instead of treating documents as isolated islands, we organize information as a **network of interconnected nodes** where relationships matter just as much as the content itself.

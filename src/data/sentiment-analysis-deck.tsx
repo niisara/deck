@@ -9,6 +9,11 @@ export const sentimentAnalysisDeck: Deck = {
   description: '15 Sentiment Analysis Techniques - From Rule-Based to Transformers',
   category: 'NLP',
   theme: 'moon',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -37,6 +42,7 @@ export const sentimentAnalysisDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2b0e77',
+          backgroundImage: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80',
           notes: `### Sentiment Analysis Techniques
 
 [cheerfully] Welcome everyone! [excited] Today we're going to explore the fascinating world of sentiment analysis, which is all about teaching computers to understand human emotions and opinions in text.

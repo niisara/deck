@@ -9,6 +9,11 @@ export const embeddingQualityDeck: Deck = {
   description: 'Practical cheat sheets for preprocessing and chunking',
   category: 'RAG',
   theme: 'night',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -42,6 +47,7 @@ export const embeddingQualityDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
+          backgroundImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&q=80',
           notes: `### 7 Tricks to Improve Embedding Quality
 [cheerfully] Welcome everyone! [excited] Today we're going to explore seven powerful techniques that will dramatically improve your embedding quality without changing a single line of your model code. [pause] Think about that for a moment. You don't need to retrain anything, you don't need more compute power, and you don't need expensive new models. Just smarter preprocessing.
 

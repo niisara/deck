@@ -11,6 +11,11 @@ export const entityNormalizationDeck: Deck = {
   description: 'A practical cheat sheet for NLP, data integration, and knowledge graphs',
   category: 'NLP',
   theme: 'black',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -20,6 +25,7 @@ export const entityNormalizationDeck: Deck = {
         {
           id: 1,
           center: true,
+          backgroundImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
           title: '13 Entity Normalization & Disambiguation Techniques',
           content: (
             <div>

@@ -8,6 +8,12 @@ export const deathDeck: Deck = {
   description: 'A confrontational meditation on mortality and physical decay',
   category: 'Inner Intelligence',
   theme: 'black',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: '#ffffff',
+  },
   slides: [],
   slideGroups: [
     {
@@ -29,6 +35,7 @@ export const deathDeck: Deck = {
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
+          backgroundImage: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=80',
           notes: `[slowly] This will happen to me.
 Not in theory. Not someday. [darkly] To this body.
 

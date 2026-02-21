@@ -13,9 +13,10 @@ export const contextPackingDeck: Deck = {
   theme: 'black',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    color: '#ffffff',
   },
   slides: [],
   slideGroups: [
@@ -26,6 +27,7 @@ export const contextPackingDeck: Deck = {
         {
           id: 1,
           center: true,
+          backgroundImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80',
           title: '13 Context Packing Techniques',
           content: (
             <div>

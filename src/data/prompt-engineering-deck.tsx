@@ -62,7 +62,7 @@ export const promptEngineeringDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a3957',
+          backgroundImage: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80',
           notes: `### 18 Prompt Engineering Techniques
 [cheerfully] Welcome to this comprehensive deep-dive into **18 Prompt Engineering Techniques** — the essential patterns and strategies you need to build *reliable*, *accurate*, and *production-ready* **LLM** 👉 'L-L-M' (Large Language Model) applications.
 

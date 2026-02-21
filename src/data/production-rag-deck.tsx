@@ -9,6 +9,12 @@ export const productionRagDeck: Deck = {
   description: 'Proven designs for reliable, scalable Retrieval-Augmented Generation',
   category: 'RAG',
   theme: 'night',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: '#ffffff',
+  },
   slides: [],
   slideGroups: [
     {
@@ -54,6 +60,7 @@ export const productionRagDeck: Deck = {
             </div>
           ),
           backgroundColor: '#3c1651',
+          backgroundImage: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1920&q=80',
           notes: `### Title Slide - 11 Production RAG Architecture Patterns
 
 [cheerfully] Welcome everyone! [excited] Today we're diving deep into eleven production-ready RAG architecture patterns that will transform how you build retrieval-augmented generation systems. RAG, or Retrieval-Augmented Generation 👉 [rag], combines the power of large language models with external knowledge retrieval to create more accurate, factual, and context-aware AI applications.

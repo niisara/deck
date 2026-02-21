@@ -11,9 +11,10 @@ export const embeddingModelsDeck: Deck = {
   theme: 'night',
   cardClassName: 'glass-morphism',
   cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    color: '#ffffff',
   },
   slides: [],
   slideGroups: [
@@ -43,6 +44,7 @@ export const embeddingModelsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#7b377d',
+          backgroundImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
           notes: `### 9 Embedding Models Cheat Sheet
 
 [cheerfully] Welcome everyone! [excited] Today we're diving into one of the most critical technologies powering modern AI applications: embedding models. [conversational] If you've heard buzzwords like RAG 👉 'rag', semantic search, or vector databases but aren't quite sure how they all fit together, you're in the right place.
