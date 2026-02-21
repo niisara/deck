@@ -1,0 +1,152 @@
+Infer the deck topic, category, and techniques from the filename provided. Then create a complete, production-ready deck file following ALL rules below. Use the existing decks in src/data/ (e.g. graph-retrieval-deck.tsx, chunking-techniques-deck.tsx) as style references.
+
+---
+
+## File Structure
+
+```tsx
+import type { Deck } from './types';
+import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
+
+const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
+
+export const <camelCaseExportName>: Deck = {
+  id: '<kebab-case-id>',
+  name: '<N> <Topic Name>',
+  description: '<one-line description>',
+  category: '<one of: NLP | RAG | Fine Tuning | Agent | Demo | Personal | Inner Intelligence | Other>',
+  theme: 'moon',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(<UNSPLASH_URL>)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  slides: [],
+  slideGroups: [],
+};
+```
+
+After creating the file, add the import and the export name to src/data/decks.ts.
+
+---
+
+## Slide Groups Structure
+
+### Group 1 — introduction
+- Slide 1: Title slide (center: true). Show topic icon, audience, what you'll get, credits: "Prepared by: Nisar A / niisar.com".
+- Slide 2: Overview — numbered grid of all techniques + MermaidPopover with graph TB showing technique categories.
+- Slide 3: Why It Matters — motivation, pain points, where it fits in the ML/AI stack. MermaidPopover for pipeline/context diagram.
+
+### Groups 2…N — one group per technique (id: technique-N-slug)
+Each technique gets 4 slides:
+| Slide | Suffix | Content |
+|---|---|---|
+| A | — Overview | 1-line definition, when to use, key intuition. MermaidPopover for core idea. |
+| B | — How It Works | Step-by-step numbered breakdown. MermaidPopover for data/gradient flow. |
+| C | — Pros & Cons | Two columns: ✅ Pros left (slideInLeft) / ❌ Cons right (slideInRight). |
+| D | — Config & Tools | Key hyperparams/defaults, popular libraries/frameworks, quick-start hint. |
+
+### Last Group — summary
+- Slide 1: Cheat Sheet — decision table comparing all techniques (memory cost, compute cost, data needed, best use case).
+- Slide 2: Key Takeaways — top 5 actionable bullets + call-to-action.
+
+---
+
+## GSAP Animation Rules
+
+- Title slides → rotateIn on icon, scaleIn on headline, fadeIn on subtitle/credits.
+- Lists → GSAPStaggerList with stagger 0.08–0.12.
+- Two-column slides → slideInLeft + slideInRight for opposing columns.
+- Key stats/numbers → bounceIn or scaleIn.
+- Never repeat the same animation type on two consecutive slides.
+- Every slide must have at least one animated element.
+- Durations: quick items 0.5–0.7s, content blocks 0.7–0.9s, hero elements 0.9–1.2s.
+
+---
+
+## Speaker Notes (notes field — required on EVERY slide)
+
+Format:
+```
+### [Slide Title]
+[tone-tag] Opening hook / transition from previous slide.
+
+#### [Section]
+Full sentences. Simple words. 1–2 line analogy. Pronunciation guides on first mention.
+
+#### When to Use This?
+Practical scenarios in complete sentences.
+
+#### Pros
+Flowing description of benefits (no naked bullet lists).
+
+#### Cons
+Flowing description of drawbacks.
+
+Closing sentence leading to the next slide.
+```
+
+Tone tags to vary: [cheerfully] [lecture] [conversational] [storytelling] [confidently] [seriously] [warmly] [energetic]
+
+Pronunciation guide rules — phonetic only, NEVER expand the abbreviation:
+- LoRA → LoRA 👉 'loh-rah'
+- QLoRA → QLoRA 👉 'cue-loh-rah'
+- RLHF → RLHF 👉 'are-el-aitch-eff'
+- DPO → DPO 👉 'dee-pee-oh'
+- PEFT → PEFT 👉 'peft'
+- RAG → RAG 👉 'rag'
+- LLM → LLM 👉 'el-el-em'
+- CoT → CoT 👉 'see-oh-tee'
+- ToT → ToT 👉 'tee-oh-tee'
+- BM25 → BM25 👉 'bee-em-twenty-five'
+
+---
+
+## MermaidPopover Rules
+
+- At least one MermaidPopover per technique group (more is better).
+- Place inside the relevant <h4> tag:
+  ```tsx
+  <h4>
+    How It Works
+    <MermaidPopover title="LoRA Architecture" diagram={`graph LR ...`} />
+  </h4>
+  ```
+- Color scheme: #4fc3f7 inputs (blue) · #81c784 outputs (green) · #ffcdd2 errors (red) · #ffd700 highlights (gold) · #e1bee7 special (purple).
+- Keep diagrams simple — avoid complex nested subgraphs.
+
+---
+
+## Background Image
+
+- Choose a UNIQUE Unsplash image not already used by any deck in src/data/.
+- Must be dark/low-contrast so white text stays legible.
+- Thematically relevant (e.g. fine-tuning → neural wires, gradient abstract; agents → dark web of nodes; RLHF → abstract feedback loop).
+- Format: https://images.unsplash.com/photo-<ID>?w=1920&q=80
+- Apply in TWO places:
+  a) cardStyle.backgroundImage → with url() wrapper
+  b) slideGroups[0].slides[0].backgroundImage → without url() wrapper (same URL)
+- Set color: '#fff' on text containers for dark backgrounds.
+
+---
+
+## Register in decks.ts
+
+After writing the deck file, add the import and insert the export name into the decks array in src/data/decks.ts.
+
+---
+
+## Quality Checklist — verify before finishing
+
+- [ ] Every slide has a non-empty notes field
+- [ ] Every slide has at least one GSAPAnimated or GSAPStaggerList
+- [ ] At least one MermaidPopover per technique group
+- [ ] All techniques are covered with 4 slides each
+- [ ] cardStyle and first slide use the same Unsplash URL
+- [ ] category is a valid enum value from types.ts
+- [ ] Export name, deck id, and file name are consistent
+- [ ] Import + array entry added to src/data/decks.ts
+- [ ] npx tsc --noEmit passes with no errors

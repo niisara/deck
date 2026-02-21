@@ -1,53 +1,45 @@
 #!/bin/bash
 
-# Array of deck files to process
+# Array of NEW deck files to create
 FILES=(
-  "chunking-techniques-deck.tsx"
-  "context-packing-deck.tsx"
-  "death-deck.tsx"
-  "document-preprocessing-deck.tsx"
-  "embedding-models-deck.tsx"
-  "embedding-quality-deck.tsx"
-  "entity-normalization-deck.tsx"
-  "feature-extraction-deck.tsx"
-  "graph-retrieval-deck.tsx"
-  "guru-puja-deck.tsx"
-  "hybrid-search-deck.tsx"
-  "llm-caching-deck.tsx"
-  "metadata-enrichment-deck.tsx"
-  "multi-step-retrieval-deck.tsx"
-  "ner-approaches-deck.tsx"
-  "ner-metrics-deck.tsx"
-  "ner-training-deck.tsx"
-  "parent-child-retrieval-deck.tsx"
-  "production-rag-deck.tsx"
-  "prompt-engineering-deck.tsx"
-  "query-rewriting-deck.tsx"
-  "rag-evaluation-metrics-deck.tsx"
-  "rag-latency-deck.tsx"
-  "reranking-models-deck.tsx"
-  "sentiment-analysis-deck.tsx"
-  "text-preprocessing-deck.tsx"
-  "vector-databases-deck.tsx"
+  # ── Fine-Tuning ──────────────────────────────────────────────────────────────
+  "llm-finetuning-techniques-deck.tsx"        # LLM Fine-Tuning Techniques — Full FT vs LoRA vs QLoRA vs Adapters vs Prefix Tuning vs Prompt Tuning
+  "lora-peft-methods-deck.tsx"                # LoRA & PEFT Methods Deep Dive — LoRA, QLoRA, IA³, DoRA, LoftQ
+  "finetuning-data-preparation-deck.tsx"      # Fine-Tuning Data Preparation — curation, dedup, Alpaca/ChatML/ShareGPT formats, synthetic data
+  "finetuning-evaluation-metrics-deck.tsx"    # Fine-Tuning Evaluation Metrics — ROUGE, BLEU, BERTScore, MT-Bench, win-rate, reward model
+  "rlhf-alignment-techniques-deck.tsx"        # RLHF & Alignment Techniques — SFT → RM → PPO, DPO, ORPO, RLAIF
+  "finetuning-for-rag-deck.tsx"               # Fine-Tuning for RAG — domain adaptation, embedding FT, reader FT, end-to-end RAG FT
+  "embedding-model-finetuning-deck.tsx"       # Embedding Model Fine-Tuning — contrastive learning, triplet loss, MNRL, hard negatives, matryoshka
+  "continual-learning-deck.tsx"               # Continual Learning & Catastrophic Forgetting — EWC, replay, SLERP/TIES/DARE model merging
+
+  # ── Agent ────────────────────────────────────────────────────────────────────
+  "llm-agent-architectures-deck.tsx"          # LLM Agent Architectures — ReAct, Plan-and-Execute, Reflexion, Self-Ask, MRKL
+  "agent-memory-systems-deck.tsx"             # Agent Memory Systems — in-context, external/vector, episodic, semantic, procedural
+  "tool-use-function-calling-deck.tsx"        # Tool Use & Function Calling — selection, parallel calls, chaining, error recovery, JSON schema
+  "agent-planning-techniques-deck.tsx"        # Agent Planning Techniques — CoT, ToT, GoT, MCTS, HuggingGPT decomposition
+  "multi-agent-systems-deck.tsx"              # Multi-Agent Systems — orchestrator/subagent, AutoGen, CrewAI, LangGraph, consensus
+  "agentic-rag-deck.tsx"                      # Agentic RAG — query decomposition agents, iterative retrieval, self-correcting RAG
+  "agent-evaluation-reliability-deck.tsx"     # Agent Evaluation & Reliability — trajectory eval, tool call accuracy, AgentBench, τ-bench
+  "agent-safety-guardrails-deck.tsx"          # Agent Safety & Guardrails — prompt injection, sandboxing, output validation, HITL
 )
 
-LOG_FILE="/home/nisar/.openclaw/workspace/deck/mermaid-popover-cron.log"
-PROMPT_FILE="/home/nisar/.openclaw/workspace/deck/Prompt/run-new-deck-prompt.txt"
+LOG_FILE="/home/nisar/.openclaw/workspace/deck/new-deck-creation.log"
+PROMPT_FILE="/home/nisar/.openclaw/workspace/deck/Prompt/create-new-deck-prompt.txt"
 cd /home/nisar/.openclaw/workspace/deck
 
-echo "=== Starting MermaidPopover batch job at $(date) ===" >> $LOG_FILE
+echo "=== Starting new deck creation batch at $(date) ===" >> $LOG_FILE
 
 for i in "${!FILES[@]}"; do
   FILE="${FILES[$i]}"
   FILE_NUM=$((i + 1))
   TOTAL=${#FILES[@]}
   
-  echo "[$(date)] Processing file $FILE_NUM/$TOTAL: $FILE" >> $LOG_FILE
+  echo "[$(date)] Creating file $FILE_NUM/$TOTAL: $FILE" >> $LOG_FILE
   
-  # Run copilot for this file using full prompt from file
+  # Run copilot to create the new deck file from the prompt template
   # Note: $(cat) expands file contents once - backticks in output are NOT re-evaluated by bash
   copilot --model claude-sonnet-4.6 --add-dir . --allow-all-tools --no-ask-user \
-    -p "In src/data/$FILE: $(cat "$PROMPT_FILE")" >> $LOG_FILE 2>&1
+    -p "Create a new deck file src/data/$FILE. $(cat "$PROMPT_FILE")" >> $LOG_FILE 2>&1
   
   EXIT_CODE=$?
   echo "[$(date)] Finished $FILE - exit code: $EXIT_CODE" >> $LOG_FILE
@@ -59,4 +51,4 @@ for i in "${!FILES[@]}"; do
   fi
 done
 
-echo "=== Batch job completed at $(date) ===" >> $LOG_FILE
+echo "=== Batch creation completed at $(date) ===" >> $LOG_FILE
