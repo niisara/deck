@@ -242,7 +242,25 @@ This technique is particularly powerful because embedding happens on **every sin
           title: '1. Use Smaller Embedding Models - When to Use',
           icon: { name: 'duo-microchip' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Small vs Large Embedding Model Impact"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    subgraph Large["🐘 Large Model (768-dim)"]
+        L1["1 query = 50ms"]
+        L2["1M docs = 12hrs indexing"]
+    end
+    subgraph Small["⚡ Small Model (256-dim)"]
+        S1["1 query = 10ms"]
+        S2["1M docs = 2hrs indexing"]
+    end
+    Large -->|"5x speedup"| Small
+    style Large fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Small fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -480,7 +498,26 @@ The problems: There's a **potential recall drop on nuanced queries** — very su
           title: '2. Reduce Chunk Size - When to Use',
           icon: { name: 'duo-scissors' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Chunk Size Impact on Token Cost & Latency"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Large["📄 Large Chunk (1000 tokens)"]
+        B1["Background info..."]
+        B2["✅ Relevant sentence"]
+        B3["More filler text..."]
+    end
+    subgraph Small["✂️ Small Chunk (200 tokens)"]
+        S1["✅ Relevant sentence"]
+        S2["Focused context"]
+    end
+    Large -->|"Reduce chunk size"| Small
+    style Large fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Small fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -719,7 +756,26 @@ Top-K 👉 'top kay' refers to how many results your vector search returns. If y
           title: '3. Limit Top-K Retrieval - When to Use',
           icon: { name: 'duo-filter' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Top-K=10 vs Top-K=3 Context Cost"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph K10["Top-K = 10 (Before)"]
+        T1["10 chunks × 200 tokens"]
+        T2["= 2,000 tokens context"]
+        T3["Higher cost & latency"]
+    end
+    subgraph K3["Top-K = 3 (Optimized)"]
+        O1["3 chunks × 200 tokens"]
+        O2["= 600 tokens context"]
+        O3["70% token reduction"]
+    end
+    style K10 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style K3 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -960,7 +1016,26 @@ Two popular ANN algorithms are HNSW 👉 'H-N-S-W' and IVF 👉 'eye-vee-eff'. L
           title: '4. Use ANN Indexes - When to Use',
           icon: { name: 'duo-network-wired' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Exact Search vs ANN Index at Scale"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Exact["🐢 Exact Search (1M vectors)"]
+        E1["Compare all 1M vectors"]
+        E2["⏱️ ~2,000ms latency"]
+        E3["10 servers needed"]
+    end
+    subgraph ANN["⚡ ANN Index (HNSW)"]
+        A1["Navigate index graph"]
+        A2["⏱️ ~5ms latency"]
+        A3["1 server needed"]
+    end
+    style Exact fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style ANN fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -1201,7 +1276,24 @@ In many production systems, a large percentage of queries are repeats or near-du
           title: '5. Cache Query Embeddings - When to Use',
           icon: { name: 'duo-database' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Query Embedding Cache: Hit vs Miss"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["🔍 User Query"] --> C{"Cache Hit?"}
+    C -->|"✅ Yes (repeat query)"| H["Return cached vector"]
+    C -->|"❌ No (new query)"| E["Call Embedding API"]
+    H --> R["⚡ 0ms — skip API"]
+    E --> S["Store in cache"]
+    S --> R2["⏱️ 10–50ms latency"]
+    style H fill:#c8e6c9,color:#000
+    style R fill:#c8e6c9,color:#000
+    style E fill:#ffcdd2,color:#000
+    style C fill:#e3f2fd,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -1447,7 +1539,24 @@ Vector search typically takes 5-50 milliseconds depending on your index size and
           title: '6. Cache Retrieval Results - When to Use',
           icon: { name: 'duo-floppy-disk' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Retrieval Cache: 40% Traffic Savings"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["🔍 User Query"] --> C{"Result in Cache?"}
+    C -->|"✅ Yes (40% of queries)"| H["Return cached chunks"]
+    C -->|"❌ No (60% of queries)"| VS["Vector DB Search"]
+    H --> Skip["⚡ Skip vector search entirely"]
+    VS --> Store["Store result in cache"]
+    Store --> Resp["Return to user"]
+    style H fill:#c8e6c9,color:#000
+    style Skip fill:#c8e6c9,color:#000
+    style VS fill:#ffcdd2,color:#000
+    style C fill:#e3f2fd,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -1695,7 +1804,25 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           title: '7. Re-Ranking - When to Use',
           icon: { name: 'duo-ranking-star' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Two-Stage Retrieval with Lightweight Reranker"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    Q["🔍 Query"] --> VS["Vector Search\nTop-20 results"]
+    VS --> RR["⚡ Reranker\ncross-encoder"]
+    RR --> Top3["🎯 Best 3 results\nhigh precision"]
+    subgraph Tradeoff["Why It Works"]
+        T1["Total latency still <"]
+        T2["fetching Top-20 alone"]
+    end
+    style VS fill:#e3f2fd,color:#000
+    style RR fill:#e1bee7,color:#000
+    style Top3 fill:#c8e6c9,color:#000
+    style Tradeoff fill:#fff9c4,stroke:#f57c00,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -1940,7 +2067,27 @@ In practice, context compression can reduce your context size by 50-80% while pr
           title: '8. Context Compression - When to Use',
           icon: { name: 'duo-compress' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Context Compression: 75% Token Reduction"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Before["Before Compression"]
+        B1["Retrieved: 2,000 tokens"]
+        B2["Background, filler, context..."]
+        B3["✅ Key facts (500 tokens)"]
+    end
+    subgraph After["After Compression"]
+        A1["Compressed: 500 tokens"]
+        A2["✅ Key facts only"]
+        A3["75% cost & latency savings"]
+    end
+    Before -->|"Compress"| After
+    style Before fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style After fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -2188,7 +2335,28 @@ Well-designed parallelization can reduce your overall pipeline latency by 30-50%
           title: '9. Parallelize Retrieval - When to Use',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Parallel vs Sequential Retrieval"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["🔍 Query"] --> PE["Embed Query"]
+    PE --> VS["Vector DB Search"]
+    PE --> KW["BM25 Keyword Search"]
+    VS --> M["Merge Results"]
+    KW --> M
+    M --> LLM["LLM Generation"]
+    subgraph Savings["Time Saved"]
+        S1["Sequential: 100ms + 80ms = 180ms"]
+        S2["Parallel: max(100ms, 80ms) = 100ms"]
+    end
+    style VS fill:#e1bee7,color:#000
+    style KW fill:#e1bee7,color:#000
+    style M fill:#ffd700,color:#000
+    style Savings fill:#c8e6c9,stroke:#388e3c,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -2439,7 +2607,26 @@ Research shows that users perceive streaming responses as 2-3x faster than batch
           title: '10. Streaming - When to Use',
           icon: { name: 'duo-stream' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Streaming vs Batch: Perceived Responsiveness"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    subgraph Batch["❌ No Streaming"]
+        N1["0ms — spinner shown"]
+        N2["...3-5 seconds..."]
+        N3["Full response arrives"]
+    end
+    subgraph Stream["✅ With Streaming"]
+        Y1["~200ms — first token"]
+        Y2["Tokens stream in..."]
+        Y3["Response complete"]
+    end
+    style Batch fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Stream fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -2686,7 +2873,32 @@ Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation l
           title: '11. Smaller LLM - When to Use',
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Large LLM vs Small LLM Tradeoffs"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Large["GPT-4 (Large LLM)"]
+        L1["~20 tokens/sec"]
+        L2["$0.03 per 1K tokens"]
+        L3["High reasoning power"]
+    end
+    subgraph Small["7B Model (Small LLM)"]
+        S1["~100 tokens/sec"]
+        S2["~$0.001 per 1K tokens"]
+        S3["Domain-tunable, fast"]
+    end
+    subgraph UseSmall["✅ Use Small When"]
+        U1["Simple Q&A tasks"]
+        U2["Predictable output format"]
+        U3["Budget or latency critical"]
+    end
+    style Large fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Small fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
+    style UseSmall fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ marginBottom: '20px' }}></div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>

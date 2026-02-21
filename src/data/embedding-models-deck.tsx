@@ -249,7 +249,23 @@ export const embeddingModelsDeck: Deck = {
               </div>
               <div>
                 <GSAPAnimated animation="slideInLeft" duration={0.8} delay={0.1}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="OpenAI Small: Cost vs Control"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A["📝 1M Tokens"] --> B{"Embed where?"}
+    B -->|"☁️ OpenAI API"| C["$0.02<br/>Stable + fast"]
+    B -->|"🖥️ Self-Host"| D["GPU + Ops<br/>Higher upfront cost"]
+    C --> E["✅ Best value<br/>for most teams"]
+    D --> F["Full control<br/>data on-prem"]
+    style C fill:#c8e6c9,stroke:#4caf50,color:#000
+    style D fill:#e3f2fd,stroke:#1976d2,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#4fc3f7,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -384,7 +400,27 @@ What are the trade-offs? Let's evaluate strengths and weaknesses!`
               </div>
               <div>
                 <GSAPAnimated animation="slideInRight" duration={0.8} delay={0.1}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="OpenAI Large: Quality vs Cost Tradeoff"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Sm["Small: $0.02/1M"]
+        S["1536 dims — Good quality"]
+    end
+    subgraph Lg["Large: $0.13/1M ⭐"]
+        L["3072 dims — Top accuracy"]
+    end
+    Q["Your Query"] --> Sm
+    Q --> Lg
+    Sm -->|"✅ Budget apps"| R1["Cost-effective"]
+    Lg -->|"✅ Mission-critical"| R2["Max precision"]
+    style Lg fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
+    style Sm fill:#e3f2fd,stroke:#1976d2,color:#000
+    style R2 fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -522,7 +558,23 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="slideInLeft" duration={0.8} delay={0.1}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="BGE Base: Self-Hosting Pipeline"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A["📄 Private Docs"] --> B["BGE-Base<br/>768-dim<br/>Self-hosted"]
+    B --> C["Local Vector DB"]
+    C --> D["🔒 Data stays<br/>on-prem"]
+    B -->|"✅ No API cost"| E["$0 per query"]
+    B -->|"✅ MTEB top-20"| F["Competitive quality"]
+    style B fill:#4fc3f7,stroke:#1976d2,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -649,7 +701,25 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="slideInTop" duration={0.7} delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="BGE Large: SOTA Open-Source Performance"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Open["🏆 Open-Source Leaderboard"]
+        A["BGE-Large ⭐ Top rank"]
+        B["E5-Large"]
+        C["GTE-Large"]
+    end
+    A --> D["MTEB top-5\nopen-source"]
+    A --> E["C-MTEB\ncross-lingual"]
+    D --> F["✅ Near-commercial\nquality — $0 API"]
+    style A fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
+    style F fill:#81c784,color:#000
+    style Open fill:#f5f5f5,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -776,7 +846,22 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="rotateIn" duration={0.8} delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="E5 Base: Multilingual Zero-Shot Retrieval"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A["query: What is ML?"] --> B["E5-Base<br/>768-dim"]
+    C["passage: ML is..."] --> B
+    D["passage: 机器学习是..."] --> B
+    B --> E["✅ Zero-shot\nNo fine-tuning needed"]
+    B --> F["🌍 ~100 languages\nvia multilingual-e5"]
+    style B fill:#4fc3f7,stroke:#1976d2,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -904,7 +989,27 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="scaleIn" duration={0.8} delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="E5 Large: Base vs Large Comparison"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Base["E5-Base: 768-dim"]
+        B1["Lighter & faster"]
+        B2["MTEB: good"]
+    end
+    subgraph Lg["E5-Large: 1024-dim ⭐"]
+        L1["Higher quality"]
+        L2["BEIR/MTEB: strong"]
+        L3["Multilingual variants"]
+    end
+    Q["Your Use Case"] -->|"Speed priority"| Base
+    Q -->|"Quality priority"| Lg
+    style Lg fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
+    style Base fill:#e3f2fd,stroke:#1976d2,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -1033,7 +1138,23 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="slideInTop" duration={0.8} delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Instructor XL: Task-Aware Embedding"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    T1["Represent for retrieval"] --> B["Instructor-XL<br/>768-dim"]
+    T2["Represent for sentiment"] --> B
+    T3["Represent for clustering"] --> B
+    D["📄 Same Text"] --> B
+    B --> E["✅ Task-specific<br/>embeddings"]
+    B --> F["✅ No fine-tuning<br/>needed"]
+    style B fill:#e1bee7,stroke:#7b1fa2,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -1161,7 +1282,22 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="GTE Base: Lightweight Deployment"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📄 Docs"] --> B["GTE-Base<br/>768-dim"]
+    B --> C{"Deploy?"}
+    C -->|"CPU ✅"| D["Works fine\nlow memory"]
+    C -->|"GPU ✅"| E["Fast & scalable"]
+    D --> F["Easy integration\nPinecone/Weaviate/Qdrant"]
+    E --> F
+    style B fill:#4fc3f7,stroke:#1976d2,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>
@@ -1289,7 +1425,21 @@ What are the strengths and weaknesses? Let's break it down!`
               </div>
               <div>
                 <GSAPAnimated animation="bounceIn" duration={0.9} delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="GTE Large: Quality/Efficiency Balance"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A["GTE-Large<br/>1024-dim ⭐"] --> B["Strong MTEB scores"]
+    A --> C["Efficient inference\nvs. commercial APIs"]
+    A --> D["Pinecone ✅\nWeaviate ✅\nQdrant ✅\nMilvus ✅"]
+    B --> E["✅ High quality\nself-hosted"]
+    style A fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
+    style E fill:#81c784,color:#000
+    style D fill:#e3f2fd,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                       <strong>Strengths:</strong></p>

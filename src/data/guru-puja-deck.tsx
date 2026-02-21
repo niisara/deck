@@ -1,5 +1,6 @@
 import type { Deck } from './types';
 import { GSAPAnimated } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const guruPujaDeck: Deck = {
   id: 'guru-puja',
@@ -91,7 +92,32 @@ Whether pure or impure, or in whatever condition one may be, one who remembers t
           center: true,
           title: '',
           content: (
-            <div>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Guru Lineage — Part 1"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🌊 Nārāyaṇa\n(Vishnu)"] --> B["🪷 Padmabhava\n(Brahma)"]
+    B --> C["🌿 Vasiṣṭha"]
+    C --> D["⚡ Śakti"]
+    D --> E["📜 Parāśara\n(Śakti's son)"]
+    E --> F["📚 Vyāsa"]
+    F --> G["🕊️ Śuka"]
+    G --> H["🧘 Gauḍapāda"]
+    H --> I["🌟 Govinda Yogīndra"]
+
+    style A fill:#e3f2fd,stroke:#1976d2,color:#000
+    style B fill:#e3f2fd,stroke:#1976d2,color:#000
+    style C fill:#e8f5e9,stroke:#388e3c,color:#000
+    style D fill:#e8f5e9,stroke:#388e3c,color:#000
+    style E fill:#e8f5e9,stroke:#388e3c,color:#000
+    style F fill:#fff9c4,stroke:#f57c00,color:#000
+    style G fill:#fff9c4,stroke:#f57c00,color:#000
+    style H fill:#f3e5f5,stroke:#7b1fa2,color:#000
+    style I fill:#ffd700,stroke:#b8860b,color:#000`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" duration={1.5} delay={0.3}>
                 <p style={{ fontSize: '1.2em', color: '#d4a017', fontWeight: 600, marginBottom: '0.6em' }}>
                   Avahanam
@@ -122,14 +148,42 @@ I salute Narayana, the lotus-born Brahma, Vasishta, Shakti and his son Parashara
           center: true,
           title: '',
           content: (
-            <GSAPAnimated animation="fadeIn" duration={1.8} delay={0.5}>
-              <p style={{ fontSize: '1.3em', fontStyle: 'italic', lineHeight: 1.8, color: '#e8d5a3' }}>
-                Śrī Śaṅkarācāryam athāsya Padma<br/>
-                pādaṁ ca Hastāmalakaṁ ca śiṣyam<br/>
-                Taṁ Troṭakaṁ Vārtikakāram anyān<br/>
-                asmad gurūn santatam ānato'smi
-              </p>
-            </GSAPAnimated>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Guru Lineage — Part 2: Shankaracharya & Disciples"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    G["🌟 Govinda Yogīndra"] --> S["🧘 Śrī Śaṅkarācārya"]
+    subgraph Disciples["Four Pillars — Direct Disciples of Śaṅkara"]
+        P["🪷 Padmapāda\n(lotus-footed)"]
+        H["🤲 Hastāmalaka"]
+        T["🎵 Troṭaka"]
+        V["📜 Vārtikakāra"]
+    end
+    S --> P
+    S --> H
+    S --> T
+    S --> V
+
+    style G fill:#ffd700,stroke:#b8860b,color:#000
+    style S fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
+    style Disciples fill:#f5f5f5,stroke:#9e9e9e,color:#000
+    style P fill:#e8f5e9,stroke:#388e3c,color:#000
+    style H fill:#e8f5e9,stroke:#388e3c,color:#000
+    style T fill:#e8f5e9,stroke:#388e3c,color:#000
+    style V fill:#e8f5e9,stroke:#388e3c,color:#000`}
+                />
+              </div>
+              <GSAPAnimated animation="fadeIn" duration={1.8} delay={0.5}>
+                <p style={{ fontSize: '1.3em', fontStyle: 'italic', lineHeight: 1.8, color: '#e8d5a3' }}>
+                  Śrī Śaṅkarācāryam athāsya Padma<br/>
+                  pādaṁ ca Hastāmalakaṁ ca śiṣyam<br/>
+                  Taṁ Troṭakaṁ Vārtikakāram anyān<br/>
+                  asmad gurūn santatam ānato'smi
+                </p>
+              </GSAPAnimated>
+            </div>
           ),
           backgroundColor: '#1a1008',
           notes: `
@@ -266,7 +320,26 @@ The one capable of dispelling the dense clouds of worldly ignorance, Sri Shankar
           center: true,
           title: '',
           content: (
-            <div>
+            <div style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="The Guru as All Three — Trinity & Supreme"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    G["🙏 The GURU"] --> B["🌺 Brahmā\n(Creator)"]
+    G --> V["🔵 Viṣṇu\n(Preserver)"]
+    G --> S["🔥 Maheśvara\n(Destroyer)"]
+    B --> P["☀️ Paraṁ Brahma\n(Supreme Reality)"]
+    V --> P
+    S --> P
+
+    style G fill:#ffd700,stroke:#b8860b,stroke-width:3px,color:#000
+    style B fill:#e3f2fd,stroke:#1976d2,color:#000
+    style V fill:#e8f5e9,stroke:#388e3c,color:#000
+    style S fill:#ffcdd2,stroke:#c62828,color:#000
+    style P fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000`}
+                />
+              </div>
               <GSAPAnimated animation="fadeIn" duration={1.5} delay={0.3}>
                 <p style={{ fontSize: '1.2em', color: '#d4a017', fontWeight: 600, marginBottom: '0.6em' }}>
                   Pushpanjalim

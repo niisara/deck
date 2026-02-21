@@ -1,6 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { GSAPAnimated } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const multiStepRetrievalDeck: Deck = {
   id: 'multi-step-retrieval-deck',
@@ -270,7 +271,29 @@ Let's begin with our first strategy.`
                   <p><strong>How It Works:</strong> Alternate between drafting, spotting gaps, reformulating queries, and re-retrieving to refine answers</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Ambiguous questions, sparse corpora, long-form synthesis, exploratory Q&A</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Iterative Retrieve-and-Refine: Loop Example"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🔍 User Query"] --> B["Initial Retrieval"]
+    B --> C["📝 Draft Partial Answer"]
+    C --> D["❓ Identify Gaps"]
+    D --> E["🔄 Reformulate Queries"]
+    E --> F["Re-retrieve Evidence"]
+    F --> G{"Stop Criteria?"}
+    G -->|"No — gaps remain"| C
+    G -->|"Yes — confident"| H["✅ Final Answer"]
+    style A fill:#4fc3f7,color:#000
+    style H fill:#81c784,color:#000
+    style G fill:#fff9c4,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Ambiguous questions, sparse corpora, long-form synthesis, exploratory Q&A</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -413,7 +436,25 @@ With that understanding of our first strategy, let's move on to our second techn
                   <p><strong>How It Works:</strong> Generate a hypothetical passage from the query; embed it to retrieve similar real documents</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Short queries, niche domains, low-recall vector stores, lexical mismatch</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="HyDE: Hypothetical Document Flow"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["❓ Short Query\n'What causes inflation?'"] --> B["🤖 Generate\nHypothetical Doc"]
+    B --> C["📐 Embed\nSynthetic Doc"]
+    C --> D["🔍 kNN Retrieval\nvs. Real Corpus"]
+    D --> E["📄 Real Docs\n(discard hypothetical)"]
+    E --> F["✅ Final Answer"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style E fill:#c8e6c9,color:#000
+    style F fill:#81c784,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Short queries, niche domains, low-recall vector stores, lexical mismatch</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -557,7 +598,29 @@ Now let's move on to our third strategy, Query Decomposition, which takes yet an
                   <p><strong>How It Works:</strong> Plan sub-queries, retrieve per sub-query, then synthesize results into comprehensive answer</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Multi-fact or multi-source questions, procedural tasks, comprehensive reports</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Query Decomposition: Divide & Conquer"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🧩 Complex Query"] --> B["📋 Decompose"]
+    B --> C["Sub-Q 1\nDeploy infra?"]
+    B --> D["Sub-Q 2\nSerialize model?"]
+    B --> E["Sub-Q 3\nMonitor perf?"]
+    C --> F["Retrieve & Answer"]
+    D --> G["Retrieve & Answer"]
+    E --> H["Retrieve & Answer"]
+    F --> I["✅ Synthesize\nFinal Answer"]
+    G --> I
+    H --> I
+    style A fill:#4fc3f7,color:#000
+    style I fill:#81c784,color:#000
+    style B fill:#e1bee7,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Multi-fact or multi-source questions, procedural tasks, comprehensive reports</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -709,7 +772,29 @@ Now let's move on to Chain-of-Thought Guided Retrieval, which takes a similar bu
                   <p><strong>How It Works:</strong> Generate a CoT skeleton; extract entities/relations per step; retrieve targeted snippets</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Reasoning-heavy tasks where targeted facts matter (analysis, calculations with context)</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Chain-of-Thought Guided Retrieval: Step-Aligned Evidence"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Question"] --> B["🧠 CoT Skeleton\n(no answer yet)"]
+    B --> C["Step 1:\nExtract cues"]
+    B --> D["Step 2:\nExtract cues"]
+    B --> E["Step 3:\nExtract cues"]
+    C --> F["🔍 Retrieve\nfor Step 1"]
+    D --> G["🔍 Retrieve\nfor Step 2"]
+    E --> H["🔍 Retrieve\nfor Step 3"]
+    F --> I["✅ Final Answer\n(step-aligned evidence)"]
+    G --> I
+    H --> I
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style I fill:#81c784,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Reasoning-heavy tasks where targeted facts matter (analysis, calculations with context)</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -854,7 +939,25 @@ Now let's move to our fifth strategy, Step-Back Reasoning, which takes a differe
                   <p><strong>How It Works:</strong> Ask a meta-question (what is the core concept?), retrieve summaries, then drill down</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Overly specific/noisy queries, concept-heavy topics, when direct retrieval fails</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Step-Back Reasoning: Zoom Out Then Zoom In"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🔎 Specific Query\n'Why does useState\ncause re-renders?'"] --> B["⬆️ Step-Back Question\n'How does React's\nrendering cycle work?'"]
+    B --> C["📚 Retrieve\nHigh-Level Context"]
+    C --> D["🎯 Reformulate\nPrecise Query"]
+    D --> E["🔍 Retrieve\nSpecific Evidence"]
+    E --> F["✅ Final Answer"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#e3f2fd,color:#000
+    style F fill:#81c784,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Overly specific/noisy queries, concept-heavy topics, when direct retrieval fails</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -995,7 +1098,26 @@ Now let's move to our sixth strategy, Multi-Hop Graph Traversal, which takes a c
                   <p><strong>How It Works:</strong> Build or infer a graph (entities/relations) and traverse hops to collect supporting docs</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Relational questions, cause-effect chains, linking distant facts</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Multi-Hop Graph Traversal: Following Entity Paths"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🌱 Seed Entity\n'Person A'"] -->|"Hop 1"| B["🔗 Relation:\nworked_at"]
+    B --> C["🏢 Entity:\nCompany X"]
+    C -->|"Hop 2"| D["🔗 Relation:\nacquired_by"]
+    D --> E["🏦 Entity:\nCompany Y"]
+    E --> F["📄 Gather Docs\nper Hop"]
+    F --> G["✅ Answer:\nHow is A connected\nto Company Y?"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#e1bee7,color:#000
+    style E fill:#c8e6c9,color:#000
+    style G fill:#81c784,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Relational questions, cause-effect chains, linking distant facts</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -1131,7 +1253,27 @@ Now let's move to our seventh strategy, Context-Summarize-and-Retrieve, which ta
                   <p><strong>How It Works:</strong> Summarize conversation/state; use summary to query for fresh, relevant evidence</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Long sessions, iterative research, limited context window</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Context-Summarize-and-Retrieve: Rolling Summary Loop"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📚 Accumulated\nContext (long)"] --> B["✂️ Summarize\n(salient facts +\nopen questions)"]
+    B --> C["🔑 Extract Key\nTerms & Gaps"]
+    C --> D["🔍 Retrieve\nNew Evidence"]
+    D --> E["🔄 Update\nSummary"]
+    E --> F{"More\nneeded?"}
+    F -->|"Yes"| B
+    F -->|"No"| G["✅ Final Answer\n(within token budget)"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000
+    style F fill:#fff9c4,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Long sessions, iterative research, limited context window</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -1272,7 +1414,30 @@ Now let's look at our eighth strategy, Answer-Conditioned Re-Retrieval, which us
                   <p><strong>How It Works:</strong> Draft answer → extract claims → retrieve per claim → revise and cite</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Fact-checking, citations, high-stakes outputs, audits</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Answer-Conditioned Re-Retrieval: Claim Verification"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🤖 Generate\nProvisional Answer"] --> B["🔬 Extract\nAtomic Claims"]
+    B --> C["Claim 1:\nFact X"]
+    B --> D["Claim 2:\nFact Y"]
+    B --> E["Claim 3:\nFact Z"]
+    C --> F["🔍 Retrieve\nEvidence"]
+    D --> G["🔍 Retrieve\nEvidence"]
+    E --> H["🔍 Retrieve\nEvidence"]
+    F --> I{"✓ Supported?\n✗ Contradicted?"}
+    G --> I
+    H --> I
+    I --> J["📝 Revise & Cite\n(or flag uncertain)"]
+    style A fill:#4fc3f7,color:#000
+    style J fill:#81c784,color:#000
+    style I fill:#fff9c4,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Fact-checking, citations, high-stakes outputs, audits</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>
@@ -1410,7 +1575,27 @@ Now let's move to our final strategy, Feedback-Based Retrieval Loop, which uses 
                   <p><strong>How It Works:</strong> Collect relevance feedback (explicit or implicit), update queries/weights, re-retrieve</p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="fadeIn" delay={0.6}>
-                  <p><strong>When to Use:</strong> Interactive systems, personalization, cold-start or dynamic corpora</p>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Feedback-Based Retrieval Loop: Learning from Signals"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Initial\nRetrieval"] --> B["📊 Present\nResults"]
+    B --> C["👍👎 Collect\nFeedback\n(clicks, votes,\ndwell time)"]
+    C --> D["⚙️ Update\nStrategy\n(weights, reranking)"]
+    D --> E["🔍 Re-retrieve\nwith new strategy"]
+    E --> F{"Satisfied?"}
+    F -->|"No"| B
+    F -->|"Yes"| G["💾 Store\nPreferences"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#fff9c4,color:#000
+    style G fill:#81c784,color:#000
+    style D fill:#e1bee7,color:#000`}
+                      />
+                    </div>
+                    <p><strong>When to Use:</strong> Interactive systems, personalization, cold-start or dynamic corpora</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.8}>
                   <div style={{ marginTop: '20px' }}>

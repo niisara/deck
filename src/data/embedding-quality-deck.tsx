@@ -130,20 +130,20 @@ export const embeddingQualityDeck: Deck = {
                     <span style={{ fontSize: '1.2rem' }}>Reduce textual variability so the same concepts map to similar tokens.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Text Normalization Pipeline"
-                          diagram={`flowchart LR
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Text Normalization Pipeline"
+                        diagram={`flowchart LR
     A["📄 Raw Text"] --> B["🔤 Unicode Normalization"]
     B --> C["✂️ Whitespace & Punctuation"]
     C --> D["✨ Clean Output"]
     style A fill:#ffcdd2,color:#000
     style D fill:#81c784,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Apply unicode normalization, consistent casing, whitespace and punctuation fixes to standardize input.</span>
                     </p>
                   </div>
@@ -266,13 +266,11 @@ And you eliminate **encoding and scraping artifacts**. No more weird characters 
                     <span style={{ fontSize: '1.2rem' }}>Eliminate non-content text that dilutes embeddings.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Boilerplate Removal Process"
-                          diagram={`flowchart TB
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Boilerplate Removal Process"
+                        diagram={`flowchart TB
     A["📰 Document"] --> B{"🔍 Identify Content"}
     B -->|Keep| C["📝 Main Content"]
     B -->|Remove| D["🗑️ Headers/Footers/Nav"]
@@ -280,8 +278,10 @@ And you eliminate **encoding and scraping artifacts**. No more weird characters 
     style A fill:#ffcdd2,color:#000
     style D fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Detect and strip headers/footers, nav, ads, cookie banners, email signatures, legal footers.</span>
                     </p>
                   </div>
@@ -406,21 +406,21 @@ You also get a **smaller index size**. If you're removing eighty percent noise f
                     <span style={{ fontSize: '1.2rem' }}>Split documents into coherent units that answer a question on their own.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Semantic Chunking Strategy"
-                          diagram={`flowchart TB
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Semantic Chunking Strategy"
+                        diagram={`flowchart TB
     A["📄 Long Document"] --> B["📐 Structure Analysis"]
     B --> C["📑 Split at Boundaries"]
     C --> D["🔗 Add Overlap"]
     D --> E["✨ Coherent Chunks"]
     style A fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Use structure and similarity to set chunk boundaries and optional overlaps.</span>
                     </p>
                   </div>
@@ -544,13 +544,11 @@ Third, **use similarity to refine your chunks**. Within a section, you might hav
                     <span style={{ fontSize: '1.2rem' }}>Provide context and disambiguation for each chunk.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Section Title Hierarchy Flow"
-                          diagram={`flowchart TB
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Section Title Hierarchy Flow"
+                        diagram={`flowchart TB
     A["📚 Document Structure"] --> B["🔍 Extract Hierarchy"]
     B --> C["📋 Doc Title > H1 > H2 > H3"]
     C --> D["🏷️ Build Breadcrumb"]
@@ -559,8 +557,10 @@ Third, **use similarity to refine your chunks**. Within a section, you might hav
     style A fill:#ffcdd2,color:#000
     style F fill:#81c784,color:#000
     style D fill:#4fc3f7,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Prepend/bundle the document title and heading path with the chunk text/metadata.</span>
                     </p>
                   </div>
@@ -690,13 +690,11 @@ Second, **build a concise chunk title**. You might not need the full breadcrumb 
                     <span style={{ fontSize: '1.2rem' }}>Reduce filler tokens while preserving meaning and negation.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Stopword Filtering Process"
-                          diagram={`flowchart TB
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Stopword Filtering Process"
+                        diagram={`flowchart TB
     A["📝 Original Text"] --> B{"🔍 Token Analysis"}
     B -->|Keep| C["💎 Content Words"]
     B -->|Remove| D["🗑️ Filler Words"]
@@ -706,8 +704,10 @@ Second, **build a concise chunk title**. You might not need the full breadcrumb 
     style D fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000
     style F fill:#4fc3f7,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Remove a conservative set of high-frequency function words outside code/data.</span>
                     </p>
                   </div>
@@ -837,13 +837,11 @@ You also get **faster indexing**. Fewer tokens means less processing time when g
                     <span style={{ fontSize: '1.2rem' }}>Enrich chunks with facetable concepts for better filtering and recall.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Keyphrase Extraction and Tagging"
-                          diagram={`flowchart TB
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Keyphrase Extraction and Tagging"
+                        diagram={`flowchart TB
     A["📝 Chunk Text"] --> B["🔍 Extract Keyphrases"]
     B --> C["🔄 Normalize & Dedupe"]
     C --> D["📚 Map to Vocabulary"]
@@ -852,8 +850,10 @@ You also get **faster indexing**. Fewer tokens means less processing time when g
     style A fill:#ffcdd2,color:#000
     style F fill:#81c784,color:#000
     style D fill:#4fc3f7,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Extract keyphrases and map to a controlled vocabulary; store as metadata fields.</span>
                     </p>
                   </div>
@@ -982,13 +982,11 @@ The other major challenge is **taxonomy maintenance**. Over time, your vocabular
                     <span style={{ fontSize: '1.2rem' }}>Preserve relational information in a model-friendly linear form.</span></p>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ marginTop: '20px' }}>
-                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <strong>
-                        How It Works
-                        <MermaidPopover
-                          title="Table to Text Conversion"
-                          diagram={`flowchart TB
+                  <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Table to Text Conversion"
+                        diagram={`flowchart TB
     A["📊 Table"] --> B["🔍 Parse Structure"]
     B --> C["📋 Extract Schema"]
     C --> D["🔄 Linearize Rows"]
@@ -997,8 +995,10 @@ The other major challenge is **taxonomy maintenance**. Over time, your vocabular
     style A fill:#ffcdd2,color:#000
     style F fill:#81c784,color:#000
     style E fill:#4fc3f7,color:#000`}
-                        />
-                      </strong>
+                      />
+                    </div>
+                    <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <strong>How It Works</strong>
                       <span style={{ fontSize: '1.2rem' }}>Linearize rows/columns into key–value sentences or compact JSON-like strings.</span>
                     </p>
                   </div>

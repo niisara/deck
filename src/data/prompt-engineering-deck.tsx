@@ -1,6 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const promptEngineeringDeck: Deck = {
   id: 'prompt-engineering-deck',
@@ -232,7 +233,24 @@ Use zero-shot when you need *quick results* for well-known tasks like summarizat
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="bounceIn" delay={1.0}>
-                <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Email Triage: Zero-shot Classification"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📧 Incoming Email"] --> B{"Classify"}
+    B -->|"Action in 24h"| C["🔴 Urgent"]
+    B -->|"Action in 1 week"| D["🟡 Normal"]
+    B -->|"Informational only"| E["🟢 Low"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#ffcdd2,color:#000
+    style D fill:#fff9c4,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -395,7 +413,26 @@ Few-shot sits in a perfect middle ground — it's more powerful than zero-shot b
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="bounceIn" delay={1.0}>
-                <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Few-shot: Pattern Learning from Examples"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph Examples["📚 2-5 Examples"]
+        E1["Input 1 → Output 1"]
+        E2["Input 2 → Output 2"]
+        E3["Input 3 → Output 3"]
+    end
+    Examples --> B["🤖 LLM\nLearns Pattern"]
+    B --> C["✅ New Input →\nStyle-Consistent Output"]
+    style Examples fill:#e3f2fd,stroke:#1976d2,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -563,7 +600,24 @@ Beyond accuracy, CoT gives you **transparency**. You can see *how* the model arr
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.0}>
-                <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="CoT: Finance Approval Step-by-Step"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["💰 Base Cost: $10,000"] --> B["+ Tax 8%: $800"]
+    B --> C["- Volume Discount 15%: -$1,500"]
+    C --> D["= Net Cost: $9,300"]
+    D --> E["Annual Savings: $15,000"]
+    E --> F["✅ ROI: 161% → Approve"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#fff9c4,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -731,7 +785,22 @@ Meta prompting works because modern LLMs have learned countless schemas, formats
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.0}>
-                <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Meta Prompting: Schema-Driven Incident Report"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📋 Raw Incident\nInput"] --> B["📐 Schema Spec\n{severity, category,\nresolution_steps}"]
+    B --> C["🤖 LLM Formats\nto Schema"]
+    C --> D["✅ Structured JSON\nConsistent Across Teams"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#fff9c4,color:#000
+    style D fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -901,7 +970,28 @@ Self-consistency gives you two major benefits: **higher accuracy** through error
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.0}>
-                <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Self-Consistency: Majority Voting on Math"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ 12 × 15 = ?"] --> B["Path 1: 12×10+12×5=180 ✓"]
+    A --> C["Path 2: 15×12=180 ✓"]
+    A --> D["Path 3: 15×12=185 ✗"]
+    B --> E["🗳️ Vote: 180 wins 2-1"]
+    C --> E
+    D --> F["Vote: 185 minority"]
+    E --> G["✅ Final Answer: 180"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#c8e6c9,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#ffcdd2,color:#000
+    style G fill:#ffd700,color:#000`}
+                    />
+                  </div>
+                  <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -1066,7 +1156,24 @@ Generate Knowledge provides **explicit grounding** for the answer. Instead of th
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="bounceIn" delay={1.0}>
-                <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Generate Knowledge: Medical Triage Two-Stage"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🤒 Symptoms:\nHeadache + Fever + Stiff Neck"] --> B["Stage 1: Generate Facts"]
+    B --> C["Fact: Can indicate meningitis\nFact: Risk: college dorms\nFact: Risk: recent illness"]
+    C --> D["Stage 2: Answer with Facts"]
+    D --> E["⚠️ Seek emergency\ncare immediately"]
+    style A fill:#ffcdd2,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#e3f2fd,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -1234,7 +1341,25 @@ Prompt chaining makes systems **maintainable and debuggable**. When something go
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.0}>
-                <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Prompt Chaining: Legal Brief Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📄 Case\nDocuments"] --> B["🔍 Stage 1\nExtract\nCase Law"]
+    B --> C["📝 Stage 2\nSummarize\nRelevance"]
+    C --> D["🏗️ Stage 3\nPlan Argument\nStructure"]
+    D --> E["⚖️ Stage 4\nDraft Polished\nLegal Writing"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -1405,7 +1530,27 @@ Unlike techniques that follow a single line of reasoning, Tree of Thoughts creat
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="bounceIn" delay={0.9}>
-                <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Tree of Thoughts: Product Roadmap Exploration"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🎯 Product Decision"] --> B["Feature X First\n(sure ✓)"]
+    A --> C["Feature Y First\n(maybe ~)"]
+    A --> D["Both Together\n(impossible ✗)"]
+    B --> E["Market: +30%\nEngineering: 6mo"]
+    C --> F["Market: +15%\nEngineering: 3mo"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#c8e6c9,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000`}
+                    />
+                  </div>
+                  <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -1597,7 +1742,25 @@ RAG shines when you need **fresh knowledge** (news, updates), **long-tail inform
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.0}>
-                <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="RAG: Enterprise Policy Assistant Pipeline"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["❓ Query:\nParental leave?"] --> B["🔢 Embed\nQuery"]
+    B --> C["🔍 Vector Search\nInternal PDFs"]
+    C --> D["📄 Retrieved:\n[1] Sec 7.3\n[2] HR Policy"]
+    D --> E["🤖 LLM Answer\n+ Cite Sources"]
+    E --> F["✅ 16 weeks paid\n[Source: Sec 7.3]"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#e3f2fd,color:#000
+    style D fill:#fff9c4,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -1786,7 +1949,27 @@ Before ART, we had to hardcode: "Step 1: search this. Step 2: calculate that." A
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="bounceIn" delay={1.2}>
-                <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ART: Tokyo Research — Automatic Tool Use"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Tokyo population\ndensity?"] --> B["Plan: Need pop\n+ area, then calc"]
+    B --> C["SEARCH: Tokyo population\n→ ~14M"]
+    C --> D["SEARCH: Tokyo area\n→ 2,194 km²"]
+    D --> E["CALC: 14M ÷ 2,194\n→ 6,380/km²"]
+    E --> F["✅ 6,380 people/km²"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#fff9c4,color:#000
+    style E fill:#e3f2fd,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -2012,7 +2195,24 @@ When does APE shine? When you need consistency at scale, when you're tackling a 
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={1.0}>
-                <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="APE: Customer Service Prompt Tournament"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📧 10k Historical\nSupport Tickets"] --> B["🤖 Generate 50\nPrompt Candidates"]
+    B --> C["🧪 Test Each on\n500 Validation Tickets"]
+    C --> D["📊 Rank by\nAccuracy Score"]
+    D --> E["✅ Best Prompt:\n23% less misrouting"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -2187,8 +2387,27 @@ The efficiency gain is huge: you're focusing your expensive human annotation tim
                 <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop and human annotators</p>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.1}>
-                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-                <p>Math word-problem tutor adapting to student cohorts.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Active-Prompt: Uncertainty-Driven Annotation"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📚 Word Problems\nPool"] --> B["Generate k=5\nCoT Solutions Each"]
+    B --> C{"Measure\nDisagreement?"}
+    C -->|"High: 5 diff answers"| D["🎯 Uncertain!\nSend to Human Expert"]
+    C -->|"Low: all agree"| E["✓ Skip: Model\nAlready Knows"]
+    D --> F["Annotate Correct\nCoT Reasoning"]
+    F --> G["📥 Update Exemplar Set"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#c8e6c9,color:#000
+    style G fill:#81c784,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+                  <p>Math word-problem tutor adapting to student cohorts.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -2377,7 +2596,26 @@ You get **guided outputs** aligned to specific perspectives without retraining y
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.7}>
-                <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="DSP: Two-Model Architecture for Compliance Summaries"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📝 Meeting\nTranscript"] --> B["🤖 Policy Model\n(small, tuned)"]
+    B --> C["💡 Stimulus:\nFocus on deadlines,\nblockers, budget"]
+    A --> D["🧠 Main LLM\n(large, frozen)"]
+    C --> D
+    D --> E["✅ Compliance Summary\nwith required emphasis"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -2584,7 +2822,25 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInBottom" delay={1.9}>
-                <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="PAL: Coin Change via Code Generation & Execution"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Min coins for 47¢\nDenominations: 1,4,6"] --> B["🤖 LLM Generates\nPython Code"]
+    B --> C["def min_coins(amount):\n  dp=[inf]*(amount+1)\n  dp[0]=0\n  ...return dp[47]"]
+    C --> D["⚡ Python Executor\n(sandboxed)"]
+    D --> E["✅ Exact Answer: 9 coins\n(6+6+6+6+6+6+6+1+1)"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -2712,7 +2968,28 @@ ReAct shines in **knowledge-intensive tasks** where the model needs to look thin
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={1.7}>
-                <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ReAct: Shopping Agent Think-Act-Observe Loop"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🛒 Find best laptop\nunder $1000"] --> B["Think:\nSearch for options"]
+    B --> C["Act:\nSearch laptops"]
+    C --> D["Observe:\n3 matches found"]
+    D --> E["Think:\nCheck #1 specs"]
+    E --> F["Act:\nLookup specs"]
+    F --> G["Observe:\n16GB RAM, 1TB ✓"]
+    G --> H["✅ Recommend\nwith justification"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#e3f2fd,color:#000
+    style H fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -2901,7 +3178,27 @@ This is particularly powerful for tasks where you need to iterate - like writing
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={2.2}>
-                <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Reflexion: Coding Agent Self-Improvement Loop"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🔧 Task: Fix Bug"] --> B["Attempt 1:\nWrite Code"]
+    B --> C{"Tests?"}
+    C -->|"3 FAIL"| D["Critique:\nMissed null check,\nWrong type assumption"]
+    D --> E["Attempt 2:\nImproved Code"]
+    E --> F{"Tests?"}
+    F -->|"ALL PASS ✓"| G["✅ Solution\nDeployed"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#fff9c4,color:#000
+    style D fill:#ffcdd2,color:#000
+    style F fill:#fff9c4,color:#000
+    style G fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -3060,8 +3357,27 @@ This technique is a game-changer for any problem where *seeing* the data is just
                 <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={1.2}>
-                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-                <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Multimodal CoT: Circuit Diagram Reasoning"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🖼️ Circuit Diagram\nImage"] --> C["Cross-Modal\nReasoning"]
+    B["📝 Question:\nOutput voltage?"] --> C
+    C --> D["Observe: 24V source,\nR1=100Ω, R2=100Ω\nvoltage divider config"]
+    D --> E["Relate: Equal resistors\n→ voltage divider formula"]
+    E --> F["Reason: 24V × 100/(100+100)"]
+    F --> G["✅ Answer: 12V output"]
+    style A fill:#e3f2fd,color:#000
+    style B fill:#fff9c4,color:#000
+    style D fill:#e1bee7,color:#000
+    style G fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+                  <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),
@@ -3296,7 +3612,25 @@ This is incredibly powerful for questions like "How is Company A connected to Pe
                 <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={1.7}>
-                <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Graph Prompting: Due-Diligence Ownership Tracing"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📄 SEC Filings\nPress Releases"] --> B["Extract:\nEntities & Relations"]
+    B --> C["🗂️ Knowledge Graph:\nCorp A→owns→Holding B\nPerson X→CEO→Corp A"]
+    C --> D["❓ Query: Who\ncontrols Corp A?"]
+    D --> E["Multi-hop:\nPerson X→CEO→Corp A\n→owned by→Holding B"]
+    E --> F["✅ Beneficial owner:\nPerson X via Holding B"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#e3f2fd,color:#000
+    style E fill:#fff9c4,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
+                  <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
+                </div>
               </GSAPAnimated>
             </div>
           ),

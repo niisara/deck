@@ -189,10 +189,8 @@ export const sentimentAnalysisDeck: Deck = {
               <div style={{ gap: '30px', fontSize: '0.85em' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Lexicon-Based Process"
                           diagram={`flowchart LR
@@ -202,6 +200,10 @@ export const sentimentAnalysisDeck: Deck = {
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#b4fff0' }}>No labels; optional domain lexicon curation</p>
                     </div>
@@ -354,10 +356,8 @@ It requires zero training, runs extremely fast, and you can understand every dec
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Rule-Based Process"
                           diagram={`flowchart LR
@@ -368,6 +368,10 @@ It requires zero training, runs extremely fast, and you can understand every dec
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#eab9ff' }}>No labels, but significant rule engineering</p>
                     </div>
@@ -537,10 +541,8 @@ Let's move on to machine learning approaches that can learn patterns from data r
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Bag-of-Words + Logistic Regression"
                           diagram={`flowchart LR
@@ -551,6 +553,10 @@ Let's move on to machine learning approaches that can learn patterns from data r
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#f76ed5' }}>Small–moderate labeled set (~1k–50k)</p>
                     </div>
@@ -731,10 +737,8 @@ But when you need to understand context, handle complex language patterns, or sq
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="TF-IDF + SVM Process"
                           diagram={`flowchart LR
@@ -745,6 +749,10 @@ But when you need to understand context, handle complex language patterns, or sq
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#63e188' }}>5k–100k labeled examples</p>
                     </div>
@@ -924,10 +932,8 @@ Next, we'll look at Naive Bayes, an even simpler probabilistic approach that can
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Naive Bayes Process"
                           diagram={`flowchart LR
@@ -938,6 +944,10 @@ Next, we'll look at Naive Bayes, an even simpler probabilistic approach that can
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#956efb' }}>Works with very small labeled sets (hundreds+)</p>
                     </div>
@@ -1123,10 +1133,8 @@ Now let's move from classical machine learning to modern NLP tools specifically 
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="VADER Sentiment Process"
                           diagram={`flowchart LR
@@ -1138,6 +1146,10 @@ Now let's move from classical machine learning to modern NLP tools specifically 
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#ed5e5e' }}>None; optional domain tweaks</p>
                     </div>
@@ -1328,10 +1340,8 @@ Next, let's look at TextBlob, another popular Python library for sentiment analy
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="TextBlob Process"
                           diagram={`flowchart LR
@@ -1342,6 +1352,10 @@ Next, let's look at TextBlob, another popular Python library for sentiment analy
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#ff4bea' }}>None</p>
                     </div>
@@ -1531,10 +1545,8 @@ Now let's shift gears dramatically and enter the world of deep learning with LST
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="LSTM Sentiment Process"
                           diagram={`flowchart LR
@@ -1545,6 +1557,10 @@ Now let's shift gears dramatically and enter the world of deep learning with LST
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#a665ff' }}>10k–100k+ labeled texts</p>
                     </div>
@@ -1736,10 +1752,8 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="BiLSTM with Attention"
                           diagram={`flowchart LR
@@ -1751,6 +1765,10 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#d9d44b' }}>10k–100k+ labeled examples</p>
                     </div>
@@ -1948,10 +1966,8 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="CNN Sentiment Process"
                           diagram={`flowchart LR
@@ -1963,6 +1979,10 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#4edbc7' }}>5k–100k labeled examples</p>
                     </div>
@@ -2178,10 +2198,8 @@ Now we're ready to enter the transformer era, starting with BERT, which fundamen
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="BERT Fine-Tuning Process"
                           diagram={`flowchart LR
@@ -2198,6 +2216,10 @@ Sentiment"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#ed5df9' }}>2k–100k labeled examples; few-shot learning possible with smaller datasets</p>
                     </div>
@@ -2412,10 +2434,8 @@ Next, let's explore BERT's successors and variants that address some of these li
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="RoBERTa vs DistilBERT Trade-offs"
                           diagram={`flowchart TD
@@ -2432,6 +2452,10 @@ Next, let's explore BERT's successors and variants that address some of these li
     style E fill:#81c784,color:#000
     style F fill:#ffd54f,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#4fd75d' }}>Similar to BERT (2k-100k labeled examples; few-shot learning possible)</p>
                     </div>
@@ -2662,10 +2686,8 @@ Next, we'll explore an entirely different paradigm: using large language models 
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="LLM Zero-Shot Sentiment Process"
                           diagram={`flowchart LR
@@ -2681,6 +2703,10 @@ Sentiment"]
     style A fill:#ffb74d,color:#000
     style E fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#f7417d' }}>None for zero-shot; few examples improve reliability</p>
                     </div>
@@ -2944,10 +2970,8 @@ The paradigm shift from training models to engineering prompts continues to resh
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="ABSA Pipeline Process"
                           diagram={`flowchart TD
@@ -2964,6 +2988,10 @@ Insights"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#e1d23d' }}>Aspect-annotated corpora; costly to label</p>
                     </div>
@@ -3255,10 +3283,8 @@ ABSA is where sentiment analysis graduates from interesting metrics to strategic
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                    <div>
-                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                        Data Requirement
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Multimodal Fusion Architecture"
                           diagram={`flowchart TD
@@ -3279,6 +3305,10 @@ Emotion"]
     style A fill:#4fc3f7,color:#000
     style G fill:#81c784,color:#000`}
                         />
+                      </div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
                       </h4>
                       <p style={{ color: '#43cfdb' }}>Synchronized multimodal data (e.g., MOSI/MOSEI); consent/privacy controls</p>
                     </div>

@@ -281,7 +281,25 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Rule Brittleness: Missing Variations"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Rule["Regex: r'[A-Z][a-z]+ [A-Z][a-z]+'"]
+        R1["✅ John Smith → PERSON"]
+        R2["❌ Dr. John Smith → MISSED"]
+        R3["❌ John A. Smith → MISSED"]
+        R4["❌ JOHN SMITH → MISSED"]
+    end
+    style Rule fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style R1 fill:#c8e6c9,color:#000
+    style R2 fill:#ffcdd2,color:#000
+    style R3 fill:#ffcdd2,color:#000
+    style R4 fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -433,7 +451,21 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="OOV Problem: New Entity Missing"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    Text["Text: 'OpenAI released GPT-5'"] --> Lookup["📚 Dictionary Lookup"]
+    Lookup --> Known{"In Dictionary?"}
+    Known -->|"Yes (old entries)"| Found["✅ Microsoft=ORG"]
+    Known -->|"No (new company)"| Miss["❌ OpenAI=MISSED"]
+    style Text fill:#4fc3f7,color:#000
+    style Found fill:#c8e6c9,color:#000
+    style Miss fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -585,7 +617,26 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Context Blindness: Apple Ambiguity"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph S1["Tech Article"]
+        A1["'Apple released iPhone'"] --> T1["Apple → ORG ✅"]
+    end
+    subgraph S2["Food Article"]
+        A2["'I ate an apple'"] --> T2["apple → ORG ❌"]
+    end
+    note["TF-IDF: No context window\nacross sentences"]
+    S1 -.-> note
+    S2 -.-> note
+    style S1 fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style S2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style note fill:#fff9c4,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -751,7 +802,24 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="HMM Independence Assumption Failure"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    subgraph HMM["HMM: Each word → tag independently"]
+        W1["Central"] --> T1["O"]
+        W2["Bank"] --> T2{"ORG or LOC?"}
+        W3["of America"] --> T3["O"]
+    end
+    T2 -->|"No context"| E1["❌ Guesses wrong"]
+    T2 -->|"With context"| E2["✅ ORG (correct)"]
+    style HMM fill:#e3f2fd,color:#000
+    style E1 fill:#ffcdd2,color:#000
+    style E2 fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -915,7 +983,27 @@ flowchart TB
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="CRF Feature Engineering Burden"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Token["Token: 'Apple'"] --> F1["is_capitalized? ✓"]
+    Token --> F2["prev_word='eat'?"]
+    Token --> F3["next_word='Inc'?"]
+    Token --> F4["in_org_list?"]
+    Token --> F5["ends_with_corp?"]
+    F1 & F2 & F3 & F4 & F5 --> Manual["🔧 Manual Engineering\nfor EVERY feature"]
+    style Token fill:#4fc3f7,color:#000
+    style Manual fill:#fff9c4,color:#000
+    style F1 fill:#c8e6c9,color:#000
+    style F2 fill:#e1bee7,color:#000
+    style F3 fill:#e1bee7,color:#000
+    style F4 fill:#e1bee7,color:#000
+    style F5 fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -1077,7 +1165,24 @@ flowchart TB
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="OOV Word Problem in BiLSTM"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    subgraph Known["Known Word"]
+        W1["'Microsoft'"] --> E1["Word Embedding ✅"]
+        E1 --> P1["ORG (correct)"]
+    end
+    subgraph OOV["OOV Word"]
+        W2["'Amazn' (typo)"] --> E2["UNK embedding ❌"]
+        E2 --> P2["? (uncertain)"]
+    end
+    style Known fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style OOV fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -1247,7 +1352,25 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="CNN+BiLSTM Complexity vs BiLSTM"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph BiLSTM["Plain BiLSTM"]
+        B1["Word Embed"] --> B2["BiLSTM"] --> B3["CRF"] --> B4["Tag"]
+    end
+    subgraph CNN["CNN + BiLSTM"]
+        C1["Char CNN"] --> C3["Concat"]
+        C2["Word Embed"] --> C3
+        C3 --> C4["BiLSTM"] --> C5["CRF"] --> C6["Tag"]
+    end
+    BiLSTM -.->|"More complex,\nslower inference"| CNN
+    style BiLSTM fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style CNN fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -1401,7 +1524,23 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="spaCy Domain Mismatch Example"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    subgraph News["News Domain (Trained)"]
+        N1["'Tim Cook announced...'"] --> N2["✅ PERSON, ORG"]
+    end
+    subgraph Med["Medical Domain (Mismatch)"]
+        M1["'Patient presents with MI'"] --> M2["❌ MI not recognized"]
+        M3["'Metformin 500mg daily'"] --> M4["❌ Drug missed"]
+    end
+    style News fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Med fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -1557,7 +1696,32 @@ flowchart TB
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="BERT Subword Alignment Challenge"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Words["Word Labels"]
+        W1["'Eu'=B-ORG"] 
+        W2["'rope'=I-ORG"]
+        W3["'an'=I-ORG"]
+    end
+    subgraph Tokens["BERT Subword Tokens"]
+        T1["[EU]"] --> T2["[rope]"] --> T3["[##an]"]
+    end
+    subgraph Align["Alignment Needed"]
+        A1["B-ORG → [EU]"]
+        A2["I-ORG → [rope]"]
+        A3["I-ORG → [##an] ⚠️"]
+    end
+    Words -.->|"Manual alignment"| Align
+    Tokens -.-> Align
+    style Words fill:#e3f2fd,color:#000
+    style Tokens fill:#e1bee7,color:#000
+    style Align fill:#fff9c4,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -1726,7 +1890,33 @@ flowchart TB
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.3}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="RoBERTa vs DistilBERT Trade-offs"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph R["🏆 RoBERTa"]
+        R1["F1: Higher accuracy"]
+        R2["Speed: Same as BERT"]
+        R3["Size: 125M params"]
+    end
+    subgraph D["⚡ DistilBERT"]
+        D1["F1: ~97% of BERT"]
+        D2["Speed: 2x faster"]
+        D3["Size: 66M params (40% smaller)"]
+    end
+    subgraph Cost["Both: High Cost"]
+        C1["GPU required"]
+        C2["API latency: seconds"]
+        C3["Privacy concerns"]
+    end
+    R & D --> Cost
+    style R fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style D fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Cost fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>
@@ -1888,7 +2078,24 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="LLM Hallucination Example"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Text["Text: 'The CEO announced Q3 results'"] --> LLM["🤖 LLM NER"]
+    LLM --> R1["✅ 'CEO' → ROLE"]
+    LLM --> R2["✅ 'Q3' → TIME_PERIOD"]
+    LLM --> R3["❌ 'Sarah Johnson' → HALLUCINATED\n(not in text!)"]
+    LLM --> R4["⚠️ Same prompt,\ndifferent run → different output"]
+    style Text fill:#4fc3f7,color:#000
+    style R1 fill:#c8e6c9,color:#000
+    style R2 fill:#c8e6c9,color:#000
+    style R3 fill:#ffcdd2,color:#000
+    style R4 fill:#fff9c4,color:#000`}
+                      />
+                    </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                       <strong>Cons:</strong></p>

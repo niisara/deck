@@ -269,7 +269,24 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Alpha Tuning by Query Type"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Technical["Technical Query: 'Python 3.11 changelog'"]
+        T1["α=0.7 → BM25 dominant"]
+        T2["✅ Exact version match"]
+    end
+    subgraph Natural["Natural Query: 'how to feel happy'"]
+        N1["α=0.3 → Vector dominant"]
+        N2["✅ Semantic meaning captured"]
+    end
+    style Technical fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Natural fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.3}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -403,7 +420,26 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Early Miss Problem: BM25 First Stage"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Good["✅ BM25 Finds It"]
+        G1["Query: 'dog training'"]
+        G2["Doc: 'dog obedience tips'"]
+        G1 --> G2
+    end
+    subgraph Bad["❌ BM25 Misses It (Early Miss)"]
+        B1["Query: 'canine training'"]
+        B2["Doc: 'dog obedience tips'"]
+        B1 -. "vocabulary mismatch" .-> B2
+    end
+    style Good fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Bad fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -559,7 +595,26 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Semantic Recall Catches Paraphrases"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query: 'how to fix WiFi'"]
+    Q --> V["🧠 Stage 1: Vector ANN (top-M)"]
+    V --> D1["✅ 'resolving network issues'"]
+    V --> D2["✅ 'fix internet connectivity'"]
+    V --> D3["✅ 'wireless troubleshooting'"]
+    D1 --> B["📝 Stage 2: BM25 re-rank"]
+    D2 --> B
+    D3 --> B
+    B --> R["Precision-filtered results"]
+    style Q fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style R fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -722,7 +777,26 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Transparent Term Boost Scoring"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query: 'red Nike running shoes'"]
+    Q --> V["🧠 Vector: 0.78
+(athletic footwear)"]
+    Q --> T["📝 Term Boosts:
++0.30 'Nike'
++0.15 'red'"]
+    V --> F["Final Score: 0.78 + 0.45 = 1.23"]
+    T --> F
+    F --> R["Nike Air Max ranks #1 ✅"]
+    style Q fill:#4fc3f7,color:#000
+    style F fill:#ffd700,color:#000
+    style R fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -889,7 +963,26 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Multi-Tenant Metadata Isolation"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph TenantA["Company A User"]
+        QA["Query"] --> FA["Filter: tenant=CompanyA"]
+        FA --> SA["Search 50K / 10M docs"]
+        SA --> RA["Results: CompanyA only ✅"]
+    end
+    subgraph TenantB["Company B User"]
+        QB["Query"] --> FB["Filter: tenant=CompanyB"]
+        FB --> SB["Search 30K / 10M docs"]
+        SB --> RB["Results: CompanyB only ✅"]
+    end
+    style TenantA fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style TenantB fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1054,7 +1147,27 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="BM25F Field Weight Scoring"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Doc["Article: 'Nike Air Max Review'"]
+        T["Title match → ×3 boost 🏆"]
+        A["Abstract match → ×2 boost"]
+        B["Body match → ×1 boost"]
+    end
+    T --> F["BM25F Total Score"]
+    A --> F
+    B --> F
+    F --> R["Title-matched doc ranks #1 ✅"]
+    F2["No title match → ranks lower ⬇️"]
+    style T fill:#ffd700,color:#000
+    style F fill:#e1bee7,color:#000
+    style R fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1225,7 +1338,29 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Good Expansion vs Query Drift"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Good["✅ Good Expansion"]
+        G1["Query: 'MI treatment'"]
+        G2["MI → myocardial infarction
++ heart attack
++ ICD-10:I21"]
+        G1 --> G2
+    end
+    subgraph Bad["⚠️ Query Drift Risk"]
+        B1["Query: 'python tutorial'"]
+        B2["python → snake? reptile?
+→ Wrong domain!"]
+        B1 -. "bad expansion" .-> B2
+    end
+    style Good fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Bad fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1385,7 +1520,24 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Cross-Encoder vs Bi-Encoder Precision"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph BiEnc["⚡ Bi-Encoder (Fast, Less Precise)"]
+        BE["'no tumor growth' ≈ 'tumor growth'
+Score: 0.80 (misses negation!)"]
+    end
+    subgraph CrossEnc["🎯 Cross-Encoder (Slow, Precise)"]
+        CE1["'no tumor growth' → Score: 0.12 ✅"]
+        CE2["'tumor growth found' → Score: 0.94 ✅"]
+    end
+    style BiEnc fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style CrossEnc fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1560,7 +1712,24 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="Retrieve Small, Return Big"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    P["📄 Parent Section (500 words)"]
+    P --> C1["Child 1: Intro paragraph"]
+    P --> C2["Child 2: Key paragraph 🎯"]
+    P --> C3["Child 3: Conclusion"]
+    Q["Query"] --> C2
+    C2 -->|"map back via parent_id"| P
+    P --> R["Return full parent context ✅"]
+    style C2 fill:#ffd700,color:#000
+    style Q fill:#4fc3f7,color:#000
+    style R fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1732,7 +1901,26 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="ANN Speed vs Exact Search"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Exact["❌ Exact Search at Scale"]
+        E1["100M docs × distance calc"]
+        E2["Latency: 5000ms"]
+    end
+    subgraph ANN["✅ HNSW ANN Search"]
+        A1["Navigate graph structure"]
+        A2["Latency: 20ms"]
+        A3["Recall: 97%"]
+    end
+    Exact -. "too slow for prod" .-> ANN
+    style Exact fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style ANN fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1910,7 +2098,27 @@ flowchart TB
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                        <MermaidPopover
+                          title="UMLS Ontology Expansion Example"
+                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query: 'MI treatment'"]
+    Q --> NER["🏷️ NER: MI = medical entity"]
+    NER --> ONT["📚 UMLS Lookup"]
+    ONT --> E1["myocardial infarction"]
+    ONT --> E2["heart attack"]
+    ONT --> E3["ICD-10:I21"]
+    ONT --> E4["STEMI / NSTEMI"]
+    E1 --> R["3× more relevant docs retrieved ✅"]
+    E2 --> R
+    E3 --> R
+    E4 --> R
+    style ONT fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style R fill:#c8e6c9,color:#000`}
+                        />
+                      </div>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                       <GSAPAnimated animation="fadeIn" delay={0.4}>
                         <ul style={{ fontSize: '1.2rem' }}>
@@ -1978,7 +2186,29 @@ flowchart TB
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Choosing Your Hybrid Search Pattern"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    S["Start: Need Hybrid Search"] --> P1["Pattern 1: Weighted/RRF
+(Simple baseline)"]
+    P1 --> Q1{"Need more precision?"}
+    Q1 -->|"Two-stage"| P23["Patterns 2-3:
+Cascade Retrieval"]
+    Q1 -->|"Critical"| P8["Pattern 8:
+Cross-Encoder"]
+    Q1 -->|"Good enough"| Done["✅ Ship it!"]
+    P23 --> Q2{"Specialized domain?"}
+    Q2 -->|"Yes"| P11["Pattern 11:
+Ontologies"]
+    Q2 -->|"No"| Done
+    style S fill:#4fc3f7,color:#000
+    style Done fill:#c8e6c9,color:#000
+    style P8 fill:#ffd700,color:#000`}
+                      />
+                    </div>
                     <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                       What to Remember

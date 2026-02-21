@@ -116,8 +116,15 @@ export const nerTrainingDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity Dictionary Flow"
                       diagram={`flowchart LR
@@ -127,14 +134,7 @@ export const nerTrainingDeck: Deck = {
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Limited labeled data, high domain jargon, recall-critical tasks.</li>
@@ -286,8 +286,15 @@ Let's look at the specific steps next.`
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Annotation Quality Process"
                       diagram={`flowchart TB
@@ -298,14 +305,7 @@ Let's look at the specific steps next.`
     D --> E["🏆 Gold Standard"]
     style E fill:#ffd700,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>New domain/schema; training from scratch or fine-tuning.</li>
@@ -461,7 +461,29 @@ flowchart TB
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Annotation Consistency: IAA Workflow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Before["❌ Without Guidelines"]
+        A1["👤 Ann 1: Dr. Smith = PERSON"]
+        A2["👤 Ann 2: Smith = PERSON, Dr. = TITLE"]
+    end
+    subgraph After["✅ With Guidelines"]
+        B1["👤 Ann 1: Smith = PERSON"]
+        B2["👤 Ann 2: Smith = PERSON"]
+        C["📊 IAA F1 ≥ 0.8"]
+    end
+    Before --> After
+    B1 --> C
+    B2 --> C
+    style Before fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style After fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style C fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Multiple annotators, long projects, or outsourced labeling.</li>
@@ -615,7 +637,28 @@ flowchart TB
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Real vs Synthetic Data: Training Impact"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Synthetic["🤖 Synthetic Only"]
+        S1["John Smith at Microsoft"]
+        S2["Jane Doe at Google"]
+        S3["❌ Fails on: 'JS @ MSFT'"]
+    end
+    subgraph Real["📋 Real Domain Data"]
+        R1["Jhon Smth @ MSFT (typo)"]
+        R2["EHR: pt dx w/ T2DM"]
+        R3["✅ Handles production noise"]
+    end
+    style Synthetic fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Real fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style S3 fill:#ef9a9a,color:#000
+    style R3 fill:#81c784,color:#000`}
+                    />
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Messy sources (EHRs, logs, contracts), unique jargon, compliance contexts.</li>
@@ -708,20 +751,10 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', position: 'relative' }}>
                   <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                   <h4>Cons</h4>
-                </div>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Access/privacy constraints</li>
-                  <li>Harder, slower annotation</li>
-                  <li>May require legal/compliance review</li>
-                </ul>
-              </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={0.5}>
-                <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(129,199,132,0.1)', borderRadius: '8px' }}>
-                  <h4>
-                    A Practical Approach
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Mixed Data Strategy"
                       diagram={`flowchart LR
@@ -731,9 +764,13 @@ flowchart TB
     style B fill:#81c784,color:#000
     style D fill:#4fc3f7,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.7em', margin: '5px 0' }}>Mix real and synthetic data for best results</p>
+                  </div>
                 </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Access/privacy constraints</li>
+                  <li>Harder, slower annotation</li>
+                  <li>May require legal/compliance review</li>
+                </ul>
               </GSAPAnimated>
             </div>
           ),
@@ -781,8 +818,15 @@ flowchart LR
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Transfer Learning Flow"
                       diagram={`flowchart TB
@@ -792,14 +836,7 @@ flowchart LR
     style A fill:#e1bee7,color:#000
     style D fill:#81c784,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Limited data, complex language, multilingual, or domain-adapted models available.</li>
@@ -899,9 +936,28 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', position: 'relative' }}>
                   <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                   <h4>Cons</h4>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Model Size vs Speed Trade-off"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph BERT["🧠 BERT-base"]
+        B1["110M params"]
+        B2["~50ms inference"]
+        B3["F1: 0.91"]
+    end
+    subgraph DistilBERT["⚡ DistilBERT"]
+        D1["66M params (40% smaller)"]
+        D2["~20ms inference (2.5x faster)"]
+        D3["F1: 0.88 (minor loss)"]
+    end
+    style BERT fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px,color:#000
+    style DistilBERT fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+                    />
+                  </div>
                 </div>
                 <ul style={{ fontSize: '0.7em' }}>
                   <li>Compute/latency costs</li>
@@ -947,8 +1003,15 @@ flowchart TB
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Data Augmentation Process"
                       diagram={`flowchart LR
@@ -958,14 +1021,7 @@ flowchart TB
     style A fill:#ffcdd2,color:#000
     style C fill:#c8e6c9,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Class imbalance; few-shot entities; costly labeling.</li>
@@ -1066,20 +1122,10 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', position: 'relative' }}>
                   <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                   <h4>Cons</h4>
-                </div>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Artifacts can mislead model</li>
-                  <li>Unrealistic text</li>
-                  <li>Boundary drift risk</li>
-                </ul>
-              </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={0.5}>
-                <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(129,199,132,0.1)', borderRadius: '8px' }}>
-                  <h4>
-                    Quality Over Quantity
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Quality Check Process"
                       diagram={`flowchart TB
@@ -1089,9 +1135,13 @@ flowchart LR
     style C fill:#81c784,color:#000
     style D fill:#ef9a9a,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.7em', margin: '5px 0' }}>Always prioritize quality augmentation</p>
+                  </div>
                 </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Artifacts can mislead model</li>
+                  <li>Unrealistic text</li>
+                  <li>Boundary drift risk</li>
+                </ul>
               </GSAPAnimated>
             </div>
           ),
@@ -1139,8 +1189,15 @@ flowchart TB
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Negative Examples Flow"
                       diagram={`flowchart TB
@@ -1150,14 +1207,7 @@ flowchart TB
     D --> E["🎯 Higher Precision"]
     style E fill:#81c784,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>High false-positive rates; ambiguous terminology; rule-assisted pre-annotations.</li>
@@ -1251,19 +1301,10 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', position: 'relative' }}>
                   <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                   <h4>Cons</h4>
-                </div>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>May reduce recall</li>
-                  <li>Needs ongoing curation</li>
-                </ul>
-              </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={0.5}>
-                <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(255,205,210,0.1)', borderRadius: '8px' }}>
-                  <h4>
-                    The Precision-Recall Trade-off
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision-Recall Balance"
                       diagram={`flowchart LR
@@ -1272,9 +1313,12 @@ flowchart TB
     style B fill:#81c784,color:#000
     style C fill:#ffcdd2,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.7em', margin: '5px 0' }}>Monitor both metrics together</p>
+                  </div>
                 </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>May reduce recall</li>
+                  <li>Needs ongoing curation</li>
+                </ul>
               </GSAPAnimated>
             </div>
           ),
@@ -1315,8 +1359,15 @@ flowchart TB
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Boundary Correction Flow"
                       diagram={`flowchart LR
@@ -1325,14 +1376,7 @@ flowchart TB
     style A fill:#ffcc80,color:#000
     style C fill:#81c784,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Consistent punctuation/units/brackets issues; hyphenated terms; titles.</li>
@@ -1428,20 +1472,10 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', position: 'relative' }}>
                   <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                   <h4>Cons</h4>
-                </div>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Brittle</li>
-                  <li>Domain/language-specific</li>
-                  <li>Maintenance needed</li>
-                </ul>
-              </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={0.5}>
-                <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(79,195,247,0.1)', borderRadius: '8px' }}>
-                  <h4>
-                    Use Wisely
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="When to Use Rules vs Retraining"
                       diagram={`flowchart TB
@@ -1450,9 +1484,13 @@ flowchart LR
     style B fill:#81c784,color:#000
     style C fill:#4fc3f7,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.7em', margin: '5px 0' }}>Rules are band-aids, not cures</p>
+                  </div>
                 </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Brittle</li>
+                  <li>Domain/language-specific</li>
+                  <li>Maintenance needed</li>
+                </ul>
               </GSAPAnimated>
             </div>
           ),
@@ -1499,8 +1537,15 @@ flowchart TB
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Iterative Improvement Cycle"
                       diagram={`flowchart TB
@@ -1513,14 +1558,7 @@ flowchart TB
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
                     />
-                  </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5}>
-                <div style={{ marginBottom: '0.7em' }}>
+                  </div>
                   <h4>When to Use</h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>After baseline; after data/model changes; ongoing operations.</li>
@@ -1623,20 +1661,10 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', position: 'relative' }}>
                   <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                   <h4>Cons</h4>
-                </div>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Requires sustained effort</li>
-                  <li>Risk of overfitting to test</li>
-                  <li>Ops overhead</li>
-                </ul>
-              </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={0.5}>
-                <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(255,215,0,0.1)', borderRadius: '8px' }}>
-                  <h4>
-                    The Long View
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Improvement Over Time"
                       diagram={`flowchart LR
@@ -1646,9 +1674,13 @@ flowchart TB
     D -->|"F1: 0.92"| E["🏆 Year 2"]
     style E fill:#ffd700,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.7em', margin: '5px 0' }}>Steady gains through discipline</p>
+                  </div>
                 </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Requires sustained effort</li>
+                  <li>Risk of overfitting to test</li>
+                  <li>Ops overhead</li>
+                </ul>
               </GSAPAnimated>
             </div>
           ),
@@ -1849,17 +1881,8 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                  <div style={{ marginBottom: '25px' }}>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <SvgIcon iconName="duo-battery-quarter" sizeName="2x" style={{ color: '#ffc107' }} darkModeInvert={true} />
-                      <strong>Resource constraints</strong> → prioritize entity types, phase rollouts
-                    </p>
-                  </div>
-                </GSAPAnimated>
-                <GSAPAnimated animation="bounceIn" delay={0.8}>
-                  <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(129,199,132,0.1)', borderRadius: '8px' }}>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9em' }}>
-                      <strong>Risk Management Process</strong>
+                  <div style={{ marginBottom: '25px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Risk Management Flow"
                         diagram={`flowchart TB
@@ -1868,6 +1891,10 @@ flowchart LR
     C --> D["✅ Execute"]
     style D fill:#81c784,color:#000`}
                       />
+                    </div>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <SvgIcon iconName="duo-battery-quarter" sizeName="2x" style={{ color: '#ffc107' }} darkModeInvert={true} />
+                      <strong>Resource constraints</strong> → prioritize entity types, phase rollouts
                     </p>
                   </div>
                 </GSAPAnimated>

@@ -2624,8 +2624,34 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           title: 'Pattern 12: Summarization Cache',
           icon: { name: 'duo-compress' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
               <div style={{ marginBottom: '20px' }}></div>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Summarization Cache Flow"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📄 Source Document"] --> B{"📦 Cached Summary?"}
+    B -->|"Hit"| C["⚡ Return Summary"]
+    B -->|"Miss"| D["🤖 LLM Summarization"]
+    D --> E["💾 Cache: doc_id + version"]
+    E --> C
+
+    subgraph Levels["Multi-Granularity Summaries"]
+        L1["📚 Doc-Level"]
+        L2["📑 Section-Level"]
+        L3["📋 Chunk-Level"]
+    end
+
+    C --> Levels
+
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+    style E fill:#e1bee7,color:#000
+    style Levels fill:#f5f5f5,stroke:#1976d2,stroke-width:2px,color:#000`}
+                />
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -2750,8 +2776,27 @@ This coupling between retrieval and re-ranking caches adds architectural complex
           title: 'Pattern 13: Final Answer Cache with TTL',
           icon: { name: 'duo-check-circle' },
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.5', position: 'relative' }}>
               <div style={{ marginBottom: '20px' }}></div>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                <MermaidPopover
+                  title="Final Answer Cache: Query → TTL Flow"
+                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📝 User Query"] --> B["🔤 Normalize Query"]
+    B --> C["🔑 hash(query + lang + model_id)"]
+    C --> D{"📦 Cache Hit?"}
+    D -->|"Hit"| E["⚡ Return Cached Answer"]
+    D -->|"Miss"| F["🤖 LLM Generation (temp=0)"]
+    F --> G["💾 Store with TTL (mins → days)"]
+    G --> E
+
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000
+    style G fill:#e1bee7,color:#000`}
+                />
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>

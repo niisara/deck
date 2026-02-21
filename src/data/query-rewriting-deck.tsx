@@ -375,14 +375,32 @@ For complex questions: **Query Decomposition** splits them into sub-questions. *
                 <li>Significant recall improvement</li>
                 <li>Works with existing search engines</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Ideal for scenarios with:</p>
-              <ul>
-                <li>Low recall performance</li>
-                <li>Sparse or short queries</li>
-                <li>Domain-specific terminology</li>
-                <li>Tail terms or rare concepts</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Expansion: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Short Query\n'flu treatment'"] --> B{"Issue?"}
+    B -->|"Low Recall"| C["Add Synonyms\n+ Related Terms"]
+    B -->|"Rare Terms"| D["Add Domain\nVariants"]
+    C --> E["✅ Expanded Query\n'flu OR influenza\ntherapy OR treatment'"]
+    D --> E
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Ideal for scenarios with:</p>
+                <ul>
+                  <li>Low recall performance</li>
+                  <li>Sparse or short queries</li>
+                  <li>Domain-specific terminology</li>
+                  <li>Tail terms or rare concepts</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e557b',
@@ -532,14 +550,32 @@ But there are gotchas. **Precision can drop** if you add too many terms without 
                 <li>Better response in multi-turn chats</li>
                 <li>Self-contained queries for caching</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Best applied to:</p>
-              <ul>
-                <li>Conversational follow-up queries</li>
-                <li>Terse or vague user questions</li>
-                <li>Multi-turn interactions</li>
-                <li>Ambiguous references to entities</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Reformulation: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["💬 Vague Query\n'What about pricing?'"] --> B{"Context?"}
+    B -->|"Multi-turn Chat"| C["Add Context\nfrom History"]
+    B -->|"Ambiguous Ref"| D["Resolve\nPronoun/Entity"]
+    C --> E["✅ Explicit Query\n'Pricing for Acme\nPro API 2024'"]
+    D --> E
+    style A fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Best applied to:</p>
+                <ul>
+                  <li>Conversational follow-up queries</li>
+                  <li>Terse or vague user questions</li>
+                  <li>Multi-turn interactions</li>
+                  <li>Ambiguous references to entities</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#6c1e7b',
@@ -666,14 +702,33 @@ The sweet spot? Use reformulation for **every follow-up query in chat** scenario
                 <li>Each sub-question can be precisely answered</li>
                 <li>Reduces hallucinations on complex queries</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Best for questions that involve:</p>
-              <ul>
-                <li>Multi-entity relationships</li>
-                <li>Multi-step reasoning</li>
-                <li>Compare/contrast scenarios</li>
-                <li>Questions requiring information from different domains</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Decomposition: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🧩 Complex Query\n'Compare Snowflake vs\nBigQuery for 10TB/mo'"] --> B["Split into\nSub-Questions"]
+    B --> C["Q1: Snowflake\n10TB pricing?"]
+    B --> D["Q2: BigQuery\n10TB pricing?"]
+    B --> E["Q3: Feature\ncomparison?"]
+    C --> F["✅ Synthesized\nAnswer"]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+    style B fill:#e1bee7,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Best for questions that involve:</p>
+                <ul>
+                  <li>Multi-entity relationships</li>
+                  <li>Multi-step reasoning</li>
+                  <li>Compare/contrast scenarios</li>
+                  <li>Questions requiring information from different domains</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e6b7b',
@@ -801,14 +856,32 @@ Here's a real-world example of decomposition in action.
                 <li>Improves coverage of relevant information</li>
                 <li>Helps understand fundamental principles</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Best applied when:</p>
-              <ul>
-                <li>Specific but under-retrieving queries</li>
-                <li>Reasoning-heavy or conceptual topics</li>
-                <li>Technical questions needing broader context</li>
-                <li>Direct retrieval with specific terms fails</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Step-Back Prompting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🎯 Specific Query\n'Fix CUDA OOM with\nLlama 3.1 70B'"] --> B{"Direct\nRetrieval\nFails?"}
+    B -->|"Yes"| C["Step Back\nto Principles"]
+    C --> D["Abstract Query\n'LLM memory\noptimization'"]
+    D --> E["✅ Broader\nContext Found"]
+    B -->|"No"| F["Use as-is"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style C fill:#e1bee7,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Best applied when:</p>
+                <ul>
+                  <li>Specific but under-retrieving queries</li>
+                  <li>Reasoning-heavy or conceptual topics</li>
+                  <li>Technical questions needing broader context</li>
+                  <li>Direct retrieval with specific terms fails</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b5d1e',
@@ -935,15 +1008,33 @@ The rule of thumb: use step-back prompting when specific queries fail, but alway
                 <li>Bridges vocabulary gaps effectively</li>
                 <li>Zero-shot capability for new domains</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Particularly effective for:</p>
-              <ul>
-                <li>Low recall in dense retrieval systems</li>
-                <li>Zero-shot domain applications</li>
-                <li>Queries with vocabulary mismatch</li>
-                <li>Complex information needs</li>
-                <li>When semantic search underperforms</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="HyDE: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Query\n'quantum error\ncorrection'"] --> B{"Dense Retrieval\nUnderperforms?"}
+    B -->|"Yes - Vocab\nMismatch"| C["Generate\nHypothetical Doc"]
+    C --> D["Embed Doc\nnot Query"]
+    D --> E["✅ Better\nSemantic Match"]
+    B -->|"No"| F["Standard\nEmbedding"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style C fill:#fff9c4,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Particularly effective for:</p>
+                <ul>
+                  <li>Low recall in dense retrieval systems</li>
+                  <li>Zero-shot domain applications</li>
+                  <li>Queries with vocabulary mismatch</li>
+                  <li>Complex information needs</li>
+                  <li>When semantic search underperforms</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e7b28',
@@ -1078,14 +1169,34 @@ Use HyDE when dense retrieval underperforms. For simple keyword queries, it's ov
                 <li>Better coverage of different aspects</li>
                 <li>Handles vocabulary mismatches</li>
               </ul>
-              <h3 style={{ marginTop: '40px', fontSize: '2rem' }}>When to Use</h3>
-              <p>Best suited for:</p>
-              <ul>
-                <li>Ambiguous or underspecified queries</li>
-                <li>Heterogeneous document corpora</li>
-                <li>Tasks requiring breadth of coverage</li>
-                <li>Critical applications where recall matters</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Multi-Query Generation: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Ambiguous Query\n'best ML framework'"] --> B["Generate\nMultiple Variants"]
+    B --> C["Q1: 'top Python\nML libraries 2024'"]
+    B --> D["Q2: 'PyTorch vs\nTensorFlow comparison'"]
+    B --> E["Q3: 'ML frameworks\nfor production'"]
+    C --> F["🔀 RRF Fusion"]
+    D --> F
+    E --> F
+    F --> G["✅ High Recall\nResults"]
+    style A fill:#4fc3f7,color:#000
+    style F fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ marginTop: '40px', fontSize: '2rem' }}>When to Use</h3>
+                <p>Best suited for:</p>
+                <ul>
+                  <li>Ambiguous or underspecified queries</li>
+                  <li>Heterogeneous document corpora</li>
+                  <li>Tasks requiring breadth of coverage</li>
+                  <li>Critical applications where recall matters</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#465e7b',
@@ -1223,14 +1334,32 @@ Here's a great example of multi-query in action.
                 <li>Enables effective RAG on follow-ups</li>
                 <li>Preserves conversation flow</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Ideal for:</p>
-              <ul>
-                <li>Conversational chatbots</li>
-                <li>Multi-turn question answering</li>
-                <li>Session-based search interfaces</li>
-                <li>Follow-up questions with pronouns</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Context-Aware Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph History["📜 Conversation"]
+        H1["User: 'Tell me about Redis'"]
+        H2["Bot: 'Redis is a cache...'"]
+        H3["User: 'How does it scale?'"]
+    end
+    History --> B["Rewrite with\nContext"]
+    B --> C["✅ Standalone\n'How does Redis\nscale horizontally?'"]
+    style History fill:#e3f2fd,stroke:#1976d2,color:#000
+    style C fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Ideal for:</p>
+                <ul>
+                  <li>Conversational chatbots</li>
+                  <li>Multi-turn question answering</li>
+                  <li>Session-based search interfaces</li>
+                  <li>Follow-up questions with pronouns</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b2e1e',
@@ -1359,14 +1488,31 @@ Be careful with **context selection** — picking the wrong context can lead to 
                 <li>Reduces irrelevant results</li>
                 <li>Educates users on query formulation</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Ideal for scenarios with:</p>
-              <ul>
-                <li>Short or vague queries</li>
-                <li>Ambiguous terms with multiple meanings</li>
-                <li>Missing contextual constraints</li>
-                <li>Domain-specific clarification needs</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Clarification: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Vague Query\n'Python performance'"] --> B{"Ambiguous?"}
+    B -->|"Yes"| C["Ask Clarification\n'Language speed or\ncode optimization?'"]
+    C --> D["User: 'code speed'"]
+    D --> E["✅ Clear Query\n'Python code\nperformance tips'"]
+    B -->|"No"| F["Proceed as-is"]
+    style A fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+    style C fill:#fff9c4,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Ideal for scenarios with:</p>
+                <ul>
+                  <li>Short or vague queries</li>
+                  <li>Ambiguous terms with multiple meanings</li>
+                  <li>Missing contextual constraints</li>
+                  <li>Domain-specific clarification needs</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e7b20',
@@ -1495,15 +1641,34 @@ Here's query clarification in a real scenario.
                 <li>Supports structured data sources</li>
                 <li>Combines well with BM25/keyword search</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Best for scenarios requiring high precision:</p>
-              <ul>
-                <li>Enterprise search systems</li>
-                <li>Data analytics applications</li>
-                <li>Compliance and audit searches</li>
-                <li>Large heterogeneous document collections</li>
-                <li>Time-sensitive information needs</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Specification: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📋 General Query\n'security incidents'"] --> B["Add Constraints"]
+    B --> C["+ date_range:\n  2024-Q4"]
+    B --> D["+ source:\n  internal_audit"]
+    B --> E["+ severity:\n  critical"]
+    C --> F["✅ Specified Query\nFilters applied"]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+    style B fill:#e1bee7,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Best for scenarios requiring high precision:</p>
+                <ul>
+                  <li>Enterprise search systems</li>
+                  <li>Data analytics applications</li>
+                  <li>Compliance and audit searches</li>
+                  <li>Large heterogeneous document collections</li>
+                  <li>Time-sensitive information needs</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b1e75',
@@ -1638,14 +1803,36 @@ One important note: this strategy works best with search engines that support fi
                 <li>Reduces "zero results" scenarios</li>
                 <li>Works well with both sparse and dense retrieval</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Best applied for domains with:</p>
-              <ul>
-                <li>Specialized jargon (medical, legal, technical)</li>
-                <li>Product/SKU catalogs and e-commerce</li>
-                <li>Academic/scientific search</li>
-                <li>Industry-specific terminology gaps</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Semantic Bridging: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph User["👤 User Language"]
+        A["'heart attack\nprevention'"]
+    end
+    subgraph Bridge["🌉 Ontology Map"]
+        B["cardiac arrest\nmyocardial infarction\ncoronary artery disease"]
+    end
+    subgraph Docs["📚 Domain Docs"]
+        C["✅ Medical Literature\nFound"]
+    end
+    User --> Bridge --> Docs
+    style User fill:#e3f2fd,stroke:#1976d2,color:#000
+    style Bridge fill:#fff9c4,stroke:#f57c00,color:#000
+    style Docs fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Best applied for domains with:</p>
+                <ul>
+                  <li>Specialized jargon (medical, legal, technical)</li>
+                  <li>Product/SKU catalogs and e-commerce</li>
+                  <li>Academic/scientific search</li>
+                  <li>Industry-specific terminology gaps</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b6a1e',
@@ -1773,14 +1960,30 @@ Here's a perfect medical example.
                 <li>Works well with dense retrieval</li>
                 <li>Bridges vocabulary gaps</li>
               </ul>
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <p>Best applied when:</p>
-              <ul>
-                <li>Sparse or short queries lack context</li>
-                <li>Using dense or hybrid retrieval systems</li>
-                <li>Technical domains with specific terminology</li>
-                <li>Knowledge-intensive queries</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query2Doc: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Short Query\n'transformer attention'"] --> B["Generate\nPseudo-Doc"]
+    B --> C["📄 Hypothetical Answer\n'Transformer attention\nmechanisms compute...'"]
+    C --> D["Embed\nFull Doc"]
+    D --> E["✅ Dense Match\nwith Real Docs"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <p>Best applied when:</p>
+                <ul>
+                  <li>Sparse or short queries lack context</li>
+                  <li>Using dense or hybrid retrieval systems</li>
+                  <li>Technical domains with specific terminology</li>
+                  <li>Knowledge-intensive queries</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#4e1e7b',
@@ -1908,13 +2111,31 @@ Here's Query2Doc in practice.
                 <li>More comprehensive final responses</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Hard questions requiring comprehensive info</li>
-                <li>Incomplete initial context</li>
-                <li>Multi-step reasoning requirements</li>
-                <li>When single retrieval pass misses key info</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="ITER-RETGEN: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["❓ Hard Question\n'Compare cloud costs\nfor 3-tier app'"] --> B["Retrieve #1\n+ Draft Answer"]
+    B --> C["Gaps Found?"]
+    C -->|"Yes"| D["New Query\nfrom Draft"]
+    D --> E["Retrieve #2\n+ Refine Answer"]
+    E --> C
+    C -->|"No"| F["✅ Complete\nAnswer"]
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+    style D fill:#e1bee7,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Hard questions requiring comprehensive info</li>
+                  <li>Incomplete initial context</li>
+                  <li>Multi-step reasoning requirements</li>
+                  <li>When single retrieval pass misses key info</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#5d7b1e',
@@ -2049,13 +2270,29 @@ Here's ITER-RETGEN solving a complex question.
                 <li>Enforces standardized formats</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Customer support & documentation QA</li>
-                <li>E-commerce product search</li>
-                <li>Specialized domain knowledge</li>
-                <li>High-volume, predictable query patterns</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Template-Based Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📥 User Query\n'return my shoes'"] --> B["Classify\nIntent"]
+    B --> C["Intent: RETURN\nTemplate: '{product}\nreturn policy {store}'"]
+    C --> D["Fill Template\n'shoes return policy\nNikeStore'"]
+    D --> E["✅ Consistent\nStructured Query"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Customer support & documentation QA</li>
+                  <li>E-commerce product search</li>
+                  <li>Specialized domain knowledge</li>
+                  <li>High-volume, predictable query patterns</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b1e41',
@@ -2185,14 +2422,32 @@ Here's template-based rewriting in action.
                 <li>Reduces irrelevant results</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Knowledge graph integration</li>
-                <li>Product catalogs and search</li>
-                <li>People/places/organization queries</li>
-                <li>Ambiguous entity names</li>
-                <li>Domain-specific entity collections</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Entity-Centric Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["🔍 Query\n'Apple revenue'"] --> B["Extract\nEntities"]
+    B --> C{"Which Apple?"}
+    C -->|"Tech Giant"| D["Apple Inc. (AAPL)\nCupertino, CA"]
+    C -->|"Fruit"| E["Apple (fruit)\ncrop statistics"]
+    D --> F["✅ Enriched Query\n'Apple Inc Q4 2024\nannual revenue'"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#fff9c4,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Knowledge graph integration</li>
+                  <li>Product catalogs and search</li>
+                  <li>People/places/organization queries</li>
+                  <li>Ambiguous entity names</li>
+                  <li>Domain-specific entity collections</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e7b71',
@@ -2327,14 +2582,32 @@ Here's entity-centric rewriting solving the classic ambiguity problem.
                 <li>Handles implicit temporal context automatically</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>News and current events</li>
-                <li>Product pricing and availability queries</li>
-                <li>API documentation and changelog searches</li>
-                <li>Policy and regulation updates</li>
-                <li>Documentation with versioning</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Temporal Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["⏰ Query with\nVague Time\n'latest AI models'"] --> B["Normalize\nTemporal Refs"]
+    B --> C["Resolve 'latest'\n→ 2025-Q1"]
+    C --> D["Add Time Filter\ndate >= 2025-01-01"]
+    D --> E["✅ Time-Aware\nQuery"]
+    E --> F["📰 Recent\nDocs Retrieved"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#fff9c4,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>News and current events</li>
+                  <li>Product pricing and availability queries</li>
+                  <li>API documentation and changelog searches</li>
+                  <li>Policy and regulation updates</li>
+                  <li>Documentation with versioning</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#341e7b',
@@ -2465,14 +2738,36 @@ Here's temporal rewriting in action.
                 <li>Efficient filtering via field constraints</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Legal research and case law</li>
-                <li>Medical/healthcare information retrieval</li>
-                <li>Financial/investment analysis</li>
-                <li>Technical engineering documentation</li>
-                <li>Scientific literature search</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Domain-Specific Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph Lay["👤 Lay Language"]
+        A["'blood thinner side\neffects in elderly'"]
+    end
+    subgraph Domain["🏥 Medical Domain"]
+        B["anticoagulant\nadverse effects\ngeriatric patients"]
+    end
+    subgraph Result["📚 Literature"]
+        C["✅ Clinical Studies\nRetrieved"]
+    end
+    Lay --> Domain --> Result
+    style Lay fill:#e3f2fd,stroke:#1976d2,color:#000
+    style Domain fill:#fff9c4,stroke:#f57c00,color:#000
+    style Result fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Legal research and case law</li>
+                  <li>Medical/healthcare information retrieval</li>
+                  <li>Financial/investment analysis</li>
+                  <li>Technical engineering documentation</li>
+                  <li>Scientific literature search</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b3b1e',
@@ -2608,13 +2903,35 @@ Here's a medical example.
                 <li>Can optimize for different metrics per intent</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Mixed query workloads</li>
-                <li>Systems with agent-based routing</li>
-                <li>Enterprise search with diverse needs</li>
-                <li>Multi-domain knowledge bases</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Intent Classification: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📥 Incoming Query"] --> B["Classify Intent"]
+    B --> C{"Intent Type"}
+    C -->|"Factual"| D["→ Direct Lookup"]
+    C -->|"Comparison"| E["→ Decompose"]
+    C -->|"Temporal"| F["→ Time Rewrite"]
+    C -->|"Domain"| G["→ Jargon Map"]
+    D --> H["✅ Best Strategy\nApplied"]
+    E --> H
+    F --> H
+    G --> H
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style H fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Mixed query workloads</li>
+                  <li>Systems with agent-based routing</li>
+                  <li>Enterprise search with diverse needs</li>
+                  <li>Multi-domain knowledge bases</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#7b1e35',
@@ -2749,13 +3066,34 @@ Here's intent-based routing in action.
                 <li>Surfaces different perspectives</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Broad, ambiguous topics</li>
-                <li>Exploratory search needs</li>
-                <li>Multiple potential interpretations</li>
-                <li>Need for high recall across facets</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Diverse Multi-Query Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["🌐 Broad Query\n'climate change\nimpact'"] --> B["Generate with\nDiversity Constraints"]
+    B --> C["Economic\nImpact"]
+    B --> D["Health\nEffects"]
+    B --> E["Migration\nPatterns"]
+    B --> F["Agricultural\nChanges"]
+    C --> G["✅ Full Coverage\nAll Facets"]
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Broad, ambiguous topics</li>
+                  <li>Exploratory search needs</li>
+                  <li>Multiple potential interpretations</li>
+                  <li>Need for high recall across facets</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e7b3e',
@@ -2895,13 +3233,32 @@ Here's DMQR tackling a broad topic.
                 <li>Leverages collective intelligence</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Production systems with telemetry</li>
-                <li>High-volume search applications</li>
-                <li>Domain-specific search engines</li>
-                <li>Customer-facing RAG systems</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Feedback-Based Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📊 User Telemetry\nClicks + Ratings"] --> B["Extract\nSignals"]
+    B --> C["What worked:\n'JavaScript async\ntutorial 2024'"]
+    B --> D["What failed:\n'JS async'"]
+    C --> E["Rewriting Model\nLearns Patterns"]
+    D --> E
+    E --> F["✅ Better\nFuture Queries"]
+    style A fill:#e3f2fd,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#ffcdd2,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Production systems with telemetry</li>
+                  <li>High-volume search applications</li>
+                  <li>Domain-specific search engines</li>
+                  <li>Customer-facing RAG systems</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e2b7b',
@@ -3035,13 +3392,29 @@ Here's feedback-based rewriting learning from user behavior.
                 <li>Works with any capable LLM</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Quick wins without complex pipelines</li>
-                <li>Rapid prototyping and testing</li>
-                <li>Low engineering implementation lift</li>
-                <li>Minimal infrastructure changes</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Prompt-Based Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📝 User Query\n'fix login bug'"] --> B["System Prompt:\n'Rewrite as specific\ntechnical question'"]
+    B --> C["🤖 LLM"]
+    C --> D["✅ Rewritten:\n'Debugging OAuth2\ntoken validation in\nPython FastAPI'"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Quick wins without complex pipelines</li>
+                  <li>Rapid prototyping and testing</li>
+                  <li>Low engineering implementation lift</li>
+                  <li>Minimal infrastructure changes</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#1e7b53',
@@ -3180,13 +3553,33 @@ Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all
                 <li>Flexible scaling of compute resources</li>
               </ul>
 
-              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
-              <ul>
-                <li>Heterogeneous query workloads</li>
-                <li>Variable cost/latency constraints</li>
-                <li>Production systems with metrics</li>
-                <li>Complex RAG pipelines with multiple strategies</li>
-              </ul>
+              <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Adaptive Query Rewriting: When to Apply"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["📥 Query +\nContext Signals"] --> B["Policy Model\nAssess Budget + Type"]
+    B --> C{"Best\nStrategy?"}
+    C -->|"Fast + Cheap"| D["→ Prompt Rewrite\n($0.001)"]
+    C -->|"High Quality"| E["→ Multi-Query\n($0.01)"]
+    C -->|"Complex"| F["→ Decompose\n($0.05)"]
+    D --> G["✅ Optimal\nResult"]
+    E --> G
+    F --> G
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000`}
+                  />
+                </div>
+                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+                <ul>
+                  <li>Heterogeneous query workloads</li>
+                  <li>Variable cost/latency constraints</li>
+                  <li>Production systems with metrics</li>
+                  <li>Complex RAG pipelines with multiple strategies</li>
+                </ul>
+              </div>
             </div>
           ),
           backgroundColor: '#521e7b',

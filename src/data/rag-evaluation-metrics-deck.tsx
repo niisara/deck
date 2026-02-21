@@ -205,14 +205,38 @@ export const ragEvaluationMetricsDeck: Deck = {
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
-                <GSAPStaggerList stagger={0.15} delay={0.5}>
-                  <ul>
-                    <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
-                    <li>Improves answer completeness by ensuring all relevant information is available</li>
-                    <li>Critical for complex queries requiring multiple evidence pieces</li>
-                  </ul>
-                </GSAPStaggerList>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Recall@K: High vs Low Recall Impact"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query] --> R{Retrieval}
+    R -->|High Recall| H[Finds 8/10 relevant docs]
+    R -->|Low Recall| L[Finds 3/10 relevant docs]
+    H --> HC[Complete context]
+    L --> LG[Gaps in context]
+    HC --> AA[Accurate answer]
+    LG --> HA[Hallucinations fill gaps]
+    style Q fill:#4fc3f7,color:#000
+    style H fill:#c8e6c9,color:#000
+    style L fill:#ffcdd2,color:#000
+    style HC fill:#c8e6c9,color:#000
+    style LG fill:#ffcdd2,color:#000
+    style AA fill:#81c784,color:#000
+    style HA fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                  <GSAPStaggerList stagger={0.15} delay={0.5}>
+                    <ul>
+                      <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
+                      <li>Improves answer completeness by ensuring all relevant information is available</li>
+                      <li>Critical for complex queries requiring multiple evidence pieces</li>
+                    </ul>
+                  </GSAPStaggerList>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
@@ -473,15 +497,39 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
-                <GSAPStaggerList stagger={0.12} delay={0.5}>
-                  <ul>
-                    <li>Improves grounding by focusing LLM on relevant information</li>
-                    <li>Reduces irrelevant context that can distract the LLM</li>
-                    <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
-                    <li>Particularly important for smaller models with limited context processing ability</li>
-                  </ul>
-                </GSAPStaggerList>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Precision@K: Clean vs Noisy Context"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query] --> R{Retrieval}
+    R -->|High Precision| HP[7/10 docs relevant]
+    R -->|Low Precision| LP[3/10 docs relevant]
+    HP --> FC[Focused clean context]
+    LP --> NC[Noisy polluted context]
+    FC --> GL[Grounded LLM response]
+    NC --> CL[Confused distracted LLM]
+    style Q fill:#4fc3f7,color:#000
+    style HP fill:#c8e6c9,color:#000
+    style LP fill:#ffcdd2,color:#000
+    style FC fill:#c8e6c9,color:#000
+    style NC fill:#ffcdd2,color:#000
+    style GL fill:#81c784,color:#000
+    style CL fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                  <GSAPStaggerList stagger={0.12} delay={0.5}>
+                    <ul>
+                      <li>Improves grounding by focusing LLM on relevant information</li>
+                      <li>Reduces irrelevant context that can distract the LLM</li>
+                      <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
+                      <li>Particularly important for smaller models with limited context processing ability</li>
+                    </ul>
+                  </GSAPStaggerList>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.7}>
@@ -743,15 +791,37 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
-                <GSAPStaggerList stagger={0.15} delay={0.5}>
-                  <ul>
-                    <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
-                    <li>Stabilizes answer quality by preventing complete retrieval failures</li>
-                    <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
-                    <li>Critical baseline before optimizing for more nuanced metrics</li>
-                  </ul>
-                </GSAPStaggerList>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Hit Rate: Binary Success Metric"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query] --> K[Top-K results]
+    K --> C{At least 1 relevant?}
+    C -->|Yes| HIT[Hit = 1]
+    C -->|No| MISS[Miss = 0]
+    HIT --> HR[Hit Rate = hits / total queries]
+    MISS --> HR
+    style Q fill:#4fc3f7,color:#000
+    style K fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style HIT fill:#c8e6c9,color:#000
+    style MISS fill:#ffcdd2,color:#000
+    style HR fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                  <GSAPStaggerList stagger={0.15} delay={0.5}>
+                    <ul>
+                      <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
+                      <li>Stabilizes answer quality by preventing complete retrieval failures</li>
+                      <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
+                      <li>Critical baseline before optimizing for more nuanced metrics</li>
+                    </ul>
+                  </GSAPStaggerList>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
@@ -861,12 +931,32 @@ Once you've done this for all your queries, you sum up all the hits—all those 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-                <h3>Example</h3>
-                <p>Test set: 100 user queries against product documentation</p>
-                <p>Result: 92 queries have at least one relevant document in top-10 results</p>
-                <p><strong>Hit Rate@10 = 92/100 = 0.92</strong></p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Hit Rate@10: 100 Query Test"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[100 queries] --> H[92 hits — at least 1 relevant doc]
+    Q --> M[8 misses — zero relevant docs]
+    H & M --> HR[Hit Rate = 92/100 = 0.92]
+    HR -->|Exceeds 0.80 target ✓| OK[Acceptable performance]
+    M --> INV[Investigate 8 failures]
+    style Q fill:#4fc3f7,color:#000
+    style H fill:#c8e6c9,color:#000
+    style M fill:#ffcdd2,color:#000
+    style HR fill:#ffd700,color:#000
+    style OK fill:#81c784,color:#000
+    style INV fill:#e1bee7,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                  <p>Test set: 100 user queries against product documentation</p>
+                  <p>Result: 92 queries have at least one relevant document in top-10 results</p>
+                  <p><strong>Hit Rate@10 = 92/100 = 0.92</strong></p>
+                </div>
               </GSAPAnimated>
-
               <GSAPAnimated animation="slideInTop" delay={0.4}>
                 <h3>How to Calculate</h3>
                 <p>For each query in your test set, run retrieval to get the top-K results. Check if at least one of those K documents is relevant. If yes, count it as a hit (1), otherwise count it as a miss (0). Sum all the hits and divide by the total number of queries.</p>
@@ -996,7 +1086,31 @@ Once you've done this for all your queries, you sum up all the hits—all those 
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Context Overlap: Coverage & Gaps"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Required ["Required Facts (5)"]
+      F1[Fact 1] & F2[Fact 2] & F3[Fact 3] & F4[Fact 4] & F5[Fact 5 MISSING]
+    end
+    Required --> CO[Context Overlap = 4/5 = 80%]
+    CO -->|High overlap| FA[Good faithfulness]
+    F5 -->|Gap| HA[Potential hallucination]
+    style F1 fill:#c8e6c9,color:#000
+    style F2 fill:#c8e6c9,color:#000
+    style F3 fill:#c8e6c9,color:#000
+    style F4 fill:#c8e6c9,color:#000
+    style F5 fill:#ffcdd2,color:#000
+    style CO fill:#ffd700,color:#000
+    style FA fill:#81c784,color:#000
+    style HA fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} duration={0.6} delay={0.7}>
                 <ul>
@@ -1277,7 +1391,30 @@ Click the diagram icon to visualize the flow. You start with the query, define e
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Context Relevance: LLM Judge Scoring"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query: reset password?] --> J[LLM Judge]
+    J --> C1[Chunk 1: password reset → 0.9]
+    J --> C2[Chunk 2: account security → 0.8]
+    J --> C3[Chunk 3: billing info → 0.3]
+    C1 & C2 & C3 --> AVG[Avg = 0.67]
+    AVG -->|Below 0.70 threshold| FIX[Improve retrieval]
+    style Q fill:#4fc3f7,color:#000
+    style J fill:#e1bee7,color:#000
+    style C1 fill:#c8e6c9,color:#000
+    style C2 fill:#c8e6c9,color:#000
+    style C3 fill:#ffcdd2,color:#000
+    style AVG fill:#ffd700,color:#000
+    style FIX fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
                 <ul>
@@ -1408,7 +1545,28 @@ where score_i ∈ [0,1] for each chunk`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3>Example</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Context Relevance: Score Distribution"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query: reset password?] --> C1[Chunk 1: password reset → 0.9]
+    Q --> C2[Chunk 2: account security → 0.8]
+    Q --> C3[Chunk 3: billing info → 0.3]
+    C1 & C2 & C3 --> AVG[Avg = 0.67]
+    AVG -->|Below 0.70 threshold| ACT[Remove Chunk 3]
+    style Q fill:#4fc3f7,color:#000
+    style C1 fill:#c8e6c9,color:#000
+    style C2 fill:#c8e6c9,color:#000
+    style C3 fill:#ffcdd2,color:#000
+    style AVG fill:#ffd700,color:#000
+    style ACT fill:#e1bee7,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.25}>
                 <p><strong>Query:</strong> "How do I reset my account password?"</p>
@@ -1559,7 +1717,28 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Hallucination Rate: Claim Verification"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Answer: 12 claims] --> V{Verify vs context}
+    V -->|Supported| OK[10 claims ✓]
+    V -->|Unsupported| BAD[2 claims ✗ invented]
+    OK & BAD --> RATE[Rate = 2/12 = 16.7%]
+    RATE -->|Exceeds 10-15% target| FIX[Needs fixing]
+    style A fill:#4fc3f7,color:#000
+    style V fill:#e1bee7,color:#000
+    style OK fill:#c8e6c9,color:#000
+    style BAD fill:#ffcdd2,color:#000
+    style RATE fill:#ffd700,color:#000
+    style FIX fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} duration={0.6}>
                 <ul>
@@ -1701,7 +1880,26 @@ where score_i ∈ [0,1] for each chunk`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3>Example</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Hallucination Rate: 12 Claims Analyzed"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Answer: 12 claims] --> OK[10 claims ✓ supported]
+    A --> BAD[2 claims ✗ invented]
+    OK & BAD --> R[Rate = 2/12 = 16.7%]
+    R -->|Over 10-15% target| FIX[Fix needed]
+    style A fill:#4fc3f7,color:#000
+    style OK fill:#c8e6c9,color:#000
+    style BAD fill:#ffcdd2,color:#000
+    style R fill:#ffd700,color:#000
+    style FIX fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p>Answer contains 12 factual claims</p>
@@ -1853,7 +2051,28 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Grounded Answer Score: Citation Verification"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Answer: 10 claims with citations] --> V1[Claim 1 → Doc A → ✓ supported]
+    A --> V2[Claim 2 → Doc B → ✗ not supported]
+    A --> V3[Claims 3-10 → ✓ verified]
+    V1 & V2 & V3 --> GAS[GAS = 9/10 = 0.90]
+    GAS -->|Meets 0.90 target| OK[Citation quality good]
+    style A fill:#4fc3f7,color:#000
+    style V1 fill:#c8e6c9,color:#000
+    style V2 fill:#ffcdd2,color:#000
+    style V3 fill:#c8e6c9,color:#000
+    style GAS fill:#ffd700,color:#000
+    style OK fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -1974,7 +2193,28 @@ Let's look at a concrete example to make this crystal clear.`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-                <h3>Example</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Grounded Answer Score: Medication Example"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[10 cited claims] --> V[Verify each citation]
+    V --> OK[9 citations verified ✓]
+    V --> BAD[1 citation mismatch ✗]
+    OK & BAD --> G[GAS = 9/10 = 0.90]
+    G -->|Meets 0.90 target ✓| PASS[Citation quality OK]
+    style A fill:#4fc3f7,color:#000
+    style V fill:#e1bee7,color:#000
+    style OK fill:#c8e6c9,color:#000
+    style BAD fill:#ffcdd2,color:#000
+    style G fill:#ffd700,color:#000
+    style PASS fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <p><strong>Answer:</strong> "The medication has three primary side effects[1]. It may cause drowsiness[2], headaches[3], and in rare cases, dizziness[4]."</p>
@@ -2112,7 +2352,28 @@ Now let's discuss the broader implications and limitations of this metric.`
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Faithfulness Score: Claim Verification"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    CTX[Context: return policy] --> V{Verify claims}
+    V --> C1[30-day policy → ✓ in context]
+    V --> C2[Receipt required → ✓ in context]
+    V --> C3[Store credit → ✗ NOT in context]
+    C1 & C2 & C3 --> F[Faithfulness = 2/3 = 0.67]
+    style CTX fill:#4fc3f7,color:#000
+    style V fill:#e1bee7,color:#000
+    style C1 fill:#c8e6c9,color:#000
+    style C2 fill:#c8e6c9,color:#000
+    style C3 fill:#ffcdd2,color:#000
+    style F fill:#ffd700,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -2240,7 +2501,28 @@ Let's see a concrete example to solidify this understanding.`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3>Example</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Faithfulness: Return Policy Example"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    C[Context: 30-day + receipt] --> V{Check 3 claims}
+    V --> C1[30-day policy → ✓ in context]
+    V --> C2[Receipt required → ✓ in context]
+    V --> C3[Store credit → ✗ NOT in context]
+    C1 & C2 & C3 --> F[Faithfulness = 2/3 = 0.67]
+    style C fill:#4fc3f7,color:#000
+    style V fill:#e1bee7,color:#000
+    style C1 fill:#c8e6c9,color:#000
+    style C2 fill:#c8e6c9,color:#000
+    style C3 fill:#ffcdd2,color:#000
+    style F fill:#ffd700,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p><strong>Context:</strong> "Our return policy allows returns within 30 days with receipt. Damaged items cannot be returned."</p>
@@ -2391,7 +2673,28 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Answer Completeness: Coverage Check"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query: price + warranty + return policy] --> A{Answer covers?}
+    A --> P[Price $199 → ✓ answered]
+    A --> W[Warranty 2yr → ✓ answered]
+    A --> R[Return policy → ✗ missing]
+    P & W & R --> C[Completeness = 2/3 = 0.67]
+    style Q fill:#4fc3f7,color:#000
+    style A fill:#e1bee7,color:#000
+    style P fill:#c8e6c9,color:#000
+    style W fill:#c8e6c9,color:#000
+    style R fill:#ffcdd2,color:#000
+    style C fill:#ffd700,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>
@@ -2522,7 +2825,28 @@ Let's see a concrete example to make this practical.`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-                <h3>Example</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Answer Completeness: 3-Part Query"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query: price + warranty + return policy] --> A{Answer covers?}
+    A --> P[Price $199 → ✓ addressed]
+    A --> W[Warranty 2yr → ✓ addressed]
+    A --> R[Return policy → ✗ missing]
+    P & W & R --> C[Completeness = 2/3 = 0.67]
+    style Q fill:#4fc3f7,color:#000
+    style A fill:#e1bee7,color:#000
+    style P fill:#c8e6c9,color:#000
+    style W fill:#c8e6c9,color:#000
+    style R fill:#ffcdd2,color:#000
+    style C fill:#ffd700,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                </div>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <p><strong>Query:</strong> "What's the price, warranty length, and return policy for this product?"</p>
@@ -2686,7 +3010,30 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.4}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Answer Specificity: Generic vs Specific"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query: troubleshoot connection?] --> G[Generic answer]
+    Q --> S[Specific answer]
+    G --> GL[check settings, restart → Low score]
+    S --> SL[Settings→Network→WiFi, 10s, E-4019, v2.5+ → High score]
+    GL --> GS[Specificity: 0.2]
+    SL --> SS[Specificity: 0.9]
+    style Q fill:#4fc3f7,color:#000
+    style G fill:#ffcdd2,color:#000
+    style S fill:#c8e6c9,color:#000
+    style GL fill:#ffcdd2,color:#000
+    style SL fill:#c8e6c9,color:#000
+    style GS fill:#ffcdd2,color:#000
+    style SS fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.6}>
                 <ul style={{ marginTop: '14px' }}>
@@ -2797,8 +3144,31 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
-                <h3>Example</h3>
-                <p><strong>Query:</strong> "How do I troubleshoot connection issues?"</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Answer Specificity: Info Density Comparison"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query: troubleshoot connection?] --> L[Low specificity]
+    Q --> H[High specificity]
+    L --> LS["check settings, restart"]
+    H --> HS["Settings→Network→WiFi, 10s, E-4019, v2.5+"]
+    LS --> LSC[Score: 0.2]
+    HS --> HSC[Score: 0.9]
+    style Q fill:#4fc3f7,color:#000
+    style L fill:#ffcdd2,color:#000
+    style H fill:#c8e6c9,color:#000
+    style LS fill:#ffcdd2,color:#000
+    style HS fill:#c8e6c9,color:#000
+    style LSC fill:#ffcdd2,color:#000
+    style HSC fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                  <p><strong>Query:</strong> "How do I troubleshoot connection issues?"</p>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" duration={0.8} delay={0.4}>
@@ -2917,7 +3287,28 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.4}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Noise Density: Token Budget Analysis"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    CTX[3000 total tokens] --> REL[2200 relevant tokens]
+    CTX --> NOI[800 noise tokens]
+    NOI --> ND[Noise Density = 800/3000 = 26.7%]
+    ND -->|Moderate noise| RERANK[Improve reranking]
+    REL --> FOCUS[LLM focus area]
+    style CTX fill:#4fc3f7,color:#000
+    style REL fill:#c8e6c9,color:#000
+    style NOI fill:#ffcdd2,color:#000
+    style ND fill:#ffd700,color:#000
+    style RERANK fill:#e1bee7,color:#000
+    style FOCUS fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.6}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3036,9 +3427,28 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="slideInBottom" duration={0.9} delay={0.1}>
-                <h3>Example</h3>
-                <p>Retrieved context: 3,000 tokens total</p>
-                <p>Irrelevant tokens: 800 tokens (tangential information)</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Noise Density: Token Analysis"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    CTX[3000 total tokens] --> REL[2200 relevant tokens]
+    CTX --> NOI[800 noise tokens]
+    NOI --> ND[Noise = 800/3000 = 26.7%]
+    ND -->|Moderate: improve reranking| FIX[Tune retrieval]
+    style CTX fill:#4fc3f7,color:#000
+    style REL fill:#c8e6c9,color:#000
+    style NOI fill:#ffcdd2,color:#000
+    style ND fill:#ffd700,color:#000
+    style FIX fill:#e1bee7,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                  <p>Retrieved context: 3,000 tokens total</p>
+                  <p>Irrelevant tokens: 800 tokens (tangential information)</p>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.5}>
@@ -3159,7 +3569,27 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.4}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Context Compression Efficiency: Token Reduction"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    B[Baseline: 2000 tokens → 85% coverage]
+    C[Compressed: 1200 tokens → 85% coverage]
+    B & C --> DIFF[Token saved: 800 tokens = 40%]
+    DIFF --> CCE[CCE ratio = 1.67:1]
+    CCE --> COST[Lower cost + latency]
+    style B fill:#ffcdd2,color:#000
+    style C fill:#c8e6c9,color:#000
+    style DIFF fill:#ffd700,color:#000
+    style CCE fill:#81c784,color:#000
+    style COST fill:#c8e6c9,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.6}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3285,9 +3715,29 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="bounceIn" duration={1} delay={0.1}>
-                <h3>Example</h3>
-                <p><strong>Baseline:</strong> 85% coverage achieved with 2,000 tokens</p>
-                <p><strong>Optimized:</strong> Same 85% coverage with only 1,200 tokens</p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Context Compression Efficiency"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    BASE[Baseline: 2000 tokens] --> COV1[85% coverage]
+    OPT[Compressed: 1200 tokens] --> COV2[85% coverage]
+    COV1 & COV2 --> SAVE[Saved: 800 tokens = 40%]
+    SAVE --> RATIO[CCE ratio = 1.67:1]
+    style BASE fill:#ffcdd2,color:#000
+    style OPT fill:#c8e6c9,color:#000
+    style COV1 fill:#ffd700,color:#000
+    style COV2 fill:#ffd700,color:#000
+    style SAVE fill:#81c784,color:#000
+    style RATIO fill:#81c784,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                  <p><strong>Baseline:</strong> 85% coverage achieved with 2,000 tokens</p>
+                  <p><strong>Optimized:</strong> Same 85% coverage with only 1,200 tokens</p>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.5}>
@@ -3419,7 +3869,28 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" duration={0.9} delay={0.4}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Latency-Cost Tradeoff Score (LCTS)"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    W[α = 0.6 latency weight] --> L[Latency penalty = 0.6×0.7 = 0.42]
+    W --> C[Cost penalty = 0.4×0.5 = 0.20]
+    L & C --> S[Sum = 0.62]
+    S --> LCTS[LCTS = 1 - 0.62 = 0.38]
+    LCTS -->|Below 0.70 threshold| OPT[Needs optimization]
+    style W fill:#4fc3f7,color:#000
+    style L fill:#ffcdd2,color:#000
+    style C fill:#e1bee7,color:#000
+    style S fill:#ffd700,color:#000
+    style LCTS fill:#ffcdd2,color:#000
+    style OPT fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.6}>
                 <ul style={{ marginTop: '14px' }}>
@@ -3546,8 +4017,29 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.1}>
-                <h3>Example</h3>
-                <p style={{ marginBottom: '0px' }}><strong>Given:</strong></p>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="LCTS Calculation: α=0.6 Example"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    W[α = 0.6] --> LP[Latency penalty: 0.6×0.7 = 0.42]
+    W --> CP[Cost penalty: 0.4×0.5 = 0.20]
+    LP & CP --> SUM[Sum = 0.62]
+    SUM --> LCTS[LCTS = 1 - 0.62 = 0.38]
+    LCTS -->|Below 0.70 threshold| OPT[Optimize pipeline]
+    style W fill:#4fc3f7,color:#000
+    style LP fill:#ffcdd2,color:#000
+    style CP fill:#e1bee7,color:#000
+    style SUM fill:#ffd700,color:#000
+    style LCTS fill:#ffcdd2,color:#000
+    style OPT fill:#ffcdd2,color:#000
+`}
+                    />
+                  </div>
+                  <h3>Example</h3>
+                  <p style={{ marginBottom: '0px' }}><strong>Given:</strong></p>
+                </div>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
                 <ul style={{ marginTop: '14px' }}>

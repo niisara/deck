@@ -286,7 +286,24 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="BoW: Word Order Is Lost"
+                        diagram={`graph TB
+    subgraph S1["Sentence 1: not good"]
+        A1["not=1, good=1"]
+    end
+    subgraph S2["Sentence 2: good not"]
+        A2["not=1, good=1"]
+    end
+    S1 --> R["Same BoW Vector!"]
+    S2 --> R
+    style S1 fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style S2 fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style R fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -449,7 +466,29 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="TF-IDF Calculation Example"
+                        diagram={`graph TB
+    subgraph A["Word: machine (rare)"]
+        TF1["TF = 3/50 = 0.06"]
+        IDF1["IDF = log(1000/5) = 5.3"]
+        TF1 --> R1["TF-IDF = 0.318"]
+        IDF1 --> R1
+    end
+    subgraph B["Word: the (common)"]
+        TF2["TF = 10/50 = 0.2"]
+        IDF2["IDF = log(1000/999) = 0.001"]
+        TF2 --> R2["TF-IDF = 0.0002 (penalized!)"]
+        IDF2 --> R2
+    end
+    style A fill:#e3f2fd,stroke:#1976d2,color:#000
+    style B fill:#fff9c4,stroke:#f57c00,color:#000
+    style R1 fill:#c8e6c9,color:#000
+    style R2 fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -614,7 +653,24 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="CBOW: Predict Center Word from Context"
+                        diagram={`graph LR
+    A["The"] --> E["CBOW\nModel"]
+    B["quick"] --> E
+    C["fox"] --> E
+    D["jumped"] --> E
+    E --> F["Predicts: brown"]
+    style A fill:#e3f2fd,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C fill:#e3f2fd,color:#000
+    style D fill:#e3f2fd,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -780,7 +836,23 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Skip-Gram: Vector Analogy Examples"
+                        diagram={`graph TB
+    A["king"] --> E["- man"]
+    E --> F["+ woman"]
+    F --> G["= queen"]
+    H["Paris"] --> I["- France"]
+    I --> J["+ Italy"]
+    J --> K["= Rome"]
+    style A fill:#4fc3f7,color:#000
+    style G fill:#c8e6c9,color:#000
+    style H fill:#4fc3f7,color:#000
+    style K fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -945,7 +1017,22 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="scaleIn" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="GloVe: Global Co-occurrence Training"
+                        diagram={`flowchart LR
+    A["Corpus\n6B tokens"] --> B["Co-occurrence\nMatrix X"]
+    B --> C["Matrix\nFactorization"]
+    C --> D["Word\nVectors W"]
+    D --> E["ice~cold\nsteam~hot"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#fff9c4,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -1110,7 +1197,23 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="FastText: Subword OOV Handling"
+                        diagram={`graph TB
+    subgraph Known["Known Word: play"]
+        W1["pla, lay, ayi, yis..."] --> C["Shared n-gram vectors"]
+    end
+    subgraph OOV["OOV Word: unplayed"]
+        W2["un, unp, npl, pla, lay, yed"] --> C
+    end
+    C --> D["Word Vector"]
+    style Known fill:#e3f2fd,stroke:#1976d2,color:#000
+    style OOV fill:#fff9c4,stroke:#f57c00,color:#000
+    style D fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -1275,7 +1378,28 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Doc2Vec: Direct Document Embeddings"
+                        diagram={`graph TB
+    subgraph WA["Word Averaging (naive)"]
+        W1["v(I)"] --> S["mean()"]
+        W2["v(love)"] --> S
+        W3["v(NLP)"] --> S
+        S --> V1["Loses structure"]
+    end
+    subgraph D2V["Doc2Vec (better)"]
+        D["Doc ID"] --> M["Model"]
+        W["All words"] --> M
+        M --> V2["Doc Vector"]
+    end
+    style WA fill:#ffcdd2,stroke:#c62828,color:#000
+    style D2V fill:#c8e6c9,stroke:#4caf50,color:#000
+    style V1 fill:#ffcdd2,color:#000
+    style V2 fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -1451,7 +1575,25 @@ flowchart TB
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="ELMo: Same Word, Different Context Vectors"
+                        diagram={`graph TB
+    subgraph C1["river bank"]
+        T1["bank"] --> V1["geography vector"]
+    end
+    subgraph C2["bank account"]
+        T2["bank"] --> V2["finance vector"]
+    end
+    N["Static embeddings: always same vector"]
+    style C1 fill:#e3f2fd,stroke:#1976d2,color:#000
+    style C2 fill:#fff9c4,stroke:#f57c00,color:#000
+    style V1 fill:#c8e6c9,color:#000
+    style V2 fill:#c8e6c9,color:#000
+    style N fill:#ffcdd2,stroke:#c62828,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -1624,7 +1766,22 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="BERT Fine-tuning Transfer Learning"
+                        diagram={`flowchart TB
+    A["Pre-trained BERT\n110M params"] --> B["Fine-tune on\ntask data"]
+    B --> C1["Text Classification"]
+    B --> C2["Named Entity\nRecognition"]
+    B --> C3["Question\nAnswering"]
+    style A fill:#e1bee7,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C1 fill:#c8e6c9,color:#000
+    style C2 fill:#c8e6c9,color:#000
+    style C3 fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -1800,7 +1957,24 @@ flowchart TB
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="SBERT: Bi-encoder vs BERT Cross-encoder"
+                        diagram={`graph TB
+    subgraph Slow["BERT Cross-encoder (Slow)"]
+        P1["SentA + SentB"] --> M1["BERT"] --> R1["Score"]
+    end
+    subgraph Fast["SBERT Bi-encoder (Fast)"]
+        S1["SentA"] --> M2["SBERT"] --> VA["Vec A"]
+        S2["SentB"] --> M3["SBERT"] --> VB["Vec B"]
+        VA --> CS["cosine_sim"]
+        VB --> CS
+    end
+    style Slow fill:#ffcdd2,stroke:#c62828,color:#000
+    style Fast fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -1965,7 +2139,21 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="scaleIn" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="USE: Simple Sentence Encoding Pipeline"
+                        diagram={`flowchart LR
+    A["Sentences"] --> B["USE Encoder\n(TF Hub)"]
+    B --> C["512-d Vectors"]
+    C --> D["Cosine\nSimilarity"]
+    D --> E["Search / QA\nResults"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#e3f2fd,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -2128,7 +2316,29 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="E5: Query/Passage Prefix Convention"
+                        diagram={`graph TB
+    subgraph Good["Correct Usage"]
+        Q["query: What is ML?"] --> QV["Query Vector"]
+        P["passage: ML is..."] --> PV["Passage Vector"]
+        QV --> CS["High Cosine Similarity"]
+        PV --> CS
+    end
+    subgraph Bad["Missing Prefix"]
+        Q2["What is ML?"] --> QV2["Vector"]
+        P2["ML is..."] --> PV2["Vector"]
+        QV2 --> CS2["Lower Similarity"]
+        PV2 --> CS2
+    end
+    style Good fill:#c8e6c9,stroke:#4caf50,color:#000
+    style Bad fill:#ffcdd2,stroke:#c62828,color:#000
+    style CS fill:#c8e6c9,color:#000
+    style CS2 fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -2287,7 +2497,28 @@ flowchart LR
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.2}>
-                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="GTE: 8k Token Context Window Advantage"
+                        diagram={`graph TB
+    subgraph Limits["Model Context Windows"]
+        B["BERT / SBERT / E5\n512 tokens ~ 400 words"]
+        E["ELMo / USE\n512 tokens ~ 400 words"]
+        G["GTE\n8192 tokens ~ 6000 words"]
+    end
+    subgraph LongDocs["GTE Handles Long Documents"]
+        D1["Legal contracts"]
+        D2["Research papers"]
+        D3["Long articles"]
+    end
+    G --> LongDocs
+    style B fill:#fff9c4,color:#000
+    style E fill:#fff9c4,color:#000
+    style G fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style LongDocs fill:#e3f2fd,stroke:#1976d2,color:#000`}
+                      />
+                    </div>
                     <div style={{ marginBottom: '0.5rem' }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#81c784' }}>
                         <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
@@ -2416,7 +2647,31 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.5}>
-                <div style={{ background: 'rgba(52, 152, 219, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ background: 'rgba(52, 152, 219, 0.15)', padding: '1rem', borderRadius: '8px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Feature Extraction Selection Guide"
+                      diagram={`flowchart TB
+    S["What do you need?"] --> Q1{"Context-aware?"}
+    Q1 -->|No| Q2{"Document-level?"}
+    Q1 -->|Yes| Q3{"Sentence similarity?"}
+    Q2 -->|No| T1["BoW / TF-IDF"]
+    Q2 -->|Yes| T2["Doc2Vec / FastText"]
+    Q3 -->|Yes| Q4{"Long docs > 512?"}
+    Q3 -->|No| T3["BERT / ELMo"]
+    Q4 -->|Yes| T4["GTE"]
+    Q4 -->|No| Q5{"Multilingual?"}
+    Q5 -->|Yes| T5["E5"]
+    Q5 -->|No| T6["SBERT / USE"]
+    style S fill:#4fc3f7,color:#000
+    style T1 fill:#fff9c4,color:#000
+    style T2 fill:#e1bee7,color:#000
+    style T3 fill:#e1bee7,color:#000
+    style T4 fill:#c8e6c9,color:#000
+    style T5 fill:#c8e6c9,color:#000
+    style T6 fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
                   <div style={{ color: '#3498db', marginBottom: '0.8rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <SvgIcon iconName="duo-chart-line" sizeName="lg" style={{ color: '#3498db' }} darkModeInvert={true} />
                     <strong>Key Insights by Context Length</strong>

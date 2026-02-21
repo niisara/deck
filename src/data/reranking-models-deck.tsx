@@ -231,7 +231,21 @@ This Two-Stage RAG Architecture shows how documents flow through the pipeline: U
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="Cross-Encoder: Two-Stage Pipeline"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📥 Query"] --> B["🔍 Retrieval\n50 candidates"]
+    B --> C["⚖️ Cross-Encoder\n2nd stage"]
+    C --> D["✅ Top 5 Docs\nscore: 0.95, 0.62..."]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.1} delay={0.7}>
                       <ul style={{ fontSize: '1.2rem', lineHeight: '1.4' }}>
@@ -295,7 +309,22 @@ You feed in pairs - query with document one, query with document two, and so on.
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Cross-Encoder: Password Reset Scoring"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query:\\n'Reset password steps?'"]
+    Q --> B["B) Account reset guide\\n→ 0.95 ✅"]
+    Q --> C["C) Login tips\\n→ 0.62 🟡"]
+    Q --> A["A) Billing policy\\n→ 0.21 ❌"]
+    style Q fill:#4fc3f7,color:#000
+    style B fill:#c8e6c9,color:#000
+    style C fill:#fff9c4,color:#000
+    style A fill:#ffcdd2,color:#000`}
+                    />
+                  </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example: Password Reset Query</strong></p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
                     <GSAPAnimated animation="slideInLeft" delay={0.4}>
@@ -451,7 +480,23 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.4}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="MiniLM: Knowledge Distillation"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Teacher["BERT-large Teacher\n440MB"]
+        T["Deep\nSemantic\nUnderstanding"]
+    end
+    subgraph Student["MiniLM Student\n90MB, 2-4x faster"]
+        S["87% Accuracy\nPreserved"]
+    end
+    Teacher -->|"Knowledge\nDistillation"| Student
+    style Teacher fill:#ffcdd2,stroke:#c62828,color:#000
+    style Student fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
@@ -519,7 +564,22 @@ pairs = [
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="MiniLM: Medical Query Ranking"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query:\\n'Side effects of ACE\\ninhibitors in diabetics?'"]
+    Q --> B["B) ACE inhibitor\\nadverse effects\\n→ 0.89 ✅"]
+    Q --> A["A) Diabetes treatment\\noverview\\n→ 0.41 🟡"]
+    Q --> C["C) Hypertension\\nguidelines\\n→ 0.32 ❌"]
+    style Q fill:#4fc3f7,color:#000
+    style B fill:#c8e6c9,color:#000
+    style A fill:#fff9c4,color:#000
+    style C fill:#ffcdd2,color:#000`}
+                    />
+                  </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example: Medical Query</strong></p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
                     <GSAPAnimated animation="slideInLeft" delay={0.4}>
@@ -707,7 +767,22 @@ pairs = [
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.8}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="MonoT5: Generative Relevance Scoring"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A["Query + Document\n→ 'Relevant?'"] --> B["T5 Encoder-Decoder"]
+    B --> C{"Token\nPrediction"}
+    C -->|"P(true)=0.91"| D["🟢 Highly Relevant"]
+    C -->|"P(true)=0.23"| E["🔴 Not Relevant"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style D fill:#c8e6c9,color:#000
+    style E fill:#ffcdd2,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}>
                       <GSAPAnimated animation="bounceIn" delay={1.0}>
                         <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
@@ -776,7 +851,24 @@ pairs = [
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="MonoT5: Technical Query Scoring"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Prompt:\\n'Query: What is FiD in RAG?\\nDocument: ... Relevant?'"]
+    Q --> T["T5 Encoder-Decoder"]
+    T --> A["A) FiD definition\\nP(true)=0.91 ✅"]
+    T --> B["B) Generic RAG\\nP(true)=0.57 🟡"]
+    T --> C["C) Retrieval methods\\nP(true)=0.23 ❌"]
+    style Q fill:#4fc3f7,color:#000
+    style T fill:#e1bee7,color:#000
+    style A fill:#c8e6c9,color:#000
+    style B fill:#fff9c4,color:#000
+    style C fill:#ffcdd2,color:#000`}
+                    />
+                  </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example: RAG Query</strong></p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
                     <GSAPAnimated animation="slideInLeft" delay={0.4}>
@@ -955,7 +1047,21 @@ pairs = [
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.8}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="MonoBERT: Classification Pipeline"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["[CLS] Query\n[SEP] Document [SEP]"] --> B["BERT\nEncoder"]
+    B --> C["Classification\nHead"]
+    C --> D["Score: 0.87\n(relevant)"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#e3f2fd,color:#000
+    style D fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}>
                       <GSAPAnimated animation="bounceIn" delay={1.0}>
                         <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
@@ -1026,7 +1132,23 @@ pairs = [
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="MonoBERT: TLS vs mTLS Scoring"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    Q["[CLS] 'TLS vs mTLS'\\n[SEP] Document [SEP]"] --> B["BERT\\nEncoder"]
+    B --> R1["B) mTLS auth\\n→ 0.89 ✅"]
+    B --> R2["A) TLS overview\\n→ 0.56 🟡"]
+    B --> R3["C) Network security\\n→ 0.32 ❌"]
+    style Q fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style R1 fill:#c8e6c9,color:#000
+    style R2 fill:#fff9c4,color:#000
+    style R3 fill:#ffcdd2,color:#000`}
+                    />
+                  </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
                     <GSAPAnimated animation="slideInLeft" delay={0.4}>
@@ -1192,7 +1314,29 @@ pairs = [
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.6}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="ColBERT: Token-Level MaxSim Matching"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Query["Query Tokens"]
+        Q1["rotate"] 
+        Q2["S3"]
+        Q3["keys"]
+    end
+    subgraph Doc["Document Tokens"]
+        D1["rotation"]
+        D2["S3"]
+        D3["credentials"]
+    end
+    Q1 -.->|"MaxSim"| D1
+    Q2 -.->|"MaxSim"| D2
+    Q3 -.->|"MaxSim"| D3
+    style Query fill:#e3f2fd,stroke:#1976d2,color:#000
+    style Doc fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.7}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.15} delay={0.8}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.95rem' }}>
@@ -1248,7 +1392,29 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ColBERT: Token-Level Matching"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph QT["Query Tokens"]
+        t1["rotate"]
+        t2["S3"]
+        t3["keys"]
+    end
+    subgraph DocC["C) S3 key rotation procedure → 0.89 ✅"]
+        d1["rotation"]
+        d2["S3"]
+        d3["access keys"]
+    end
+    t1 -.->|"MaxSim ✓"| d1
+    t2 -.->|"MaxSim ✓"| d2
+    t3 -.->|"MaxSim ✓"| d3
+    style QT fill:#e3f2fd,stroke:#1976d2,color:#000
+    style DocC fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>
@@ -1398,7 +1564,23 @@ The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than s
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="E5 Bi-Encoder: Parallel Encoding Flow"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["Query"] --> E["Encoder"]
+    C["Doc 1\n(cached)"] --> F["Encoder"]
+    D["Doc 2\n(cached)"] --> F
+    E --> G["⚡ Cosine\nSimilarity"]
+    F --> G
+    G --> H["Scores\n[0.89, 0.72, 0.64]"]
+    style A fill:#4fc3f7,color:#000
+    style H fill:#81c784,color:#000
+    style G fill:#ffd700,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
@@ -1459,7 +1641,22 @@ scores = [cosine_similarity(query_emb, doc_emb)
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="E5 Bi-Encoder: GDPR Query Flow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["Query:\\n'GDPR data\\ndeletion timeline'"] --> E["Encoder"]
+    B["Docs\\n(pre-encoded)"] --> F["Encoder\\n(cached)"]
+    E --> G["Cosine Similarity"]
+    F --> G
+    G --> H["C) 30-day window\\n→ 0.89 ✅\\nB) Retention policy\\n→ 0.72\\nA) Generic GDPR\\n→ 0.64"]
+    style A fill:#4fc3f7,color:#000
+    style G fill:#ffd700,color:#000
+    style H fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>
@@ -1612,7 +1809,21 @@ The caching story is compelling too. Encode your entire document corpus once, st
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="LLM Ranker: Listwise Reasoning"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A["Query +\n[1] Doc A\n[2] Doc B\n[3] Doc C"] --> B["🤖 LLM\nReasoning"]
+    B --> C["Ranking: [3,1,2]"]
+    B --> D["'Doc C directly\naddresses trade-offs'"]
+    style A fill:#e3f2fd,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#fff9c4,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.15} delay={0.7}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
@@ -1673,7 +1884,24 @@ Return ranking as: [3, 1, 2, ...]
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="LLM Ranker: Reasoning Flow"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A["Query: 'Pros/cons of\\neventual consistency\\nfor checkout?'"] --> B["🤖 LLM Analysis"]
+    D1["[1] DB concepts"] --> B
+    D2["[2] E-commerce patterns"] --> B
+    D3["[3] System design\\n+ consistency"] --> B
+    B --> R["Ranking: C > B > A"]
+    B --> E["Reason: 'C directly\\naddresses consistency\\ntrade-offs'"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style R fill:#c8e6c9,color:#000
+    style E fill:#fff9c4,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>
@@ -1838,7 +2066,24 @@ Return ranking as: [3, 1, 2, ...]
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="RRF: Fusion of 3 Rankers"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Rankers["3 Independent Rankers"]
+        R1["BM25: DocA=2nd"]
+        R2["Dense: DocA=3rd"]
+        R3["Hybrid: DocA=1st"]
+    end
+    Rankers --> F["RRF Formula\n1/(60+rank)"]
+    F --> W["🏆 DocA Wins!\n0.044 > 0.038"]
+    style Rankers fill:#e3f2fd,stroke:#1976d2,color:#000
+    style F fill:#e1bee7,color:#000
+    style W fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9rem' }}>
@@ -1898,7 +2143,24 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="RRF: Multi-Ranker Score Fusion"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Inputs["Individual Rankers"]
+        R1["BM25: DocA=2nd\\n1/(60+2)=0.016"]
+        R2["Dense: DocA=3rd\\n1/(60+3)=0.016"]
+        R3["Hybrid: DocA=1st\\n1/(60+1)=0.016"]
+    end
+    Inputs --> F["RRF Sum = 0.044"]
+    F --> W["🏆 DocA wins!\\n0.044 > 0.038 > 0.037"]
+    style Inputs fill:#e3f2fd,stroke:#1976d2,color:#000
+    style F fill:#e1bee7,color:#000
+    style W fill:#c8e6c9,stroke:#4caf50,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>
@@ -2093,7 +2355,24 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="FiD: Multi-Document Fusion"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query"] --> E1["Encoder"]
+    Q --> E2["Encoder"]
+    P1["Passage 1:\n'John founded X'"] --> E1
+    P2["Passage 2:\n'X est. in 1995'"] --> E2
+    E1 --> D["Decoder\n(Fusion)"]
+    E2 --> D
+    D --> O["'John founded X\nin 1995' ✅"]
+    style Q fill:#4fc3f7,color:#000
+    style D fill:#e1bee7,color:#000
+    style O fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
@@ -2158,7 +2437,25 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="FiD: Multi-Hop Evidence Fusion"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q["Query: 'Who founded X\\nand in what year?'"]
+    Q --> E1["Encoder"]
+    Q --> E2["Encoder"]
+    P1["Doc A:\\n'John Smith founded X'\\n→ score: 0.85"] --> E1
+    P2["Doc B:\\n'X established in 1995'\\n→ score: 0.82"] --> E2
+    E1 --> D["Decoder\\n(Cross-Doc Fusion)"]
+    E2 --> D
+    D --> O["✅ 'John Smith founded\\ncompany X in 1995'"]
+    style Q fill:#4fc3f7,color:#000
+    style D fill:#e1bee7,color:#000
+    style O fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>
@@ -2315,7 +2612,23 @@ The reranking capability, while useful, is indirect - you're extracting attentio
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="DPR: Dual-Encoder Architecture"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["Question"] --> B["Q-Encoder\n(at query time)"]
+    C["Passages\n(pre-encoded\n+ cached)"] --> D["P-Encoder\n(offline)"]
+    B --> E["⚡ Dot Product\n~ms"]
+    D --> E
+    E --> F["Ranked Passages"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#e3f2fd,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
@@ -2378,7 +2691,23 @@ for emb in passage_embeddings:
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <GSAPAnimated animation="bounceIn" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="DPR: QA-Optimized Encoding"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["Q: 'Capital gains\\ntax UK 2024'"] --> B["Q-Encoder"]
+    C["Doc embeddings\\n(pre-cached)"] --> D["P-Encoder\\n(offline)"]
+    B --> E["Dot Product\\n(fast!)"]
+    D --> E
+    E --> F["B) 2024 tax rates\\n→ 0.89 ✅\\nA) UK tax guide\\n→ 0.67\\nC) Investments\\n→ 0.45"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#e3f2fd,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>
@@ -2540,7 +2869,21 @@ Integration is straightforward - every major vector database supports **DPR** �
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5}>
-                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover
+                        title="BM25+LLM Hybrid Pipeline"
+                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["Query:\nerror E101\nv2.3"] --> B["BM25\nKeyword Filter\n→ 50 docs"]
+    B --> C["LLM\nReranker\nSemantic"]
+    C --> D["✅ Best Match:\nE101 troubleshooting\nsteps"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e3f2fd,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#c8e6c9,color:#000`}
+                      />
+                    </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} delay={0.7}>
                       <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1rem' }}>
@@ -2603,7 +2946,22 @@ Integration is straightforward - every major vector database supports **DPR** �
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <GSAPAnimated animation="flipCard" delay={0.2}>
-                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="BM25+LLM: Two-Stage Hybrid"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    A["Query: 'error E101\\nfirmware v2.3'"] --> B["BM25\\nKeyword Match"]
+    B -->|"Matches E101\\n+ v2.3"| C["A) E101 docs\\nB) v2.3 notes\\nC) Troubleshooting"]
+    C --> D["🤖 LLM\\nReranks by intent"]
+    D --> E["C) Troubleshooting\\n→ 0.94 ✅\\nA) E101 docs\\n→ 0.79\\nB) v2.3 notes\\n→ 0.65"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e3f2fd,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#c8e6c9,color:#000`}
+                    />
+                  </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
                     <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
                   </GSAPAnimated>

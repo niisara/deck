@@ -178,18 +178,18 @@ These **reshape and clean** context — Answer-conditioned, Table/Structured, Se
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Semantic Chunking Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Semantic Chunking Flow" diagram={`flowchart LR
     A["📄 Raw Document"] --> B["🔍 Detect Boundaries"]
     B --> C["✂️ Semantic Chunks"]
     C --> D["📦 Index & Store"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Segment by semantics: headings, paragraphs, discourse markers, code blocks, lists
@@ -200,7 +200,21 @@ These **reshape and clean** context — Answer-conditioned, Table/Structured, Se
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Semantic Chunking: When to Use" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Good["✅ Great Fit"]
+        A["📘 Manual with headings"]
+        B["📋 Policy doc with sections"]
+        C["💻 Code docs with fence blocks"]
+    end
+    subgraph Bad["❌ Poor Fit"]
+        D["💬 Free-form chat logs"]
+    end
+    style Good fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Bad fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -351,19 +365,19 @@ Now let's weigh the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Dynamic Sliding Window Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Dynamic Sliding Window Flow" diagram={`flowchart LR
     A["📄 Retrieved Chunk"] --> B["⬅️ Prev Window"]
     A --> C["➡️ Next Window"]
     B --> D["🔗 Merged Context"]
     C --> D
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Attach previous/next neighbor windows around retrieved chunks
@@ -374,7 +388,19 @@ Now let's weigh the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Sliding Window: Cross-Boundary Context" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph Isolated["❌ Without Window"]
+        C3["Step 3 chunk\n(missing context)"]
+    end
+    subgraph Window["✅ With ±1 Window"]
+        C2["Step 2"] --> C3W["Step 3"] --> C4["Step 4"]
+    end
+    style Isolated fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Window fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -521,19 +547,19 @@ Let's look at the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Parent–Child Packing Flow" diagram={`flowchart TD
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Parent–Child Packing Flow" diagram={`flowchart TD
     A["📖 Document"] --> B["📑 Section"]
     B --> C["📝 Paragraph"]
     C --> D["🔗 Child + Parent Summary"]
     B --> D
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Pack child chunk plus parent (section/chapter) summary
@@ -544,7 +570,16 @@ Let's look at the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Parent-Child: Hierarchy Example" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Doc["📖 API Docs"] --> Auth["📑 Authentication"]
+    Auth --> EP["📝 POST /users"]
+    EP --> P["Pack: EP + Auth summary"]
+    style Doc fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style P fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -694,18 +729,18 @@ Let's discuss the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Context Summarization Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Context Summarization Flow" diagram={`flowchart LR
     A["📄 Long Source"] --> B["🤖 Summarizer"]
     B --> C["📝 Compact Summary"]
     C --> D["📦 Pack into Context"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Pre-summarize verbose sources (extractive/abstractive) before packing
@@ -716,7 +751,17 @@ Let's discuss the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Summarization: Token Savings" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    A["📄 Policy: 2000 tokens"] --> B["🤖 Summarize"]
+    B --> C["📝 Summary: 150 tokens"]
+    C --> D["💰 Save 1850 tokens!"]
+    style A fill:#ffcdd2,color:#000
+    style C fill:#c8e6c9,color:#000
+    style D fill:#ffd700,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -865,19 +910,19 @@ Let's look at the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Hybrid Local+Global Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Hybrid Local+Global Flow" diagram={`flowchart LR
     A["📄 Document"] --> B["🌍 Global Summary"]
     A --> C["🔍 Local Snippets"]
     B --> D["📦 Combined Context"]
     C --> D
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Combine a short global summary with top local snippets
@@ -888,7 +933,18 @@ Let's look at the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Hybrid: Query Type Matching" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Tell me about refund policy\nand the specific deadline"]
+    Q --> G["🌍 Global Summary\n(80 tokens)"]
+    Q --> L["🔍 Local: deadline clause\n(60 tokens)"]
+    G --> R["📦 Combined Answer"]
+    L --> R
+    style Q fill:#e3f2fd,color:#000
+    style R fill:#c8e6c9,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -1036,18 +1092,18 @@ Let's discuss the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Relevance Weighted Packing Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Relevance Weighted Packing Flow" diagram={`flowchart LR
     A["📄 Candidates"] --> B["⚖️ Score & Rank"]
     B --> C["🏆 Top Chunks"]
     C --> D["📦 Budget-Fit Pack"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Rank by score; pack highest first within budget
@@ -1058,7 +1114,22 @@ Let's discuss the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Relevance Weighted: Ranking Example" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Ranked["Scored Chunks (Budget: 4k tokens)"]
+        R1["Chunk A: score 0.95 ✅ pack"]
+        R2["Chunk B: score 0.88 ✅ pack"]
+        R3["Chunk C: score 0.71 ✅ pack"]
+        R4["Chunk D: score 0.42 ❌ skip"]
+    end
+    style Ranked fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style R1 fill:#c8e6c9,color:#000
+    style R2 fill:#c8e6c9,color:#000
+    style R3 fill:#c8e6c9,color:#000
+    style R4 fill:#ffcdd2,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -1207,18 +1278,18 @@ Let's look at the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Passage Compression Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Passage Compression Flow" diagram={`flowchart LR
     A["📄 Verbose Passage"] --> B["🤖 LLM Compressor"]
     B --> C["📝 Concise Bullets"]
     C --> D["📦 Pack More Evidence"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       LLM rewrites chunks into concise bullets with entities/numbers preserved
@@ -1229,7 +1300,22 @@ Let's look at the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Compression: Before vs After" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph Before["Before: 300 tokens"]
+        P["Long paragraph with\npreamble, filler,\nand repetition..."]
+    end
+    subgraph After["After: 80 tokens (73% less)"]
+        B1["• Key fact 1"]
+        B2["• Key date: Jan 15"]
+        B3["• Amount: $500"]
+    end
+    Before --> After
+    style Before fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style After fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -1378,18 +1464,18 @@ Let's look at the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Answer-conditioned Retrieval Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Answer-conditioned Retrieval Flow" diagram={`flowchart LR
     A["❓ Query"] --> B["🏷️ Classify Type"]
     B --> C["📋 Filter Fields"]
     C --> D["📦 Targeted Context"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Predict answer schema (boolean/date/code/etc.) and filter context accordingly
@@ -1400,7 +1486,20 @@ Let's look at the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Answer-conditioned: Query Type Routing" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Query"] --> C{"Classify Type"}
+    C -->|Date query| D["📅 Extract date fields"]
+    C -->|Code query| Co["💻 Extract code blocks"]
+    C -->|Boolean query| B["✅ Extract yes/no clauses"]
+    D --> R["📦 Targeted Context"]
+    Co --> R
+    B --> R
+    style Q fill:#e3f2fd,color:#000
+    style R fill:#c8e6c9,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -1547,18 +1646,18 @@ Let's see the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Structured Context Packing Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Structured Context Packing Flow" diagram={`flowchart LR
     A["📄 Raw Text"] --> B["🔍 Extract Fields"]
     B --> C["📊 Structured Rows"]
     C --> D["📦 Dense Context"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Convert passages into compact bullets, key-value rows, or mini-tables
@@ -1569,7 +1668,22 @@ Let's see the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Structured Packing: Density Example" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph Prose["Prose: 200 tokens"]
+        T["The product supports up to\n100 users with 50GB storage\nand 1000 API calls per minute"]
+    end
+    subgraph Struct["Structured: 40 tokens"]
+        S1["Max Users: 100"]
+        S2["Storage: 50GB"]
+        S3["API Rate: 1k/min"]
+    end
+    Prose --> Struct
+    style Prose fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Struct fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -1718,18 +1832,18 @@ Let's look at the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Semantic Deduplication Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Semantic Deduplication Flow" diagram={`flowchart LR
     A["📄 Duplicate Chunks"] --> B["🔍 Similarity Check"]
     B --> C["🗑️ Remove Duplicates"]
     C --> D["📦 Clean Context"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Cluster or similarity-threshold to drop duplicates
@@ -1740,7 +1854,19 @@ Let's look at the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Deduplication: 3 Sources → 1 Chunk" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Dupes["3 Near-Identical Chunks"]
+        D1["Source A: 'Refund in 30 days'"]
+        D2["Source B: 'Refund within 30 days'"]
+        D3["Source C: 'Returns in 30 days'"]
+    end
+    Dupes --> Keep["✅ Keep best: Source A\n(cite all 3)"]
+    style Dupes fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style Keep fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -1889,19 +2015,19 @@ Let's see the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Token-Budget Aware Packing Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Token-Budget Aware Packing Flow" diagram={`flowchart LR
     A["📄 Ranked Chunks"] --> B["📏 Token Counter"]
     B --> C{"Fits Budget?"}
     C -->|Yes| D["📦 Add to Context"]
     C -->|No| E["🗜️ Compress/Skip"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Track tokens and greedily pack; compress or skip when over budget
@@ -1912,7 +2038,19 @@ Let's see the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Token Budget: Packing Loop" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    B["Budget: 4000 tokens"]
+    B --> C1["Chunk 1: 800t → add ✅\n(used: 800)"]
+    C1 --> C2["Chunk 2: 600t → add ✅\n(used: 1400)"]
+    C2 --> C3["Chunk 3: 900t → add ✅\n(used: 2300)"]
+    C3 --> C4["Chunk 4: 2000t → compress!\n→ 400t ✅ (used: 2700)"]
+    C4 --> Done["✅ Done: 2700/4000 tokens"]
+    style B fill:#e3f2fd,color:#000
+    style Done fill:#c8e6c9,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -2062,18 +2200,18 @@ Let's see the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Adaptive k Retrieval Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Adaptive k Retrieval Flow" diagram={`flowchart LR
     A["❓ Query"] --> B["📊 Estimate Complexity"]
     B --> C["🔢 Adjust k"]
     C --> D["📦 Retrieve k Chunks"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Estimate complexity and adjust k; stop when marginal gain is low
@@ -2084,7 +2222,19 @@ Let's see the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Adaptive k: Query Complexity" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Specific["Specific: 'Error code 404 in module X'"]
+        S["Score distribution: steep drop\n→ k=2 chunks"]
+    end
+    subgraph Broad["Broad: 'What is the refund policy?'"]
+        Br["Score distribution: flat\n→ k=8 chunks"]
+    end
+    style Specific fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Broad fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
@@ -2233,18 +2383,18 @@ Let's look at the trade-offs...`
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
-                  <div>
-                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>
-                        How It Works
-                        <MermaidPopover title="Chain-of-Context Packing Flow" diagram={`flowchart LR
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="Chain-of-Context Packing Flow" diagram={`flowchart LR
     A["❓ Query"] --> B["📋 Plan Steps"]
     B --> C["🔍 Group Evidence"]
     C --> D["📦 Ordered Context"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`} />
-                      </strong>
+                    </div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>How It Works</strong>
                     </div>
                     <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
                       Arrange evidence as steps: definitions → constraints → evidence → counterpoints
@@ -2255,7 +2405,19 @@ Let's look at the trade-offs...`
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                  <div>
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                      <MermaidPopover title="CoC: Reasoning Chain Order" diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Q["❓ Is this refund valid?"]
+    Q --> S1["Step 1: 📜 Refund Policy (definition)"]
+    S1 --> S2["Step 2: 📅 Purchase Date (constraint)"]
+    S2 --> S3["Step 3: 🧾 Receipt Evidence (fact)"]
+    S3 --> S4["Step 4: ⚠️ Exception Clause (caveat)"]
+    S4 --> A["✅ Grounded Answer"]
+    style Q fill:#e3f2fd,color:#000
+    style A fill:#c8e6c9,color:#000`} />
+                    </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                       <strong>When to Use</strong>
