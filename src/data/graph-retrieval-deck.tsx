@@ -221,12 +221,28 @@ The remaining techniques combine graphs with other technologies or add sophistic
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Node-Level Retrieval - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Query] --> B[Match Node]
+    B --> C[Node Content]
+    C --> D[Return Result]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>High precision</li>
                   <li>Simple</li>
                   <li>Fast</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.5}>
@@ -260,9 +276,8 @@ Now let's see exactly how this technique works under the hood!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Node-Level Retrieval Flow"
                       diagram={`flowchart LR
@@ -275,7 +290,8 @@ Now let's see exactly how this technique works under the hood!`
     style C fill:#ffd700,color:#000
     style D fill:#81c784,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</p>
                 </div>
               </GSAPAnimated>
@@ -372,12 +388,28 @@ Now let's consider the trade-offs and limitations of this approach!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Node-Level Retrieval - When to Use"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q{Query Type?} -->|Single entity| U[Use Node-Level]
+    Q -->|Multi-hop| A[Use Path-Based]
+    U --> R[High Precision]
+    style Q fill:#ffd700,color:#000
+    style U fill:#c8e6c9,color:#000
+    style A fill:#ffcdd2,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>High precision</li>
                   <li>Simple to implement</li>
                   <li>Fast query performance</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
@@ -430,12 +462,30 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Edge-Weighted Retrieval - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Seed Node] -->|weight=0.9| B[Node B]
+    A -->|weight=0.3| C[Node C]
+    B --> D[Rank Higher]
+    C --> E[Rank Lower]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#c8e6c9,color:#000
+    style C fill:#ffcdd2,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffcdd2,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Trust-aware ranking based on relationship strength</li>
                   <li>Interpretable results via explicit weights</li>
                   <li>Nuanced prioritization of connections</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.5}>
@@ -474,9 +524,8 @@ Now let's see exactly how this technique works in practice!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Edge-Weighted Retrieval Process"
                       diagram={`flowchart TD
@@ -499,7 +548,8 @@ Now let's see exactly how this technique works in practice!`
     style E3 fill:#fff176,color:#000
     style F fill:#81c784,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Find seed nodes from query, then score and rank neighbors by edge weights (citations, confidence, co-occurrence). Apply decay for multi-hop traversal.</p>
                 </div>
               </GSAPAnimated>
@@ -614,13 +664,29 @@ Now let's examine the benefits and limitations of this approach!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Edge-Weighted Retrieval - When to Use"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    E{Edge Quality?} -->|Rich metadata| U[Use Edge-Weighted]
+    E -->|No weights| A[Use Basic Traversal]
+    U --> H[Quality Ranking]
+    style E fill:#ffd700,color:#000
+    style U fill:#c8e6c9,color:#000
+    style A fill:#ffcdd2,color:#000
+    style H fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Nuanced ranking based on relationship strength</li>
                   <li>Trust-aware retrieval with interpretable scores</li>
                   <li>Better handling of noisy or uncertain edges</li>
                   <li>Transparent explanations for ranking decisions</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
@@ -683,12 +749,32 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Neighborhood Expansion - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Query] --> B[Seed Node]
+    B --> C[Neighbor 1]
+    B --> D[Neighbor 2]
+    B --> E[Neighbor 3]
+    C & D & E --> F[Aggregated Context]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Simple implementation with immediate context</li>
                   <li>Contextual richness beyond isolated nodes</li>
                   <li>Low-latency 1-hop queries</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.5}>
@@ -736,9 +822,8 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Neighborhood Expansion Process"
                       diagram={`flowchart TD
@@ -767,7 +852,8 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
     style E fill:#e1bee7,color:#000
     style F fill:#4fc3f7,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Find seed node, expand to immediate neighbors using BFS 👉 'bee-eff-ess' or DFS 👉 'dee-eff-ess' traversal (1-hop), apply type filters and relevance filters, then aggregate and return.</p>
                 </div>
               </GSAPAnimated>
@@ -912,13 +998,29 @@ Return A + context from neighbors`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Neighborhood Expansion - Depth Tradeoff"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    D{Hop Depth} -->|1-hop| P[Precise Fast]
+    D -->|2-hop| M[More Context]
+    D -->|3+ hop| N[Noise Risk]
+    style D fill:#ffd700,color:#000
+    style P fill:#c8e6c9,color:#000
+    style M fill:#e3f2fd,color:#000
+    style N fill:#ffcdd2,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Rich contextual information in single retrieval</li>
                   <li>Simple implementation with low complexity</li>
                   <li>Fast, low-latency 1-hop queries</li>
                   <li>Better user experience with comprehensive answers</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.4}>
@@ -984,12 +1086,28 @@ Return A + context from neighbors`}
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInTop" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Path-Based Retrieval - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    A[Start] -->|hop 1| B[Node B]
+    B -->|hop 2| C[Node C]
+    C -->|hop 3| D[Answer]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Supports complex reasoning and inference chains</li>
                   <li>Provides traceable evidence paths</li>
                   <li>Discovers indirect connections between concepts</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.5}>
@@ -1041,9 +1159,8 @@ Return A + context from neighbors`}
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Path-Based Retrieval Process"
                       diagram={`flowchart LR
@@ -1068,7 +1185,8 @@ Return A + context from neighbors`}
     style F fill:#ffd700,color:#000
     style G fill:#81c784,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Identify start and target nodes from query, use pathfinding algorithms (BFS, Dijkstra, A-star) to enumerate candidate paths up to max hops, score paths by length, edge weights, and semantic relevance.</p>
                 </div>
               </GSAPAnimated>
@@ -1243,13 +1361,31 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="bounceIn" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Path-Based Retrieval - When to Use"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q{Hops Needed?} -->|1-hop| S[Simple Lookup]
+    Q -->|2-3 hops| P[Use Path-Based]
+    Q -->|4+ hops| C[Consider Community]
+    P --> R[Connected Answer]
+    style Q fill:#ffd700,color:#000
+    style S fill:#e3f2fd,color:#000
+    style P fill:#c8e6c9,color:#000
+    style C fill:#e1bee7,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Enables multi-hop reasoning and inference</li>
                   <li>Provides traceable evidence chains</li>
                   <li>Discovers indirect connections and insights</li>
                   <li>Supports explainable AI with clear reasoning paths</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInTop" delay={0.4}>
@@ -1323,12 +1459,32 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Community Retrieval - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Query] --> B{Match Cluster}
+    B --> C[Member 1]
+    B --> D[Member 2]
+    B --> E[Member 3]
+    C & D & E --> F[Cluster Context]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e1bee7,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Broad, topic-coherent coverage</li>
                   <li>Reduces narrow bias</li>
                   <li>Handles exploratory queries</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.5}>
@@ -1370,9 +1526,8 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Community Detection & Retrieval"
                       diagram={`graph TB
@@ -1402,7 +1557,8 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
     style Community2 fill:#c8e6c9,color:#000
     style R fill:#81c784,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Detect communities via algorithms (Louvain 👉 'loo-VANE', Leiden 👉 'LIE-den') or semantic clustering, map query to best cluster, retrieve top-k nodes from that community by centrality or similarity.</p>
                 </div>
               </GSAPAnimated>
@@ -1518,13 +1674,29 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Community Retrieval - Quality vs Precision"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    C{Cluster Quality?} -->|Well-defined| U[Use Community]
+    C -->|Overlapping| W[Review First]
+    U --> H[High Recall]
+    style C fill:#ffd700,color:#000
+    style U fill:#c8e6c9,color:#000
+    style W fill:#ffcdd2,color:#000
+    style H fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Broad, topic-coherent context coverage</li>
                   <li>Natural handling of exploratory queries</li>
                   <li>Reduces narrow bias in results</li>
                   <li>Semantic coherence within clusters</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
@@ -1591,12 +1763,30 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Hierarchical Graph Retrieval - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    A[Topic Level] --> B[Sub-topic]
+    B --> C[Detail Level]
+    C --> D[Specific Facts]
+    Q[Query] -->|drill down| B
+    style A fill:#e3f2fd,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000
+    style Q fill:#4fc3f7,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Precise granularity control</li>
                   <li>Structured, organized summaries</li>
                   <li>Scalable for large hierarchies</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="rotateIn" delay={0.5}>
@@ -1640,9 +1830,8 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hierarchical Retrieval Process"
                       diagram={`graph TD
@@ -1672,7 +1861,8 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
     style R1 fill:#81c784,color:#000
     style R2 fill:#81c784,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Classify query specificity (broad vs. detailed), start at matched level, traverse up for context or down for detail, apply pruning to skip irrelevant branches.</p>
                 </div>
               </GSAPAnimated>
@@ -1801,13 +1991,29 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Hierarchical Retrieval - Level Selection"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q{Query Scope?} -->|Overview| T[Top Level]
+    Q -->|Specific| D[Deep Level]
+    Q -->|Both| M[Multi-Level]
+    style Q fill:#ffd700,color:#000
+    style T fill:#e3f2fd,color:#000
+    style D fill:#e1bee7,color:#000
+    style M fill:#c8e6c9,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Precise granularity control</li>
                   <li>Structured, interpretable results</li>
                   <li>Highly scalable via pruning</li>
                   <li>Natural fit for documentation</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
@@ -1876,12 +2082,31 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Graph + Dense Vector Hybrid - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query] --> V[Vector Search]
+    Q --> G[Graph Traversal]
+    V --> M[Merge and Rerank]
+    G --> M
+    M --> R[Results]
+    style Q fill:#4fc3f7,color:#000
+    style V fill:#e1bee7,color:#000
+    style G fill:#ffd700,color:#000
+    style M fill:#e3f2fd,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Best of both worlds: semantic + structural</li>
                   <li>Better precision/recall balance</li>
                   <li>Robust to query variations</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.5}>
@@ -1929,9 +2154,8 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hybrid Retrieval Process"
                       diagram={`flowchart TB
@@ -1964,7 +2188,8 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
     style M fill:#e1bee7,color:#000
     style R fill:#ffd700,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Run parallel retrieval: (1) vector search for top-k semantic matches, (2) graph expansion from seed nodes. Fuse results with hybrid scoring: semantic similarity + structural features (proximity, centrality, edge weights).</p>
                 </div>
               </GSAPAnimated>
@@ -2119,13 +2344,31 @@ Where:
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Dense Vector Hybrid - When to Use"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    N{Need?} -->|Semantic + Struct| H[Use Hybrid]
+    N -->|Pure structure| G[Graph Only]
+    N -->|Pure semantic| V[Vector Only]
+    H --> B[Best Coverage]
+    style N fill:#ffd700,color:#000
+    style H fill:#c8e6c9,color:#000
+    style G fill:#e1bee7,color:#000
+    style V fill:#e3f2fd,color:#000
+    style B fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Best of both worlds (semantic + structural)</li>
                   <li>Superior precision/recall balance</li>
                   <li>Robust across diverse query types</li>
                   <li>Compensates for weaknesses in either approach</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
@@ -2198,12 +2441,31 @@ Where:
               </GSAPAnimated>
 
               <GSAPAnimated animation="rotateIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Graph + BM25 Hybrid - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query] --> K[BM25 Keywords]
+    Q --> G[Graph Context]
+    K --> C[Combine Scores]
+    G --> C
+    C --> R[Ranked Results]
+    style Q fill:#4fc3f7,color:#000
+    style K fill:#e1bee7,color:#000
+    style G fill:#ffd700,color:#000
+    style C fill:#e3f2fd,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Keyword precision with structural context</li>
                   <li>Reduces false positives from semantic similarity</li>
                   <li>Handles technical terminology and exact codes</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.5}>
@@ -2251,9 +2513,8 @@ Where:
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Graph + BM25 Hybrid Process"
                       diagram={`flowchart TB
@@ -2291,7 +2552,8 @@ Where:
     style F fill:#ffd700,color:#000
     style R fill:#4caf50,color:#fff`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Run parallel retrieval: (1) graph expansion from seeds, (2) BM25 keyword search. Merge results with fusion strategy—intersection, union, or weighted combination. Re-rank by combining graph relevance with BM25 scores.</p>
                 </div>
               </GSAPAnimated>
@@ -2452,13 +2714,31 @@ Your **graph database** stores the structural data—nodes, edges, relationships
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="BM25 Hybrid - When to Use"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    N{Query Type?} -->|Keyword-heavy| K[BM25 Dominant]
+    N -->|Semantic| S[Vector Dominant]
+    N -->|Mixed| H[Use BM25+Graph]
+    H --> R[Robust Results]
+    style N fill:#ffd700,color:#000
+    style K fill:#e3f2fd,color:#000
+    style S fill:#e1bee7,color:#000
+    style H fill:#c8e6c9,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Keyword precision reduces false positives</li>
                   <li>Handles technical terms and exact codes reliably</li>
                   <li>Robust for sparse text and structured data</li>
                   <li>Transparent keyword-based explanations</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.4}>
@@ -2540,12 +2820,32 @@ Your **graph database** stores the structural data—nodes, edges, relationships
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Semantic Graph Traversal - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    Q[Query Embedding] --> S{Semantic Sim}
+    S -->|high| N1[Node 1]
+    N1 --> S2{Next Sim}
+    S2 -->|high| N2[Node 2]
+    N2 --> R[Results]
+    style Q fill:#4fc3f7,color:#000
+    style S fill:#ffd700,color:#000
+    style N1 fill:#e1bee7,color:#000
+    style S2 fill:#ffd700,color:#000
+    style N2 fill:#e1bee7,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Precision-focused exploration with semantic filtering</li>
                   <li>Adaptive traversal depth based on relevance</li>
                   <li>Avoids noisy or weak connections</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.5}>
@@ -2595,9 +2895,8 @@ Your **graph database** stores the structural data—nodes, edges, relationships
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Semantic Graph Traversal Process"
                       diagram={`flowchart TB
@@ -2634,7 +2933,8 @@ Your **graph database** stores the structural data—nodes, edges, relationships
     style D3 fill:#f44336,color:#fff
     style R fill:#ffd700,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Identify seed nodes, embed query, traverse via BFS/DFS. At each neighbor, compute similarity score to query. Expand only if score ≥ τ 👉 'tau' threshold. Stop when budget exhausted or no more qualifying neighbors.</p>
                 </div>
               </GSAPAnimated>
@@ -2828,13 +3128,31 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Semantic Traversal - Threshold Tradeoff"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    T{Sim Threshold} -->|High 0.9| P[Precise Few Nodes]
+    T -->|Medium 0.7| B[Balanced]
+    T -->|Low 0.5| N[Noisy Results]
+    B --> G[Good Results]
+    style T fill:#ffd700,color:#000
+    style P fill:#e3f2fd,color:#000
+    style B fill:#c8e6c9,color:#000
+    style N fill:#ffcdd2,color:#000
+    style G fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Prevents topic drift during exploration</li>
                   <li>Handles noisy graphs with weak edges gracefully</li>
                   <li>Adaptive depth based on semantic relevance</li>
                   <li>High precision through semantic filtering</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
@@ -2914,12 +3232,32 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Graph Walk-Based Ranking - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query Node] --> W[Random Walk]
+    W --> A[Node A freq=5]
+    W --> B[Node B freq=8]
+    W --> C[Node C freq=2]
+    B --> R[Top Ranked]
+    style Q fill:#4fc3f7,color:#000
+    style W fill:#e1bee7,color:#000
+    style A fill:#e3f2fd,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#e3f2fd,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Identify authoritative or central nodes</li>
                   <li>Global importance signal across entire graph</li>
                   <li>Proven, mathematically grounded algorithms</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.5}>
@@ -2977,9 +3315,8 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Personalized PageRank Process"
                       diagram={`flowchart TB
@@ -3015,7 +3352,8 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
     style D fill:#a5d6a7,color:#000
     style F fill:#ffd700,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Identify seed nodes from query. Build graph transition matrix. Run random walk with restart to seeds (damping α=0.85). Iterate until convergence. Rank nodes by stationary probabilities (PPR 👉 'pee-pee-arr' scores).</p>
                 </div>
               </GSAPAnimated>
@@ -3234,13 +3572,31 @@ Now let's examine benefits and limitations of this powerful technique!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Walk-Based Ranking - Connectivity Impact"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    G{Graph Density?} -->|Dense| H[Quality Ranks]
+    G -->|Sparse| L[Unreliable Ranks]
+    H --> U[Use Walk-Based]
+    L --> A[Augment First]
+    style G fill:#ffd700,color:#000
+    style H fill:#c8e6c9,color:#000
+    style L fill:#ffcdd2,color:#000
+    style U fill:#81c784,color:#000
+    style A fill:#e3f2fd,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
                 <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
                   <li>Identifies authoritative, central nodes effectively</li>
                   <li>Global signal robust to noise and local errors</li>
                   <li>Mathematically grounded with convergence guarantees</li>
                   <li>Proven effectiveness in web search and citations</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInTop" delay={0.4}>
@@ -3329,12 +3685,30 @@ Ready to explore even more advanced techniques? Our journey through graph retrie
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Graph Construction - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph LR
+    Q[NL Query] --> P[Parse Entities]
+    P --> G[Query Graph]
+    G --> M[Match KG Subgraph]
+    M --> R[Structured Answer]
+    style Q fill:#4fc3f7,color:#000
+    style P fill:#e1bee7,color:#000
+    style G fill:#ffd700,color:#000
+    style M fill:#e3f2fd,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Capture structured, relational query intent</li>
                   <li>Highly precise matches based on graph structure</li>
                   <li>Explainable results (graph isomorphism)</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.5}>
@@ -3400,9 +3774,8 @@ Now let's see how Query Graph Construction works in practice!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="flipCard" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Query Graph Construction Process"
                       diagram={`flowchart TB
@@ -3440,7 +3813,8 @@ Now let's see how Query Graph Construction works in practice!`
     style M fill:#e1bee7,color:#000
     style F fill:#ffd700,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Apply NER 👉 'en-ee-arr' to extract entities. Use Relation Extraction to identify relationships. Build query graph with entities as nodes, relations as edges. Link entities to KB nodes. Run subgraph matching algorithm to find structural isomorphisms in knowledge base.</p>
                 </div>
               </GSAPAnimated>
@@ -3713,7 +4087,24 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Query Graph - Complexity Decision"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q{Query Complexity?} -->|Simple entity| N[Node Lookup]
+    Q -->|Has relations| U[Use Query Graph]
+    Q -->|Multi-entity| U
+    U --> R[Structured Answer]
+    style Q fill:#ffd700,color:#000
+    style N fill:#e3f2fd,color:#000
+    style U fill:#c8e6c9,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
+                </div>
               </GSAPAnimated>
 
               <GSAPStaggerList delay={0.3} stagger={0.12}>
@@ -3856,12 +4247,30 @@ Query Graph Construction is a powerful technique for structured, relational retr
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Context Path Stitching - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    P1[Path 1: A to B] --> S[Stitch Together]
+    P2[Path 2: B to C] --> S
+    P3[Path 3: C to D] --> S
+    S --> R[Coherent Context]
+    style P1 fill:#e1bee7,color:#000
+    style P2 fill:#e1bee7,color:#000
+    style P3 fill:#e1bee7,color:#000
+    style S fill:#ffd700,color:#000
+    style R fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Transform disjoint paths into readable narratives</li>
                   <li>Provide comprehensive, connected context</li>
                   <li>Reduce LLM hallucinations via coherent evidence</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="bounceIn" delay={0.5}>
@@ -3954,9 +4363,8 @@ Now let's see how Context Path Stitching operates in practice!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Path Stitching Process"
                       diagram={`flowchart TB
@@ -3994,7 +4402,8 @@ Now let's see how Context Path Stitching operates in practice!`
     style F fill:#a5d6a7,color:#000
     style L fill:#ffd700,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Collect retrieved paths. Deduplicate overlapping nodes. Order paths logically (temporal, causal, topical). Add bridging transitions. Format into natural language prose. Feed coherent narrative to LLM 👉 'el-el-em'.</p>
                 </div>
               </GSAPAnimated>
@@ -4522,7 +4931,26 @@ Answer: Recent research indicates that sleep deprivation has significant cogniti
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Path Stitching - Coherence vs Noise"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    P{Path Count?} -->|2-3 paths| C[Coherent Context]
+    P -->|Many paths| N[Noise Risk]
+    C --> G[Good Answer]
+    N --> F[Filter First]
+    F --> G
+    style P fill:#ffd700,color:#000
+    style C fill:#c8e6c9,color:#000
+    style N fill:#ffcdd2,color:#000
+    style G fill:#81c784,color:#000
+    style F fill:#e3f2fd,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
+                </div>
               </GSAPAnimated>
 
               <GSAPStaggerList delay={0.3} stagger={0.12}>
@@ -4686,12 +5114,32 @@ Regularly review stitched outputs manually—does the narrative make sense? Are 
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInTop" delay={0.3}>
-                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="LLM-Guided Graph Expansion - Core Concept"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Q[Query] --> L[LLM Decides]
+    L -->|select| N1[Node 1]
+    N1 --> L2[LLM Evaluates]
+    L2 -->|expand| N2[Node 2]
+    L2 -->|done| A[Generate Answer]
+    style Q fill:#4fc3f7,color:#000
+    style L fill:#ffd700,color:#000
+    style N1 fill:#e1bee7,color:#000
+    style L2 fill:#ffd700,color:#000
+    style N2 fill:#e1bee7,color:#000
+    style A fill:#81c784,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li>Intelligent, adaptive exploration under budget constraints</li>
                   <li>Focuses on most promising areas of the graph</li>
                   <li>Handles open-ended, exploratory queries gracefully</li>
                 </ul>
+                </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.5}>
@@ -4777,9 +5225,8 @@ Now let's see how LLM-Guided Graph Expansion operates in practice!`
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    How It Works
+                <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="LLM-Guided Graph Expansion Process"
                       diagram={`flowchart TB
@@ -4822,7 +5269,8 @@ Now let's see how LLM-Guided Graph Expansion operates in practice!`
     style F fill:#a5d6a7,color:#000
     style A fill:#ffd700,color:#000`}
                     />
-                  </h3>
+                  </div>
+                  <h3>How It Works</h3>
                   <p>Start with seed nodes. At each iteration, prompt LLM 👉 'el-el-em' with current context and available edges. LLM reasons and selects next edges to explore. Retrieve chosen neighbors. Repeat until budget exhausted or LLM indicates completion. Return accumulated context.</p>
                 </div>
               </GSAPAnimated>
@@ -5429,7 +5877,25 @@ def log_exploration(query, state, decision, result):
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
               <GSAPAnimated animation="rotateIn" delay={0.1}>
-                <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
+                                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="LLM-Guided - Budget vs Precision"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    B{LLM Budget?} -->|High| D[Deep Exploration]
+    B -->|Low| S[Shallow Fast]
+    D --> P[High Precision]
+    S --> R[Quick Response]
+    style B fill:#ffd700,color:#000
+    style D fill:#c8e6c9,color:#000
+    style S fill:#e3f2fd,color:#000
+    style P fill:#81c784,color:#000
+    style R fill:#e1bee7,color:#000`}
+                  />
+                </div>
+<h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
+                </div>
               </GSAPAnimated>
 
               <GSAPStaggerList delay={0.3} stagger={0.12}>
