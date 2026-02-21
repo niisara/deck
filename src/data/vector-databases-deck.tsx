@@ -1,6 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const vectorDatabasesDeck: Deck = {
   id: 'vector-databases-deck',
@@ -324,7 +325,24 @@ Let's look at some additional considerations and tips.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInBottom" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Pinecone Scaling Options"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    Start["Query Load Increases"] --> V{"Need more capacity?"}
+    V -->|"Bigger pods"| Vert["Vertical: x1 → x2 → x4 → x8\n(zero downtime)"]
+    V -->|"More throughput"| Horiz["Horizontal: Add Replicas\n(QPS scales linearly)"]
+    V -->|"Change pod type"| Coll["Collections: Snapshot →\nNew Index (reconfigure)"]
+    V -->|"Variable traffic"| SrvL["Serverless: Auto-scale\n(pay per use)"]
+    style Start fill:#4fc3f7,color:#000
+    style Vert fill:#c8e6c9,color:#000
+    style Horiz fill:#c8e6c9,color:#000
+    style Coll fill:#fff9c4,color:#000
+    style SrvL fill:#e1bee7,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Vertical scaling occurs with no downtime for upserts or queries</li>
                   <li>Collections enable index reconfiguration for horizontal scaling</li>
@@ -499,7 +517,28 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInTop" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#24b15f', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#24b15f', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Weaviate: Hybrid Search & API Architecture"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Client["Client App"] --> API{"API"}
+    API -->|"GraphQL"| GQL["Flexible nested queries\n+ field selection"]
+    API -->|"REST"| REST["Traditional HTTP\nendpoints"]
+    GQL --> Hybrid["Hybrid Search Engine"]
+    REST --> Hybrid
+    Hybrid --> HNSW["HNSW Index\n(vector similarity)"]
+    Hybrid --> Inv["Inverted Index\n(text + filters)"]
+    HNSW --> Result["Combined Results"]
+    Inv --> Result
+    Result --> Ref["Reference Links\n(graph connections)"]
+    style Client fill:#4fc3f7,color:#000
+    style Hybrid fill:#e1bee7,color:#000
+    style Result fill:#c8e6c9,color:#000
+    style Ref fill:#fff9c4,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Offers GraphQL and REST APIs for flexible integration</li>
                   <li>Supports reference links for graph-like connections between objects</li>
@@ -674,7 +713,30 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInRight" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#9434bd', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#9434bd', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Qdrant: Quantization & Filter Power"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Query["Query Vector"] --> Filter{"Apply Payload\nFilters?"}
+    Filter -->|"geo / range / text"| Filtered["Pre-filtered Subset"]
+    Filter -->|"no filter"| Full["Full Collection"]
+    Filtered --> HNSW["HNSW Search\n(Rust-powered)"]
+    Full --> HNSW
+    HNSW --> Quant{"Quantization?"}
+    Quant -->|"Binary (40x faster)"| BQ["Binary Quantization\n↓ memory + ↑ speed"]
+    Quant -->|"Dense only"| Dense["Dense Vectors"]
+    Quant -->|"Dense + Sparse"| Hybrid["Hybrid Search\n(dense + sparse)"]
+    BQ --> Results["⚡ Results"]
+    Dense --> Results
+    Hybrid --> Results
+    style Query fill:#4fc3f7,color:#000
+    style BQ fill:#c8e6c9,color:#000
+    style Results fill:#ffd700,color:#000
+    style Filter fill:#e1bee7,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Features rich payload filters (geo, ranges, text), sparse vectors support, and OpenAPI v3 client generation</li>
                   <li>Written in Rust for performance</li>
@@ -851,7 +913,29 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="rotateIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#df8739', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#df8739', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Milvus: Index Selection Decision Tree"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Start["Milvus Index Selection"] --> FR{"Filter\nRatio?"}
+    FR -->|"High (many filters)"| FLAT["FLAT\n✅ Exact search\n✅ Perfect accuracy"]
+    FR -->|"Low"| TK{"TopK\nsize?"}
+    TK -->|"Large (100+)"| IVF["IVF\n✅ Many results\n✅ Memory-efficient"]
+    TK -->|"Small"| Recall{"Extreme\nRecall needed?"}
+    Recall -->|"Yes (99.9%+)"| FlatGPU["FLAT + GPU\n✅ Parallel exact search"]
+    Recall -->|"No"| Memory{"Memory\nconstrained?"}
+    Memory -->|"Yes (SSD)"| DiskANN["DiskANN\n✅ Stable latency\n✅ Low memory"]
+    Memory -->|"No"| HNSW["HNSW\n✅ Balanced speed\n✅ Good recall"]
+    style Start fill:#4fc3f7,color:#000
+    style FLAT fill:#c8e6c9,color:#000
+    style IVF fill:#c8e6c9,color:#000
+    style FlatGPU fill:#fff9c4,color:#000
+    style DiskANN fill:#e1bee7,color:#000
+    style HNSW fill:#c8e6c9,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Decision rules: high filter ratio → FLAT; large topK → IVF</li>
                   <li>Extreme recall → FLAT+GPU</li>
@@ -1040,7 +1124,28 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInBottom" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#ed311f', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#ed311f', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Chroma: Developer-Friendly RAG Stack"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    Embed["🐍 Python\nEmbeddings"] --> Chroma["Chroma DB"]
+    Chroma -->|"in-memory"| Dev["Local Dev\n(fast iteration)"]
+    Chroma -->|"persistent"| Disk["DuckDB on Disk\n(durable)"]
+    Chroma -->|"cloud"| Cloud["Chroma Cloud\n(managed)"]
+    LC["🦜 LangChain"] --> Chroma
+    LI["🦙 LlamaIndex"] --> Chroma
+    Dev --> App["RAG App\n🤖"]
+    Disk --> App
+    Cloud --> App
+    style Embed fill:#4fc3f7,color:#000
+    style Chroma fill:#ffcdd2,color:#000
+    style App fill:#c8e6c9,color:#000
+    style LC fill:#fff9c4,color:#000
+    style LI fill:#fff9c4,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Python-friendly API with extensive integrations</li>
                   <li>Works seamlessly with LangChain and LlamaIndex</li>
@@ -1229,7 +1334,28 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInTop" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#0bc7a2', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#0bc7a2', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Redis: Cache + Vector Search in One System"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    App["Application"] --> Redis["⚡ Redis In-Memory"]
+    Redis --> Cache["Cache Layer\n(key-value, TTL)"]
+    Redis --> Search["RediSearch Module\n(HNSW / Flat)"]
+    Search --> VQ["Vector Query\n(similarity search)"]
+    Search --> TQ["Text Query\n(full-text + filters)"]
+    VQ --> Result["Sub-ms Results"]
+    TQ --> Result
+    Cache --> Result
+    Redis --> Cluster["Redis Cluster\n(horizontal scale)"]
+    Cluster --> Mem["⚠️ Memory Management\n(eviction policies)"]
+    style App fill:#4fc3f7,color:#000
+    style Redis fill:#c8e6c9,color:#000
+    style Result fill:#ffd700,color:#000
+    style Mem fill:#ffcdd2,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Uniquely combines caching and search capabilities in a single system</li>
                   <li>Delivers strong throughput with minimal operational complexity for teams already familiar with Redis</li>
@@ -1420,7 +1546,29 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInRight" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#1888d1', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#1888d1', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Elasticsearch: BBQ Compression & Hybrid Pipeline"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Doc["📄 Documents"] --> Ingest["Ingest Pipeline\n(Logstash / Beats)"]
+    Ingest --> ES["Elasticsearch\n(Lucene-based)"]
+    ES --> HNSW["HNSW Index\n(vector search)"]
+    ES --> Text["Inverted Index\n(text search)"]
+    BBQ["🗜️ BBQ Compression\n(optimal default)"] --> HNSW
+    BBQ --> Mem["↓ Memory for\nlarge corpora"]
+    Query["User Query"] --> Hybrid["Hybrid Search\n(text + vector)"]
+    HNSW --> Hybrid
+    Text --> Hybrid
+    Hybrid --> ACORN["ACORN-1\n(filtered latency)"]
+    ACORN --> Results["📊 Ranked Results"]
+    style Doc fill:#4fc3f7,color:#000
+    style BBQ fill:#fff9c4,color:#000
+    style Results fill:#c8e6c9,color:#000
+    style ACORN fill:#e1bee7,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Benefits from ecosystem maturity and extensive tooling</li>
                   <li>Recent features significantly improve filtered vector latency</li>
@@ -1611,7 +1759,31 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="rotateIn" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#d96518', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#d96518', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="Vespa: ML Inference at Serving Time"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph Ingest["Document Ingestion"]
+        Doc["Document"] --> DP["Document Processor\n(transform/enrich)"]
+        DP --> Schema["Rich Schema\n(tensors + fields)"]
+    end
+    subgraph Query["Query Processing"]
+        Q["User Query"] --> QP["Query Processor\n(rewrite/augment)"]
+        QP --> HNSW["HNSW + Tensors\n(vector search)"]
+        HNSW --> Rank["Ranking Profile\n(ML model inference)"]
+        Rank --> RT["Real-time Results"]
+        Rank --> Batch["Batch Analytics"]
+    end
+    Schema --> HNSW
+    ML["🤖 ONNX / TF / XGBoost\nModel"] --> Rank
+    style Doc fill:#4fc3f7,color:#000
+    style ML fill:#e1bee7,color:#000
+    style RT fill:#c8e6c9,color:#000
+    style Batch fill:#fff9c4,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Rich schema with tensors and integrates ranking functions</li>
                   <li>ML models at serving time for on-the-fly inference</li>
@@ -1804,7 +1976,30 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInBottom" delay={0.2}>
-              <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="pgvector: SQL + Vector Search Combined"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    subgraph PG["PostgreSQL + pgvector"]
+        direction TB
+        SQL["SQL Query\n(joins, filters, ACID)"]
+        Vec["Vector Column\n(HNSW or IVFFlat)"]
+        SQL --> Join["JOIN users ON id\nWHERE category = 'X'"]
+        Join --> KNN["ORDER BY embedding\n<=> query_vec LIMIT 5"]
+        Vec --> KNN
+        KNN --> Result["Results"]
+    end
+    Tune["⚙️ Tune Parameters\n(m, ef_construction, lists)"] --> Vec
+    Scale["pgvectorscale\n(DiskANN, streaming HNSW)"] --> Vec
+    Result --> ACID["✅ ACID Transactions\n✅ SQL interface\n✅ Existing infra"]
+    style SQL fill:#4fc3f7,color:#000
+    style Result fill:#c8e6c9,color:#000
+    style ACID fill:#fff9c4,color:#000
+    style Scale fill:#e1bee7,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Tune HNSW/IVF parameters for workload optimization</li>
                   <li>Consider pgvectorscale for enhanced performance</li>
@@ -1995,7 +2190,27 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInTop" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#17b35a', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#17b35a', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="MongoDB: Atlas Unified Text + Vector Search"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart TB
+    Doc["📦 JSON Document\n(text + vector field)"] --> Atlas["MongoDB Atlas\n(HNSW-based)"]
+    Atlas --> VSearch["Atlas Vector Search\n(semantic similarity)"]
+    Atlas --> TSearch["Atlas Search\n(full-text + facets)"]
+    VSearch --> Agg["Aggregation Pipeline\n$vectorSearch → $match → $project"]
+    TSearch --> Agg
+    Agg --> Unified["Unified Results\n(text + vector combined)"]
+    Compass["🧭 MongoDB Compass\n(visual index mgmt)"] --> Atlas
+    SDK["SDKs\n(Python, JS, Java, Go...)"] --> Atlas
+    Unified --> App["Application"]
+    style Doc fill:#4fc3f7,color:#000
+    style Unified fill:#c8e6c9,color:#000
+    style Compass fill:#fff9c4,color:#000
+    style App fill:#81c784,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Extensive tooling and SDKs across multiple languages</li>
                   <li>Comprehensive benchmarks and deployment guides in documentation</li>
@@ -2184,7 +2399,30 @@ Let's look at additional important details.`
           icon: { name: 'duo-note-sticky' },
           content: (
             <GSAPAnimated animation="slideInRight" delay={0.3}>
-              <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
+              <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                  <MermaidPopover
+                    title="LanceDB: Columnar Lance Format & Arrow Ecosystem"
+                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+flowchart LR
+    subgraph Ecosystem["🐍 Python / Arrow Ecosystem"]
+        Pandas["pandas\nDataFrame"]
+        Polars["Polars\nDataFrame"]
+        DuckDB["🦆 DuckDB\n(SQL analytics)"]
+    end
+    Ecosystem -->|"zero-copy\nArrow format"| Lance["Lance Columnar\nFormat on Disk"]
+    Lance --> IVF["IVF-PQ Index\n(disk-optimized)"]
+    Lance --> IO["⚡ I/O Locality\n(sequential reads)"]
+    IVF --> Search["ANN Search\n(efficient disk-based)"]
+    IO --> Search
+    Search --> Result["💰 Low TCO\nCost-efficient RAG"]
+    Lance -->|"embedded\nor serverless"| Deploy["Deploy Anywhere\n(no server needed)"]
+    style Lance fill:#e3f2fd,color:#000
+    style Result fill:#c8e6c9,color:#000
+    style Deploy fill:#fff9c4,color:#000
+    style IO fill:#e1bee7,color:#000`}
+                  />
+                </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
                   <li>Built on the columnar Lance format for efficient storage and retrieval</li>
                   <li>Provides excellent I/O locality for disk-based operations</li>
