@@ -38,7 +38,7 @@ for i in "${!FILES[@]}"; do
   
   # Run copilot to create the new deck file from the prompt template
   # Note: $(cat) expands file contents once - backticks in output are NOT re-evaluated by bash
-  copilot --model claude-opus-4-5 --add-dir . --allow-all-tools --no-ask-user \
+  copilot --model claude-sonnet-4.6 --add-dir . --allow-all-tools --no-ask-user \
     -p "Create a new deck file src/data/$FILE. $(cat "$PROMPT_FILE")" >> $LOG_FILE 2>&1
   
   EXIT_CODE=$?
