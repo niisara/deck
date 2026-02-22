@@ -1,6 +1,65 @@
+/* ── Dynamic splash background ─────────────────────────────────── */
+.home-bg-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  /* start hidden, Ken Burns begins immediately so it's ready when faded in */
+}
+
+.home-bg-layer--active {
+  opacity: 1;
+}
+
+/* 4 Ken Burns variants (slow 16 s pan+zoom, slight direction differences) */
+@keyframes kenBurns1 {
+  0%   { transform: scale(1)    translate(0,    0); }
+  100% { transform: scale(1.28) translate(-3%, -2%); }
+}
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.12) translate(2%,  1.5%); }
+  100% { transform: scale(1.32) translate(-2.5%, -2%); }
+}
+@keyframes kenBurns3 {
+  0%   { transform: scale(1.06) translate(-2%, 2%); }
+  100% { transform: scale(1.26) translate(3%,  -1.5%); }
+}
+@keyframes kenBurns4 {
+  0%   { transform: scale(1.22) translate(1%,  0); }
+  100% { transform: scale(1)    translate(-1.5%, 2%); }
+}
+
+.home-bg-layer--kb1 { animation: kenBurns1 16s ease-in-out infinite alternate; }
+.home-bg-layer--kb2 { animation: kenBurns2 16s ease-in-out infinite alternate; }
+.home-bg-layer--kb3 { animation: kenBurns3 18s ease-in-out infinite alternate; }
+.home-bg-layer--kb4 { animation: kenBurns4 14s ease-in-out infinite alternate; }
+
+/* Dark gradient overlay for readability */
+.home-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(10, 15, 40, 0.72) 60%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+}
+
+/* ── Page layout ─────────────────────────────────────────────────── */
 .home-page {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
   padding-top: 120px; /* Account for fixed navigation */
 }
 
@@ -14,14 +73,16 @@
   text-align: center;
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
 }
 
 .subtitle {
   text-align: center;
   font-size: 1.2rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 50px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .deck-grid {
@@ -32,13 +93,16 @@
 }
 
 .deck-card {
-  background: white;
+  background: rgba(15, 20, 50, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -46,7 +110,9 @@
 
 .deck-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background: rgba(20, 30, 70, 0.70);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .deck-category {
@@ -66,13 +132,13 @@
 .deck-card h2 {
   margin: 0 0 15px 0;
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: #e8f0ff;
   padding-right: 80px; /* Make room for category badge */
 }
 
 .deck-card p {
   margin: 0 0 20px 0;
-  color: #666;
+  color: rgba(220, 230, 255, 0.80);
   flex-grow: 1;
   line-height: 1.6;
 }
@@ -127,7 +193,7 @@
 .no-results {
   text-align: center;
   padding: 60px 20px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .no-results p {
@@ -137,7 +203,7 @@
 
 .no-results .suggestion {
   font-size: 1rem;
-  color: #999;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* Responsive adjustments */
