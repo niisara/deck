@@ -127,13 +127,13 @@ function HomePage() {
               {filteredDecks.map((deck) => (
                 <LiquidGlass
                   key={deck.id}
-                  borderRadius={12}
-                  blur={0.4}
+                  borderRadius={54}
+                  blur={1}
                   contrast={1.2}
                   brightness={1.05}
                   saturation={1.15}
                   shadowIntensity={0.3}
-                  elasticity={0.6}
+                  elasticity={1}
                   zIndex={1}
                   className="deck-card-liquid"
                 >

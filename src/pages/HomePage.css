@@ -94,7 +94,7 @@
 
 /* LiquidGlass wrapper — keeps it in the grid flow */
 .deck-card-liquid {
-  border-radius: 12px;
+  border-radius: 24px;
   display: flex;
   min-height: 0;
 }
@@ -102,7 +102,7 @@
 .deck-card {
   background: transparent;
   border: none;
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 30px;
   text-decoration: none;
   color: inherit;
