@@ -67,7 +67,7 @@ Each technique gets 4 slides:
 
 ---
 
-## Speaker Notes (notes field — required on EVERY slide)
+## Speaker Notes (empty notes field — required on EVERY slide)
 
 Format:
 ```
@@ -141,7 +141,7 @@ After writing the deck file, add the import and insert the export name into the 
 
 ## Quality Checklist — verify before finishing
 
-- [ ] Every slide has a non-empty notes field
+- [ ] Every slide has a empty notes field
 - [ ] Every slide has at least one GSAPAnimated or GSAPStaggerList
 - [ ] At least one MermaidPopover per technique group
 - [ ] All techniques are covered with 4 slides each
