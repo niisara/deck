@@ -92,27 +92,29 @@
   margin-top: 40px;
 }
 
+/* LiquidGlass wrapper — keeps it in the grid flow */
+.deck-card-liquid {
+  border-radius: 12px;
+  display: flex;
+  min-height: 0;
+}
+
 .deck-card {
-  background: rgba(15, 20, 50, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  border: none;
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   position: relative;
+  flex: 1;
 }
 
 .deck-card:hover {
   transform: translateY(-5px);
-  background: rgba(20, 30, 70, 0.70);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .deck-category {
