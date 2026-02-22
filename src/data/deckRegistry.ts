@@ -254,6 +254,21 @@ export const deckRegistry: DeckMeta[] = [
     load: () => import('./llm-caching-deck').then((m) => m.llmCachingDeck),
   },
   {
+    id: 'llm-finetuning-techniques',
+    name: '6 LLM Fine-Tuning Techniques',
+    description: 'Full FT vs LoRA vs QLoRA vs Adapters vs Prefix Tuning vs Prompt Tuning',
+    category: 'Fine Tuning',
+    theme: 'moon',
+    cardClassName: 'glass-morphism',
+    cardStyle: {
+      backgroundImage: 'url(https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    slideCount: 29,
+    load: () => import('./llm-finetuning-techniques-deck').then((m) => m.llmFinetuningTechniquesDeck),
+  },
+  {
     id: 'context-packing-techniques',
     name: '13 Context Packing Techniques',
     description: 'RAG and LLM-ready strategies to maximize answer quality within token limits',

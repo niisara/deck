@@ -140,7 +140,6 @@ function HomePage() {
                   <Link 
                     to={`/deck/${deck.id}?category=${selectedCategory}`} 
                     className={`deck-card ${deck.cardClassName || ''}`}
-                    style={deck.cardStyle}
                   >
                     <div className="deck-category">{deck.category}</div>
                     <h2>{deck.name}</h2>
