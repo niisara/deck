@@ -10,6 +10,7 @@ import RevealZoom from 'reveal.js/plugin/zoom/zoom';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
+import type { Deck } from '../data/types';
 import SlideAudioControls from '../components/SlideAudioControls';
 import { loadTheme } from '../utils/themeLoader';
 import { useSettings } from '../hooks/useSettings';
@@ -109,7 +110,23 @@ function DeckPage() {
   const manuallyHiddenRef = useRef<boolean>(false);
   const [showAudioControls, setShowAudioControls] = useState(true);
 
-  const deck = decks.find((d) => d.id === deckId);
+  const deckMeta = decks.find((d) => d.id === deckId);
+  const [deckData, setDeckData] = useState<Deck | null>(null);
+  const [deckLoading, setDeckLoading] = useState(false);
+
+  // Lazily load deck content only when navigating to this page
+  useEffect(() => {
+    if (!deckMeta) return;
+    setDeckLoading(true);
+    setDeckData(null);
+    deckMeta.load().then((data) => {
+      setDeckData(data);
+      setDeckLoading(false);
+    }).catch((err) => {
+      console.error('[DeckPage] Failed to load deck:', err);
+      setDeckLoading(false);
+    });
+  }, [deckMeta?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Get category from URL params to navigate back to the correct filtered view
   const searchParams = new URLSearchParams(window.location.search);
@@ -247,16 +264,16 @@ function DeckPage() {
 
   // Dynamically load theme CSS
   useEffect(() => {
-    if (!deck) return;
+    if (!deckMeta) return;
 
-    const theme = deck.theme || 'black';
+    const theme = deckMeta.theme || 'black';
     const cleanup = loadTheme(theme);
 
     return cleanup;
-  }, [deck]);
+  }, [deckMeta]);
 
   useEffect(() => {
-    if (!deck || !revealRef.current) return;
+    if (!deckData || !revealRef.current) return;
 
     // Check if we're in PDF export mode
     const isPrintPdf = new URLSearchParams(window.location.search).has('print-pdf');
@@ -519,13 +536,22 @@ function DeckPage() {
         delete (window as any).__speakerScrollHandler;
       }
     };
-  }, [deck]);
+  }, [deckData]);
 
-  if (!deck) {
+  if (!deckMeta) {
     return (
       <div className="deck-page-error">
         <h1>Deck not found</h1>
         <button onClick={handleBackNavigation} className="home-button">← Back</button>
+      </div>
+    );
+  }
+
+  if (deckLoading || !deckData) {
+    return (
+      <div className="deck-page-loading">
+        <div className="loading-spinner" />
+        <p>Loading deck…</p>
       </div>
     );
   }
@@ -562,9 +588,9 @@ function DeckPage() {
       
       <div className="reveal" ref={revealRef}>
         <div className="slides">
-          {deck.slideGroups ? (
+          {deckData.slideGroups ? (
             // Render with groups (vertical slides)
-            deck.slideGroups.map((group) => (
+            deckData.slideGroups.map((group) => (
               <section key={group.id}>
                 {group.slides.map((slide) => (
                   <section
@@ -616,7 +642,7 @@ function DeckPage() {
             ))
           ) : (
             // Render flat slides (backward compatibility)
-            deck.slides.map((slide) => (
+            deckData.slides.map((slide) => (
               <section
                 key={slide.id}
                 data-background-color={slide.backgroundImage ? undefined : (slide.backgroundColor || '#2c3e50')}

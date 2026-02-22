@@ -58,13 +58,7 @@ function HomePage() {
             </div>
           ) : (
             <div className="deck-grid">
-              {filteredDecks.map((deck) => {
-                // Calculate total slides: either from slides array or sum of all slideGroups
-                const totalSlides = deck.slideGroups 
-                  ? deck.slideGroups.reduce((sum, group) => sum + group.slides.length, 0)
-                  : deck.slides.length;
-                
-                return (
+              {filteredDecks.map((deck) => (
                   <Link 
                     key={deck.id} 
                     to={`/deck/${deck.id}?category=${selectedCategory}`} 
@@ -74,10 +68,9 @@ function HomePage() {
                     <div className="deck-category">{deck.category}</div>
                     <h2>{deck.name}</h2>
                     <p>{deck.description}</p>
-                    <span className="slide-count">{totalSlides} slides</span>
+                    <span className="slide-count">{deck.slideCount} slides</span>
                   </Link>
-                );
-              })}
+                ))}
             </div>
           )}
         </div>
