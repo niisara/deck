@@ -13,10 +13,10 @@ export const temporalWorkflowDeck: Deck = {
   theme: 'night',
   kenBurns: true,
   backgroundImages: [
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
-    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
-    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80',
-    'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80',
+    'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1920&q=80',
+    'https://images.unsplash.com/photo-1548092372-0d1bd40894a3?w=1920&q=80',
+    'https://images.unsplash.com/photo-1667264501379-c1537934c7ab?w=1920&q=80',
+    'https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?w=1920&q=80',
   ],
   slides: [],
   slideGroups: [
@@ -78,9 +78,8 @@ export const temporalWorkflowDeck: Deck = {
           title: 'Overview — 9 Patterns at a Glance',
           icon: { name: 'duo-list-check' },
           content: (
-            <div style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'left' }}>
-              <h4>
-                Technique Categories
+            <div style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'left', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Temporal Workflow Pattern Landscape"
                   diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
@@ -113,7 +112,8 @@ graph TB
     style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888,stroke-width:1.5px
     style E1 fill:#2a2a3a,color:#e0e0e0,stroke:#888,stroke-width:1.5px`}
                 />
-              </h4>
+              </div>
+              <h4>Technique Categories</h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '1.2rem', marginTop: '14px' }}>
                 <GSAPStaggerList stagger={0.08} duration={0.6}>
                   <div style={{ marginBottom: '0.7rem' }}>
@@ -177,9 +177,8 @@ Finally, **Lifecycle Management** with **Continue-As-New**, which solves the pro
           content: (
             <div style={{ fontSize: '1.15rem', lineHeight: '1.8', textAlign: 'left' }}>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    The Problem
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Failure Without Durable Execution"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -193,7 +192,8 @@ flowchart LR
     style C fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px
     style D fill:#5c1a1a,color:#fca5a5,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>The Problem</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Distributed services fail mid-flight — <strong>network partitions</strong>, process crashes, timeouts</li>
                     <li>Manual retry / state-tracking code is fragile and hard to test</li>
@@ -256,9 +256,8 @@ flowchart LR
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    How It Works
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Saga — Forward & Compensation"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -275,7 +274,8 @@ flowchart LR
     style E fill:#3d2e00,color:#fde68a,stroke:#aaa,stroke-width:1.5px
     style F fill:#3d2e00,color:#fde68a,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>How It Works</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Each activity registers its <strong>compensation</strong> on a stack</li>
                     <li>On failure, the stack unwinds calling compensations in <strong>LIFO</strong> order</li>
@@ -316,7 +316,27 @@ The Mermaid diagram on screen shows this beautifully: Charge → Reserve → Shi
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Saga: Compensation Stack Mechanism"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    A["Step 1: ChargeCard ✅"] -->|"push refund"| S["📚 Compensation Stack"]
+    B["Step 2: Reserve ✅"] -->|"push unreserve"| S
+    C["Step 3: Ship ❌"] -->|"error!"| U["↩️ Unwind Stack LIFO"]
+    S --> U
+    U --> U1["unreserve()"]
+    U1 --> U2["refund()"]
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style S fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style U fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style U1 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style U2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li><strong>RetryPolicy</strong> on activities: <code>MaximumAttempts</code>, <code>BackoffCoefficient</code></li>
@@ -363,7 +383,25 @@ Now let's weigh the pros and cons of the Saga pattern.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Saga: Eventual Consistency Window"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart LR
+    A["💳 Charged"] --> B["📦 Reserved"]
+    B --> C["🚚 Ship ❌"]
+    C --> D["⚠️ Inconsistent<br/>Window"]
+    D --> E["↩️ Compensate<br/>All Steps"]
+    E --> F["✅ Consistent"]
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>❌ Cons</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Compensation logic can be <strong>complex</strong> (e.g., partial refunds)</li>
@@ -408,9 +446,8 @@ Finally, debugging long compensation chains requires good **observability**. The
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    State Diagram
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Order State Machine"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -423,7 +460,8 @@ stateDiagram-v2
     Rejected --> [*]
     Delivered --> [*]`}
                     />
-                  </h4>
+                  </div>
+                  <h4>State Diagram</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Each state is a <code>select</code> / <code>condition</code> block waiting for the right signal</li>
                     <li>Transitions trigger activities and update workflow-local state</li>
@@ -465,7 +503,30 @@ Let's see how this is implemented in Temporal.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="State Machine: Loop Implementation"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    A["Start Workflow"] --> B["state = Pending"]
+    B --> C{"while state != terminal"}
+    C -->|"loop"| D["Await Signal"]
+    D --> E["switch state + event"]
+    E --> F["Run Activities"]
+    F --> G["Update State"]
+    G --> C
+    C -->|"terminal"| H["✅ Return Result"]
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li><strong>WorkflowExecutionTimeout</strong> — upper bound on total lifecycle</li>
@@ -505,7 +566,25 @@ Now let's look at the trade-offs.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="State Machine: History Growth Over Time"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart LR
+    A["Pending"] -->|"approve"| B["Approved"]
+    B -->|"ship"| C["Shipped"]
+    C -->|"deliver"| D["Delivered ✅"]
+    A -->|"reject"| R["Rejected ❌"]
+    D --> H["📊 History:<br/>8 events"]
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>❌ Cons</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Complex state graphs can become <strong>hard to test exhaustively</strong></li>
@@ -550,9 +629,8 @@ If your workflow has many transitions over time, the event history grows. For lo
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    Timeline
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Long-Running Workflow Timeline"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -567,7 +645,8 @@ flowchart LR
     style D fill:#3d2e00,color:#fde68a,stroke:#aaa,stroke-width:1.5px
     style E fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Timeline</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Temporal <code>workflow.Sleep</code> is <strong>durable</strong> — the worker can restart, the timer still fires</li>
                     <li>Combine timers with Signals for human-in-the-loop flows</li>
@@ -608,7 +687,23 @@ Let's see the implementation details.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Timer vs Signal Race (Selector)"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    S["⚖️ Selector"] --> T["⏰ Timer: 7 Days"]
+    S --> C["📨 Signal: approve"]
+    T -->|"timeout"| ESC["⚠️ Escalate"]
+    C -->|"approved"| OK["✅ Continue"]
+    style S fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style ESC fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li><strong>WorkflowRunTimeout</strong> — max single run before Continue-As-New needed</li>
@@ -655,7 +750,23 @@ Let's look at the pros and cons.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Long-Running: History Growth Over Time"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart LR
+    D1["Day 1<br/>5 events"] --> D7["Day 7<br/>20 events"]
+    D7 --> D30["Day 30<br/>100 events"]
+    D30 --> D365["Day 365<br/>50K+ ⚠️"]
+    D365 --> CAN["🔄 Continue-As-New"]
+    style D1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D7 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D30 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D365 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style CAN fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>❌ Cons</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Event history can balloon — plan for <strong>Continue-As-New</strong></li>
@@ -700,9 +811,8 @@ Testing is another challenge. How do you test a workflow that sleeps for 3 month
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    Execution Pattern
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Cron Execution Cycle"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -721,7 +831,8 @@ flowchart LR
     style F fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px
     style G fill:#3d2e00,color:#fde68a,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Execution Pattern</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Temporal natively supports <code>CronSchedule</code> on <code>StartWorkflowOptions</code></li>
                     <li>Or use the newer <strong>Schedules API</strong> for richer control</li>
@@ -765,7 +876,28 @@ Let's look at implementation and configuration options.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Cron: CronSchedule vs Schedules API"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
+    subgraph Simple["CronSchedule Simple"]
+        A["Set cron string"] --> B["✅ Auto-restart"]
+    end
+    subgraph Advanced["Schedules API Recommended"]
+        C["Create Schedule"] --> D["Backfill + Pause"]
+        D --> E["Overlap Policies"]
+    end
+    style Simple fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Advanced fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li><strong>Overlap Policy</strong> — Skip / Buffer / Cancel / Terminate if previous run is still going</li>
@@ -821,9 +953,8 @@ Set **WorkflowExecutionTimeout** per run to ensure each execution finishes befor
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    Parent–Child Tree
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Child Workflow Hierarchy"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -842,7 +973,8 @@ flowchart TB
     style G2 fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px
     style G3 fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Parent–Child Tree</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Children run on their <strong>own task queue</strong> — different workers can handle them</li>
                     <li><strong>ParentClosePolicy</strong> controls what happens when the parent finishes</li>
@@ -883,7 +1015,21 @@ Let's see the implementation.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="ParentClosePolicy Options"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    P["🏢 Parent Ends"] --> T["TERMINATE<br/>→ Kill children"]
+    P --> A["ABANDON<br/>→ Children keep running"]
+    P --> R["REQUEST_CANCEL<br/>→ Graceful cleanup"]
+    style P fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li><strong>ParentClosePolicy</strong> — <code>TERMINATE</code> | <code>ABANDON</code> | <code>REQUEST_CANCEL</code></li>
@@ -940,9 +1086,8 @@ Each child has **independent retry and timeout** policies, so a flaky child does
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    Signal Flow
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Signal Communication"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -955,7 +1100,8 @@ flowchart LR
     style W fill:#3d2e00,color:#fde68a,stroke:#aaa,stroke-width:1.5px
     style A fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Signal Flow</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Signals are <strong>durable</strong> — buffered if the workflow is currently replaying</li>
                     <li>Carry a payload — any serialisable data</li>
@@ -996,7 +1142,23 @@ Let's see how to implement this.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Signal + Timer: Deadline Approval"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    S["⚖️ Selector"] --> CH["📨 Signal Channel<br/>approve"]
+    S --> TM["⏰ Timer<br/>48 hours"]
+    CH -->|"signal arrives"| OK["✅ Approved"]
+    TM -->|"timeout"| REJ["❌ Auto-Reject"]
+    style S fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style CH fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style TM fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style REJ fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config &amp; Tips</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Combine signal + timer via <strong>Selector</strong> for deadline-based approvals</li>
@@ -1053,9 +1215,8 @@ If you expect bursts of signals, buffer them with a **slice or queue** inside th
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    Query Pattern
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Query Read-Only Inspection"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -1066,7 +1227,8 @@ sequenceDiagram
     W-->>C: { status: "processing", progress: 72 }
     Note over W: State unchanged`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Query Pattern</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Queries <strong>never mutate</strong> workflow state</li>
                     <li>Handled in the workflow code via a registered query handler</li>
@@ -1108,7 +1270,23 @@ Let's see how to implement this.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Multiple Query Handlers"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    C["💻 Client"] --> W["⚙️ Workflow"]
+    W --> Q1["getStatus<br/>→ Shipped"]
+    W --> Q2["getProgress<br/>→ 72%"]
+    W --> Q3["getErrors<br/>→ none"]
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Q1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Q2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Q3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config &amp; Tips</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Multiple query types on one workflow — register different names</li>
@@ -1165,9 +1343,8 @@ On the caller side: **client.QueryWorkflow(ctx, wfID, runID, "getStatus")**. The
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    History Reset
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Continue-As-New History Reset"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -1180,7 +1357,8 @@ flowchart LR
     style C fill:#3d2e00,color:#fde68a,stroke:#aaa,stroke-width:1.5px
     style D fill:#1b4332,color:#d1fae5,stroke:#aaa,stroke-width:1.5px`}
                     />
-                  </h4>
+                  </div>
+                  <h4>History Reset</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Prevents <strong>event history from growing unbounded</strong> (50K+ events = trouble)</li>
                     <li>The new run gets a fresh history but keeps the same Workflow ID</li>
@@ -1222,7 +1400,27 @@ Let's see how to implement this.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Continue-As-New: Signal Drain Flow"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    A["📊 Check History"] --> B{"events > 10K?"}
+    B -->|"no"| C["▶️ Continue"]
+    B -->|"yes"| D["📨 Drain Signals"]
+    D --> E["📦 Serialize State"]
+    E --> F["🔄 ContinueAsNewError"]
+    F --> G["✅ Fresh Run: 0 events"]
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config &amp; Tips</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Trigger after a <strong>fixed iteration count</strong> or event count threshold (e.g., every 10K events)</li>
@@ -1278,9 +1476,8 @@ The trick is to pass your **accumulated state** as the input argument. For a pol
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>
-                    Update vs Signal
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Update: Validate → Mutate → Respond"
                       diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
@@ -1296,7 +1493,8 @@ sequenceDiagram
         W-->>C: { error: "out of stock" }
     end`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Update vs Signal</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li><strong>Validate</strong> phase — reject bad input before mutating</li>
                     <li><strong>Execute</strong> phase — mutate workflow state and return result</li>
@@ -1338,7 +1536,25 @@ Let's see the implementation.`,
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0.7em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+                    <MermaidPopover
+                      title="Update: Validator vs Handler"
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)'}}}%%
+flowchart TB
+    A["📨 UpdateWorkflow<br/>addItem, item"] --> V["🔍 Validator<br/>pure, fast"]
+    V -->|"invalid"| ERR["❌ Error<br/>no state change"]
+    V -->|"valid"| H["⚙️ Handler<br/>can call activities"]
+    H --> M["📝 Mutate State"]
+    M --> R["✅ Return Result"]
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style ERR fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#2d1b4e,color:#e0c0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
+                    />
+                  </div>
                   <h4>Key Config &amp; Tips</h4>
                   <ul style={{ fontSize: '0.95rem' }}>
                     <li>Validator must be <strong>deterministic &amp; fast</strong> — no activities, no side effects</li>
