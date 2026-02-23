@@ -734,15 +734,15 @@ flowchart LR
             </div>
           ),
           notes: `### 13 — Cron — Overview
-Pattern #4 — **Cron Workflows**. If you've ever set up a crontab on a Linux server, you'll feel right at home.
+[excited] Pattern #4 — **Cron Workflows**. If you've ever set up a crontab on a Linux server, you'll feel right at home.
 #### ⏰ What Is a Cron Workflow?
-It's a workflow that **re-runs on a schedule**. Think Unix cron, but with superpowers: it's durable, observable, retryable, and you don't need a dedicated crontab server that becomes a single point of failure.
-Here's the everyday example: every morning at 9 AM, generate a sales report, email it to the team, and archive it. That's a cron workflow.
+[confidently] It's a workflow that **re-runs on a schedule**. Think Unix cron, but with superpowers: it's durable, observable, retryable, and you don't need a dedicated crontab server that becomes a single point of failure.
+[storytelling] Here's the everyday example: every morning at 9 AM, generate a sales report, email it to the team, and archive it. That's a cron workflow.
 #### ⚙️ Execution Pattern
-The diagram shows the cycle: Schedule fires → Run 1 executes → Done → Wait for next tick → Run 2 executes → Done → and so on, forever. Each run is a **separate workflow execution** with its own clean event history.
-Temporal natively supports this with the **CronSchedule** field on your start options — just pass a cron string like **"0 9 * * *"** for "every day at 9 AM". Or use the newer **Schedules API** which gives you much richer control: backfill missed runs, pause and resume, and set overlap policies.
+[lecture] The diagram shows the cycle: Schedule fires → Run 1 executes → Done → Wait for next tick → Run 2 executes → Done → and so on, forever. Each run is a **separate workflow execution** with its own clean event history.
+[conversational] Temporal natively supports this with the **CronSchedule** field on your start options — just pass a cron string like **"0 9 * * *"** for "every day at 9 AM". Or use the newer **Schedules API** which gives you much richer control: backfill missed runs, pause and resume, and set overlap policies.
 #### 🎯 Best For
-**Batch ETL** 👉 'ee-tee-ELL' jobs, **report generation**, **periodic data sync**, **cleanup tasks** — any recurring job that needs to run reliably on a schedule.
+[confidently] **Batch ETL** 👉 'ee-tee-ELL' jobs, **report generation**, **periodic data sync**, **cleanup tasks** — any recurring job that needs to run reliably on a schedule.
 Let's look at implementation and configuration options.`,
         },
         {
@@ -786,17 +786,17 @@ Let's look at implementation and configuration options.`,
             </div>
           ),
           notes: `### 14 — Cron — Implementation & Config
-Let's dig into the two approaches and key settings.
+[conversational] Let's dig into the two approaches and key settings.
 #### 🛠️ Two Approaches
-**Approach 1: CronSchedule string.** The simplest way — you just set a cron expression on your workflow start options. Something like **CronSchedule: "0 9 * * *"** for daily at 9 AM. It's easy but limited — no backfill, no pause/resume.
-**Approach 2: Schedules API.** This is the modern, recommended approach. You create a schedule using **client.ScheduleClient.Create()** and configure it with much more granularity: backfill missed runs, set overlap policies, add jitter, and pause/resume programmatically. If you're starting fresh, go with this.
+[lecture] **Approach 1: CronSchedule string.** The simplest way — you just set a cron expression on your workflow start options. Something like **CronSchedule: "0 9 * * *"** for daily at 9 AM. It's easy but limited — no backfill, no pause/resume.
+[pleased] **Approach 2: Schedules API.** This is the modern, recommended approach. You create a schedule using **client.ScheduleClient.Create()** and configure it with much more granularity: backfill missed runs, set overlap policies, add jitter, and pause/resume programmatically. If you're starting fresh, go with this.
 #### ⚙️ Key Configuration
-**Overlap Policy** is crucial — what happens if the previous run is still going when the next tick fires? Your options are: **Skip** it, **Buffer** it for later, **Cancel** the old one, or **Terminate** it. Choose based on your use case — for a report you might Skip, for a critical sync you might Buffer.
-**Jitter** 👉 'JIH-tur' adds a random delay to the start time. This prevents the **thundering herd** problem where 100 cron workflows all fire at exactly 9:00:00 AM and overwhelm your system.
+[seriously] **Overlap Policy** is crucial — what happens if the previous run is still going when the next tick fires? Your options are: **Skip** it, **Buffer** it for later, **Cancel** the old one, or **Terminate** it. Choose based on your use case — for a report you might Skip, for a critical sync you might Buffer.
+[conversational] **Jitter** 👉 'JIH-tur' adds a random delay to the start time. This prevents the **thundering herd** problem where 100 cron workflows all fire at exactly 9:00:00 AM and overwhelm your system.
 Set **WorkflowExecutionTimeout** per run to ensure each execution finishes before the next tick arrives.
 #### ⚖️ Trade-offs
-**Pros:** No crontab server to manage, built-in observability and auto-retry. **Cons:** Each run is a new execution, so sharing state between runs needs external storage or Temporal memo fields. You can't just carry a variable from Run 1 to Run 2 inside the workflow itself.
-Let's move to Pattern #5 — **Child Workflows**.`,
+[pleased] **Pros:** No crontab server to manage, built-in observability and auto-retry. [cautiously] **Cons:** Each run is a new execution, so sharing state between runs needs external storage or Temporal memo fields. You can't just carry a variable from Run 1 to Run 2 inside the workflow itself.
+[energetic] Let's move to Pattern #5 — **Child Workflows**.`,
         },
       ],
     },
@@ -855,15 +855,15 @@ flowchart TB
             </div>
           ),
           notes: `### 15 — Child Workflows — Overview
-Pattern #5 — **Child Workflows**. Think of this as the "divide and conquer" pattern of Temporal.
+[excited] Pattern #5 — **Child Workflows**. Think of this as the "divide and conquer" pattern of Temporal.
 #### 🏗️ What Are They?
-A child workflow is simply a workflow that's **spawned by another workflow** — the parent. The parent can wait for results, fire-and-forget, or cancel all children when it finishes. It's like a tree structure: one parent at the top, branching out to multiple children.
-Real-world example: you're processing a large batch of 10,000 records. Instead of handling all of them in one giant workflow, the parent spawns 100 child workflows, each handling 100 records. Each child runs independently, possibly on different workers.
+[confidently] A child workflow is simply a workflow that's **spawned by another workflow** — the parent. The parent can wait for results, fire-and-forget, or cancel all children when it finishes. It's like a tree structure: one parent at the top, branching out to multiple children.
+[storytelling] Real-world example: you're processing a large batch of 10,000 records. Instead of handling all of them in one giant workflow, the parent spawns 100 child workflows, each handling 100 records. Each child runs independently, possibly on different workers.
 #### ⚙️ How It Works
-The diagram shows the tree: a **Parent Workflow** spawns Child 1 (Process Order), Child 2 (Send Email), and Child 3 (Update Inventory). Each child runs independently and produces a result. The parent collects all results when they're done.
+[lecture] The diagram shows the tree: a **Parent Workflow** spawns Child 1 (Process Order), Child 2 (Send Email), and Child 3 (Update Inventory). Each child runs independently and produces a result. The parent collects all results when they're done.
 Children can run on their **own task queue** — meaning different worker fleets can handle them. That's great for scaling. The **ParentClosePolicy** controls what happens to children when the parent finishes: should they be terminated, abandoned to continue on their own, or sent a cancellation request?
 #### 🎯 Best For
-**Fan-out / fan-in** patterns, **batch processing**, **partitioned pipelines**, and any time you want to break a complex workflow into **modular, reusable sub-processes**.
+[confidently] **Fan-out / fan-in** patterns, **batch processing**, **partitioned pipelines**, and any time you want to break a complex workflow into **modular, reusable sub-processes**.
 Let's see the implementation.`,
         },
         {
@@ -904,18 +904,18 @@ Let's see the implementation.`,
             </div>
           ),
           notes: `### 16 — Child Workflows — How It Works
-Let's get into the implementation details and trade-offs.
+[conversational] Let's get into the implementation details and trade-offs.
 #### 🛠️ Temporal Implementation
-Starting a child is straightforward: call **workflow.ExecuteChildWorkflow(ctx, childFunction, args)**. This returns a **Future** — you can call **.Get()** on it to block until the child finishes, or you can fire off multiple children and collect their futures to await them all in parallel.
+[lecture] Starting a child is straightforward: call **workflow.ExecuteChildWorkflow(ctx, childFunction, args)**. This returns a **Future** — you can call **.Get()** on it to block until the child finishes, or you can fire off multiple children and collect their futures to await them all in parallel.
 You configure each child with **ChildWorkflowOptions** — setting the task queue, retry policy, and timeouts independently from the parent.
 #### ⚙️ Key Configuration
-**ParentClosePolicy** is the most important setting here. **TERMINATE** kills children when the parent ends. **ABANDON** lets children continue running independently. **REQUEST_CANCEL** sends a cancellation signal so children can clean up gracefully.
-**WorkflowIDReusePolicy** prevents duplicate children — if you try to start a child with an ID that's already running, Temporal can reject it instead of creating a duplicate.
+[seriously] **ParentClosePolicy** is the most important setting here. **TERMINATE** kills children when the parent ends. **ABANDON** lets children continue running independently. **REQUEST_CANCEL** sends a cancellation signal so children can clean up gracefully.
+[confidently] **WorkflowIDReusePolicy** prevents duplicate children — if you try to start a child with an ID that's already running, Temporal can reject it instead of creating a duplicate.
 Each child has **independent retry and timeout** policies, so a flaky child doesn't block or crash the parent.
 #### ⚖️ Trade-offs
-**Pros:** Children scale independently, have separate failure domains, and keep the parent's history small. The parent just records "started child" and "child completed" events.
-**Cons:** Cross-workflow observability requires tooling — you need to navigate between parent and child in the Temporal UI. There's also a small **latency overhead** for starting each child. And the added complexity of managing a tree of workflows instead of a single flat one.
-On to Pattern #6 — **Signals**.`,
+[pleased] **Pros:** Children scale independently, have separate failure domains, and keep the parent's history small. The parent just records "started child" and "child completed" events.
+[cautiously] **Cons:** Cross-workflow observability requires tooling — you need to navigate between parent and child in the Temporal UI. There's also a small **latency overhead** for starting each child. And the added complexity of managing a tree of workflows instead of a single flat one.
+[energetic] On to Pattern #6 — **Signals**.`,
         },
       ],
     },
@@ -968,15 +968,15 @@ flowchart LR
             </div>
           ),
           notes: `### 17 — Signals — Overview
-Pattern #6 — **Signals**. This is how the outside world talks to a running workflow.
+[excited] Pattern #6 — **Signals**. This is how the outside world talks to a running workflow.
 #### ⚡ What Are Signals?
-Signals are **asynchronous, fire-and-forget messages** sent to a running workflow from the outside. An external service, a user action, a webhook callback — any of these can send a signal to a workflow, and the workflow receives it through a named channel and reacts.
-Think of it like knocking on someone's door. You knock (send the signal), and whenever they're ready, they open the door (receive it). You don't wait for a response — it's a one-way communication.
+[confidently] Signals are **asynchronous, fire-and-forget messages** sent to a running workflow from the outside. An external service, a user action, a webhook callback — any of these can send a signal to a workflow, and the workflow receives it through a named channel and reacts.
+[storytelling] Think of it like knocking on someone's door. You knock (send the signal), and whenever they're ready, they open the door (receive it). You don't wait for a response — it's a one-way communication.
 #### ⚙️ How It Works
-The diagram shows the pattern: an external service and a user action both send signals to the workflow. The workflow receives them and continues processing. Signals carry a **payload** — any serializable data you want to send.
-The crucial thing about signals: they're **durable**. If the workflow is currently replaying when the signal arrives, it gets buffered and delivered as soon as replay catches up. You'll never lose a signal because of a crash.
+[lecture] The diagram shows the pattern: an external service and a user action both send signals to the workflow. The workflow receives them and continues processing. Signals carry a **payload** — any serializable data you want to send.
+[pleased] The crucial thing about signals: they're **durable**. If the workflow is currently replaying when the signal arrives, it gets buffered and delivered as soon as replay catches up. You'll never lose a signal because of a crash.
 #### 🎯 Best For
-**User approvals** — "the manager approved this expense report." **Webhook callbacks** — "the payment provider confirmed the charge." **Real-time notifications** — "new data is available for processing." Any time you need to inject external events into a running workflow.
+[conversational] **User approvals** — "the manager approved this expense report." **Webhook callbacks** — "the payment provider confirmed the charge." **Real-time notifications** — "new data is available for processing." Any time you need to inject external events into a running workflow.
 Let's see how to implement this.`,
         },
         {
@@ -1017,18 +1017,18 @@ Let's see how to implement this.`,
             </div>
           ),
           notes: `### 18 — Signals — Implementation
-Let's look at the code-level details and best practices.
+[conversational] Let's look at the code-level details and best practices.
 #### 🛠️ Temporal Implementation
-First, you define a channel inside your workflow: **ch := workflow.GetSignalChannel(ctx, "approve")**. Then you block on it with **ch.Receive(ctx, &payload)** — the workflow pauses until a signal named "approve" arrives.
+[lecture] First, you define a channel inside your workflow: **ch := workflow.GetSignalChannel(ctx, "approve")**. Then you block on it with **ch.Receive(ctx, &payload)** — the workflow pauses until a signal named "approve" arrives.
 If you need to listen on **multiple channels** simultaneously — say an "approve" channel and a "cancel" channel — use a **Selector**. The Selector races both channels and whichever fires first wins.
 On the sender side, it's a simple API call: **client.SignalWorkflow(ctx, workflowID, runID, "approve", data)**. This can come from your API server, a webhook handler, or even another workflow.
 #### ⚙️ Tips
-A powerful pattern is combining a signal with a timer via a **Selector** for deadline-based approvals. "Wait up to 48 hours for approval. If no signal arrives, auto-reject." That's a Selector racing a timer and a signal channel.
-**SignalWithStartWorkflow** is another useful trick — it starts a workflow *and* sends it a signal in one atomic call. Perfect for idempotent workflows that might already be running.
+[pleased] A powerful pattern is combining a signal with a timer via a **Selector** for deadline-based approvals. [storytelling] "Wait up to 48 hours for approval. If no signal arrives, auto-reject." That's a Selector racing a timer and a signal channel.
+[confidently] **SignalWithStartWorkflow** is another useful trick — it starts a workflow *and* sends it a signal in one atomic call. Perfect for idempotent workflows that might already be running.
 If you expect bursts of signals, buffer them with a **slice or queue** inside the workflow and process them in order.
 #### ⚖️ Trade-offs
-**Pros:** Decouples external events from workflow logic, durable delivery, no polling needed. **Cons:** Fire-and-forget means the sender gets **no return value**. If you need a response, use **Update** instead — that's Pattern #9. Also, unhandled signals can pile up in the queue if your workflow doesn't drain them.
-Next up is Pattern #7 — **Queries**.`,
+[pleased] **Pros:** Decouples external events from workflow logic, durable delivery, no polling needed. [cautiously] **Cons:** Fire-and-forget means the sender gets **no return value**. If you need a response, use **Update** instead — that's Pattern #9. Also, unhandled signals can pile up in the queue if your workflow doesn't drain them.
+[energetic] Next up is Pattern #7 — **Queries**.`,
         },
       ],
     },
@@ -1080,15 +1080,15 @@ sequenceDiagram
             </div>
           ),
           notes: `### 19 — Queries — Overview
-Pattern #7 — **Queries**. If Signals are about *sending* data into a workflow, Queries are about *reading* data out.
+[excited] Pattern #7 — **Queries**. If Signals are about *sending* data into a workflow, Queries are about *reading* data out.
 #### 🔍 What Are Queries?
-A Query is a **synchronous, read-only** inspection of a running workflow's internal state. The caller sends a query and gets an immediate response — like calling a getter function on an object.
-The key difference from Signals: Queries **never mutate** workflow state. They're completely side-effect-free. Think of it like checking your bank balance — you're reading the number, not changing it.
+[confidently] A Query is a **synchronous, read-only** inspection of a running workflow's internal state. The caller sends a query and gets an immediate response — like calling a getter function on an object.
+[conversational] The key difference from Signals: Queries **never mutate** workflow state. They're completely side-effect-free. Think of it like checking your bank balance — you're reading the number, not changing it.
 #### ⚙️ How It Works
-The sequence diagram shows the pattern beautifully. The client sends a **QueryWorkflow("getStatus")** call. The workflow's registered query handler runs, reads the current state from local variables, and returns **{ status: "processing", progress: 72 }**. The workflow state remains completely unchanged.
-Queries work on **both running and completed** workflows. So you can check the final state of a workflow that finished yesterday, which is great for debugging.
+[lecture] The sequence diagram shows the pattern beautifully. The client sends a **QueryWorkflow("getStatus")** call. The workflow's registered query handler runs, reads the current state from local variables, and returns **{ status: "processing", progress: 72 }**. The workflow state remains completely unchanged.
+[pleased] Queries work on **both running and completed** workflows. So you can check the final state of a workflow that finished yesterday, which is great for debugging.
 #### 🎯 Best For
-**Status dashboards** — show live progress of all active workflows. **Progress bars** — "your export is 72% complete." **Health checks** — "is this subscription workflow still healthy?" And **debugging** — inspect any workflow's internal state without touching it.
+[conversational] **Status dashboards** — show live progress of all active workflows. **Progress bars** — "your export is 72% complete." **Health checks** — "is this subscription workflow still healthy?" And **debugging** — inspect any workflow's internal state without touching it.
 Let's see how to implement this.`,
         },
         {
@@ -1129,18 +1129,18 @@ Let's see how to implement this.`,
             </div>
           ),
           notes: `### 20 — Queries — Implementation
-Let's look at how to set up and use queries.
+[conversational] Let's look at how to set up and use queries.
 #### 🛠️ Temporal Implementation
-You register a query handler inside your workflow: **workflow.SetQueryHandler(ctx, "getStatus", func() (Status, error) { return currentStatus, nil })**. That's it — now any external caller can query this workflow's status.
+[lecture] You register a query handler inside your workflow: **workflow.SetQueryHandler(ctx, "getStatus", func() (Status, error) { return currentStatus, nil })**. That's it — now any external caller can query this workflow's status.
 On the caller side: **client.QueryWorkflow(ctx, wfID, runID, "getStatus")**. The response is returned synchronously, just like a regular function call.
-The critical rule: query handlers must be **pure functions** — no side effects, no activity calls, no timers. They just read local variables and return data. If your handler does anything non-deterministic, Temporal's replay will break.
+[seriously] The critical rule: query handlers must be **pure functions** — no side effects, no activity calls, no timers. They just read local variables and return data. If your handler does anything non-deterministic, Temporal's replay will break.
 #### ⚙️ Tips
-You can register **multiple query types** on a single workflow. For example, "getStatus", "getProgress", "getErrors" — each returning different slices of the workflow's state.
-For **bulk queries** across many workflows — like "how many orders are in the Shipped state right now?" — use **Search Attributes** instead. Search Attributes are indexed fields you set on your workflow that Temporal can query across all executions efficiently.
-Query handlers must return **quickly**. No blocking calls, no waiting. If the handler takes too long, the query times out.
+[pleased] You can register **multiple query types** on a single workflow. For example, "getStatus", "getProgress", "getErrors" — each returning different slices of the workflow's state.
+[confidently] For **bulk queries** across many workflows — like "how many orders are in the Shipped state right now?" — use **Search Attributes** instead. Search Attributes are indexed fields you set on your workflow that Temporal can query across all executions efficiently.
+[cautiously] Query handlers must return **quickly**. No blocking calls, no waiting. If the handler takes too long, the query times out.
 #### ⚖️ Trade-offs
-**Pros:** Zero side-effects, instant state visibility, works on completed workflows too. **Cons:** Read-only only — if you need to *change* workflow state, you need **Update** (our next pattern). Also, a live worker must be available to handle the query — if all workers are down, queries will fail.
-Let's move to Pattern #8 — **Continue-As-New**.`,
+[pleased] **Pros:** Zero side-effects, instant state visibility, works on completed workflows too. [cautiously] **Cons:** Read-only only — if you need to *change* workflow state, you need **Update** (our next pattern). Also, a live worker must be available to handle the query — if all workers are down, queries will fail.
+[energetic] Let's move to Pattern #8 — **Continue-As-New**.`,
         },
       ],
     },
@@ -1193,16 +1193,16 @@ flowchart LR
             </div>
           ),
           notes: `### 21 — Continue-As-New — Overview
-Pattern #8 — **Continue-As-New**. This is Temporal's answer to the "my workflow ran too long and the history got huge" problem.
+[excited] Pattern #8 — **Continue-As-New**. This is Temporal's answer to the "my workflow ran too long and the history got huge" problem.
 #### 🔄 What Is It?
-Continue-As-New is a mechanism that **closes the current workflow execution** and immediately starts a fresh one with the same Workflow ID. The key: the new execution starts with a **clean, empty event history**, but you can carry over whatever state you need as the input argument.
-Think of it like closing one notebook that's full and opening a fresh one — same project, same context, but a clean page count.
+[confidently] Continue-As-New is a mechanism that **closes the current workflow execution** and immediately starts a fresh one with the same Workflow ID. The key: the new execution starts with a **clean, empty event history**, but you can carry over whatever state you need as the input argument.
+[storytelling] Think of it like closing one notebook that's full and opening a fresh one — same project, same context, but a clean page count.
 #### ⚙️ Why You Need It
-Temporal stores every event that happens in a workflow: timers started, activities scheduled, signals received. For a workflow that processes thousands of iterations — say a polling loop that checks every 5 minutes — the history can grow to **50,000+ events**. At that point, replay becomes slow and expensive.
-The diagram shows the concept: Run 1 has 48K events and is getting dangerously large. It calls Continue-As-New, and Run 2 starts fresh at 0 events. When Run 2 reaches 45K events, it does the same thing, creating Run 3 with 0 events again.
-The Workflow ID stays the same throughout, so external callers don't even notice the rollover.
+[seriously] Temporal stores every event that happens in a workflow: timers started, activities scheduled, signals received. For a workflow that processes thousands of iterations — say a polling loop that checks every 5 minutes — the history can grow to **50,000+ events**. At that point, replay becomes slow and expensive.
+[lecture] The diagram shows the concept: Run 1 has 48K events and is getting dangerously large. It calls Continue-As-New, and Run 2 starts fresh at 0 events. When Run 2 reaches 45K events, it does the same thing, creating Run 3 with 0 events again.
+[pleased] The Workflow ID stays the same throughout, so external callers don't even notice the rollover.
 #### 🎯 Best For
-**Polling loops**, **long-lived entity workflows** like a user session, and **high-iteration cron-like patterns** where you process events indefinitely.
+[confidently] **Polling loops**, **long-lived entity workflows** like a user session, and **high-iteration cron-like patterns** where you process events indefinitely.
 Let's see how to implement this.`,
         },
         {
@@ -1243,17 +1243,17 @@ Let's see how to implement this.`,
             </div>
           ),
           notes: `### 22 — Continue-As-New — Implementation
-Let's look at the implementation details and gotchas.
+[conversational] Let's look at the implementation details and gotchas.
 #### 🛠️ Temporal Implementation
-The API is elegant. Instead of returning normally, you return **workflow.NewContinueAsNewError(ctx, workflowFn, nextArgs)**. Temporal recognizes this special error type and automatically starts a new execution of the same workflow with the arguments you provided. The current run is marked as "Continued As New" in the UI.
+[pleased] The API is elegant. Instead of returning normally, you return **workflow.NewContinueAsNewError(ctx, workflowFn, nextArgs)**. Temporal recognizes this special error type and automatically starts a new execution of the same workflow with the arguments you provided. The current run is marked as "Continued As New" in the UI.
 The trick is to pass your **accumulated state** as the input argument. For a polling workflow, that might be the last processed timestamp. For an entity workflow, it might be the current entity state.
 #### ⚙️ Key Tips
-Trigger Continue-As-New after a **fixed threshold** — either a certain number of iterations (e.g., every 1,000 loops) or when the event count approaches a limit (e.g., every 10K events). Temporal provides **workflow.GetInfo(ctx).GetCurrentHistoryLength()** to check the current event count.
-Here's the most common gotcha: **pending signals and timers don't carry over**. Before calling Continue-As-New, you must **drain all pending signals** from your channels. Otherwise, those signals are lost forever. Same for active timers — they're cancelled when the execution closes.
-The good news: **Memos and Search Attributes** carry over automatically. So your indexed fields and metadata are preserved.
+[lecture] Trigger Continue-As-New after a **fixed threshold** — either a certain number of iterations (e.g., every 1,000 loops) or when the event count approaches a limit (e.g., every 10K events). Temporal provides **workflow.GetInfo(ctx).GetCurrentHistoryLength()** to check the current event count.
+[seriously] Here's the most common gotcha: **pending signals and timers don't carry over**. Before calling Continue-As-New, you must **drain all pending signals** from your channels. Otherwise, those signals are lost forever. Same for active timers — they're cancelled when the execution closes.
+[pleased] The good news: **Memos and Search Attributes** carry over automatically. So your indexed fields and metadata are preserved.
 #### ⚖️ Trade-offs
-**Pros:** Prevents history blow-up, keeps the same Workflow ID, seamless for external callers. **Cons:** You need to manually serialize and deserialize state between runs. Pending signals and timers must be drained first, adding complexity to your workflow logic.
-Alright, last but not least — Pattern #9: **Update**.`,
+[confidently] **Pros:** Prevents history blow-up, keeps the same Workflow ID, seamless for external callers. [cautiously] **Cons:** You need to manually serialize and deserialize state between runs. Pending signals and timers must be drained first, adding complexity to your workflow logic.
+[energetic] Alright, last but not least — Pattern #9: **Update**.`,
         },
       ],
     },
@@ -1310,15 +1310,15 @@ sequenceDiagram
             </div>
           ),
           notes: `### 23 — Update — Overview
-And here's Pattern #9 — **Update**. This is one of Temporal's newest and most powerful primitives.
+[excited] And here's Pattern #9 — **Update**. This is one of Temporal's newest and most powerful primitives.
 #### ✏️ What Is an Update?
-An Update is a **synchronous, validated mutation** sent to a running workflow. Unlike Signals, which are fire-and-forget, the caller **gets a response back** — including any validation errors — before the call returns. It's like an RPC 👉 'ahr-pee-SEE' call directly into your workflow.
-Think of it like a cashier at a store. You hand them an item to add to your cart (the Update). They check if it's in stock (validation). If yes, they add it and tell you the new total (response). If not, they tell you it's out of stock (validation error). You get an answer immediately.
+[confidently] An Update is a **synchronous, validated mutation** sent to a running workflow. Unlike Signals, which are fire-and-forget, the caller **gets a response back** — including any validation errors — before the call returns. It's like an RPC 👉 'ahr-pee-SEE' call directly into your workflow.
+[storytelling] Think of it like a cashier at a store. You hand them an item to add to your cart (the Update). They check if it's in stock (validation). If yes, they add it and tell you the new total (response). If not, they tell you it's out of stock (validation error). You get an answer immediately.
 #### ⚙️ How It Works — Update vs Signal
-The sequence diagram shows the two-phase process. Phase 1 is **Validate** — the workflow checks if the input is valid without changing any state. If it's invalid, the caller gets an error immediately. Phase 2 is **Execute** — the workflow mutates its state and returns the result to the caller.
-This is a game-changer compared to Signals. With Signals, you send data in and hope for the best. With Updates, you know *immediately* whether the operation succeeded and what the new state is.
+[lecture] The sequence diagram shows the two-phase process. Phase 1 is **Validate** — the workflow checks if the input is valid without changing any state. If it's invalid, the caller gets an error immediately. Phase 2 is **Execute** — the workflow mutates its state and returns the result to the caller.
+[pleased] This is a game-changer compared to Signals. With Signals, you send data in and hope for the best. With Updates, you know *immediately* whether the operation succeeded and what the new state is.
 #### 🎯 Best For
-**Shopping cart add/remove**, **auction bidding**, **reservation changes**, and any interaction where the caller needs a response. Essentially, any time you want **RPC-like semantics** with a running workflow.
+[confidently] **Shopping cart add/remove**, **auction bidding**, **reservation changes**, and any interaction where the caller needs a response. Essentially, any time you want **RPC-like semantics** with a running workflow.
 Let's see the implementation.`,
         },
         {
@@ -1359,16 +1359,16 @@ Let's see the implementation.`,
             </div>
           ),
           notes: `### 24 — Update — Implementation
-Let's look at the implementation details.
+[conversational] Let's look at the implementation details.
 #### 🛠️ Temporal Implementation
-You register an update handler with: **workflow.SetUpdateHandlerWithOptions(ctx, "addItem", handler, opts)**. The options include a **Validator** function that runs in the validate phase — return an error to reject the update. The **Handler** function runs in the execute phase — mutate your state here and return the result.
-Important distinction: the Validator must be **deterministic and fast** — no activities, no side effects, no timers. It's essentially a pure check. But the Handler **can** call activities, start child workflows, or sleep — it has full access to the Temporal API. This is because the Validator runs during admission, while the Handler runs as part of the workflow's main execution.
+[lecture] You register an update handler with: **workflow.SetUpdateHandlerWithOptions(ctx, "addItem", handler, opts)**. The options include a **Validator** function that runs in the validate phase — return an error to reject the update. The **Handler** function runs in the execute phase — mutate your state here and return the result.
+[seriously] Important distinction: the Validator must be **deterministic and fast** — no activities, no side effects, no timers. It's essentially a pure check. But the Handler **can** call activities, start child workflows, or sleep — it has full access to the Temporal API. This is because the Validator runs during admission, while the Handler runs as part of the workflow's main execution.
 #### ⚙️ Key Tips
-A powerful pattern is **Update-with-Start** — it atomically starts a workflow *and* sends the first update in one call. Perfect for initializing a shopping cart workflow and adding the first item simultaneously.
-Think about your validation carefully. The Validator is your guard at the door — checking inventory levels, verifying permissions, validating input format. Anything that would cause a bad mutation should be caught here, before the state changes.
+[pleased] A powerful pattern is **Update-with-Start** — it atomically starts a workflow *and* sends the first update in one call. Perfect for initializing a shopping cart workflow and adding the first item simultaneously.
+[confidently] Think about your validation carefully. The Validator is your guard at the door — checking inventory levels, verifying permissions, validating input format. Anything that would cause a bad mutation should be caught here, before the state changes.
 #### ⚖️ Trade-offs
-**Pros:** Caller gets a synchronous response, input validation before mutation, atomic operation. No more fire-and-forget uncertainty. **Cons:** It's a newer API, so not all SDKs have fully stable support yet. It also adds complexity compared to simple Signals — you're writing a validator, a handler, and dealing with the two-phase lifecycle.
-Alright, we've covered all 9 patterns! Let's wrap things up with a cheat sheet and key takeaways.`,
+[pleased] **Pros:** Caller gets a synchronous response, input validation before mutation, atomic operation. No more fire-and-forget uncertainty. [cautiously] **Cons:** It's a newer API, so not all SDKs have fully stable support yet. It also adds complexity compared to simple Signals — you're writing a validator, a handler, and dealing with the two-phase lifecycle.
+[energetic] Alright, we've covered all 9 patterns! Let's wrap things up with a cheat sheet and key takeaways.`,
         },
       ],
     },
@@ -1461,15 +1461,15 @@ Alright, we've covered all 9 patterns! Let's wrap things up with a cheat sheet a
             </div>
           ),
           notes: `### 25 — Cheat Sheet — All 9 Patterns Compared
-Here's your quick reference card — all 9 patterns side by side.
+[cheerfully] Here's your quick reference card — all 9 patterns side by side.
 #### 📋 The Decision Table
-Let me walk you through the key columns. **Complexity** tells you how much code you'll write. **History Cost** tells you how the event history grows. **Best Use Case** helps you pick the right pattern for your problem.
-**Saga** is medium complexity with medium history cost — use it for distributed transactions with rollback. **State Machine** is similar complexity but history can grow higher because of all the state transitions.
-**Long-Running** is low to medium complexity but **high** history cost — those durable timers and signals add events over weeks and months. That's why you pair it with **Continue-As-New**, which *resets* the history.
+[lecture] Let me walk you through the key columns. **Complexity** tells you how much code you'll write. **History Cost** tells you how the event history grows. **Best Use Case** helps you pick the right pattern for your problem.
+[confidently] **Saga** is medium complexity with medium history cost — use it for distributed transactions with rollback. **State Machine** is similar complexity but history can grow higher because of all the state transitions.
+[conversational] **Long-Running** is low to medium complexity but **high** history cost — those durable timers and signals add events over weeks and months. That's why you pair it with **Continue-As-New**, which *resets* the history.
 **Cron** is the simplest — low complexity, low history cost because each run is a fresh execution. **Child Workflows** have low history cost *per workflow* because the work is split across multiple executions.
 **Signals** and **Queries** are both low complexity, low cost — they're communication primitives, not full patterns. **Update** is medium complexity because of the two-phase validate-execute lifecycle.
-Here's a mental shortcut: if you need **rollback**, pick Saga. If you need **state tracking**, pick State Machine. If you need to **talk to a workflow**, use Signals, Queries, or Update depending on whether you need fire-and-forget, read-only, or read-write.
-Let's close with the key takeaways.`,
+[storytelling] Here's a mental shortcut: if you need **rollback**, pick Saga. If you need **state tracking**, pick State Machine. If you need to **talk to a workflow**, use Signals, Queries, or Update depending on whether you need fire-and-forget, read-only, or read-write.
+[energetic] Let's close with the key takeaways.`,
         },
         /* ---------- Key Takeaways ---------- */
         {
@@ -1506,16 +1506,16 @@ Let's close with the key takeaways.`,
             </div>
           ),
           notes: `### 26 — Key Takeaways
-Let's wrap up with the five things I want you to remember from this talk.
+[warmly] Let's wrap up with the five things I want you to remember from this talk.
 #### 🎯 The Big Five
-**Number 1:** Start with **Saga** for any multi-service transaction. It eliminates distributed locks and two-phase commit. If you're building anything that involves charging money and then doing other steps, Saga is your first tool.
-**Number 2:** Use **Signals + Selectors** for human-in-the-loop approvals. Combine a signal channel with a timer so you can set SLA deadlines. "Approve within 48 hours or auto-reject." Simple, durable, elegant.
-**Number 3:** Always plan for **Continue-As-New** in long-running workflows. Don't wait until your history hits 50K events to think about it. Build it in from day one.
-**Number 4:** Prefer **Update** over Signal when the caller needs a response or you need input validation. Updates give you synchronous, validated mutations — much safer than fire-and-forget signals for critical operations.
+[confidently] **Number 1:** Start with **Saga** for any multi-service transaction. It eliminates distributed locks and two-phase commit. If you're building anything that involves charging money and then doing other steps, Saga is your first tool.
+**Number 2:** Use **Signals + Selectors** for human-in-the-loop approvals. Combine a signal channel with a timer so you can set SLA deadlines. [storytelling] "Approve within 48 hours or auto-reject." Simple, durable, elegant.
+[seriously] **Number 3:** Always plan for **Continue-As-New** in long-running workflows. Don't wait until your history hits 50K events to think about it. Build it in from day one.
+[confidently] **Number 4:** Prefer **Update** over Signal when the caller needs a response or you need input validation. Updates give you synchronous, validated mutations — much safer than fire-and-forget signals for critical operations.
 **Number 5:** Decompose large workflows into **Child Workflows**. It keeps history small, enables independent scaling, and makes your codebase more modular and testable.
 #### 🚀 Your Next Step
-Here's your homework: pick **one pattern** from today's talk — the one most relevant to a problem you're solving right now. Prototype it with the Temporal TypeScript or Go SDK. Start a workflow, send it some signals or updates, and observe the event history in the **Temporal Web UI**. Seeing the event history light up as your workflow executes is incredibly satisfying and helps these patterns click in a way that slides alone never can.
-Thank you for joining me today! If you found this helpful, check out **niisar.com** for more talks and resources.`,
+[inspiringly] Here's your homework: pick **one pattern** from today's talk — the one most relevant to a problem you're solving right now. Prototype it with the Temporal TypeScript or Go SDK. Start a workflow, send it some signals or updates, and observe the event history in the **Temporal Web UI**. [excited] Seeing the event history light up as your workflow executes is incredibly satisfying and helps these patterns click in a way that slides alone never can.
+[warmly] Thank you for joining me today! If you found this helpful, check out **niisar.com** for more talks and resources.`,
         },
       ],
     },
