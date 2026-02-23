@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import mermaid from 'mermaid';
+import { LiquidGlass } from '@liquidglass/react';
 import SvgIcon from '../lib/icons/SvgIcon';
 
 interface MermaidPopoverProps {
@@ -12,24 +13,14 @@ const MIN_ZOOM = 0.1;
 const MAX_ZOOM = 5;
 const ZOOM_STEP = 0.15;
 
-/* ── Liquid-glass shared styles ── */
-const glassBar: React.CSSProperties = {
-  background: 'rgba(255, 255, 255, 0.08)',
-  backdropFilter: 'blur(24px) saturate(1.6)',
-  WebkitBackdropFilter: 'blur(24px) saturate(1.6)',
-  border: '1px solid rgba(255, 255, 255, 0.15)',
-  borderRadius: '16px',
-  boxShadow:
-    '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.04)',
-};
-
+/* ── Button styles (no glass — container handles it) ── */
 const glassBtn: React.CSSProperties = {
   width: '38px',
   height: '38px',
   padding: 0,
   background: 'rgba(255, 255, 255, 0.06)',
   color: 'rgba(255, 255, 255, 0.9)',
-  border: '1px solid rgba(255, 255, 255, 0.12)',
+  border: '1px solid rgba(255, 255, 255, 0.14)',
   borderRadius: '10px',
   cursor: 'pointer',
   fontSize: '18px',
@@ -38,8 +29,6 @@ const glassBtn: React.CSSProperties = {
   justifyContent: 'center',
   transition: 'background 0.2s, border-color 0.2s, transform 0.15s',
   userSelect: 'none',
-  backdropFilter: 'blur(8px)',
-  WebkitBackdropFilter: 'blur(8px)',
 };
 
 const glassBtnWide: React.CSSProperties = {
@@ -314,38 +303,47 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
       {title && (
         <div
           onClick={(e) => e.stopPropagation()}
-          style={{
-            ...glassBar,
-            position: 'absolute',
-            top: '20px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            padding: '10px 28px',
-            pointerEvents: 'none',
-          }}
+          style={{ position: 'absolute', top: '20px', left: '20px', pointerEvents: 'none' }}
         >
-          <span style={{ color: 'rgba(255,255,255,0.92)', fontSize: '1.15em', fontWeight: 600, whiteSpace: 'nowrap' }}>
-            {title}
-          </span>
+          <LiquidGlass borderRadius={16} blur={3.5} contrast={1.05} brightness={1.22} saturation={0.85} shadowIntensity={0.5} elasticity={0.5}>
+            <div style={{
+              padding: '10px 28px',
+              position: 'relative',
+            }}>
+              {/* frost veil */}
+              <div style={{
+                position: 'absolute', inset: 0, borderRadius: 16,
+                background: 'rgba(255,255,255,0.13)',
+                pointerEvents: 'none',
+              }} />
+              <span style={{ position: 'relative', color: 'rgba(255,255,255,0.95)', fontSize: '1.15em', fontWeight: 600, whiteSpace: 'nowrap', textShadow: '0 1px 8px rgba(0,0,0,0.35)' }}>
+                {title}
+              </span>
+            </div>
+          </LiquidGlass>
         </div>
       )}
 
       {/* ── Floating liquid-glass toolbar ── */}
       <div
         onClick={(e) => e.stopPropagation()}
-        style={{
-          ...glassBar,
-          position: 'absolute',
-          bottom: '28px',
-          left: '50%',
-          transform: 'translateX(-50%)',
+        style={{ position: 'absolute', top: '20px', right: '20px' }}
+      >
+      <LiquidGlass borderRadius={16} blur={3.5} contrast={1.05} brightness={1.22} saturation={0.85} shadowIntensity={0.5} elasticity={0.5}>
+      <div style={{
           padding: '10px 16px',
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
           userSelect: 'none',
-        }}
-      >
+          position: 'relative',
+        }}>
+        {/* frost veil */}
+        <div style={{
+          position: 'absolute', inset: 0, borderRadius: 16,
+          background: 'rgba(255,255,255,0.13)',
+          pointerEvents: 'none',
+        }} />
         {/* Zoom out */}
         <button
           onClick={zoomOut}
@@ -429,15 +427,16 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
           ×
         </button>
       </div>
+      </LiquidGlass>
+      </div>
 
       {/* ── Hint text ── */}
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
           position: 'absolute',
-          bottom: '84px',
-          left: '50%',
-          transform: 'translateX(-50%)',
+          bottom: '20px',
+          right: '20px',
           color: 'rgba(255,255,255,0.35)',
           fontSize: '12px',
           pointerEvents: 'none',

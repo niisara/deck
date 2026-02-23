@@ -56,7 +56,7 @@ This body. These hands. These lungs. This heartbeat.
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="How Speech Failure Unfolds"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["💭 Thought is crystal clear"] --> B["🗣️ Mouth won't cooperate"]
     B --> C["Others jump in, finish your sentences"]
@@ -64,10 +64,13 @@ flowchart TB
     D -->|"Yes"| E["Partial relief — but it wasn't yours"]
     D -->|"No"| F["You are corrected about your own intentions"]
     F --> G["🤐 You nod — correcting them is too tiring"]
-    style A fill:#e3f2fd,color:#000
-    style G fill:#ffcdd2,color:#000
-    style F fill:#fff9c4,color:#000
-    style E fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                 />
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -280,7 +283,7 @@ Not someday.
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Cognitive Decline: The Quiet Theft"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🧠 Forget the word for common things"] --> B["Call children by wrong names"]
     B --> C["Forget you made the mistake"]
@@ -288,9 +291,13 @@ flowchart TB
     D --> E["😶 People smile patiently — exchange glances"]
     E --> F["You don't notice"]
     F --> G["💨 The you that remembers fades before the you that exists"]
-    style A fill:#e3f2fd,color:#000
-    style E fill:#fff9c4,color:#000
-    style G fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                 />
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -589,7 +596,7 @@ Not someday.
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Organ Failure Cascade"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     K["🫘 Kidneys filter less"] --> L["🫀 Liver processes slower"]
     L --> Lu["🫁 Lungs capture less oxygen"]
@@ -598,10 +605,14 @@ flowchart TB
     M --> F["💧 Body retains fluid"]
     F --> S["Ankles swell • Belly distends"]
     S --> D["☠️ You look pregnant with your own death"]
-    style K fill:#e3f2fd,color:#000
-    style T fill:#fff9c4,color:#000
-    style S fill:#ffcdd2,color:#000
-    style D fill:#1a1a1a,color:#fff`}
+    style K fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Lu fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#0f0f1a,color:#fff,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -897,7 +908,7 @@ Not someday.
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="The Disappearing Visit Timeline"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🌹 At first — visits often, flowers, hours"] --> B["📅 Then once a week"]
     B --> C["📆 Then once a month"]
@@ -905,10 +916,13 @@ flowchart TB
     D --> E["📵 Then not at all"]
     E --> F["📞 Waiting by the phone for calls that don't come"]
     F --> G["You won't blame them. But you will notice."]
-    style A fill:#c8e6c9,color:#000
-    style C fill:#fff9c4,color:#000
-    style E fill:#ffcdd2,color:#000
-    style G fill:#1a1a1a,color:#fff`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#0f0f1a,color:#fff,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -1200,17 +1214,17 @@ In the darkness at 3 AM.
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="The Fall Chain — 20-30% One-Year Mortality"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🚶 One Fall\n(wet floor, loose rug,\nuneven pavement)"] --> B["🦴 Broken Hip"]
     B --> C["🛏️ Bedridden"]
     C --> D["🫁 Pneumonia"]
     D --> E["💀 Death"]
-    style A fill:#fff9c4,color:#000
-    style B fill:#ffcdd2,color:#000
-    style C fill:#ffcdd2,color:#000
-    style D fill:#c62828,color:#fff
-    style E fill:#1a1a1a,color:#fff`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#c62828,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#0f0f1a,color:#fff,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -2194,7 +2208,7 @@ Piece by piece.
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Identity Stripped Away — Role by Role"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Was["Who You Were"]
         W1["💼 Worker"] --- W2["🏠 Provider"] --- W3["💪 Strong"]
@@ -2208,9 +2222,17 @@ graph TB
     end
     Was --> Becomes
     Becomes --> Left
-    style Was fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Becomes fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
-    style Left fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
+    style Was fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Becomes fill:#2a1a00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style Left fill:#1f0a0a,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style W1 fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style W2 fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style W3 fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B1 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style L1 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style L2 fill:#0f0f1a,color:#fff,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>

@@ -27,8 +27,10 @@ Key effects:
 If a node has no `style` line, add one using the default dark-neutral style:
 
 ```
-style <NODE_ID> fill:#2a2a3a,color:#e0e0e0,stroke:rgba(255,255,255,0.35),stroke-width:1.5px
+style <NODE_ID> fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 ```
+
+> ⚠️ **Do NOT use `rgba()` in `style` lines.** Mermaid's diagram parser does not support parentheses in style values and will throw a parse error. Use flat hex colors for all stroke values. `rgba()` is only valid inside the `%%{init}%%` JSON block (theme variables).
 
 ---
 
@@ -48,10 +50,15 @@ style <NODE_ID> fill:#2a2a3a,color:#e0e0e0,stroke:rgba(255,255,255,0.35),stroke-
 
 ### 4. Stroke on every node
 
-Every `style` line must include:
-- `stroke:rgba(255,255,255,0.45)` for colored/accent fills
-- `stroke:rgba(255,255,255,0.35)` for dark/neutral fills
-- `stroke-width:1.5px` on all nodes
+Every `style` line must include `stroke-width:1.5px` and a flat hex stroke color. Use the following mappings:
+
+| Node type | Stroke hex |
+|---|---|
+| Colored/accent fill (blue, amber, red) | `stroke:#aaaaaa` |
+| Dark/neutral fill (`#2a2a3a`, `#0f0f1a`) | `stroke:#888888` |
+| High-danger fill (`#5c1a1a`, `#c62828`) | `stroke:#bbbbbb` |
+
+> ⚠️ Never use `rgba()` in `style` lines — Mermaid's parser cannot handle parentheses there.
 
 ---
 
@@ -60,10 +67,10 @@ Every `style` line must include:
 If the diagram uses `subgraph` blocks, apply dark fill and colored border:
 
 ```
-style <SUBGRAPH_ID> fill:#0d1f33,stroke:rgba(255,255,255,0.3),stroke-width:2px,color:#e0e0e0
+style <SUBGRAPH_ID> fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
 ```
 
-Use a colored stroke accent (e.g. `#4da6ff`, `#f5a623`, `#e53935`) if the subgraph carries a semantic meaning (info/warn/danger).
+Use a colored stroke accent (e.g. `#4da6ff`, `#f5a623`, `#e53935`) if the subgraph carries a semantic meaning (info/warn/danger). Flat hex is required — no `rgba()` in style lines.
 
 ---
 
@@ -115,11 +122,11 @@ flowchart TB
     D -->|"Yes"| E["Partial relief — but it wasn't yours"]
     D -->|"No"| F["You are corrected about your own intentions"]
     F --> G["🤐 You nod — correcting them is too tiring"]
-    style A fill:#1a3a5c,color:#fff,stroke:rgba(255,255,255,0.45),stroke-width:1.5px
-    style B fill:#2a2a3a,color:#e0e0e0,stroke:rgba(255,255,255,0.35),stroke-width:1.5px
-    style C fill:#2a2a3a,color:#e0e0e0,stroke:rgba(255,255,255,0.35),stroke-width:1.5px
-    style D fill:#3d2e00,color:#fde68a,stroke:rgba(255,255,255,0.45),stroke-width:1.5px
-    style E fill:#1b4332,color:#d1fae5,stroke:rgba(255,255,255,0.45),stroke-width:1.5px
-    style F fill:#3d2e00,color:#fde68a,stroke:rgba(255,255,255,0.45),stroke-width:1.5px
-    style G fill:#5c1a1a,color:#fecaca,stroke:rgba(255,255,255,0.5),stroke-width:1.5px
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
 ```
