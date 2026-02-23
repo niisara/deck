@@ -102,6 +102,21 @@ export const deckRegistry: DeckMeta[] = [
     load: () => import('./temporal-workflow-deck').then((m) => m.temporalWorkflowDeck),
   },
   {
+    id: 'temporal-failure-retry-strategies',
+    name: '11 Temporal Failure & Retry Strategies',
+    description:
+      'Retry policies, timeouts (Start-to-Close, Schedule-to-Start, Heartbeat), dead-letter patterns, compensation, idempotency',
+    category: 'Agent',
+    theme: 'night',
+    cardStyle: {
+      backgroundImage: 'url(https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    slideCount: 27,
+    load: () => import('./temporal-failure-retry-deck').then((m) => m.temporalFailureRetryDeck),
+  },
+  {
     id: 'embedding-models-deck',
     name: '9 Embedding Models Cheat Sheet',
     description: 'Quick-reference for RAG, semantic search, clustering, and more',
