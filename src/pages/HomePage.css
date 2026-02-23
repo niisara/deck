@@ -60,7 +60,7 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  padding-top: 120px; /* Account for fixed navigation */
+  padding-top: 100px; /* Account for floating glass navigation */
 }
 
 .home-content {
@@ -189,7 +189,7 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .home-page {
-    padding-top: 180px; /* More space for wrapped navigation */
+    padding-top: 160px; /* More space for wrapped navigation */
   }
 }
 
