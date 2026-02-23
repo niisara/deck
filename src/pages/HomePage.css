@@ -129,18 +129,24 @@
   flex: 1;
 }
 
-.deck-category {
-  position: absolute;
+/* LiquidGlass wrapper for the category badge */
+.deck-category-liquid {
+  position: absolute !important;
   top: 15px;
   right: 15px;
+  width: auto !important;
+  height: auto !important;
+}
+
+.deck-category {
+  display: block;
   padding: 0.35rem 0.75rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .deck-card h2 {

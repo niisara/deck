@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { LiquidGlass } from '@liquidglass/react';
 import { decks } from '../data/decks';
 import Navigation from '../components/Navigation';
 import './HomePage.css';
@@ -129,7 +130,19 @@ function HomePage() {
                     to={`/deck/${deck.id}?category=${selectedCategory}`} 
                     className={`deck-card ${deck.cardClassName || ''}`}
                   >
-                    <div className="deck-category">{deck.category}</div>
+                    <LiquidGlass
+                      borderRadius={12}
+                      blur={0.5}
+                      contrast={1.15}
+                      brightness={1.1}
+                      saturation={1.2}
+                      shadowIntensity={0.2}
+                      elasticity={1}
+                      zIndex={2}
+                      className="deck-category-liquid"
+                    >
+                      <span className="deck-category">{deck.category}</span>
+                    </LiquidGlass>
                     <h2>{deck.name}</h2>
                     <p>{deck.description}</p>
                     <span className="slide-count">{deck.slideCount} slides</span>
