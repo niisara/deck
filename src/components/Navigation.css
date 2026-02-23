@@ -13,6 +13,8 @@
   margin: 0 auto;
   width: 100% !important;
   height: auto !important;
+  outline: 1px solid rgba(255, 255, 255, 0.08);
+  outline-offset: 2px;
 }
 
 .nav-container {
@@ -48,6 +50,8 @@
   flex-shrink: 0;
   height: auto !important;
   width: auto !important;
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  outline-offset: 1px;
 }
 
 /* Inner button inside LiquidGlass (active state) */
