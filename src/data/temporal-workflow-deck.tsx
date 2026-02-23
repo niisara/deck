@@ -64,7 +64,7 @@ export const temporalWorkflowDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 1 — 9 Temporal Workflow Patterns for Durable Execution
+          notes: `### 9 Temporal Workflow Patterns for Durable Execution
 [cheerfully] Welcome everyone! Today we're going to explore **9 powerful workflow patterns** that Temporal 👉 'TEM-puh-ruhl' gives us for building **durable execution** systems.
 #### 🎯 What's This About?
 [storytelling] Imagine you're building a system where a process absolutely *must* complete — like charging a credit card, reserving inventory, and shipping an order. What happens if your server crashes halfway through? [confidently] That's exactly the problem **durable execution** solves. Temporal makes your workflow code **survive crashes, restarts, and even deployments** without you writing any retry or state-tracking logic yourself.
@@ -158,7 +158,7 @@ graph TB
               </div>
             </div>
           ),
-          notes: `### 2 — Overview — 9 Patterns at a Glance
+          notes: `### Overview — 9 Patterns at a Glance
 [conversational] Alright, let's get the big picture first before we deep-dive into each pattern individually.
 #### 📋 The Four Categories
 [lecture] We've organized these 9 patterns into four logical families. First, we have the **Orchestration** patterns — that's **Saga**, **State Machine**, and **Long-Running Workflows**. These are about *how* your workflow coordinates multiple steps.
@@ -221,7 +221,7 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 3 — Why Durable Execution Matters
+          notes: `### Why Durable Execution Matters
 [conversational] So why should you care about durable execution? Let's talk about the real pain points.
 #### 💥 The Problem
 [storytelling] Picture this: your API receives an order. It charges the credit card — success. Then it tries to reserve stock — but the server crashes right there. [cautiously] Now you've charged the customer but never reserved the item. That's an **inconsistent state**, and it's a nightmare to debug and fix manually.
@@ -287,7 +287,7 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 4 — Saga — Overview
+          notes: `### Saga — Overview
 [excited] Alright, Pattern #1 — the **Saga** pattern. This one is *essential* for anyone building microservices.
 #### 🔄 What Is a Saga?
 [confidently] A Saga is a sequence of steps where each step has a **compensating action** — basically an "undo" button. If step 3 fails, you don't just give up. You roll back step 2, then step 1, in reverse order. Think of it like a stack — last in, first out.
@@ -333,7 +333,7 @@ The Mermaid diagram on screen shows this beautifully: Charge → Reserve → Shi
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 5 — Saga — Implementation
+          notes: `### Saga — Implementation
 [conversational] Now let's get into the nuts and bolts of implementing a Saga in Temporal.
 #### 🛠️ How to Build It
 [pleased] The implementation is surprisingly clean. Inside your workflow function, you keep a local **compensations array**. Every time an activity succeeds, you push its compensating activity onto this array. Then you wrap everything in a try-catch — if anything throws, you loop through the compensations in reverse and execute each one.
@@ -374,7 +374,7 @@ Now let's weigh the pros and cons of the Saga pattern.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 6 — Saga — Pros & Cons
+          notes: `### Saga — Pros & Cons
 [conversational] Let's be honest about what's great and what's tricky with the Saga pattern.
 #### ✅ Pros
 [excited] The big win: **no distributed locks**, no two-phase commit. Each service stays completely autonomous — that's **loose coupling** at its finest. You don't need some central transaction coordinator holding locks across databases.
@@ -435,7 +435,7 @@ stateDiagram-v2
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 7 — State Machine — Overview
+          notes: `### State Machine — Overview
 [excited] Pattern #2 — the **State Machine** workflow. If you've ever drawn a flowchart of a business process, you've essentially designed a state machine.
 #### 📊 What Is It?
 [confidently] A state machine workflow models your process as a finite set of **states** with explicit **transitions** between them. The workflow sits in one state, waits for an external event — usually a signal — and then moves to the next state based on that event.
@@ -476,7 +476,7 @@ Let's see how this is implemented in Temporal.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 8 — State Machine — How It Works
+          notes: `### State Machine — How It Works
 [conversational] Let's dig into the implementation details.
 #### 🛠️ Temporal Implementation
 [lecture] The core pattern is a **while-true loop** with a state variable. Each iteration calls **workflow.GetSignalChannel** to receive the next event from the outside world. Then a **switch** statement evaluates the current state combined with the incoming event to decide what to do — run activities, update the state, or exit.
@@ -516,7 +516,7 @@ Now let's look at the trade-offs.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 9 — State Machine — Pros & Cons
+          notes: `### State Machine — Pros & Cons
 [conversational] Let's weigh the good and the bad.
 #### ✅ Pros
 [pleased] First, state machines are incredibly **readable**. They map directly to those business process diagrams your product manager draws on the whiteboard. When a stakeholder asks "what happens when we approve an order?", you can point to the code and they'll understand it.
@@ -579,7 +579,7 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 10 — Long-Running — Overview
+          notes: `### Long-Running — Overview
 [excited] Pattern #3 — **Long-Running Workflows**. This is one of Temporal's superpowers that really sets it apart from regular task queues.
 #### ⏳ What Are They?
 [confidently] These are workflows that stay open for **days, weeks, or even months**. They're not constantly running — they're mostly *waiting*. Waiting for a human to approve something, waiting for a deadline to pass, waiting for an external webhook.
@@ -625,7 +625,7 @@ Let's see the implementation details.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 11 — Long-Running — Implementation
+          notes: `### Long-Running — Implementation
 [conversational] Let's get into the code-level details.
 #### 🛠️ Temporal Implementation
 [lecture] The core API is simple: **workflow.Sleep(ctx, 30*24*time.Hour)** sleeps for 30 days. But the real magic is combining this with signals. You use **selector.AddReceive** to set up a race between a timer and a signal channel — whichever fires first wins, and the other is discarded.
@@ -666,7 +666,7 @@ Let's look at the pros and cons.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 12 — Long-Running — Pros & Cons
+          notes: `### Long-Running — Pros & Cons
 [conversational] Time for the honest assessment.
 #### ✅ Pros
 [pleased] The biggest advantage: **no external scheduler** needed. You don't need a separate cron daemon, a database with timer tables, or a Redis-based delayed job queue. Temporal is your all-in-one solution for durable waits.
@@ -733,7 +733,7 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 13 — Cron — Overview
+          notes: `### Cron — Overview
 [excited] Pattern #4 — **Cron Workflows**. If you've ever set up a crontab on a Linux server, you'll feel right at home.
 #### ⏰ What Is a Cron Workflow?
 [confidently] It's a workflow that **re-runs on a schedule**. Think Unix cron, but with superpowers: it's durable, observable, retryable, and you don't need a dedicated crontab server that becomes a single point of failure.
@@ -785,7 +785,7 @@ Let's look at implementation and configuration options.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 14 — Cron — Implementation & Config
+          notes: `### Cron — Implementation & Config
 [conversational] Let's dig into the two approaches and key settings.
 #### 🛠️ Two Approaches
 [lecture] **Approach 1: CronSchedule string.** The simplest way — you just set a cron expression on your workflow start options. Something like **CronSchedule: "0 9 * * *"** for daily at 9 AM. It's easy but limited — no backfill, no pause/resume.
@@ -854,7 +854,7 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 15 — Child Workflows — Overview
+          notes: `### Child Workflows — Overview
 [excited] Pattern #5 — **Child Workflows**. Think of this as the "divide and conquer" pattern of Temporal.
 #### 🏗️ What Are They?
 [confidently] A child workflow is simply a workflow that's **spawned by another workflow** — the parent. The parent can wait for results, fire-and-forget, or cancel all children when it finishes. It's like a tree structure: one parent at the top, branching out to multiple children.
@@ -903,7 +903,7 @@ Let's see the implementation.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 16 — Child Workflows — How It Works
+          notes: `### Child Workflows — How It Works
 [conversational] Let's get into the implementation details and trade-offs.
 #### 🛠️ Temporal Implementation
 [lecture] Starting a child is straightforward: call **workflow.ExecuteChildWorkflow(ctx, childFunction, args)**. This returns a **Future** — you can call **.Get()** on it to block until the child finishes, or you can fire off multiple children and collect their futures to await them all in parallel.
@@ -967,7 +967,7 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 17 — Signals — Overview
+          notes: `### Signals — Overview
 [excited] Pattern #6 — **Signals**. This is how the outside world talks to a running workflow.
 #### ⚡ What Are Signals?
 [confidently] Signals are **asynchronous, fire-and-forget messages** sent to a running workflow from the outside. An external service, a user action, a webhook callback — any of these can send a signal to a workflow, and the workflow receives it through a named channel and reacts.
@@ -1016,7 +1016,7 @@ Let's see how to implement this.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 18 — Signals — Implementation
+          notes: `### Signals — Implementation
 [conversational] Let's look at the code-level details and best practices.
 #### 🛠️ Temporal Implementation
 [lecture] First, you define a channel inside your workflow: **ch := workflow.GetSignalChannel(ctx, "approve")**. Then you block on it with **ch.Receive(ctx, &payload)** — the workflow pauses until a signal named "approve" arrives.
@@ -1079,7 +1079,7 @@ sequenceDiagram
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 19 — Queries — Overview
+          notes: `### Queries — Overview
 [excited] Pattern #7 — **Queries**. If Signals are about *sending* data into a workflow, Queries are about *reading* data out.
 #### 🔍 What Are Queries?
 [confidently] A Query is a **synchronous, read-only** inspection of a running workflow's internal state. The caller sends a query and gets an immediate response — like calling a getter function on an object.
@@ -1128,7 +1128,7 @@ Let's see how to implement this.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 20 — Queries — Implementation
+          notes: `### Queries — Implementation
 [conversational] Let's look at how to set up and use queries.
 #### 🛠️ Temporal Implementation
 [lecture] You register a query handler inside your workflow: **workflow.SetQueryHandler(ctx, "getStatus", func() (Status, error) { return currentStatus, nil })**. That's it — now any external caller can query this workflow's status.
@@ -1192,7 +1192,7 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 21 — Continue-As-New — Overview
+          notes: `### Continue-As-New — Overview
 [excited] Pattern #8 — **Continue-As-New**. This is Temporal's answer to the "my workflow ran too long and the history got huge" problem.
 #### 🔄 What Is It?
 [confidently] Continue-As-New is a mechanism that **closes the current workflow execution** and immediately starts a fresh one with the same Workflow ID. The key: the new execution starts with a **clean, empty event history**, but you can carry over whatever state you need as the input argument.
@@ -1242,7 +1242,7 @@ Let's see how to implement this.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 22 — Continue-As-New — Implementation
+          notes: `### Continue-As-New — Implementation
 [conversational] Let's look at the implementation details and gotchas.
 #### 🛠️ Temporal Implementation
 [pleased] The API is elegant. Instead of returning normally, you return **workflow.NewContinueAsNewError(ctx, workflowFn, nextArgs)**. Temporal recognizes this special error type and automatically starts a new execution of the same workflow with the arguments you provided. The current run is marked as "Continued As New" in the UI.
@@ -1309,7 +1309,7 @@ sequenceDiagram
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 23 — Update — Overview
+          notes: `### Update — Overview
 [excited] And here's Pattern #9 — **Update**. This is one of Temporal's newest and most powerful primitives.
 #### ✏️ What Is an Update?
 [confidently] An Update is a **synchronous, validated mutation** sent to a running workflow. Unlike Signals, which are fire-and-forget, the caller **gets a response back** — including any validation errors — before the call returns. It's like an RPC 👉 'ahr-pee-SEE' call directly into your workflow.
@@ -1358,7 +1358,7 @@ Let's see the implementation.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 24 — Update — Implementation
+          notes: `### Update — Implementation
 [conversational] Let's look at the implementation details.
 #### 🛠️ Temporal Implementation
 [lecture] You register an update handler with: **workflow.SetUpdateHandlerWithOptions(ctx, "addItem", handler, opts)**. The options include a **Validator** function that runs in the validate phase — return an error to reject the update. The **Handler** function runs in the execute phase — mutate your state here and return the result.
@@ -1460,7 +1460,7 @@ Let's see the implementation.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 25 — Cheat Sheet — All 9 Patterns Compared
+          notes: `### Cheat Sheet — All 9 Patterns Compared
 [cheerfully] Here's your quick reference card — all 9 patterns side by side.
 #### 📋 The Decision Table
 [lecture] Let me walk you through the key columns. **Complexity** tells you how much code you'll write. **History Cost** tells you how the event history grows. **Best Use Case** helps you pick the right pattern for your problem.
@@ -1505,7 +1505,7 @@ Let's see the implementation.`,
               </GSAPAnimated>
             </div>
           ),
-          notes: `### 26 — Key Takeaways
+          notes: `### Key Takeaways
 [warmly] Let's wrap up with the five things I want you to remember from this talk.
 #### 🎯 The Big Five
 [confidently] **Number 1:** Start with **Saga** for any multi-service transaction. It eliminates distributed locks and two-phase commit. If you're building anything that involves charging money and then doing other steps, Saga is your first tool.
