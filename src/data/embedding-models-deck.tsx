@@ -67,7 +67,8 @@ export const embeddingModelsDeck: Deck = {
               <div style={{ marginBottom: '15px' }}>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph TB
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Embedding Model Landscape] --> B[Cloud APIs]
     A --> C[Open Source]
     B --> D[OpenAI<br/>text-embedding-3]
@@ -76,14 +77,14 @@ export const embeddingModelsDeck: Deck = {
     C --> G[Instructor<br/>HKU NLP]
     C --> H[GTE 👉 'jee-tee-ee'<br/>Alibaba]
     
-    style A fill:#ffd700
-    style B fill:#4fc3f7
-    style C fill:#81c784
-    style D fill:#4fc3f7
-    style E fill:#81c784
-    style F fill:#81c784
-    style G fill:#81c784
-    style H fill:#81c784`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="Model Families Landscape"
                   />
                 </h4>
@@ -170,17 +171,18 @@ export const embeddingModelsDeck: Deck = {
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Your Text] --> B[OpenAI API]
     B --> C[text-embedding-3-small]
     C --> D[1536-dim Vector]
     D --> E[Vector Database]
     
-    style A fill:#4fc3f7
-    style B fill:#4fc3f7
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="OpenAI Embedding Flow"
                   />
                 </h4>
@@ -251,17 +253,19 @@ export const embeddingModelsDeck: Deck = {
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="OpenAI Small: Cost vs Control"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A["📝 1M Tokens"] --> B{"Embed where?"}
     B -->|"☁️ OpenAI API"| C["$0.02<br/>Stable + fast"]
     B -->|"🖥️ Self-Host"| D["GPU + Ops<br/>Higher upfront cost"]
     C --> E["✅ Best value<br/>for most teams"]
     D --> F["Full control<br/>data on-prem"]
-    style C fill:#c8e6c9,stroke:#4caf50,color:#000
-    style D fill:#e3f2fd,stroke:#1976d2,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -319,17 +323,18 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Your Text] --> B[OpenAI API]
     B --> C[text-embedding-3-large]
     C --> D[3072-dim Vector]
     D --> E[High-Precision Search]
     
-    style A fill:#4fc3f7
-    style B fill:#4fc3f7
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="OpenAI Large Model Flow"
                   />
                 </h4>
@@ -400,7 +405,7 @@ What are the trade-offs? Let's evaluate strengths and weaknesses!`
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="OpenAI Large: Quality vs Cost Tradeoff"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Sm["Small: $0.02/1M"]
         S["1536 dims — Good quality"]
@@ -412,9 +417,13 @@ graph TB
     Q --> Lg
     Sm -->|"✅ Budget apps"| R1["Cost-effective"]
     Lg -->|"✅ Mission-critical"| R2["Max precision"]
-    style Lg fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
-    style Sm fill:#e3f2fd,stroke:#1976d2,color:#000
-    style R2 fill:#81c784,color:#000`}
+    style Lg fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Sm fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -471,7 +480,8 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph TB
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Document] --> B[BGE 👉 'bee-jee-ee' Base Encoder]
     B --> C[768-dim Embedding]
     C --> D[Vector Store]
@@ -480,12 +490,14 @@ graph TB
     F --> G[BGE Reranker]
     G --> H[Final Results]
     
-    style A fill:#4fc3f7
-    style E fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style G fill:#ffd700
-    style H fill:#81c784`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="BGE Retrieval Pipeline"
                   />
                 </h4>
@@ -556,17 +568,19 @@ What are the strengths and weaknesses? Let's break it down!`
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="BGE Base: Self-Hosting Pipeline"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A["📄 Private Docs"] --> B["BGE-Base<br/>768-dim<br/>Self-hosted"]
     B --> C["Local Vector DB"]
     C --> D["🔒 Data stays<br/>on-prem"]
     B -->|"✅ No API cost"| E["$0 per query"]
     B -->|"✅ MTEB top-20"| F["Competitive quality"]
-    style B fill:#4fc3f7,stroke:#1976d2,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -623,14 +637,17 @@ graph LR
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Query] --> B[BGE-Large<br/>1024-dim]
     C[Document] --> B
     B --> D[Normalized<br/>Embeddings]
     D --> E[Cosine<br/>Similarity]
-    style B fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style D fill:#81c784,stroke:#333,stroke-width:2px
-    style E fill:#ffd700,stroke:#333,stroke-width:2px`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="BGE Large Architecture"
                   />
                 </h4>
@@ -697,7 +714,7 @@ graph LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="BGE Large: SOTA Open-Source Performance"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Open["🏆 Open-Source Leaderboard"]
         A["BGE-Large ⭐ Top rank"]
@@ -707,9 +724,13 @@ graph TB
     A --> D["MTEB top-5\nopen-source"]
     A --> E["C-MTEB\ncross-lingual"]
     D --> F["✅ Near-commercial\nquality — $0 API"]
-    style A fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
-    style F fill:#81c784,color:#000
-    style Open fill:#f5f5f5,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Open fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -763,15 +784,17 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph TB
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A["query: search query"] --> B[E5-Base<br/>768-dim]
     C["passage: document"] --> B
     B --> D[Embeddings]
     D --> E[Cosine<br/>Similarity]
-    style A fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style C fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style B fill:#81c784,stroke:#333,stroke-width:2px
-    style E fill:#ffd700,stroke:#333,stroke-width:2px`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="E5 Base with Prefix Architecture"
                   />
                 </h4>
@@ -840,16 +863,19 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="E5 Base: Multilingual Zero-Shot Retrieval"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A["query: What is ML?"] --> B["E5-Base<br/>768-dim"]
     C["passage: ML is..."] --> B
     D["passage: 机器学习是..."] --> B
     B --> E["✅ Zero-shot\nNo fine-tuning needed"]
     B --> F["🌍 ~100 languages\nvia multilingual-e5"]
-    style B fill:#4fc3f7,stroke:#1976d2,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -904,15 +930,19 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["query: text"] --> B[E5-Large<br/>1024-dim]
     C["passage: doc"] --> B
     B --> D[Normalized<br/>Vectors]
     D --> E[Ranking]
     E --> F[Optional<br/>Reranker]
-    style B fill:#4fc3f7,stroke:#333,stroke-width:3px
-    style D fill:#81c784,stroke:#333,stroke-width:2px
-    style F fill:#e1bee7,stroke:#333,stroke-width:2px`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2d1b33,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="E5 Large Pipeline"
                   />
                 </h4>
@@ -981,7 +1011,7 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="E5 Large: Base vs Large Comparison"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Base["E5-Base: 768-dim"]
         B1["Lighter & faster"]
@@ -994,8 +1024,14 @@ graph TB
     end
     Q["Your Use Case"] -->|"Speed priority"| Base
     Q -->|"Quality priority"| Lg
-    style Lg fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
-    style Base fill:#e3f2fd,stroke:#1976d2,color:#000`}
+    style Lg fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Base fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -1052,14 +1088,17 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph TB
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A["Instruction:<br/>Represent for retrieval"] --> B[Instructor-XL<br/>768-dim]
     C[Text Content] --> B
     B --> D[Task-Aware<br/>Embeddings]
     D --> E[Domain-Specific<br/>Similarity]
-    style A fill:#e1bee7,stroke:#333,stroke-width:3px
-    style B fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style D fill:#81c784,stroke:#333,stroke-width:2px`}
+    style A fill:#2d1b33,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     title="Instructor XL Architecture"
                   />
                 </h4>
@@ -1128,7 +1167,7 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Instructor XL: Task-Aware Embedding"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     T1["Represent for retrieval"] --> B["Instructor-XL<br/>768-dim"]
     T2["Represent for sentiment"] --> B
@@ -1136,9 +1175,13 @@ graph TB
     D["📄 Same Text"] --> B
     B --> E["✅ Task-specific<br/>embeddings"]
     B --> F["✅ No fine-tuning<br/>needed"]
-    style B fill:#e1bee7,stroke:#7b1fa2,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#81c784,color:#000`}
+    style T1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2d1b33,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -1193,15 +1236,19 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Query] --> B[GTE-Base<br/>768-dim]
     C[Documents] --> B
     B --> D[Normalized<br/>Embeddings]
     D --> E[Cosine<br/>Similarity]
     E --> F[Reranker<br/>Optional]
-    style B fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style D fill:#81c784,stroke:#333,stroke-width:2px
-    style F fill:#ffcdd2,stroke:#333,stroke-width:2px`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     title="GTE Base RAG Pipeline"
                   />
                 </h4>
@@ -1270,7 +1317,7 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="GTE Base: Lightweight Deployment"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📄 Docs"] --> B["GTE-Base<br/>768-dim"]
     B --> C{"Deploy?"}
@@ -1278,8 +1325,12 @@ flowchart LR
     C -->|"GPU ✅"| E["Fast & scalable"]
     D --> F["Easy integration\nPinecone/Weaviate/Qdrant"]
     E --> F
-    style B fill:#4fc3f7,stroke:#1976d2,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -1336,14 +1387,17 @@ flowchart LR
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph TB
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Input Text] --> B[GTE-Large<br/>1024-dim]
     B --> C[Rich Semantic<br/>Embeddings]
     C --> D[Vector DB]
     D --> E[High-Quality<br/>Search Results]
-    style B fill:#4fc3f7,stroke:#333,stroke-width:3px
-    style C fill:#81c784,stroke:#333,stroke-width:2px
-    style E fill:#ffd700,stroke:#333,stroke-width:2px`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="GTE Large Deployment"
                   />
                 </h4>
@@ -1411,15 +1465,17 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="GTE Large: Quality/Efficiency Balance"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A["GTE-Large<br/>1024-dim ⭐"] --> B["Strong MTEB scores"]
     A --> C["Efficient inference\nvs. commercial APIs"]
     A --> D["Pinecone ✅\nWeaviate ✅\nQdrant ✅\nMilvus ✅"]
     B --> E["✅ High quality\nself-hosted"]
-    style A fill:#c8e6c9,stroke:#4caf50,stroke-width:3px,color:#000
-    style E fill:#81c784,color:#000
-    style D fill:#e3f2fd,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -1476,7 +1532,8 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Start] --> B{Budget?}
     B -->|Limited| C[OpenAI Small<br/>or BGE Base]
     B -->|Flexible| D{Accuracy?}
@@ -1486,10 +1543,16 @@ graph TB
     F -->|No| H{Self-Host?}
     H -->|Yes| I[BGE/GTE/E5]
     H -->|No| J[OpenAI]
-    style A fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style E fill:#81c784,stroke:#333,stroke-width:2px
-    style G fill:#e1bee7,stroke:#333,stroke-width:2px
-    style I fill:#ffd700,stroke:#333,stroke-width:2px`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2d1b33,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     title="Model Selection Decision Tree"
                   />
                 </h4>
@@ -1592,7 +1655,8 @@ graph TB
               <div>
                 <h4>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Text] --> B[Chunk<br/>200-400 tokens]
     B --> C[Embed]
     C --> D[Normalize]
@@ -1600,10 +1664,14 @@ graph TB
     E --> F[Retrieve Top-K]
     F --> G[Rerank<br/>Optional]
     G --> H[Final Results]
-    style C fill:#4fc3f7,stroke:#333,stroke-width:2px
-    style D fill:#81c784,stroke:#333,stroke-width:2px
-    style G fill:#e1bee7,stroke:#333,stroke-width:2px
-    style H fill:#ffd700,stroke:#333,stroke-width:2px`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2d1b33,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     title="Best Practices Pipeline"
                   />
                 </h4>

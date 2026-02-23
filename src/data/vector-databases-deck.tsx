@@ -324,18 +324,19 @@ Let's look at some additional considerations and tips.`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Pinecone Scaling Options"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Start["Query Load Increases"] --> V{"Need more capacity?"}
     V -->|"Bigger pods"| Vert["Vertical: x1 → x2 → x4 → x8\n(zero downtime)"]
     V -->|"More throughput"| Horiz["Horizontal: Add Replicas\n(QPS scales linearly)"]
     V -->|"Change pod type"| Coll["Collections: Snapshot →\nNew Index (reconfigure)"]
     V -->|"Variable traffic"| SrvL["Serverless: Auto-scale\n(pay per use)"]
-    style Start fill:#4fc3f7,color:#000
-    style Vert fill:#c8e6c9,color:#000
-    style Horiz fill:#c8e6c9,color:#000
-    style Coll fill:#fff9c4,color:#000
-    style SrvL fill:#e1bee7,color:#000`}
+    style Start fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Vert fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Horiz fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Coll fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style SrvL fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -510,7 +511,7 @@ Let's look at additional important details.`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Weaviate: Hybrid Search & API Architecture"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Client["Client App"] --> API{"API"}
     API -->|"GraphQL"| GQL["Flexible nested queries\n+ field selection"]
@@ -522,10 +523,15 @@ flowchart TB
     HNSW --> Result["Combined Results"]
     Inv --> Result
     Result --> Ref["Reference Links\n(graph connections)"]
-    style Client fill:#4fc3f7,color:#000
-    style Hybrid fill:#e1bee7,color:#000
-    style Result fill:#c8e6c9,color:#000
-    style Ref fill:#fff9c4,color:#000`}
+    style Client fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style API fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style GQL fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style REST fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Hybrid fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style HNSW fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Inv fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Ref fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -700,7 +706,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Qdrant: Quantization & Filter Power"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Query["Query Vector"] --> Filter{"Apply Payload\nFilters?"}
     Filter -->|"geo / range / text"| Filtered["Pre-filtered Subset"]
@@ -714,10 +720,16 @@ flowchart TB
     BQ --> Results["⚡ Results"]
     Dense --> Results
     Hybrid --> Results
-    style Query fill:#4fc3f7,color:#000
-    style BQ fill:#c8e6c9,color:#000
-    style Results fill:#ffd700,color:#000
-    style Filter fill:#e1bee7,color:#000`}
+    style Query fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Filter fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style Filtered fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Full fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style HNSW fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Quant fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style BQ fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Dense fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Hybrid fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Results fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -894,7 +906,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Milvus: Index Selection Decision Tree"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Start["Milvus Index Selection"] --> FR{"Filter\nRatio?"}
     FR -->|"High (many filters)"| FLAT["FLAT\n✅ Exact search\n✅ Perfect accuracy"]
@@ -905,12 +917,16 @@ flowchart TB
     Recall -->|"No"| Memory{"Memory\nconstrained?"}
     Memory -->|"Yes (SSD)"| DiskANN["DiskANN\n✅ Stable latency\n✅ Low memory"]
     Memory -->|"No"| HNSW["HNSW\n✅ Balanced speed\n✅ Good recall"]
-    style Start fill:#4fc3f7,color:#000
-    style FLAT fill:#c8e6c9,color:#000
-    style IVF fill:#c8e6c9,color:#000
-    style FlatGPU fill:#fff9c4,color:#000
-    style DiskANN fill:#e1bee7,color:#000
-    style HNSW fill:#c8e6c9,color:#000`}
+    style Start fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style FR fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style TK fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Recall fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Memory fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style FLAT fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style IVF fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style FlatGPU fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style DiskANN fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style HNSW fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -1099,7 +1115,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Chroma: Developer-Friendly RAG Stack"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     Embed["🐍 Python\nEmbeddings"] --> Chroma["Chroma DB"]
     Chroma -->|"in-memory"| Dev["Local Dev\n(fast iteration)"]
@@ -1110,11 +1126,14 @@ flowchart LR
     Dev --> App["RAG App\n🤖"]
     Disk --> App
     Cloud --> App
-    style Embed fill:#4fc3f7,color:#000
-    style Chroma fill:#ffcdd2,color:#000
-    style App fill:#c8e6c9,color:#000
-    style LC fill:#fff9c4,color:#000
-    style LI fill:#fff9c4,color:#000`}
+    style Embed fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Chroma fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Dev fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Disk fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Cloud fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style LC fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style LI fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style App fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -1303,7 +1322,7 @@ flowchart LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Redis: Cache + Vector Search in One System"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     App["Application"] --> Redis["⚡ Redis In-Memory"]
     Redis --> Cache["Cache Layer\n(key-value, TTL)"]
@@ -1315,10 +1334,15 @@ flowchart TB
     Cache --> Result
     Redis --> Cluster["Redis Cluster\n(horizontal scale)"]
     Cluster --> Mem["⚠️ Memory Management\n(eviction policies)"]
-    style App fill:#4fc3f7,color:#000
-    style Redis fill:#c8e6c9,color:#000
-    style Result fill:#ffd700,color:#000
-    style Mem fill:#ffcdd2,color:#000`}
+    style App fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Redis fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Cache fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Search fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style VQ fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style TQ fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Cluster fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Mem fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -1509,7 +1533,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Elasticsearch: BBQ Compression & Hybrid Pipeline"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Doc["📄 Documents"] --> Ingest["Ingest Pipeline\n(Logstash / Beats)"]
     Ingest --> ES["Elasticsearch\n(Lucene-based)"]
@@ -1522,10 +1546,17 @@ flowchart TB
     Text --> Hybrid
     Hybrid --> ACORN["ACORN-1\n(filtered latency)"]
     ACORN --> Results["📊 Ranked Results"]
-    style Doc fill:#4fc3f7,color:#000
-    style BBQ fill:#fff9c4,color:#000
-    style Results fill:#c8e6c9,color:#000
-    style ACORN fill:#e1bee7,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Ingest fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style ES fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style HNSW fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Text fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style BBQ fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Mem fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Query fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Hybrid fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style ACORN fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style Results fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -1716,7 +1747,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Vespa: ML Inference at Serving Time"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     subgraph Ingest["Document Ingestion"]
         Doc["Document"] --> DP["Document Processor\n(transform/enrich)"]
@@ -1731,10 +1762,18 @@ flowchart TB
     end
     Schema --> HNSW
     ML["🤖 ONNX / TF / XGBoost\nModel"] --> Rank
-    style Doc fill:#4fc3f7,color:#000
-    style ML fill:#e1bee7,color:#000
-    style RT fill:#c8e6c9,color:#000
-    style Batch fill:#fff9c4,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style DP fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Schema fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style QP fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style HNSW fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Rank fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style ML fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style RT fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Batch fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Ingest fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Query fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -1927,7 +1966,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="pgvector: SQL + Vector Search Combined"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     subgraph PG["PostgreSQL + pgvector"]
         direction TB
@@ -1941,10 +1980,15 @@ flowchart TB
     Tune["⚙️ Tune Parameters\n(m, ef_construction, lists)"] --> Vec
     Scale["pgvectorscale\n(DiskANN, streaming HNSW)"] --> Vec
     Result --> ACID["✅ ACID Transactions\n✅ SQL interface\n✅ Existing infra"]
-    style SQL fill:#4fc3f7,color:#000
-    style Result fill:#c8e6c9,color:#000
-    style ACID fill:#fff9c4,color:#000
-    style Scale fill:#e1bee7,color:#000`}
+    style SQL fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Vec fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Join fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style KNN fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Tune fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Scale fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style ACID fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style PG fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -2135,7 +2179,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="MongoDB: Atlas Unified Text + Vector Search"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Doc["📦 JSON Document\n(text + vector field)"] --> Atlas["MongoDB Atlas\n(HNSW-based)"]
     Atlas --> VSearch["Atlas Vector Search\n(semantic similarity)"]
@@ -2146,10 +2190,15 @@ flowchart TB
     Compass["🧭 MongoDB Compass\n(visual index mgmt)"] --> Atlas
     SDK["SDKs\n(Python, JS, Java, Go...)"] --> Atlas
     Unified --> App["Application"]
-    style Doc fill:#4fc3f7,color:#000
-    style Unified fill:#c8e6c9,color:#000
-    style Compass fill:#fff9c4,color:#000
-    style App fill:#81c784,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Atlas fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style VSearch fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style TSearch fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Agg fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Unified fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Compass fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style SDK fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style App fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>
@@ -2338,7 +2387,7 @@ flowchart TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="LanceDB: Columnar Lance Format & Arrow Ecosystem"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     subgraph Ecosystem["🐍 Python / Arrow Ecosystem"]
         Pandas["pandas\nDataFrame"]
@@ -2352,10 +2401,16 @@ flowchart LR
     IO --> Search
     Search --> Result["💰 Low TCO\nCost-efficient RAG"]
     Lance -->|"embedded\nor serverless"| Deploy["Deploy Anywhere\n(no server needed)"]
-    style Lance fill:#e3f2fd,color:#000
-    style Result fill:#c8e6c9,color:#000
-    style Deploy fill:#fff9c4,color:#000
-    style IO fill:#e1bee7,color:#000`}
+    style Pandas fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Polars fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style DuckDB fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Lance fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style IVF fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style IO fill:#2d1b4e,color:#c4b5fd,stroke:#aaaaaa,stroke-width:1.5px
+    style Search fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Deploy fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Ecosystem fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                   />
                 </div>
                 <ul style={{ lineHeight: '1.8', fontSize: '1.6rem' }}>

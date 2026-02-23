@@ -304,7 +304,9 @@ function DeckPage() {
       hideCursorTime: 5000,
       keyboard: {
         33: null, // Disable Page Up key (keycode 33) - let browser handle scrolling
-        34: null  // Disable Page Down key (keycode 34) - let browser handle scrolling
+        34: null, // Disable Page Down key (keycode 34) - let browser handle scrolling
+        // Disable 's' key (keycode 83) for speaker notes when notes are disabled
+        ...(import.meta.env.VITE_IS_ENABLE_NOTES !== 'true' ? { 83: null } : {})
       } as any, // Type assertion needed because TypeScript definitions are incomplete
       plugins: [
         RevealHighlight,
@@ -613,7 +615,7 @@ function DeckPage() {
                         {slide.icon && (
                           <SvgIcon 
                             iconName={slide.icon.name as any} 
-                            sizeName={(slide.icon.size || "5x") as any} 
+                            sizeName={(slide.icon.size || "2x") as any} 
                             style={{ color: kbGallery ? '#ffffff' : getIconColor(slide.backgroundColor || '#2c3e50') }} 
                           />
                         )}

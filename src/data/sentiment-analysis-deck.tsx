@@ -198,12 +198,15 @@ export const sentimentAnalysisDeck: Deck = {
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Lexicon-Based Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text Input"] --> B["📖 Lookup Words\\nin Lexicon"]
     B --> C["➕ Sum\\nScores"]
     C --> D["😊/😐/😢\\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -363,13 +366,17 @@ It requires zero training, runs extremely fast, and you can understand every dec
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Rule-Based Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text Input"] --> B["🔍 Apply\nRules"]
     B --> C["⚖️ Negation\nHandling"]
     C --> D["📊 Score\nAdjustment"]
     D --> E["😊/😐/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -546,13 +553,17 @@ Let's move on to machine learning approaches that can learn patterns from data r
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Bag-of-Words + Logistic Regression"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📦 Create\nBoW Vector"]
     B --> C["🧠 Logistic\nRegression"]
     C --> D["📊 Probability\nScore"]
     D --> E["😊/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -740,13 +751,17 @@ But when you need to understand context, handle complex language patterns, or sq
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="TF-IDF + SVM Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📊 Compute\nTF-IDF"]
     B --> C["🛡️ SVM\nClassifier"]
     C --> D["🎯 Decision\nBoundary"]
     D --> E["😊/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -933,13 +948,17 @@ Next, we'll look at Naive Bayes, an even simpler probabilistic approach that can
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Naive Bayes Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📊 Word\nCounts"]
     B --> C["🎲 Probability\nCalculation"]
     C --> D["🧠 Bayes\nTheorem"]
     D --> E["😊/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1132,14 +1151,19 @@ Now let's move from classical machine learning to modern NLP tools specifically 
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="VADER Sentiment Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📜 Lexicon\nLookup"]
     B --> C["❗ Intensifier\nDetection"]
     C --> D["🚫 Negation\nHandling"]
     D --> E["😀 Emoji\nProcessing"]
     E --> F["📊 Compound\nScore"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1337,13 +1361,17 @@ Next, let's look at TextBlob, another popular Python library for sentiment analy
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="TextBlob Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["🔤 Pattern\nLexicon"]
     B --> C["📊 Polarity\nScore"]
     B --> D["🎭 Subjectivity\nScore"]
     C --> E["😊/😐/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1540,13 +1568,17 @@ Now let's shift gears dramatically and enter the world of deep learning with LST
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="LSTM Sentiment Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📖 Word\nEmbeddings"]
     B --> C["🔄 LSTM\nLayers"]
     C --> D["🧠 Dense\nLayer"]
     D --> E["😊/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1745,14 +1777,19 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="BiLSTM with Attention"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📖 Embeddings"]
     B --> C["◀️ BiLSTM\n▶️"]
     C --> D["👁️ Attention\nWeights"]
     D --> E["🧠 Classification"]
     E --> F["😊/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1957,14 +1994,19 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="CNN Sentiment Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["📖 Embeddings"]
     B --> C["🧧 Conv Filters\n(3/4/5-gram)"]
     C --> D["↓ Max\nPooling"]
     D --> E["🧠 Dense\nLayer"]
     E --> F["😊/😢\nSentiment"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2187,7 +2229,8 @@ Now we're ready to enter the transformer era, starting with BERT, which fundamen
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="BERT Fine-Tuning Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text"] --> B["🧩 BERT
 Tokenizer"]
     B --> C["🧠 Pretrained
@@ -2198,8 +2241,12 @@ Head"]
 Labeled Data"]
     E --> F["😊/😢
 Sentiment"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2421,7 +2468,8 @@ Next, let's explore BERT's successors and variants that address some of these li
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="RoBERTa vs DistilBERT Trade-offs"
-                          diagram={`flowchart TD
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["📄 Input Text"] --> B{"🤔 Choose Model"}
     B -->|"Accuracy Priority"| C["🧠 RoBERTa
 (Slower, Better)"]
@@ -2431,9 +2479,12 @@ Next, let's explore BERT's successors and variants that address some of these li
 +10ms Latency"]
     D --> F["🎯 Good Accuracy
 +4ms Latency"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd54f,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2671,7 +2722,8 @@ Next, we'll explore an entirely different paradigm: using large language models 
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="LLM Zero-Shot Sentiment Process"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Prompt
 Template"] --> B["➕ Text
 to Analyze"]
@@ -2681,8 +2733,11 @@ to Analyze"]
 Response"]
     D --> E["😊/😢/😐
 Sentiment"]
-    style A fill:#ffb74d,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2953,7 +3008,8 @@ The paradigm shift from training models to engineering prompts continues to resh
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="ABSA Pipeline Process"
-                          diagram={`flowchart TD
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["📄 Review Text"] --> B["🎯 Extract
 Aspects"]
     B --> C["🔍 Extract
@@ -2964,8 +3020,12 @@ Aspect-Opinion"]
 Sentiment"]
     E --> F["📊 Aspect-Level
 Insights"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -3264,7 +3324,8 @@ ABSA is where sentiment analysis graduates from interesting metrics to strategic
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Multimodal Fusion Architecture"
-                          diagram={`flowchart TD
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["🎥 Video Input"] --> B["📝 Text
 Encoder"]
     A --> C["🎵 Audio
@@ -3279,8 +3340,13 @@ Layer"]
 Attention"]
     F --> G["😊/😢/😡
 Emotion"]
-    style A fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

@@ -127,12 +127,15 @@ export const nerTrainingDeck: Deck = {
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity Dictionary Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📋 Entity List"] --> B["🔍 Pattern Matcher"]
     B --> C["📄 Raw Text"]
     C --> D["✨ Pre-tagged Text"]
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -294,13 +297,18 @@ Let's look at the specific steps next.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Annotation Quality Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📄 Raw Text"] --> B["👤 Annotator 1"]
     A --> C["👤 Annotator 2"]
     B --> D["⚖️ Adjudicator"]
     C --> D
     D --> E["🏆 Gold Standard"]
-    style E fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -459,7 +467,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Annotation Consistency: IAA Workflow"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Before["❌ Without Guidelines"]
         A1["👤 Ann 1: Dr. Smith = PERSON"]
@@ -473,9 +481,13 @@ graph TB
     Before --> After
     B1 --> C
     B2 --> C
-    style Before fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style After fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
-    style C fill:#81c784,color:#000`}
+    style Before fill:#5c1a1a,stroke:#bbbbbb,stroke-width:2px,color:#fecaca
+    style After fill:#1b4332,stroke:#aaaaaa,stroke-width:2px,color:#d1fae5
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -632,7 +644,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Real vs Synthetic Data: Training Impact"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Synthetic["🤖 Synthetic Only"]
         S1["John Smith at Microsoft"]
@@ -644,10 +656,14 @@ graph TB
         R2["EHR: pt dx w/ T2DM"]
         R3["✅ Handles production noise"]
     end
-    style Synthetic fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Real fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
-    style S3 fill:#ef9a9a,color:#000
-    style R3 fill:#81c784,color:#000`}
+    style Synthetic fill:#5c1a1a,stroke:#bbbbbb,stroke-width:2px,color:#fecaca
+    style Real fill:#1b4332,stroke:#aaaaaa,stroke-width:2px,color:#d1fae5
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -746,12 +762,15 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Mixed Data Strategy"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🎭 Synthetic Data"] --> C["🎯 Mixed Training Set"]
     B["📋 Real Data"] --> C
     C --> D["🚀 Robust Model"]
-    style B fill:#81c784,color:#000
-    style D fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                 </div>
@@ -817,12 +836,15 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Transfer Learning Flow"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🧠 Pretrained BERT"] --> B["➕ Token Classification Head"]
     B --> C["📚 Fine-tune on Your Data"]
     C --> D["🎯 Domain NER Model"]
-    style A fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -928,7 +950,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Model Size vs Speed Trade-off"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph BERT["🧠 BERT-base"]
         B1["110M params"]
@@ -940,8 +962,14 @@ graph TB
         D2["~20ms inference (2.5x faster)"]
         D3["F1: 0.88 (minor loss)"]
     end
-    style BERT fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px,color:#000
-    style DistilBERT fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style BERT fill:#2d1b4e,stroke:#aaaaaa,stroke-width:2px,color:#e9d5ff
+    style DistilBERT fill:#1b4332,stroke:#aaaaaa,stroke-width:2px,color:#d1fae5
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                 </div>
@@ -999,12 +1027,15 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Data Augmentation Process"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📉 50 Rare Examples"] --> B["✨ Augmentation"]
     B --> C["📈 500 Augmented Examples"]
     C --> D["🎯 Balanced Training"]
-    style A fill:#ffcdd2,color:#000
-    style C fill:#c8e6c9,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1111,12 +1142,15 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Quality Check Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🎲 Raw Augmentation"] --> B{"✅ Quality Check"}
     B -->|Pass| C["📚 Training Data"]
     B -->|Fail| D["🗑️ Discard"]
-    style C fill:#81c784,color:#000
-    style D fill:#ef9a9a,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                 </div>
@@ -1182,12 +1216,17 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Negative Examples Flow"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🤖 Model Predictions"] --> B["❌ Find False Positives"]
     B --> C["📝 Add as Negative Examples"]
     C --> D["🔄 Retrain"]
     D --> E["🎯 Higher Precision"]
-    style E fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1287,11 +1326,13 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision-Recall Balance"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["⬆️ More Negatives"] --> B["⬆️ Precision"]
     A --> C["⬇️ Recall Risk"]
-    style B fill:#81c784,color:#000
-    style C fill:#ffcdd2,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                 </div>
@@ -1349,11 +1390,13 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Boundary Correction Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🤖 Model Output"] --> B["⚙️ Boundary Rules"]
     B --> C["✨ Corrected Entities"]
-    style A fill:#ffcc80,color:#000
-    style C fill:#81c784,color:#000`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1455,11 +1498,13 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="When to Use Rules vs Retraining"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A{"Error Pattern?"} -->|"Systematic & Deterministic"| B["✅ Use Rule"]
     A -->|"Complex & Variable"| C["🔄 Retrain Model"]
-    style B fill:#81c784,color:#000
-    style C fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                 </div>
@@ -1524,15 +1569,20 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Iterative Improvement Cycle"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🚀 Deploy"] --> B["📊 Monitor"]
     B --> C["🔍 Analyze Errors"]
     C --> D["📝 Collect Data"]
     D --> E["🔄 Retrain"]
     E --> F["✅ Evaluate"]
     F --> A
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1641,12 +1691,17 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Improvement Over Time"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📅 Month 1"] -->|"F1: 0.75"| B["📅 Month 3"]
     B -->|"F1: 0.82"| C["📅 Month 6"]
     C -->|"F1: 0.88"| D["📅 Month 12"]
     D -->|"F1: 0.92"| E["🏆 Year 2"]
-    style E fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                 </div>
@@ -1798,13 +1853,17 @@ flowchart LR
                       Start error log; plan augmentation and negatives
                       <MermaidPopover
                         title="Getting Started Flow"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Schema"] --> B["📖 Dictionary"]
     B --> C["🤖 Baseline"]
     C --> D["📊 Error Log"]
     D --> E["🔄 Iterate"]
-    style A fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </li>
                   </ol>
@@ -1856,11 +1915,15 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Risk Management Flow"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["⚠️ Risk"] --> B["🔍 Identify Early"]
     B --> C["📋 Plan Mitigation"]
     C --> D["✅ Execute"]
-    style D fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

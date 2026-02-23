@@ -212,14 +212,19 @@ export const documentPreprocessingDeck: Deck = {
                       How It Works
                       <MermaidPopover
                         title="Boilerplate Removal Process"
-                        diagram={`flowchart LR
-    A["📄 Raw HTML/PDF"] --> B["🔍 Parse DOM Structure"]
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
+    A["📄 Raw HTML/PDF"] --> B["�� Parse DOM Structure"]
     B --> C["📊 Content Density Analysis"]
     C --> D["🎯 Identify Main Content"]
     D --> E["🧹 Remove Low-Signal Blocks"]
     E --> F["✅ Clean Content"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -370,7 +375,8 @@ Third, there's heuristic 👉 (hyoo-RIS-tik) text density analysis. This approac
                       How It Works
                       <MermaidPopover
                         title="Deduplication Process"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Text Corpus"] --> B["Compute Hashes"]
     B --> C["Exact Match?"]
     C -->|Yes| D["Group Together"]
@@ -380,9 +386,14 @@ Third, there's heuristic 👉 (hyoo-RIS-tik) text density analysis. This approac
     D --> G["Keep 1 Representative"]
     G --> H["✅ Deduplicated Corpus"]
     F --> H
-    style A fill:#4fc3f7,color:#000
-    style H fill:#81c784,color:#000
-    style D fill:#fff59d,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -530,16 +541,21 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="Whitespace Normalization"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Raw Text"] --> B["Collapse Whitespace"]
     B --> C["Normalize Line Endings"]
     C --> D["Unicode Normalization"]
     D --> E["Strip Zero-Width Chars"]
     E --> F["Trim Edges"]
     F --> G["✅ Clean Text"]
-    style A fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000
-    style D fill:#fff59d,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -687,16 +703,21 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="Table Conversion Process"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📊 Table"] --> B["Parse Structure"]
     B --> C["Extract Headers & Rows"]
     C --> D["Apply Templates"]
     D --> E["Add Context"]
     E --> F["Validate"]
     F --> G["📄 Natural Language"]
-    style A fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000
-    style D fill:#fff59d,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -841,7 +862,8 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="OCR Cleanup Process"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📷 Scanned Image"] --> B["Run OCR"]
     B --> C["Dictionary Check"]
     C --> D["Spell Correction"]
@@ -849,9 +871,14 @@ flowchart LR
     E --> F["Pattern Matching"]
     F --> G["Validate"]
     G --> H["✅ Clean Text"]
-    style A fill:#4fc3f7,color:#000
-    style H fill:#81c784,color:#000
-    style E fill:#fff59d,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -997,7 +1024,8 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="Sentence Boundary Detection Flow"
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Raw Text] --> B[Rule-Based Regex]
     B --> C{Abbreviation?}
     C -->|Yes| D[Check Dictionary]
@@ -1008,8 +1036,16 @@ flowchart LR
     E --> H[ML Model Validation]
     H --> I{Context Check}
     I --> J[Final Boundaries]
-    style A fill:#e1f5ff
-    style J fill:#d4edda`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style J fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -1150,7 +1186,8 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="Semantic Chunking Process"
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document Sentences] --> B[Generate Embeddings]
     B --> C[Sliding Window]
     C --> D[Calculate Similarity]
@@ -1162,8 +1199,16 @@ flowchart LR
     H --> I{More Text?}
     I -->|Yes| C
     I -->|No| J[Final Chunks]
-    style A fill:#e1f5ff
-    style J fill:#d4edda`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style J fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.1rem' }}>
@@ -1305,7 +1350,8 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="Parent-Child Chunking Workflow"
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Full Document] --> B[Identify Structure]
     B --> C[Create Parent Chunks]
     C --> D[Section Headers]
@@ -1321,8 +1367,19 @@ flowchart LR
     J --> K
     K --> L[Retrieve Child]
     L --> M[Include Parent Context]
-    style A fill:#e1f5ff
-    style M fill:#d4edda`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -1465,7 +1522,8 @@ flowchart LR
                       How It Works
                       <MermaidPopover
                         title="Text Normalization Pipeline"
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Raw Text] --> B[Lowercase Conversion]
     B --> C[Unicode Normalization]
     C --> D{NFKC or NFKD?}
@@ -1478,8 +1536,18 @@ flowchart LR
     I -->|No| K[Full Normalization]
     J --> L[Normalized Text]
     K --> L
-    style A fill:#e1f5ff
-    style L fill:#d4edda`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.1rem' }}>
@@ -1626,7 +1694,8 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                       How It Works
                       <MermaidPopover
                         title="Stopword Trimming Process"
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Input Text] --> B[Tokenize]
     B --> C[Load Stopword List]
     C --> D{Check Each Token}
@@ -1640,8 +1709,18 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
     I --> J{Validate Phrases}
     J --> K[Domain Check]
     K --> L[Final Text]
-    style A fill:#e1f5ff
-    style L fill:#d4edda`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -1795,7 +1874,7 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Stemming vs Lemmatization: Word Normalization"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     subgraph Input["Input Word Forms"]
         W1["🏃 running"]
@@ -1815,9 +1894,18 @@ flowchart TB
     W1 --> S1 & L1
     W2 --> S2 & L2
     W3 --> S3 & L3
-    style Input fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Stem fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
-    style Lemma fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+    style Input fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Stem fill:#1a1200,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style Lemma fill:#0d2b1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style W1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style W2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style W3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1940,7 +2028,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Keyphrase Extraction Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Doc["📄 Document Text"] --> Cand["Candidate Phrases\n(noun chunks / n-grams)"]
     Cand --> Score{"Scoring Methods"}
@@ -1950,9 +2038,15 @@ flowchart TB
     S1 & S2 & S3 --> Rank["📊 Ranked Candidates"]
     Rank --> MMR["MMR Deduplication"]
     MMR --> Out["🏷️ Top Keyphrases\n(metadata tags)"]
-    style Doc fill:#4fc3f7,color:#000
-    style Rank fill:#e1bee7,color:#000
-    style Out fill:#81c784,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Cand fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Score fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Rank fill:#3d1a4f,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style MMR fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Out fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2074,7 +2168,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="NER: Text → Tagged Entities"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Text["📝 'Tim Cook leads Apple in Cupertino'"] --> NER["NER Model\n(spaCy / BERT)"]
     subgraph Entities["Tagged Entities"]
@@ -2084,10 +2178,13 @@ graph TB
     end
     NER --> Entities
     Entities --> Meta["💾 Structured Metadata\n{text, type, start, end}"]
-    style Text fill:#4fc3f7,color:#000
-    style NER fill:#e1bee7,color:#000
-    style Entities fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Meta fill:#81c784,color:#000`}
+    style Text fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style NER fill:#3d1a4f,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Entities fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Meta fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2210,7 +2307,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Dead Chunk Detection: Quality Scoring Flow"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Chunk["📦 Chunk"] --> Q1{"Length ≥ 50\nchars?"}
     Q1 -->|No| D1["🗑️ Too Short"]
@@ -2219,11 +2316,14 @@ flowchart TB
     Q2 -->|Yes| Q3{"Entropy\n≥ 2.5 bits?"}
     Q3 -->|No| D3["🗑️ Low Info\nDensity"]
     Q3 -->|Yes| Keep["✅ Keep &\nIndex"]
-    style Chunk fill:#4fc3f7,color:#000
-    style Keep fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
-    style D1 fill:#ffcdd2,stroke:#c62828,color:#000
-    style D2 fill:#ffcdd2,stroke:#c62828,color:#000
-    style D3 fill:#ffcdd2,stroke:#c62828,color:#000`}
+    style Chunk fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Q1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Q2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Q3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Keep fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D1 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2409,7 +2509,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Chunk Summary Metadata Generation"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Chunk["📄 Full Chunk\n(500 tokens)"] --> A{"Method?"}
     A -->|LLM call| B["📝 Abstractive\n'This covers B-tree indexing...'"]
@@ -2421,11 +2521,15 @@ flowchart TB
         S3["entities: list"]
     end
     Store --> Rank["⚡ Fast Re-ranking\n(no full chunk read)"]
-    style Chunk fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#fff9c4,color:#000
-    style Store fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Rank fill:#81c784,color:#000`}
+    style Chunk fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#3d1a4f,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Store fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Rank fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2620,7 +2724,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Synonym Normalization: Variants → Canonical"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     V1["💬 heart attack"]
     V2["💬 MI"]
@@ -2634,13 +2738,13 @@ flowchart LR
     V4 --> Dict
     Dict --> Canon
     Canon --> Index["🔍 Consistent\nSearch & Analytics"]
-    style V1 fill:#fff9c4,color:#000
-    style V2 fill:#fff9c4,color:#000
-    style V3 fill:#fff9c4,color:#000
-    style V4 fill:#fff9c4,color:#000
-    style Dict fill:#e1bee7,color:#000
-    style Canon fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000
-    style Index fill:#81c784,color:#000`}
+    style V1 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style V2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style V3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style V4 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Dict fill:#3d1a4f,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Canon fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Index fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2861,7 +2965,7 @@ Maintain **transparency** by logging all normalizations and providing user inter
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Temporal Labeling: Document → Time Metadata"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Doc["📄 Document\n'Updated Jan 2024\nAPI v2.3.1'"] --> Parse["Date & Version\nExtraction"]
     Parse --> Norm["Normalize to ISO 8601"]
@@ -2873,9 +2977,15 @@ flowchart TB
     end
     Norm --> Meta
     Meta --> Filter["⏰ Time-Aware Retrieval\n(freshness filtering)"]
-    style Doc fill:#4fc3f7,color:#000
-    style Meta fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Filter fill:#81c784,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Parse fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Norm fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Meta fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Filter fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

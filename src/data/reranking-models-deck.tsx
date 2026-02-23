@@ -105,14 +105,15 @@ export const rerankingModelsDeck: Deck = {
                   Why Re-Ranking Matters
                   <MermaidPopover
                     title="Two-Stage RAG Architecture"
-                    diagram={`flowchart LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["Query"] --> B["Stage 1: Retrieval<br/>(20-50 docs)"]
     B --> C["Stage 2: Re-Ranking<br/>(Top 5-10)"]
     C --> D["LLM Generation"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h2>
               </GSAPAnimated>
@@ -236,15 +237,15 @@ This Two-Stage RAG Architecture shows how documents flow through the pipeline: U
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Cross-Encoder: Two-Stage Pipeline"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📥 Query"] --> B["🔍 Retrieval\n50 candidates"]
     B --> C["⚖️ Cross-Encoder\n2nd stage"]
     C --> D["✅ Top 5 Docs\nscore: 0.95, 0.62..."]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e3f2fd,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -313,16 +314,16 @@ You feed in pairs - query with document one, query with document two, and so on.
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Cross-Encoder: Password Reset Scoring"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q["Query:\\n'Reset password steps?'"]
     Q --> B["B) Account reset guide\\n→ 0.95 ✅"]
     Q --> C["C) Login tips\\n→ 0.62 🟡"]
     Q --> A["A) Billing policy\\n→ 0.21 ❌"]
-    style Q fill:#4fc3f7,color:#000
-    style B fill:#c8e6c9,color:#000
-    style C fill:#fff9c4,color:#000
-    style A fill:#ffcdd2,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example: Password Reset Query</strong></p>
@@ -482,7 +483,7 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="MiniLM: Knowledge Distillation"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Teacher["BERT-large Teacher\n440MB"]
         T["Deep\nSemantic\nUnderstanding"]
@@ -491,8 +492,10 @@ graph TB
         S["87% Accuracy\nPreserved"]
     end
     Teacher -->|"Knowledge\nDistillation"| Student
-    style Teacher fill:#ffcdd2,stroke:#c62828,color:#000
-    style Student fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style Teacher fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Student fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style T fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -565,16 +568,16 @@ pairs = [
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="MiniLM: Medical Query Ranking"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q["Query:\\n'Side effects of ACE\\ninhibitors in diabetics?'"]
     Q --> B["B) ACE inhibitor\\nadverse effects\\n→ 0.89 ✅"]
     Q --> A["A) Diabetes treatment\\noverview\\n→ 0.41 🟡"]
     Q --> C["C) Hypertension\\nguidelines\\n→ 0.32 ❌"]
-    style Q fill:#4fc3f7,color:#000
-    style B fill:#c8e6c9,color:#000
-    style A fill:#fff9c4,color:#000
-    style C fill:#ffcdd2,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example: Medical Query</strong></p>
@@ -643,16 +646,19 @@ graph TB
                   Understanding the Trade-offs
                   <MermaidPopover
                     title="Model Decision Flow"
-                    diagram={`flowchart TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["Need Re-Ranking?"] --> B{"Latency<br/>Critical?"}
     B -->|"Yes"| C["MiniLM ✓<br/>Fast & Efficient"]
     B -->|"No"| D{"Domain?"}
     D -->|"Web/General"| E["MiniLM ✓<br/>Great Fit"]
     D -->|"Code/Legal"| F["Consider<br/>Specialized Model"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffb74d,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h4>
               </GSAPAnimated>
@@ -766,16 +772,17 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="MonoT5: Generative Relevance Scoring"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A["Query + Document\n→ 'Relevant?'"] --> B["T5 Encoder-Decoder"]
     B --> C{"Token\nPrediction"}
     C -->|"P(true)=0.91"| D["🟢 Highly Relevant"]
     C -->|"P(true)=0.23"| E["🔴 Not Relevant"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}>
@@ -849,18 +856,18 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="MonoT5: Technical Query Scoring"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q["Prompt:\\n'Query: What is FiD in RAG?\\nDocument: ... Relevant?'"]
     Q --> T["T5 Encoder-Decoder"]
     T --> A["A) FiD definition\\nP(true)=0.91 ✅"]
     T --> B["B) Generic RAG\\nP(true)=0.57 🟡"]
     T --> C["C) Retrieval methods\\nP(true)=0.23 ❌"]
-    style Q fill:#4fc3f7,color:#000
-    style T fill:#e1bee7,color:#000
-    style A fill:#c8e6c9,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#ffcdd2,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example: RAG Query</strong></p>
@@ -1043,15 +1050,15 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="MonoBERT: Classification Pipeline"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["[CLS] Query\n[SEP] Document [SEP]"] --> B["BERT\nEncoder"]
     B --> C["Classification\nHead"]
     C --> D["Score: 0.87\n(relevant)"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#e3f2fd,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}>
@@ -1127,17 +1134,17 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="MonoBERT: TLS vs mTLS Scoring"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     Q["[CLS] 'TLS vs mTLS'\\n[SEP] Document [SEP]"] --> B["BERT\\nEncoder"]
     B --> R1["B) mTLS auth\\n→ 0.89 ✅"]
     B --> R2["A) TLS overview\\n→ 0.56 🟡"]
     B --> R3["C) Network security\\n→ 0.32 ❌"]
-    style Q fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style R1 fill:#c8e6c9,color:#000
-    style R2 fill:#fff9c4,color:#000
-    style R3 fill:#ffcdd2,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style R1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
@@ -1307,7 +1314,7 @@ graph LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="ColBERT: Token-Level MaxSim Matching"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Query["Query Tokens"]
         Q1["rotate"] 
@@ -1322,8 +1329,14 @@ graph TB
     Q1 -.->|"MaxSim"| D1
     Q2 -.->|"MaxSim"| D2
     Q3 -.->|"MaxSim"| D3
-    style Query fill:#e3f2fd,stroke:#1976d2,color:#000
-    style Doc fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style Query fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Doc fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Q1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Q2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Q3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.7}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -1384,7 +1397,7 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="ColBERT: Token-Level Matching"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph QT["Query Tokens"]
         t1["rotate"]
@@ -1399,8 +1412,14 @@ graph TB
     t1 -.->|"MaxSim ✓"| d1
     t2 -.->|"MaxSim ✓"| d2
     t3 -.->|"MaxSim ✓"| d3
-    style QT fill:#e3f2fd,stroke:#1976d2,color:#000
-    style DocC fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style QT fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style DocC fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style t1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style t2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style t3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style d1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style d2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style d3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -1554,7 +1573,7 @@ The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than s
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="E5 Bi-Encoder: Parallel Encoding Flow"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["Query"] --> E["Encoder"]
     C["Doc 1\n(cached)"] --> F["Encoder"]
@@ -1562,9 +1581,13 @@ flowchart LR
     E --> G["⚡ Cosine\nSimilarity"]
     F --> G
     G --> H["Scores\n[0.89, 0.72, 0.64]"]
-    style A fill:#4fc3f7,color:#000
-    style H fill:#81c784,color:#000
-    style G fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -1630,16 +1653,19 @@ scores = [cosine_similarity(query_emb, doc_emb)
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="E5 Bi-Encoder: GDPR Query Flow"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["Query:\\n'GDPR data\\ndeletion timeline'"] --> E["Encoder"]
     B["Docs\\n(pre-encoded)"] --> F["Encoder\\n(cached)"]
     E --> G["Cosine Similarity"]
     F --> G
     G --> H["C) 30-day window\\n→ 0.89 ✅\\nB) Retention policy\\n→ 0.72\\nA) Generic GDPR\\n→ 0.64"]
-    style A fill:#4fc3f7,color:#000
-    style G fill:#ffd700,color:#000
-    style H fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -1796,15 +1822,15 @@ The caching story is compelling too. Encode your entire document corpus once, st
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="LLM Ranker: Listwise Reasoning"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A["Query +\n[1] Doc A\n[2] Doc B\n[3] Doc C"] --> B["🤖 LLM\nReasoning"]
     B --> C["Ranking: [3,1,2]"]
     B --> D["'Doc C directly\naddresses trade-offs'"]
-    style A fill:#e3f2fd,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#fff9c4,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -1870,7 +1896,7 @@ Return ranking as: [3, 1, 2, ...]
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="LLM Ranker: Reasoning Flow"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A["Query: 'Pros/cons of\\neventual consistency\\nfor checkout?'"] --> B["🤖 LLM Analysis"]
     D1["[1] DB concepts"] --> B
@@ -1878,10 +1904,13 @@ graph TB
     D3["[3] System design\\n+ consistency"] --> B
     B --> R["Ranking: C > B > A"]
     B --> E["Reason: 'C directly\\naddresses consistency\\ntrade-offs'"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style R fill:#c8e6c9,color:#000
-    style E fill:#fff9c4,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -2050,7 +2079,7 @@ graph TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="RRF: Fusion of 3 Rankers"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Rankers["3 Independent Rankers"]
         R1["BM25: DocA=2nd"]
@@ -2059,9 +2088,12 @@ graph TB
     end
     Rankers --> F["RRF Formula\n1/(60+rank)"]
     F --> W["🏆 DocA Wins!\n0.044 > 0.038"]
-    style Rankers fill:#e3f2fd,stroke:#1976d2,color:#000
-    style F fill:#e1bee7,color:#000
-    style W fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style Rankers fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style F fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -2126,7 +2158,7 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="RRF: Multi-Ranker Score Fusion"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Inputs["Individual Rankers"]
         R1["BM25: DocA=2nd\\n1/(60+2)=0.016"]
@@ -2135,9 +2167,12 @@ graph TB
     end
     Inputs --> F["RRF Sum = 0.044"]
     F --> W["🏆 DocA wins!\\n0.044 > 0.038 > 0.037"]
-    style Inputs fill:#e3f2fd,stroke:#1976d2,color:#000
-    style F fill:#e1bee7,color:#000
-    style W fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style Inputs fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style F fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -2336,7 +2371,7 @@ Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five'
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="FiD: Multi-Document Fusion"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q["Query"] --> E1["Encoder"]
     Q --> E2["Encoder"]
@@ -2345,9 +2380,13 @@ graph TB
     E1 --> D["Decoder\n(Fusion)"]
     E2 --> D
     D --> O["'John founded X\nin 1995' ✅"]
-    style Q fill:#4fc3f7,color:#000
-    style D fill:#e1bee7,color:#000
-    style O fill:#c8e6c9,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -2417,7 +2456,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="FiD: Multi-Hop Evidence Fusion"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q["Query: 'Who founded X\\nand in what year?'"]
     Q --> E1["Encoder"]
@@ -2427,9 +2466,13 @@ graph TB
     E1 --> D["Decoder\\n(Cross-Doc Fusion)"]
     E2 --> D
     D --> O["✅ 'John Smith founded\\ncompany X in 1995'"]
-    style Q fill:#4fc3f7,color:#000
-    style D fill:#e1bee7,color:#000
-    style O fill:#c8e6c9,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -2590,17 +2633,19 @@ The reranking capability, while useful, is indirect - you're extracting attentio
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="DPR: Dual-Encoder Architecture"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["Question"] --> B["Q-Encoder\n(at query time)"]
     C["Passages\n(pre-encoded\n+ cached)"] --> D["P-Encoder\n(offline)"]
     B --> E["⚡ Dot Product\n~ms"]
     D --> E
     E --> F["Ranked Passages"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#e3f2fd,color:#000
-    style E fill:#ffd700,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -2668,17 +2713,19 @@ for emb in passage_embeddings:
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="DPR: QA-Optimized Encoding"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["Q: 'Capital gains\\ntax UK 2024'"] --> B["Q-Encoder"]
     C["Doc embeddings\\n(pre-cached)"] --> D["P-Encoder\\n(offline)"]
     B --> E["Dot Product\\n(fast!)"]
     D --> E
     E --> F["B) 2024 tax rates\\n→ 0.89 ✅\\nA) UK tax guide\\n→ 0.67\\nC) Investments\\n→ 0.45"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#e3f2fd,color:#000
-    style E fill:#ffd700,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -2844,15 +2891,15 @@ Integration is straightforward - every major vector database supports **DPR** �
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="BM25+LLM Hybrid Pipeline"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["Query:\nerror E101\nv2.3"] --> B["BM25\nKeyword Filter\n→ 50 docs"]
     B --> C["LLM\nReranker\nSemantic"]
     C --> D["✅ Best Match:\nE101 troubleshooting\nsteps"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e3f2fd,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="flipCard" delay={0.6}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
@@ -2920,16 +2967,17 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="BM25+LLM: Two-Stage Hybrid"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["Query: 'error E101\\nfirmware v2.3'"] --> B["BM25\\nKeyword Match"]
     B -->|"Matches E101\\n+ v2.3"| C["A) E101 docs\\nB) v2.3 notes\\nC) Troubleshooting"]
     C --> D["🤖 LLM\\nReranks by intent"]
     D --> E["C) Troubleshooting\\n→ 0.94 ✅\\nA) E101 docs\\n→ 0.79\\nB) v2.3 notes\\n→ 0.65"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e3f2fd,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <GSAPAnimated animation="fadeIn" delay={0.3}>
@@ -3126,7 +3174,8 @@ The explainability is genuinely valuable. You can tell users "This document matc
                         <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Key Performance Metrics <MermaidPopover
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Which Model Should I Choose?] --> B{Need maximum<br/>accuracy?}
     B -->|Yes| C{Have GPU<br/>resources?}
     B -->|No| D{Need high<br/>throughput?}
@@ -3146,13 +3195,20 @@ The explainability is genuinely valuable. You can tell users "This document matc
     L -->|Yes| M[BM25 + LLM<br/>Hybrid]
     L -->|No| N[ColBERT<br/>Token-level]
     
-    style E fill:#81c784
-    style G fill:#81c784
-    style H fill:#ffb74d
-    style K fill:#4fc3f7
-    style J fill:#64b5f6
-    style M fill:#ba68c8
-    style N fill:#f06292`}
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style J fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N fill:#5c1a2e,color:#fbcfe8,stroke:#aaaaaa,stroke-width:1.5px`}
                         title="Model Selection Decision Tree"
                       />
                     </h3>

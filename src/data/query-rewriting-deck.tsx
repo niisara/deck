@@ -189,17 +189,20 @@ export const queryRewritingDeck: Deck = {
                   Step-by-Step Process
                   <MermaidPopover
                     title="Query Rewriting Workflow"
-                    diagram={`flowchart LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📋 Parse Intent"] --> B["📝 Pick Policy"]
     B --> C["✨ Transform"]
     C --> D["🔍 Retrieve"]
     D --> E["✅ Check Coverage"]
     E --> F["📊 Log & Adapt"]
     E -->|"gaps?"| C
-    style A fill:#4fc3f7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -375,17 +378,18 @@ For complex questions: **Query Decomposition** splits them into sub-questions. *
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Expansion: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 Short Query\n'flu treatment'"] --> B{"Issue?"}
     B -->|"Low Recall"| C["Add Synonyms\n+ Related Terms"]
     B -->|"Rare Terms"| D["Add Domain\nVariants"]
     C --> E["✅ Expanded Query\n'flu OR influenza\ntherapy OR treatment'"]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -419,7 +423,8 @@ flowchart LR
                 How Query Expansion Works
                 <MermaidPopover
                   title="Query Expansion Flow"
-                  diagram={`flowchart LR
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Original Query"] --> B["🔍 Find Synonyms"]
     B --> C["📚 Thesaurus"]
     B --> D["🧠 Embeddings"]
@@ -427,8 +432,12 @@ flowchart LR
     C --> F["📋 Expanded Query"]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                 />
               </h3></GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.3}><p>Add semantically related keywords and entities through multiple approaches:</p></GSAPAnimated>
@@ -546,17 +555,18 @@ But there are gotchas. **Precision can drop** if you add too many terms without 
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Reformulation: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["💬 Vague Query\n'What about pricing?'"] --> B{"Context?"}
     B -->|"Multi-turn Chat"| C["Add Context\nfrom History"]
     B -->|"Ambiguous Ref"| D["Resolve\nPronoun/Entity"]
     C --> E["✅ Explicit Query\n'Pricing for Acme\nPro API 2024'"]
     D --> E
-    style A fill:#ffcdd2,color:#000
-    style E fill:#81c784,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -694,7 +704,7 @@ The sweet spot? Use reformulation for **every follow-up query in chat** scenario
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Decomposition: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🧩 Complex Query\n'Compare Snowflake vs\nBigQuery for 10TB/mo'"] --> B["Split into\nSub-Questions"]
     B --> C["Q1: Snowflake\n10TB pricing?"]
@@ -703,9 +713,12 @@ flowchart TB
     C --> F["✅ Synthesized\nAnswer"]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000
-    style B fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -844,17 +857,19 @@ Here's a real-world example of decomposition in action.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Step-Back Prompting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🎯 Specific Query\n'Fix CUDA OOM with\nLlama 3.1 70B'"] --> B{"Direct\nRetrieval\nFails?"}
     B -->|"Yes"| C["Step Back\nto Principles"]
     C --> D["Abstract Query\n'LLM memory\noptimization'"]
     D --> E["✅ Broader\nContext Found"]
     B -->|"No"| F["Use as-is"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style C fill:#e1bee7,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -992,17 +1007,19 @@ The rule of thumb: use step-back prompting when specific queries fail, but alway
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="HyDE: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 Query\n'quantum error\ncorrection'"] --> B{"Dense Retrieval\nUnderperforms?"}
     B -->|"Yes - Vocab\nMismatch"| C["Generate\nHypothetical Doc"]
     C --> D["Embed Doc\nnot Query"]
     D --> E["✅ Better\nSemantic Match"]
     B -->|"No"| F["Standard\nEmbedding"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style C fill:#fff9c4,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -1149,7 +1166,7 @@ Use HyDE when dense retrieval underperforms. For simple keyword queries, it's ov
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Multi-Query Generation: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["❓ Ambiguous Query\n'best ML framework'"] --> B["Generate\nMultiple Variants"]
     B --> C["Q1: 'top Python\nML libraries 2024'"]
@@ -1159,9 +1176,13 @@ flowchart TB
     D --> F
     E --> F
     F --> G["✅ High Recall\nResults"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#e1bee7,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ marginTop: '40px', fontSize: '2rem' }}>When to Use</h3>
@@ -1310,7 +1331,7 @@ Here's a great example of multi-query in action.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Context-Aware Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     subgraph History["📜 Conversation"]
         H1["User: 'Tell me about Redis'"]
@@ -1319,8 +1340,12 @@ flowchart LR
     end
     History --> B["Rewrite with\nContext"]
     B --> C["✅ Standalone\n'How does Redis\nscale horizontally?'"]
-    style History fill:#e3f2fd,stroke:#1976d2,color:#000
-    style C fill:#81c784,color:#000`}
+    style History fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style H1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -1460,16 +1485,19 @@ Be careful with **context selection** — picking the wrong context can lead to 
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Clarification: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["❓ Vague Query\n'Python performance'"] --> B{"Ambiguous?"}
     B -->|"Yes"| C["Ask Clarification\n'Language speed or\ncode optimization?'"]
     C --> D["User: 'code speed'"]
     D --> E["✅ Clear Query\n'Python code\nperformance tips'"]
     B -->|"No"| F["Proceed as-is"]
-    style A fill:#ffcdd2,color:#000
-    style E fill:#81c784,color:#000
-    style C fill:#fff9c4,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -1609,7 +1637,7 @@ Here's query clarification in a real scenario.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Specification: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📋 General Query\n'security incidents'"] --> B["Add Constraints"]
     B --> C["+ date_range:\n  2024-Q4"]
@@ -1618,9 +1646,12 @@ flowchart LR
     C --> F["✅ Specified Query\nFilters applied"]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000
-    style B fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -1767,7 +1798,7 @@ One important note: this strategy works best with search engines that support fi
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Semantic Bridging: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     subgraph User["👤 User Language"]
         A["'heart attack\nprevention'"]
@@ -1779,9 +1810,12 @@ flowchart LR
         C["✅ Medical Literature\nFound"]
     end
     User --> Bridge --> Docs
-    style User fill:#e3f2fd,stroke:#1976d2,color:#000
-    style Bridge fill:#fff9c4,stroke:#f57c00,color:#000
-    style Docs fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style User fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Bridge fill:#0d1f33,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style Docs fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -1920,15 +1954,17 @@ Here's a perfect medical example.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query2Doc: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 Short Query\n'transformer attention'"] --> B["Generate\nPseudo-Doc"]
     B --> C["📄 Hypothetical Answer\n'Transformer attention\nmechanisms compute...'"]
     C --> D["Embed\nFull Doc"]
     D --> E["✅ Dense Match\nwith Real Docs"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#fff9c4,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2067,7 +2103,7 @@ Here's Query2Doc in practice.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="ITER-RETGEN: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["❓ Hard Question\n'Compare cloud costs\nfor 3-tier app'"] --> B["Retrieve #1\n+ Draft Answer"]
     B --> C["Gaps Found?"]
@@ -2075,9 +2111,12 @@ flowchart TB
     D --> E["Retrieve #2\n+ Refine Answer"]
     E --> C
     C -->|"No"| F["✅ Complete\nAnswer"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000
-    style D fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2222,15 +2261,17 @@ Here's ITER-RETGEN solving a complex question.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Template-Based Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📥 User Query\n'return my shoes'"] --> B["Classify\nIntent"]
     B --> C["Intent: RETURN\nTemplate: '{product}\nreturn policy {store}'"]
     C --> D["Fill Template\n'shoes return policy\nNikeStore'"]
     D --> E["✅ Consistent\nStructured Query"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#fff9c4,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2370,17 +2411,19 @@ Here's template-based rewriting in action.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Entity-Centric Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 Query\n'Apple revenue'"] --> B["Extract\nEntities"]
     B --> C{"Which Apple?"}
     C -->|"Tech Giant"| D["Apple Inc. (AAPL)\nCupertino, CA"]
     C -->|"Fruit"| E["Apple (fruit)\ncrop statistics"]
     D --> F["✅ Enriched Query\n'Apple Inc Q4 2024\nannual revenue'"]
-    style A fill:#4fc3f7,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#fff9c4,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2526,17 +2569,19 @@ Here's entity-centric rewriting solving the classic ambiguity problem.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Temporal Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["⏰ Query with\nVague Time\n'latest AI models'"] --> B["Normalize\nTemporal Refs"]
     B --> C["Resolve 'latest'\n→ 2025-Q1"]
     C --> D["Add Time Filter\ndate >= 2025-01-01"]
     D --> E["✅ Time-Aware\nQuery"]
     E --> F["📰 Recent\nDocs Retrieved"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#fff9c4,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2678,7 +2723,7 @@ Here's temporal rewriting in action.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Domain-Specific Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     subgraph Lay["👤 Lay Language"]
         A["'blood thinner side\neffects in elderly'"]
@@ -2690,9 +2735,12 @@ flowchart LR
         C["✅ Clinical Studies\nRetrieved"]
     end
     Lay --> Domain --> Result
-    style Lay fill:#e3f2fd,stroke:#1976d2,color:#000
-    style Domain fill:#fff9c4,stroke:#f57c00,color:#000
-    style Result fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style Lay fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Domain fill:#0d1f33,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style Result fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2839,7 +2887,7 @@ Here's a medical example.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Intent Classification: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["📥 Incoming Query"] --> B["Classify Intent"]
     B --> C{"Intent Type"}
@@ -2851,9 +2899,14 @@ flowchart TB
     E --> H
     F --> H
     G --> H
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style H fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -2998,7 +3051,7 @@ Here's intent-based routing in action.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Diverse Multi-Query Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🌐 Broad Query\n'climate change\nimpact'"] --> B["Generate with\nDiversity Constraints"]
     B --> C["Economic\nImpact"]
@@ -3009,9 +3062,13 @@ flowchart TB
     D --> G
     E --> G
     F --> G
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -3161,7 +3218,7 @@ Here's DMQR tackling a broad topic.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Feedback-Based Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📊 User Telemetry\nClicks + Ratings"] --> B["Extract\nSignals"]
     B --> C["What worked:\n'JavaScript async\ntutorial 2024'"]
@@ -3169,10 +3226,12 @@ flowchart LR
     C --> E["Rewriting Model\nLearns Patterns"]
     D --> E
     E --> F["✅ Better\nFuture Queries"]
-    style A fill:#e3f2fd,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -3316,15 +3375,15 @@ Here's feedback-based rewriting learning from user behavior.
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Prompt-Based Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 User Query\n'fix login bug'"] --> B["System Prompt:\n'Rewrite as specific\ntechnical question'"]
     B --> C["🤖 LLM"]
     C --> D["✅ Rewritten:\n'Debugging OAuth2\ntoken validation in\nPython FastAPI'"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
@@ -3473,7 +3532,7 @@ Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Adaptive Query Rewriting: When to Apply"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["📥 Query +\nContext Signals"] --> B["Policy Model\nAssess Budget + Type"]
     B --> C{"Best\nStrategy?"}
@@ -3483,9 +3542,13 @@ flowchart TB
     D --> G["✅ Optimal\nResult"]
     E --> G
     F --> G
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3a1a5c,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ fontSize: '2rem' }}>When to Use</h3>

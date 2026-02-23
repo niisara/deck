@@ -216,16 +216,21 @@ export const parentChildRetrievalDeck: Deck = {
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Parent-Child Chunking Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Document"] --> B["🔪 Parser"]
     B --> C["👨‍👩‍👧 Parent Sections"]
     B --> D["👶 Child Chunks"]
     D --> E["🔍 Vector Index"]
     E --> F["📥 Retrieve Children"]
     F --> G["🔗 Attach Parents"]
-    style C fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style G fill:#ffb74d,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul>
@@ -246,15 +251,17 @@ export const parentChildRetrievalDeck: Deck = {
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Policy/Legal Doc: Child + Parent Context"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📜 Policy Doc"] --> B["§ Section A\n(parent)"]
     B --> C["clause 1\n(child)"]
     C --> D["🔍 Query match"]
     D --> E["📋 Child + Parent\ncontext sent to LLM"]
-    style B fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -380,12 +387,15 @@ Now let's look at the implementation details and trade-offs for this pattern.`
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Section-Header Anchoring Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Chunk"] --> B["🏷️ Nearest Header"]
     B --> C["🍞 Breadcrumb Path"]
     C --> D["📝 Header + Path + Chunk"]
-    style B fill:#81c784,color:#000
-    style D fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -406,15 +416,17 @@ Now let's look at the implementation details and trade-offs for this pattern.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Wiki/Product Guide: Header-Anchored Chunk"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📖 Wiki Article"] --> B["## Installation"]
     B --> C["### Windows"]
     C --> D["'run setup.exe'\n(chunk)"]
     D --> E["Context:\nInstallation > Windows > chunk"]
-    style B fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -546,7 +558,8 @@ This diagram shows the flow from a raw chunk to finding its nearest header, buil
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Outline-Based Tree Flow"
-                      diagram={`flowchart TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["🌳 Root"] --> B["📑 Chapter 1"]
     A --> C["📑 Chapter 2"]
     B --> D["📄 Section 1.1"]
@@ -554,8 +567,14 @@ This diagram shows the flow from a raw chunk to finding its nearest header, buil
     D --> F["👶 Chunk"]
     F --> G["🔍 Query Match"]
     G --> H["⬆️ Include Ancestors"]
-    style F fill:#81c784,color:#000
-    style H fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -576,15 +595,17 @@ This diagram shows the flow from a raw chunk to finding its nearest header, buil
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Textbook: Full Ancestor Path on Match"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TD
     A["📚 Textbook"] --> B["Ch.2 Algorithms"]
     B --> C["§2.3 Sorting"]
     C --> D["§2.3.1 Quicksort\n(leaf chunk)"]
     D --> E["Query Match →\ninclude Ch.2 + §2.3 ancestors"]
-    style A fill:#e3f2fd,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -720,18 +741,19 @@ flowchart TD
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Top-k Parent Expansion"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["👶 Child Chunk"] --> B["⬆️ Level 1 Parent"]
     A --> C["⬆️⬆️ Level 2 Grandparent"]
     A --> D["⬆️⬆️⬆️ Level 3 Great-Grandparent"]
     B --> E["📦 Combined Context"]
     C --> E
     D --> E
-    style A fill:#81c784,color:#000
-    style E fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#ffb74d,color:#000
-    style D fill:#ffb74d,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -752,18 +774,19 @@ flowchart TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Standards Doc: Multi-Level Constraint Chain"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🏢 ISO Standard"] --> B["Part I (L1)"]
     B --> C["Chapter 3 (L2)"]
     C --> D["§3.2 Rule (L3)"]
     D --> E["clause (child)"]
     E --> F["All 3 parent levels\nincluded in context"]
-    style B fill:#ffb74d,color:#000
-    style C fill:#ffb74d,color:#000
-    style D fill:#ffb74d,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -901,15 +924,17 @@ flowchart TB
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Sibling-Aware Retrieval Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["⬅️ Prev Sibling"] --> B["🎯 Hit Chunk"]
     B --> C["➡️ Next Sibling"]
     D["👨‍👩‍👧 Parent"] --> A
     D --> B
     D --> C
-    style B fill:#81c784,color:#000
-    style A fill:#4fc3f7,color:#000
-    style C fill:#4fc3f7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -930,16 +955,17 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Procedure: Sibling Steps for Sequential Context"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["Step 1:\nInstall"] --> B["Step 2:\nConfigure"]
     B --> C["Step 3: Test\n🎯 query match"]
     C --> D["Step 4:\nDeploy"]
     B --> E["Context: Steps 2+3+4\nreturned together"]
-    style C fill:#81c784,color:#000
-    style B fill:#4fc3f7,color:#000
-    style D fill:#4fc3f7,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -1074,16 +1100,17 @@ Having explored sibling relationships, let's look at pattern six, which takes a 
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Windowed Retrieval Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📍 Matched Chunk"] --> B["⬅️ Window Before"]
     A --> C["➡️ Window After"]
     B --> D["📦 Expanded Context"]
     A --> D
     C --> D
-    style A fill:#81c784,color:#000
-    style D fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#ffb74d,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -1104,7 +1131,7 @@ Having explored sibling relationships, let's look at pattern six, which takes a 
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Transcript: Sliding Window Expansion"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["... prior\ntext ..."] --> B["[−W tokens\nwindow]"]
     B --> C["📍 matched\nchunk"]
@@ -1113,10 +1140,12 @@ flowchart LR
     B --> F["Expanded context\nreturned"]
     C --> F
     D --> F
-    style C fill:#81c784,color:#000
-    style B fill:#4fc3f7,color:#000
-    style D fill:#4fc3f7,color:#000
-    style F fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -1251,15 +1280,20 @@ Now let's move to pattern seven, which builds semantic rather than structural hi
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Semantic Hierarchy Flow"
-                      diagram={`flowchart TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["🏷️ Topic Cluster"] --> B["📄 Chunk 1"]
     A --> C["📄 Chunk 2"]
     A --> D["📄 Chunk 3"]
     E["🔍 Query"] --> F["Match Chunk 2"]
     F --> G["Include Topic Summary"]
-    style A fill:#ba68c8,color:#fff
-    style F fill:#81c784,color:#000
-    style G fill:#4fc3f7,color:#000`}
+    style A fill:#2d1b4e,color:#d8b4fe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -1280,16 +1314,18 @@ Now let's move to pattern seven, which builds semantic rather than structural hi
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Knowledge Base: Topic Cluster Groups Scattered Content"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TD
     A["🏷️ Topic: Authentication"]
     A --> B["Article A\n(doc 1)"]
     A --> C["FAQ entry\n(doc 2)"]
     A --> D["Guide §4\n(doc 3)"]
     C --> E["Query match →\ninclude topic summary"]
-    style A fill:#ba68c8,color:#fff
-    style C fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#2d1b4e,color:#d8b4fe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -1424,7 +1460,8 @@ With semantic structures covered, let's look at pattern eight, which compresses 
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Dynamic Context Folding"
-                      diagram={`flowchart TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["📄 Full Parent Section"] --> B["🗜️ Compression Engine"]
     B --> C["📦 30% Summary"]
     B --> D["📦 50% Summary"]
@@ -1434,9 +1471,14 @@ With semantic structures covered, let's look at pattern eight, which compresses 
     D --> G
     E --> G
     G --> H["✅ Optimized Context"]
-    style A fill:#ffb74d,color:#000
-    style F fill:#81c784,color:#000
-    style H fill:#4fc3f7,color:#000`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -1457,17 +1499,18 @@ With semantic structures covered, let's look at pattern eight, which compresses 
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Budget-Adaptive Compression: Fit Long Sections"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📄 Section\n2000 tokens"] --> B{"Budget\ncheck"}
     B -->|"500 tok\navailable"| C["30% summary\n= 600 tok ✅"]
     B -->|"1500 tok\navailable"| D["70% summary\n= 1400 tok ✅"]
     C --> E["child + summary\nsent to LLM"]
     D --> E
-    style A fill:#ffb74d,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -1606,15 +1649,19 @@ Now let's explore pattern nine, which combines semantic and lexical matching for
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Hybrid BM25 Verification Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🔍 Query"] --> B["🧠 Dense Retrieve"]
     B --> C["👶 Children"]
     C --> D["🔗 Attach Parents"]
     D --> E["📊 BM25 Verify"]
     E --> F["✅ Verified Results"]
-    style B fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -1635,16 +1682,19 @@ Now let's explore pattern nine, which combines semantic and lexical matching for
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Compliance: BM25 Verifies Exact Term Presence"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["⚖️ Legal Query:\n'Section 4.2.1'"] --> B["Semantic\nmatch"]
     B --> C["Parent text"]
     C --> D{"BM25 check:\n'4.2.1' present?"}
     D -->|"✓ Yes"| E["✅ Verified hit\nreturned"]
     D -->|"✗ No"| F["❌ Filtered\nout"]
-    style E fill:#81c784,color:#000
-    style F fill:#ffcdd2,color:#000
-    style D fill:#e3f2fd,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -1782,16 +1832,21 @@ Now let's look at pattern ten, which uses cross-encoders for even more precise p
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Cross-Encoder Re-ranking Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🔍 Dense Retrieval"] --> B["👶 Children"]
     B --> C["📋 Collect Parents"]
     C --> D["🤝 Cross-Encoder"]
     E["❓ Query"] --> D
     D --> F["📊 Relevance Scores"]
     F --> G["🏆 Top-m Parents"]
-    style B fill:#81c784,color:#000
-    style G fill:#4fc3f7,color:#000
-    style D fill:#ffb74d,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -1812,7 +1867,7 @@ Now let's look at pattern ten, which uses cross-encoders for even more precise p
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Long Doc: Cross-Encoder Selects Best Parent"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["50-section\ndocument"] --> B["Dense: 8 children\nmatched"]
     B --> C["Collect unique parents"]
@@ -1822,10 +1877,14 @@ flowchart TB
     D --> G["§12: 0.45 ❌"]
     E --> H["Top-2 parents\nselected"]
     F --> H
-    style E fill:#81c784,color:#000
-    style F fill:#81c784,color:#000
-    style G fill:#ffcdd2,color:#000
-    style H fill:#ffd700,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>
@@ -1961,16 +2020,22 @@ Now let's explore our final pattern, which uses graph structures for rich relati
                   <h4 style={{ fontSize: '2rem' }}>
                     Goal / What It Solves <MermaidPopover
                       title="Graph-Based Retrieval Flow"
-                      diagram={`flowchart TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["📄 Section Node"] -->|parent_of| B["📄 Subsection"]
     B -->|cites| C["📚 Reference"]
     B -->|prerequisite| D["📄 Other Section"]
     E["🔍 Query"] --> F["Match Node B"]
     F --> G["Traverse Edges"]
     G --> H["Compile Context"]
-    style F fill:#81c784,color:#000
-    style G fill:#ba68c8,color:#fff
-    style H fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#d8b4fe,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h4>
                   <ul style={{ marginTop: '10px' }}>
@@ -1991,17 +2056,18 @@ Now let's explore our final pattern, which uses graph structures for rich relati
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="API Docs: Graph Traversal Across Interlinked Nodes"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TD
     A["🔧 createUser()"] -->|"calls"| B["validateInput()"]
     A -->|"depends on"| C["AuthService"]
     B -->|"cites"| D["§3.2 Validation\nRules"]
     E["Query: createUser\nauth"] --> F["Match A → traverse\nedges → B, C, D"]
-    style A fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#d8b4fe,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#d8b4fe,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4 style={{ fontSize: '2rem' }}>When to Use</h4>

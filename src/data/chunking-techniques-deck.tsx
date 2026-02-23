@@ -94,18 +94,19 @@ export const chunkingTechniquesDeck: Deck = {
                     <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                     Definition
                     <MermaidPopover
-                      diagram={`graph LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Large Document] -->|Chunking| B[Chunk 1]
     A -->|Chunking| C[Chunk 2]
     A -->|Chunking| D[Chunk 3]
     B -->|Embed| E[Vector DB]
     C -->|Embed| E
     D -->|Embed| E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </h3>
                   <p style={{ fontSize: '1.2rem', margin: '0px' }}>
@@ -203,16 +204,17 @@ export const chunkingTechniquesDeck: Deck = {
                       <SvgIcon iconName="duo-ruler" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Fixed/Token-based (1-3)
                       <MermaidPopover
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Text: 1000 chars] -->|Fixed Size| B[Chunk 1: 256 chars]
     A -->|Fixed Size| C[Chunk 2: 256 chars]
     A -->|Fixed Size| D[Chunk 3: 256 chars]
     A -->|Fixed Size| E[Chunk 4: 232 chars]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.4}>
@@ -241,16 +243,19 @@ export const chunkingTechniquesDeck: Deck = {
                       <SvgIcon iconName="duo-sitemap" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Structure-aware (7-13)
                       <MermaidPopover
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] -->|Parse| B[Section 1]
     A -->|Parse| C[Section 2]
     B -->|Extract| D[Heading + Para]
     C -->|Extract| E[Table]
     C -->|Extract| F[Code Block]
-    style A fill:#4fc3f7
-    style D fill:#81c784
-    style E fill:#ffd700
-    style F fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.08} delay={0.5}>
@@ -272,15 +277,17 @@ export const chunkingTechniquesDeck: Deck = {
                       <SvgIcon iconName="duo-brain" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Semantic/Adaptive (14-19)
                       <MermaidPopover
-                        diagram={`graph TD
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Text] -->|Embed| B[Vectors]
     B -->|Similarity| C[Find Boundaries]
     C -->|Split| D[Semantic Chunk 1]
     C -->|Split| E[Semantic Chunk 2]
-    style A fill:#4fc3f7
-    style B fill:#e1bee7
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
@@ -297,17 +304,19 @@ export const chunkingTechniquesDeck: Deck = {
                       <SvgIcon iconName="duo-wand-sparkles" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Special-Purpose (20-26)
                       <MermaidPopover
-                        diagram={`graph LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Audio] -->|Transcribe| B[Text]
     B -->|Speaker Turns| C[Chunk by Speaker]
     D[QA Pairs] -->|Extract| E[QA Chunks]
     F[Images] -->|Caption| G[Visual Chunks]
-    style A fill:#4fc3f7
-    style D fill:#4fc3f7
-    style F fill:#4fc3f7
-    style C fill:#81c784
-    style E fill:#81c784
-    style G fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.12} delay={0.8}>
@@ -371,18 +380,19 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Document] -->|Split by chars| B[Chunk 1<br/>512 tokens]
     A -->|Split by chars| C[Chunk 2<br/>512 tokens]
     A -->|Split by chars| D[Chunk 3<br/>512 tokens]
     B -->|Fast & Simple| E[Vector DB]
     C -->|Fast & Simple| E
     D -->|Fast & Simple| E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -422,15 +432,16 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Complete Sentence] -->|Fixed Split| B[Chunk 1:<br/>'The quick brown']
     A -->|Fixed Split| C[Chunk 2:<br/>'fox jumps over']
     B -->|Lost Context| D[Poor Retrieval]
     C -->|Broken Meaning| D
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -472,14 +483,15 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-ruler" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Token Count] -->|Too Small<br/>100 tokens| B[Lost Context]
     A -->|Sweet Spot<br/>512 tokens| C[Optimal Balance]
     A -->|Too Large<br/>2000 tokens| D[Noise & Cost]
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#81c784
-    style D fill:#ffcdd2`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -494,12 +506,13 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-link" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Chunk 1: tokens 0-512] -.->|Overlap 50 tokens| B[Chunk 2: tokens 462-974]
     B -.->|Overlap 50 tokens| C[Chunk 3: tokens 924-1436]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -551,7 +564,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Fixed-Size Chunking] --> B[Server Logs]
     A --> C[FAQ Documents]
     A --> D[Uniform Content]
@@ -560,12 +574,12 @@ export const chunkingTechniquesDeck: Deck = {
     C --> F
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -639,18 +653,19 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Paragraph] -->|Sentence Split| B[Sentence 1]
     A -->|Sentence Split| C[Sentence 2]
     A -->|Sentence Split| D[Sentence 3]
     B -->|Complete Thought| E[High Precision]
     C -->|Complete Thought| E
     D -->|Complete Thought| E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -692,7 +707,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Short Sentence<br/>10 tokens]
     A --> C[Medium Sentence<br/>40 tokens]
     A --> D[Long Sentence<br/>120 tokens]
@@ -700,12 +716,12 @@ export const chunkingTechniquesDeck: Deck = {
     C --> E
     D --> E
     E --> F[Batching Issues]
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffd700
-    style D fill:#ffcdd2
-    style E fill:#e74c3c
-    style F fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -749,14 +765,15 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-ruler" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Chunking Strategy] -->|1 sentence| B[Very Granular<br/>~30 tokens]
     A -->|2 sentences| C[Balanced<br/>~60 tokens]
     A -->|3 sentences| D[Good Context<br/>~90 tokens]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -771,12 +788,13 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-link" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Sentence 1 + 2] -.->|Optional overlap| B[Sentence 2 + 3]
     B -.->|Optional overlap| C[Sentence 3 + 4]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -828,7 +846,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Sentence Chunking] --> B[QA Systems]
     A --> C[Classification]
     A --> D[FAQ Retrieval]
@@ -837,12 +856,12 @@ export const chunkingTechniquesDeck: Deck = {
     C --> F
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -918,18 +937,19 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Document] -->|Natural Breaks| B[Paragraph 1<br/>Complete Topic]
     A -->|Natural Breaks| C[Paragraph 2<br/>Complete Topic]
     A -->|Natural Breaks| D[Paragraph 3<br/>Complete Topic]
     B --> E[Coherent Context]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -973,7 +993,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Short Para<br/>50 tokens]
     A --> C[Medium Para<br/>200 tokens]
     A --> D[Long Para<br/>800 tokens]
@@ -982,12 +1003,12 @@ export const chunkingTechniquesDeck: Deck = {
     C --> F
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#ffcdd2
-    style E fill:#e74c3c
-    style F fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1029,16 +1050,17 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Paragraph Size] -->|Target Range| B[150-400 tokens]
     B --> C[Blog Posts:<br/>~200 tokens]
     B --> D[Technical Docs:<br/>~300 tokens]
     B --> E[Academic:<br/>~350 tokens]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#ffd700
-    style D fill:#ffd700
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1053,14 +1075,15 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Paragraph 1] -->|Clean Break| B[Paragraph 2]
     B -->|Clean Break| C[Paragraph 3]
     A -.->|Optional 1 sent| B
     B -.->|Optional 1 sent| C
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1114,7 +1137,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Paragraph Chunking] --> B[Blog Posts]
     A --> C[Reports]
     A --> D[Articles]
@@ -1123,12 +1147,12 @@ export const chunkingTechniquesDeck: Deck = {
     C --> F
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1202,7 +1226,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Text] -->|Try \\n\\n| B{Fits Size?}
     B -->|Yes| C[Split on \\n\\n]
     B -->|No| D[Try \\n]
@@ -1214,11 +1239,15 @@ export const chunkingTechniquesDeck: Deck = {
     E --> I
     G --> I
     H --> I
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style D fill:#ffd700
-    style F fill:#ffd700
-    style I fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1262,18 +1291,19 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Recursive Split] -->|Rule-Based| B[No Semantic<br/>Understanding]
     A -->|Separator Order| C[Tuning Needed]
     A -->|Structure Blind| D[Ignores Headers]
     B --> E[Limited Quality]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1317,18 +1347,21 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Target Size] -->|Small Docs| B[400 tokens]
     A -->|Typical| C[600 tokens]
     A -->|Large Context| D[800 tokens]
     B --> E[More Chunks]
     C --> F[Balanced]
     D --> G[Fewer Chunks]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#ffd700
-    style F fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1343,17 +1376,21 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-link" sizeName="2x" darkModeInvert={true} />
                   Overlap Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Chunk Size] -->|10% overlap| B[50 tokens]
     A -->|15% overlap| C[90 tokens]
     A -->|20% overlap| D[150 tokens]
     B --> E[Minimal Context]
     C --> F[Good Balance]
     D --> G[Maximum Context]
-    style A fill:#4fc3f7
-    style F fill:#81c784
-    style B fill:#ffd700
-    style G fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1405,7 +1442,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Use Cases / Examples
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Recursive Split] --> B[Mixed Docs]
     A --> C[PDF Extracts]
     A --> D[Varying Structure]
@@ -1414,12 +1452,12 @@ export const chunkingTechniquesDeck: Deck = {
     C --> F
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1495,7 +1533,8 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[# Chapter 1]
     B --> C[## Section 1.1]
     C --> D[Content]
@@ -1503,13 +1542,13 @@ export const chunkingTechniquesDeck: Deck = {
     E --> F[Content]
     D --> G[Hierarchical<br/>Chunks]
     F --> G
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style E fill:#81c784
-    style D fill:#81c784
-    style F fill:#81c784
-    style G fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1553,19 +1592,20 @@ export const chunkingTechniquesDeck: Deck = {
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Inconsistent<br/>Formatting]
     A --> C[Missing<br/>Structure]
     A --> D[Uneven<br/>Sections]
     B --> E[Parsing Fails]
     C --> E
     D --> F[Size Issues]
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c
-    style F fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1607,15 +1647,15 @@ export const chunkingTechniquesDeck: Deck = {
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Structure-Aware: Variable Section Sizes"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Document] --> B[H1 Section<br/>500-1200 tokens]
     A --> C[H2 Section<br/>300-800 tokens]
     C --> D[H3 Section<br/>200-500 tokens]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#81c784,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -1671,7 +1711,7 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Structure-Aware: Doc Types to Retrieval"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Manuals] --> E[Structure-Aware<br/>Chunking]
     B[Whitepapers] --> E
@@ -1679,13 +1719,13 @@ graph LR
     D[Legal Docs] --> E
     E --> F[Section Chunks<br/>+ Metadata]
     F --> G[Retrieval]
-    style A fill:#e3f2fd,color:#000
-    style B fill:#e3f2fd,color:#000
-    style C fill:#e3f2fd,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#ffd700,color:#000
-    style F fill:#81c784,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -1747,7 +1787,8 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Code Block]
     A --> C[Table]
     A --> D[List]
@@ -1757,13 +1798,13 @@ graph LR
     D --> F
     E --> F
     F --> G[Preserved<br/>Semantics]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#ffd700
-    style G fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1805,7 +1846,8 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Content-Aware<br/>Chunking] --> B[Domain Tuning]
     A --> C[Heuristic<br/>Development]
     A --> D[Maintenance<br/>Overhead]
@@ -1813,12 +1855,12 @@ graph LR
     C --> E
     D --> E
     E --> F[Edge Cases]
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c
-    style F fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -1860,17 +1902,17 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Content-Aware: Dynamic 200-800 Token Sizing"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Mixed Document] --> B{Detect<br/>Content Type}
     B -->|Code| C[200-400 tokens<br/>Code Chunk]
     B -->|Table| D[150-300 tokens<br/>Table Chunk]
     B -->|Prose| E[400-800 tokens<br/>Prose Chunk]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -1925,7 +1967,7 @@ graph TD
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Content-Aware: Mixed Doc Chunking"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Mixed Document] --> B{Detect<br/>Content Type}
     B --> C[Code Block]
@@ -1934,12 +1976,12 @@ graph TD
     C --> F[Appropriate Chunk]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#e3f2fd,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -2000,7 +2042,8 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Embed Sentences]
     B --> C[Compute<br/>Similarity]
     C --> D[Topic 1<br/>Chunk]
@@ -2009,13 +2052,13 @@ graph TD
     D --> G[Semantic<br/>Coherence]
     E --> G
     F --> G
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#81c784
-    style G fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2057,18 +2100,19 @@ graph TD
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Semantic Chunking] --> B[Embedding Cost]
     A --> C[Threshold Tuning]
     A --> D[Model Dependency]
     B --> E[High Complexity]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2110,17 +2154,17 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Semantic Chunking: Cosine Similarity Boundaries"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Sentences] --> B[Embed<br/>Sentences]
     B --> C{Cosine<br/>Similarity Drop?}
     C -->|Yes| D[Topic Boundary<br/>200-600 tokens]
     C -->|No| E[Continue<br/>Grouping]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#e3f2fd,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -2177,17 +2221,17 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Semantic Chunking: Multi-topic Doc Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Multi-topic Doc] --> B[Embed Sentences]
     B --> C[Detect Similarity<br/>Drops]
     C --> D[Semantic Chunks]
     D --> E[Vector DB]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -2249,18 +2293,19 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Text] --> B[Analyze<br/>Cohesion]
     B --> C[Topic 1]
     B --> D[Cohesion Drop]
     B --> E[Topic 2]
     D --> F[Natural<br/>Boundary]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#e74c3c
-    style E fill:#81c784
-    style F fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2302,18 +2347,19 @@ graph TD
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[TextTiling] --> B[Parameter<br/>Sensitivity]
     A --> C[Gradual<br/>Transitions]
     A --> D[Tuning<br/>Required]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2355,17 +2401,17 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="TextTiling: Lexical Cohesion Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Text] --> B[Sliding<br/>Windows]
     B --> C[Lexical Cohesion<br/>Scores]
     C --> D[Topic<br/>Boundaries]
     D --> E[Variable Chunks<br/>200-800 tokens]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -2421,15 +2467,15 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="TextTiling: Topic Shift Detection"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Article with<br/>Topic Shifts] --> B[TextTiling<br/>Algorithm]
     B --> C[Cohesion<br/>Analysis]
     C --> D[Coherent<br/>Topic Chunks]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -2491,7 +2537,8 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Text] --> B[Parse EDUs]
     B --> C[Identify<br/>Relations]
     C --> D[Elaboration]
@@ -2500,13 +2547,13 @@ graph LR
     D --> G[Discourse<br/>Structure]
     E --> G
     F --> G
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#81c784
-    style G fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2548,18 +2595,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[RST Chunking] --> B[Heavy<br/>Computation]
     A --> C[Specialized<br/>Knowledge]
     A --> D[Low<br/>Throughput]
     B --> E[High Barriers]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2601,7 +2649,7 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="RST Chunking: EDU to Discourse Structure"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Text] --> B[EDU<br/>Segmentation]
     B --> C{Rhetorical<br/>Relations}
@@ -2611,13 +2659,13 @@ graph TD
     D --> G[150-400 token<br/>Chunks]
     E --> G
     F --> G
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#e3f2fd,color:#000
-    style F fill:#e3f2fd,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -2673,17 +2721,17 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="RST: Long-form Doc to QA Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Long-form Doc] --> B[RST Parser]
     B --> C[Discourse Tree]
     C --> D[Coherent Argument<br/>Chunks]
     D --> E[QA / Summarization]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -2745,16 +2793,17 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Text] --> B[Tokenize]
     B --> C[Count Tokens]
     C --> D[Chunk at<br/>Token Limit]
     D --> E[Perfect Fit]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2796,18 +2845,19 @@ graph TD
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Token Chunking] --> B[Splits<br/>Meaning]
     A --> C[Tokenizer<br/>Variance]
     A --> D[No Semantic<br/>Awareness]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2844,17 +2894,17 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Token-Aware: Text to Embedding Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Text] --> B[Tokenizer<br/>Tiktoken/HF]
     B --> C[256-1024 Token<br/>Chunks]
     C --> D[10-20%<br/>Overlap]
     D --> E[Embedding<br/>Model]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -2907,17 +2957,17 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Token-Aware: Tiktoken/HuggingFace Workflow"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Any Text] --> B[Tiktoken /<br/>HuggingFace]
     B --> C[Token Chunks]
     C --> D[Embedding<br/>Pipeline]
     D --> E[Vector Store]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db' }}>Use Cases / Examples</h3>
@@ -2979,17 +3029,18 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[H1 Section]
     B --> C[H2 Subsection]
     B --> D[H2 Subsection]
     C --> E[Preserve<br/>Hierarchy]
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3026,18 +3077,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Heading Chunking] --> B[Requires<br/>Structure]
     A --> C[Uneven<br/>Sizes]
     A --> D[Style<br/>Variance]
     B --> E[Limitations]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3073,7 +3125,8 @@ graph LR
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[H1: Introduction<br/>200 tokens]
     A --> C[H1: Setup<br/>400 tokens]
     A --> D[H1: Usage<br/>1200 tokens]
@@ -3081,14 +3134,14 @@ graph LR
     C --> F[H2: Installation<br/>250 tokens]
     D --> G[H2: Basic<br/>600 tokens]
     D --> H[H2: Advanced<br/>600 tokens]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#ffd700
-    style E fill:#e1bee7
-    style F fill:#e1bee7
-    style G fill:#e1bee7
-    style H fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3157,17 +3210,17 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Heading-Anchor: Docs Site Chunking"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Docs Site] --> B{Heading<br/>Anchors}
     B --> C[H1 Chunk<br/>+ heading metadata]
     B --> D[H2 Chunk<br/>+ heading metadata]
     B --> E[H3 Chunk<br/>+ heading metadata]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -3231,7 +3284,8 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[HTML/Markdown] --> B[Parse Structure]
     B --> C[Code Blocks]
     B --> D[Tables]
@@ -3239,12 +3293,12 @@ graph TD
     C --> F[Preserved<br/>Elements]
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3281,18 +3335,19 @@ graph TD
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Structure Chunking] --> B[Requires<br/>Clean Markup]
     A --> C[Boilerplate<br/>Noise]
     A --> D[Parsing<br/>Complexity]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3328,20 +3383,21 @@ graph TD
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[HTML Page] --> B[Section: 600 tokens]
     A --> C[Div: 300 tokens]
     A --> D[Article: 700 tokens]
     B --> E[Paragraph: 150 tokens]
     B --> F[Code Block: 200 tokens]
     C --> G[List: 100 tokens]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#e1bee7
-    style F fill:#ffd700
-    style G fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3406,15 +3462,15 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Markdown-Aware: Preserve Structure Elements"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Markdown Doc] --> B[Detect Headers<br/>Code Blocks<br/>Lists/Tables]
     B --> C[300-800 Token<br/>Chunks]
     C --> D[Preserved<br/>Markdown Elements]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -3478,16 +3534,17 @@ For Markdown, parsers like **marked** and **remark** convert Markdown into struc
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Detect Table]
     B --> C[Extract<br/>Complete]
     C --> D[Preserve<br/>Structure]
     D --> E[Queryable<br/>Data]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3524,18 +3581,19 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Table Chunking] --> B[Format<br/>Variance]
     A --> C[Formatting<br/>Loss]
     A --> D[Complex<br/>Tables]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3571,20 +3629,21 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Text Chunk<br/>300 tokens]
     A --> C[Table Chunk<br/>150 tokens]
     A --> D[Text Chunk<br/>250 tokens]
     C --> E[Headers: Product,Price,Rating]
     C --> F[Row 1: Widget A,$99,4.5]
     C --> G[Row 2: Widget B,$149,4.8]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#e1bee7
-    style F fill:#e1bee7
-    style G fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3650,18 +3709,18 @@ Tables typically have **zero overlap** with surrounding chunks. They're self-con
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Table-Aware: Header+Rows with Context"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Doc with Tables] --> B[Detect Tables]
     B --> C[Table Chunk<br/>header + rows]
     B --> D[Context Chunk<br/>surrounding text]
     C --> E[Vector DB]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -3725,7 +3784,8 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Source Code] --> B[Parse AST]
     B --> C[Function]
     B --> D[Class]
@@ -3733,12 +3793,12 @@ graph TD
     C --> F[Semantic<br/>Units]
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3775,18 +3835,19 @@ Functions often depend on nearby code: imports at the top of the file, type defi
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Code Chunking] --> B[Language<br/>Specific]
     A --> C[Long<br/>Functions]
     A --> D[Parser<br/>Dependency]
     B --> E[Complexity]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3822,7 +3883,8 @@ Functions often depend on nearby code: imports at the top of the file, type defi
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Code File] --> B[Import Statements]
     A --> C[Function: login<br/>200 tokens]
     A --> D[Class: UserService<br/>600 tokens]
@@ -3830,14 +3892,14 @@ Functions often depend on nearby code: imports at the top of the file, type defi
     D --> F[Method: authenticate<br/>200 tokens]
     D --> G[Method: getProfile<br/>180 tokens]
     D --> H[Method: updateUser<br/>220 tokens]
-    style A fill:#4fc3f7
-    style B fill:#e1bee7
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#ffd700
-    style F fill:#e1bee7
-    style G fill:#e1bee7
-    style H fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3906,18 +3968,18 @@ You might also **include essential imports** at the top of each chunk so the cod
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Code-Aware: AST Parser to Chunks"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Code File] --> B[AST Parser]
     B --> C[Function<br/>Boundaries]
     B --> D[Class<br/>Boundaries]
     C --> E[400 token Chunk<br/>with docstring]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -3981,18 +4043,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Sentences] --> B[Window 1:<br/>Sent 1-3]
     A --> C[Window 2:<br/>Sent 2-4]
     A --> D[Window 3:<br/>Sent 3-5]
     B --> E[Sliding<br/>Context]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4029,18 +4092,19 @@ The sliding window approach provides **better context than fixed-size chunks**. 
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Windowed Grouping] --> B[Redundancy]
     A --> C[Parameter<br/>Tuning]
     A --> D[Uneven<br/>Sizes]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4076,16 +4140,17 @@ The sliding window approach provides **better context than fixed-size chunks**. 
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Document] --> B[Chunk 1: S1,S2,S3<br/>250 tokens]
     A --> C[Chunk 2: S2,S3,S4<br/>220 tokens]
     A --> D[Chunk 3: S3,S4,S5<br/>280 tokens]
     A --> E[Chunk 4: S4,S5,S6<br/>240 tokens]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#ffd700
-    style D fill:#81c784
-    style E fill:#ffd700
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
     linkStyle 0 stroke:#81c784,stroke-width:3px
     linkStyle 1 stroke:#ffd700,stroke-width:3px
     linkStyle 2 stroke:#81c784,stroke-width:3px
@@ -4155,17 +4220,17 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Sentence Grouping: Sliding Window Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Text] --> B[Sentence<br/>Tokenizer]
     B --> C[Window of<br/>3-5 Sentences]
     C --> D[Overlapping<br/>Chunks]
     D --> E[Embedding<br/>Pipeline]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -4229,17 +4294,18 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Content] --> B{Analyze<br/>Complexity}
     B -->|High| C[Small Chunks]
     B -->|Low| D[Large Chunks]
     C --> E[Optimized<br/>Retrieval]
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4276,18 +4342,19 @@ This approach **optimizes for both retrieval quality and computational efficienc
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Adaptive Chunking] --> B[Complex<br/>Metrics]
     A --> C[Parameter<br/>Tuning]
     A --> D[Unpredictable<br/>Storage]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4324,7 +4391,8 @@ This approach **optimizes for both retrieval quality and computational efficienc
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document Analysis] --> B{Complexity Check}
     B -->|High Complexity| C[Small Chunk<br/>200-400 tokens]
     B -->|Medium Complexity| D[Medium Chunk<br/>400-600 tokens]
@@ -4332,14 +4400,14 @@ This approach **optimizes for both retrieval quality and computational efficienc
     C --> F[Dense Technical Content]
     D --> G[Mixed Content]
     E --> H[Simple Narrative]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#ffcdd2
-    style D fill:#e1bee7
-    style E fill:#81c784
-    style F fill:#e1bee7
-    style G fill:#e1bee7
-    style H fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4410,18 +4478,18 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Adaptive Length: Complexity-Based Sizing"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Document] --> B{Analyze<br/>Complexity}
     B -->|Dense/Technical| C[Small Chunks<br/>200-400 tokens]
     B -->|Narrative/Simple| D[Large Chunks<br/>600-1000 tokens]
     C --> E[Optimized<br/>Retrieval]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -4485,16 +4553,17 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Chunk] --> B[Generate<br/>Summary]
     B --> C[Augment<br/>Chunk]
     C --> D[Enhanced<br/>Retrieval]
     D --> E[Better<br/>Recall]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4531,18 +4600,19 @@ For **very long documents**, chunks can feel disconnected from the document's ma
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Summary Chunking] --> B[High Cost]
     A --> C[Hallucination<br/>Risk]
     A --> D[Storage<br/>Overhead]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4578,18 +4648,19 @@ For **very long documents**, chunks can feel disconnected from the document's ma
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Original Chunk<br/>600 tokens] --> B[Generate Summary]
     B --> C[Summary<br/>100 tokens]
     C --> D[Final Chunk<br/>700 tokens total]
     D --> E[Original: 600 tokens]
     D --> F[Summary: 100 tokens]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#e1bee7
-    style D fill:#81c784
-    style E fill:#e1bee7
-    style F fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4653,18 +4724,18 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Summarization-Based: Dual-Level Retrieval"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Long Doc] --> B[LLM Summary]
     A --> C[Original Chunks]
     B --> D[Summary-Indexed]
     C --> D
     D --> E[Dual-Level<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e3f2fd,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -4728,16 +4799,17 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Sentences] --> B[Build<br/>Graph]
     B --> C[Compute<br/>Similarity]
     C --> D[Community<br/>Detection]
     D --> E[Topic<br/>Clusters]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#ffd700
-    style D fill:#ffd700
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4774,18 +4846,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Graph Chunking] --> B[Complex<br/>Implementation]
     A --> C[High<br/>Compute]
     A --> D[Parameter<br/>Sensitive]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4821,7 +4894,8 @@ graph LR
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Sentence Graph] --> B{Community Detection}
     B --> C[Community 1<br/>5 sentences<br/>300 tokens]
     B --> D[Community 2<br/>3 sentences<br/>180 tokens]
@@ -4829,14 +4903,14 @@ graph LR
     C --> F[Topic: Authentication]
     D --> G[Topic: Database]
     E --> H[Topic: API Routes]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#e1bee7
-    style G fill:#e1bee7
-    style H fill:#e1bee7`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -4904,17 +4978,17 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Graph-Based: Community Detection Chunking"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Sentences] --> B[Build<br/>Similarity Graph]
     B --> C[Community<br/>Detection]
     C --> D[Topic Clusters]
     D --> E[Graph-Based<br/>Chunks]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -4978,14 +5052,15 @@ graph TD
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Audio] --> B[Transcribe<br/>with Times]
     B --> C[Chunk by<br/>Time]
     C --> D[Timestamp<br/>Sync]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5023,18 +5098,19 @@ graph TD
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Time Chunking] --> B[Cuts<br/>Semantics]
     A --> C[ASR<br/>Errors]
     A --> D[Variable<br/>Density]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5092,7 +5168,8 @@ graph TD
                 <div style={{ marginTop: '30px' }}>
                   <MermaidPopover
                     title="Audio Chunking Timeline"
-                    diagram={`gantt
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+gantt
     title Audio Time-Based Chunking (60s chunks, 2s overlap)
     dateFormat ss
     axisFormat %S
@@ -5139,17 +5216,17 @@ Two seconds is usually sufficient because that's about how long it takes to spea
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Audio/ASR: Time-Based Chunking Pipeline"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Audio] --> B[ASR<br/>Transcription]
     B --> C[Time-Based<br/>Chunks]
     C --> D[Timestamp<br/>Metadata]
     D --> E[Searchable<br/>Segments]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -5210,15 +5287,16 @@ However, it's not Advanced because the concepts are straightforward and excellen
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Conversation] --> B[Speaker A]
     A --> C[Speaker B]
     B --> D[Turn-Based<br/>Chunks]
     C --> D
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5257,18 +5335,19 @@ However, it's not Advanced because the concepts are straightforward and excellen
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Speaker Chunking] --> B[Variable<br/>Lengths]
     A --> C[Diarization<br/>Required]
     A --> D[Detection<br/>Errors]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5306,17 +5385,17 @@ However, it's not Advanced because the concepts are straightforward and excellen
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Speaker-Turn: Diarization to Chunks"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Conversation] --> B[Speaker<br/>Diarization]
     B --> C[100-300 token<br/>Turn Chunks]
     C --> D[0-1 Turn<br/>Overlap]
     D --> E[Embedding<br/>Model]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -5360,17 +5439,17 @@ Once you have diarization results, the actual chunking is straightforward since 
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Speaker-Turn: Multi-Speaker Retrieval"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Multi-Speaker<br/>Audio] --> B[Speaker<br/>Diarization]
     B --> C[Turn-Based<br/>Chunks]
     C --> D[Speaker<br/>Attribution]
     D --> E[Retrieval by<br/>Speaker]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -5423,17 +5502,18 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Identify<br/>QA Pairs]
     B --> C[Question]
     B --> D[Answer]
     C --> E[Optimized<br/>Chunks]
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5471,18 +5551,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[QA Chunking] --> B[Setup<br/>Cost]
     A --> C[Pattern<br/>Dependency]
     A --> D[Limited<br/>Generalization]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5521,17 +5602,17 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="QA-Focused: Answer-Boundary Chunking"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Document] --> B[Identify<br/>QA Pairs]
     B --> C[Question<br/>Context]
     C --> D[100-400 token<br/>Answer Chunk]
     D --> E[QA-Optimized<br/>Index]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -5576,17 +5657,17 @@ graph TD
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="QA-Focused: Knowledge Base Retrieval"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Knowledge Base] --> B[QA Chunking]
     B --> C[Answer Chunks]
     C --> D[Question-Answer<br/>Pairs]
     D --> E[High-Precision<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -5639,18 +5720,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[PDF] --> B[Page 1]
     A --> C[Page 2]
     A --> D[Page 3]
     B --> E[Easy<br/>Citations]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5688,18 +5770,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Page Chunking] --> B[Not<br/>Semantic]
     A --> C[Variable<br/>Density]
     A --> D[Splits<br/>Content]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5737,17 +5820,17 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Page-Preservation: PDF Page Chunking"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[PDF Page] --> B[Preserve<br/>Page Boundary]
     B --> C[~500 token<br/>Page Chunk]
     C --> D[Page Number<br/>Metadata]
     D --> E[Citation-Ready<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -5792,17 +5875,17 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Page-Preservation: Page-Referenced Retrieval"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[PDF Document] --> B[Page Extraction]
     B --> C[Page Chunks]
     C --> D[page_num +<br/>doc_id Metadata]
     D --> E[Page-Referenced<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -5855,16 +5938,17 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B[Figure]
     B --> C[Caption]
     C --> D[Context]
     D --> E[Multimodal<br/>Chunk]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5902,18 +5986,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Caption Chunking] --> B[Layout<br/>Detection]
     A --> C[Complex<br/>Layouts]
     A --> D[Tuning<br/>Required]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -5951,17 +6036,17 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Caption+Context: Layout-Aware Chunking"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Document] --> B[Layout<br/>Analysis]
     B --> C[Caption<br/>Detection]
     C --> D[Caption +<br/>Context Window]
     D --> E[100-400 token<br/>Chunk]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -6007,17 +6092,17 @@ graph TD
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Caption+Context: Figure-Referenced Retrieval"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Scientific Paper] --> B[Figure Detection]
     B --> C[Caption + Context]
     C --> D[Visual Chunk]
     D --> E[Figure-Referenced<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -6070,7 +6155,8 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Chunk] --> B[Add Metadata]
     B --> C[Author]
     B --> D[Date]
@@ -6078,12 +6164,12 @@ graph LR
     C --> F[Enhanced<br/>Retrieval]
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -6122,18 +6208,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Metadata Chunking] --> B[Extraction<br/>Effort]
     A --> C[Schema<br/>Management]
     A --> D[Storage<br/>Overhead]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -6172,18 +6259,18 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Metadata-Aware: Chunk + Metadata Enrichment"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Document] --> B[Base Chunking<br/>300-800 tokens]
     A --> C[Metadata<br/>Extraction]
     B --> D[Chunk +<br/>Metadata]
     C --> D
     D --> E[Filtered<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#81c784,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -6228,17 +6315,17 @@ graph TD
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Metadata-Aware: Enterprise Filtered Search"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Enterprise Docs] --> B[Metadata<br/>Enrichment]
     B --> C[author, date,<br/>dept, tags]
     C --> D[Filtered Vector<br/>Search]
     D --> E[Precise<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -6291,7 +6378,8 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Document] --> B{Route}
     B -->|Code| C[Code Chunking]
     B -->|Table| D[Table Chunking]
@@ -6299,12 +6387,12 @@ graph LR
     C --> F[Optimal<br/>Strategy]
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784
-    style F fill:#81c784`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -6342,18 +6430,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Hybrid Chunking] --> B[Complex<br/>Orchestration]
     A --> C[High<br/>Maintenance]
     A --> D[Debug<br/>Difficulty]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -6392,7 +6481,7 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Hybrid Chunking: Route by Content Type"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TD
     A[Document] --> B{Content<br/>Type?}
     B -->|Structured| C[Structure-Aware<br/>300-800 tokens]
@@ -6401,12 +6490,12 @@ graph TD
     C --> F[Unified Index]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e3f2fd,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#e3f2fd,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -6453,7 +6542,7 @@ graph TD
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Hybrid: Mixed Corpus Pipeline"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Mixed Corpus] --> B{Route by<br/>Doc Type}
     B --> C[Markdown<br/>Splitter]
@@ -6462,12 +6551,12 @@ graph LR
     C --> F[Hybrid Index]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
@@ -6520,18 +6609,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Text] --> B[Window 1]
     A --> C[Window 2<br/>Overlaps]
     A --> D[Window 3<br/>Overlaps]
     B --> E[Continuous<br/>Context]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#ffd700`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -6570,18 +6660,19 @@ graph LR
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
                   <MermaidPopover
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Sliding Window] --> B[Storage<br/>Redundancy]
     A --> C[Embedding<br/>Cost]
     A --> D[Duplicate<br/>Results]
     B --> E[Challenges]
     C --> E
     D --> E
-    style A fill:#4fc3f7
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2
-    style E fill:#e74c3c`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -6620,17 +6711,17 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Sliding Window: Overlapping Context Chunks"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Text] --> B[Window<br/>300-800 tokens]
     B --> C[Slide with<br/>15-30% Overlap]
     C --> D[Overlapping<br/>Chunks]
     D --> E[Embedding<br/>Model]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
@@ -6676,17 +6767,17 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Sliding Window: Cross-Reference Preservation"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Legal / Academic<br/>Document] --> B[Sliding Window]
     B --> C[Overlapping<br/>Context Chunks]
     C --> D[Cross-Reference<br/>Preservation]
     D --> E[High-Context<br/>Retrieval]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e3f2fd,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#bfdbfe,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#ffffff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>

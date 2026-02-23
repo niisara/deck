@@ -87,16 +87,17 @@ export const ragLatencyDeck: Deck = {
                       <SvgIcon iconName="duo-microchip" sizeName="2x" darkModeInvert={true} />
                       <strong>Embeddings & Chunking <MermaidPopover
                         title="RAG Pipeline Stages"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Query"] --> B["🔢 Embed"]
     B --> C["🔍 Retrieve"]
     C --> D["📊 Rerank"]
     D --> E["🤖 Generate"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       /></strong>
                     </div>
                     <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
@@ -244,7 +245,7 @@ This technique is particularly powerful because embedding happens on **every sin
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Small vs Large Embedding Model Impact"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     subgraph Large["🐘 Large Model (768-dim)"]
         L1["1 query = 50ms"]
@@ -255,8 +256,12 @@ graph LR
         S2["1M docs = 2hrs indexing"]
     end
     Large -->|"5x speedup"| Small
-    style Large fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Small fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style Large fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style Small fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -495,7 +500,7 @@ The problems: There's a **potential recall drop on nuanced queries** — very su
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Chunk Size Impact on Token Cost & Latency"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Large["📄 Large Chunk (1000 tokens)"]
         B1["Background info..."]
@@ -507,8 +512,13 @@ graph TB
         S2["Focused context"]
     end
     Large -->|"Reduce chunk size"| Small
-    style Large fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Small fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style Large fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style Small fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -748,7 +758,7 @@ Top-K 👉 'top kay' refers to how many results your vector search returns. If y
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Top-K=10 vs Top-K=3 Context Cost"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph K10["Top-K = 10 (Before)"]
         T1["10 chunks × 200 tokens"]
@@ -760,8 +770,14 @@ graph TB
         O2["= 600 tokens context"]
         O3["70% token reduction"]
     end
-    style K10 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style K3 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style K10 fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style K3 fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style T1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -812,15 +828,19 @@ Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tok
                     How It Works
                     <MermaidPopover
                       title="Top-K Retrieval Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🔍 Query"] --> B["📊 Vector Search"]
     B --> C["Top-20 Results"]
     B --> D["Top-3 Results"]
     C --> E["🐢 Slow Processing"]
     D --> F["🚀 Fast Processing"]
-    style A fill:#4fc3f7,color:#000
-    style E fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </strong>
                 </div>
@@ -1003,7 +1023,7 @@ Two popular ANN algorithms are HNSW 👉 'H-N-S-W' and IVF 👉 'eye-vee-eff'. L
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Exact Search vs ANN Index at Scale"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Exact["🐢 Exact Search (1M vectors)"]
         E1["Compare all 1M vectors"]
@@ -1015,8 +1035,14 @@ graph TB
         A2["⏱️ ~5ms latency"]
         A3["1 server needed"]
     end
-    style Exact fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style ANN fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style Exact fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style ANN fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style E1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -1258,7 +1284,7 @@ In many production systems, a large percentage of queries are repeats or near-du
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Query Embedding Cache: Hit vs Miss"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["🔍 User Query"] --> C{"Cache Hit?"}
     C -->|"✅ Yes (repeat query)"| H["Return cached vector"]
@@ -1266,10 +1292,13 @@ flowchart TB
     H --> R["⚡ 0ms — skip API"]
     E --> S["Store in cache"]
     S --> R2["⏱️ 10–50ms latency"]
-    style H fill:#c8e6c9,color:#000
-    style R fill:#c8e6c9,color:#000
-    style E fill:#ffcdd2,color:#000
-    style C fill:#e3f2fd,color:#000`}
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style S fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -1516,7 +1545,7 @@ Vector search typically takes 5-50 milliseconds depending on your index size and
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Retrieval Cache: 40% Traffic Savings"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["🔍 User Query"] --> C{"Result in Cache?"}
     C -->|"✅ Yes (40% of queries)"| H["Return cached chunks"]
@@ -1524,10 +1553,13 @@ flowchart TB
     H --> Skip["⚡ Skip vector search entirely"]
     VS --> Store["Store result in cache"]
     Store --> Resp["Return to user"]
-    style H fill:#c8e6c9,color:#000
-    style Skip fill:#c8e6c9,color:#000
-    style VS fill:#ffcdd2,color:#000
-    style C fill:#e3f2fd,color:#000`}
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Skip fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style VS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Store fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Resp fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -1776,7 +1808,7 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Two-Stage Retrieval with Lightweight Reranker"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     Q["🔍 Query"] --> VS["Vector Search\nTop-20 results"]
     VS --> RR["⚡ Reranker\ncross-encoder"]
@@ -1785,10 +1817,13 @@ flowchart LR
         T1["Total latency still <"]
         T2["fetching Top-20 alone"]
     end
-    style VS fill:#e3f2fd,color:#000
-    style RR fill:#e1bee7,color:#000
-    style Top3 fill:#c8e6c9,color:#000
-    style Tradeoff fill:#fff9c4,stroke:#f57c00,color:#000`}
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style VS fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style RR fill:#2d1b3d,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style Top3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Tradeoff fill:#3d2e00,stroke:#f5a623,stroke-width:2px,color:#fde68a
+    style T1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -2034,7 +2069,7 @@ In practice, context compression can reduce your context size by 50-80% while pr
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Context Compression: 75% Token Reduction"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Before["Before Compression"]
         B1["Retrieved: 2,000 tokens"]
@@ -2047,8 +2082,14 @@ graph TB
         A3["75% cost & latency savings"]
     end
     Before -->|"Compress"| After
-    style Before fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style After fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style Before fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style After fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -2297,9 +2338,9 @@ Well-designed parallelization can reduce your overall pipeline latency by 30-50%
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Parallel vs Sequential Retrieval"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
-    Q["🔍 Query"] --> PE["Embed Query"]
+    Q["�� Query"] --> PE["Embed Query"]
     PE --> VS["Vector DB Search"]
     PE --> KW["BM25 Keyword Search"]
     VS --> M["Merge Results"]
@@ -2309,10 +2350,15 @@ flowchart TB
         S1["Sequential: 100ms + 80ms = 180ms"]
         S2["Parallel: max(100ms, 80ms) = 100ms"]
     end
-    style VS fill:#e1bee7,color:#000
-    style KW fill:#e1bee7,color:#000
-    style M fill:#ffd700,color:#000
-    style Savings fill:#c8e6c9,stroke:#388e3c,color:#000`}
+    style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style PE fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style VS fill:#2d1b3d,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style KW fill:#2d1b3d,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style LLM fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Savings fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -2564,7 +2610,7 @@ Research shows that users perceive streaming responses as 2-3x faster than batch
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Streaming vs Batch: Perceived Responsiveness"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     subgraph Batch["❌ No Streaming"]
         N1["0ms — spinner shown"]
@@ -2576,8 +2622,14 @@ graph LR
         Y2["Tokens stream in..."]
         Y3["Response complete"]
     end
-    style Batch fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Stream fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style Batch fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style Stream fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style N1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Y1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Y2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Y3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>
@@ -2825,7 +2877,7 @@ Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation l
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Large LLM vs Small LLM Tradeoffs"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Large["GPT-4 (Large LLM)"]
         L1["~20 tokens/sec"]
@@ -2842,9 +2894,18 @@ graph TB
         U2["Predictable output format"]
         U3["Budget or latency critical"]
     end
-    style Large fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Small fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
-    style UseSmall fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+    style Large fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#fecaca
+    style Small fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#d1fae5
+    style UseSmall fill:#3d2e00,stroke:#f5a623,stroke-width:2px,color:#fde68a
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style U1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style U2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style U3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ marginBottom: '20px' }}></div>

@@ -93,7 +93,8 @@ export const ragEvaluationMetricsDeck: Deck = {
                   RAG System Flow
                   <MermaidPopover
                     title="RAG Pipeline"
-                    diagram={`flowchart LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["❓ User Query"] --> B["🔍 Retrieval<br/>(Metrics 1-4)"]
     B --> C["📋 Context Quality<br/>(Metric 5)"]
     C --> D["🤖 LLM Generation<br/>(Metrics 6-10)"]
@@ -101,12 +102,12 @@ export const ragEvaluationMetricsDeck: Deck = {
     B -.-> F["⚡ Efficiency<br/>(Metrics 11-13)"]
     C -.-> F
     D -.-> F
-    style A fill:#4fc3f7,color:#000
-    style B fill:#3b82f6,color:#fff
-    style C fill:#0ea5e9,color:#fff
-    style D fill:#10b981,color:#fff
-    style E fill:#81c784,color:#000
-    style F fill:#8b5cf6,color:#fff`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3b82f6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#0ea5e9,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#8b5cf6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}}
                   />
                 </h4>
               </GSAPAnimated>
@@ -215,7 +216,7 @@ export const ragEvaluationMetricsDeck: Deck = {
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Recall@K: High vs Low Recall Impact"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query] --> R{Retrieval}
     R -->|High Recall| H[Finds 8/10 relevant docs]
@@ -224,14 +225,15 @@ graph TB
     L --> LG[Gaps in context]
     HC --> AA[Accurate answer]
     LG --> HA[Hallucinations fill gaps]
-    style Q fill:#4fc3f7,color:#000
-    style H fill:#c8e6c9,color:#000
-    style L fill:#ffcdd2,color:#000
-    style HC fill:#c8e6c9,color:#000
-    style LG fill:#ffcdd2,color:#000
-    style AA fill:#81c784,color:#000
-    style HA fill:#ffcdd2,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style HC fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style LG fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style AA fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style HA fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Recall fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -280,19 +282,20 @@ You should pay special attention to Recall at K when you're tuning your embeddin
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works
                   <MermaidPopover
                     title="Recall@K Calculation Process"
-                    diagram={`flowchart TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A[Start: Query + Corpus] --> B[Identify ALL Relevant Docs<br/>in Corpus]
     B --> C[Run Retrieval System<br/>Get Top-K Results]
     C --> D[Count Overlap:<br/>Relevant ∩ TopK]
     D --> E[Divide by Total<br/>Relevant Docs]
     E --> F[Recall@K Score]
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#3b82f6,color:#fff
-    style C fill:#0ea5e9,color:#fff
-    style D fill:#10b981,color:#fff
-    style E fill:#fbbf24,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3b82f6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#0ea5e9,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}}
                   />
                 </h3>
                 <p>Retrieval Recall@K measures the proportion of all relevant documents that appear in the top-K results. It answers: "Of all relevant documents, how many did we retrieve?"</p>
@@ -348,7 +351,8 @@ You should pay special attention to Recall at K when you're tuning your embeddin
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example
                   <MermaidPopover
                     title="Recall@K Example Visualization"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Query: Side effects of medication X?] --> B[Corpus Analysis]
     B --> C[Total Relevant Docs: 4]
     C --> D1[Doc A: Primary side effects]
@@ -370,13 +374,22 @@ You should pay special attention to Recall at K when you're tuning your embeddin
     
     H --> I[Recall@5 = 3/4 = 0.75]
     
-    style A fill:#4fc3f7,color:#000
-    style I fill:#81c784,color:#000
-    style G1 fill:#10b981,color:#fff
-    style G2 fill:#10b981,color:#fff
-    style G4 fill:#10b981,color:#fff
-    style G3 fill:#ef4444,color:#fff
-    style G5 fill:#ef4444,color:#fff`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G1 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G2 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G4 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G3 fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G5 fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -424,7 +437,8 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG
                   <MermaidPopover
                     title="Impact of High vs Low Recall"
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Low Recall<br/>Missing Docs] --> B[Incomplete Context]
     B --> C[LLM Fills Gaps]
     C --> D[❌ Hallucinations<br/>❌ Omissions]
@@ -433,10 +447,14 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
     F --> G[LLM Has All Info]
     G --> H[✅ Accurate Answers<br/>✅ Completeness]
     
-    style A fill:#ef4444,color:#fff
-    style D fill:#ef4444,color:#fff
-    style E fill:#10b981,color:#fff
-    style H fill:#10b981,color:#fff`}
+    style A fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
@@ -503,7 +521,7 @@ You should actively monitor Recall at K in several scenarios. [lecture] First, w
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision@K: Clean vs Noisy Context"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query] --> R{Retrieval}
     R -->|High Precision| HP[7/10 docs relevant]
@@ -512,14 +530,15 @@ graph TB
     LP --> NC[Noisy polluted context]
     FC --> GL[Grounded LLM response]
     NC --> CL[Confused distracted LLM]
-    style Q fill:#4fc3f7,color:#000
-    style HP fill:#c8e6c9,color:#000
-    style LP fill:#ffcdd2,color:#000
-    style FC fill:#c8e6c9,color:#000
-    style NC fill:#ffcdd2,color:#000
-    style GL fill:#81c784,color:#000
-    style CL fill:#ffcdd2,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style HP fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style LP fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FC fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style NC fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style GL fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style CL fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style Precision fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -569,7 +588,8 @@ graph TB
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works
                   <MermaidPopover
                     title="Precision@K vs Recall@K"
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Top-K Retrieved] --> B{Evaluate Each}
     B --> C[Relevant Docs<br/>in TopK]
     B --> D[Irrelevant Docs<br/>in TopK]
@@ -579,12 +599,13 @@ graph TB
     F[All Relevant Docs<br/>in Corpus] --> G[Recall@K:<br/>Retrieved / Total]
     C --> G
     
-    style A fill:#4fc3f7,color:#000
-    style C fill:#10b981,color:#fff
-    style D fill:#ef4444,color:#fff
-    style E fill:#fbbf24,color:#000
-    style F fill:#8b5cf6,color:#fff
-    style G fill:#fbbf24,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#8b5cf6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
                 <p>Retrieval Precision@K measures the proportion of retrieved documents that are actually relevant. It answers: "Of the K documents we retrieved, how many are relevant?"</p>
@@ -640,7 +661,8 @@ graph TB
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example
                   <MermaidPopover
                     title="Precision@K Example"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Query: Reset password?] --> B[Retrieval: Top-5]
     B --> C1[✅ Doc 1: Password reset guide]
     B --> C2[✅ Doc 2: Step-by-step reset]
@@ -657,13 +679,16 @@ graph TB
     
     D --> F[Precision@5 = 4/5 = 0.80]
     
-    style A fill:#4fc3f7,color:#000
-    style C1 fill:#10b981,color:#fff
-    style C2 fill:#10b981,color:#fff
-    style C4 fill:#10b981,color:#fff
-    style C5 fill:#10b981,color:#fff
-    style C3 fill:#ef4444,color:#fff
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C2 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C4 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C5 fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C3 fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -710,7 +735,8 @@ graph TB
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG
                   <MermaidPopover
                     title="Precision-Recall Trade-off"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Conservative Retrieval<br/>High Threshold] --> B[High Precision<br/>Clean Results]
     B --> C[Low Recall<br/>Missing Docs]
     C --> D[Incomplete Answers]
@@ -722,10 +748,17 @@ graph TB
     I[Balanced Approach] --> J[Moderate Precision<br/>& Recall]
     J --> K[Best Overall Quality]
     
-    style A fill:#fbbf24,color:#000
-    style E fill:#ef4444,color:#fff
-    style I fill:#10b981,color:#fff
-    style K fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.12} delay={0.3}>
@@ -793,7 +826,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hit Rate: Binary Success Metric"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query] --> K[Top-K results]
     K --> C{At least 1 relevant?}
@@ -801,13 +834,13 @@ graph TB
     C -->|No| MISS[Miss = 0]
     HIT --> HR[Hit Rate = hits / total queries]
     MISS --> HR
-    style Q fill:#4fc3f7,color:#000
-    style K fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style HIT fill:#c8e6c9,color:#000
-    style MISS fill:#ffcdd2,color:#000
-    style HR fill:#81c784,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style HIT fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style MISS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style HR fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -857,7 +890,8 @@ graph TB
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works
                   <MermaidPopover
                     title="Hit Rate Binary Evaluation"
-                    diagram={`flowchart TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A[Start: Query + Corpus] --> B[Run Retrieval System<br/>Get Top-K Results]
     B --> C{At Least 1<br/>Relevant Doc?}
     C -->|Yes| D[Hit = 1 ✓]
@@ -867,14 +901,14 @@ graph TB
     F --> G[Divide by Total<br/>Number of Queries]
     G --> H[Hit Rate Score]
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#3b82f6,color:#fff
-    style C fill:#8b5cf6,color:#fff
-    style D fill:#10b981,color:#fff
-    style E fill:#ef4444,color:#fff
-    style F fill:#0ea5e9,color:#fff
-    style G fill:#fbbf24,color:#000
-    style H fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3b82f6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#8b5cf6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#0ea5e9,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}}
                   />
                 </h3>
                 <p>Hit Rate measures the fraction of queries where at least one relevant document appears in the top-K results. It's a binary success metric: did we retrieve anything useful?</p>
@@ -931,20 +965,20 @@ Once you've done this for all your queries, you sum up all the hits—all those 
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hit Rate@10: 100 Query Test"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[100 queries] --> H[92 hits — at least 1 relevant doc]
     Q --> M[8 misses — zero relevant docs]
     H & M --> HR[Hit Rate = 92/100 = 0.92]
     HR -->|Exceeds 0.80 target ✓| OK[Acceptable performance]
     M --> INV[Investigate 8 failures]
-    style Q fill:#4fc3f7,color:#000
-    style H fill:#c8e6c9,color:#000
-    style M fill:#ffcdd2,color:#000
-    style HR fill:#ffd700,color:#000
-    style OK fill:#81c784,color:#000
-    style INV fill:#e1bee7,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style HR fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style INV fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -992,7 +1026,8 @@ graph TB
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG
                   <MermaidPopover
                     title="Hit Rate Impact on RAG Pipeline"
-                    diagram={`flowchart LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["❓ Query"] --> B["🔍 Retrieval"]
     B -->|Hit Rate ≥0.8| C["✅ At Least 1<br/>Relevant Doc"]
     B -->|Hit Rate <0.8| D["❌ Zero<br/>Relevant Docs"]
@@ -1001,14 +1036,14 @@ graph TB
     E --> G["✓ Quality Output"]
     F --> H["✗ Poor Output"]
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#3b82f6,color:#fff
-    style C fill:#10b981,color:#fff
-    style D fill:#ef4444,color:#fff
-    style E fill:#81c784,color:#000
-    style F fill:#fbbf24,color:#000
-    style G fill:#10b981,color:#fff
-    style H fill:#ef4444,color:#fff`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3b82f6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style G fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}}
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
@@ -1084,7 +1119,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Overlap: Coverage & Gaps"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Required ["Required Facts (5)"]
       F1[Fact 1] & F2[Fact 2] & F3[Fact 3] & F4[Fact 4] & F5[Fact 5 MISSING]
@@ -1092,15 +1127,17 @@ graph TB
     Required --> CO[Context Overlap = 4/5 = 80%]
     CO -->|High overlap| FA[Good faithfulness]
     F5 -->|Gap| HA[Potential hallucination]
-    style F1 fill:#c8e6c9,color:#000
-    style F2 fill:#c8e6c9,color:#000
-    style F3 fill:#c8e6c9,color:#000
-    style F4 fill:#c8e6c9,color:#000
-    style F5 fill:#ffcdd2,color:#000
-    style CO fill:#ffd700,color:#000
-    style FA fill:#81c784,color:#000
-    style HA fill:#ffcdd2,color:#000
-`}
+    style F1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F4 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F5 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style CO fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FA fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style HA fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style Required fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+style Facts fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style overlap fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -1147,7 +1184,8 @@ graph TB
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>How It Works <MermaidPopover
-                  diagram={`graph TD
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Reference Answer] -->|Extract Facts| B[Fact Set: F1, F2, F3, F4, F5]
     C[Retrieved Context] -->|Check Presence| D{Which Facts Present?}
     B --> D
@@ -1156,11 +1194,17 @@ graph TB
     E --> G[Overlap = 4/5 = 0.80]
     F -.->|Gap Identified| H[Update Knowledge Base]
     
-    style A fill:#3b82f6
-    style C fill:#3b82f6
-    style E fill:#22c55e
-    style F fill:#ef4444
-    style G fill:#eab308`}
+    style A fill:#3b82f6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3b82f6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#22c55e,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Facts fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Identified fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Presence fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   title="Context Overlap Score Calculation"
                 /></h3>
               </GSAPAnimated>
@@ -1219,7 +1263,8 @@ Click the diagram icon to see how facts flow from the reference answer through t
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Example <GSAPAnimated animation="bounceIn" delay={1.3}>
                   <MermaidPopover
-                    diagram={`sequenceDiagram
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+sequenceDiagram
     participant Q as Query
     participant R as Reference Answer
     participant C as Context
@@ -1237,7 +1282,7 @@ Click the diagram icon to see how facts flow from the reference answer through t
     style Q fill:#3b82f6
     style R fill:#8b5cf6
     style C fill:#3b82f6
-    style E fill:#eab308`}
+    style E fill:#eab308`}}
                     title="Context Overlap Calculation Flow"
                   />
                 </GSAPAnimated></h3>
@@ -1287,7 +1332,8 @@ Click the diagram icon to visualize the flow. You start with the query, define e
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '14px' }}>Impact on RAG <GSAPAnimated animation="rotateIn" delay={1.2}>
                   <MermaidPopover
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Context Overlap Score] --> B[High ≥0.85]
     A --> C[Medium 0.70-0.84]
     A --> D[Low <0.70]
@@ -1303,15 +1349,18 @@ Click the diagram icon to visualize the flow. You start with the query, define e
     D --> K[✗ High Risk]
     D --> L[✗ Poor Answer Quality]
     
-    style B fill:#22c55e
-    style C fill:#eab308
-    style D fill:#ef4444
-    style E fill:#22c55e
-    style F fill:#22c55e
-    style G fill:#22c55e
-    style J fill:#ef4444
-    style K fill:#ef4444
-    style L fill:#ef4444`}
+    style B fill:#22c55e,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#22c55e,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#22c55e,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#22c55e,stroke:#aaaaaa,stroke-width:1.5px
+    style J fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     title="How Overlap Scores Affect RAG Quality"
                   />
                 </GSAPAnimated></h3>
@@ -1385,7 +1434,7 @@ Click the diagram icon to visualize the flow. You start with the query, define e
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Relevance: LLM Judge Scoring"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query: reset password?] --> J[LLM Judge]
     J --> C1[Chunk 1: password reset → 0.9]
@@ -1393,14 +1442,14 @@ graph TB
     J --> C3[Chunk 3: billing info → 0.3]
     C1 & C2 & C3 --> AVG[Avg = 0.67]
     AVG -->|Below 0.70 threshold| FIX[Improve retrieval]
-    style Q fill:#4fc3f7,color:#000
-    style J fill:#e1bee7,color:#000
-    style C1 fill:#c8e6c9,color:#000
-    style C2 fill:#c8e6c9,color:#000
-    style C3 fill:#ffcdd2,color:#000
-    style AVG fill:#ffd700,color:#000
-    style FIX fill:#ffcdd2,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style J fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style AVG fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FIX fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -1458,7 +1507,8 @@ graph TB
                   View the scoring process flow
                   <MermaidPopover
                     title="Context Relevance Scoring Process"
-                    diagram={`flowchart TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A[User Query] --> B[Retrieval System]
     B --> C[Retrieved Chunks]
     C --> D{LLM Judge}
@@ -1470,9 +1520,15 @@ graph TB
     G --> H
     H --> I[Context Relevance Score]
     
-    style A fill:#3498db,color:#fff
-    style D fill:#e74c3c,color:#fff
-    style I fill:#2ecc71,color:#fff`}
+    style A fill:#3498db,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#e74c3c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#2ecc71,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </p>
               </GSAPAnimated>
@@ -1537,20 +1593,20 @@ where score_i ∈ [0,1] for each chunk`}
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Relevance: Score Distribution"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query: reset password?] --> C1[Chunk 1: password reset → 0.9]
     Q --> C2[Chunk 2: account security → 0.8]
     Q --> C3[Chunk 3: billing info → 0.3]
     C1 & C2 & C3 --> AVG[Avg = 0.67]
     AVG -->|Below 0.70 threshold| ACT[Remove Chunk 3]
-    style Q fill:#4fc3f7,color:#000
-    style C1 fill:#c8e6c9,color:#000
-    style C2 fill:#c8e6c9,color:#000
-    style C3 fill:#ffcdd2,color:#000
-    style AVG fill:#ffd700,color:#000
-    style ACT fill:#e1bee7,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style AVG fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style ACT fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -1630,7 +1686,8 @@ graph TB
                   Explore impact on system quality
                   <MermaidPopover
                     title="Context Relevance Impact Diagram"
-                    diagram={`flowchart LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A[Low Relevance Score] --> B[Filter Chunks]
     B --> C[Higher Precision Context]
     C --> D[Better Generation]
@@ -1642,10 +1699,17 @@ graph TB
     I[Monitor Scores] --> J[Identify Problem Queries]
     J --> K[Improve Retrieval]
     
-    style A fill:#e74c3c,color:#fff
-    style F fill:#2ecc71,color:#fff
-    style D fill:#3498db,color:#fff
-    style E fill:#3498db,color:#fff`}
+    style A fill:#e74c3c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2ecc71,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3498db,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3498db,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </p>
               </GSAPAnimated>
@@ -1707,20 +1771,20 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hallucination Rate: Claim Verification"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Answer: 12 claims] --> V{Verify vs context}
     V -->|Supported| OK[10 claims ✓]
     V -->|Unsupported| BAD[2 claims ✗ invented]
     OK & BAD --> RATE[Rate = 2/12 = 16.7%]
     RATE -->|Exceeds 10-15% target| FIX[Needs fixing]
-    style A fill:#4fc3f7,color:#000
-    style V fill:#e1bee7,color:#000
-    style OK fill:#c8e6c9,color:#000
-    style BAD fill:#ffcdd2,color:#000
-    style RATE fill:#ffd700,color:#000
-    style FIX fill:#ffcdd2,color:#000
-`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style BAD fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style RATE fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FIX fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -1778,7 +1842,8 @@ graph TB
                   View the detection process
                   <MermaidPopover
                     title="Hallucination Detection Process"
-                    diagram={`flowchart TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A[Generated Answer] --> B[Extract Claims]
     B --> C[Claim 1]
     B --> D[Claim 2]
@@ -1799,9 +1864,18 @@ graph TB
     H --> K
     K --> L[Hallucination Rate]
     
-    style A fill:#3498db,color:#fff
-    style I fill:#e74c3c,color:#fff
-    style L fill:#9b59b6,color:#fff`}
+    style A fill:#3498db,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#e74c3c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#9b59b6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </p>
               </GSAPAnimated>
@@ -1868,18 +1942,18 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hallucination Rate: 12 Claims Analyzed"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Answer: 12 claims] --> OK[10 claims ✓ supported]
     A --> BAD[2 claims ✗ invented]
     OK & BAD --> R[Rate = 2/12 = 16.7%]
     R -->|Over 10-15% target| FIX[Fix needed]
-    style A fill:#4fc3f7,color:#000
-    style OK fill:#c8e6c9,color:#000
-    style BAD fill:#ffcdd2,color:#000
-    style R fill:#ffd700,color:#000
-    style FIX fill:#ffcdd2,color:#000
-`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style BAD fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FIX fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -1955,7 +2029,8 @@ graph TB
                   Explore the trust relationship
                   <MermaidPopover
                     title="Hallucination Rate Impact on Trust"
-                    diagram={`flowchart TB
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A[High Hallucination Rate] --> B[Low User Trust]
     B --> C[Reduced Adoption]
     B --> D[Legal/Safety Risks]
@@ -1972,10 +2047,18 @@ graph TB
     K --> E
     L --> E
     
-    style A fill:#e74c3c,color:#fff
-    style E fill:#2ecc71,color:#fff
-    style D fill:#c0392b,color:#fff
-    style H fill:#3498db,color:#fff`}
+    style A fill:#e74c3c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2ecc71,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#c0392b,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#3498db,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </p>
               </GSAPAnimated>
@@ -2037,20 +2120,20 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Grounded Answer Score: Citation Verification"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Answer: 10 claims with citations] --> V1[Claim 1 → Doc A → ✓ supported]
     A --> V2[Claim 2 → Doc B → ✗ not supported]
     A --> V3[Claims 3-10 → ✓ verified]
     V1 & V2 & V3 --> GAS[GAS = 9/10 = 0.90]
     GAS -->|Meets 0.90 target| OK[Citation quality good]
-    style A fill:#4fc3f7,color:#000
-    style V1 fill:#c8e6c9,color:#000
-    style V2 fill:#ffcdd2,color:#000
-    style V3 fill:#c8e6c9,color:#000
-    style GAS fill:#ffd700,color:#000
-    style OK fill:#81c784,color:#000
-`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style V2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style V3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style GAS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2107,7 +2190,8 @@ graph TB
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula
                   <MermaidPopover
                     title="Citation Verification Process"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Generated Answer] --> B[Extract Claims]
     B --> C[Identify Citations]
     C --> D{For Each Citation}
@@ -2120,8 +2204,17 @@ graph TB
     I --> J
     J --> K[GAS = Correct / Total]
     
-    style A fill:#e3f2fd
-    style K fill:#c8e6c9`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2177,20 +2270,20 @@ Let's look at a concrete example to make this crystal clear.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Grounded Answer Score: Medication Example"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[10 cited claims] --> V[Verify each citation]
     V --> OK[9 citations verified ✓]
     V --> BAD[1 citation mismatch ✗]
     OK & BAD --> G[GAS = 9/10 = 0.90]
     G -->|Meets 0.90 target ✓| PASS[Citation quality OK]
-    style A fill:#4fc3f7,color:#000
-    style V fill:#e1bee7,color:#000
-    style OK fill:#c8e6c9,color:#000
-    style BAD fill:#ffcdd2,color:#000
-    style G fill:#ffd700,color:#000
-    style PASS fill:#81c784,color:#000
-`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style BAD fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style PASS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -2262,7 +2355,8 @@ Now let's discuss the broader implications and limitations of this metric.`
                 <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Limitations & Considerations
                   <MermaidPopover
                     title="Impact Flow"
-                    diagram={`graph LR
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Grounded Answer Score] --> B[Better Citations]
     B --> C[Increased Trust]
     C --> D[User Verification]
@@ -2274,9 +2368,15 @@ Now let's discuss the broader implications and limitations of this metric.`
     A --> H[Compliance]
     H --> I[Audit Trails]
     
-    style A fill:#c8e6c9
-    style C fill:#e3f2fd
-    style I fill:#fff9c4`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2334,20 +2434,20 @@ Now let's discuss the broader implications and limitations of this metric.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Faithfulness Score: Claim Verification"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     CTX[Context: return policy] --> V{Verify claims}
     V --> C1[30-day policy → ✓ in context]
     V --> C2[Receipt required → ✓ in context]
     V --> C3[Store credit → ✗ NOT in context]
     C1 & C2 & C3 --> F[Faithfulness = 2/3 = 0.67]
-    style CTX fill:#4fc3f7,color:#000
-    style V fill:#e1bee7,color:#000
-    style C1 fill:#c8e6c9,color:#000
-    style C2 fill:#c8e6c9,color:#000
-    style C3 fill:#ffcdd2,color:#000
-    style F fill:#ffd700,color:#000
-`}
+    style CTX fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2407,7 +2507,8 @@ graph TB
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula
                   <MermaidPopover
                     title="Faithfulness Evaluation Process"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Generated Answer] --> B[Extract Claims]
     B --> C{For Each Claim}
     C --> D[Search Retrieved Context]
@@ -2420,9 +2521,16 @@ graph TB
     
     J[Retrieved Context] --> D
     
-    style A fill:#e3f2fd
-    style I fill:#c8e6c9
-    style G fill:#ffcdd2`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2481,20 +2589,20 @@ Let's see a concrete example to solidify this understanding.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Faithfulness: Return Policy Example"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     C[Context: 30-day + receipt] --> V{Check 3 claims}
     V --> C1[30-day policy → ✓ in context]
     V --> C2[Receipt required → ✓ in context]
     V --> C3[Store credit → ✗ NOT in context]
     C1 & C2 & C3 --> F[Faithfulness = 2/3 = 0.67]
-    style C fill:#4fc3f7,color:#000
-    style V fill:#e1bee7,color:#000
-    style C1 fill:#c8e6c9,color:#000
-    style C2 fill:#c8e6c9,color:#000
-    style C3 fill:#ffcdd2,color:#000
-    style F fill:#ffd700,color:#000
-`}
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -2572,7 +2680,8 @@ Now let's explore the broader implications and trade-offs of this metric.`
                 <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Limitations & Considerations
                   <MermaidPopover
                     title="Trade-offs & Considerations"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Faithfulness Score] --> B[Benefits]
     A --> C[Limitations]
     
@@ -2585,9 +2694,16 @@ Now let's explore the broader implications and trade-offs of this metric.`
     C --> I[Computational Cost]
     C --> J[Context Completeness]
     
-    style A fill:#e1bee7
-    style B fill:#c8e6c9
-    style C fill:#ffcdd2`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2651,20 +2767,20 @@ Now let's explore the broader implications and trade-offs of this metric.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Answer Completeness: Coverage Check"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query: price + warranty + return policy] --> A{Answer covers?}
     A --> P[Price $199 → ✓ answered]
     A --> W[Warranty 2yr → ✓ answered]
     A --> R[Return policy → ✗ missing]
     P & W & R --> C[Completeness = 2/3 = 0.67]
-    style Q fill:#4fc3f7,color:#000
-    style A fill:#e1bee7,color:#000
-    style P fill:#c8e6c9,color:#000
-    style W fill:#c8e6c9,color:#000
-    style R fill:#ffcdd2,color:#000
-    style C fill:#ffd700,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2724,7 +2840,8 @@ graph TB
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula
                   <MermaidPopover
                     title="Completeness Evaluation Flow"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[User Query] --> B[Parse Query]
     B --> C[Identify Sub-Questions]
     C --> D[List Required Elements]
@@ -2737,9 +2854,17 @@ graph TB
     I --> J
     J --> K[Completeness = Present / Required]
     
-    style A fill:#e3f2fd
-    style K fill:#c8e6c9
-    style I fill:#ffcdd2`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2801,20 +2926,20 @@ Let's see a concrete example to make this practical.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Answer Completeness: 3-Part Query"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query: price + warranty + return policy] --> A{Answer covers?}
     A --> P[Price $199 → ✓ addressed]
     A --> W[Warranty 2yr → ✓ addressed]
     A --> R[Return policy → ✗ missing]
     P & W & R --> C[Completeness = 2/3 = 0.67]
-    style Q fill:#4fc3f7,color:#000
-    style A fill:#e1bee7,color:#000
-    style P fill:#c8e6c9,color:#000
-    style W fill:#c8e6c9,color:#000
-    style R fill:#ffcdd2,color:#000
-    style C fill:#ffd700,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -2895,7 +3020,8 @@ Now let's explore the broader implications and trade-offs of this metric.`
                 <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Limitations & Considerations
                   <MermaidPopover
                     title="Completeness Trade-offs"
-                    diagram={`graph TD
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Answer Completeness] --> B[Benefits]
     A --> C[Challenges]
     
@@ -2912,10 +3038,20 @@ Now let's explore the broader implications and trade-offs of this metric.`
     K --> M[Relevance]
     K --> N[Conciseness]
     
-    style A fill:#bbdefb
-    style B fill:#c8e6c9
-    style C fill:#ffcdd2
-    style K fill:#fff9c4`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style K fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2984,7 +3120,7 @@ Now let's explore the broader implications and trade-offs of this metric.`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Answer Specificity: Generic vs Specific"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query: troubleshoot connection?] --> G[Generic answer]
     Q --> S[Specific answer]
@@ -2992,14 +3128,14 @@ graph TB
     S --> SL[Settings→Network→WiFi, 10s, E-4019, v2.5+ → High score]
     GL --> GS[Specificity: 0.2]
     SL --> SS[Specificity: 0.9]
-    style Q fill:#4fc3f7,color:#000
-    style G fill:#ffcdd2,color:#000
-    style S fill:#c8e6c9,color:#000
-    style GL fill:#ffcdd2,color:#000
-    style SL fill:#c8e6c9,color:#000
-    style GS fill:#ffcdd2,color:#000
-    style SS fill:#81c784,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style S fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style GL fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style SL fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style GS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style SS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3048,7 +3184,8 @@ graph TB
               <GSAPAnimated animation="scaleIn" duration={0.9} delay={0.4}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Calculation Flow"
-                  diagram={`graph TB
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Answer Generated] --> B{Choose Method}
     B -->|Option 1| C[LLM Judge Scoring]
     B -->|Option 2| D[Info Density Calculation]
@@ -3066,7 +3203,20 @@ graph TB
     K --> L[Normalize to 0-1]
     
     G --> M[Final Specificity Score]
-    L --> M`}
+    L --> M
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`Option 1: LLM-judged specificity score [0-1]
@@ -3116,7 +3266,7 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Answer Specificity: Info Density Comparison"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query: troubleshoot connection?] --> L[Low specificity]
     Q --> H[High specificity]
@@ -3124,14 +3274,14 @@ graph TB
     H --> HS["Settings→Network→WiFi, 10s, E-4019, v2.5+"]
     LS --> LSC[Score: 0.2]
     HS --> HSC[Score: 0.9]
-    style Q fill:#4fc3f7,color:#000
-    style L fill:#ffcdd2,color:#000
-    style H fill:#c8e6c9,color:#000
-    style LS fill:#ffcdd2,color:#000
-    style HS fill:#c8e6c9,color:#000
-    style LSC fill:#ffcdd2,color:#000
-    style HSC fill:#81c784,color:#000
-`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style LS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style HS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style LSC fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style HSC fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3180,7 +3330,8 @@ graph TB
               <GSAPAnimated animation="slideInTop" duration={0.8} delay={0.1}>
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Impact Diagram"
-                  diagram={`graph LR
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[High Specificity] --> B[Actionable Outputs]
     A --> C[Full Context Utilization]
     A --> D[Concrete Information]
@@ -3191,7 +3342,14 @@ graph TB
     D --> F
     E --> F
     
-    F --> G[Improved RAG System]`}
+    F --> G[Improved RAG System]
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
 
               </GSAPAnimated>
@@ -3257,20 +3415,20 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Noise Density: Token Budget Analysis"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     CTX[3000 total tokens] --> REL[2200 relevant tokens]
     CTX --> NOI[800 noise tokens]
     NOI --> ND[Noise Density = 800/3000 = 26.7%]
     ND -->|Moderate noise| RERANK[Improve reranking]
     REL --> FOCUS[LLM focus area]
-    style CTX fill:#4fc3f7,color:#000
-    style REL fill:#c8e6c9,color:#000
-    style NOI fill:#ffcdd2,color:#000
-    style ND fill:#ffd700,color:#000
-    style RERANK fill:#e1bee7,color:#000
-    style FOCUS fill:#81c784,color:#000
-`}
+    style CTX fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style REL fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style NOI fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style ND fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style RERANK fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style FOCUS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+style noise fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3319,7 +3477,8 @@ graph TB
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.5}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Noise Detection Process"
-                  diagram={`graph TB
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Retrieved Context] --> B[Analyze Each Chunk]
     B --> C{Chunk Relevance?}
     
@@ -3341,7 +3500,22 @@ graph TB
     K --> L{Score Analysis}
     L -->|<15%| M[Excellent - Minimal Noise]
     L -->|15-30%| N[Acceptable - Some Cleanup Possible]
-    L -->|>30%| O[Poor - Significant Noise]`}
+    L -->|>30%| O[Poor - Significant Noise]
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
 
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
@@ -3395,18 +3569,18 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Noise Density: Token Analysis"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     CTX[3000 total tokens] --> REL[2200 relevant tokens]
     CTX --> NOI[800 noise tokens]
     NOI --> ND[Noise = 800/3000 = 26.7%]
     ND -->|Moderate: improve reranking| FIX[Tune retrieval]
-    style CTX fill:#4fc3f7,color:#000
-    style REL fill:#c8e6c9,color:#000
-    style NOI fill:#ffcdd2,color:#000
-    style ND fill:#ffd700,color:#000
-    style FIX fill:#e1bee7,color:#000
-`}
+    style CTX fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style REL fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style NOI fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style ND fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FIX fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+style reranking fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3456,7 +3630,8 @@ graph TB
               <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.1}>
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Impact Flow"
-                  diagram={`graph LR
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Low Noise Density] --> B[Reduced LLM Distraction]
     A --> C[Lower Token Costs]
     A --> D[Improved Grounding]
@@ -3470,7 +3645,17 @@ graph TB
     F --> J[Optimized RAG System]
     G --> J
     H --> J
-    I --> J`}
+    I --> J
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
@@ -3535,19 +3720,19 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Compression Efficiency: Token Reduction"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     B[Baseline: 2000 tokens → 85% coverage]
     C[Compressed: 1200 tokens → 85% coverage]
     B & C --> DIFF[Token saved: 800 tokens = 40%]
     DIFF --> CCE[CCE ratio = 1.67:1]
     CCE --> COST[Lower cost + latency]
-    style B fill:#ffcdd2,color:#000
-    style C fill:#c8e6c9,color:#000
-    style DIFF fill:#ffd700,color:#000
-    style CCE fill:#81c784,color:#000
-    style COST fill:#c8e6c9,color:#000
-`}
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style DIFF fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style CCE fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style COST fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3599,7 +3784,8 @@ graph TB
               <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.4}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Compression Process"
-                  diagram={`graph TB
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Baseline Context] --> B[Measure Coverage]
     A --> C[Count Tokens]
     B --> D[Baseline: Coverage/Tokens]
@@ -3625,7 +3811,27 @@ graph TB
     
     O --> P{Quality Check}
     P -->|Coverage Maintained| Q[Success!]
-    P -->|Coverage Dropped| R[Adjust & Retry]`}
+    P -->|Coverage Dropped| R[Adjust & Retry]
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Dropped fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Maintained fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`CCE = Coverage_τ / Tokens
@@ -3679,19 +3885,19 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Compression Efficiency"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     BASE[Baseline: 2000 tokens] --> COV1[85% coverage]
     OPT[Compressed: 1200 tokens] --> COV2[85% coverage]
     COV1 & COV2 --> SAVE[Saved: 800 tokens = 40%]
     SAVE --> RATIO[CCE ratio = 1.67:1]
-    style BASE fill:#ffcdd2,color:#000
-    style OPT fill:#c8e6c9,color:#000
-    style COV1 fill:#ffd700,color:#000
-    style COV2 fill:#ffd700,color:#000
-    style SAVE fill:#81c784,color:#000
-    style RATIO fill:#81c784,color:#000
-`}
+    style BASE fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style OPT fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style COV1 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style COV2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style SAVE fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style RATIO fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3741,7 +3947,8 @@ graph TB
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.1}>
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Efficiency Trade-offs"
-                  diagram={`graph TD
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Context Compression] --> B{Benefits}
     A --> C{Costs}
     
@@ -3763,7 +3970,20 @@ graph TB
     J --> K
     
     K -->|Positive| L[Deploy Compression]
-    K -->|Negative| M[Optimize or Skip]`}
+    K -->|Negative| M[Optimize or Skip]
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
@@ -3831,20 +4051,20 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Latency-Cost Tradeoff Score (LCTS)"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     W[α = 0.6 latency weight] --> L[Latency penalty = 0.6×0.7 = 0.42]
     W --> C[Cost penalty = 0.4×0.5 = 0.20]
     L & C --> S[Sum = 0.62]
     S --> LCTS[LCTS = 1 - 0.62 = 0.38]
     LCTS -->|Below 0.70 threshold| OPT[Needs optimization]
-    style W fill:#4fc3f7,color:#000
-    style L fill:#ffcdd2,color:#000
-    style C fill:#e1bee7,color:#000
-    style S fill:#ffd700,color:#000
-    style LCTS fill:#ffcdd2,color:#000
-    style OPT fill:#ffcdd2,color:#000
-`}
+    style W fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style LCTS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style OPT fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3896,7 +4116,8 @@ graph TB
               <GSAPAnimated animation="rotateIn" duration={1} delay={0.4}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Formula <MermaidPopover
                   title="View Tradeoff Calculation"
-                  diagram={`graph TB
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[Set Constraints] --> B[Latency Budget]
     A --> C[Cost Budget]
     A --> D[Weight α]
@@ -3921,7 +4142,24 @@ graph TB
     M --> N{Score Range}
     N -->|≥0.85| O[Excellent Efficiency]
     N -->|0.70-0.84| P[Good Efficiency]
-    N -->|<0.70| Q[Needs Optimization]`}
+    N -->|<0.70| Q[Needs Optimization]
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]`}
@@ -3977,20 +4215,20 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="LCTS Calculation: α=0.6 Example"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     W[α = 0.6] --> LP[Latency penalty: 0.6×0.7 = 0.42]
     W --> CP[Cost penalty: 0.4×0.5 = 0.20]
     LP & CP --> SUM[Sum = 0.62]
     SUM --> LCTS[LCTS = 1 - 0.62 = 0.38]
     LCTS -->|Below 0.70 threshold| OPT[Optimize pipeline]
-    style W fill:#4fc3f7,color:#000
-    style LP fill:#ffcdd2,color:#000
-    style CP fill:#e1bee7,color:#000
-    style SUM fill:#ffd700,color:#000
-    style LCTS fill:#ffcdd2,color:#000
-    style OPT fill:#ffcdd2,color:#000
-`}
+    style W fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style LP fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style CP fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style SUM fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style LCTS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style OPT fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                     />
                   </div>
                   <h3>Example</h3>
@@ -4050,7 +4288,8 @@ graph TB
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
                 <h3 style={{ color: '#2ecc71', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>Impact on RAG <MermaidPopover
                   title="View Complete Trade-off Matrix"
-                  diagram={`graph TB
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[LCTS Framework] --> B[Latency Budget]
     A --> C[Cost Budget]
     A --> D[Priority Weight α]
@@ -4073,7 +4312,21 @@ graph TB
     K --> L
     
     L --> M[Optimized RAG System]
-    M --> N[Production Success]`}
+    M --> N[Production Success]
+style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
                 /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.4}>

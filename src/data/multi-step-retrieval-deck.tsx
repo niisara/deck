@@ -280,7 +280,7 @@ Let's begin with our first strategy.`
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Iterative Retrieve-and-Refine: Loop Example"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🔍 User Query"] --> B["Initial Retrieval"]
     B --> C["📝 Draft Partial Answer"]
@@ -290,11 +290,14 @@ flowchart TB
     F --> G{"Stop Criteria?"}
     G -->|"No — gaps remain"| C
     G -->|"Yes — confident"| H["✅ Final Answer"]
-    style A fill:#4fc3f7,color:#000
-    style H fill:#81c784,color:#000
-    style G fill:#fff9c4,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Ambiguous questions, sparse corpora, long-form synthesis, exploratory Q&A</p>
@@ -443,17 +446,19 @@ With that understanding of our first strategy, let's move on to our second techn
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="HyDE: Hypothetical Document Flow"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["❓ Short Query\n'What causes inflation?'"] --> B["🤖 Generate\nHypothetical Doc"]
     B --> C["📐 Embed\nSynthetic Doc"]
     C --> D["🔍 kNN Retrieval\nvs. Real Corpus"]
     D --> E["📄 Real Docs\n(discard hypothetical)"]
     E --> F["✅ Final Answer"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Short queries, niche domains, low-recall vector stores, lexical mismatch</p>
@@ -603,7 +608,7 @@ Now let's move on to our third strategy, Query Decomposition, which takes yet an
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Query Decomposition: Divide & Conquer"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🧩 Complex Query"] --> B["📋 Decompose"]
     B --> C["Sub-Q 1\nDeploy infra?"]
@@ -615,9 +620,15 @@ flowchart TB
     F --> I["✅ Synthesize\nFinal Answer"]
     G --> I
     H --> I
-    style A fill:#4fc3f7,color:#000
-    style I fill:#81c784,color:#000
-    style B fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Multi-fact or multi-source questions, procedural tasks, comprehensive reports</p>
@@ -775,7 +786,7 @@ Now let's move on to Chain-of-Thought Guided Retrieval, which takes a similar bu
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Chain-of-Thought Guided Retrieval: Step-Aligned Evidence"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["❓ Question"] --> B["🧠 CoT Skeleton\n(no answer yet)"]
     B --> C["Step 1:\nExtract cues"]
@@ -787,9 +798,15 @@ flowchart TB
     F --> I["✅ Final Answer\n(step-aligned evidence)"]
     G --> I
     H --> I
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style I fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Reasoning-heavy tasks where targeted facts matter (analysis, calculations with context)</p>
@@ -940,17 +957,19 @@ Now let's move to our fifth strategy, Step-Back Reasoning, which takes a differe
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Step-Back Reasoning: Zoom Out Then Zoom In"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🔎 Specific Query\n'Why does useState\ncause re-renders?'"] --> B["⬆️ Step-Back Question\n'How does React's\nrendering cycle work?'"]
     B --> C["📚 Retrieve\nHigh-Level Context"]
     C --> D["🎯 Reformulate\nPrecise Query"]
     D --> E["🔍 Retrieve\nSpecific Evidence"]
     E --> F["✅ Final Answer"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#e3f2fd,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Overly specific/noisy queries, concept-heavy topics, when direct retrieval fails</p>
@@ -1097,7 +1116,7 @@ Now let's move to our sixth strategy, Multi-Hop Graph Traversal, which takes a c
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Multi-Hop Graph Traversal: Following Entity Paths"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🌱 Seed Entity\n'Person A'"] -->|"Hop 1"| B["🔗 Relation:\nworked_at"]
     B --> C["🏢 Entity:\nCompany X"]
@@ -1105,10 +1124,13 @@ flowchart LR
     D --> E["🏦 Entity:\nCompany Y"]
     E --> F["📄 Gather Docs\nper Hop"]
     F --> G["✅ Answer:\nHow is A connected\nto Company Y?"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#e1bee7,color:#000
-    style E fill:#c8e6c9,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Relational questions, cause-effect chains, linking distant facts</p>
@@ -1250,7 +1272,7 @@ Now let's move to our seventh strategy, Context-Summarize-and-Retrieve, which ta
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Context-Summarize-and-Retrieve: Rolling Summary Loop"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["📚 Accumulated\nContext (long)"] --> B["✂️ Summarize\n(salient facts +\nopen questions)"]
     B --> C["🔑 Extract Key\nTerms & Gaps"]
@@ -1259,10 +1281,13 @@ flowchart TB
     E --> F{"More\nneeded?"}
     F -->|"Yes"| B
     F -->|"No"| G["✅ Final Answer\n(within token budget)"]
-    style A fill:#ffcdd2,color:#000
-    style B fill:#e1bee7,color:#000
-    style G fill:#81c784,color:#000
-    style F fill:#fff9c4,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Long sessions, iterative research, limited context window</p>
@@ -1409,7 +1434,7 @@ Now let's look at our eighth strategy, Answer-Conditioned Re-Retrieval, which us
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Answer-Conditioned Re-Retrieval: Claim Verification"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🤖 Generate\nProvisional Answer"] --> B["🔬 Extract\nAtomic Claims"]
     B --> C["Claim 1:\nFact X"]
@@ -1422,9 +1447,16 @@ flowchart TB
     G --> I
     H --> I
     I --> J["📝 Revise & Cite\n(or flag uncertain)"]
-    style A fill:#4fc3f7,color:#000
-    style J fill:#81c784,color:#000
-    style I fill:#fff9c4,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style J fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Fact-checking, citations, high-stakes outputs, audits</p>
@@ -1568,7 +1600,7 @@ Now let's move to our final strategy, Feedback-Based Retrieval Loop, which uses 
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Feedback-Based Retrieval Loop: Learning from Signals"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 Initial\nRetrieval"] --> B["📊 Present\nResults"]
     B --> C["👍👎 Collect\nFeedback\n(clicks, votes,\ndwell time)"]
@@ -1577,10 +1609,13 @@ flowchart LR
     E --> F{"Satisfied?"}
     F -->|"No"| B
     F -->|"Yes"| G["💾 Store\nPreferences"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#fff9c4,color:#000
-    style G fill:#81c784,color:#000
-    style D fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a1a3a,color:#e0d0f0,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p><strong>When to Use:</strong> Interactive systems, personalization, cold-start or dynamic corpora</p>

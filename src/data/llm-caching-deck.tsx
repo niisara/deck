@@ -111,14 +111,15 @@ export const llmCachingDeck: Deck = {
                         Caching Layers
                         <MermaidPopover
                           title="Caching Architecture Layers"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🌐 Edge/App Cache"] --> B["📊 Vector/Index Cache"]
     B --> C["🤖 Model Runtime Cache"]
     C --> D["👤 User/Session Memory"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#81c784,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2e1a47,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -173,14 +174,15 @@ export const llmCachingDeck: Deck = {
 
 #### The Four Caching Layers
 \`\`\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["🌐 Edge/App Cache"] --> B["📊 Vector/Index Cache"]
     B --> C["🤖 Model Runtime Cache"]
     C --> D["👤 User/Session Memory"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#81c784,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#e1bee7,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2e1a47,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
 \`\`\`
 
 [lecture] Caching isn't one-size-fits-all. We work with **four distinct layers**. At the top, you have your **edge or application cache** that stores complete responses and templates. This is your first line of defense. Moving deeper, there's the **vector or index cache** that holds retrieval results. [conversational] Then you get into the model itself with **runtime caches** like KV caches 👉 'kay-vee' and logit caches that make generation faster. Finally, at the personalization layer, you have **user and session memory** that maintains contextual state across conversations.
@@ -215,16 +217,20 @@ How do you know if your caching strategy is working? [confidently] Four key metr
                         What is Cached
                         <MermaidPopover
                           title="Query Embedding Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Query"] --> B["🔄 Normalize"]
     B --> C{"🔍 Cache?"}
     C -->|Hit| D["⚡ Return Embedding"]
     C -->|Miss| E["🤖 Generate Embedding"]
     E --> F["💾 Store in Cache"]
     F --> D
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -289,6 +295,7 @@ How do you know if your caching strategy is working? [confidently] Four key metr
 [lecture] In this pattern, we cache **query embedding vectors and their normalization artifacts**. [conversational] Think about what happens every time a user asks a question. Your system takes that text, normalizes it, and then runs it through an embedding model to convert it into a high-dimensional vector. [seriously] This embedding step isn't free. It requires a forward pass through a neural network, which takes time and costs money or compute resources.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 Query"] --> B["🔄 Normalize"]
     B --> C{"🔍 Cache?"}
@@ -296,9 +303,12 @@ flowchart LR
     C -->|Miss| E["🤖 Generate Embedding"]
     E --> F["💾 Store in Cache"]
     F --> D
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 [conversational] When a query comes in, we normalize it first, then check the cache. [pleased] If we get a cache hit, we instantly return the embedding without touching the embedding model. On a miss, we generate the embedding, store it in the cache, and then return it. [confidently] Simple flow, massive impact.
@@ -395,16 +405,20 @@ We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassu
                         What is Cached
                         <MermaidPopover
                           title="Retrieval Results Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Query"] --> B["🔢 Embedding"]
     B --> C{"🔍 Cache?"}
     C -->|Hit| D["⚡ Return Results"]
     C -->|Miss| E["🔎 Vector Search"]
     E --> F["💾 Store in Cache"]
     F --> D
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -471,6 +485,7 @@ We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassu
 [lecture] In this pattern, we cache **the output of vector search operations**. Specifically, we're storing the **top-k document IDs, their similarity scores, and optionally document snippets or previews**. [storytelling] Think about what happens when you run a semantic search query. You generate an embedding, that embedding gets compared against potentially millions of vectors in your index, you compute similarity scores, sort them, apply filters, and return the top results. [seriously] This entire vector search operation is computationally expensive and time-consuming.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 Query"] --> B["🔢 Embedding"]
     B --> C{"🔍 Cache?"}
@@ -478,9 +493,12 @@ flowchart LR
     C -->|Miss| E["🔎 Vector Search"]
     E --> F["💾 Store in Cache"]
     F --> D
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 [conversational] Here's the flow. Query comes in, gets embedded, then we check the cache. [pleased] On a **cache hit**, we instantly return the document IDs and scores without touching the vector database at all. On a **cache miss**, we perform the full vector search, store those results in the cache, and then return them. [confidently] The key insight is that vector search is often one of the most expensive operations in your retrieval pipeline. By caching these results, you can skip that entire computation.
@@ -585,15 +603,18 @@ You also include **k**, which is the number of results requested, and any **filt
                       <strong>
                         What is Cached
                         <MermaidPopover
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📋 Template ID + Variables"] --> B{"🔍 Cache Check"}
     B -->|Hit| C["⚡ Return Rendered Prompt"]
     B -->|Miss| D["🔨 Render Template"]
     D --> E["💾 Store in Cache"]
     E --> C
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -660,15 +681,18 @@ You also include **k**, which is the number of results requested, and any **filt
 [lecture] In this pattern, we cache **rendered system and instruction templates along with their tokenized IDs**. Let me explain what this means in practice. [conversational] Most LLM applications don't send raw, ad-hoc text to the model. You typically have structured prompt templates with placeholders for dynamic content. [storytelling] Something like: "You are a helpful assistant specializing in {domain}. Answer the following question: {user_question}." The static parts, like "You are a helpful assistant," remain constant across thousands of requests. The dynamic parts, like the domain and user question, change per request.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📋 Template ID + Variables"] --> B{"🔍 Cache Check"}
     B -->|Hit| C["⚡ Return Rendered Prompt"]
     B -->|Miss| D["🔨 Render Template"]
     D --> E["💾 Store in Cache"]
     E --> C
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 [conversational] When a request comes in with a template ID and variables, we check the cache. [pleased] On a hit, we get back the pre-rendered prompt text or, even better, the pre-tokenized token IDs ready to send to the model. On a miss, we render the template, tokenize it if needed, store it in the cache, and return it. [confidently] The beauty here is that we're avoiding repetitive template rendering and tokenization operations.
@@ -804,18 +828,22 @@ You also keep templates in **application-level memory for high-access frequency 
                         What is Cached
                         <MermaidPopover
                           title="Semantic Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Query"] --> B["🔢 Embedding"]
     B --> C["🔍 Similarity Search"]
     C --> D{"📊 Above Threshold?"}
     D -->|Yes| E["⚡ Return Cached Response"]
     D -->|No| F["🤖 Generate New"]
-    F --> G["💾 Store"]
+    F --> G["�� Store"]
     G --> E
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000
-    style D fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -882,18 +910,22 @@ You also keep templates in **application-level memory for high-access frequency 
 [lecture] In this pattern, we cache the **final LLM answer with citations, conditioned on the query**. This is the complete response that your RAG 👉 'rag' system generates after retrieving context and prompting the model. [storytelling] Think of it as caching the entire output of your RAG pipeline. When a user asks "What is our refund policy?" your system retrieves relevant documents from your knowledge base, constructs a prompt with that context, generates an answer from the LLM, and adds citations pointing back to source documents. [confidently] All of that, the complete package, gets cached.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 Query"] --> B["🔢 Embedding"]
     B --> C["🔍 Similarity Search"]
     C --> D{"📊 Above Threshold?"}
     D -->|Yes| E["⚡ Return Cached Response"]
     D -->|No| F["🤖 Generate New"]
-    F --> G["💾 Store"]
+    F --> G["�� Store"]
     G --> E
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000
-    style D fill:#ffcdd2,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 [conversational] The flow is elegant. A query comes in, you generate or retrieve its embedding, and perform a **similarity search** against previously cached queries. [excited] Here's where it gets interesting: instead of checking for exact matches like Pattern 1, this pattern uses **semantic similarity**. [lecture] If the similarity score is above your threshold, maybe zero-point-nine on a cosine similarity scale, you return the cached response. If it's below threshold, you generate a new response, store it with its query embedding, and return it.
@@ -1049,7 +1081,8 @@ You also need **content classification** to determine appropriate TTLs 👉 'tee
                         What is Cached
                         <MermaidPopover
                           title="Chunk-Level Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Document"] --> B["✂️ Chunk"]
     B --> C{"🔍 Cache?"}
     C -->|Hit| D["⚡ Return Cached"]
@@ -1057,9 +1090,13 @@ You also need **content classification** to determine appropriate TTLs 👉 'tee
     E --> F["🔢 Embed"]
     F --> G["💾 Store"]
     G --> D
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1126,6 +1163,7 @@ You also need **content classification** to determine appropriate TTLs 👉 'tee
 [conversational] In this pattern, we cache **per-chunk embeddings, tokenized text, reranker features, and metadata**. Think about what happens when you ingest documents into your RAG 👉 'rag' system. You take large documents, split them into chunks, generate embeddings for each chunk, tokenize the text, potentially compute reranker features, and extract metadata. All of this processing is expensive and time-consuming.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📄 Document"] --> B["✂️ Chunk"]
     B --> C{"🔍 Cache?"}
@@ -1134,9 +1172,13 @@ flowchart LR
     E --> F["🔢 Embed"]
     F --> G["💾 Store"]
     G --> D
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 When a document comes in for processing, we chunk it first, then check the cache for each chunk. If we get a cache hit, we instantly return the pre-processed chunk data without re-running the embedding model or tokenizer. On a miss, we process the chunk, generate the embedding, store everything in the cache, and then return it. This is particularly valuable when you're re-indexing documents or when multiple documents contain overlapping content.
@@ -1279,7 +1321,8 @@ It's less valuable in **small corpora or highly unique content** where there's m
                         What is Cached
                         <MermaidPopover
                           title="KV Cache Flow in Transformer"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📝 Prompt Tokens"] --> B["🔄 Transformer Layer 1"]
     B --> C["💾 Store K,V Vectors L1"]
     C --> D["🔄 Transformer Layer 2"]
@@ -1288,10 +1331,14 @@ It's less valuable in **small corpora or highly unique content** where there's m
     F --> G["🤖 Generation Phase"]
     G --> H["♻️ Reuse K,V for Next Tokens"]
     H --> G
-    style A fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000
-    style C fill:#ffd700,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1357,6 +1404,7 @@ It's less valuable in **small corpora or highly unique content** where there's m
 [conversational] In this pattern, we cache **transformer attention key and value tensors per layer for prompt tokens**. Let me break down what that means. When a transformer model like **GPT 👉 'gee-pee-tee'** or **Llama 👉 'lah-mah'** processes text, it uses self-attention mechanisms in every layer. For each token in the input, the model computes three vectors: a query vector, a key vector, and a value vector. These are the famous **Q 👉 'cue', K 👉 'kay', and V 👉 'vee'** in the attention formula.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["📝 Prompt Tokens"] --> B["🔄 Transformer Layer 1"]
     B --> C["💾 Store K,V Vectors L1"]
@@ -1366,10 +1414,14 @@ flowchart TB
     F --> G["🤖 Generation Phase"]
     G --> H["♻️ Reuse K,V for Next Tokens"]
     H --> G
-    style A fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000
-    style C fill:#ffd700,color:#000
-    style E fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 Here's the key insight: when you're generating text auto-regressively, token by token, the query changes with each new token, but the keys and values for all the previous tokens remain constant. They never change. So instead of recomputing the K and V vectors for the entire prompt at every generation step, which would be incredibly wasteful, we cache them. We compute them once during the initial **prompt processing phase** and then reuse them throughout the **generation phase**.
@@ -1504,18 +1556,20 @@ Let's move on to the next pattern, where we'll see another model-level caching t
                         What is Cached
                         <MermaidPopover
                           title="Logit Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Input Tokens"] --> B["🔄 Forward Pass"]
     B --> C["💾 Store Logits"]
     C --> D["🎲 Sampling"]
     D --> E["✨ Next Token"]
     E --> F["🔁 Reuse Prefix Logits"]
     F -.->|For Similar Inputs| B
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#ffd700,color:#000
-    style F fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1587,6 +1641,7 @@ Here's the key insight: computing those logits is expensive. It requires a full 
 [confidently] In **Logit Cache**, we're caching **next-token logits and probabilities for frequent prefixes**. Think about common prompt templates. If your system starts every customer support query with the same system prompt, maybe five hundred tokens long, the logits for the next token after that prefix are always the same. Why recompute them millions of times? Cache them once.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 Input Tokens"] --> B["🔄 Forward Pass"]
     B --> C["💾 Store Logits"]
@@ -1594,11 +1649,12 @@ flowchart LR
     D --> E["✨ Next Token"]
     E --> F["🔁 Reuse Prefix Logits"]
     F -.->|For Similar Inputs| B
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#ffd700,color:#000
-    style F fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
 \\\`\\\`\\\`
 
 Practically speaking, you can cache the **full logit vectors** if memory allows, or you can cache only the **top-k most likely tokens** to save space. For a vocabulary of fifty thousand tokens, storing full float32 logits per prefix costs about two hundred kilobytes. That adds up quickly. But storing just the top one hundred tokens with their probabilities reduces this to a few kilobytes, and often that's sufficient because you're typically sampling from the top candidates anyway.
@@ -1757,15 +1813,18 @@ You can also layer logit cache beneath **semantic similarity cache**. The semant
                         What is Cached
                         <MermaidPopover
                           title="Template Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Template + Variables"] --> B{"🔍 Check Cache"}
     B -->|Hit| C["⚡ Return Formatted Output"]
     B -->|Miss| D["🤖 Format Template"]
     D --> E["💾 Store"]
     E --> C
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1832,15 +1891,18 @@ You can also layer logit cache beneath **semantic similarity cache**. The semant
 [lecture] In this pattern, we cache **rendered templates with substituted variables, formatted output strings, and pre-processed template results**. Think about applications that send emails, generate reports, or display notifications. You have a template, like "Hello {{name}}, your order {{order_id}} has been shipped", and you substitute variables to create the final output. Even though template rendering is relatively fast compared to LLM inference, it adds up when you're processing thousands or millions of requests.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📄 Template + Variables"] --> B{"🔍 Check Cache"}
     B -->|Hit| C["⚡ Return Formatted Output"]
     B -->|Miss| D["🤖 Format Template"]
     D --> E["💾 Store"]
     E --> C
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 When a template rendering request comes in with specific variables, we check the cache first. If we've rendered this exact combination before, we return it immediately. On a cache miss, we format the template, store the result, and return it. This is especially powerful for templates with enumerated or limited variable spaces.
@@ -1951,15 +2013,19 @@ Fourth, this pattern is **not effective for templates with user-generated or hig
                         What is Cached
                         <MermaidPopover
                           title="Tool Call Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🔧 Tool Name + Arguments"] --> B{"🔍 Check Cache"}
     B -->|Hit| C["⚡ Return Cached Result"]
     B -->|Miss| D["🤖 Execute Tool"]
     D --> E["💾 Store Result"]
     E --> F["📤 Return"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2026,15 +2092,19 @@ Fourth, this pattern is **not effective for templates with user-generated or hig
 [conversational] In this pattern, we cache **tool execution results**. These are the outputs from **API responses**, **database queries**, and **calculations** performed by your tools. When a language model decides to call a tool, like searching a knowledge base, fetching weather data, or calculating a complex formula, the result of that execution is what we store. We also cache **function call outputs for deterministic tools**, meaning tools that always return the same result for the same inputs. And we include **metadata** like execution time and success or error status, which helps with debugging and monitoring.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔧 Tool Name + Arguments"] --> B{"🔍 Check Cache"}
     B -->|Hit| C["⚡ Return Cached Result"]
     B -->|Miss| D["🤖 Execute Tool"]
     D --> E["💾 Store Result"]
     E --> F["📤 Return"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 The flow is straightforward. When your agent decides to call a tool with specific arguments, we first check if we've cached that exact combination. On a cache hit, we return the stored result immediately, skipping the actual tool execution. On a miss, we execute the tool, store the result with a timestamp, and return it. This is especially powerful for expensive operations like API calls that have rate limits or cost money per invocation.
@@ -2181,15 +2251,19 @@ It's less valuable in **highly personalized, unique tool calls** where every req
                         What is Cached
                         <MermaidPopover
                           title="Session Memory Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 User Message"] --> B["🔑 Session ID"]
     B --> C["📂 Load Context + History"]
     C --> D["⚙️ Process"]
     D --> E["🔄 Update Session"]
     E --> F["💾 Store"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2256,15 +2330,19 @@ It's less valuable in **highly personalized, unique tool calls** where every req
 [conversational] In this pattern, we cache **conversation history and message sequences**. Think about a typical chatbot interaction. When a user says "Tell me more about that," the system needs to know what "that" refers to. The entire conversation history, the back-and-forth exchanges between the user and the assistant, needs to be readily available. We're storing complete message sequences with timestamps, roles like user or assistant or system, and the full content of each message.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 User Message"] --> B["🔑 Session ID"]
     B --> C["📂 Load Context + History"]
     C --> D["⚙️ Process"]
     D --> E["🔄 Update Session"]
     E --> F["💾 Store"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
 \\\`\\\`\\\`
 
 When a message comes in, we use the session ID to load the existing context and history. The system processes the new message with full awareness of what came before. After generating a response, we update the session state and store it back. This creates the illusion of memory and continuity.
@@ -2389,7 +2467,8 @@ And fourth, you need **data retention and deletion mechanisms**. You can't keep 
                         What is Cached
                         <MermaidPopover
                           title="Ranked Results Cache Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Query"] --> B["🔍 Initial Retrieval"]
     B --> C["📋 Candidate List"]
     C --> D{"🔍 Cache?"}
@@ -2397,9 +2476,13 @@ And fourth, you need **data retention and deletion mechanisms**. You can't keep 
     D -->|Miss| F["🤖 Re-Ranker Model"]
     F --> G["💾 Store Rankings"]
     G --> E
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2468,6 +2551,7 @@ And fourth, you need **data retention and deletion mechanisms**. You can't keep 
 That's where re-ranking comes in. You take those candidates and run them through a more sophisticated model, usually a **cross-encoder** or even a small **LLM 👉 'el-el-em'** like **GPT-3.5 👉 'gee-pee-tee three point five'** or **Llama-3-8B 👉 'lah-mah three eight bee'**, that scores each candidate's relevance to the query with much higher accuracy. The problem? Re-ranking is expensive. A cross-encoder requires a forward pass for each query-document pair. If you have a hundred candidates, that's a hundred forward passes. This can take several hundred milliseconds and consumes significant compute resources.
 
 \\\`\\\`\\\`mermaid
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📝 Query"] --> B["🔍 Initial Retrieval"]
     B --> C["📋 Candidate List"]
@@ -2476,9 +2560,13 @@ flowchart LR
     D -->|Miss| F["🤖 Re-Ranker Model"]
     F --> G["💾 Store Rankings"]
     G --> E
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 \\\`\\\`\\\`
 
 When a query comes in, we perform the initial retrieval, which gives us a candidate list. Before re-ranking, we check the cache. If we have a hit, we return the pre-computed ranked results immediately, skipping the expensive re-ranker entirely. On a miss, we run the re-ranker, store those rankings in the cache, and then return them. The key insight is that for similar or identical queries, the ranked order of candidates is often very similar or identical.
@@ -2605,7 +2693,7 @@ This coupling between retrieval and re-ranking caches adds architectural complex
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Summarization Cache Flow"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["📄 Source Document"] --> B{"📦 Cached Summary?"}
     B -->|"Hit"| C["⚡ Return Summary"]
@@ -2621,11 +2709,15 @@ flowchart TB
 
     C --> Levels
 
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#e1bee7,color:#000
-    style Levels fill:#f5f5f5,stroke:#1976d2,stroke-width:2px,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2e1a47,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Levels fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                 />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -2755,7 +2847,7 @@ flowchart TB
               <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                 <MermaidPopover
                   title="Final Answer Cache: Query → TTL Flow"
-                  diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["📝 User Query"] --> B["🔤 Normalize Query"]
     B --> C["🔑 hash(query + lang + model_id)"]
@@ -2765,10 +2857,13 @@ flowchart TB
     F --> G["💾 Store with TTL (mins → days)"]
     G --> E
 
-    style A fill:#4fc3f7,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#ffd700,color:#000
-    style G fill:#e1bee7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2e1a47,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                 />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>

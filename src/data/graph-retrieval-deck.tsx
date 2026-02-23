@@ -89,7 +89,8 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
                 Technique Categories
                 <MermaidPopover
                   title="Graph Retrieval Technique Landscape"
-                  diagram={`graph TB
+                  diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A[13 Graph Retrieval<br/>Techniques] --> B[Basic Retrieval<br/>1-3]
     A --> C[Path & Community<br/>4-6]
     A --> D[Hybrid Methods<br/>7-8]
@@ -112,11 +113,24 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
     E --> E4[Path Stitching]
     E --> E5[LLM 👉 'el-el-em' Guided]
     
-    style A fill:#ffd700,color:#000
-    style B fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#ffb74d,color:#000`}
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E5 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 />
               </h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '1.2rem', marginTop: '14px' }}>
@@ -222,15 +236,15 @@ The remaining techniques combine graphs with other technologies or add sophistic
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Node-Level Retrieval - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Query] --> B[Match Node]
     B --> C[Node Content]
     C --> D[Return Result]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -276,15 +290,16 @@ Now let's see exactly how this technique works under the hood!`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Node-Level Retrieval Flow"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🔍 Query:<br/>Python"] --> B["📊 Match Node:<br/>Similarity Score"]
     B --> C["🎯 Node:<br/>Python Programming"]
     C --> D["📄 Return:<br/>Node Content"]
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -386,15 +401,15 @@ Now let's consider the trade-offs and limitations of this approach!`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Node-Level Retrieval - When to Use"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q{Query Type?} -->|Single entity| U[Use Node-Level]
     Q -->|Multi-hop| A[Use Path-Based]
     U --> R[High Precision]
-    style Q fill:#ffd700,color:#000
-    style U fill:#c8e6c9,color:#000
-    style A fill:#ffcdd2,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style U fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -459,17 +474,17 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Edge-Weighted Retrieval - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Seed Node] -->|weight=0.9| B[Node B]
     A -->|weight=0.3| C[Node C]
     B --> D[Rank Higher]
     C --> E[Rank Lower]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#c8e6c9,color:#000
-    style C fill:#ffcdd2,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -520,7 +535,8 @@ Now let's see exactly how this technique works in practice!`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Edge-Weighted Retrieval Process"
-                      diagram={`flowchart TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["🔍 Query:<br/>Machine Learning"] --> B["📊 Find Seed Node:<br/>ML 👉 'em-el' Concept"]
     B --> C["🔗 Get Connected Nodes<br/>with Edge Weights"]
     C --> D["📈 Score Neighbors:<br/>weight × relevance"]
@@ -531,14 +547,14 @@ Now let's see exactly how this technique works in practice!`
     E2 --> F
     E3 --> F
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#e1bee7,color:#000
-    style E1 fill:#ffd700,color:#000
-    style E2 fill:#ffeb3b,color:#000
-    style E3 fill:#fff176,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E1 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -658,15 +674,15 @@ Now let's examine the benefits and limitations of this approach!`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Edge-Weighted Retrieval - When to Use"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     E{Edge Quality?} -->|Rich metadata| U[Use Edge-Weighted]
     E -->|No weights| A[Use Basic Traversal]
     U --> H[Quality Ranking]
-    style E fill:#ffd700,color:#000
-    style U fill:#c8e6c9,color:#000
-    style A fill:#ffcdd2,color:#000
-    style H fill:#81c784,color:#000`}
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style U fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -742,19 +758,19 @@ Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Neighborhood Expansion - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Query] --> B[Seed Node]
     B --> C[Neighbor 1]
     B --> D[Neighbor 2]
     B --> E[Neighbor 3]
     C & D & E --> F[Aggregated Context]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -814,7 +830,8 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Neighborhood Expansion Process"
-                      diagram={`flowchart TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TD
     A["🔍 Query:<br/>Python Function"] --> B["🎯 Seed Node:<br/>authenticate()"]
     B --> C["🔗 1-Hop Expansion"]
     C --> D1["📋 Parameters"]
@@ -829,16 +846,16 @@ graph TB
     D5 --> E
     E --> F["✅ Return Enriched Result"]
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#ffb74d,color:#000
-    style D1 fill:#81c784,color:#000
-    style D2 fill:#81c784,color:#000
-    style D3 fill:#81c784,color:#000
-    style D4 fill:#81c784,color:#000
-    style D5 fill:#81c784,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#4fc3f7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style D1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D4 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D5 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -988,15 +1005,15 @@ Return A + context from neighbors`}
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Neighborhood Expansion - Depth Tradeoff"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     D{Hop Depth} -->|1-hop| P[Precise Fast]
     D -->|2-hop| M[More Context]
     D -->|3+ hop| N[Noise Risk]
-    style D fill:#ffd700,color:#000
-    style P fill:#c8e6c9,color:#000
-    style M fill:#e3f2fd,color:#000
-    style N fill:#ffcdd2,color:#000`}
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style N fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -1075,15 +1092,15 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Path-Based Retrieval - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     A[Start] -->|hop 1| B[Node B]
     B -->|hop 2| C[Node C]
     C -->|hop 3| D[Answer]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -1147,7 +1164,8 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Path-Based Retrieval Process"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🔍 Query:<br/>Vitamin D → Bone Health"] --> B["🎯 Find Endpoints:<br/>Start & Target Nodes"]
     B --> C["🛤️ Pathfinding:<br/>BFS 👉 'bee-eff-ess'/Dijkstra"]
     C --> D1["Path 1:<br/>A→B→C→D"]
@@ -1159,15 +1177,15 @@ graph LR
     E --> F["🏆 Rank Paths"]
     F --> G["✅ Return Best Paths<br/>with Evidence"]
     
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#81c784,color:#000
-    style D1 fill:#e1bee7,color:#000
-    style D2 fill:#e1bee7,color:#000
-    style D3 fill:#e1bee7,color:#000
-    style E fill:#fff176,color:#000
-    style F fill:#ffd700,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D1 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D2 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D3 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -1347,17 +1365,17 @@ Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelin
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Path-Based Retrieval - When to Use"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q{Hops Needed?} -->|1-hop| S[Simple Lookup]
     Q -->|2-3 hops| P[Use Path-Based]
     Q -->|4+ hops| C[Consider Community]
     P --> R[Connected Answer]
-    style Q fill:#ffd700,color:#000
-    style S fill:#e3f2fd,color:#000
-    style P fill:#c8e6c9,color:#000
-    style C fill:#e1bee7,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -1444,19 +1462,19 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Community Retrieval - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Query] --> B{Match Cluster}
     B --> C[Member 1]
     B --> D[Member 2]
     B --> E[Member 3]
     C & D & E --> F[Cluster Context]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#e1bee7,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -1510,7 +1528,8 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Community Detection & Retrieval"
-                      diagram={`graph TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Community1["🔵 Community 1: ML 👉 'em-el'"]
         A[Neural Networks]
         B[Deep Learning]
@@ -1532,10 +1551,18 @@ graph TB
     Q["🔍 Query:<br/>Machine Learning"] -.-> Community1
     Community1 --> R["📦 Return:<br/>All nodes in Community 1"]
     
-    style Q fill:#4fc3f7,color:#000
-    style Community1 fill:#bbdefb,color:#000
-    style Community2 fill:#c8e6c9,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Community1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Community2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Community1["🔵 fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Community2["🟢 fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -1656,15 +1683,15 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Community Retrieval - Quality vs Precision"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     C{Cluster Quality?} -->|Well-defined| U[Use Community]
     C -->|Overlapping| W[Review First]
     U --> H[High Recall]
-    style C fill:#ffd700,color:#000
-    style U fill:#c8e6c9,color:#000
-    style W fill:#ffcdd2,color:#000
-    style H fill:#81c784,color:#000`}
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style U fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -1744,17 +1771,17 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Hierarchical Graph Retrieval - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     A[Topic Level] --> B[Sub-topic]
     B --> C[Detail Level]
     C --> D[Specific Facts]
     Q[Query] -->|drill down| B
-    style A fill:#e3f2fd,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000
-    style Q fill:#4fc3f7,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -1810,7 +1837,8 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hierarchical Retrieval Process"
-                      diagram={`graph TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     Root["📚 Root:<br/>Programming"] --> A["🐍 Python"]
     Root --> B["☕ Java"]
     Root --> C["📘 JavaScript"]
@@ -1828,14 +1856,19 @@ graph TB
     A --> R1["📦 Return:<br/>Mid-level"]
     A1a --> R2["📦 Return:<br/>Leaf detail"]
     
-    style Root fill:#9c27b0,color:#fff
-    style A fill:#4fc3f7,color:#000
-    style A1 fill:#81c784,color:#000
-    style A1a fill:#ffd700,color:#000
-    style Q1 fill:#ffb74d,color:#000
-    style Q2 fill:#ffb74d,color:#000
-    style R1 fill:#81c784,color:#000
-    style R2 fill:#81c784,color:#000`}
+    style Root fill:#9c27b0,color:#e0e0e0,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style A1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A1a fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Q1 fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style Q2 fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style R1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A1b fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -1969,15 +2002,15 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Hierarchical Retrieval - Level Selection"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q{Query Scope?} -->|Overview| T[Top Level]
     Q -->|Specific| D[Deep Level]
     Q -->|Both| M[Multi-Level]
-    style Q fill:#ffd700,color:#000
-    style T fill:#e3f2fd,color:#000
-    style D fill:#e1bee7,color:#000
-    style M fill:#c8e6c9,color:#000`}
+    style Q fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -2059,18 +2092,18 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Graph + Dense Vector Hybrid - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query] --> V[Vector Search]
     Q --> G[Graph Traversal]
     V --> M[Merge and Rerank]
     G --> M
     M --> R[Results]
-    style Q fill:#4fc3f7,color:#000
-    style V fill:#e1bee7,color:#000
-    style G fill:#ffd700,color:#000
-    style M fill:#e3f2fd,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2130,7 +2163,8 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Hybrid Retrieval Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     Q["🔍 Query:<br/>ML 👉 'em-el' Applications"] --> V["🎯 Vector Search:<br/>Top-k by Similarity"]
     Q --> G["🕸️ Graph Seeds:<br/>Find Anchor Nodes"]
     
@@ -2154,11 +2188,19 @@ graph TB
     
     M --> R["🎯 Ranked Results:<br/>Best Combined Scores"]
     
-    style Q fill:#4fc3f7,color:#000
-    style V fill:#81c784,color:#000
-    style G fill:#ffb74d,color:#000
-    style M fill:#e1bee7,color:#000
-    style R fill:#ffd700,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style GE1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style GE2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style GE3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style V1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style V2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style V3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -2318,17 +2360,17 @@ Where:
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Dense Vector Hybrid - When to Use"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     N{Need?} -->|Semantic + Struct| H[Use Hybrid]
     N -->|Pure structure| G[Graph Only]
     N -->|Pure semantic| V[Vector Only]
     H --> B[Best Coverage]
-    style N fill:#ffd700,color:#000
-    style H fill:#c8e6c9,color:#000
-    style G fill:#e1bee7,color:#000
-    style V fill:#e3f2fd,color:#000
-    style B fill:#81c784,color:#000`}
+    style N fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style V fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -2414,18 +2456,18 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Graph + BM25 Hybrid - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query] --> K[BM25 Keywords]
     Q --> G[Graph Context]
     K --> C[Combine Scores]
     G --> C
     C --> R[Ranked Results]
-    style Q fill:#4fc3f7,color:#000
-    style K fill:#e1bee7,color:#000
-    style G fill:#ffd700,color:#000
-    style C fill:#e3f2fd,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2485,7 +2527,8 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Graph + BM25 Hybrid Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     Q["🔍 Query:<br/>Section 409A Requirements"] --> P["⚡ Parallel Retrieval"]
     
     P --> G["🕸️ Graph Path:<br/>Find Connected Nodes"]
@@ -2512,13 +2555,21 @@ graph TB
     
     F --> R["🎯 Final Results:<br/>Ranked by Combined Score"]
     
-    style Q fill:#4fc3f7,color:#000
-    style P fill:#9c27b0,color:#fff
-    style G fill:#ffb74d,color:#000
-    style B fill:#81c784,color:#000
-    style M fill:#e1bee7,color:#000
-    style F fill:#ffd700,color:#000
-    style R fill:#4caf50,color:#fff`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#9c27b0,color:#e0e0e0,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -2684,17 +2735,17 @@ Your **graph database** stores the structural data—nodes, edges, relationships
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="BM25 Hybrid - When to Use"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     N{Query Type?} -->|Keyword-heavy| K[BM25 Dominant]
     N -->|Semantic| S[Vector Dominant]
     N -->|Mixed| H[Use BM25+Graph]
     H --> R[Robust Results]
-    style N fill:#ffd700,color:#000
-    style K fill:#e3f2fd,color:#000
-    style S fill:#e1bee7,color:#000
-    style H fill:#c8e6c9,color:#000
-    style R fill:#81c784,color:#000`}
+    style N fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style K fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -2789,19 +2840,19 @@ graph TB
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Semantic Graph Traversal - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     Q[Query Embedding] --> S{Semantic Sim}
     S -->|high| N1[Node 1]
     N1 --> S2{Next Sim}
     S2 -->|high| N2[Node 2]
     N2 --> R[Results]
-    style Q fill:#4fc3f7,color:#000
-    style S fill:#ffd700,color:#000
-    style N1 fill:#e1bee7,color:#000
-    style S2 fill:#ffd700,color:#000
-    style N2 fill:#e1bee7,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N1 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style S2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N2 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2863,7 +2914,8 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Semantic Graph Traversal Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     Q["🔍 Query:<br/>Quantum Computing"] --> S["⚓ Find Seed:<br/>Quantum Computing Node"]
     S --> E["📐 Embed Query"]
     E --> T["🚶 Start Traversal:<br/>BFS or DFS"]
@@ -2885,17 +2937,21 @@ graph LR
     
     R --> N4["🔁 Repeat until:<br/>Budget exhausted"]
     
-    style Q fill:#4fc3f7,color:#000
-    style S fill:#ffb74d,color:#000
-    style E fill:#81c784,color:#000
-    style T fill:#e1bee7,color:#000
-    style C1 fill:#b3e5fc,color:#000
-    style C2 fill:#b3e5fc,color:#000
-    style C3 fill:#b3e5fc,color:#000
-    style D1 fill:#4caf50,color:#fff
-    style D2 fill:#4caf50,color:#fff
-    style D3 fill:#f44336,color:#fff
-    style R fill:#ffd700,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -3094,17 +3150,17 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Semantic Traversal - Threshold Tradeoff"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     T{Sim Threshold} -->|High 0.9| P[Precise Few Nodes]
     T -->|Medium 0.7| B[Balanced]
     T -->|Low 0.5| N[Noisy Results]
     B --> G[Good Results]
-    style T fill:#ffd700,color:#000
-    style P fill:#e3f2fd,color:#000
-    style B fill:#c8e6c9,color:#000
-    style N fill:#ffcdd2,color:#000
-    style G fill:#81c784,color:#000`}
+    style T fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style N fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -3197,19 +3253,19 @@ graph LR
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Graph Walk-Based Ranking - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query Node] --> W[Random Walk]
     W --> A[Node A freq=5]
     W --> B[Node B freq=8]
     W --> C[Node C freq=2]
     B --> R[Top Ranked]
-    style Q fill:#4fc3f7,color:#000
-    style W fill:#e1bee7,color:#000
-    style A fill:#e3f2fd,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e3f2fd,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style W fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3279,7 +3335,8 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Personalized PageRank Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     Q["🔍 Query:<br/>Machine Learning"] --> S["⚓ Find Seeds:<br/>ML 👉 'em-el' Concept Nodes"]
     S --> M["📊 Build Transition<br/>Matrix P"]
     M --> I["🎲 Initialize:<br/>Prob = 1 at seeds"]
@@ -3301,16 +3358,19 @@ graph TB
     R2 --> F
     R3 --> F
     
-    style Q fill:#4fc3f7,color:#000
-    style S fill:#ffb74d,color:#000
-    style M fill:#81c784,color:#000
-    style I fill:#e1bee7,color:#000
-    style W1 fill:#b3e5fc,color:#000
-    style W2 fill:#b3e5fc,color:#000
-    style W3 fill:#b3e5fc,color:#000
-    style C fill:#fff176,color:#000
-    style D fill:#a5d6a7,color:#000
-    style F fill:#ffd700,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style W1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style W2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style W3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -3534,17 +3594,17 @@ Now let's examine benefits and limitations of this powerful technique!`
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Walk-Based Ranking - Connectivity Impact"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     G{Graph Density?} -->|Dense| H[Quality Ranks]
     G -->|Sparse| L[Unreliable Ranks]
     H --> U[Use Walk-Based]
     L --> A[Augment First]
-    style G fill:#ffd700,color:#000
-    style H fill:#c8e6c9,color:#000
-    style L fill:#ffcdd2,color:#000
-    style U fill:#81c784,color:#000
-    style A fill:#e3f2fd,color:#000`}
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style U fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
@@ -3646,17 +3706,17 @@ Ready to explore even more advanced techniques? Our journey through graph retrie
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Graph Construction - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     Q[NL Query] --> P[Parse Entities]
     P --> G[Query Graph]
     G --> M[Match KG Subgraph]
     M --> R[Structured Answer]
-    style Q fill:#4fc3f7,color:#000
-    style P fill:#e1bee7,color:#000
-    style G fill:#ffd700,color:#000
-    style M fill:#e3f2fd,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3734,7 +3794,8 @@ Now let's see how Query Graph Construction works in practice!`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Query Graph Construction Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     Q["🔍 Query Text:<br/>'Companies with Series A<br/>funding hiring ML 👉 'em-el' engineers'"] --> N["🏷️ NER 👉 'en-ee-arr':<br/>Extract Entities"]
     
     N --> E1["💼 Entity: Companies"]
@@ -3761,13 +3822,20 @@ Now let's see how Query Graph Construction works in practice!`
     M1 --> F["🎯 Return Matched<br/>Subgraphs"]
     M2 --> F
     
-    style Q fill:#4fc3f7,color:#000
-    style N fill:#ffb74d,color:#000
-    style R fill:#81c784,color:#000
-    style QG fill:#ba68c8,color:#000
-    style L fill:#ffd54f,color:#000
-    style M fill:#e1bee7,color:#000
-    style F fill:#ffd700,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style N fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style QG fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -4045,16 +4113,16 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Query Graph - Complexity Decision"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q{Query Complexity?} -->|Simple entity| N[Node Lookup]
     Q -->|Has relations| U[Use Query Graph]
     Q -->|Multi-entity| U
     U --> R[Structured Answer]
-    style Q fill:#ffd700,color:#000
-    style N fill:#e3f2fd,color:#000
-    style U fill:#c8e6c9,color:#000
-    style R fill:#81c784,color:#000`}
+    style Q fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style U fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
@@ -4204,17 +4272,17 @@ Query Graph Construction is a powerful technique for structured, relational retr
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Context Path Stitching - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     P1[Path 1: A to B] --> S[Stitch Together]
     P2[Path 2: B to C] --> S
     P3[Path 3: C to D] --> S
     S --> R[Coherent Context]
-    style P1 fill:#e1bee7,color:#000
-    style P2 fill:#e1bee7,color:#000
-    style P3 fill:#e1bee7,color:#000
-    style S fill:#ffd700,color:#000
-    style R fill:#81c784,color:#000`}
+    style P1 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style P2 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style P3 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -4319,7 +4387,8 @@ Now let's see how Context Path Stitching operates in practice!`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Context Path Stitching Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     R["📊 Retrieved Paths:<br/>Path 1: A→B→C<br/>Path 2: A→D→E<br/>Path 3: C→F→G"] --> D["🔍 Deduplication:<br/>Merge repeated nodes<br/>(A appears in Path 1 & 2)"]
     
     D --> N1["Node A: Einstein (shared)"]
@@ -4346,13 +4415,20 @@ Now let's see how Context Path Stitching operates in practice!`
     
     F --> L["🤖 Feed to LLM 👉 'el-el-em':<br/>Coherent context prompt"]
     
-    style R fill:#4fc3f7,color:#000
-    style D fill:#ffb74d,color:#000
-    style O fill:#81c784,color:#000
-    style T fill:#ba68c8,color:#000
-    style S fill:#ffd54f,color:#000
-    style F fill:#a5d6a7,color:#000
-    style L fill:#ffd700,color:#000`}
+    style R fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style O fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style N5 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -4885,18 +4961,18 @@ Answer: Recent research indicates that sleep deprivation has significant cogniti
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="Path Stitching - Coherence vs Noise"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     P{Path Count?} -->|2-3 paths| C[Coherent Context]
     P -->|Many paths| N[Noise Risk]
     C --> G[Good Answer]
     N --> F[Filter First]
     F --> G
-    style P fill:#ffd700,color:#000
-    style C fill:#c8e6c9,color:#000
-    style N fill:#ffcdd2,color:#000
-    style G fill:#81c784,color:#000
-    style F fill:#e3f2fd,color:#000`}
+    style P fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style N fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
@@ -5067,19 +5143,19 @@ Regularly review stitched outputs manually—does the narrative make sense? Are 
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="LLM-Guided Graph Expansion - Core Concept"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Q[Query] --> L[LLM Decides]
     L -->|select| N1[Node 1]
     N1 --> L2[LLM Evaluates]
     L2 -->|expand| N2[Node 2]
     L2 -->|done| A[Generate Answer]
-    style Q fill:#4fc3f7,color:#000
-    style L fill:#ffd700,color:#000
-    style N1 fill:#e1bee7,color:#000
-    style L2 fill:#ffd700,color:#000
-    style N2 fill:#e1bee7,color:#000
-    style A fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style L fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N1 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style L2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style N2 fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -5177,7 +5253,8 @@ Now let's see how LLM-Guided Graph Expansion operates in practice!`
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="LLM-Guided Graph Expansion Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     Q["🔍 Query:<br/>'Societal impacts of<br/>Einstein's work'"] --> S["🎯 Identify Seed Nodes:<br/>Einstein entity"]
     
     S --> I1["🤖 LLM 👉 'el-el-em' Iteration 1:<br/>Current: Einstein<br/>Available edges: worked_on,<br/>influenced, born_in"]
@@ -5205,17 +5282,20 @@ Now let's see how LLM-Guided Graph Expansion operates in practice!`
     
     F --> A["🎯 Generate Answer<br/>Using Retrieved Context"]
     
-    style Q fill:#4fc3f7,color:#000
-    style S fill:#ffb74d,color:#000
-    style I1 fill:#ba68c8,color:#000
-    style I2 fill:#ba68c8,color:#000
-    style I3 fill:#ba68c8,color:#000
-    style D1 fill:#81c784,color:#000
-    style D2 fill:#81c784,color:#000
-    style D3 fill:#81c784,color:#000
-    style B fill:#ffd54f,color:#000
-    style F fill:#a5d6a7,color:#000
-    style A fill:#ffd700,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#3d1f00,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style I1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>How It Works</h3>
@@ -5827,17 +5907,17 @@ def log_exploration(query, state, decision, result):
                 <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                   <MermaidPopover
                     title="LLM-Guided - Budget vs Precision"
-                    diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                    diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     B{LLM Budget?} -->|High| D[Deep Exploration]
     B -->|Low| S[Shallow Fast]
     D --> P[High Precision]
     S --> R[Quick Response]
-    style B fill:#ffd700,color:#000
-    style D fill:#c8e6c9,color:#000
-    style S fill:#e3f2fd,color:#000
-    style P fill:#81c784,color:#000
-    style R fill:#e1bee7,color:#000`}
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </div>
 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>

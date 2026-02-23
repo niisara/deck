@@ -208,7 +208,7 @@ Finally, in cyan, we have **Freshness and Trust**. These are your quality signal
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Section Title Retrieval Flow"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Doc["📄 Policy Document"]
         H1["H1: Employee Handbook"]
@@ -221,9 +221,16 @@ graph TB
     Meta --> F2["heading_level: 3"]
     Meta --> F3["section_path: Handbook>Refunds>Eligibility"]
     F3 --> Ret["🔍 Retrieval: filter by section_path"]
-    style Doc fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Meta fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
-    style Ret fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000`}
+    style Doc fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style H1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Chunk fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Meta fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style F1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Ret fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
@@ -369,7 +376,7 @@ Now let's move on to document type labels...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Document Type Classification Flow"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Doc["📄 Incoming Document"] --> Classifier{"🤖 Classifier\n(rules + ML)"}
     Classifier -->|"FAQ pattern"| T1["doc_type: faq"]
@@ -377,13 +384,13 @@ flowchart TB
     Classifier -->|"HR keywords"| T3["doc_type: policy"]
     Classifier -->|"Email headers"| T4["doc_type: email"]
     T1 --> Q["🔍 Query: 'How do I reset password?'\n→ filter: doc_type=faq"]
-    style Doc fill:#4fc3f7,color:#000
-    style Classifier fill:#e1bee7,color:#000
-    style T1 fill:#c8e6c9,color:#000
-    style T2 fill:#c8e6c9,color:#000
-    style T3 fill:#fff9c4,color:#000
-    style T4 fill:#ffcdd2,color:#000
-    style Q fill:#81c784,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Classifier fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style T1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style T4 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Q fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong>When to Use:</strong>
@@ -531,7 +538,7 @@ Next, let's explore entity tagging with named entity recognition...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="NER Entity Extraction Example"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Text["📝 'Alice Chen at Acme Corp filed T-1234\nregarding WidgetX malfunction'"]
     Text --> NER["🤖 NER Model (spaCy / HF)"]
@@ -544,10 +551,14 @@ graph TB
     Prod --> Meta
     Tick --> Meta
     Meta --> Filter["🔍 filter: org=acme_corp_id\n→ all Acme documents retrieved"]
-    style Text fill:#e3f2fd,color:#000
-    style NER fill:#e1bee7,color:#000
-    style Meta fill:#fff9c4,color:#000
-    style Filter fill:#c8e6c9,color:#000`}
+    style Text fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style NER fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Prod fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Tick fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Meta fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Filter fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong>When to Use:</strong>
@@ -696,7 +707,7 @@ Let's move on to topic and category tags...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Taxonomy Mapping Example"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     Chunk["📄 Chunk: 'Credit card chargebacks\nrequire KYC verification\nbefore refund is issued'"]
     Chunk --> Tagger{"🤖 Multi-label\nClassifier (≥80% confidence)"}
@@ -706,13 +717,13 @@ graph TB
     T1 --> Meta["topics: ['Payments>Refunds', 'Compliance>KYC']\ntopic_ids: [12, 45]"]
     T2 --> Meta
     Meta --> Filter["🔍 filter: topic=Payments>Refunds\n→ precise retrieval"]
-    style Chunk fill:#e3f2fd,color:#000
-    style Tagger fill:#e1bee7,color:#000
-    style T1 fill:#c8e6c9,color:#000
-    style T2 fill:#c8e6c9,color:#000
-    style T3 fill:#ffcdd2,color:#000
-    style Meta fill:#fff9c4,color:#000
-    style Filter fill:#81c784,color:#000`}
+    style Chunk fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Tagger fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style T1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Meta fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Filter fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
@@ -873,7 +884,7 @@ Let's move on to our next enrichment technique...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Version Metadata: Freshness Filtering"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph History["Privacy Policy Versions"]
         V1["v1.0 | valid_to: 2024-01-01 | is_latest: false"]
@@ -885,11 +896,12 @@ graph TB
     Filter --> V3
     Filter -->|"❌ excluded"| V1
     Filter -->|"❌ excluded"| V2
-    style V3 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
-    style V1 fill:#ffcdd2,color:#000
-    style V2 fill:#ffcdd2,color:#000
-    style Filter fill:#e1bee7,color:#000
-    style Q fill:#4fc3f7,color:#000`}
+    style History fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style V3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style V1 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style V2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Filter fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
@@ -1057,7 +1069,7 @@ Next, let's explore how semantic summaries can enhance our retrieval quality...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Semantic Summary Generation"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Chunk["📄 Long Chunk (500 tokens)\n'Section 4.2: Customers who purchased\nbefore Jan 1 are eligible for full refunds\nif returned within 30 days. Exclusions apply\nto sale items, digital downloads...'"]
     Chunk --> LLM["🤖 LLM Prompt:\n'Extract key claims, scope,\nconstraints. Max 70 tokens.'"]
@@ -1066,10 +1078,13 @@ flowchart TB
     Uses --> BM25["BM25 keyword search"]
     Uses --> Vector["Vector similarity"]
     Uses --> UI["UI preview snippet"]
-    style Chunk fill:#e3f2fd,color:#000
-    style LLM fill:#e1bee7,color:#000
-    style Summary fill:#c8e6c9,color:#000
-    style Uses fill:#fff9c4,color:#000`}
+    style Chunk fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style LLM fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Summary fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Uses fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style BM25 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Vector fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style UI fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <strong>When to Use:</strong>
@@ -1230,7 +1245,7 @@ Let's explore our next enrichment technique...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Keyword Extraction Pipeline"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Text["📄 'Submit RMA form within 30 days.\nRestocking fee applies. Chargeback\nrefund window expires after 60 days.'"]
     Text --> RAKE["⚙️ RAKE / KeyBERT / YAKE"]
@@ -1239,10 +1254,13 @@ flowchart TB
     Norm --> Dict["Merge domain dictionary:\n'RMA' synonym: 'return merchandise auth'"]
     Dict --> KW["keywords: ['refund window', 'restocking fee', 'RMA', 'chargeback']"]
     KW --> BM25["📊 BM25 field (boosted)\n→ exact match on product codes / IDs"]
-    style Text fill:#e3f2fd,color:#000
-    style RAKE fill:#e1bee7,color:#000
-    style KW fill:#fff9c4,color:#000
-    style BM25 fill:#c8e6c9,color:#000`}
+    style Text fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style RAKE fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Raw fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Norm fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Dict fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style KW fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style BM25 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong>When to Use:</strong>
@@ -1419,7 +1437,7 @@ Now let's explore how to score source reliability...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Trust Score Calculation"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Doc["📄 Incoming Document"]
     Doc --> ST{"Source Type"}
@@ -1433,11 +1451,17 @@ flowchart TB
     V --> Score["trust_score: 0.92 → stored"]
     R --> Score
     Score --> Ret["🔍 Retrieval:\nthreshold ≥ 0.70\nOR boost by score"]
-    style Doc fill:#4fc3f7,color:#000
-    style S1 fill:#c8e6c9,color:#000
-    style S4 fill:#ffcdd2,color:#000
-    style Score fill:#ffd700,color:#000
-    style Ret fill:#81c784,color:#000`}
+    style Doc fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style ST fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S4 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Adj fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style V fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Score fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Ret fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong>When to Use:</strong>
@@ -1604,7 +1628,7 @@ Let's move to our final enrichment technique...`
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Parent-Child Hierarchy & Retrieval"
-                          diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Tree["📚 Technical Manual Structure"]
         Doc["doc_1: Employee Handbook"]
@@ -1619,10 +1643,16 @@ graph TB
     Sec --> P1 --> P2 --> P3 --> P4
     P3 --> Fetch["Fetch: hit + 2 siblings\n+ parent for context"]
     Fetch --> LLM["🤖 LLM gets full context:\nP2 + P3 + P4 + sec_5 title"]
-    style P3 fill:#ffd700,stroke:#f57c00,stroke-width:2px,color:#000
-    style Fetch fill:#e1bee7,color:#000
-    style LLM fill:#c8e6c9,color:#000
-    style Tree fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000`}
+    style Tree fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Doc fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Chap fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Sec fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style P4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Fetch fill:#2d1b4e,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style LLM fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>

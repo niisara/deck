@@ -204,15 +204,19 @@ export const productionRagDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`flowchart LR
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A[User Query] --> B[Embedding Model]
     B --> C[Vector DB]
     C --> D[Top-K Chunks]
     D --> E[LLM]
     E --> F[Generated Answer]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style F fill:#ffd700`} /></span></strong></p>
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`} /></span></strong></p>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>LLM (text generation)</li>
@@ -258,18 +262,19 @@ export const productionRagDeck: Deck = {
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Basic RAG: When to Use"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["❓ Query Type?"] --> B{"Complexity?"}
     B -->|"Simple"| C["✅ Basic RAG\nFAQs / Wikis"]
     B -->|"Complex"| D["🔄 Use Advanced\nPattern"]
     C --> E["✅ Small Corpus\n<1K docs"]
     C --> F["✅ POC / MVP"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -311,7 +316,7 @@ flowchart TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Basic RAG: Simple But Effective Flow"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     Q["❓ Query"] --> R["🔍 Retrieve\nTop-K"]
     R --> G["🤖 Generate\nAnswer"]
@@ -320,9 +325,12 @@ flowchart LR
         A["✅ 80-90%\nAccuracy"]
     end
     G --> Perf
-    style Q fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000
-    style Perf fill:#f5f5f5,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style T fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Perf fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -384,14 +392,19 @@ flowchart LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`flowchart TB
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A[Query] --> B[Vector DB]
     B --> C[Top 100-300<br/>Candidates]
     C --> D[Reranker Model]
     D --> E[Top 5-10<br/>Precise Results]
     E --> F[LLM]
-    style D fill:#ffd700
-    style E fill:#81c784`} /></span></strong></p>
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} /></span></strong></p>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Base retriever (vector DB + embeddings)</li>
@@ -437,7 +450,7 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Re-Ranking: Precision Funnel"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 Retrieve\nTop 100-300"] --> B["⚖️ Cross-Encoder\nReranker"]
     B --> C["🎯 Top 5-10\nPrecise Results"]
@@ -446,10 +459,12 @@ flowchart LR
         E["🎯 High Precision"]
     end
     C --> Use
-    style A fill:#e3f2fd,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#c8e6c9,color:#000
-    style Use fill:#f5f5f5,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Use fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -491,7 +506,7 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Re-Ranking: Precision Improvement"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["🔍 100 Candidates\nFrom Vector DB"] --> B["⚖️ Cross-Encoder\nReranker"]
     B --> C["🎯 Top 10\nPrecise Matches"]
@@ -503,11 +518,13 @@ flowchart LR
     end
     C --> After
     A --> Before
-    style A fill:#e3f2fd,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#c8e6c9,color:#000
-    style After fill:#c8e6c9,color:#000,stroke:#4caf50
-    style Before fill:#ffcdd2,color:#000,stroke:#c62828`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style X fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Y fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style After fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Before fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -569,13 +586,14 @@ flowchart LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <GSAPAnimated animation="slideInTop" delay={0.2}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`sequenceDiagram
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+sequenceDiagram
     User->>+Rewriter: "What's the return policy?"
     Rewriter->>+Rewriter: Analyze & Transform
     Rewriter-->>-User: "Product return procedures<br/>AND refund timelines"
     User->>VectorDB: Rewritten Query
     VectorDB-->>LLM: Better Results
-    style Rewriter fill:#ffd700`} /></span></strong></p>
+    style Rewriter fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`} /></span></strong></p>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Rewriter LLM (canonicalize/expand/clarify)</li>
@@ -620,7 +638,7 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Query Rewriting: Bridging User Language to Docs"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["😕 'cancel\nmy thing'"] --> B["🔄 Rewrite\n+Expand"]
     B --> C["✅ 'subscription\ncancellation'"]
@@ -630,10 +648,13 @@ flowchart LR
         F["🏢 Domain Terms"]
     end
     D --> Ideal
-    style A fill:#ffcdd2,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#c8e6c9,color:#000
-    style Ideal fill:#f5f5f5,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Ideal fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -678,7 +699,7 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Query Rewriting: Handling Real User Language"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["😕 'Why is my\ncode slow?'"] --> B["🔄 Rewrite\n+Expand"]
     B --> C["✅ 'Python performance\noptimization techniques'"]
@@ -689,11 +710,14 @@ flowchart LR
     subgraph After["After Rewrite"]
         Y["✅ 75% Match Rate"]
     end
-    style A fill:#ffcdd2,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#c8e6c9,color:#000
-    style After fill:#c8e6c9,color:#000,stroke:#4caf50
-    style Before fill:#ffcdd2,color:#000,stroke:#c62828`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style X fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Y fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style After fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Before fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -756,7 +780,8 @@ flowchart LR
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                      diagram={`graph TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[User Query] --> B[LLM Query Generator]
     B --> C1[Variant 1]
     B --> C2[Variant 2]
@@ -769,7 +794,19 @@ flowchart LR
     D3 --> E
     E --> F[Deduplication]
     F --> G[Final Context]
-    G --> H[LLM Answer]`}
+    G --> H[LLM Answer]
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
 
                     /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
@@ -819,7 +856,7 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Multi-Query Retrieval: Coverage Through Diversity"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     A["❓ Complex\nQuestion"] --> B["🔄 Generate\n3 Variants"]
     B --> C["Query 1:\nTechnical"]
@@ -828,8 +865,12 @@ flowchart TB
     C --> F["🔀 RRF Fusion\n📈 Better Recall"]
     D --> F
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -899,7 +940,7 @@ The citation and source tracking system becomes more complex here because you ne
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Multi-Query: Better Recall Through Diversity"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["❓ Original Query"] --> V1["Variant 1:\nTechnical"]
     Q --> V2["Variant 2:\nConceptual"]
@@ -908,9 +949,12 @@ flowchart TB
     V2 --> R
     V3 --> R
     R --> Out["📈 Better Recall\nDiverse Coverage"]
-    style Q fill:#4fc3f7,color:#000
-    style R fill:#ffd700,color:#000
-    style Out fill:#c8e6c9,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style V1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style V2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style V3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Out fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -998,13 +1042,21 @@ The pattern **reduces chunking dependency**. If your chunking strategy isn't per
                 <GSAPAnimated animation="slideInTop" delay={0.3}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                      diagram={`graph LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[User Query:<br/>'How to secure JWT tokens?'] --> B[LLM: Generate<br/>Hypothetical Answer]
     B --> C[Hypothetical Doc:<br/>'JWT tokens should use...<br/>HMAC-SHA256, rotate keys...']
     C --> D[Embed Hypothetical<br/>Answer]
     D --> E[Vector Search on<br/>Real Documents]
     E --> F[Retrieve Similar<br/>Real Documents]
-    F --> G[LLM: Final Answer<br/>from Real Docs]`}
+    F --> G[LLM: Final Answer<br/>from Real Docs]
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
 
                     /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
@@ -1052,16 +1104,17 @@ The pattern **reduces chunking dependency**. If your chunking strategy isn't per
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="HyDE: Vocabulary Bridge for Zero-Shot Retrieval"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["❓ Short Query:\n'JWT security'"] --> B["🤖 LLM Generates\nHypothetical Answer"]
     B --> C["📄 'Use HMAC\nrotate keys...'"]
     C --> D["🔍 Embed &\nSearch"]
     D --> E["✅ Domain-matched\nDocuments"]
-    style A fill:#ffcdd2,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#fff9c4,color:#000
-    style E fill:#c8e6c9,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3b1a4a,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -1142,16 +1195,17 @@ For **multi-lingual retrieval**, HyDE can generate a hypothetical answer in the 
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="HyDE: Zero-Shot Vocabulary Bridge"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["❓ 'JWT security'"] --> B["🤖 Hypothetical\nAnswer Generation"]
     B --> C["📄 'Use HMAC-SHA256,\nrotate keys every 24h...'"]
     C --> D["🔍 Embed &\nSearch Corpus"]
     D --> E["✅ Real Docs\nVocabulary Matched"]
-    style A fill:#ffcdd2,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#fff9c4,color:#000
-    style E fill:#c8e6c9,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3b1a4a,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1292,7 +1346,7 @@ Another approach is **selective HyDE**: use simple heuristics to detect when a q
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Parent-Child Retrieval: Precision + Context"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     subgraph Parent["📄 Parent Section (800 tokens)"]
         subgraph Child["🎯 Child Chunk (200 tokens)"]
@@ -1302,9 +1356,12 @@ flowchart TB
         P2["...related details..."]
     end
     Child --> R["↩️ Return Full\nParent for Context"]
-    style Parent fill:#e3f2fd,color:#000,stroke:#1976d2
-    style Child fill:#c8e6c9,color:#000,stroke:#388e3c
-    style R fill:#ffd700,color:#000`}
+    style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style Parent fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Child fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -1402,15 +1459,15 @@ Some systems use **multi-level hierarchies**: grandparent to parent to child. Th
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Parent-Child: Precision Match + Rich Context"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["❓ Query"] --> C["🎯 Small Child Chunk\nMatches Precisely\n(200 tokens)"]
     C --> P["📄 Full Parent Section\nLoaded for Context\n(800 tokens)"]
     P --> A["✅ Precise Match\n+ Full Context\nBetter Answer"]
-    style Q fill:#4fc3f7,color:#000
-    style C fill:#c8e6c9,color:#000,stroke:#388e3c
-    style P fill:#e3f2fd,color:#000,stroke:#1976d2
-    style A fill:#81c784,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style P fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1504,7 +1561,8 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                      diagram={`graph TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Query: Who funded<br/>Company X?] --> B[Entity<br/>Extraction]
     B --> C[Entity: Company X]
     C --> D[Graph Query:<br/>Cypher/SPARQL]
@@ -1515,8 +1573,16 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
     G --> H
     H --> I[Merged Context]
     I --> J[LLM Answer]
-    style E fill:#4fc3f7
-    style C fill:#81c784`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
 
                     /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
@@ -1569,15 +1635,17 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="GraphRAG: Multi-Hop Relationship Reasoning"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     Q["❓ 'Who funded\nCompany X?'"] --> E["🏢 Company X"]
     E -->|"FUNDED_BY"| I["💰 Investor A"]
     I -->|"ALSO_FUNDED"| C["🏢 Company Y"]
     C -->|"ACQUIRED"| Z["🏢 Company Z"]
-    style Q fill:#4fc3f7,color:#000
-    style I fill:#ffd700,color:#000
-    style Z fill:#c8e6c9,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Z fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -1680,7 +1748,7 @@ This ingestion complexity is significant but pays dividends at query time.
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="GraphRAG: Multi-Hop Relationship Traversal"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph LR
     Q["❓ 'Who invested in\nCompany X?'"] --> E["🏢 Company X"]
     E -->|"FUNDED_BY"| I["💰 Investor A"]
@@ -1690,9 +1758,13 @@ graph LR
         P["Hop 1 → Hop 2 → Hop 3"]
     end
     Z --> Result
-    style Q fill:#4fc3f7,color:#000
-    style I fill:#ffd700,color:#000
-    style Result fill:#c8e6c9,color:#000,stroke:#4caf50`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Z fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1810,7 +1882,8 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
                 <GSAPAnimated animation="rotateIn" delay={0.3}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                      diagram={`graph TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[User Query] --> B[Agent Planner]
     B --> C{Select Tool}
     C -->|Need Data| D[SQL Query Tool]
@@ -1823,8 +1896,16 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
     H -->|Yes| B
     H -->|No| I[RAG Retrieval]
     I --> J[LLM Final Answer]
-    style B fill:#4fc3f7
-    style I fill:#81c784`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
 
                     /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
@@ -1872,7 +1953,7 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Agentic RAG: Multi-Tool Orchestration"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["❓ Business Query"] --> A["🤖 Agent\nOrchestrates"]
     A --> T1["🔍 Search\nDocs"]
@@ -1881,9 +1962,12 @@ flowchart TB
     T1 --> S["✅ Rich Answer\nWith Live Data"]
     T2 --> S
     T3 --> S
-    style A fill:#e1bee7,color:#000
-    style Q fill:#4fc3f7,color:#000
-    style S fill:#c8e6c9,color:#000`}
+    style A fill:#3b1a4a,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style T1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -2001,7 +2085,7 @@ Maintaining this toolset is ongoing work as APIs evolve and new tools are added.
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Agentic RAG: Dynamic Multi-Tool Orchestration"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["❓ Complex Query:\n'Compare Q3 sales\nvs competitors'"] --> A["🤖 Agent\nOrchestrates Plan"]
     A --> T1["🔍 Search\nDocs"]
@@ -2010,9 +2094,12 @@ flowchart TB
     T1 --> S["✅ Rich Answer\nWith Live + Static Data"]
     T2 --> S
     T3 --> S
-    style A fill:#e1bee7,color:#000
-    style Q fill:#4fc3f7,color:#000
-    style S fill:#c8e6c9,color:#000`}
+    style A fill:#3b1a4a,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style T1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2174,7 +2261,7 @@ Some teams implement **agent fallback**: try standard RAG first, invoke agents o
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="RAG + Fine-Tuned: Investment vs. Return"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📚 Domain Docs\n+Examples"] --> B["🎓 Fine-Tune LLM"]
     B --> C["🤖 Domain Expert\nLLM"]
@@ -2185,10 +2272,14 @@ flowchart LR
         G["⚖️ Regulated\nIndustries"]
     end
     E --> Ideal
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style E fill:#c8e6c9,color:#000
-    style Ideal fill:#f5f5f5,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#3b1a4a,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Ideal fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -2293,7 +2384,7 @@ The fine-tuned model then uses RAG-retrieved context but interprets and responds
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="RAG + Fine-Tuned: Compounding Quality Benefits"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📚 Domain Docs"] --> FT["🎓 Fine-Tune LLM\n(Format + Knowledge)"]
     FT --> M["🤖 Domain-Expert\nModel"]
@@ -2304,10 +2395,14 @@ flowchart LR
         G2["📈 +20% Quality"]
     end
     Out --> Gain
-    style FT fill:#e1bee7,color:#000
-    style M fill:#ffd700,color:#000
-    style Out fill:#c8e6c9,color:#000
-    style Gain fill:#f5f5f5,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style FT fill:#3b1a4a,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style M fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Out fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Gain fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2420,7 +2515,8 @@ This de-risks the investment while building toward the hybrid ideal.
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`flowchart TB
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A[Question] --> B[Decompose]
     B --> C[Subquery 1]
     B --> D[Subquery 2]
@@ -2431,8 +2527,15 @@ This de-risks the investment while building toward the hybrid ideal.
     G --> H{Complete?}
     H -->|No| B
     H -->|Yes| I[Final Answer]
-    style B fill:#ffd700
-    style H fill:#ffcdd2`} /></span></strong></p>
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} /></span></strong></p>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
                       <ul style={{ fontSize: '1rem' }}>
                         <li>Iterative retriever (multi-hop)</li>
@@ -2481,17 +2584,17 @@ This de-risks the investment while building toward the hybrid ideal.
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Multi-Step Retrieval: Iterative Evidence Gathering"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["❓ Multi-hop Question:\n'Compare A's Q3 to\nB's last launch'"] --> S1["Step 1:\nRetrieve Context A"]
     S1 --> S2["Step 2:\nRefine & Retrieve B"]
     S2 --> S3["Step 3:\nConnect & Analyze"]
     S3 --> A["✅ Evidence-backed\nComprehensive Answer"]
-    style Q fill:#4fc3f7,color:#000
-    style S1 fill:#fff9c4,color:#000
-    style S2 fill:#fff9c4,color:#000
-    style S3 fill:#fff9c4,color:#000
-    style A fill:#c8e6c9,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S1 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style S2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style S3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -2536,7 +2639,7 @@ flowchart TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Multi-Step Retrieval: Solving Compositional Questions"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Q["❓ 'What drug treats diseases\nlinked to gene X?'"] --> S1["Step 1: Find\nGene X diseases"]
     S1 --> S2["Step 2: Find\ndrug treatments"]
@@ -2546,12 +2649,13 @@ flowchart TB
         G["📈 30-50%\nAccuracy Gain"]
     end
     A --> Gain
-    style Q fill:#4fc3f7,color:#000
-    style S1 fill:#fff9c4,color:#000
-    style S2 fill:#fff9c4,color:#000
-    style S3 fill:#fff9c4,color:#000
-    style A fill:#c8e6c9,color:#000
-    style Gain fill:#f5f5f5,color:#000`}
+    style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S1 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style S2 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style S3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Gain fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2661,15 +2765,15 @@ flowchart TB
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Context Compression: Signal Over Noise"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📚 10 Full Docs\n10K tokens\n(Noise + Signal)"] --> B["🗜️ Context\nCompressor"]
     B --> C["✨ 20 Snippets\n2K tokens\n(Pure Signal)"]
     C --> D["🤖 LLM\n67% ↓ Failures\n80% ↓ Tokens"]
-    style A fill:#ffcdd2,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
@@ -2713,7 +2817,7 @@ flowchart LR
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Context Compression: More Signal, Fewer Tokens"
-                        diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📚 10 Full Docs\n10K tokens\n(Noise + Signal)"] --> B["🗜️ Context\nCompressor"]
     B --> C["✨ 20 Snippets\n2K tokens\n(Pure Signal)"]
@@ -2723,10 +2827,13 @@ flowchart LR
         R2["✅ 80% ↓ Tokens"]
     end
     D --> Result
-    style A fill:#ffcdd2,color:#000
-    style B fill:#fff9c4,color:#000
-    style C fill:#c8e6c9,color:#000
-    style Result fill:#c8e6c9,color:#000,stroke:#4caf50`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                       />
                     </div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>

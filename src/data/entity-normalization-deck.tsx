@@ -261,16 +261,21 @@ export const entityNormalizationDeck: Deck = {
                       Typical Pipeline
                       <MermaidPopover
                         title="Entity Resolution Pipeline"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Raw Text"] --> B["🧹 Preprocess"]
     B --> C["🔍 Candidates"]
     C --> D["📊 Score"]
     D --> E["🌐 Graph Coherence"]
     E --> F["✅ Select"]
     F --> G["💾 Persist"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000
-    style G fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </strong>
                   </div>
@@ -352,14 +357,19 @@ flowchart LR
                         How It Works
                         <MermaidPopover
                           title="String Normalization Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Raw String"] --> B["✂️ Trim"]
     B --> C["📏 Collapse Whitespace"]
     C --> D["🔤 Normalize Punctuation"]
     D --> E["📅 Standardize Formats"]
     E --> F["✨ Clean String"]
-    style A fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -375,13 +385,17 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Pipeline Order: Normalize First"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Raw Input"] --> B["🧹 Normalize"]
     B --> C["🔍 Lookup"]
     C --> D["🔀 Fuzzy Match"]
     D --> E["🧮 Vectorize"]
-    style A fill:#ffcdd2,color:#000
-    style B fill:#81c784,stroke:#4caf50,stroke-width:3px,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:3px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -526,15 +540,20 @@ flowchart LR
                         How It Works
                         <MermaidPopover
                           title="Unicode Normalization Process"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📝 Input: café"] --> B{"Choose Form"}
     B -->|NFC| C["Composed: café"]
     B -->|NFKC| D["Compatible: cafe"]
     C --> E["🔤 Case Fold"]
     D --> E
     E --> F["✨ Normalized"]
-    style A fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -550,7 +569,8 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Unicode Normalization: Multilingual Unification"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     subgraph Input["Variant Inputs"]
         A["café (NFC: é = 1 char)"]
         B["cafe\u0301 (NFD: e + ◌́)"]
@@ -558,8 +578,12 @@ flowchart LR
     end
     Input --> D["🔄 NFKC + case fold"]
     D --> E["✅ cafe"]
-    style D fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Input fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -707,14 +731,17 @@ flowchart TB
                         How It Works
                         <MermaidPopover
                           title="Edit Distance Concept"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["kitten"] --> B["🔄 sitten"]
     B --> C["🔄 sittin"]
     C --> D["🔄 sitting"]
     A --> E["Distance = 3"]
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -730,7 +757,8 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Fuzzy Matching Use Cases"
-                      diagram={`graph TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Names["👤 Name Typos"]
         A["'Jon Smith'"] --> A2["'John Smith' ✅"]
     end
@@ -740,9 +768,15 @@ flowchart TB
     subgraph Dedup["🗂️ Deduplication"]
         C["'Microsft Corp'"] --> C2["'Microsoft Corp' ✅"]
     end
-    style A2 fill:#81c784,color:#000
-    style B2 fill:#81c784,color:#000
-    style C2 fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Names fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style OCR fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Dedup fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -891,16 +925,20 @@ flowchart LR
                         How It Works
                         <MermaidPopover
                           title="Token Similarity Comparison"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["'New York City'"] --> B["Tokenize"]
     C["'City of New York'"] --> B
     B --> D["{new, york, city}"]
     B --> E["{city, of, new, york}"]
     D --> F["Jaccard = 3/4 = 0.75"]
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style C fill:#4fc3f7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -916,7 +954,8 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Token Similarity: Multi-Word Entity Use Cases"
-                      diagram={`graph TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Products["🛍️ Product Titles"]
         P1["'Apple iPhone 15 Pro'"] --> P2["'iPhone 15 Pro by Apple' ✅"]
     end
@@ -926,9 +965,15 @@ flowchart LR
     subgraph Addr["📍 Addresses"]
         A1["'123 Main St, NY'"] --> A2["'123 Main Street New York' ✅"]
     end
-    style P2 fill:#81c784,color:#000
-    style O2 fill:#81c784,color:#000
-    style A2 fill:#81c784,color:#000`}
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style O1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style O2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Products fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Orgs fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Addr fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1077,15 +1122,19 @@ flowchart TB
                         How It Works
                         <MermaidPopover
                           title="Gazetteer Lookup Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 'aspirin'"] --> B["🔍 Lookup"]
     B --> C["📚 Gazetteer"]
     C --> D["✅ ID: NDC-12345"]
     B --> E["⚠️ Not Found"]
     E --> F["Fuzzy Match?"]
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1101,7 +1150,8 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Gazetteer: Closed-World Domain Examples"
-                      diagram={`graph TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Meds["💊 Medications"]
         M1["'aspirin'"] --> M2["NDC-12345 ✅"]
         M3["'ibuprofen'"] --> M4["NDC-67890 ✅"]
@@ -1112,9 +1162,17 @@ flowchart TB
     subgraph SKUs["📦 Product SKUs"]
         S1["'Widget Pro'"] --> S2["SKU-W-PRO ✅"]
     end
-    style M2 fill:#81c784,color:#000
-    style L2 fill:#81c784,color:#000
-    style S2 fill:#81c784,color:#000`}
+    style M1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style M3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M4 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Meds fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Locs fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style SKUs fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1262,14 +1320,19 @@ flowchart LR
                         How It Works
                         <MermaidPopover
                           title="Synonym Mapping"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["NYC"] --> E["🏙️ New York City"]
     B["Big Apple"] --> E
     C["New York, NY"] --> E
     D["N.Y.C."] --> E
     E --> F["ID: geo_nyc_001"]
-    style E fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1285,7 +1348,8 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Synonym Mapping: When Aliases Matter"
-                      diagram={`graph TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Brand["🏷️ Brand Aliases"]
         B1["'Big Blue'"] --> B2["IBM ✅"]
         B3["'Mickey D\\'s'"] --> B4["McDonald\\'s ✅"]
@@ -1296,10 +1360,17 @@ flowchart LR
     subgraph Medical["💊 Medical Abbrevs"]
         A1["'MI'"] --> A2["Myocardial Infarction ✅"]
     end
-    style B2 fill:#81c784,color:#000
-    style B4 fill:#81c784,color:#000
-    style F2 fill:#81c784,color:#000
-    style A2 fill:#81c784,color:#000`}
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B4 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Brand fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Finance fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Medical fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1446,16 +1517,21 @@ flowchart TB
                         How It Works
                         <MermaidPopover
                           title="Rule-Based Context Flow"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["'Apple announced...'"] --> B["Check Context"]
     B --> C{"Nearby: 'CEO', 'iPhone'?"}
     C -->|Yes| D["🏢 Apple Inc."]
     C -->|No| E{"Nearby: 'fruit', 'orchard'?"}
     E -->|Yes| F["🍎 Apple fruit"]
     E -->|No| G["⚠️ Ambiguous"]
-    style D fill:#81c784,color:#000
-    style F fill:#81c784,color:#000
-    style G fill:#ffcdd2,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1471,7 +1547,8 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Rule-Based Context: Structured Docs & Compliance"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     subgraph Structured["📄 Structured Documents"]
         S1["Medical Record"] --> S2{"Section: Diagnosis"}
         S2 -->|"'cold'"| S3["🦠 Illness (not temp) ✅"]
@@ -1481,9 +1558,15 @@ flowchart TB
         C2 -->|"'Apple'"| C3["🏢 Apple Inc. ✅"]
         C2 -->|"explainable"| C4["Audit Log ✅"]
     end
-    style S3 fill:#81c784,color:#000
-    style C3 fill:#81c784,color:#000
-    style C4 fill:#e3f2fd,color:#000`}
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C4 fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Structured fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Compliance fill:#0d1f33,stroke:#f5a623,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1630,7 +1713,8 @@ flowchart TB
                         How It Works
                         <MermaidPopover
                           title="Embedding Similarity Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["'NYC'"] --> B["Embed"]
     C["'New York City'"] --> D["Embed"]
     B --> E["[0.2, 0.8, ...]"]
@@ -1638,9 +1722,14 @@ flowchart TB
     E --> G{"Cosine > 0.9?"}
     F --> G
     G -->|Yes| H["✅ MATCH"]
-    style E fill:#4fc3f7,color:#000
-    style F fill:#4fc3f7,color:#000
-    style H fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1656,7 +1745,8 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Embeddings: Cross-Lingual & Semantic Matching"
-                      diagram={`graph TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph CrossLingual["🌍 Cross-Lingual"]
         X1["'München'"] --> X3["✅ Match"]
         X2["'Munich'"] --> X3
@@ -1669,9 +1759,18 @@ flowchart TB
         S1["'heart attack'"] --> S3["✅ Match"]
         S2["'myocardial infarction'"] --> S3
     end
-    style X3 fill:#81c784,color:#000
-    style A3 fill:#81c784,color:#000
-    style S3 fill:#81c784,color:#000`}
+    style X1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style X2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style X3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style CrossLingual fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Abbrev fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Semantic fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1824,7 +1923,8 @@ flowchart LR
                         How It Works
                         <MermaidPopover
                           title="Entity Linking Pipeline"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["'Apple'"] --> B["Candidates"]
     B --> C["Apple Inc. Q312"]
     B --> D["Apple fruit Q89"]
@@ -1832,9 +1932,13 @@ flowchart LR
     D --> E
     E --> F{"Best Match"}
     F --> G["🏢 Q312"]
-    style C fill:#4fc3f7,color:#000
-    style D fill:#4fc3f7,color:#000
-    style G fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -1850,17 +1954,21 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity Linking: Open-Domain Enrichment"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📰 Open-Domain Text"] --> B["'Paris'"]
     B --> C{"Link to KB"}
     C --> D["🗼 Paris, France Q90"]
     D --> E["Population: 2.1M"]
     D --> F["Country: France"]
     D --> G["Timezone: CET"]
-    style D fill:#4fc3f7,color:#000
-    style E fill:#e3f2fd,color:#000
-    style F fill:#e3f2fd,color:#000
-    style G fill:#e3f2fd,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -2015,14 +2123,17 @@ flowchart LR
                         How It Works
                         <MermaidPopover
                           title="Graph Coherence"
-                          diagram={`graph TD
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     M1["'Apple'"] --> A1["Apple Inc."]
     M1 --> A2["Apple fruit"]
     M2["'Tim Cook'"] --> B1["Tim Cook CEO"]
     A1 --- B1
-    style A1 fill:#81c784,color:#000
-    style B1 fill:#81c784,color:#000
-    style A2 fill:#ffcdd2,color:#000`}
+    style M1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2038,7 +2149,8 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Graph Disambiguation: Mutual Constraints"
-                      diagram={`graph TD
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     subgraph NewsArticle["📰 News Article Mentions"]
         M1["'Apple'"] --> A1["Apple Inc. ✅"]
         M1 --> A2["Apple fruit ❌"]
@@ -2047,10 +2159,14 @@ flowchart LR
     end
     A1 --- B1
     A1 --- C1
-    style A1 fill:#81c784,color:#000
-    style B1 fill:#81c784,color:#000
-    style C1 fill:#81c784,color:#000
-    style A2 fill:#ffcdd2,color:#000`}
+    style M1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style NewsArticle fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -2199,13 +2315,16 @@ graph TD
                         How It Works
                         <MermaidPopover
                           title="PageRank Centrality"
-                          diagram={`graph LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["Entity A<br/>PR: 0.35"] --> B["Entity B<br/>PR: 0.15"]
     A --> C["Entity C<br/>PR: 0.25"]
     B --> C
     D["Entity D<br/>PR: 0.25"] --> C
-    style A fill:#81c784,color:#000
-    style C fill:#4fc3f7,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2221,7 +2340,8 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="PageRank: Dense KB & Relational Context"
-                      diagram={`graph LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     subgraph TechDoc["📰 Tech Article"]
         M1["'Apple'"] --> A1["Apple Inc.\nPR: 0.42 ✅"]
         M1 --> A2["Apple fruit\nPR: 0.08 ❌"]
@@ -2230,10 +2350,14 @@ graph TD
     end
     A1 --- I
     A1 --- S
-    style A1 fill:#81c784,color:#000
-    style A2 fill:#ffcdd2,color:#000
-    style I fill:#e3f2fd,color:#000
-    style S fill:#e3f2fd,color:#000`}
+    style M1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style A2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style I fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style S fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style TechDoc fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -2383,15 +2507,19 @@ graph LR
                         How It Works
                         <MermaidPopover
                           title="Ontology Hierarchy"
-                          diagram={`graph TD
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A["🏥 Disease"] --> B["Cardiovascular"]
     A --> C["Respiratory"]
     B --> D["Hypertension<br/>ICD: I10"]
     B --> E["Heart Failure<br/>ICD: I50"]
     C --> F["Asthma<br/>ICD: J45"]
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2407,7 +2535,8 @@ graph LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Ontology Mapping: Regulated Domain Coding"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     subgraph Health["🏥 Healthcare (ICD/SNOMED)"]
         H1["'heart attack'"] --> H2["ICD-10: I21 ✅"]
         H3["'high blood pressure'"] --> H4["ICD-10: I10 ✅"]
@@ -2418,10 +2547,17 @@ graph LR
     subgraph Pharma["💊 Pharma (NDC)"]
         P1["'aspirin 500mg'"] --> P2["NDC: 12345-678 ✅"]
     end
-    style H2 fill:#81c784,color:#000
-    style H4 fill:#81c784,color:#000
-    style F2 fill:#81c784,color:#000
-    style P2 fill:#81c784,color:#000`}
+    style H1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H4 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Health fill:#0d1f33,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style Finance fill:#0d1f33,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style Pharma fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -2576,15 +2712,19 @@ graph TD
                         How It Works
                         <MermaidPopover
                           title="LLM Disambiguation Flow"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["Context + Mention"] --> B["🤖 LLM"]
     C["Candidates + KB facts"] --> B
     B --> D["Entity: Apple Inc."]
     B --> E["Confidence: 0.95"]
     D --> F["✅ Grounded"]
-    style B fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000
-    style F fill:#4fc3f7,color:#000`}
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </strong>
                     </div>
@@ -2600,7 +2740,8 @@ graph TD
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="LLM Disambiguation: Complex Context Use Cases"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     subgraph FewShot["🎯 Few-Shot / Zero-Shot"]
         Z1["New domain"] --> Z2["2-3 examples in prompt ✅"]
     end
@@ -2611,9 +2752,16 @@ graph TD
     subgraph LongDoc["📄 Long Documents"]
         L1["Mention on page 5"] --> L2["Context from page 1 ✅"]
     end
-    style Z2 fill:#81c784,color:#000
-    style C3 fill:#81c784,color:#000
-    style L2 fill:#81c784,color:#000`}
+    style Z1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Z2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style L2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style FewShot fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style Complex fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style LongDoc fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                     />
                   </div>
                   <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

@@ -84,16 +84,17 @@ export const nerMetricsDeck: Deck = {
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="NER Entity Structure"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📝 Sentence"] --> B["🔍 NER Model"]
     B --> C["👤 PERSON"]
     B --> D["🏢 ORG"]
     B --> E["📍 LOC"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -200,16 +201,18 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision Calculation"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🤖 Model Predictions"] --> B{"Correct?"}
     B -->|Yes| C["✅ TP = 8"]
     B -->|No| D["❌ FP = 2"]
     C --> E["📊 Precision = 8/10 = 80%"]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Formula</h4>
@@ -226,7 +229,7 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision Example: 10 Predictions"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Pred["\ud83e\udd16 Model Found 10 Entities"]
         P1["1. Apple \u2705"]
@@ -247,10 +250,21 @@ graph TB
     TP --> Result["Precision = 8 / 10 = 80%"]
     FP --> Result
     
-    style Pred fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
-    style TP fill:#c8e6c9,color:#000
-    style FP fill:#ffcdd2,color:#000
-    style Result fill:#fff9c4,color:#000,stroke:#fbc02d,stroke-width:2px`}
+    style Pred fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P5 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P6 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P7 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P8 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P9 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P10 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Calc fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style TP fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style FP fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Result fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -301,7 +315,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision: Gaming the Metric"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Safe["🎯 'Safe' Model (Gaming)"]
         S1["Guesses 1 entity"]
@@ -317,8 +331,16 @@ graph TB
         G4["AND finds most entities ✅"]
         G1 --> G2 --> G3 --> G4
     end
-    style Safe fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Good fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+    style Safe fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style S4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Good fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style G1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -394,16 +416,18 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Recall Calculation"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📋 Gold Entities = 10"] --> B{"Found?"}
     B -->|Yes| C["✅ TP = 8"]
     B -->|No| D["❌ FN = 2"]
     C --> E["📊 Recall = 8/10 = 80%"]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Formula</h4>
@@ -420,7 +444,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Recall Example: Treasure Hunt"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Gold["\ud83c\udfaf 10 Real Entities in Text"]
         G1["1. Apple"]
@@ -443,10 +467,22 @@ graph TB
     TP --> Result["Recall = 8 / 10 = 80%"]
     FN --> Result
     
-    style Gold fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
-    style TP fill:#c8e6c9,color:#000
-    style FN fill:#ffcdd2,color:#000
-    style Result fill:#fff9c4,color:#000,stroke:#fbc02d,stroke-width:2px`}
+    style Gold fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style G1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G5 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G6 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G7 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G8 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G9 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G10 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Found fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Missed fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style TP fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style FN fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style Result fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -499,7 +535,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Recall: Gaming the Metric"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph SpamFilter["📧 Spam Filter (100% Recall)"]
         SF1["Mark EVERY email as spam"]
@@ -515,8 +551,16 @@ graph TB
         BF4["Actually useful! 🎉"]
         BF1 --> BF2 --> BF3 --> BF4
     end
-    style SpamFilter fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Balanced fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+    style SpamFilter fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style SF1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style SF2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style SF3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style SF4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Balanced fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style BF1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style BF2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style BF3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style BF4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -594,14 +638,15 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="F1 Score — Finding the Balance"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["🎯 Precision"] --> C["⚖️ F1 Score"]
     B["🔍 Recall"] --> C
     C --> D["📊 Best of Both"]
-    style A fill:#81c784,color:#000
-    style B fill:#4fc3f7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#e1bee7,color:#000`}
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a1a3a,color:#e0d0ff,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Formula</h4>
@@ -618,7 +663,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="F1 Score: Comparing 3 Models"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph ModelA["Model A: Too Careful"]
         A1["Precision: 90%"]
@@ -650,12 +695,21 @@ graph TB
         C3 --> C4
     end
     
-    style ModelA fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style ModelB fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
-    style ModelC fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px,color:#000
-    style A3 fill:#ffebee,color:#000
-    style B3 fill:#fff8e1,color:#000
-    style C3 fill:#a5d6a7,color:#000,stroke:#2e7d32,stroke-width:2px`}
+    style ModelA fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style ModelB fill:#2a1500,stroke:#ff7043,stroke-width:2px,color:#e0e0e0
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style ModelC fill:#0a2e1a,stroke:#4caf50,stroke-width:3px,color:#e0e0e0
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B3 fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -706,7 +760,7 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="F1 Trap: Same Score, Different Models"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph ModelA["Model A: Finds Many"]
         A1["Precision: 60%"]
@@ -728,9 +782,17 @@ graph TB
     end
     ModelA -.- Same["⚠️ Same F1 = 72%\nBut completely different behavior!"]
     ModelB -.- Same
-    style ModelA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style ModelB fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#000
-    style Same fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+    style ModelA fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style A1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style A4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style ModelB fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Same fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -809,16 +871,18 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Exact Match — All or Nothing"
-                      diagram={`flowchart TB
-    A["📄 Sentence"] --> B{"All Entities\nPerfect?"}
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
+    A["�� Sentence"] --> B{"All Entities\nPerfect?"}
     B -->|"✅ Yes"| C["Score = 1"]
     B -->|"❌ No"| D["Score = 0"]
     C --> E["📊 EM = Perfect / Total"]
     D --> E
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Formula</h4>
@@ -832,7 +896,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Exact Match Example: 4 Predictions"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Truth["🎯 Ground Truth"]
         GT["Apple=ORG | Tim Cook=PERSON | Tesla=ORG"]
@@ -863,16 +927,20 @@ graph TB
     Truth --> P3
     Truth --> P4
     
-    style Truth fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
-    style P1 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
-    style P2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style P3 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style P4 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style GT fill:#fff,color:#000
-    style P1E fill:#fff,color:#000
-    style P2E fill:#fff,color:#000
-    style P3E fill:#fff,color:#000
-    style P4E fill:#fff,color:#000`}
+    style Truth fill:#0d1f33,stroke:#4da6ff,stroke-width:3px,color:#e0e0e0
+    style P1 fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style P2 fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style P3 fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style P4 fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style GT fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P1E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P1R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P3E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P3R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P4E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P4R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -943,7 +1011,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Exact Match: All-or-Nothing Problem"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Bad["❌ 0 Correct Out of 10"]
         B1["Predicted: 'the Microsoft'"]
@@ -961,9 +1029,15 @@ graph TB
     end
     Bad -.- Same["⚠️ Both score ZERO\nEM can't distinguish them!"]
     Close -.- Same
-    style Bad fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Close fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
-    style Same fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000`}
+    style Bad fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Close fill:#2a1500,stroke:#ff7043,stroke-width:2px,color:#e0e0e0
+    style C1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Same fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1030,18 +1104,21 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="IoU Partial Match Process"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📋 Gold: 'Tim Cook'"] --> C["🔀 Compare"]
     B["🤖 Pred: 'Tim'"] --> C
     C --> D["📐 IoU = 1/2 = 50%"]
     D --> E{"IoU ≥ τ?"}
     E -->|"✅ Yes"| F["Match!"]
     E -->|"❌ No"| G["No Match"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style D fill:#ffd700,color:#000
-    style F fill:#81c784,color:#000
-    style G fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>How It Works</h4>
@@ -1059,7 +1136,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="IoU Examples: Partial Match Scoring"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Ex1["Example 1: Tim Cook"]
         E1G["\u2705 Gold: 'Tim Cook' (2 tokens)"]
@@ -1085,14 +1162,18 @@ graph TB
         E2R --> E2M
     end
     
-    style Ex1 fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
-    style Ex2 fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
-    style E1G fill:#fff,color:#000
-    style E1P fill:#fff,color:#000
-    style E2G fill:#fff,color:#000
-    style E2P fill:#fff,color:#000
-    style E1M fill:#c8e6c9,color:#000
-    style E2M fill:#c8e6c9,color:#000`}
+    style Ex1 fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style E1O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Ex2 fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style E2O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1M fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E2M fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1148,7 +1229,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Partial Match: τ Threshold Comparison"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Span["🔍 Span: 'New York City' (3 tokens)"]
         Pred["🤖 Pred: 'New York' (2 tokens)"]
@@ -1161,10 +1242,15 @@ graph TB
     T1 -->|"67% ≥ 30%"| M1["✅ Match"]
     T2 -->|"67% ≥ 50%"| M2["✅ Match"]
     T3 -->|"67% < 80%"| M3["❌ No Match"]
-    style Span fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style M1 fill:#c8e6c9,color:#000
-    style M2 fill:#c8e6c9,color:#000
-    style M3 fill:#ffcdd2,color:#000`}
+    style Span fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Pred fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Calc fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style T3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style M1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style M2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style M3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1242,17 +1328,20 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity-Level Accuracy — Labeling Test"
-                      diagram={`flowchart LR
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📋 Gold Spans\nAlready Given"] --> B["🏷️ Label Each\nPERSON? ORG? LOC?"]
     B --> C{"Correct Label?"}
     C -->|"✅"| D["Right!"]
     C -->|"❌"| E["Wrong!"]
     D --> F["📊 Accuracy = Right / Total"]
     E --> F
-    style A fill:#4fc3f7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffcdd2,color:#000
-    style F fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Formula</h4>
@@ -1268,7 +1357,7 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity-Level Accuracy Examples"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Ex1["Example 1: Perfect Score"]
         E1T["\ud83d\udccb Given Spans: 'Apple', 'Tim Cook'"]
@@ -1295,12 +1384,17 @@ graph TB
         E2L3 --> E2R
     end
     
-    style Ex1 fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
-    style Ex2 fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
-    style E1T fill:#fff,color:#000
-    style E2T fill:#fff,color:#000
-    style E1R fill:#c8e6c9,color:#000
-    style E2R fill:#ffe0b2,color:#000`}
+    style Ex1 fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style E1L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Ex2 fill:#2a1500,stroke:#ff9800,stroke-width:2px,color:#e0e0e0
+    style E2L1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2L2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2L3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1T fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E2T fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E1R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E2R fill:#3d2000,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1354,7 +1448,7 @@ flowchart LR
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity Accuracy: Diagnostic Detective"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart TB
     Start["🔍 F1 = 40% — Something is Wrong!"]
     Start --> Check{"Check Entity\nLevel Accuracy"}
@@ -1362,11 +1456,12 @@ flowchart TB
     Check -->|"Accuracy = 45%"| LabelProblem["❌ Labeling Problem\n(Wrong types assigned)"]
     FindProblem --> FixFind["🔧 Fix: More detection\ntraining data"]
     LabelProblem --> FixLabel["🔧 Fix: Better label\nguidelines"]
-    style Start fill:#ffcdd2,color:#000
-    style FindProblem fill:#fff3e0,color:#000
-    style LabelProblem fill:#fff3e0,color:#000
-    style FixFind fill:#c8e6c9,color:#000
-    style FixLabel fill:#c8e6c9,color:#000`}
+    style Check fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Start fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style FindProblem fill:#3d2000,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style LabelProblem fill:#3d2000,color:#fed7aa,stroke:#aaaaaa,stroke-width:1.5px
+    style FixFind fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style FixLabel fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1446,19 +1541,21 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Confusion Matrix Structure"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🏷️ Gold Labels\n(Rows)"] --> C["📊 Matrix Grid"]
     B["🤖 Predicted Labels\n(Columns)"] --> C
     C --> D["✅ Diagonal = Correct"]
     C --> E["❌ Off-diagonal = Confused"]
     D --> F["🎯 Action: Celebrate!"]
     E --> G["🔧 Action: Fix These!"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000
-    style E fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000
-    style G fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>How It Works</h4>
@@ -1476,7 +1573,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Confusion Matrix Example"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Matrix["Confusion Matrix (Gold vs Predicted)"]
         direction TB
@@ -1496,13 +1593,16 @@ graph TB
     
     Matrix --> Analysis
     
-    style Matrix fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    style Analysis fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
-    style Header fill:#bbdefb,color:#000
-    style Row1 fill:#fff,color:#000
-    style Row2 fill:#fff,color:#000
-    style Row3 fill:#fff,color:#000
-    style I4 fill:#ffccbc,color:#000`}
+    style Matrix fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Analysis fill:#2a1a00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style Header fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style Row1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Row2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Row3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style I4 fill:#5c2a00,color:#fed7aa,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>When to Use</h4>
@@ -1556,7 +1656,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Confusion Matrix: Real Story — F1 75% → 82%"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Problem["🔍 Confusion Matrix Revealed"]
         P1["'Boston General Hospital'"]
@@ -1577,9 +1677,17 @@ graph TB
         R1 --> R2
     end
     Problem --> Fix --> Result
-    style Problem fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style Fix fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
-    style Result fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+    style Problem fill:#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style P1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style P3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Fix fill:#2a1a00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+    style F1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Result fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style R1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style R2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1651,17 +1759,19 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="When to Use Each Metric"
-                      diagram={`flowchart TB
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["🚀 Start Here"] --> B{"What do you need?"}
     B -->|"Standard Report"| C["📊 Precision + Recall + F1"]
     B -->|"Production Gate"| D["💯 Exact Match"]
     B -->|"Messy Data"| E["🔀 Partial Match\nτ = 0.5"]
     B -->|"Debug Model"| F["🔍 Entity Accuracy\n+ Confusion Matrix"]
-    style A fill:#4fc3f7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a1a3a,color:#e0d0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Metric Selection Guide</h4>
@@ -1728,7 +1838,7 @@ flowchart TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Horror Story: 95% Accuracy vs 40% Entity F1"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 graph TB
     subgraph Sentence["📝 1000-Word Sentence"]
         W["950 non-entity tokens (O)"]
@@ -1748,8 +1858,17 @@ graph TB
     end
     Sentence --> WrongMetric
     Sentence --> RightMetric
-    style WrongMetric fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
-    style RightMetric fill:#c8e6c9,stroke:#4caf50,stroke-width:2px,color:#000`}
+    style Sentence fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
+    style W fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    :#2a0808,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style WM1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style WM2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style WM3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style RightMetric fill:#0a2e1a,stroke:#4caf50,stroke-width:2px,color:#e0e0e0
+    style RM1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style RM2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style RM3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1805,15 +1924,15 @@ graph TB
                   <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="NER Evaluation Workflow"
-                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+                      diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["⚙️ Set Eval Config\n(matching, τ, averaging)"] --> B["🧪 Add Unit Tests\n(exact, partial, errors)"]
     B --> C["📊 Automate Reports\n(F1 + per-class + matrix)"]
     C --> D["📝 Document\n(metrics, results, issues)"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#81c784,color:#000
-    style D fill:#ffd700,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a1a3a,color:#e0d0ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`}
                     />
                   </div>
                   <h4>Action Items</h4>

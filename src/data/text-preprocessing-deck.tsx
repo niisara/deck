@@ -195,38 +195,41 @@ export const textPreprocessingDeck: Deck = {
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Raw Text] --> B[Tokenizer]
     B --> C[Token Array]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Split text into meaningful units (tokens) such as words, subwords, or sentences.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Input: Hello World!] --> B{Method?}
     B -->|Whitespace| C[Hello, World!]
     B -->|BPE| D[Hel, lo, Wor, ld, !]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Tokenization: When to Apply"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Raw Text"] --> B["✂️ Tokenize"]
     B --> C["📊 Features"]
     C --> D["🤖 Model"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#e1bee7,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -309,16 +312,17 @@ graph TD
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Raw Text] --> B[Tokenization]
     B --> C[ML Ready]
     B --> D[Search Ready]
     B --> E[Analysis Ready]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Enables downstream NLP tasks</li>
@@ -327,14 +331,15 @@ graph TD
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Issues] --> B[Lost Context]
     A --> C[Language Challenges]
     A --> D[Longer Sequences]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Can lose spacing/punctuation nuance</li>
@@ -399,33 +404,36 @@ graph LR
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["Hello WORLD"] --> B[Lowercase]
     B --> C["hello world"]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Reduce case-related variance to shrink vocabulary and improve robustness.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Mixed Case Text] --> B{Method}
     B -->|.lower| C[lowercase]
     B -->|.casefold| D[case-folded]
     D --> E[Handles ß  to  ss]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#e1bee7`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Convert text to lowercase or Unicode casefolding for broader equivalence.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Lowercasing: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Apply["✅ Apply Lowercasing"]
         A["🔍 IR / Search"]
         B["🗂️ Topic Modeling"]
@@ -435,8 +443,13 @@ graph LR
         D["🏷️ NER (Apple vs apple)"]
         E["❓ QA (IT vs it)"]
     end
-    style Apply fill:#c8e6c9,stroke:#4caf50,color:#000
-    style Skip fill:#fff9c4,stroke:#f57c00,color:#000`}
+    style Apply fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Skip fill:#3d2e00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -520,18 +533,19 @@ graph TD
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Benefits] --> B[Smaller Vocabulary]
     A --> C[Better Generalization]
     A --> D[Simpler Matching]
     B --> E[Less Memory]
     C --> F[Better Predictions]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#e1bee7
-    style F fill:#e1bee7`} />
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Smaller vocab</li>
@@ -540,14 +554,15 @@ graph TD
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Lost Information] --> B["US vs us"]
     A --> C["Apple vs apple"]
     A --> D["WHO vs who"]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Loses case signals (named entities, sentence starts)</li>
@@ -621,37 +636,40 @@ graph LR
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["é (U+00E9)"] --> N[Normalize]
     B["é (U+0065+0301)"] --> N
     N --> C["Canonical Form"]
-    style A fill:#4fc3f7
-    style B fill:#4fc3f7
-    style N fill:#ffd700
-    style C fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style N fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Ensure canonical representation of characters to avoid duplicate forms.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Text] --> B{Unicode Form}
     B -->|NFC| C[Composed]
     B -->|NFD| D[Decomposed]
     B -->|NFKC| E[Compat Composed]
     B -->|NFKD| F[Compat Decomposed]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784
-    style D fill:#81c784
-    style E fill:#e1bee7
-    style F fill:#e1bee7`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose/compatibility-normalize.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Unicode Normalization: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Sources["Mixed Data Sources"]
         A["🌐 Web Scrape"]
         B["📧 Email (Windows)"]
@@ -660,10 +678,13 @@ graph LR
     Sources --> D["🔧 NFC Normalize"]
     D --> E["✅ Consistent Text"]
     D --> F["🔍 Dedup Works"]
-    style Sources fill:#e3f2fd,stroke:#1976d2,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style Sources fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -759,14 +780,15 @@ graph LR
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Benefits] --> B[Stable Comparisons]
     A --> C[No Duplicates]
     A --> D[Safer Processing]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Stable comparisons</li>
@@ -775,12 +797,13 @@ graph LR
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[NFKC Risk] --> B[Changed Appearance]
     A --> C[Lost Semantics]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>NFKC may alter appearance/semantics</li>
@@ -854,44 +877,47 @@ graph TD
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["Hello    World  "] --> B[Normalize]
     B --> C["Hello World"]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Standardize spacing to make token boundaries predictable.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Messy Spacing] --> B[Collapse Spaces]
     B --> C[Normalize Newlines]
     C --> D[Trim Edges]
     D --> E[Clean Text]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#ffd700
-    style D fill:#ffd700
-    style E fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Collapse multiple spaces; normalize tabs/newlines; trim leading/trailing whitespace.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Whitespace Normalization: When to Apply"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📷 OCR Output"] --> D["🧹 Whitespace Norm"]
     B["📋 Server Logs"] --> D
     C["�� Web Scrape"] --> D
     D --> E["✂️ Tokenize"]
     E --> F["📊 Pipeline"]
-    style A fill:#ffcdd2,color:#000
-    style B fill:#ffcdd2,color:#000
-    style C fill:#ffcdd2,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#e1bee7,color:#000
-    style F fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1002,14 +1028,15 @@ graph LR
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Clean Text] --> B[Better Tokens]
     A --> C[Consistent Parse]
     A --> D[Fewer Bugs]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Cleaner tokens</li>
@@ -1018,14 +1045,15 @@ graph LR
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Lost Info] --> B[Table Layout]
     A --> C[Code Format]
     A --> D[Alignment]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>May lose layout cues (tables, code)</li>
@@ -1118,33 +1146,36 @@ Not              an              accident
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[""'--..."] --> B[Normalize]
     B --> C["Standard Punctuation"]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Reduce punctuation variants and noise.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Smart Quotes] --> B[Map to Straight]
     C[Multiple Dashes] --> D[Unify Hyphens]
     E[Repeated!!!] --> F[Collapse]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#4fc3f7
-    style D fill:#81c784
-    style E fill:#4fc3f7
-    style F fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Punctuation Normalization: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph UGC["Noisy UGC Input"]
         A["Hello!!!"]
         B["It’s…great"]
@@ -1153,10 +1184,13 @@ Not              an              accident
     UGC --> D["🔧 Punct Norm"]
     D --> E["✂️ Tokenize"]
     D --> F["📊 Features"]
-    style UGC fill:#ffcdd2,stroke:#c62828,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style UGC fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1248,14 +1282,15 @@ Let's look at the tradeoffs next.`
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Normalized] --> B[Consistent Tokens]
     A --> C[Better Matching]
     A --> D[Clean Splits]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Fewer token variants</li>
@@ -1264,12 +1299,13 @@ Let's look at the tradeoffs next.`
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Risks] --> B[Language Issues]
     A --> C[Lost Emotion]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Language/script-specific</li>
@@ -1342,27 +1378,32 @@ graph LR
                   <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Raw Tokens] --> B{Filter}
     B --> C[Content Words]
     B --> D[Stopwords]
-    style A fill:#4fc3f7
-    style C fill:#81c784
-    style D fill:#ffcdd2`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Remove very frequent function words that add little topical value.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Token Stream] --> B[Load Stopword List]
     B --> C{Token in list?}
     C -->|Yes| D[Remove]
     C -->|No| E[Keep]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style D fill:#ffcdd2`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Filter tokens against a language-specific stopword list.</p>
                   </GSAPAnimated>
@@ -1371,7 +1412,8 @@ graph LR
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Stopword Removal: Best Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Use["✅ Great For"]
         A["📦 Bag of Words"]
         B["📈 TF-IDF"]
@@ -1382,8 +1424,14 @@ graph LR
         E["💬 Sentiment (not bad)"]
         F["🧠 Deep Learning"]
     end
-    style Use fill:#c8e6c9,stroke:#4caf50,color:#000
-    style Avoid fill:#fff9c4,stroke:#f57c00,color:#000`}
+    style Use fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Avoid fill:#3d2e00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1474,14 +1522,15 @@ graph LR
                 <GSAPAnimated animation="bounceIn" delay={0.2} duration={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Stopword Removal] --> B[Reduced Dimensions]
     A --> C[Faster Training]
     A --> D[Better Topic Signal]
-    style A fill:#ffd700
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
@@ -1494,14 +1543,15 @@ graph LR
                 <GSAPAnimated animation="bounceIn" delay={0.9} duration={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Stopword Removal] --> B[Meaning Loss]
     A --> C[Breaks Sequences]
     A --> D[Domain Issues]
-    style A fill:#ffd700
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
@@ -1591,30 +1641,34 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
                   <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[All Tokens] --> B[Light Filter]
     B --> C[Keep Most Words]
     B --> D[Remove Only Generic]
-    style A fill:#4fc3f7
-    style C fill:#81c784
-    style D fill:#ffcdd2
-    style B fill:#ffd700`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Conservatively remove only the most generic function words while keeping nuance.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="rotateIn" delay={0.4} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Tokens] --> B{Check Minimal List}
     B -->|Generic| C[Remove]
     B -->|Important| D[Keep]
     D --> E[Preserve negations]
     D --> F[Preserve intensifiers]
-    style A fill:#4fc3f7
-    style D fill:#81c784
-    style E fill:#e1bee7
-    style F fill:#e1bee7`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
                   </GSAPAnimated>
@@ -1623,7 +1677,8 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Light Stopword Trimming: When to Use"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Preserved["✅ Preserved Tokens"]
         A["not bad → kept"]
         B["very good → kept"]
@@ -1633,9 +1688,13 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
         D["the, a, an"]
     end
     Preserved --> E["😊 Sentiment: Accurate"]
-    style Preserved fill:#c8e6c9,stroke:#4caf50,color:#000
-    style Removed fill:#ffcdd2,stroke:#c62828,color:#000
-    style E fill:#81c784,color:#000`}
+    style Preserved fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Removed fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -1748,14 +1807,15 @@ Use TF-IDF or document frequency to identify words that appear in almost every d
                 <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Light Trimming] --> B[Preserves Meaning]
     A --> C[Reduces Noise]
     A --> D[Safe for Sentiment]
-    style A fill:#ffd700
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
@@ -1767,14 +1827,15 @@ Use TF-IDF or document frequency to identify words that appear in almost every d
                 <GSAPAnimated animation="flipCard" delay={0.9} duration={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Light Trimming] --> B[Needs Tuning]
     A --> C[Some Noise Remains]
     A --> D[Short Text Risk]
-    style A fill:#ffd700
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
@@ -1889,23 +1950,25 @@ graph LR
                   <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[running] --> B[run]
     C[runs] --> B
     D[runner] --> B
     E[ran] --> B
-    style A fill:#4fc3f7
-    style C fill:#4fc3f7
-    style D fill:#4fc3f7
-    style E fill:#4fc3f7
-    style B fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Reduce inflected words to stems to merge variants.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="scaleIn" delay={0.4} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Word] --> B{Apply Rules}
     B --> C[Strip -ing]
     B --> D[Strip -ed]
@@ -1913,9 +1976,12 @@ graph LR
     C --> F[Stem]
     D --> F
     E --> F
-    style A fill:#4fc3f7
-    style F fill:#81c784
-    style B fill:#ffd700`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
                   </GSAPAnimated>
@@ -1924,7 +1990,8 @@ graph LR
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Stemming: When to Use"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A{"Need exact word forms?"}
     A -->|"No - use Stemming"| B["✅ Stemming
 running→run
@@ -1936,9 +2003,12 @@ better→good"]
         E["🗂️ Topic Model"]
     end
     B --> GoodFor
-    style B fill:#c8e6c9,color:#000
-    style C fill:#fff9c4,color:#000
-    style GoodFor fill:#e3f2fd,color:#000`}
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style GoodFor fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -2059,12 +2129,13 @@ graph TD
                 <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.8}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Stemming] --> B[Smaller Vocabulary]
     A --> C[Handles Inflections]
-    style A fill:#ffd700
-    style B fill:#81c784
-    style C fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.6}>
@@ -2076,14 +2147,15 @@ graph TD
                 <GSAPAnimated animation="slideInBottom" delay={0.8} duration={0.8}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Stemming] --> B[Non-words: happi]
     A --> C[Over-stemming: univers]
     A --> D[Under-stemming: alumni]
-    style A fill:#ffd700
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.6}>
@@ -2218,33 +2290,35 @@ graph TD
                   <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[better] --> B[good]
     C[running] --> D[run]
     E[was] --> F[be]
     G[feet] --> H[foot]
-    style A fill:#4fc3f7
-    style C fill:#4fc3f7
-    style E fill:#4fc3f7
-    style G fill:#4fc3f7
-    style B fill:#81c784
-    style D fill:#81c784
-    style F fill:#81c784
-    style H fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Map tokens to dictionary base forms (lemmas).</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.4} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Word + POS] --> B[Morphological Analysis]
     B --> C[Dictionary Lookup]
     C --> D[Lemma]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#e1bee7
-    style D fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Morphological analysis using lexicons and POS/context.</p>
                   </GSAPAnimated>
@@ -2253,7 +2327,8 @@ graph TD
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Lemmatization: When to Use"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Use["✅ Best For"]
         A["🔬 Linguistic Analysis"]
         B["📚 QA Systems"]
@@ -2264,8 +2339,14 @@ graph TD
         F["running → run ✅"]
         G["was → be ✅"]
     end
-    style Use fill:#c8e6c9,stroke:#4caf50,color:#000
-    style Comp fill:#e3f2fd,stroke:#1976d2,color:#000`}
+    style Use fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Comp fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -2427,14 +2508,15 @@ lemmas = [token.lemma_ for token in doc]
                 <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Lemmatization] --> B[Real Words]
     A --> C[High Accuracy]
     A --> D[Handles Irregulars]
-    style A fill:#ffd700
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.7}>
@@ -2447,14 +2529,15 @@ lemmas = [token.lemma_ for token in doc]
                 <GSAPAnimated animation="bounceIn" delay={0.9} duration={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Lemmatization] --> B[Slower Processing]
     A --> C[Needs Resources]
     A --> D[Domain Shift Errors]
-    style A fill:#ffd700
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.7}>
@@ -2605,33 +2688,35 @@ Use neither when:
                   <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[I] --> B[PRON]
     C[love] --> D[VERB]
     E[fast] --> F[ADJ]
     G[cars] --> H[NOUN]
-    style A fill:#4fc3f7
-    style C fill:#4fc3f7
-    style E fill:#4fc3f7
-    style G fill:#4fc3f7
-    style B fill:#81c784
-    style D fill:#e1bee7
-    style F fill:#ffd700
-    style H fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Sentence] --> B[Context Analysis]
     B --> C[HMM/CRF/Neural Model]
     C --> D[POS Tags]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#e1bee7
-    style D fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
                   </GSAPAnimated>
@@ -2640,18 +2725,19 @@ Use neither when:
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="POS Tagging: Pipeline Position"
-                          diagram={`flowchart LR
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["✂️ Tokenize"] --> B["🏷️ POS Tag"]
     B --> C["📖 Lemmatize"]
     B --> D["🔍 NER"]
     B --> E["🌳 Parsing"]
     B --> F["⚙️ Features"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -2846,14 +2932,15 @@ for token in doc:
                 <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[POS Tagging] --> B[Syntax Awareness]
     A --> C[Better Lemmatization]
     A --> D[Rich Features]
-    style A fill:#ffd700
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
@@ -2865,14 +2952,15 @@ for token in doc:
                 <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[POS Tagging] --> B[Error Propagation]
     A --> C[Domain Variance]
     A --> D[Ambiguity Issues]
-    style A fill:#ffd700
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
@@ -3042,28 +3130,30 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
                   <GSAPAnimated animation="bounceIn" delay={0.2} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph TD
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A["I love NLP"] --> B["Unigrams: I, love, NLP"]
     A --> C["Bigrams: I love, love NLP"]
     A --> D["Trigrams: I love NLP"]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#e1bee7
-    style D fill:#ffd700`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Capture local context by creating contiguous token sequences.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="bounceIn" delay={0.4} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph LR
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Tokens] --> B[Sliding Window]
     B --> C[Generate n-grams]
     C --> D[Prune/Weight]
-    style A fill:#4fc3f7
-    style B fill:#ffd700
-    style C fill:#e1bee7
-    style D fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
                   </GSAPAnimated>
@@ -3072,19 +3162,20 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="N-gram Generation: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A["I love NLP"] --> B["Bigrams:
 I_love, love_NLP"]
     B --> C["📊 Feature Matrix"]
     C --> D["🤖 Linear Model"]
     C --> E["🔍 IR Search"]
     C --> F["📁 Text Classifier"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#e1bee7,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -3272,12 +3363,13 @@ N-grams are a simple, interpretable, and effective way to capture local context 
                 <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[N-grams] --> B[Word Order]
     A --> C[Context Capture]
-    style A fill:#ffd700
-    style B fill:#81c784
-    style C fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
@@ -3289,14 +3381,15 @@ N-grams are a simple, interpretable, and effective way to capture local context 
                 <GSAPAnimated animation="slideInRight" delay={0.8} duration={0.8}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph TD
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[N-grams] --> B["10K words  to  500K bigrams"]
     A --> C[Sparse Features]
     A --> D[Brittle Matching]
-    style A fill:#ffd700
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
@@ -3478,30 +3571,32 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
                   <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      Goal <MermaidPopover diagram={`graph LR
+                      Goal <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["New York City"] --> B["New_York_City"]
     C["machine learning"] --> D["machine_learning"]
     E["ice cream"] --> F["ice_cream"]
-    style A fill:#4fc3f7
-    style C fill:#4fc3f7
-    style E fill:#4fc3f7
-    style B fill:#81c784
-    style D fill:#81c784
-    style F fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Treat multiword expressions as single units (e.g., "New York").</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="flipCard" delay={0.4} duration={1.0}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Compute PMI/T-score] --> B[Set Threshold]
     B --> C[Join High-Score Pairs]
     C --> D[Iterate for Longer]
-    style A fill:#ffd700
-    style B fill:#e1bee7
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2d1b3d,color:#e9d5ff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
                   </GSAPAnimated>
@@ -3510,7 +3605,8 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Phrase Detection: When to Apply"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Before["Before Detection"]
         A["New York City"] 
         B["machine learning"]
@@ -3519,9 +3615,13 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
     D --> E["New_York_City ✅"]
     D --> F["machine_learning ✅"]
     E --> H["🔍 IR & Entity Tasks"]
-    style Before fill:#ffcdd2,stroke:#c62828,color:#000
-    style D fill:#ffd700,color:#000
-    style H fill:#c8e6c9,color:#000`}
+    style Before fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -3747,14 +3847,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Phrase Detection] --> B[Better Semantics]
     A --> C[Reduces Fragmentation]
     A --> D[Improves Retrieval]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Better semantics</li>
@@ -3763,14 +3864,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Challenges] --> B[Threshold Tuning]
     A --> C[Domain Dependence]
     A --> D[False Matches]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Threshold tuning</li>
@@ -3817,7 +3919,8 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                     <p style={{ margin: '0px' }}>Fix misspellings to improve readability and model input quality.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Misspelled Word] --> B[Generate Candidates]
     B --> C[Edit Distance 1-2]
     B --> D[Phonetic Similarity]
@@ -3825,15 +3928,21 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     D --> E
     E --> F[Context Check]
     F --> G[Best Correction]
-    style A fill:#4fc3f7
-    style G fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Spell Correction: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Sources["📥 Input Sources"]
         A["�� UGC / Social"]
         B["📋 Noisy Forms"]
@@ -3845,10 +3954,15 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
         F["🏥 Medical Terms"]
         G["💻 Code / Variables"]
     end
-    style Sources fill:#e3f2fd,stroke:#1976d2,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#c8e6c9,color:#000
-    style Avoid fill:#fff9c4,stroke:#f57c00,color:#000`}
+    style Sources fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Avoid fill:#3d2e00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -3910,16 +4024,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Risks] --> B[Overcorrection]
     A --> C[Language Specific]
     A --> D[Computation Cost]
     B --> E["desert → dessert"]
     C --> F["café → cafe?"]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Overcorrection risk</li>
@@ -3966,7 +4083,8 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                     <p style={{ margin: '0px' }}>Correct systematic errors from optical character recognition.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Scanned Image] --> B[OCR Engine]
     B --> C[Raw Text with Errors]
     C --> D["rn → m"]
@@ -3976,16 +4094,22 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     E --> G
     F --> G
     G --> H[Corrected Text]
-    style A fill:#4fc3f7
-    style C fill:#ffcdd2
-    style H fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="OCR Error Correction: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Sources["📥 Document Sources"]
         A["📚 Scanned Books"]
         B["📄 Legacy PDFs"]
@@ -3997,10 +4121,14 @@ rn→m, l→I errors"]
     E --> F["🔧 OCR Correction"]
     F --> G["✅ Clean Text
 10-20% → 1-2% error"]
-    style Sources fill:#e3f2fd,stroke:#1976d2,color:#000
-    style E fill:#ffcdd2,color:#000
-    style F fill:#ffd700,color:#000
-    style G fill:#c8e6c9,color:#000`}
+    style Sources fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4110,24 +4238,30 @@ rn→m, l→I errors"]
                     <p style={{ margin: '0px' }}>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph LR
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A["don't"] --> B[Regex Match]
     B --> C[Dictionary Lookup]
     C --> D["do not"]
     E["can't"] --> F[Regex Match]
     F --> G[Dictionary Lookup]
     G --> H["can not / cannot"]
-    style A fill:#4fc3f7
-    style E fill:#4fc3f7
-    style D fill:#81c784
-    style H fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Regex + mapping dictionary; optional context-aware models.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Contraction Expansion: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Before["Before Expansion"]
         A["I don’t like it"]
     end
@@ -4139,10 +4273,14 @@ Detected Correctly"]
         G["😊 Sentiment Analysis"]
         H["📝 Rule-Based Parsing"]
     end
-    style Before fill:#ffcdd2,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#c8e6c9,color:#000
-    style Use fill:#c8e6c9,stroke:#4caf50,color:#000`}
+    style Before fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style Use fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4196,14 +4334,17 @@ Detected Correctly"]
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Contraction Expansion] --> B[Clearer Negation]
     A --> C[Consistent Tokens]
     B --> D["don't → do not"]
     C --> E[Smaller Vocabulary]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Clearer negation and syntax</li>
@@ -4258,7 +4399,8 @@ Detected Correctly"]
                     <p style={{ margin: '0px' }}>Standardize numeric expressions for comparability and reduced sparsity.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A["123,456"] --> B[Parse Format]
     C["123.456"] --> B
     D["one hundred"] --> B
@@ -4266,18 +4408,23 @@ Detected Correctly"]
     E --> F[NUM or 123456]
     G["$50"] --> H[Unit Detection]
     H --> I[50 USD]
-    style A fill:#4fc3f7
-    style C fill:#4fc3f7
-    style D fill:#4fc3f7
-    style F fill:#81c784
-    style I fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Number Normalization: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Strategy["Choose Strategy"]
         A{"Purpose?"}
     end
@@ -4286,10 +4433,11 @@ Detected Correctly"]
 5K → 5000"]
     A -->|"Cross-unit"| D["⚖️ Convert:
 5ft → 1.52m"]
-    style A fill:#e3f2fd,color:#000
-    style B fill:#c8e6c9,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style Strategy fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4352,16 +4500,19 @@ Detected Correctly"]
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Challenges] --> B[Loss of Precision]
     A --> C[Unit Complexity]
     A --> D[Context Sensitivity]
     B --> E["$99.99 → $100?"]
     C --> F["2.5L vs 2.5lb"]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Potential loss of precision</li>
@@ -4408,7 +4559,8 @@ Detected Correctly"]
                     <p style={{ margin: '0px' }}>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Raw Text] --> B{Unicode Category}
     B --> C[Letters] 
     B --> D[Emojis]
@@ -4419,16 +4571,23 @@ Detected Correctly"]
     E --> I[Remove]
     F --> H
     H --> G
-    style A fill:#4fc3f7
-    style G fill:#81c784
-    style I fill:#ffcdd2`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Special Character Filtering: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Apply["✅ Apply Filtering"]
         A["📃 Formal Docs
 (Legal/Medical)"]
@@ -4439,8 +4598,13 @@ Detected Correctly"]
         D["😠 = Negative Sentiment"]
         E["🔥 = Strong Emotion"]
     end
-    style Apply fill:#c8e6c9,stroke:#4caf50,color:#000
-    style Preserve fill:#fff9c4,stroke:#f57c00,color:#000`}
+    style Apply fill:#1b4332,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style Preserve fill:#3d2e00,stroke:#f5a623,stroke-width:2px,color:#e0e0e0
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4549,7 +4713,8 @@ Detected Correctly"]
                     <p style={{ margin: '0px' }}>Remove template-like non-content (headers, footers, nav, ads).</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Web Page] --> B[Parse HTML/DOM]
     B --> C[Header]
     B --> D[Navigation]
@@ -4561,17 +4726,23 @@ Detected Correctly"]
     F --> H
     G --> H
     E --> I[Keep]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style I fill:#81c784
-    style H fill:#ffcdd2`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Boilerplate Removal: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Input["📥 Raw Sources"]
         A["🌐 Web Scrape"]
         B["📧 Emails"]
@@ -4581,11 +4752,14 @@ Detected Correctly"]
     D --> E["❌ Header / Footer"]
     D --> F["❌ Nav / Ads"]
     D --> G["✅ Main Content"]
-    style Input fill:#e3f2fd,color:#000
-    style D fill:#ffd700,color:#000
-    style E fill:#ffcdd2,color:#000
-    style F fill:#ffcdd2,color:#000
-    style G fill:#c8e6c9,color:#000`}
+    style Input fill:#0d1f33,stroke:#4da6ff,stroke-width:2px,color:#e0e0e0
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style G fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4648,16 +4822,19 @@ Detected Correctly"]
                   </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Cons <MermaidPopover diagram={`graph LR
+                    Cons <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Risks] --> B[Remove Real Content]
     A --> C[Site-Specific Rules]
     A --> D[Complex Layouts]
     B --> E[Caption in sidebar?]
     C --> F[Maintenance burden]
-    style A fill:#ffcdd2
-    style B fill:#ffcdd2
-    style C fill:#ffcdd2
-    style D fill:#ffcdd2`} />
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Risk of removing content</li>
@@ -4706,7 +4883,8 @@ Detected Correctly"]
                     <p style={{ margin: '0px' }}>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Sentence 1] --> B[Normalize]
     C[Sentence 2] --> D[Normalize]
     B --> E[Hash/Embed]
@@ -4715,17 +4893,24 @@ Detected Correctly"]
     F --> G
     G -->|Yes| H[Remove Duplicate]
     G -->|No| I[Keep Both]
-    style A fill:#4fc3f7
-    style C fill:#4fc3f7
-    style H fill:#ffcdd2
-    style I fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style I fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style Similarity fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Duplicate Removal: When to Apply"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     subgraph Problem["⚠️ Without Dedup"]
         A["Same sentence 100× → Bias"]
         B["Train/Test overlap → Leakage"]
@@ -4734,9 +4919,13 @@ Detected Correctly"]
     C --> D["✅ Clean Dataset"]
     D --> E["🤖 Train"]
     D --> F["📊 Evaluate"]
-    style Problem fill:#ffcdd2,stroke:#c62828,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#c8e6c9,color:#000`}
+    style Problem fill:#5c1a1a,stroke:#e53935,stroke-width:2px,color:#e0e0e0
+    style C fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+        style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+        style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4848,33 +5037,39 @@ Detected Correctly"]
                     <p style={{ margin: '0px' }}>Split text into sentences for sentence-level processing.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Dr. Smith arrived.] --> B{Period after Dr.?}
     B -->|Abbreviation| C[Don't Split]
     A --> D{Period after arrived?}
     D -->|Sentence End| E[Split Here]
     F["It costs $5.99."] --> G{Period after 99?}
     G -->|Sentence End| H[Split Here]
-    style A fill:#4fc3f7
-    style F fill:#4fc3f7
-    style E fill:#81c784
-    style H fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Sentence Segmentation: Use Cases"
-                          diagram={`flowchart TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📄 Document"] --> B["✂️ Sentence Segmentation"]
     B --> C["📝 Summarization"]
     B --> D["🌍 Translation"]
     B --> E["😊 Sentence-level Sentiment"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#c8e6c9,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -4928,17 +5123,21 @@ Detected Correctly"]
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph LR
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph LR
     A[Benefits] --> B[Sentence-Level Features]
     A --> C[Manageable Chunks]
     A --> D[Better Alignment]
     B --> E[Translation]
     C --> F[Summarization]
     D --> G[Analysis]
-    style A fill:#81c784
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Enables sentence-level features</li>
@@ -4993,7 +5192,8 @@ Detected Correctly"]
                     <p style={{ margin: '0px' }}>Identify language and route/filter text accordingly.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                      How It Works <MermaidPopover diagram={`graph TD
+                      How It Works <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Mixed Text] --> B[Character n-grams]
     B --> C[Frequency Analysis]
     C --> D{Language Classifier}
@@ -5001,27 +5201,33 @@ Detected Correctly"]
     D --> F[Spanish - 0.10]
     D --> G[French - 0.05]
     E --> H[Route to EN Pipeline]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style H fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </h4>
                     <p style={{ margin: '0px' }}>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
                     <div style={{ position: 'relative' }}>
                       <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                         <MermaidPopover
                           title="Language Detection: Use Cases"
-                          diagram={`graph TB
+                          diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TB
     A["🌍 Mixed Language Stream"] --> B["🔍 Detect Language"]
     B --> C["🇬🇧 English → EN Pipeline"]
     B --> D["🇪🇸 Spanish → ES Pipeline"]
     B --> E["🇫🇷 French → FR Pipeline"]
     B --> F["❓ Unknown → Filter"]
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffd700,color:#000
-    style C fill:#c8e6c9,color:#000
-    style D fill:#c8e6c9,color:#000
-    style E fill:#c8e6c9,color:#000
-    style F fill:#ffcdd2,color:#000`}
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`}
                         />
                       </div>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
@@ -5076,17 +5282,21 @@ Detected Correctly"]
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Pros <MermaidPopover diagram={`graph TD
+                    Pros <MermaidPopover diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+graph TD
     A[Language Detection] --> B[Clean Datasets]
     A --> C[Correct Routing]
     A --> D[Better Performance]
     B --> E[Monolingual Corpora]
     C --> F[Right Model/Agent]
     D --> G[Optimized Processing]
-    style A fill:#4fc3f7
-    style B fill:#81c784
-    style C fill:#81c784
-    style D fill:#81c784`} />
+    style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style B fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
                     <li>Cleaner mono-lingual datasets</li>

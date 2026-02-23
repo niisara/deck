@@ -140,12 +140,15 @@ export const embeddingQualityDeck: Deck = {
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Text Normalization Pipeline"
-                        diagram={`flowchart LR
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart LR
     A["📄 Raw Text"] --> B["🔤 Unicode Normalization"]
     B --> C["✂️ Whitespace & Punctuation"]
     C --> D["✨ Clean Output"]
-    style A fill:#ffcdd2,color:#000
-    style D fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -274,14 +277,17 @@ And you eliminate **encoding and scraping artifacts**. No more weird characters 
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Boilerplate Removal Process"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📰 Document"] --> B{"🔍 Identify Content"}
     B -->|Keep| C["📝 Main Content"]
     B -->|Remove| D["🗑️ Headers/Footers/Nav"]
     C --> E["✨ Clean Document"]
-    style A fill:#ffcdd2,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -412,13 +418,17 @@ You also get a **smaller index size**. If you're removing eighty percent noise f
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Semantic Chunking Strategy"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📄 Long Document"] --> B["📐 Structure Analysis"]
     B --> C["📑 Split at Boundaries"]
     C --> D["🔗 Add Overlap"]
     D --> E["✨ Coherent Chunks"]
-    style A fill:#ffcdd2,color:#000
-    style E fill:#81c784,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -548,15 +558,19 @@ Third, **use similarity to refine your chunks**. Within a section, you might hav
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Section Title Hierarchy Flow"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📚 Document Structure"] --> B["🔍 Extract Hierarchy"]
     B --> C["📋 Doc Title > H1 > H2 > H3"]
     C --> D["🏷️ Build Breadcrumb"]
     D --> E["📦 Prepend to Chunk"]
     E --> F["✨ Contextualized Chunk"]
-    style A fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000
-    style D fill:#4fc3f7,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -692,16 +706,19 @@ Second, **build a concise chunk title**. You might not need the full breadcrumb 
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Stopword Filtering Process"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📝 Original Text"] --> B{"🔍 Token Analysis"}
     B -->|Keep| C["💎 Content Words"]
     B -->|Remove| D["🗑️ Filler Words"]
     C --> E["✨ Dense Text"]
     D -.->|"a, the, of..."| F["⚠️ Light Removal Only"]
-    style A fill:#ffcdd2,color:#000
-    style D fill:#ffcdd2,color:#000
-    style E fill:#81c784,color:#000
-    style F fill:#4fc3f7,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -837,15 +854,19 @@ You also get **faster indexing**. Fewer tokens means less processing time when g
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Keyphrase Extraction and Tagging"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📝 Chunk Text"] --> B["🔍 Extract Keyphrases"]
     B --> C["🔄 Normalize & Dedupe"]
     C --> D["📚 Map to Vocabulary"]
     D --> E["🏷️ Attach as Tags"]
     E --> F["✨ Enriched Chunk"]
-    style A fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000
-    style D fill:#4fc3f7,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -980,15 +1001,19 @@ The other major challenge is **taxonomy maintenance**. Over time, your vocabular
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                       <MermaidPopover
                         title="Table to Text Conversion"
-                        diagram={`flowchart TB
+                        diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+flowchart TB
     A["📊 Table"] --> B["🔍 Parse Structure"]
     B --> C["📋 Extract Schema"]
     C --> D["🔄 Linearize Rows"]
     D --> E["✍️ Key-Value Format"]
     E --> F["✨ Structured Text"]
-    style A fill:#ffcdd2,color:#000
-    style F fill:#81c784,color:#000
-    style E fill:#4fc3f7,color:#000`}
+    style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
+    style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
+    style E fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                       />
                     </div>
                     <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}>
