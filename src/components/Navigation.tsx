@@ -50,7 +50,8 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
         <div className="nav-container">
           {/* Logo */}
           <div className="nav-logo">
-            <h1>📚 Deck</h1>
+            <SvgIcon iconName="duo-presentation-screen" sizeName="2x" darkModeInvert={true} className="nav-logo-icon" />
+            <span className="nav-logo-text">Deck<span className="nav-logo-accent">.</span></span>
           </div>
 
           {/* Category Menu */}

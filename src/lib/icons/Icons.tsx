@@ -255,6 +255,9 @@ export const icons: IconsMap = {
   // Icons for NER training deck
   "duo-brain": "/icons/svg/duotone/brain.svg",
   "duo-graduation-cap": "/icons/svg/duotone/graduation-cap.svg",
+  "duo-presentation-screen": "/icons/svg/duotone/presentation-screen.svg",
+  "duo-chalkboard": "/icons/svg/duotone/chalkboard.svg",
+  "duo-podium": "/icons/svg/duotone/podium.svg",
   "duo-book-open": "/icons/svg/duotone/book-open.svg",
   "duo-list-check": "/icons/svg/duotone/list-check.svg",
   "duo-clipboard-list": "/icons/svg/duotone/clipboard-list.svg",
