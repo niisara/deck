@@ -1,32 +1,4 @@
-
-chunking-techniques-deck.tsx
-context-packing-deck.tsx
-death-deck.tsx
-document-preprocessing-deck.tsx
-embedding-models-deck.tsx
-embedding-quality-deck.tsx
-entity-normalization-deck.tsx
-feature-extraction-deck.tsx
-graph-retrieval-deck.tsx
-guru-puja-deck.tsx
-hybrid-search-deck.tsx
-llm-caching-deck.tsx
-metadata-enrichment-deck.tsx
-multi-step-retrieval-deck.tsx
-ner-approaches-deck.tsx
-ner-metrics-deck.tsx
-ner-training-deck.tsx
-parent-child-retrieval-deck.tsx
-production-rag-deck.tsx
-prompt-engineering-deck.tsx
-query-rewriting-deck.tsx
-rag-evaluation-metrics-deck.tsx
-rag-latency-deck.tsx
-reranking-models-deck.tsx
-sentiment-analysis-deck.tsx
-text-preprocessing-deck.tsx
-vector-databases-deck.tsx
-vector-indexing-deck.tsx for this file do the following:
+Infer the deck topic, category, and techniques from the filename provided. 
 
 ## Purpose
 Add interactive MermaidPopover diagrams as inline clickable badges to slides, making technical concepts more engaging and visual during presentations without adding vertical space or requiring scrolling.

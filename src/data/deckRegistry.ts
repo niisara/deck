@@ -87,6 +87,21 @@ export const deckRegistry: DeckMeta[] = [
     load: () => import('./ner-training-deck').then((m) => m.nerTrainingDeck),
   },
   {
+    id: 'temporal-workflow-patterns',
+    name: '9 Temporal Workflow Patterns for Durable Execution',
+    description:
+      'Saga, State Machine, Long-Running, Cron, Child Workflows, Signals, Queries, Continue-As-New, Update',
+    category: 'Agent',
+    theme: 'night',
+    cardStyle: {
+      backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    slideCount: 26,
+    load: () => import('./temporal-workflow-deck').then((m) => m.temporalWorkflowDeck),
+  },
+  {
     id: 'embedding-models-deck',
     name: '9 Embedding Models Cheat Sheet',
     description: 'Quick-reference for RAG, semantic search, clustering, and more',
