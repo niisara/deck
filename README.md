@@ -1,6 +1,7 @@
 wsl
 
 cd /home/nisar/.openclaw/workspace/deck
+ bash run-mermaid-popover.sh
 
 # React + TypeScript + Vite
 
