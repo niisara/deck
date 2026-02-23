@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LiquidGlass } from '@liquidglass/react';
 import SvgIcon from '../lib/icons/SvgIcon';
 import type { IconName } from '../lib/icons/Icons';
 import './Navigation.css';
@@ -35,7 +36,17 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
 
   return (
     <nav className="navigation">
-      <div className="nav-glass-bar">
+      <LiquidGlass
+        borderRadius={20}
+        blur={1}
+        contrast={1.2}
+        brightness={1.08}
+        saturation={1.3}
+        shadowIntensity={0.3}
+        elasticity={0.6}
+        zIndex={1000}
+        className="nav-liquid"
+      >
         <div className="nav-container">
           {/* Logo */}
           <div className="nav-logo">
@@ -44,21 +55,52 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
 
           {/* Category Menu */}
           <div className="nav-categories">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
-                onClick={() => onCategoryChange(category)}
-              >
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+              const icon = (
                 <SvgIcon
                   iconName={CATEGORY_ICONS[category]}
                   sizeName="lg"
                   darkModeInvert={true}
-                  className="category-icon"
                 />
-                <span className="category-label">{category}</span>
-              </button>
-            ))}
+              );
+
+              if (isActive) {
+                return (
+                  <LiquidGlass
+                    key={category}
+                    borderRadius={50}
+                    blur={0.8}
+                    contrast={1.2}
+                    brightness={1.1}
+                    saturation={1.3}
+                    shadowIntensity={0.25}
+                    elasticity={0.6}
+                    zIndex={1}
+                    className="category-btn-liquid"
+                  >
+                    <button
+                      className="category-btn active"
+                      onClick={() => onCategoryChange(category)}
+                    >
+                      {icon}
+                      <span className="category-label">{category}</span>
+                    </button>
+                  </LiquidGlass>
+                );
+              }
+
+              return (
+                <button
+                  key={category}
+                  className="category-btn inactive"
+                  onClick={() => onCategoryChange(category)}
+                  title={category}
+                >
+                  {icon}
+                </button>
+              );
+            })}
           </div>
 
           {/* Search Bar */}
@@ -78,7 +120,7 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
             <SvgIcon iconName="duo-gear" sizeName="lg" darkModeInvert={true} />
           </Link>
         </div>
-      </div>
+      </LiquidGlass>
     </nav>
   );
 }
