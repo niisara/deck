@@ -26,7 +26,7 @@ const isProd = import.meta.env.VITE_IS_PROD === 'true';
 console.log(`Running in ${isProd ? 'production' : 'development'} mode. VITE_IS_PROD=${import.meta.env.VITE_IS_PROD}`);
 function HomePage() {
   const location = useLocation();
-  const [selectedCategory, setSelectedCategory] = useState<'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All'>('NLP');
+  const [selectedCategory, setSelectedCategory] = useState<'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Inner Intelligence' | 'Other' | 'All'>('NLP');
   const [searchQuery, setSearchQuery] = useState('');
 
   // Background slideshow state

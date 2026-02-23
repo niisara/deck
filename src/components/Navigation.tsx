@@ -5,8 +5,8 @@ import type { IconName } from '../lib/icons/Icons';
 import './Navigation.css';
 
 interface NavigationProps {
-  selectedCategory: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All';
-  onCategoryChange: (category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All') => void;
+  selectedCategory: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Inner Intelligence' | 'Other' | 'All';
+  onCategoryChange: (category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Inner Intelligence' | 'Other' | 'All') => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
 }
@@ -17,7 +17,6 @@ const CATEGORY_ICONS: Record<string, IconName> = {
   RAG:                 'duo-magnifying-glass',
   'Fine Tuning':       'duo-sliders',
   Agent:               'duo-robot',
-  Demo:                'duo-wand-magic-sparkles',
   'Inner Intelligence':'duo-brain-circuit',
   Other:               'duo-cube',
 };
@@ -25,13 +24,12 @@ const CATEGORY_ICONS: Record<string, IconName> = {
 const isProd = import.meta.env.VITE_IS_PROD === 'true';
 
 function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchChange }: NavigationProps) {
-  const categories: Array<'All' | 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other'> = [
+  const categories: Array<'All' | 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Inner Intelligence' | 'Other'> = [
     'All',
     'NLP',
     'RAG',
     'Fine Tuning',
     'Agent',
-    'Demo',
     'Inner Intelligence',
     ...(isProd ? [] : ['Other' as const]),
   ];

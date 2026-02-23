@@ -5,7 +5,7 @@ export interface DeckMeta {
   id: string;
   name: string;
   description: string;
-  category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Personal' | 'Inner Intelligence' | 'Other';
+  category: 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Personal' | 'Inner Intelligence' | 'Other';
   theme?: RevealTheme;
   cardStyle?: CSSProperties;
   cardClassName?: string;
