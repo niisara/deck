@@ -9,7 +9,7 @@ interface KenBurnsBackgroundProps {
   fadeDuration?: number;
 }
 
-function KenBurnsBackground({ images, duration = 30000, fadeDuration = 4000 }: KenBurnsBackgroundProps) {
+function KenBurnsBackground({ images, duration = 15000, fadeDuration = 4000 }: KenBurnsBackgroundProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {

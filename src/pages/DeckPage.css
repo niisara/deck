@@ -186,14 +186,14 @@
 
 /* Deck-level: all slides with bg images animate */
 .ken-burns-deck .slide-background-content {
-  animation: kenBurns 18s ease-in-out infinite;
+  animation: kenBurns 9s ease-in-out infinite;
   transform-origin: center center;
   will-change: transform;
 }
 
 /* Slide-level: only marked background containers animate */
 .reveal .slide-background.ken-burns-active .slide-background-content {
-  animation: kenBurns 18s ease-in-out infinite;
+  animation: kenBurns 9s ease-in-out infinite;
   transform-origin: center center;
   will-change: transform;
 }

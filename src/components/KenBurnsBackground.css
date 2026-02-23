@@ -21,7 +21,7 @@
 /* Active image: fade in + start Ken Burns */
 .kb-active {
   opacity: 1;
-  animation: kbZoomPan 45s ease-in-out infinite alternate;
+  animation: kbZoomPan 25s ease-in-out infinite alternate;
 }
 
 /* ─── Ken Burns keyframes ─── */
