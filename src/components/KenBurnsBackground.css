@@ -1,0 +1,46 @@
+/* ─── Full-viewport Ken Burns gallery backdrop ─── */
+.ken-burns-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Each image layer */
+.kb-layer {
+  position: absolute;
+  inset: -8%; /* slight overflow so zoom never reveals edges */
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity var(--kb-fade, 2000ms) ease-in-out;
+  will-change: transform, opacity;
+}
+
+/* Active image: fade in + start Ken Burns */
+.kb-active {
+  opacity: 1;
+  animation: kbZoomPan 12s ease-in-out infinite alternate;
+}
+
+/* ─── Ken Burns keyframes ─── */
+@keyframes kbZoomPan {
+  0%   { transform: scale(1)    translate(0%, 0%);    }
+  25%  { transform: scale(1.07) translate(-1.5%, -1%); }
+  50%  { transform: scale(1.12) translate(1.2%,  -1.5%); }
+  75%  { transform: scale(1.06) translate(1.8%,  1%);  }
+  100% { transform: scale(1.1)  translate(-0.5%, 1.5%); }
+}
+
+/* Dark gradient overlay so glass text is always readable */
+.kb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}

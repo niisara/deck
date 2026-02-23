@@ -175,6 +175,29 @@
   50% { box-shadow: 0 2px 16px rgba(46, 204, 113, 0.7); }
 }
 
+/* Ken Burns zoom-pan animation for slide backgrounds */
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translate(0,     0);    }
+  25%  { transform: scale(1.08) translate(-1.5%, -1%);  }
+  50%  { transform: scale(1.12) translate(1%,    -2%);  }
+  75%  { transform: scale(1.06) translate(1.5%,  1%);   }
+  100% { transform: scale(1)    translate(0,     0);    }
+}
+
+/* Deck-level: all slides with bg images animate */
+.ken-burns-deck .slide-background-content {
+  animation: kenBurns 18s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Slide-level: only marked background containers animate */
+.reveal .slide-background.ken-burns-active .slide-background-content {
+  animation: kenBurns 18s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
 .home-button {
   background: #3498db;
   color: white;
@@ -199,10 +222,66 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 12px 24px;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   display: inline-flex !important;
   width: auto;
   max-width: 100%;
+}
+
+/* ─── Ken Burns Gallery deck: transparent Reveal backgrounds ─── */
+.kb-gallery-deck .reveal-viewport {
+  background: transparent !important;
+}
+.kb-gallery-deck .reveal .backgrounds .slide-background {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* ─── Glassmorphism text content for Ken Burns gallery decks ─── */
+.kb-gallery-deck .reveal h2 {
+  background: rgba(15, 15, 30, 0.55) !important;
+  backdrop-filter: blur(22px) saturate(1.6) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.kb-gallery-deck .reveal .slides section > div:not(.slide-audio-controls) {
+  background: rgba(10, 12, 28, 0.52);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255,255,255,0.1);
+  padding: 24px 28px;
+}
+
+.kb-gallery-deck .reveal .slides section h3,
+.kb-gallery-deck .reveal .slides section p,
+.kb-gallery-deck .reveal .slides section li,
+.kb-gallery-deck .reveal .slides section td,
+.kb-gallery-deck .reveal .slides section th {
+  color: rgba(255, 255, 255, 0.93);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.kb-gallery-deck .reveal .slides section code {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  padding: 1px 6px;
+  text-shadow: none;
+}
+
+.kb-gallery-deck .reveal .slides section pre {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 /* Enhanced glassmorphism for slides with background images */

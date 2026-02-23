@@ -19,6 +19,7 @@ import { marked } from 'marked';
 import mermaid from 'mermaid';
 import gsap from 'gsap';
 import { useSlideBroadcast } from '../hooks/useSlideBroadcast';
+import KenBurnsBackground from '../components/KenBurnsBackground';
 import './DeckPage.css';
 
 // Initialize mermaid with dark theme for speaker notes
@@ -557,7 +558,10 @@ function DeckPage() {
   }
 
   return (
-    <div className="deck-page">
+    <div className={`deck-page${!isPrintPdf && deckData.backgroundImages?.length ? ' kb-gallery-deck' : ''}`}>
+      {!isPrintPdf && deckData.backgroundImages?.length && (
+        <KenBurnsBackground images={deckData.backgroundImages} />
+      )}
       {!isPrintPdf && (
         <>
           <button 
@@ -586,7 +590,7 @@ function DeckPage() {
         </>
       )}
       
-      <div className="reveal" ref={revealRef}>
+      <div className={`reveal${deckData.kenBurns ? ' ken-burns-deck' : ''}`} ref={revealRef}>
         <div className="slides">
           {deckData.slideGroups ? (
             // Render with groups (vertical slides)
@@ -599,7 +603,7 @@ function DeckPage() {
                     data-background-image={slide.backgroundImage}
                     data-background-size="cover"
                     data-background-position="center"
-                    className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''}`}
+                    className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''} ${(slide.kenBurns || deckData.kenBurns) && slide.backgroundImage ? 'ken-burns-slide' : ''}`}
                   >
                     {slide.title && (
                       <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
@@ -649,7 +653,7 @@ function DeckPage() {
                 data-background-image={slide.backgroundImage}
                 data-background-size="cover"
                 data-background-position="center"
-                className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''}`}
+                className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''} ${(slide.kenBurns || deckData.kenBurns) && slide.backgroundImage ? 'ken-burns-slide' : ''}`}
               >
                 {slide.title && (
                   <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>

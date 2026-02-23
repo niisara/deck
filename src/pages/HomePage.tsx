@@ -7,9 +7,9 @@ import './HomePage.css';
 
 // 10 curated tech / AI / abstract splash images (Unsplash)
 const SPLASH_IMAGES = [
-  'https://images.unsplash.com/photo-1617554658760-5d8f6882caf9?w=1920&q=80', // AI neural
-  'https://images.unsplash.com/photo-1618083544322-03b922bd4fdc?w=1920&q=80', // robot face
-  'https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?w=1920&q=80', // circuit board
+  'https://images.unsplash.com/photo-1617554658760-5d8f6882caf9?w=1920&q=80', 
+  'https://images.unsplash.com/photo-1618083544322-03b922bd4fdc?w=1920&q=80', 
+  'https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?w=1920&q=80', 
   'https://images.unsplash.com/photo-1551221236-6f908cc5838a?w=1920&q=80',  // abstract blue
   'https://images.unsplash.com/photo-1551221236-30e276f9e0df?w=1920&q=80', // cosmos
   'https://images.unsplash.com/photo-1602171080230-02c0a344d650?w=1920&q=80', // retro tech

@@ -9,6 +9,12 @@ export const nerMetricsDeck: Deck = {
   description: 'A concise cheat sheet for evaluating Named Entity Recognition',
   category: 'NLP',
   theme: 'night',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1617554658760-5d8f6882caf9?w=1920&q=80', 
+  'https://images.unsplash.com/photo-1618083544322-03b922bd4fdc?w=1920&q=80', 
+  'https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?w=1920&q=80', 
+  ],
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80)',
     backgroundSize: 'cover',
