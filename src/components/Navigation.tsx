@@ -104,22 +104,22 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
             })}
           </div>
 
-          {/* Search Bar */}
-          <div className="nav-search">
-            <input
-              type="text"
-              placeholder="Search decks..."
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
-              className="search-input"
-            />
-            <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" darkModeInvert={true} className="search-icon" />
+          {/* Search + Settings (right) */}
+          <div className="nav-right">
+            <div className="nav-search">
+              <input
+                type="text"
+                placeholder="Search decks..."
+                value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)}
+                className="search-input"
+              />
+              <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" darkModeInvert={true} className="search-icon" />
+            </div>
+            <Link to="/settings" className="nav-settings" title="Settings">
+              <SvgIcon iconName="duo-gear" sizeName="lg" darkModeInvert={true} />
+            </Link>
           </div>
-
-          {/* Settings Link */}
-          <Link to="/settings" className="nav-settings" title="Settings">
-            <SvgIcon iconName="duo-gear" sizeName="lg" darkModeInvert={true} />
-          </Link>
         </div>
       </LiquidGlass>
     </nav>
