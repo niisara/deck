@@ -73,7 +73,7 @@ export const rerankingModelsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          color: '#ffffff',
+          backgroundColor: '#ffffff',
           notes: `### Introduction - 11 Re-Ranking Models to Improve RAG Accuracy
 
 [cheerfully] Welcome everyone! [excited] Today we're diving into something that can dramatically boost the accuracy of your **RAG** 👉 'rag' systems - that's **Retrieval-Augmented Generation**. [conversational] Think of RAG 👉 'rag' as a smart assistant that first looks up information and then uses it to generate answers.

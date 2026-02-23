@@ -49,7 +49,7 @@ export const multiStepRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          color: '#ffffff',
+          backgroundColor: '#ffffff',
           notes: `### Multi-Step Retrieval Strategies
 
 #### Welcome and Introduction
