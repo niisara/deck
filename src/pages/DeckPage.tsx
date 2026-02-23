@@ -147,6 +147,9 @@ function DeckPage() {
   // Check if we're in PDF export mode
   const isPrintPdf = searchParams.has('print-pdf');
 
+  // When a Ken Burns gallery backdrop is active every icon / text should be white
+  const kbGallery = !!(deckData?.backgroundImages?.length && !isPrintPdf);
+
   // Handle back navigation to the correct category view
   const handleBackNavigation = () => {
     if (categoryParam) {
@@ -611,7 +614,7 @@ function DeckPage() {
                           <SvgIcon 
                             iconName={slide.icon.name as any} 
                             sizeName={(slide.icon.size || "5x") as any} 
-                            style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
+                            style={{ color: kbGallery ? '#ffffff' : getIconColor(slide.backgroundColor || '#2c3e50') }} 
                           />
                         )}
                         <span>{slide.title}</span>
@@ -634,7 +637,7 @@ function DeckPage() {
                       <SlideAudioControls
                         slideContent={`${slide.title}. ${extractPlainText(slide.content)}`}
                         notes={slide.notes}
-                        iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
+                        iconColor={kbGallery ? '#ffffff' : getIconColor(slide.backgroundColor || '#2c3e50')}
                         autoPlayContent={settings.autoPlayContent}
                         autoPlayNotes={settings.autoPlayNotes}
                         showControls={showAudioControls}
@@ -661,7 +664,7 @@ function DeckPage() {
                       <SvgIcon 
                         iconName={slide.icon.name as any} 
                         sizeName={(slide.icon.size || "5x") as any} 
-                        style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
+                        style={{ color: kbGallery ? '#ffffff' : getIconColor(slide.backgroundColor || '#2c3e50') }} 
                       />
                     )}
                     <span>{slide.title}</span>
@@ -684,7 +687,7 @@ function DeckPage() {
                   <SlideAudioControls
                     slideContent={`${slide.title}. ${extractPlainText(slide.content)}`}
                     notes={slide.notes}
-                    iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
+                    iconColor={kbGallery ? '#ffffff' : getIconColor(slide.backgroundColor || '#2c3e50')}
                     autoPlayContent={settings.autoPlayContent}
                     autoPlayNotes={settings.autoPlayNotes}
                     showControls={showAudioControls}

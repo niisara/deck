@@ -3,13 +3,13 @@ import './KenBurnsBackground.css';
 
 interface KenBurnsBackgroundProps {
   images: string[];
-  /** How long each image is shown in ms before crossfading to the next. Default: 9000 */
+  /** How long each image is shown in ms before crossfading to the next. Default: 30000 */
   duration?: number;
-  /** Crossfade duration in ms. Default: 2000 */
+  /** Crossfade duration in ms. Default: 4000 */
   fadeDuration?: number;
 }
 
-function KenBurnsBackground({ images, duration = 9000, fadeDuration = 2000 }: KenBurnsBackgroundProps) {
+function KenBurnsBackground({ images, duration = 30000, fadeDuration = 4000 }: KenBurnsBackgroundProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
