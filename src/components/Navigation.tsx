@@ -22,6 +22,8 @@ const CATEGORY_ICONS: Record<string, IconName> = {
   Other:               'duo-cube',
 };
 
+const isProd = import.meta.env.VITE_IS_PROD === 'true';
+
 function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchChange }: NavigationProps) {
   const categories: Array<'All' | 'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other'> = [
     'All',
@@ -31,7 +33,7 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
     'Agent',
     'Demo',
     'Inner Intelligence',
-    'Other'
+    ...(isProd ? [] : ['Other' as const]),
   ];
 
   return (
@@ -116,9 +118,11 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
               />
               <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" darkModeInvert={true} className="search-icon" />
             </div>
-            <Link to="/settings" className="nav-settings" title="Settings">
-              <SvgIcon iconName="duo-gear" sizeName="lg" darkModeInvert={true} />
-            </Link>
+            {!isProd && (
+              <Link to="/settings" className="nav-settings" title="Settings">
+                <SvgIcon iconName="duo-gear" sizeName="lg" darkModeInvert={true} />
+              </Link>
+            )}
           </div>
         </div>
       </LiquidGlass>

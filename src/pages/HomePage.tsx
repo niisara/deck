@@ -22,6 +22,8 @@ const SPLASH_IMAGES = [
 // 4 Ken Burns variants cycled through in order
 const KB_VARIANTS = ['kb1', 'kb2', 'kb3', 'kb4'] as const;
 
+const isProd = import.meta.env.VITE_IS_PROD === 'true';
+console.log(`Running in ${isProd ? 'production' : 'development'} mode. VITE_IS_PROD=${import.meta.env.VITE_IS_PROD}`);
 function HomePage() {
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState<'NLP' | 'RAG' | 'Fine Tuning' | 'Agent' | 'Demo' | 'Inner Intelligence' | 'Other' | 'All'>('NLP');
@@ -73,6 +75,9 @@ function HomePage() {
   // Filter decks based on category and search query
   const filteredDecks = useMemo(() => {
     return decks.filter((deck) => {
+      // Hide "Other" category decks in production
+      if (isProd && deck.category === 'Other') return false;
+
       // Filter by category
       const matchesCategory = selectedCategory === 'All' || deck.category === selectedCategory;
       

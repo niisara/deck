@@ -4,12 +4,14 @@ import DeckPage from './pages/DeckPage'
 import SettingsPage from './pages/SettingsPage'
 import './App.css'
 
+const isProd = import.meta.env.VITE_IS_PROD === 'true';
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/deck/:deckId" element={<DeckPage />} />
-      <Route path="/settings" element={<SettingsPage />} />
+      {!isProd && <Route path="/settings" element={<SettingsPage />} />}
     </Routes>
   )
 }
