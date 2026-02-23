@@ -127,7 +127,7 @@ function HomePage() {
               {filteredDecks.map((deck) => (
                 <LiquidGlass
                   key={deck.id}
-                  borderRadius={54}
+                  borderRadius={30}
                   blur={1}
                   contrast={1.2}
                   brightness={1.05}
