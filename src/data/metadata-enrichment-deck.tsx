@@ -9,11 +9,13 @@ export const metadataEnrichmentDeck: Deck = {
   description: 'Cheat-sheets, patterns, and practical implementations',
   category: 'RAG',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -44,8 +46,6 @@ export const metadataEnrichmentDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#14283d',
-          backgroundImage: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=1920&q=80',
           notes: `### 9 Metadata Enrichment Tricks
 [cheerfully] Welcome everyone! [excited] Today we're diving into one of the most powerful yet often overlooked aspects of building effective RAG systems: **metadata enrichment**. Think of metadata as the secret sauce that transforms your basic document search into an intelligent, context-aware retrieval system.
 
@@ -152,7 +152,6 @@ export const metadataEnrichmentDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#14283d',
           notes: `### Overview: The 9 Enrichment Tricks
 [conversational] Let me give you a roadmap of what we'll cover today. I've organized these nine tricks into three logical categories to help you understand how they work together.
 
@@ -253,7 +252,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#1a4d2e',
           notes: `### Section-Level Titles as Metadata
 [conversational] Our first enrichment trick is **Section-Level Titles**, and it's one of the most powerful yet simple techniques you'll use. This is the foundation that many other tricks build upon.
 
@@ -315,7 +313,6 @@ Now let's look at the pros and cons of this approach...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a4d2e',
           notes: `### Pros and Cons of Section-Level Titles
 [conversational] Let's be balanced here. Every technique has trade-offs, and it's important to understand both the strengths and limitations of section-level titles.
 
@@ -415,7 +412,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1a1f4d',
           notes: `### Document Type Labels
 [conversational] Moving to our second enrichment trick: **Document Type Labels**. This is about understanding not just what a document says, but what *kind* of document it is.
 
@@ -479,7 +475,6 @@ Now let's examine the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1f4d',
           notes: `### Pros and Cons of Document Type Labels
 [conversational] Let's evaluate document type labels objectively. This technique has some compelling advantages but also requires upfront investment.
 
@@ -583,7 +578,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#4d1a43',
           notes: `### Entity Tagging with NER
 [conversational] Now we're getting into more advanced territory with **Entity Tagging** using **Named Entity Recognition** or NER 👉 (N-E-R). This technique extracts structured information about real-world entities from unstructured text.
 
@@ -646,7 +640,6 @@ Let's examine the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4d1a43',
           notes: `### Pros and Cons of Entity Tagging
 [conversational] Entity tagging with NER is powerful but comes with real implementation challenges. Let's break down both sides honestly.
 
@@ -750,7 +743,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#4d441a',
           notes: `### Topic and Category Tags
 [conversational] Our fourth enrichment trick is **Topic and Category Tags**, also known as taxonomy mapping. This is about organizing your content into a controlled hierarchical structure.
 
@@ -814,7 +806,6 @@ Now let's evaluate the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4d441a',
           notes: `### Pros and Cons of Topic and Category Tags
 
 [conversational] Now let's honestly assess the trade-offs of implementing a taxonomy-based tagging system. Like any sophisticated feature, topic and category tags come with both significant benefits and important considerations you need to plan for.
@@ -930,7 +921,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#4d1a1a',
           notes: `### Time/Version Metadata: Adding Temporal Awareness
 
 [conversational] Let's talk about enrichment technique number five: **Time and Version Metadata**. This is where we add temporal intelligence to our RAG system, ensuring that users always get the most current and relevant information.
@@ -995,7 +985,6 @@ Now let's evaluate the trade-offs of implementing temporal metadata...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4d1a1a',
           notes: `### Pros and Cons of Time/Version Metadata
 
 [conversational] Let's weigh the benefits and challenges of implementing temporal metadata in your RAG system. As with any enrichment technique, understanding the trade-offs helps you make informed decisions about when and how to apply it.
@@ -1107,7 +1096,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#2d1a4d',
           notes: `### Semantic Summary Metadata: Distilling the Essence
 
 [conversational] Welcome to enrichment technique number six: **Semantic Summary Metadata**. This is where we leverage LLMs to create concise, meaningful summaries of each chunk, dramatically improving both retrieval quality and user experience.
@@ -1170,7 +1158,6 @@ Now let's evaluate the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2d1a4d',
           notes: `### Pros and Cons of Semantic Summary Metadata
 
 [conversational] Let's evaluate the benefits and costs of implementing semantic summaries in your RAG pipeline. This technique involves LLM processing, so understanding the trade-offs is crucial for making smart implementation decisions.
@@ -1284,7 +1271,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#4d4b1a',
           notes: `### Keyword Highlights and Key-Phrase Extraction
 
 [conversational] Let's dive into enrichment technique number seven: **Keyword Highlights and Key-Phrase Extraction**. This is where we automatically identify the most important terms and phrases in each chunk, creating powerful lexical signals for retrieval.
@@ -1347,7 +1333,6 @@ Let's evaluate the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4d4b1a',
           notes: `### Pros and Cons of Keyword Highlights
 
 [conversational] Let's examine the advantages and limitations of implementing keyword extraction in your RAG pipeline. This technique has a different cost-benefit profile compared to the LLM-based approaches we've discussed.
@@ -1482,7 +1467,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1a4d27',
           notes: `### Source Confidence and Trust Scoring
 
 [conversational] Welcome to enrichment technique number eight: **Source Confidence and Trust Scoring**. This is where we add a crucial quality signal that helps your RAG system prioritize authoritative, verified sources over informal or questionable ones.
@@ -1548,7 +1532,6 @@ Let's assess the pros and cons...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a4d27',
           notes: `### Pros and Cons of Source Confidence Scoring
 
 [conversational] Let's carefully evaluate the benefits and challenges of implementing trust scoring in your RAG system. This technique has significant implications for both quality and organizational processes.
@@ -1673,7 +1656,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#4d1a3e',
           notes: `### Parent-Child Structural Metadata: Preserving Document Hierarchy
 
 [conversational] We've reached our ninth and final enrichment technique: **Parent-Child Structural Metadata**. This is perhaps the most sophisticated approach, as it preserves the entire hierarchical structure of your documents, enabling powerful context-aware retrieval.
@@ -1738,7 +1720,6 @@ Let's evaluate the trade-offs of this sophisticated approach...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4d1a3e',
           notes: `### Pros and Cons of Parent-Child Structural Metadata
 
 [conversational] Let's examine the trade-offs of implementing hierarchical structural metadata. This is the most sophisticated enrichment technique, so understanding when the complexity is justified is crucial.
@@ -1824,7 +1805,6 @@ Now let's synthesize what we've learned into best practices...`
               </div>
             </div>
           ),
-          backgroundColor: '#2d1d61',
           notes: `### Best Practices for Metadata-Driven RAG: Part One
 
 [conversational] Now that we've explored all nine enrichment techniques, let's discuss best practices for implementing them successfully in production RAG systems. I've organized these into five key areas, and we'll cover the first three on this slide.
@@ -1909,7 +1889,6 @@ These first three practice areas set the foundation for success. Let's continue 
               </div>
             </div>
           ),
-          backgroundColor: '#2d1d61',
           notes: `### Best Practices for Metadata-Driven RAG: Part Two
 
 [conversational] Let's continue with the final two practice areas: operations and safety, plus measurement and success factors.
@@ -2029,7 +2008,6 @@ These practices separate successful metadata enrichment from failed attempts. Le
               </div>
             </div>
           ),
-          backgroundColor: '#2d1d61',
           notes: `### Conclusion and Next Steps: Your Metadata Journey
 
 [conversational] We've covered a lot of ground today. Let me help you synthesize everything we've learned and give you a concrete roadmap for implementation.
@@ -2087,7 +2065,6 @@ Now, let's end with the key takeaway you should remember...`
               </div>
             </div>
           ),
-          backgroundColor: '#2d1d61',
           notes: `### Key Takeaway: Metadata as an Ongoing Journey
 
 [warmly] We've reached the end of our journey through metadata enrichment techniques. Let me leave you with the most important insights that will guide your implementation.

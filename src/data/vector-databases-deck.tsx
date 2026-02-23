@@ -9,12 +9,14 @@ export const vectorDatabasesDeck: Deck = {
   description: 'A comprehensive guide to 11 leading vector databases for similarity search and AI applications',
   category: 'RAG',
   theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?w=1920&q=80',
+  ],
   cardClassName: '',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1488229297570-58520851e868?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
   slides: [],
   slideGroups: [
     {
@@ -72,8 +74,6 @@ export const vectorDatabasesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1488229297570-58520851e868?w=1920&q=80',
-          backgroundColor: '#2a217b',
           notes: `### Vector Databases Cheat Sheet
 #### Welcome
 [cheerfully] Hello everyone! [excited] Welcome to this comprehensive guide on vector databases. [warmly] If you're new to this topic, don't worry - we'll start from the basics and build up your understanding step by step.
@@ -164,7 +164,6 @@ export const vectorDatabasesDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#2a217b',
           notes: `### Table of Contents
 #### Overview of Coverage
 [energetic] Great! Now let's look at what we're going to cover today. [enthusiastically] We'll be exploring 11 different vector databases, each with unique capabilities and ideal use cases.
@@ -195,7 +194,6 @@ export const vectorDatabasesDeck: Deck = {
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a4e71',
           notes: `### Pinecone - Index Type
 #### Introduction to Pinecone
 [conversational] Pinecone is one of the most popular fully-managed vector databases, and it's a great place to start our journey. [lecture] Let's talk about how it organizes data internally.
@@ -223,7 +221,6 @@ Let's see how Pinecone scales as your needs grow.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a4e71',
           notes: `### Pinecone - Scaling Model
 #### Two Ways to Scale
 [conversational] Pinecone offers two complementary ways to scale your vector database: vertical scaling and horizontal scaling. Let me explain both in simple terms.
@@ -248,7 +245,6 @@ Next, let's look at the actual performance you can expect.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a4e71',
           notes: `### Pinecone - Performance Profile
 #### Speed is Critical
 [seriously] For AI applications, especially those serving real users, speed is absolutely critical. [conversational] Nobody wants to wait several seconds for a chatbot response or product recommendation.
@@ -275,7 +271,6 @@ Now let's talk about what this performance costs.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a4e71',
           notes: `### Pinecone - Cost Consideration
 #### Understanding Pinecone's Pricing
 [conversational] Pinecone is a fully managed service, which means you're paying for convenience and operational simplicity - no infrastructure to manage, no servers to maintain, no database administration headaches.
@@ -302,7 +297,6 @@ Let's explore when Pinecone is the best choice.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a4e71',
           notes: `### Pinecone - Best Use Case
 #### When to Choose Pinecone
 [conversational] After exploring Pinecone's features, let's crystallize when it's the ideal choice for your project.
@@ -353,7 +347,6 @@ graph TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a4e71',
           notes: `### Pinecone - Notes
 #### Important Details and Tips
 [conversational] Before we move on to the next database, let's cover some important details and gotchas you should know about Pinecone.
@@ -386,7 +379,6 @@ graph TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#104928',
           notes: `### Weaviate - Index Type
 #### Introduction to Weaviate
 [cheerfully] Welcome to Weaviate! [conversational] This is an open-source vector database with strong community support and excellent features for hybrid search - combining semantic similarity with traditional filtering.
@@ -413,7 +405,6 @@ Let's see how Weaviate handles growth and scaling.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#104928',
           notes: `### Weaviate - Scaling Model
 #### Flexible Scaling Options
 [conversational] Weaviate offers flexible scaling strategies suitable for different deployment scenarios - from small projects to massive enterprise deployments.
@@ -442,7 +433,6 @@ Let's examine Weaviate's performance characteristics.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#104928',
           notes: `### Weaviate - Performance Profile
 #### Fast Vector Search
 [confidently] Weaviate delivers fast HNSW-based search with sub-50 millisecond latency for 20-NN queries - that's finding the 20 nearest neighbors to your query vector. Even on large datasets with millions or tens of millions of vectors, Weaviate maintains this responsiveness.
@@ -469,7 +459,6 @@ Now let's talk about the cost to run Weaviate.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#104928',
           notes: `### Weaviate - Cost Consideration
 #### Open Source Foundation
 [excited] First, the great news: Weaviate is open source! [enthusiastically] You can download it, run it yourself, and pay zero licensing fees. This is huge for development, testing, and even production if you have the expertise to self-host and manage infrastructure.
@@ -496,7 +485,6 @@ Let's explore when Weaviate is your best choice.`
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#104928',
           notes: `### Weaviate - Best Use Case
 #### The Hybrid Search Champion
 [enthusiastically] Weaviate is ideal when you need to combine semantic similarity search with structured filtering. [storytelling] If your use case involves questions like "find similar documents but only from this author in this date range" or "recommend products like this one but only in this price range and category," [pleased] Weaviate excels.
@@ -549,7 +537,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#104928',
           notes: `### Weaviate - Notes
 #### API Options
 [conversational] Weaviate offers both GraphQL and REST APIs. The GraphQL API is particularly elegant for nested queries and specifying exactly what fields you want returned. The REST API is more traditional and might be preferred by teams unfamiliar with GraphQL. [confidently] Both are well-documented and production-ready.
@@ -582,7 +569,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#3a1b47',
           notes: `### Qdrant - Index Type
 #### Welcome to Qdrant
 [cheerfully] Qdrant 👉 'Q-drant' is a high-performance vector database written in Rust that's gaining popularity for its exceptional throughput and efficiency. [conversational] Let's explore its indexing approach.
@@ -609,7 +595,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#3a1b47',
           notes: `### Qdrant - Scaling Model
 #### Distributed Architecture
 [conversational] Qdrant offers a distributed clustering architecture designed for scalability from the ground up. Let's break down how it works.
@@ -638,7 +623,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#3a1b47',
           notes: `### Qdrant - Performance Profile
 #### Exceptional Throughput
 [enthusiastically] Qdrant delivers up to 4 times higher RPS - Requests Per Second - compared to some competitors. [lecture] RPS measures how many queries your system can handle per second. Higher RPS means you can serve more users or process more requests with less infrastructure, directly impacting costs and scalability.
@@ -665,7 +649,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#3a1b47',
           notes: `### Qdrant - Cost Consideration
 #### Open Source Freedom
 [pleased] Qdrant is open source, which means you can self-host it completely free of licensing costs. [conversational] The entire codebase is available on GitHub, and you have full control over your deployment.
@@ -692,7 +675,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#3a1b47',
           notes: `### Qdrant - Best Use Case
 #### High-Throughput Real-Time Applications
 [conversational] Qdrant is ideal when you need to handle high query volumes with real-time responsiveness. [lecture] If your application experiences thousands or tens of thousands of queries per second, Qdrant's exceptional RPS makes it a strong choice.
@@ -747,7 +729,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#3a1b47',
           notes: `### Qdrant - Notes
 #### Rich Payload Filters
 [lecture] Qdrant supports diverse filter types including geo-spatial filters for location-based queries, range filters for numeric fields, and text matching filters. [pleased] This flexibility lets you build sophisticated query logic combining vector similarity with multiple filter criteria.
@@ -782,7 +763,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#754011',
           notes: `### Milvus - Index Type
 #### Enterprise-Scale Vector Database
 [cheerfully] Milvus 👉 'Mill-vus' is an enterprise-grade open source vector database designed specifically for billion-scale vector search. [conversational] Let's explore its sophisticated indexing options.
@@ -809,7 +789,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#754011',
           notes: `### Milvus - Scaling Model
 #### Cloud-Native Architecture
 [lecture] Milvus features a cloud-native distributed cluster architecture that separates storage from compute. [pleased] This separation is elegant - you can scale compute resources independently from storage, optimizing costs and performance.
@@ -836,7 +815,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#754011',
           notes: `### Milvus - Performance Profile
 #### Understanding Milvus Performance
 [conversational] Now let's talk about Milvus performance capabilities. [enthusiastically] This is where Milvus really shines - it's built to handle billion-scale vector search workloads with highly tunable characteristics.
@@ -863,7 +841,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#754011',
           notes: `### Milvus - Cost Consideration
 #### Understanding Milvus Pricing
 [conversational] Let's talk about costs with Milvus. [pleased] The great news is that it's open source, so you can run it yourself without licensing fees. [conversational] But there are also managed options available.
@@ -892,7 +869,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#754011',
           notes: `### Milvus - Best Use Case
 #### When to Choose Milvus
 [conversational] After exploring Milvus capabilities, let's identify when it's the ideal choice for your project.
@@ -946,7 +922,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#754011',
           notes: `### Milvus - Notes
 #### Important Details and Decision Rules
 [conversational] Before we move to our next database, let's cover some important tips and decision rules for working with Milvus effectively.
@@ -981,7 +956,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#651d16',
           notes: `### Chroma - Index Type
 #### Introduction to Chroma
 [cheerfully] Welcome to Chroma! [conversational] This database has a different philosophy from what we've seen so far. While Pinecone, Weaviate, Qdrant, and Milvus are built for production scale, Chroma focuses on simplicity and developer experience.
@@ -1010,7 +984,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#651d16',
           notes: `### Chroma - Scaling Model
 #### Understanding Chroma's Scaling Approach
 [conversational] Chroma takes a fundamentally different approach to scaling compared to the distributed systems we've discussed so far.
@@ -1039,7 +1012,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#651d16',
           notes: `### Chroma - Performance Profile
 #### Understanding Chroma Performance
 [conversational] Let's talk about Chroma's performance characteristics and where it excels.
@@ -1070,7 +1042,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#651d16',
           notes: `### Chroma - Cost Consideration
 #### Understanding Chroma Economics
 [conversational] Let's talk about the financial aspects of using Chroma - this is where it really shines for many teams.
@@ -1101,7 +1072,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#651d16',
           notes: `### Chroma - Best Use Case
 #### When to Choose Chroma
 [conversational] After exploring Chroma's capabilities, let's identify the perfect scenarios for this database.
@@ -1156,7 +1126,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#651d16',
           notes: `### Chroma - Notes
 #### Important Details and Integration Tips
 [conversational] Before moving on, let's cover some important details that make Chroma particularly useful.
@@ -1191,7 +1160,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#0b5748',
           notes: `### Redis Vector Store - Index Type
 #### Introduction to Redis Vector Store
 [conversational] Now we're entering a different category of vector databases - established systems that added vector capabilities. [lecture] Redis is one of the most popular in-memory data stores in the world, known for caching and real-time applications. [pleased] Redis Vector Store brings vector search to this proven platform.
@@ -1220,7 +1188,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#0b5748',
           notes: `### Redis Vector Store - Scaling Model
 #### Understanding Redis Scaling
 [conversational] Redis Vector Store leverages Redis's mature, proven scaling architecture - the same system that powers some of the world's largest web applications.
@@ -1249,7 +1216,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#0b5748',
           notes: `### Redis Vector Store - Performance Profile
 #### Understanding Redis Performance
 [conversational] Let's talk about Redis performance - this is where the in-memory architecture really shines.
@@ -1280,7 +1246,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#0b5748',
           notes: `### Redis Vector Store - Cost Consideration
 #### Understanding Redis Economics
 [seriously] Let's talk honestly about Redis costs - the in-memory architecture delivers amazing performance but comes with specific cost considerations.
@@ -1311,7 +1276,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#0b5748',
           notes: `### Redis Vector Store - Best Use Case
 #### When to Choose Redis Vector Store
 [conversational] After exploring Redis capabilities, let's identify when it's the ideal choice for your vector search needs.
@@ -1366,7 +1330,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#0b5748',
           notes: `### Redis Vector Store - Notes
 #### Important Details and Best Practices
 [conversational] Before moving forward, let's cover some important details about using Redis Vector Store effectively.
@@ -1401,7 +1364,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Index Type
 #### Introduction to Elasticsearch Vector
 [cheerfully] Welcome to Elasticsearch Vector! [lecture] Elasticsearch is one of the most popular search engines in the world, powering everything from log analysis to e-commerce search. [pleased] Now it includes powerful vector search capabilities built on top of its proven infrastructure.
@@ -1430,7 +1392,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Scaling Model
 #### Understanding Elasticsearch Scaling
 [lecture] Elasticsearch has one of the most mature scaling architectures in the database world, refined over more than a decade of production use.
@@ -1461,7 +1422,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Performance Profile
 #### Understanding Elasticsearch Performance
 [conversational] Let's discuss where Elasticsearch Vector truly excels - hybrid search that combines traditional text relevance with modern vector similarity.
@@ -1492,7 +1452,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Cost Consideration
 #### Understanding Elasticsearch Economics
 [conversational] Let's talk about costs with Elasticsearch - there are both infrastructure and licensing considerations to understand.
@@ -1523,7 +1482,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Best Use Case
 #### When to Choose Elasticsearch Vector
 [conversational] After exploring Elasticsearch capabilities, let's identify when it's your best choice for vector search.
@@ -1579,7 +1537,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#133b55',
           notes: `### Elasticsearch Vector - Notes
 #### Important Details and Best Practices
 [conversational] Before moving to the next database, let's cover key details for working effectively with Elasticsearch Vector.
@@ -1614,7 +1571,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#552200',
           notes: `### Vespa - Index Type
 #### Introduction to Vespa
 [cheerfully] Welcome to Vespa! [enthusiastically] This is a sophisticated platform that takes vector search to another level with advanced capabilities. [conversational] Vespa was originally developed by Yahoo for their massive-scale search and recommendation needs, then open-sourced for everyone to use.
@@ -1643,7 +1599,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#552200',
           notes: `### Vespa - Scaling Model
 #### Understanding Vespa Scaling
 [lecture] Vespa's scaling architecture is built from the ground up for massive scale - we're talking about a system that powered Yahoo's global search infrastructure.
@@ -1674,7 +1629,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#552200',
           notes: `### Vespa - Performance Profile
 #### Understanding Vespa Performance
 [conversational] Let's discuss Vespa's performance characteristics - this is where its sophisticated architecture truly shines.
@@ -1705,7 +1659,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#552200',
           notes: `### Vespa - Cost Consideration
 #### Understanding Vespa Economics
 [conversational] Let's talk about costs with Vespa - there are several deployment models to consider.
@@ -1736,7 +1689,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#552200',
           notes: `### Vespa - Best Use Case
 #### When to Choose Vespa
 [conversational] After exploring Vespa's sophisticated capabilities, let's identify when it's your best choice.
@@ -1794,7 +1746,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#552200',
           notes: `### Vespa - Notes
 #### Important Details and Advanced Features
 [conversational] Before moving forward, let's cover key details about Vespa's advanced capabilities.
@@ -1831,7 +1782,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Index Type
 #### Introduction to PostgreSQL with pgvector
 [enthusiastically] Welcome to PostgreSQL with pgvector! [storytelling] This represents a fascinating approach - adding vector capabilities to the world's most popular open-source relational database. [pleased] Many organizations already use PostgreSQL, and pgvector lets them add vector search without introducing a new database.
@@ -1860,7 +1810,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Scaling Model
 #### Understanding PostgreSQL Scaling
 [conversational] PostgreSQL with pgvector leverages PostgreSQL's mature, well-understood scaling mechanisms - both the strengths and limitations.
@@ -1891,7 +1840,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Performance Profile
 #### Understanding pgvector Performance
 [conversational] Let's talk about pgvector performance - this has improved dramatically in recent releases and continues getting better.
@@ -1922,7 +1870,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Cost Consideration
 #### Understanding pgvector Economics
 [conversational] Let's talk about costs with pgvector - this is one of its strongest selling points.
@@ -1953,7 +1900,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Best Use Case
 #### When to Choose PostgreSQL with pgvector
 [conversational] After exploring pgvector capabilities, let's identify when it's your ideal choice.
@@ -2010,7 +1956,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#34495E',
           notes: `### PostgreSQL + pgvector - Notes
 #### Important Details and Optimization Tips
 [conversational] Before moving to the next database, let's cover important tips for working effectively with pgvector.
@@ -2045,7 +1990,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Index Type
 #### Introduction to MongoDB Vector Search
 [enthusiastically] Welcome to MongoDB Vector Search! [storytelling] MongoDB is one of the world's most popular NoSQL databases, known for its document-oriented model and developer-friendly API. [pleased] MongoDB Atlas Vector Search brings vector capabilities to this proven platform.
@@ -2074,7 +2018,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Scaling Model
 #### Understanding MongoDB Scaling
 [lecture] MongoDB Atlas provides managed scaling that leverages MongoDB's mature distributed systems architecture refined over years of production use.
@@ -2105,7 +2048,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Performance Profile
 #### Understanding MongoDB Performance
 [conversational] Let's discuss MongoDB Vector Search performance and where it excels particularly well.
@@ -2136,7 +2078,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Cost Consideration
 #### Understanding MongoDB Economics
 [conversational] Let's talk about costs with MongoDB Vector Search - understanding Atlas pricing helps you plan effectively.
@@ -2167,7 +2108,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Best Use Case
 #### When to Choose MongoDB Vector Search
 [conversational] After exploring MongoDB capabilities, let's identify when it's your ideal choice.
@@ -2221,7 +2161,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#135b32',
           notes: `### MongoDB Vector Search - Notes
 #### Important Details and Best Practices
 [conversational] Before moving to our final database, let's cover important details about working with MongoDB Vector Search.
@@ -2258,7 +2197,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#383e3f',
           notes: `### LanceDB - Index Type
 #### Introduction to LanceDB
 [enthusiastically] Welcome to LanceDB, our final database! [storytelling] LanceDB represents a unique approach to vector search - optimized specifically for storage-efficient, disk-based operations. [lecture] It's built on the Lance columnar format designed for machine learning workloads.
@@ -2287,7 +2225,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#383e3f',
           notes: `### LanceDB - Scaling Model
 #### Understanding LanceDB Scaling
 [conversational] LanceDB takes a flexible approach to deployment and scaling that differs from traditional database architectures.
@@ -2318,7 +2255,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#383e3f',
           notes: `### LanceDB - Performance Profile
 #### Understanding LanceDB Performance
 [conversational] Let's talk about LanceDB performance - this is impressive given its disk-based architecture.
@@ -2347,7 +2283,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#383e3f',
           notes: `### LanceDB - Cost Consideration
 #### Understanding LanceDB Economics
 [enthusiastically] Let's talk about LanceDB costs - this is its strongest selling point for many use cases.
@@ -2376,7 +2311,6 @@ flowchart TB
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#383e3f',
           notes: `### LanceDB - Best Use Case
 #### When to Choose LanceDB
 [conversational] After exploring LanceDB capabilities, let's identify when it's your ideal choice.
@@ -2433,7 +2367,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#383e3f',
           notes: `### LanceDB - Notes
 #### Important Details and Integration Points
 [enthusiastically] We've reached our last database! [conversational] Let's cover key details about LanceDB.
@@ -2565,7 +2498,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1e4d7d',
           notes: `### Quick Comparison Summary
 #### Bringing It All Together
 [enthusiastically] Excellent! We've explored all 11 vector databases in detail. [conversational] Now let's bring everything together with a comprehensive comparison table that lets you see them side by side.
@@ -2659,7 +2591,6 @@ flowchart LR
               </div>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1e4d7d',
           notes: `### How to Choose the Right Vector Database
 #### Decision Framework
 [enthusiastically] Perfect! Now we arrive at the most practical slide - how to actually choose the right vector database for your specific needs. [conversational] Let's walk through this decision framework systematically.

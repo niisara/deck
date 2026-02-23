@@ -10,12 +10,15 @@ export const entityNormalizationDeck: Deck = {
   name: '13 Entity Normalization & Disambiguation Techniques',
   description: 'A practical cheat sheet for NLP, data integration, and knowledge graphs',
   category: 'NLP',
-  theme: 'black',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -25,7 +28,6 @@ export const entityNormalizationDeck: Deck = {
         {
           id: 1,
           center: true,
-          backgroundImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
           title: '13 Entity Normalization & Disambiguation Techniques',
           content: (
             <div>
@@ -63,7 +65,6 @@ export const entityNormalizationDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a3a52',
           notes: `### 1) 13 Entity Normalization & Disambiguation Techniques
 [cheerfully] Welcome everyone! [energetic] Today we're diving into something that might sound a bit technical at first, but is actually one of the most important foundations for building reliable data systems.
 
@@ -181,7 +182,6 @@ export const entityNormalizationDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a3a52',
           notes: `### 2) Table of Contents
 [conversational] Here's our roadmap for today. We have **13 techniques** to cover, and they're organized from simple to complex.
 
@@ -285,7 +285,6 @@ export const entityNormalizationDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a3a52',
           notes: `### 3) Introduction: Normalization vs. Disambiguation
 [lecture] Before we dive into the techniques, let's make sure we understand the two core concepts we're working with. [conversational] They're related but fundamentally different.
 
@@ -413,7 +412,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a523d',
           notes: `### 4) String Normalization
 [enthusiastically] This is where every entity resolution journey begins. [impressed] String normalization is your **first line of defense** against messy data, and honestly, it's often more powerful than people give it credit for.
 
@@ -477,7 +475,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a523d',
           notes: `### 5) String Normalization - Pros & Cons
 [conversational] Let's be honest about what string normalization can and can't do for you.
 
@@ -592,7 +589,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#52401a',
           notes: `### 6) Lowercasing + Unicode Normalization
 [seriously] Now we're getting into something that trips up a lot of developers—**Unicode handling**. [conversational] This might seem technical, but understanding it will save you from some really frustrating bugs.
 
@@ -659,7 +655,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#52401a',
           notes: `### 7) Lowercasing + Unicode Normalization - Pros & Cons
 [conversational] Let's weigh the benefits against the potential issues.
 
@@ -778,7 +773,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a1a',
           notes: `### 8) Fuzzy Matching (Edit Distance)
 [excited] Now we're entering the world of **approximate matching**. [enthusiastically] This is where things get exciting because we can finally handle typos and small mistakes!
 
@@ -844,7 +838,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#521a1a',
           notes: `### 9) Fuzzy Matching - Pros & Cons
 [conversational] Fuzzy matching is powerful, but it has clear limitations you need to understand.
 
@@ -966,7 +959,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3b521a',
           notes: `### 10) Token-Based Similarity (Jaccard / Cosine)
 [impressed] This technique solves the word-order problem we just discussed. [confidently] Instead of comparing strings character by character, we **break them into tokens and compare the sets**.
 
@@ -1034,7 +1026,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#3b521a',
           notes: `### 11) Token-Based Similarity - Pros & Cons
 [conversational] Let's be realistic about what token-based methods can and can't do.
 
@@ -1154,7 +1145,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a3152',
           notes: `### 12) Dictionary / Gazetteer Lookup
 [enthusiastically] Now we're entering the world of **curated knowledge**. [lecture] A gazetteer is essentially a fancy dictionary that maps mentions to canonical entities. [conversational] Think of it as a lookup table with superpowers.
 
@@ -1221,7 +1211,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a3152',
           notes: `### 13) Dictionary / Gazetteer Lookup - Pros & Cons
 [conversational] Gazetteers are wonderful tools, but they come with their own challenges.
 
@@ -1341,7 +1330,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a3c',
           notes: `### 14) Synonym / Alias Mapping
 [impressed] This is the natural extension of gazetteers—instead of just having one name per entity, we map **multiple aliases** to the same canonical form.
 
@@ -1405,7 +1393,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#521a3c',
           notes: `### 15) Synonym / Alias Mapping - Pros & Cons
 [conversational] Synonym tables are incredibly useful, but they require care.
 
@@ -1527,7 +1514,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1c52',
           notes: `### 16) Rule-Based Context Matching
 [impressed] Now we're adding **intelligence** to our matching. [confidently] Instead of just looking at the entity mention itself, we look at what's around it to figure out the correct interpretation.
 
@@ -1593,7 +1579,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1a1c52',
           notes: `### 17) Rule-Based Context Matching - Pros & Cons
 [conversational] Rules are powerful but come with significant maintenance challenges.
 
@@ -1717,7 +1702,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a524a',
           notes: `### 18) Embedding-Based Similarity Matching
 [excited] Welcome to the **machine learning** side of entity normalization! [enthusiastically] This is where things get really powerful.
 
@@ -1787,7 +1771,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a524a',
           notes: `### 19) Embedding-Based Similarity - Pros & Cons
 [conversational] Embeddings are powerful but require careful calibration.
 
@@ -1908,7 +1891,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4d521a',
           notes: `### 20) Entity Linking with Knowledge Bases
 [impressed] Now we're connecting our entities to the **world's knowledge**. [enthusiastically] This is where NLP meets the semantic web.
 
@@ -1978,7 +1960,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#4d521a',
           notes: `### 21) Entity Linking - Pros & Cons
 [conversational] Knowledge bases are incredibly powerful, but they come with infrastructure overhead.
 
@@ -2100,7 +2081,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3c1a52',
           notes: `### 22) Graph-Based Entity Disambiguation
 [impressed] Now we're thinking about entities **collectively**, not one at a time. [enthusiastically] This is a game-changer for accuracy.
 
@@ -2166,7 +2146,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#3c1a52',
           notes: `### 23) Graph-Based Disambiguation - Pros & Cons
 [conversational] Collective inference is powerful, but adds complexity.
 
@@ -2285,7 +2264,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a3f',
           notes: `### 24) PageRank / Centrality-Based Disambiguation
 [impressed] This technique borrows an idea from Google's original search algorithm to help with entity disambiguation.
 
@@ -2352,7 +2330,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#521a3f',
           notes: `### 25) PageRank/Centrality - Pros & Cons
 [conversational] Centrality is elegant, but popularity bias is real.
 
@@ -2475,7 +2452,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a4652',
           notes: `### 26) Domain-Specific Ontology Mapping
 [impressed] Now we're talking about **specialized knowledge** for specific industries. [enthusiastically] This is where the real precision lives.
 
@@ -2545,7 +2521,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#1a4652',
           notes: `### 27) Ontology Mapping - Pros & Cons
 [conversational] Ontologies are the gold standard for precision, but they require investment.
 
@@ -2669,7 +2644,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#523b1a',
           notes: `### 28) LLM-Based Entity Disambiguation
 [excited] Welcome to the **frontier** of entity disambiguation! [amazed] Large Language Models are changing the game.
 
@@ -2741,7 +2715,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#523b1a',
           notes: `### 29) LLM-Based Disambiguation - Pros & Cons
 [conversational] LLMs are powerful but come with significant operational considerations.
 
@@ -2847,7 +2820,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1d1a52',
           notes: `### 30) Conclusion & Key Takeaways
 [conversational] We've covered a lot of ground! [enthusiastically] Let's bring it all together with practical guidance you can apply tomorrow.
 
@@ -2904,7 +2876,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d1a52',
           notes: `### 31) Governance & Best Practices
 [seriously] Before we wrap up, let's talk about **operational excellence**. [conversational] Building a great system is only half the battle—you need to run it well.
 

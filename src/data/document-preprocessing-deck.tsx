@@ -9,11 +9,13 @@ export const documentPreprocessingDeck: Deck = {
   description: 'A practical cheat sheet for NLP and data processing pipelines',
   category: 'NLP',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -67,8 +69,6 @@ export const documentPreprocessingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80',
-          backgroundColor: '#6b2121',
           notes: `### 17 Document Preprocessing Techniques
 [cheerfully] Welcome everyone! [excited] Today we're diving into seventeen practical document preprocessing techniques that you absolutely need to know. Whether you're building a search engine, training a machine learning model, or just trying to make sense of messy text data, these techniques will be your best friends.
 
@@ -162,7 +162,6 @@ export const documentPreprocessingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b2121',
           notes: `### Table of Contents
 [conversational] Let's take a bird's-eye view of all seventeen techniques we'll be covering today. [confidently] I've organized them into four logical categories to make them easier to understand and remember.
 
@@ -259,7 +258,6 @@ export const documentPreprocessingDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#9d281c',
           notes: `### Remove Boilerplate Noise
 
 #### The Core Problem
@@ -332,7 +330,6 @@ Third, there's heuristic 👉 (hyoo-RIS-tik) text density analysis. This approac
               </div>
             </div>
           ),
-          backgroundColor: '#9d281c',
           notes: `### Pros and Cons - Remove Boilerplate Noise
 [conversational] Now that we understand how boilerplate removal works, let's examine the benefits and potential pitfalls of this technique. [seriously] Like any preprocessing method, it's not a silver bullet—you need to understand both sides to use it effectively.
 
@@ -426,7 +423,6 @@ Third, there's heuristic 👉 (hyoo-RIS-tik) text density analysis. This approac
               </div>
             </div>
           ),
-          backgroundColor: '#611083',
           notes: `### 5. Technique 2 - Deduplicate Repeated Text
 
 #### Introduction
@@ -493,7 +489,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#611083',
           notes: `### 6. Deduplication - Pros and Cons
 
 #### The Benefits
@@ -586,7 +581,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#114567',
           notes: `### 7. Technique 3 - Normalize Whitespace & Formatting
 
 #### Introduction
@@ -652,7 +646,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#114567',
           notes: `### 8. Whitespace Normalization - Pros and Cons
 
 #### The Benefits
@@ -744,7 +737,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#207363',
           notes: `### 9. Technique 4 - Convert Tables into Structured Text
 
 #### Introduction
@@ -809,7 +801,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#207363',
           notes: `### 10. Table Conversion - Pros and Cons
 
 #### The Benefits
@@ -901,7 +892,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7f3f14',
           notes: `### 11. Technique 5 - OCR Cleanup
 
 #### Introduction
@@ -966,7 +956,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7f3f14',
           notes: `### 12. OCR Cleanup - Pros and Cons
 
 #### The Benefits
@@ -1061,7 +1050,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#2f590e',
           notes: `#### Introduction
 [energetic] Welcome to technique six, sentence boundary detection. [conversational] This might sound simple at first, but [lecture] accurately identifying where one sentence ends and another begins is actually a sophisticated challenge in document preprocessing. The goal here is to handle all those tricky edge cases that make sentence splitting harder than it seems.
 #### The Challenge
@@ -1119,7 +1107,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#2f590e',
           notes: `#### The Benefits
 [pleased] Let's start with why sentence boundary detection is so valuable. First, it enables fine-grained analysis of your text. You can process documents at the sentence level, which gives you much more precision than working with entire paragraphs or pages.
 [confidently] Second, it improves chunking quality dramatically. When you chunk documents later in your pipeline, having clean sentence boundaries means your chunks break at natural points. You never split in the middle of a thought or statement.
@@ -1216,7 +1203,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#0e1559',
           notes: `#### Introduction
 [energetic] Welcome to technique seven, semantic chunking. [conversational] This is where we move beyond simple fixed-size chunks and start thinking about the actual meaning and topic flow of your documents. [confidently] Semantic chunking is one of the most powerful techniques for improving retrieval quality in RAG 👉 rag systems.
 #### The Core Problem
@@ -1276,7 +1262,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#0e1559',
           notes: `#### The Benefits
 [pleased] Semantic chunking delivers some major advantages for retrieval systems. First and most importantly, it provides better retrieval relevance. [enthusiastically] When a user searches for information, they get chunks that contain complete, coherent topics rather than fragmented pieces. This dramatically improves the user experience.
 [confidently] Second, it preserves context within chunks. Each chunk is self-contained and makes sense on its own. You don't need to retrieve adjacent chunks just to understand what's being discussed.
@@ -1378,7 +1363,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#590e51',
           notes: `#### Introduction
 [energetic] Welcome to technique eight, contextual chunk linking, also known as parent-child chunking. [lecture] This technique recognizes a fundamental problem: sometimes the chunk you retrieve doesn't have enough context on its own. [confidently] By maintaining relationships between chunks at different hierarchical levels, we can preserve the bigger picture while still retrieving precisely.
 #### The Core Problem
@@ -1438,7 +1422,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#590e51',
           notes: `#### The Benefits
 [pleased] Parent-child chunking offers several compelling advantages. First, it maintains document structure in your chunked data. You don't lose the hierarchical relationships that authors carefully created to organize their ideas.
 [enthusiastically] Second, it improves answer accuracy significantly. When your system can provide both the specific detail and its broader context, users get more complete and accurate answers. [lecture] This is especially important for technical or complex domains where context is crucial.
@@ -1538,7 +1521,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#561173',
           notes: `#### Introduction
 [energetic] Welcome to technique nine, text normalization. [lecture] This is a classic preprocessing technique that converts text to a canonical form. [conversational] While it's less critical for modern transformer-based systems, it still has important use cases in production pipelines.
 #### The Core Concept
@@ -1601,7 +1583,6 @@ Contraction expansion converts "can't" to "cannot," "won't" to "will not," and s
               </div>
             </div>
           ),
-          backgroundColor: '#561173',
           notes: `#### The Benefits
 [pleased] Text normalization offers several clear benefits, especially for traditional systems. First, it improves matching consistency. [conversational] When you search for "cafe," you'll match "café" and "Café" and "CAFE"—all the variations users might type or authors might write.
 [confidently] Second, it reduces vocabulary size in your system. Instead of treating "café," "cafe," and "Cafe" as three different words, you treat them as one. This reduces sparsity in traditional models and makes your system more efficient.
@@ -1699,7 +1680,6 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
               </div>
             </div>
           ),
-          backgroundColor: '#736111',
           notes: `#### Introduction
 [lecture] And finally, we've reached technique ten, light stopword trimming. [conversational] This is our last document preprocessing technique, and it's another traditional approach that you need to use carefully in modern systems. [confidently] The key word here is "light"—aggressive stopword removal is almost never the right choice anymore.
 #### The Core Concept
@@ -1759,7 +1739,6 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
               </div>
             </div>
           ),
-          backgroundColor: '#736111',
           notes: `#### The Benefits
 [pleased] Let's start with the scenarios where stopword trimming actually provides value. [confidently] First, it reduces noise in keyword systems. If you're using a traditional inverted index, stopwords can inflate document scores without adding meaningful information. Removing them focuses the system on distinctive terms.
 [conversational] Second, it lowers storage and processing requirements. Stopwords can be twenty to thirty percent of your text. Removing them means smaller indexes, faster search, and lower storage costs.
@@ -1867,7 +1846,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#731111',
           notes: `#### Introduction
 [energetic] Welcome to technique eleven, lemmatization and stemming. [lecture] These are classic text normalization techniques that reduce words to their base or root forms. [conversational] While less critical for modern transformer models, they still have specific use cases in traditional NLP pipelines.
 #### The Core Concept
@@ -1916,7 +1894,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#731111',
           notes: `#### The Benefits
 [pleased] Lemmatization and stemming provide clear benefits for traditional systems. [confidently] First, they reduce vocabulary sparsity—instead of "run," "running," "runs," and "ran" being four separate tokens, they become one. This helps traditional ML models learn better. [enthusiastically] Second, search recall improves dramatically. Users searching for "run" will find documents containing "running." [lecture] Third, this is especially valuable for morphologically rich languages like German or Finnish where words have many inflected forms. [pleased] Finally, it makes term counting and analysis more consistent.
 #### The Challenges
@@ -2003,7 +1980,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#560965',
           notes: `#### Introduction
 [energetic] Keyphrase extraction identifies the most important terms and phrases in your documents. [confidently] These keyphrases serve as tags, metadata, and navigation aids that improve discoverability and organization.
 #### Core Approach
@@ -2052,7 +2028,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#560965',
           notes: `#### The Benefits
 [pleased] Keyphrase extraction enables powerful navigation and filtering in large document collections. [enthusiastically] Users can quickly find relevant content by browsing or filtering by keyphrases. [confidently] It improves retrieval precision by providing additional signals beyond full-text search. [conversational] Document summarization becomes easier when you have the key concepts identified. [pleased] Overall content discovery and organization significantly improve.
 #### The Challenges
@@ -2140,7 +2115,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#0b6509',
           notes: `#### Introduction
 [confidently] Named Entity Recognition, or NER 👉 N-E-R, identifies and tags specific entities in text—people, organizations, locations, dates, products, and domain-specific entities. [enthusiastically] This transforms unstructured text into structured, queryable data that enables powerful entity-based search and analytics.
 #### The Power of Entity Tagging
@@ -2189,7 +2163,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#0b6509',
           notes: `#### The Benefits
 [pleased] Entity tagging transforms unstructured text into structured, queryable data. [enthusiastically] You can run entity-based queries like "show me all documents mentioning Apple the company, not apple the fruit." [conversational] Database-like joins become possible—find all documents where person X works at organization Y. [confidently] Search precision improves dramatically with entity filtering. [pleased] The metadata created enables sophisticated document organization and discovery.
 #### The Challenges
@@ -2278,7 +2251,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#892015',
           notes: `
 #### Introduction to Dead Chunks & Quality Filtering
 
@@ -2368,7 +2340,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#892015',
           notes: `
 #### Balancing Precision and Recall in Quality Filtering
 
@@ -2482,7 +2453,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#591277',
           notes: `
 #### Introduction to Chunk Summary Metadata
 
@@ -2576,7 +2546,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#591277',
           notes: `
 #### Weighing the Costs and Benefits of Summary Metadata
 
@@ -2701,7 +2670,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#0e594a',
           notes: `
 #### Introduction to Domain Dictionary & Synonym Normalization
 
@@ -2815,7 +2783,6 @@ Finally, **stylistic and authorial nuances** can be lost. Different authors migh
               </div>
             </div>
           ),
-          backgroundColor: '#0e594a',
           notes: `
 #### Evaluating Domain Dictionary Trade-Offs
 
@@ -2938,7 +2905,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#113d59',
           notes: `
 #### Introduction to Temporal Labeling & Version Tagging
 
@@ -3050,7 +3016,6 @@ Finally, **complex query logic** for temporal relevance might be required. [stor
               </div>
             </div>
           ),
-          backgroundColor: '#113d59',
           notes: `
 #### Evaluating Temporal Metadata Benefits and Challenges
 
@@ -3152,7 +3117,6 @@ Maintain **version control** infrastructure—whether that's git, content manage
               </div>
             </div>
           ),
-          backgroundColor: '#11552e',
           notes: `#### Introduction
 [cheerfully] Now that we've covered all seventeen preprocessing techniques, let's talk about building a minimal viable pipeline. [conversational] You don't need to implement everything at once—start with core essentials and expand based on your specific needs.
 #### The Starter Pipeline
@@ -3198,7 +3162,6 @@ Maintain **version control** infrastructure—whether that's git, content manage
               </div>
             </div>
           ),
-          backgroundColor: '#11552e',
           notes: `#### Key Principles
 [confidently] The most important principles: Clean document structure, semantically coherent chunks, and rich metadata are the foundation of high-quality retrieval. [cautiously] Favor conservative preprocessing—aggressive normalization often hurts more than it helps. [lecture] Always preserve original text alongside processed versions for debugging and display. Log every transformation so you can trace problems back to their source.
 #### Technique Selection
@@ -3241,7 +3204,6 @@ Maintain **version control** infrastructure—whether that's git, content manage
               </div>
             </div>
           ),
-          backgroundColor: '#11552e',
           notes: `#### Your Action Plan
 [enthusiastically] Here's what to do next. [lecture] First, assess your current document collection—what types, formats, and quality issues do you have? Second, identify your biggest pain points—is it poor retrieval quality, noisy content, or missing metadata? [confidently] Third, start with a minimal pipeline—just the essential techniques that address your top issues. Fourth, measure baseline metrics so you can track improvement. Fifth, iterate and refine based on results and user feedback.
 #### Continued Learning

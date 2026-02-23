@@ -9,11 +9,13 @@ export const queryRewritingDeck: Deck = {
   description: 'Practical patterns, prompts, and examples for better retrieval',
   category: 'RAG',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -54,8 +56,6 @@ export const queryRewritingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80',
-          backgroundColor: '#2C3E50',
           notes: `### 21 Query Rewriting Strategies for RAG
 [cheerfully] Welcome everyone! Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. [conversational] RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. [seriously] But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.
 #### 🎯 What You'll Learn
@@ -114,7 +114,6 @@ export const queryRewritingDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#34495E',
           notes: `### Why Query Rewriting?
 [conversational] So why do we even need query rewriting? [seriously] Let's look at the real problems it solves.
 #### ❌ The Problems
@@ -170,7 +169,6 @@ export const queryRewritingDeck: Deck = {
               </div></GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16496b',
           notes: `### Impact on RAG Performance
 [excited] Now let's talk numbers, because this is where it gets exciting.
 #### 📊 The Metrics
@@ -257,7 +255,6 @@ export const queryRewritingDeck: Deck = {
               </div></GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495E',
           notes: `### Implementation Workflow
 [conversational] Let me walk you through the six-step workflow for implementing query rewriting in a RAG pipeline.
 #### 🔄 The Six Steps
@@ -338,7 +335,6 @@ Don't forget the guardrails: token and cost caps so your LLM rewriting doesn't b
               </p></GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#194f2f',
           notes: `### 21 Strategies Overview
 Here's a bird's-eye view of all twenty-one strategies organized by their approach type.
 #### 📈 Expansion & Enhancement
@@ -403,7 +399,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e557b',
           notes: `### Query Expansion — Overview
 [conversational] Let's start with the simplest and most widely used strategy: **Query Expansion**.
 #### 🎯 What Is It?
@@ -445,7 +440,6 @@ flowchart LR
               </ul></GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e557b',
           notes: `### Query Expansion — How It Works
 So how does query expansion actually work? There are four main approaches, and you can mix and match them.
 #### 🔄 The Expansion Methods
@@ -490,7 +484,6 @@ def expand_query(query):
               </pre>
             </div>
           ),
-          backgroundColor: '#1e557b',
           notes: `### Query Expansion — Implementation
 Here's a practical implementation pattern you can use right away.
 #### 💻 The Prompt Template
@@ -520,7 +513,6 @@ Here's a practical implementation pattern you can use right away.
               </ul>
             </div>
           ),
-          backgroundColor: '#1e557b',
           notes: `### Query Expansion — Example & Considerations
 [conversational] Let's look at a real example.
 #### 📝 Before and After
@@ -578,7 +570,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#6c1e7b',
           notes: `### Query Reformulation — Overview
 [conversational] Strategy number two is **Query Reformulation**, and it's all about making queries clearer and self-contained.
 #### 🎯 What Is It?
@@ -605,7 +596,6 @@ flowchart LR
               </ul>
             </div>
           ),
-          backgroundColor: '#6c1e7b',
           notes: `### Query Reformulation — How It Works
 Here's how reformulation works in practice.
 #### 🔄 The Process
@@ -642,7 +632,6 @@ def reformulate_query(query, history):
               </pre>
             </div>
           ),
-          backgroundColor: '#6c1e7b',
           notes: `### Query Reformulation — Implementation
 [lecture] The implementation uses a simple but effective prompt pattern.
 #### 💻 The Prompt
@@ -672,7 +661,6 @@ In the implementation, you first summarize the conversation history to extract t
               </ul>
             </div>
           ),
-          backgroundColor: '#6c1e7b',
           notes: `### Query Reformulation — Example & Considerations
 Here's a perfect example of what reformulation does.
 #### 📝 Before and After
@@ -731,7 +719,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1e6b7b',
           notes: `### Query Decomposition — Overview
 [conversational] Strategy 3 is **Query Decomposition**, and it tackles one of the hardest problems in retrieval: complex, multi-part questions.
 #### 🎯 What Is It?
@@ -758,7 +745,6 @@ When a user asks "Compare Snowflake vs BigQuery costs for 10 TB per month," that
               </ul>
             </div>
           ),
-          backgroundColor: '#1e6b7b',
           notes: `### Query Decomposition — How It Works
 [lecture] The decomposition workflow follows a plan-retrieve-answer-combine pattern.
 #### 🔄 The Four Steps
@@ -795,7 +781,6 @@ def answer_with_decomposition(query):
               </pre>
             </div>
           ),
-          backgroundColor: '#1e6b7b',
           notes: `### Query Decomposition — Implementation
 Here's how to implement decomposition in practice.
 #### 💻 The Prompt
@@ -825,7 +810,6 @@ Here's how to implement decomposition in practice.
               </ul>
             </div>
           ),
-          backgroundColor: '#1e6b7b',
           notes: `### Query Decomposition — Example & Considerations
 Here's a real-world example of decomposition in action.
 #### 📝 Before and After
@@ -884,7 +868,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7b5d1e',
           notes: `### Step-Back Prompting — Overview
 [conversational] Strategy 4 is **Step-Back Prompting**, and it takes the opposite approach from decomposition — instead of breaking a query down, it zooms out.
 #### 🎯 What Is It?
@@ -911,7 +894,6 @@ When a user asks "How to fix CUDA OOM with Llama 3.1 70B?" 👉 'lah-mah three-p
               </ul>
             </div>
           ),
-          backgroundColor: '#7b5d1e',
           notes: `### Step-Back Prompting — How It Works
 [lecture] The process is straightforward but powerful.
 #### 🔄 The Process
@@ -947,7 +929,6 @@ def step_back_query(original_query):
               </pre>
             </div>
           ),
-          backgroundColor: '#7b5d1e',
           notes: `### Step-Back Prompting — Implementation
 [lecture] The implementation is surprisingly simple.
 #### 💻 The Prompt
@@ -977,7 +958,6 @@ def step_back_query(original_query):
               </ul>
             </div>
           ),
-          backgroundColor: '#7b5d1e',
           notes: `### Step-Back Prompting — Example & Considerations
 [conversational] Let's see step-back in action.
 #### 📝 Before and After
@@ -1037,7 +1017,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e7b28',
           notes: `### HyDE — Overview
 [conversational] Strategy 5 is **HyDE**, which stands for Hypothetical Document Embeddings, and it's one of my favorite techniques. HyDE 👉 'hide'.
 #### 🎯 What Is It?
@@ -1064,7 +1043,6 @@ HyDE shines when you have **low recall in dense retrieval**, for **zero-shot dom
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b28',
           notes: `### HyDE — How It Works
 Here's the four-step process that makes HyDE work.
 #### 🔄 The Four Steps
@@ -1103,7 +1081,6 @@ def hyde_retrieval(query, top_k=5):
               </pre>
             </div>
           ),
-          backgroundColor: '#1e7b28',
           notes: `### HyDE — Implementation
 [lecture] The implementation is clean and modular.
 #### 💻 The Prompt
@@ -1139,7 +1116,6 @@ One practical tip: you can generate **multiple hypothetical documents** with dif
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b28',
           notes: `### HyDE — Example & Considerations
 Here's HyDE in action with a real example.
 #### 📝 Before and After
@@ -1199,7 +1175,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#465e7b',
           notes: `### Multi-Query Generation — Overview
 [conversational] Strategy 6 is **Multi-Query Generation**, which attacks the problem from multiple angles simultaneously.
 #### 🎯 What Is It?
@@ -1226,7 +1201,6 @@ Instead of sending one query to your retrieval system, you generate **multiple d
               </ul>
             </div>
           ),
-          backgroundColor: '#465e7b',
           notes: `### Multi-Query Generation — How It Works
 [lecture] The workflow is straightforward but effective.
 #### 🔄 The Steps
@@ -1266,7 +1240,6 @@ def multi_query_retrieve(query):
               </pre>
             </div>
           ),
-          backgroundColor: '#465e7b',
           notes: `### Multi-Query Generation — Implementation
 [lecture] The implementation involves a focused generation prompt and a result fusion step.
 #### 💻 The Prompt
@@ -1303,7 +1276,6 @@ A practical optimization: run the retrieval calls **in parallel**. Since each va
               </ul>
             </div>
           ),
-          backgroundColor: '#465e7b',
           notes: `### Multi-Query Generation — Example & Considerations
 Here's a great example of multi-query in action.
 #### 📝 Before and After
@@ -1362,7 +1334,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7b2e1e',
           notes: `### Context-Aware Rewriting — Overview
 [conversational] Strategy 7 is **Context-Aware Rewriting**, and if you're building any kind of chat-based RAG system, this is absolutely essential.
 #### 🎯 What Is It?
@@ -1389,7 +1360,6 @@ In a conversation, users naturally use pronouns and references: "Tell me about i
               </ul>
             </div>
           ),
-          backgroundColor: '#7b2e1e',
           notes: `### Context-Aware Rewriting — How It Works
 Here's how context-aware rewriting works in practice.
 #### 🔄 The Process
@@ -1428,7 +1398,6 @@ def context_aware_rewrite(query, history):
               </pre>
             </div>
           ),
-          backgroundColor: '#7b2e1e',
           notes: `### Context-Aware Rewriting — Implementation
 [lecture] The implementation pattern is clean and reusable.
 #### 💻 The Prompt
@@ -1458,7 +1427,6 @@ One important consideration: **how much history to include**. Sending the entire
               </ul>
             </div>
           ),
-          backgroundColor: '#7b2e1e',
           notes: `### Context-Aware Rewriting — Example & Considerations
 Here's a classic example.
 #### 📝 Before and After
@@ -1515,7 +1483,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1e7b20',
           notes: `### Query Clarification — Overview
 [conversational] Strategy 8 is **Query Clarification**, and it's unique because it involves the user in the rewriting process.
 #### 🎯 What Is It?
@@ -1542,7 +1509,6 @@ Instead of silently rewriting the query, the system **detects ambiguity** and as
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b20',
           notes: `### Query Clarification — How It Works
 [lecture] The system operates through a detect-ask-rewrite cycle.
 #### 🔄 The Process
@@ -1578,7 +1544,6 @@ def clarify_query(query):
               </pre>
             </div>
           ),
-          backgroundColor: '#1e7b20',
           notes: `### Query Clarification — Implementation
 [lecture] The implementation follows a clarify-then-rewrite pattern.
 #### 💻 The Prompt
@@ -1610,7 +1575,6 @@ In the implementation, you first run an ambiguity detector. If the ambiguity sco
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b20',
           notes: `### Query Clarification — Example & Considerations
 Here's query clarification in a real scenario.
 #### 📝 Before and After
@@ -1671,7 +1635,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7b1e75',
           notes: `### Query Specification — Overview
 [conversational] Strategy 9 is **Query Specification**, which adds explicit filters and constraints to narrow down retrieval.
 #### 🎯 What Is It?
@@ -1699,7 +1662,6 @@ Query specification is about adding **structured constraints** to your query —
               </ul>
             </div>
           ),
-          backgroundColor: '#7b1e75',
           notes: `### Query Specification — How It Works
 Query specification works by expanding queries with structured search operators.
 #### 🔄 The Process
@@ -1742,7 +1704,6 @@ def specify_query(query):
               </pre>
             </div>
           ),
-          backgroundColor: '#7b1e75',
           notes: `### Query Specification — Implementation
 [lecture] The implementation detects constraints and annotates the query.
 #### 💻 The Prompt
@@ -1773,7 +1734,6 @@ One important note: this strategy works best with search engines that support fi
               </ul>
             </div>
           ),
-          backgroundColor: '#7b1e75',
           notes: `### Query Specification — Example & Considerations
 [conversational] Let's see specification in action.
 #### 📝 Before and After
@@ -1835,7 +1795,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7b6a1e',
           notes: `### Semantic Bridging — Overview
 [conversational] Strategy 10 is **Semantic Bridging**, and it's all about closing the vocabulary gap between users and domain experts.
 #### 🎯 What Is It?
@@ -1862,7 +1821,6 @@ Users speak one language, domain experts speak another. A patient says "heart at
               </ul>
             </div>
           ),
-          backgroundColor: '#7b6a1e',
           notes: `### Semantic Bridging — How It Works
 [lecture] The bridging process uses several complementary techniques.
 #### 🔄 The Process
@@ -1900,7 +1858,6 @@ def semantic_bridge(query, domain):
               </pre>
             </div>
           ),
-          backgroundColor: '#7b6a1e',
           notes: `### Semantic Bridging — Implementation
 [lecture] The implementation combines ontology lookups with LLM-powered normalization.
 #### 💻 The Prompt
@@ -1930,7 +1887,6 @@ A practical tip: build and maintain a **curated mapping dictionary** for your mo
               </ul>
             </div>
           ),
-          backgroundColor: '#7b6a1e',
           notes: `### Semantic Bridging — Example & Considerations
 Here's a perfect medical example.
 #### 📝 Before and After
@@ -1986,7 +1942,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#4e1e7b',
           notes: `### Query2Doc — Overview
 [conversational] Strategy 11 is **Query2Doc**, which is similar to HyDE but with a different focus.
 #### 🎯 What Is It?
@@ -2013,7 +1968,6 @@ Query2Doc turns a query into a **pseudo-document** that mimics the style and con
               </ul>
             </div>
           ),
-          backgroundColor: '#4e1e7b',
           notes: `### Query2Doc — How It Works
 [lecture] The Query2Doc process generates document-style expansions.
 #### 🔄 The Process
@@ -2048,7 +2002,6 @@ def query2doc(query):
               </pre>
             </div>
           ),
-          backgroundColor: '#4e1e7b',
           notes: `### Query2Doc — Implementation
 [lecture] The implementation follows a generate-embed-retrieve pattern.
 #### 💻 The Prompt
@@ -2078,7 +2031,6 @@ A practical optimization: you can concatenate the original query with the pseudo
               </ul>
             </div>
           ),
-          backgroundColor: '#4e1e7b',
           notes: `### Query2Doc — Example & Considerations
 Here's Query2Doc in practice.
 #### 📝 Before and After
@@ -2138,7 +2090,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#5d7b1e',
           notes: `### ITER-RETGEN — Overview
 [conversational] Strategy 12 is **ITER-RETGEN**, which stands for Iterative Retrieval-Generation. ITER-RETGEN 👉 'iter-ret-jen'.
 #### 🎯 What Is It?
@@ -2166,7 +2117,6 @@ flowchart TB
               </ul>
             </div>
           ),
-          backgroundColor: '#5d7b1e',
           notes: `### ITER-RETGEN — How It Works
 [lecture] The process alternates between drafting and targeted retrieval.
 #### 🔄 The Iterative Loop
@@ -2204,7 +2154,6 @@ Return only the follow-up queries without explanations.
               </pre>
             </div>
           ),
-          backgroundColor: '#5d7b1e',
           notes: `### ITER-RETGEN — Implementation
 [lecture] The implementation uses a loop with draft evaluation.
 #### 💻 The Prompt
@@ -2238,7 +2187,6 @@ Return only the follow-up queries without explanations.
               </ul>
             </div>
           ),
-          backgroundColor: '#5d7b1e',
           notes: `### ITER-RETGEN — Example & Considerations
 Here's ITER-RETGEN solving a complex question.
 #### 📝 Before and After
@@ -2295,7 +2243,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7b1e41',
           notes: `### Template-Based Rewriting — Overview
 [conversational] Strategy 13 is **Template-Based Rewriting**, which brings consistency and speed to query transformation.
 #### 🎯 What Is It?
@@ -2322,7 +2269,6 @@ flowchart LR
               </ul>
             </div>
           ),
-          backgroundColor: '#7b1e41',
           notes: `### Template-Based Rewriting — How It Works
 [lecture] The system matches queries to predefined templates and fills in the slots.
 #### 🔄 The Template Types
@@ -2358,7 +2304,6 @@ Available templates:
               </pre>
             </div>
           ),
-          backgroundColor: '#7b1e41',
           notes: `### Template-Based Rewriting — Implementation
 [lecture] The implementation follows a classify-select-fill pattern.
 #### 💻 The Prompt
@@ -2389,7 +2334,6 @@ One practical tip: start with five to ten templates covering your most common qu
               </ul>
             </div>
           ),
-          backgroundColor: '#7b1e41',
           notes: `### Template-Based Rewriting — Example & Considerations
 Here's template-based rewriting in action.
 #### 📝 Before and After
@@ -2450,7 +2394,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e7b71',
           notes: `### Entity-Centric Rewriting — Overview
 [conversational] Strategy 14 is **Entity-Centric Rewriting**, which focuses on identifying, disambiguating, and enriching entities in queries.
 #### 🎯 What Is It?
@@ -2477,7 +2420,6 @@ When a user searches "jaguar speed," what do they mean? The animal? The car? The
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b71',
           notes: `### Entity-Centric Rewriting — How It Works
 [lecture] The process follows an extract-link-enrich-reformulate pipeline.
 #### 🔄 The Pipeline
@@ -2518,7 +2460,6 @@ Query: {query}
               </pre>
             </div>
           ),
-          backgroundColor: '#1e7b71',
           notes: `### Entity-Centric Rewriting — Implementation
 [lecture] The implementation combines NER with knowledge base linking.
 #### 💻 The Prompt
@@ -2550,7 +2491,6 @@ A practical alternative: if you don't have a full knowledge base, you can use th
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b71',
           notes: `### Entity-Centric Rewriting — Example & Considerations
 Here's entity-centric rewriting solving the classic ambiguity problem.
 #### 📝 Before and After
@@ -2610,7 +2550,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#341e7b',
           notes: `### Temporal Rewriting — Overview
 [conversational] Strategy 15 is **Temporal Rewriting**, which handles one of the most common but overlooked problems in search: time.
 #### 🎯 What Is It?
@@ -2637,7 +2576,6 @@ When a user asks for "latest OpenAI API quotas," what does "latest" mean? Today?
               </ul>
             </div>
           ),
-          backgroundColor: '#341e7b',
           notes: `### Temporal Rewriting — How It Works
 Temporal rewriting resolves and enhances time aspects through several techniques.
 #### 🔄 The Process
@@ -2675,7 +2613,6 @@ Query: {query}
               </pre>
             </div>
           ),
-          backgroundColor: '#341e7b',
           notes: `### Temporal Rewriting — Implementation
 [lecture] The implementation combines date parsing with LLM-powered time resolution.
 #### 💻 The Prompt
@@ -2706,7 +2643,6 @@ A practical tip: you can implement basic temporal rewriting with **simple regex 
               </ul>
             </div>
           ),
-          backgroundColor: '#341e7b',
           notes: `### Temporal Rewriting — Example & Considerations
 Here's temporal rewriting in action.
 #### 📝 Before and After
@@ -2770,7 +2706,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#7b3b1e',
           notes: `### Domain-Specific Rewriting — Overview
 [conversational] Strategy 16 is **Domain-Specific Rewriting**, which is similar to semantic bridging but goes deeper into domain expertise.
 #### 🎯 What Is It?
@@ -2797,7 +2732,6 @@ While semantic bridging maps terms to ontologies, domain-specific rewriting **fu
               </ul>
             </div>
           ),
-          backgroundColor: '#7b3b1e',
           notes: `### Domain-Specific Rewriting — How It Works
 [lecture] The system maps queries to domain terminology and applies field constraints.
 #### 🔄 The Process
@@ -2840,7 +2774,6 @@ Domain: {domain}
               </pre>
             </div>
           ),
-          backgroundColor: '#7b3b1e',
           notes: `### Domain-Specific Rewriting — Implementation
 [lecture] The implementation loads domain ontologies and applies them to queries.
 #### 💻 The Prompt
@@ -2871,7 +2804,6 @@ A practical consideration: you can build lightweight domain ontologies by extrac
               </ul>
             </div>
           ),
-          backgroundColor: '#7b3b1e',
           notes: `### Domain-Specific Rewriting — Example & Considerations
 Here's a medical example.
 #### 📝 Before and After
@@ -2934,7 +2866,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#7b1e35',
           notes: `### Intent Classification — Overview
 [conversational] Strategy 17 is **Intent Classification and Rewriting**, which acts as a **router** that directs queries to the most appropriate rewriting strategy.
 #### 🎯 What Is It?
@@ -2961,7 +2892,6 @@ Instead of applying the same rewriting strategy to every query, intent classific
               </ul>
             </div>
           ),
-          backgroundColor: '#7b1e35',
           notes: `### Intent Classification — How It Works
 [lecture] The system classifies queries into intent categories and routes them to specific strategies.
 #### 🔄 The Routing Map
@@ -3002,7 +2932,6 @@ Query: {query}
               </pre>
             </div>
           ),
-          backgroundColor: '#7b1e35',
           notes: `### Intent Classification — Implementation
 [lecture] The implementation combines an intent classifier with a strategy router.
 #### 💻 The Prompt
@@ -3033,7 +2962,6 @@ A practical tip: start with a simple rule-based classifier using keyword pattern
               </ul>
             </div>
           ),
-          backgroundColor: '#7b1e35',
           notes: `### Intent Classification — Example & Considerations
 Here's intent-based routing in action.
 #### 📝 Before and After
@@ -3096,7 +3024,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1e7b3e',
           notes: `### Diverse Multi-Query Rewriting — Overview
 [conversational] Strategy 18 is **Diverse Multi-Query Rewriting**, or DMQR 👉 'dee-em-queue-ar'. It's like multi-query generation on steroids.
 #### 🎯 What Is It?
@@ -3123,7 +3050,6 @@ Regular multi-query generation creates multiple query variants, but they can end
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b3e',
           notes: `### Diverse Multi-Query Rewriting — How It Works
 [firmly] The key differentiator is the **explicit diversity constraints**.
 #### 🔄 The Process
@@ -3162,7 +3088,6 @@ Query: {query}
               </pre>
             </div>
           ),
-          backgroundColor: '#1e7b3e',
           notes: `### Diverse Multi-Query Rewriting — Implementation
 [lecture] The implementation generates queries with explicit diversity checks.
 #### 💻 The Prompt
@@ -3201,7 +3126,6 @@ A practical tip: you can also use **maximal marginal relevance** (MMR 👉 'em-e
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b3e',
           notes: `### Diverse Multi-Query Rewriting — Example & Considerations
 Here's DMQR tackling a broad topic.
 #### 📝 Before and After
@@ -3261,7 +3185,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e2b7b',
           notes: `### Feedback-Based Rewriting — Overview
 [conversational] Strategy 19 is **Feedback-Based Rewriting**, which learns from actual user behavior to improve queries over time.
 #### 🎯 What Is It?
@@ -3288,7 +3211,6 @@ flowchart LR
               </ul>
             </div>
           ),
-          backgroundColor: '#1e2b7b',
           notes: `### Feedback-Based Rewriting — How It Works
 [lecture] The system uses feedback signals to progressively refine queries.
 #### 🔄 The Process
@@ -3328,7 +3250,6 @@ Return only the refined query without explanation.
               </pre>
             </div>
           ),
-          backgroundColor: '#1e2b7b',
           notes: `### Feedback-Based Rewriting — Implementation
 [lecture] The implementation connects user telemetry to the rewriting pipeline.
 #### 💻 The Prompt
@@ -3360,7 +3281,6 @@ A practical consideration: you need a **minimum volume threshold** before feedba
               </ul>
             </div>
           ),
-          backgroundColor: '#1e2b7b',
           notes: `### Feedback-Based Rewriting — Example & Considerations
 Here's feedback-based rewriting learning from user behavior.
 #### 📝 Before and After
@@ -3417,7 +3337,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e7b53',
           notes: `### Prompt-Based Rewriting — Overview
 [conversational] Strategy 20 is **Prompt-Based Rewriting**, and it's the **easiest strategy to deploy** — you literally just write a good prompt.
 #### 🎯 What Is It?
@@ -3444,7 +3363,6 @@ Perfect for **quick wins without complex pipelines**, **rapid prototyping and te
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b53',
           notes: `### Prompt-Based Rewriting — How It Works
 [lecture] The approach uses well-crafted system prompts with few-shot examples.
 #### 🔄 The Process
@@ -3490,7 +3408,6 @@ QUERY: {query}
               </pre>
             </div>
           ),
-          backgroundColor: '#1e7b53',
           notes: `### Prompt-Based Rewriting — Implementation
 [lecture] The implementation is refreshingly simple.
 #### 💻 The Prompt
@@ -3521,7 +3438,6 @@ QUERY: {query}
               </ul>
             </div>
           ),
-          backgroundColor: '#1e7b53',
           notes: `### Prompt-Based Rewriting — Example & Considerations
 [warmly] Here's the simplest strategy delivering real results.
 #### 📝 Before and After
@@ -3582,7 +3498,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Adaptive Query Rewriting — Overview
 [warmly] Our final strategy, number 21, is **Adaptive Query Rewriting** — the grand orchestrator.
 #### 🎯 What Is It?
@@ -3609,7 +3524,6 @@ Let's see how it selects strategies.`
               </ul>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Adaptive Query Rewriting — How It Works
 [warmly] The system uses a **policy model or agent** to select among available strategies.
 #### 🔄 The Decision Factors
@@ -3651,7 +3565,6 @@ Signals:
               </pre>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Adaptive Query Rewriting — Implementation
 [warmly] The implementation uses a policy model to route queries to strategies.
 #### 💻 The Prompt
@@ -3685,7 +3598,6 @@ Let's see a final example.`
               </ul>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Adaptive Query Rewriting — Example & Considerations
 [warmly] Let's see the adaptive approach making decisions.
 #### 📝 Before and After

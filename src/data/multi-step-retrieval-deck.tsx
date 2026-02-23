@@ -8,13 +8,14 @@ export const multiStepRetrievalDeck: Deck = {
   name: '9 Multi-Step Retrieval Strategies',
   description: 'Retrieve → Generate → Retrieve - A comprehensive guide to techniques that improve RAG through multi-step processes',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: '#ffffff',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -48,8 +49,6 @@ export const multiStepRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e2f5d',
-          backgroundImage: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1920&q=80',
           color: '#ffffff',
           notes: `### Multi-Step Retrieval Strategies
 
@@ -131,7 +130,6 @@ export const multiStepRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e2f5d',
           notes: `### Overview: Why Multi-Step Retrieval?
 
 #### The Core Concept
@@ -232,7 +230,6 @@ Let's look at all nine strategies in our next slide.`
               </div>
             </div>
           ),
-          backgroundColor: '#1e2f5d',
           notes: `### The 9 Strategies
 
 #### Overview of Our Journey
@@ -318,7 +315,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### 1. Iterative Retrieve-and-Refine
 
 #### The Foundation Strategy
@@ -395,7 +391,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Iterative Retrieve-and-Refine: Pros and Cons
 
 #### Weighing the Trade-offs
@@ -478,7 +473,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#4b174f',
           notes: `### 2. HyDE (Hypothetical Document Generation)
 
 #### Pronunciation and Concept
@@ -555,7 +549,6 @@ Let's look at these trade-offs in more detail on the next slide.`
               </div>
             </div>
           ),
-          backgroundColor: '#4b174f',
           notes: `### HyDE: Pros and Cons
 
 #### The Hallucination Paradox
@@ -645,7 +638,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#172e4f',
           notes: `### 3. Query Decomposition + Sequential Retrieval
 
 #### The Divide and Conquer Approach
@@ -729,7 +721,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#172e4f',
           notes: `### Query Decomposition: Pros and Cons
 
 #### Balancing Modularity and Complexity
@@ -818,7 +809,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#174f1b',
           notes: `### 4. Chain-of-Thought Guided Retrieval
 
 #### Introduction to CoT 👉 'see-oh-tee'
@@ -898,7 +888,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#174f1b',
           notes: `### Chain-of-Thought Guided Retrieval: Pros and Cons
 
 #### Precision Versus Complexity
@@ -981,7 +970,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#17404f',
           notes: `### 5. Step-Back Reasoning Retrieval
 
 #### The Zoom-Out-Then-Zoom-In Strategy
@@ -1055,7 +1043,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#17404f',
           notes: `### Step-Back Reasoning: Pros and Cons
 
 #### The Abstraction Trade-off
@@ -1141,7 +1128,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#4f2e17',
           notes: `### 6. Multi-Hop Graph Traversal Retrieval
 
 #### Following the Connection Thread
@@ -1210,7 +1196,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#4f2e17',
           notes: `### Multi-Hop Graph Traversal: Pros and Cons
 
 #### Graph-Based Reasoning Trade-offs
@@ -1297,7 +1282,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#3f4f17',
           notes: `### 7. Context-Summarize-and-Retrieve
 
 #### Managing Context Windows Intelligently
@@ -1371,7 +1355,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#3f4f17',
           notes: `### Context-Summarize-and-Retrieve: Pros and Cons
 
 #### The Compression Trade-off
@@ -1461,7 +1444,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#174f41',
           notes: `### 8. Answer-Conditioned Re-Retrieval
 
 #### Verification Through Reverse Engineering
@@ -1536,7 +1518,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#174f41',
           notes: `### Answer-Conditioned Re-Retrieval: Pros and Cons
 
 #### Verification Versus Efficiency
@@ -1619,7 +1600,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#2e174f',
           notes: `### 9. Feedback-Based Retrieval Loop
 
 #### Learning from User Signals
@@ -1693,7 +1673,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#2e174f',
           notes: `### Feedback-Based Retrieval Loop: Pros and Cons
 
 #### Learning Systems Trade-offs
@@ -1791,7 +1770,6 @@ Now let's bring everything together with our summary and decision guide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Summary and How to Choose
 
 #### Bringing It All Together

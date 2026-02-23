@@ -9,11 +9,14 @@ export const nerTrainingDeck: Deck = {
   description: 'Cheat sheets for practical, high-accuracy NER in specialized domains',
   category: 'NLP',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -39,7 +42,6 @@ export const nerTrainingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
           notes: `### 9 Custom NER Training Tips for Domain-Specific Use Cases
 [cheerfully] [excited] Welcome everyone! Today we're going to explore something really exciting in the world of Natural Language Processing, or NLP. We'll be talking about **Named Entity Recognition**, commonly called NER.
 #### 🎯 What is NER?
@@ -77,7 +79,6 @@ export const nerTrainingDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#2d4a6f',
           notes: `### What You'll Learn
 [conversational] Let me give you a quick roadmap of what we'll cover today so you know exactly what to expect.
 #### 📚 The Structure
@@ -142,7 +143,6 @@ export const nerTrainingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a3a52',
           notes: `### Tip 1: Build a Domain-Specific Entity Dictionary
 [conversational] Our first tip is all about building a **domain-specific entity dictionary**. [lighthearted] This might sound technical, but it's actually a very intuitive concept.
 #### 📖 What's an Entity Dictionary?
@@ -200,7 +200,6 @@ Let's look at the specific steps next.`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a3a52',
           notes: `### Tip 1: Steps
 [lecture] Now let's walk through the practical steps to build your entity dictionary.
 #### Step 1: Aggregate Your Sources
@@ -249,7 +248,6 @@ Let's look at the specific steps next.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a3a52',
           notes: `### Tip 1: Pros & Cons
 [conversational] Let's be honest about the trade-offs with entity dictionaries.
 #### ✅ Pros
@@ -313,7 +311,6 @@ Let's look at the specific steps next.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2d5016',
           notes: `### Tip 2: Create High-Quality Annotated Training Data
 [conversational] Now we're getting to something fundamental. [storytelling] If Tip 1 was about building a helpful shortcut, Tip 2 is about creating the **gold standard** that your model will learn from.
 #### 🎯 The Goal
@@ -370,7 +367,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#2d5016',
           notes: `### Tip 2: Steps
 [conversational] Let me walk you through how to create a solid annotation pipeline.
 #### Step 1: Define Your Entity Schema
@@ -417,7 +413,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2d5016',
           notes: `### Tip 2: Pros & Cons
 [conversational] Let's weigh the benefits against the costs of high-quality annotation.
 #### ✅ Pros
@@ -491,7 +486,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4a4e69',
           notes: `### Tip 3: Use Consistent Annotation Guidelines
 [conversational] Now, Tip 2 was about *having* good data. Tip 3 is about *keeping* it good, especially when multiple people are involved.
 #### 🎯 The Goal
@@ -545,7 +539,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4a4e69',
           notes: `### Tip 3: Steps
 [conversational] Here's how to create and maintain effective annotation guidelines.
 #### Step 1: Write Boundary Rules
@@ -593,7 +586,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4a4e69',
           notes: `### Tip 3: Pros & Cons
 [conversational] Let's look at both sides of maintaining strict guidelines.
 #### ✅ Pros
@@ -666,7 +658,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3e2c57',
           notes: `### Tip 4: Label Data with Real Domain Context
 [serious] This tip addresses a common mistake that even experienced teams make.
 #### 🎯 The Goal
@@ -712,7 +703,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#3e2c57',
           notes: `### Tip 4: Steps
 [conversational] Let me walk you through how to work with real-world data responsibly.
 #### Step 1: Source Data Ethically
@@ -773,7 +763,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3e2c57',
           notes: `### Tip 4: Pros & Cons
 [conversational] Using real data comes with significant benefits and some challenges.
 #### ✅ Pros
@@ -844,7 +833,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#770022',
           notes: `### Tip 5: Fine-Tune Pretrained Transformer Models
 [enthusiastically] Alright, this tip is where modern NLP really shines. [conversational] If you've heard of BERT 👉 'burt', GPT, or transformers in general, this is where that technology comes into play.
 #### 🎯 The Goal
@@ -900,7 +888,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#770022',
           notes: `### Tip 5: Steps
 [conversational] Let's walk through the technical process of fine-tuning.
 #### Step 1: Choose Your Base Model
@@ -966,7 +953,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#770022',
           notes: `### Tip 5: Pros & Cons
 [conversational] Let's honestly assess transformer fine-tuning.
 #### ✅ Pros
@@ -1029,7 +1015,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#10508f',
           notes: `### Tip 6: Use Data Augmentation for Rare Entities
 [conversational] Now we tackle one of the trickiest problems in NER: the **long tail** of rare entity types.
 #### 🎯 The Goal
@@ -1084,7 +1069,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#10508f',
           notes: `### Tip 6: Steps
 [conversational] Here's how to implement data augmentation safely.
 #### Step 1: Identify Rare Classes
@@ -1144,7 +1128,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#10508f',
           notes: `### Tip 6: Pros & Cons
 [conversational] Let's weigh the benefits and risks of augmentation.
 #### ✅ Pros
@@ -1215,7 +1198,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#304f1a',
           notes: `### Tip 7: Add Negative Examples to Reduce False Positives
 [conversational] Time to address precision. [serious] We've been focused on finding more entities (recall), but sometimes the bigger problem is finding *too many* fake entities (false positives).
 #### 🎯 The Goal
@@ -1267,7 +1249,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#304f1a',
           notes: `### Tip 7: Steps
 [conversational] Here's how to systematically add negative examples.
 #### Step 1: Log False Positives
@@ -1321,7 +1302,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#304f1a',
           notes: `### Tip 7: Pros & Cons
 [conversational] Let's assess the negative examples approach.
 #### ✅ Pros
@@ -1384,7 +1364,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b2b00',
           notes: `### Tip 8: Use Entity Boundary Correction Rules
 [conversational] Sometimes your model gets the entity *almost* right, but the boundaries are slightly off. [energetic] This tip is about fixing those systematic errors without retraining.
 #### 🎯 The Goal
@@ -1430,7 +1409,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#7b2b00',
           notes: `### Tip 8: Steps
 [conversational] Here's how to implement boundary correction rules.
 #### Step 1: Analyze Error Patterns
@@ -1493,7 +1471,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b2b00',
           notes: `### Tip 8: Pros & Cons
 [conversational] Let's weigh the benefits and risks of rule-based post-processing.
 #### ✅ Pros
@@ -1566,7 +1543,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b1fa2',
           notes: `### Tip 9: Perform Iterative Error Analysis and Retraining
 [excited] Our final tip is perhaps the most important one, because it's the strategy that makes all the other tips work together over time.
 #### 🎯 The Goal
@@ -1621,7 +1597,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#7b1fa2',
           notes: `### Tip 9: Steps
 [conversational] Here's how to set up an effective error analysis and retraining cycle.
 #### Step 1: Build Slice Metrics and Confusion Matrices
@@ -1683,7 +1658,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b1fa2',
           notes: `### Tip 9: Pros & Cons
 [conversational] Let's honestly assess the iterative improvement approach.
 #### ✅ Pros
@@ -1778,7 +1752,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#283593',
           notes: `### Summary
 [conversational] Alright, let's bring together everything we've learned! [excited] We've covered 9 tips for building high-accuracy domain-specific NER systems.
 #### 💡 Key Takeaways
@@ -1839,7 +1812,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#283593',
           notes: `### Next Steps
 [conversational] Here's a practical roadmap for getting started with your own domain-specific NER project.
 #### Step 1: Draft Schema and Guidelines
@@ -1900,7 +1872,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#283593',
           notes: `### Risks & Mitigations
 [serious] Let's wrap up by talking about the real-world risks you'll face and how to handle them.
 #### 🔒 Data Access and Privacy

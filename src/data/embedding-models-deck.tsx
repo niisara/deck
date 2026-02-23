@@ -8,13 +8,14 @@ export const embeddingModelsDeck: Deck = {
   name: '9 Embedding Models Cheat Sheet',
   description: 'Quick-reference for RAG, semantic search, clustering, and more',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: '#ffffff',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -42,8 +43,6 @@ export const embeddingModelsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b377d',
-          backgroundImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
           notes: `### 9 Embedding Models Cheat Sheet
 
 [cheerfully] Welcome everyone! [excited] Today we're diving into one of the most critical technologies powering modern AI applications: embedding models. [conversational] If you've heard buzzwords like RAG 👉 'rag', semantic search, or vector databases but aren't quite sure how they all fit together, you're in the right place.
@@ -138,7 +137,6 @@ export const embeddingModelsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b377d',
           notes: `### Model Families Overview
 
 [conversational] Now let's map out the embedding model landscape. [lecture] We're covering five distinct model families, and understanding their heritage helps you make better choices.
@@ -222,7 +220,6 @@ export const embeddingModelsDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#365383',
           notes: `### OpenAI text-embedding-3-small
 
 [enthusiastically] Let's start with OpenAI's budget-friendly champion: text-embedding-3-small. [pleased] This is often the first embedding model developers encounter, and for good reason.
@@ -292,7 +289,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#365383',
           notes: `### Strengths and Weaknesses
 
 [conversational] Every model has trade-offs, and text-embedding-3-small is no exception. [honestly] Let's be honest about what works and what doesn't.
@@ -373,7 +369,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#833636',
           notes: `### OpenAI text-embedding-3-large
 
 [enthusiastically] Now for the flagship model: text-embedding-3-large. [impressed] This is where OpenAI brings its A-game for quality.
@@ -446,7 +441,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#833636',
           notes: `### Strengths and Weaknesses
 
 [conversational] The large model brings premium quality, but at what cost? Let's break down the decision.
@@ -531,7 +525,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#838036',
           notes: `### BGE 👉 'bee-jee-ee' Base
 
 [enthusiastically] Welcome to the open-source world! [excited] BGE 👉 'bee-jee-ee' from BAAI 👉 'bye', the Beijing Academy of Artificial Intelligence, is one of the most popular self-hosted embedding models.
@@ -600,7 +593,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#838036',
           notes: `### Strengths and Weaknesses
 
 [conversational] BGE 👉 'bee-jee-ee' Base offers compelling advantages for self-hosting, but you need to understand its limitations.
@@ -678,7 +670,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#835536',
           notes: `### BGE Large Model Overview
 
 [enthusiastically] Welcome to the BGE 👉 'bee-jee-ee' Large model, developed by BAAI 👉 'bye', which stands for the Beijing Academy of Artificial Intelligence. [impressed] This is one of the most popular open-source embedding models available today, and for good reason. [confidently] BGE 👉 'bee-jee-ee' Large produces 1024-dimensional vectors, giving you rich semantic representations that consistently rank at the top of the MTEB 👉 'em-teb' leaderboard among open-source options.
@@ -743,7 +734,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#835536',
           notes: `### BGE Large Strengths and Weaknesses
 
 [conversational] Let's examine the trade-offs when choosing BGE 👉 'bee-jee-ee' Large for your embedding needs.
@@ -821,7 +811,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#36833f',
           notes: `### E5 Base Model Overview
 
 [enthusiastically] Moving to the E5 👉 'ee-five' family, developed by Microsoft Research. [lecture] The name E5 👉 'ee-five' stands for "EmbEddings from bidirEctional Encoder rEpresentations," and this model brings a unique approach to embedding generation through its prefix-based system.
@@ -886,7 +875,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#36833f',
           notes: `### E5 Base Strengths and Weaknesses
 
 [conversational] Let's break down what makes E5 👉 'ee-five' Base a compelling choice and where it has limitations.
@@ -964,7 +952,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#365283',
           notes: `### E5 Large Model Overview
 
 [enthusiastically] Now we move to E5 👉 'ee-five' Large, which represents the high-capacity version of Microsoft's E5 👉 'ee-five' family. [impressed] This model scales up from 768 to 1024 dimensions, providing more expressive embeddings while maintaining the same prefix-based approach.
@@ -1036,7 +1023,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#365283',
           notes: `### E5 Large Strengths and Weaknesses
 
 [conversational] Let's evaluate the trade-offs when choosing E5 👉 'ee-five' Large for your embedding infrastructure.
@@ -1113,7 +1099,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#7d3683',
           notes: `### Instructor XL Model Overview
 
 [enthusiastically] Now we encounter a fundamentally different approach with Instructor XL 👉 'ex-el', developed by researchers at the University of Hong Kong. [excited] This model introduces instruction-following capabilities to the embedding space, allowing you to dynamically control the behavior of your embeddings through natural language instructions.
@@ -1179,7 +1164,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#7d3683',
           notes: `### Instructor XL Strengths and Weaknesses
 
 [conversational] Let's evaluate when Instructor XL 👉 'ex-el' is the right choice and when you might want to look elsewhere.
@@ -1257,7 +1241,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#367d83',
           notes: `### GTE Base Model Overview
 
 [enthusiastically] Let's explore GTE 👉 'jee-tee-ee' Base, which stands for General Text Embeddings. [conversational] Developed by Alibaba DAMO Academy and maintained by the thenlper organization, this model offers a pragmatic balance between performance and efficiency.
@@ -1324,7 +1307,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#367d83',
           notes: `### GTE Base Strengths and Weaknesses
 
 [conversational] Let's assess the advantages and trade-offs of choosing GTE 👉 'jee-tee-ee' Base for your embedding infrastructure.
@@ -1400,7 +1382,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#468336',
           notes: `### GTE Large Model Overview
 
 [enthusiastically] GTE 👉 'jee-tee-ee' Large represents the scaled-up version of the GTE 👉 'jee-tee-ee' family, offering increased capacity for applications that demand higher retrieval quality.
@@ -1466,7 +1447,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#468336',
           notes: `### GTE Large Strengths and Weaknesses
 
 [conversational] Let's evaluate the benefits and limitations of GTE 👉 'jee-tee-ee' Large to help you make an informed decision.
@@ -1586,7 +1566,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#4c3683',
           notes: `### Model Selection Guide
 
 [conversational] We've covered nine different embedding models across multiple families. [confidently] Now let's distill this information into a practical decision framework to help you choose the right model for your specific needs.
@@ -1647,7 +1626,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4c3683',
           notes: `### Best Practices and Pro Tips
 
 [warmly] Let's conclude with essential best practices that apply across all embedding models. [inspiringly] These tips will help you achieve optimal results regardless of which model you choose.

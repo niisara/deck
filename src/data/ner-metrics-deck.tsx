@@ -110,7 +110,6 @@ export const nerMetricsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495E',
           notes: `### How to Evaluate NER: Overview of 7 Metrics
 [conversational] Before we dive into the metrics, let's learn some vocabulary. [reassuringly] Don't worry — it's easy!
 
@@ -161,7 +160,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#2980B9',
           notes: `### Metrics Covered
 [conversational] Here's our roadmap for today. Seven metrics, seven ways to grade your NER model. [storytelling] Think of it like school — you don't get just one grade, right? You get grades for math, English, science. Same idea here!
 
@@ -264,7 +262,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#27AE60',
           notes: `### Precision (Entity-Level)
 [excited] Now that we know the basics, let's learn our first metric — **Precision**!
 
@@ -356,7 +353,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16A085',
           notes: `### Precision: Pros & Cons
 [conversational] Precision sounds great, right? [cautiously] But there's a catch. Every metric has both good and bad sides, so let's be honest about both.
 
@@ -462,7 +458,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#E67E22',
           notes: `### Recall (Entity-Level)
 [excited] Now that we've seen Precision, let's flip it around. Our next metric is **Recall**.
 
@@ -556,7 +551,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#D35400',
           notes: `### Recall: Pros & Cons
 [conversational] Just like Precision, Recall has its good and bad sides. Let's be honest about both.
 
@@ -673,7 +667,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#8E44AD',
           notes: `### F1 Score (Entity-Level)
 [enthusiastically] Here's the superstar metric — the **F1 Score**! [excited] This is the most popular metric in NER. You'll see it everywhere: papers, leaderboards, job interviews.
 
@@ -773,7 +766,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#9B59B6',
           notes: `### F1 Score: Pros & Cons
 [conversational] F1 is amazing, but no metric is perfect. Let's look at the trade-offs.
 
@@ -892,7 +884,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#C0392B',
           notes: `### Exact Match Score (Sentence-Level)
 [seriously] Now that we've seen F1, let's get *really* strict. [dramatically] This is the **Exact Match Score**, and I call it the "all or nothing" metric.
 
@@ -994,7 +985,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#E74C3C',
           notes: `### Exact Match: Pros & Cons
 [conversational] Exact Match is powerful, but it can be brutal. Let's see both sides.
 
@@ -1113,7 +1103,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1ABC9C',
           notes: `### Partial Match Score (IoU-Based)
 [excited] Now that we've seen how strict Exact Match is, let's meet the forgiving cousin — **Partial Match Score**. [playfully] This one says *"close enough? You get credit!"*
 
@@ -1211,7 +1200,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16A085',
           notes: `### Partial Match: Pros & Cons
 [conversational] Partial Match is forgiving, but flexibility comes with trade-offs.
 
@@ -1324,7 +1312,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3498DB',
           notes: `### Entity-Level Accuracy
 [excited] Now let's look at a very different kind of metric — **Entity-Level Accuracy**. [conversational] This one isolates just ONE skill: labeling!
 
@@ -1415,7 +1402,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2980B9',
           notes: `### Entity-Level Accuracy: Pros & Cons
 [conversational] Entity-Level Accuracy is a great detective tool, but it has its limits.
 
@@ -1527,7 +1513,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#E67E22',
           notes: `### Confusion Matrix Analysis (By Entity Type)
 [enthusiastically] Last metric, and it's my personal favorite — the **Confusion Matrix**! [excited] This is the ultimate detective tool. It shows you exactly WHERE your model gets confused: which mistakes, how often, everything.
 
@@ -1630,7 +1615,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#D35400',
           notes: `### Confusion Matrix: Pros & Cons
 [conversational] The Confusion Matrix is super powerful, but it has some quirks.
 
@@ -1691,7 +1675,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#27AE60',
           notes: `### Summary and Key Takeaways
 [pleased] Alright! [cheerfully] We've covered all seven metrics. Let's bring it all together with a clear guide on when to use each one.
 
@@ -1788,7 +1771,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#8E44AD',
           notes: `### Do's and Don'ts
 [seriously] Now some very important rules. [firmly] Follow these and you'll avoid big mistakes that trip up even experienced teams!
 
@@ -1852,7 +1834,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2C3E50',
           notes: `### Next Steps
 [delighted] Congratulations! [excited] You just learned seven evaluation metrics for NER — that's a big deal! [seriously] But learning is step one. [energetic] Now it's action time!
 

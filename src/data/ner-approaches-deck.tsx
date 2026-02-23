@@ -8,12 +8,14 @@ export const nerApproachesDeck: Deck = {
   name: '11 Named Entity Recognition Approaches',
   description: 'A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons',
   category: 'NLP',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -66,8 +68,6 @@ export const nerApproachesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#162d6b',
-          backgroundImage: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80',
           notes: `### Named Entity Recognition Approaches
 [cheerfully] Welcome everyone! [excited] Today we're going to explore one of the most fundamental tasks in Natural Language Processing: **Named Entity Recognition**, or NER for short.
 
@@ -143,7 +143,6 @@ export const nerApproachesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#162d6b',
           notes: `### Table of Contents
 [conversational] Here's our roadmap for today. We've organized the 11 NER approaches roughly from simplest to most complex.
 
@@ -229,7 +228,6 @@ export const nerApproachesDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#183c77',
           notes: `### 3) Rule-Based Pattern Matching
 [conversational] Let's start with the simplest and most intuitive approach: **Rule-Based Pattern Matching**. [lecture] This is where you explicitly tell the computer what patterns to look for.
 
@@ -313,7 +311,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#183c77',
           notes: `### Rule-Based Pattern Matching - Pros and Cons
 [conversational] Now let's weigh the advantages and disadvantages of this approach.
 
@@ -401,7 +398,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### 5) Dictionary / Gazetteer Lookup
 [conversational] Now let's look at an approach that's complementary to rules: **Dictionary or Gazetteer Lookup**. [storytelling] Instead of defining patterns, we maintain lists of known entities!
 
@@ -479,7 +475,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Dictionary / Gazetteer Lookup - Pros and Cons
 [conversational] Let's break down what works and what doesn't with dictionary-based NER.
 
@@ -566,7 +561,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#6d1e1e',
           notes: `### 7) TF-IDF + Classifier-Based NER
 [excited] Welcome to our first true machine learning approach! [enthusiastically] We're moving from hand-crafted rules to **learned patterns**.
 
@@ -650,7 +644,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6d1e1e',
           notes: `### TF-IDF + Classifier-Based NER - Pros and Cons
 [conversational] Let's evaluate this approach honestly.
 
@@ -744,7 +737,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#2b6d1e',
           notes: `### 9) Hidden Markov Model (HMM) NER
 [impressed] Now we get to one of the most elegant ideas in NLP: **Hidden Markov Models**. [lecture] This is where we start thinking about NER as a **sequence labeling** problem.
 
@@ -833,7 +825,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#2b6d1e',
           notes: `### 10) Hidden Markov Model (HMM) NER - Pros and Cons
 [lecture] HMMs have beautiful theoretical foundations, but also significant limitations in practice.
 
@@ -926,7 +917,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e496d',
           notes: `### 11) Conditional Random Fields (CRF) NER
 [enthusiastically] Here comes the workhorse of classical NER: **Conditional Random Fields**. [impressed] CRFs were state-of-the-art before deep learning and are still incredibly useful today!
 
@@ -1017,7 +1007,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#1e496d',
           notes: `### 12) Conditional Random Fields (CRF) NER - Pros and Cons
 [conversational] CRFs hit a sweet spot between simplicity and power. [seriously] Let's evaluate them honestly.
 
@@ -1109,7 +1098,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#4a1e6d',
           notes: `### 13) BiLSTM + CRF
 [excited] Welcome to the neural network era of NER! [enthusiastically] **BiLSTM + CRF** combines the best of both worlds: neural networks that learn features automatically, plus CRFs that ensure valid output sequences.
 
@@ -1196,7 +1184,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#4a1e6d',
           notes: `### 14) BiLSTM + CRF - Pros and Cons
 [impressed] BiLSTM+CRF was a game-changer when it arrived. [conversational] Let's see why it worked so well, and what its limitations are.
 
@@ -1292,7 +1279,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#6d571e',
           notes: `### 15) CNN + BiLSTM NER
 [excited] Now we add another powerful ingredient to our neural NER: **character-level CNNs**. [enthusiastically] This addresses one of BiLSTM's biggest weaknesses: handling unknown words!
 
@@ -1384,7 +1370,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6d571e',
           notes: `### 16) CNN + BiLSTM NER - Pros and Cons
 [conversational] Adding character CNNs brings significant benefits but also complexity. [seriously] Let's evaluate.
 
@@ -1472,7 +1457,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#1e6d5e',
           notes: `### 17) spaCy Statistical NER
 [excited] Now let's talk about a tool that changed how practitioners do NER: **spaCy** 👉 'spay-see'. [impressed] It's a production-ready library that packages best practices into an easy-to-use framework.
 
@@ -1554,7 +1538,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e6d5e',
           notes: `### 18) spaCy Statistical NER - Pros and Cons
 [conversational] spaCy has become the go-to tool for practical NER. [seriously] Let's understand why, and its limitations.
 
@@ -1643,7 +1626,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#6d1e52',
           notes: `### 19) BERT Fine-Tuned for NER
 [amazed] Welcome to the transformer revolution! [excited] **BERT** 👉 'burt' (Bidirectional Encoder Representations from Transformers) changed everything in NLP, including NER.
 
@@ -1735,7 +1717,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6d1e52',
           notes: `### 20) BERT Fine-Tuned for NER - Pros and Cons
 [seriously] BERT delivers impressive results but comes with real costs. [conversational] Let's evaluate.
 
@@ -1829,7 +1810,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6d4c1e',
           notes: `### 21) RoBERTa / DistilBERT NER Models
 [excited] BERT was a breakthrough, but researchers quickly found ways to improve it! [enthusiastically] Let's explore two popular variants that make different tradeoffs.
 
@@ -1930,7 +1910,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6d4c1e',
           notes: `### 22) RoBERTa / DistilBERT - Pros and Cons
 [conversational] These variants share BERT's architecture, so pros and cons are similar, with key differences.
 
@@ -2026,7 +2005,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#3b1e6d',
           notes: `### 23) LLM / Zero-Shot NER
 [amazed] Welcome to the future of NER! [excited] Large Language Models like GPT-4, Claude, or Llama can extract entities **without any training data at all**. [enthusiastically] Just describe what you want!
 
@@ -2109,7 +2087,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#3b1e6d',
           notes: `### 24) LLM / Zero-Shot NER - Pros and Cons
 [conversational] LLM-based NER is revolutionary but comes with important caveats. [seriously] Let's be honest about the tradeoffs.
 
@@ -2198,7 +2175,6 @@ graph TB
 
             </div>
           ),
-          backgroundColor: '#471d6f',
           notes: `### 25) Summary & Comparison - Overview
 [delighted] Congratulations! [enthusiastically] You've made it through all 11 NER approaches. [warmly] Now let's bring it all together so you can make informed decisions for your projects.
 
@@ -2279,7 +2255,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#471d6f',
           notes: `### 26) Quick Selection Guide
 [conversational] This is your decision tree for choosing an NER approach. [confidently] Match your situation to the right technology!
 
@@ -2402,7 +2377,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#471d6f',
           notes: `### 27) Data Needs Spectrum
 [lecture] This visualization helps you understand how much labeled data you need for each approach. [conversational] The bar lengths represent relative data requirements.
 
@@ -2498,7 +2472,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#471d6f',
           notes: `### 28) Compute & Latency
 [seriously] This table is critical for production planning. [conversational] Latency requirements often determine which approaches are feasible.
 
@@ -2602,7 +2575,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#471d6f',
           notes: `### 29) Maintenance & Deployment
 [seriously] Production NER isn't "set and forget." [conversational] Each approach brings different operational burdens.
 
@@ -2700,7 +2672,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#471d6f',
           notes: `### 30) Deployment Tips
 [warmly] Let's close with battle-tested advice for production NER systems. [conversational] These tips come from real-world experience.
 

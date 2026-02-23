@@ -8,12 +8,15 @@ export const rerankingModelsDeck: Deck = {
   name: '11 Re-Ranking Models to Improve RAG Accuracy',
   description: 'Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -70,8 +73,6 @@ export const rerankingModelsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
-          backgroundColor: '#1f3263',
           color: '#ffffff',
           notes: `### Introduction - 11 Re-Ranking Models to Improve RAG Accuracy
 
@@ -179,7 +180,6 @@ export const rerankingModelsDeck: Deck = {
 
             </div>
           ),
-          backgroundColor: '#1f3263',
           notes: `### Why Re-Ranking in RAG?
 
 [lecture] [confidently] Let's talk about why re-ranking is absolutely critical for building high-quality **RAG** 👉 'rag' systems. [storytelling] Think of it like this - retrieval is casting a wide fishing net, while re-ranking is carefully selecting the best catch.
@@ -279,7 +279,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#371c6d',
           notes: `### Cross-Encoder Ranker (MS MARCO family)
 
 [confidently] Now we're diving into our first model - the **Cross-Encoder Ranker**. This is like the gold standard of re-ranking, and it comes from the **MS MARCO** 👉 'em-es-marco' family - that's Microsoft's Machine Reading Comprehension dataset.
@@ -358,7 +357,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#371c6d',
           notes: `### Cross-Encoder Example - Password Reset Query
 
 [storytelling] Let's see cross-encoders in action with a real-world example. Imagine you're building a customer support chatbot, and someone asks "Reset password steps?" This seems simple, but [excited] watch how the cross-encoder intelligently ranks the candidates.
@@ -419,7 +417,6 @@ Document A, the billing policy, gets just point-two-one. Why so low? The cross-e
               </div>
             </div>
           ),
-          backgroundColor: '#371c6d',
           notes: `### Cross-Encoder - Strengths and Limitations
 
 [conversational] Now let's be honest about when cross-encoders are brilliant and when they struggle. [reassuringly] Understanding these trade-offs helps you make smart architectural decisions.
@@ -534,7 +531,6 @@ pairs = [
               </div>
             </div>
           ),
-          backgroundColor: '#50215d',
           notes: `### BERT-based Cross Encoder (ms-marco-MiniLM-L-6-v2)
 
 [conversational] Now let's talk about a practical variant that solves a real problem - **MiniLM** 👉 'mini-el-em'. [pleased] This is the model most teams actually use in production because it strikes the perfect balance between accuracy and speed.
@@ -617,7 +613,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#50215d',
           notes: `### Example - Medical Query with MiniLM
 
 [storytelling] Let's see this model in action with a practical medical query example. Imagine a healthcare professional searching for specific information about medication side effects.
@@ -705,7 +700,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#50215d',
           notes: `### Strength and Limitations - MiniLM
 
 [conversational] Every model has trade-offs, and understanding them helps you make smart architectural decisions. [reassuringly] Let's break down **MiniLM's** 👉 'mini-el-em' strengths and weaknesses so you know exactly when to use it.
@@ -821,7 +815,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#257556',
           notes: `### MonoT5 Re-Ranker
 
 [excited] Now we're moving into truly innovative territory with **MonoT5** 👉 'mono-tee-five'. [enthusiastically] This model takes a completely different approach to re-ranking by treating relevance as a *generation problem* rather than just classification.
@@ -906,7 +899,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#257556',
           notes: `### Example - RAG Query with MonoT5
 
 [storytelling] Let's watch **MonoT5** 👉 'mono-tee-five' tackle a technical query about **RAG** 👉 'rag' architecture. This example shows how the model's generative approach handles nuanced technical questions.
@@ -980,7 +972,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#257556',
           notes: `### Strength and Limitations - MonoT5
 
 [conversational] Let's be honest about what **MonoT5** 👉 'mono-tee-five' can and cannot do. [reassuringly] Understanding these trade-offs helps you architect the right solution for your needs.
@@ -1102,7 +1093,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#73262e',
           notes: `### MonoBERT Re-Ranker
 
 [cheerfully] Welcome to **MonoBERT** 👉 'mono-bert' - our fourth model and a classic approach that many consider the gold standard for transformer-based re-ranking. [confidently] This model represents the sweet spot between accuracy and practical performance.
@@ -1186,7 +1176,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#73262e',
           notes: `### Example - Security Query with MonoBERT
 
 [storytelling] Let's see **MonoBERT** 👉 'mono-bert' handle a common technical query about network security protocols. This example demonstrates how the model understands relationships between related concepts.
@@ -1260,7 +1249,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#73262e',
           notes: `### Strength and Limitations - MonoBERT
 
 [conversational] Let's be pragmatic about **MonoBERT's** 👉 'mono-bert' position in the re-ranking landscape. [reassuringly] It's a solid workhorse, but understanding its limitations helps you know when to reach for something else.
@@ -1368,7 +1356,6 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               </div>
             </div>
           ),
-          backgroundColor: '#486d24',
           notes: `### ColBERT / ColBERTv2 (Late Interaction)
 
 [excited] Let's talk about **ColBERT** 👉 'col-bert' - that's short for Contextualized Late Interaction over **BERT** 👉 'bert'. [enthusiastically] This model represents a fascinating middle ground in the re-ranking world. It's neither a pure bi-encoder nor a full cross-encoder, but something beautifully in between.
@@ -1450,7 +1437,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#486d24',
           notes: `### ColBERT Example
 
 [storytelling] Let me show you ColBERT in action with a real-world scenario. Imagine you're building a cloud infrastructure assistant, and a user asks: "Rotate **S3** 👉 'es-three' access keys safely."
@@ -1512,7 +1498,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#486d24',
           notes: `### ColBERT Strengths and Limitations
 
 [conversational] Let's break down when ColBERT is your best friend and when it might be overkill. [reassuringly] Understanding these trade-offs is crucial for making the right architectural decisions.
@@ -1617,7 +1602,6 @@ scores = [cosine_similarity(query_emb, doc_emb)
               </div>
             </div>
           ),
-          backgroundColor: '#541d5f',
           notes: `### E5-Ranker as Bi-Encoder Re-Rank
 
 [excited] Moving on to **E5-Ranker** 👉 'ee-five-ranker' - this is the speed demon of our lineup! [conversational] The "E5" stands for **E**mbeddings from bidirectional **E**ncoder representations, and it's particularly interesting when you need to rerank at scale without breaking the bank or your latency budget.
@@ -1692,7 +1676,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#541d5f',
           notes: `### E5-Ranker Example
 
 [storytelling] Let me show you **E5** 👉 'ee-five' in a real-world compliance scenario. A user asks: "**GDPR** 👉 'gee-dee-pee-ar' data deletion timeline." This is exactly the kind of query where semantic understanding beats keyword matching.
@@ -1754,7 +1737,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#541d5f',
           notes: `### E5-Ranker Strengths and Limitations
 
 [conversational] Let's get real about when **E5** 👉 'ee-five' is your hero and when you need something stronger. [reassuringly] This is all about matching the tool to your requirements.
@@ -1860,7 +1842,6 @@ Return ranking as: [3, 1, 2, ...]
               </div>
             </div>
           ),
-          backgroundColor: '#54611f',
           notes: `### LLM-as-a-Ranker (RankGPT-style)
 
 [excited] Now we're entering exciting territory - using large language models themselves as rankers! [enthusiastically] This approach, popularized by **RankGPT** 👉 'rank-gee-pee-tee', is like having a smart human annotator evaluate your documents, except it's automated and runs at machine speed.
@@ -1941,7 +1922,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#54611f',
           notes: `### LLM-as-a-Ranker Example
 
 [storytelling] Let me show you the **LLM-as-a-Ranker** 👉 'el-el-em as a ranker' approach with a complex, multi-faceted query: "Pros and cons of eventual consistency for checkout systems?" This is exactly where traditional rankers struggle but **LLMs** 👉 'el-el-ems' shine.
@@ -2003,7 +1983,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#54611f',
           notes: `### LLM-as-a-Ranker Strengths and Limitations
 
 [conversational] Now let's get real about using **LLMs** 👉 'el-el-ems' as rankers - both the amazing capabilities and the harsh realities you'll face in production.
@@ -2115,7 +2094,6 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </div>
             </div>
           ),
-          backgroundColor: '#71461b',
           notes: `### RRF (Reciprocal Rank Fusion)
 
 [cheerfully] Let's talk about **RRF** 👉 'ar-ar-ef' - Reciprocal Rank Fusion - which is honestly one of the most underrated techniques in the reranking toolkit. [playfully] This is the Swiss Army knife of result combination!
@@ -2236,7 +2214,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#71461b',
           notes: `### RRF Example
 
 [storytelling] Let me show you **RRF** 👉 'ar-ar-ef' in action with a real-world scenario that demonstrates why this simple algorithm is so powerful.
@@ -2302,7 +2279,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#71461b',
           notes: `### RRF Strengths and Limitations
 
 [conversational] Let's be completely honest about what **RRF** 👉 'ar-ar-ef' brings to the table and where it falls short.
@@ -2409,7 +2385,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#5f1944',
           notes: `### Fusion-in-Decoder (FiD) as Re-Rank/Fusion
 
 [excited] Let's dive into **FiD** 👉 'fid' - Fusion-in-Decoder - which represents a fundamentally different approach to ranking. [enthusiastically] This isn't just a reranker; it's a complete rethinking of how we handle multiple documents!
@@ -2491,7 +2466,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5f1944',
           notes: `### FiD Example
 
 [storytelling] Let me show you **FiD** 👉 'fid' solving a problem that stumps simpler rerankers - multi-hop reasoning across documents.
@@ -2557,7 +2531,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#5f1944',
           notes: `### FiD Strengths and Limitations
 
 [conversational] Let's honestly evaluate **FiD** 👉 'fid' - where it excels and where you might want alternatives.
@@ -2664,7 +2637,6 @@ for emb in passage_embeddings:
               </div>
             </div>
           ),
-          backgroundColor: '#611919',
           notes: `### DPR Re-Ranker (Dense Passage Retrieval)
 
 [cheerfully] Let's talk about **DPR** 👉 'dee-pee-ar' - Dense Passage Retrieval - which pioneered the bi-encoder approach for question answering and remains highly relevant today!
@@ -2743,7 +2715,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#611919',
           notes: `### DPR Example
 
 [storytelling] Let me show you **DPR** 👉 'dee-pee-ar' handling a specific factual question - exactly the type of query it was designed for!
@@ -2812,7 +2783,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#611919',
           notes: `### DPR Strengths and Limitations
 
 [conversational] Let's be brutally honest about **DPR** 👉 'dee-pee-ar' - where it excels and where you'll hit walls.
@@ -2919,7 +2889,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#236521',
           notes: `### BM25 + LLM Reranking Hybrid
 
 [cheerfully] Now let's talk about **BM25** 👉 'bee-em-twenty-five' plus **LLM** 👉 'el-el-em' hybrid reranking - a powerful combination that's becoming increasingly popular in production systems!
@@ -2997,7 +2966,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#236521',
           notes: `### BM25 + LLM Hybrid Example
 
 [storytelling] Let me show you the hybrid approach solving a technical support query - this is exactly where it shines!
@@ -3066,7 +3034,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#236521',
           notes: `### BM25 + LLM Hybrid Strengths and Limitations
 
 [conversational] Let's evaluate the **BM25** 👉 'bee-em-twenty-five' plus **LLM** 👉 'el-el-em' hybrid honestly - both its impressive capabilities and real operational challenges.
@@ -3228,7 +3195,6 @@ The explainability is genuinely valuable. You can tell users "This document matc
               </div>
             </div>
           ),
-          backgroundColor: '#481967',
           notes: `### Model Comparison at a Glance
 
 [cheerfully] Alright, let's pull everything together and give you the practical comparison you can actually use when making architecture decisions!
@@ -3361,7 +3327,6 @@ The explainability is genuinely valuable. You can tell users "This document matc
               </div>
             </div>
           ),
-          backgroundColor: '#481967',
           notes: `### Quick Recommendations by Use Case
 
 [cheerfully] Let me give you the practical cheat sheet - which models to reach for in specific scenarios you'll actually encounter!
@@ -3452,7 +3417,6 @@ The explainability is genuinely valuable. You can tell users "This document matc
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#481967',
           notes: `### Operational Tips & Trade-offs
 
 [warmly] Let's wrap up with the practical wisdom that separates successful deployments from science projects - the operational reality of running rerankers in production!

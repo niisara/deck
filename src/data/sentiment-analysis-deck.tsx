@@ -9,11 +9,13 @@ export const sentimentAnalysisDeck: Deck = {
   description: '15 Sentiment Analysis Techniques - From Rule-Based to Transformers',
   category: 'NLP',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -41,8 +43,6 @@ export const sentimentAnalysisDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2b0e77',
-          backgroundImage: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80',
           notes: `### Sentiment Analysis Techniques
 
 [cheerfully] Welcome everyone! [excited] Today we're going to explore the fascinating world of sentiment analysis, which is all about teaching computers to understand human emotions and opinions in text.
@@ -142,7 +142,6 @@ export const sentimentAnalysisDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#2b0e77',
           notes: `### Table of Contents
 
 [conversational] Let's get oriented with what we'll be covering today. [confidently] I've organized these fifteen techniques into six logical categories, taking you on a journey from the simplest approaches to the most sophisticated ones.
@@ -236,7 +235,6 @@ export const sentimentAnalysisDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#0c5143',
           notes: `### Lexicon-Based Sentiment Scoring
 
 [cheerfully] Let's start our journey with the simplest and most intuitive approach: lexicon-based sentiment scoring. [confidently] This is the foundation of sentiment analysis, and understanding it will help you appreciate why more complex methods exist.
@@ -309,7 +307,6 @@ It requires zero training, runs extremely fast, and you can understand every dec
               </div>
             </div>
           ),
-          backgroundColor: '#0c5143',
           notes: `### Pros and Cons
 
 [seriously] Now let's be honest about the strengths and limitations of lexicon-based approaches. [reassuringly] Understanding these trade-offs will help you decide when this simple method is enough and when you need something more sophisticated.
@@ -404,7 +401,6 @@ It requires zero training, runs extremely fast, and you can understand every dec
               </div>
             </div>
           ),
-          backgroundColor: '#47135d',
           notes: `### Rule-Based Sentiment Classification
 
 [energetic] Now let's level up from simple lexicon lookups to rule-based sentiment classification. [conversational] This technique adds intelligence to our basic dictionary approach by incorporating rules that understand language patterns.
@@ -490,7 +486,6 @@ This approach requires significant upfront engineering effort, but the payoff is
               </div>
             </div>
           ),
-          backgroundColor: '#47135d',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the trade-offs of rule-based sentiment classification so you can decide if it's the right tool for your needs.
@@ -589,7 +584,6 @@ Let's move on to machine learning approaches that can learn patterns from data r
               </div>
             </div>
           ),
-          backgroundColor: '#5d194c',
           notes: `### Bag-of-Words + Logistic Regression
 
 [excited] Welcome to the world of machine learning for sentiment analysis! [enthusiastically] This is where we move from handcrafted rules to algorithms that learn patterns from data. [confidently] Bag-of-Words combined with Logistic Regression is the classic entry point into ML-based sentiment analysis.
@@ -684,7 +678,6 @@ This technique represents your first step into data-driven sentiment analysis, o
               </div>
             </div>
           ),
-          backgroundColor: '#5d194c',
           notes: `### Pros and Cons
 
 [conversational] Let's evaluate the strengths and limitations of Bag-of-Words with Logistic Regression to help you understand when this classic approach makes sense.
@@ -785,7 +778,6 @@ But when you need to understand context, handle complex language patterns, or sq
               </div>
             </div>
           ),
-          backgroundColor: '#134923',
           notes: `### TF-IDF + SVM Sentiment Classifier
 
 [enthusiastically] Now we're stepping up our feature engineering game with TF-IDF 👉 'tee-eff eye-dee-eff', combined with Support Vector Machines. [impressed] This combination has been a workhorse of text classification for years and remains competitive even in the deep learning era.
@@ -881,7 +873,6 @@ This combination of TF-IDF and SVM represents the pinnacle of classical machine 
               </div>
             </div>
           ),
-          backgroundColor: '#134923',
           notes: `### Pros and Cons
 
 [conversational] Let's assess the strengths and weaknesses of TF-IDF with SVM to understand when this powerful combination is the right choice.
@@ -980,7 +971,6 @@ Next, we'll look at Naive Bayes, an even simpler probabilistic approach that can
               </div>
             </div>
           ),
-          backgroundColor: '#281851',
           notes: `### Naive Bayes Sentiment Model
 
 [cheerfully] Now let's explore Naive Bayes 👉 'naive base', one of the oldest and simplest machine learning algorithms, yet surprisingly effective for text classification. [playfully] Despite its simplicity and its somewhat unflattering name, it remains a go-to choice for many applications.
@@ -1076,7 +1066,6 @@ It embodies the principle that sometimes the simplest solution is the best solut
               </div>
             </div>
           ),
-          backgroundColor: '#281851',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the strengths and limitations of Naive Bayes to understand when this classic probabilistic approach is the right tool for your sentiment analysis needs.
@@ -1182,7 +1171,6 @@ Now let's move from classical machine learning to modern NLP tools specifically 
               </div>
             </div>
           ),
-          backgroundColor: '#5b1a1a',
           notes: `### VADER Sentiment Scoring
 
 [excited] Welcome to VADER 👉 'vay-der', which stands for Valence Aware Dictionary and sEntiment Reasoner. [playfully] Don't let the intimidating acronym fool you—VADER is actually one of the most practical and easy-to-use sentiment analysis tools available, specifically designed for social media text.
@@ -1285,7 +1273,6 @@ It's the tool I recommend to anyone starting with social media sentiment analysi
               </div>
             </div>
           ),
-          backgroundColor: '#5b1a1a',
           notes: `### Pros and Cons
 
 [conversational] Let's examine the strengths and limitations of VADER to help you decide when this powerful tool is the right choice for your sentiment analysis needs.
@@ -1388,7 +1375,6 @@ Next, let's look at TextBlob, another popular Python library for sentiment analy
               </div>
             </div>
           ),
-          backgroundColor: '#55184e',
           notes: `### TextBlob Polarity Scoring
 
 [conversational] TextBlob is another popular Python library for text processing that includes sentiment analysis capabilities. [confidently] It's designed to be the simplest possible interface for common text processing tasks, and that philosophy extends to its sentiment analysis features.
@@ -1490,7 +1476,6 @@ Its value lies in democratizing NLP—making sentiment analysis accessible to pe
               </div>
             </div>
           ),
-          backgroundColor: '#55184e',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate TextBlob's strengths and limitations to understand when this accessible library is the right choice.
@@ -1593,7 +1578,6 @@ Now let's shift gears dramatically and enter the world of deep learning with LST
               </div>
             </div>
           ),
-          backgroundColor: '#371763',
           notes: `### LSTM-Based Sentiment Classification
 
 [excited] Now we're entering the era of deep learning! [enthusiastically] Let's explore LSTM 👉 'ell-ess-tee-em', which stands for Long Short-Term Memory, a type of neural network specifically designed to understand sequences like text.
@@ -1687,7 +1671,6 @@ However, they've largely been superseded by transformers (which we'll discuss so
               </div>
             </div>
           ),
-          backgroundColor: '#371763',
           notes: `### Pros and Cons
 
 [seriously] Let's assess the strengths and limitations of LSTM-based sentiment classification to understand its place in the modern NLP landscape.
@@ -1801,7 +1784,6 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
               </div>
             </div>
           ),
-          backgroundColor: '#5d5a17',
           notes: `### BiLSTM with Attention
 
 [energetic] Let's enhance the LSTM architecture with two powerful concepts: bidirectionality and attention. [impressed] BiLSTM with Attention 👉 'buy-ell-ess-tee-em with attention' represents a sophistication over standard LSTMs that was state-of-the-art before transformers emerged.
@@ -1906,7 +1888,6 @@ For modern applications, transformers usually outperform BiLSTM with Attention. 
               </div>
             </div>
           ),
-          backgroundColor: '#5d5a17',
           notes: `### Pros and Cons
 
 [conversational] Let's evaluate the trade-offs of BiLSTM with Attention to understand when this architecture makes sense in your sentiment analysis pipeline.
@@ -2015,7 +1996,6 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
               </div>
             </div>
           ),
-          backgroundColor: '#144f46',
           notes: `### CNN for Sentiment Classification
 
 [excited] Now let's explore a completely different approach to text understanding: Convolutional Neural Networks, or CNNs 👉 'cee-enn-ens'. [amused] If you've heard of CNNs, you probably think of image recognition. [enthusiastically] Surprisingly, they work remarkably well for text too!
@@ -2130,7 +2110,6 @@ While transformers now dominate for maximum accuracy, CNNs remain relevant for s
               </div>
             </div>
           ),
-          backgroundColor: '#144f46',
           notes: `### Pros and Cons
 
 [conversational] Let's assess the trade-offs of CNN-based sentiment analysis to understand when this fast, efficient architecture is the right choice.
@@ -2252,7 +2231,6 @@ Sentiment"]
               </div>
             </div>
           ),
-          backgroundColor: '#501455',
           notes: `### BERT Fine-Tuned for Sentiment
 
 [excited] Welcome to the transformer revolution! [enthusiastically] Let's explore BERT 👉 'burt', which stands for Bidirectional Encoder Representations from Transformers. [impressed] BERT fundamentally changed natural language processing and represents a massive leap forward in sentiment analysis capabilities.
@@ -2366,7 +2344,6 @@ BERT's impact extends beyond sentiment—it revolutionized question answering, n
               </div>
             </div>
           ),
-          backgroundColor: '#501455',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate BERT's strengths and limitations to understand when this powerful architecture justifies its computational costs.
@@ -2488,7 +2465,6 @@ Next, let's explore BERT's successors and variants that address some of these li
               </div>
             </div>
           ),
-          backgroundColor: '#14531b',
           notes: `### RoBERTa / DistilBERT Sentiment Models
 
 [conversational] BERT was revolutionary, but researchers immediately started asking: can we make it better? [enthusiastically] Enter RoBERTa 👉 'roh-BER-tuh' and DistilBERT 👉 'distil-burt', two important evolutions that address BERT's limitations in different ways.
@@ -2610,7 +2586,6 @@ Together, these models represent the maturation of transformer-based sentiment a
               </div>
             </div>
           ),
-          backgroundColor: '#14531b',
           notes: `### Pros and Cons
 
 [conversational] Let's evaluate the trade-offs of RoBERTa and DistilBERT to understand which variant best fits your specific requirements.
@@ -2739,7 +2714,6 @@ Sentiment"]
               </div>
             </div>
           ),
-          backgroundColor: '#57172c',
           notes: `### GPT / LLM Zero-Shot Sentiment Classification
 
 [excited] Now we enter the frontier of sentiment analysis: using large language models like GPT 👉 'gee-pee-tee', Claude, or other LLMs 👉 'ell-ell-ems' for zero-shot classification. [enthusiastically] This represents a paradigm shift from training or fine-tuning models to simply asking powerful pretrained models to perform sentiment analysis through natural language instructions.
@@ -2865,7 +2839,6 @@ LLM-based sentiment analysis represents a shift from "train a model" to "enginee
               </div>
             </div>
           ),
-          backgroundColor: '#57172c',
           notes: `### Pros and Cons
 
 [seriously] Let's assess the strengths and limitations of LLM-based sentiment analysis to understand when this powerful but costly approach makes sense.
@@ -3024,7 +2997,6 @@ Insights"]
               </div>
             </div>
           ),
-          backgroundColor: '#4f4912',
           notes: `### Aspect-Based Sentiment Analysis (ABSA)
 
 [enthusiastically] Let's explore a sophisticated technique that moves beyond document-level sentiment to understand opinions about specific features or aspects within text. [confidently] ABSA 👉 'ab-suh' (Aspect-Based Sentiment Analysis) is essential for actionable business insights.
@@ -3177,7 +3149,6 @@ ABSA is where sentiment analysis delivers maximum business value, though at the 
               </div>
             </div>
           ),
-          backgroundColor: '#4f4912',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the advantages and challenges of ABSA to understand when this detailed approach justifies its substantial complexity and cost.
@@ -3341,7 +3312,6 @@ Emotion"]
               </div>
             </div>
           ),
-          backgroundColor: '#12484d',
           notes: `### Multimodal Sentiment Analysis (Text + Audio/Video)
 
 [excited] We've reached the frontier: multimodal sentiment analysis that combines text, audio, and video to understand emotions as humans naturally do—through words, tone of voice, facial expressions, and body language simultaneously.
@@ -3495,7 +3465,6 @@ This concludes our journey through fifteen sentiment analysis techniques, from s
               </div>
             </div>
           ),
-          backgroundColor: '#12484d',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the advantages and challenges of multimodal sentiment analysis to understand when this sophisticated approach justifies its substantial complexity.
@@ -3654,7 +3623,6 @@ The key is honest assessment: does your use case truly benefit from multimodal s
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#122c47',
           notes: `### Comparison Matrix: Choosing the Right Technique
 
 [conversational] We've journeyed through fifteen sentiment analysis techniques. [confidently] Now let's synthesize our understanding with a systematic comparison across key dimensions. [reassuringly] This matrix helps you quickly identify which approaches fit your specific constraints and requirements.
@@ -3813,7 +3781,6 @@ This comparison matrix is your quick-reference guide for matching your requireme
               </div>
             </div>
           ),
-          backgroundColor: '#122c47',
           notes: `### Recommendations & Best Practices
 
 [confidently] Having explored all fifteen techniques, let's distill practical recommendations for successfully implementing sentiment analysis in real-world applications. [seriously] These best practices come from hard-won experience across thousands of production deployments.
@@ -3960,7 +3927,6 @@ This disciplined approach ensures sentiment analysis capabilities evolve with yo
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                     <div style={{
-                      backgroundColor: '#3498db',
                       borderRadius: '50%',
                       width: '60px',
                       height: '60px',
@@ -3980,7 +3946,6 @@ This disciplined approach ensures sentiment analysis capabilities evolve with yo
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                     <div style={{
-                      backgroundColor: '#9b59b6',
                       borderRadius: '50%',
                       width: '60px',
                       height: '60px',
@@ -4000,7 +3965,6 @@ This disciplined approach ensures sentiment analysis capabilities evolve with yo
                 <GSAPAnimated animation="slideInLeft" delay={0.6}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                     <div style={{
-                      backgroundColor: '#b93838',
                       borderRadius: '50%',
                       width: '60px',
                       height: '60px',
@@ -4030,7 +3994,6 @@ This disciplined approach ensures sentiment analysis capabilities evolve with yo
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#122c47',
           notes: `### Implementation Roadmap: Your Path Forward
 
 [enthusiastically] You've now explored fifteen sentiment analysis techniques spanning simple lexicons to sophisticated multimodal deep learning. [conversational] The natural question is: where do I start? [confidently] Let's map a practical roadmap for successfully implementing sentiment analysis in your organization.

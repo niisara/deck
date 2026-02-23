@@ -10,12 +10,15 @@ export const ragEvaluationMetricsDeck: Deck = {
   name: '13 Underused RAG Evaluation Metrics',
   description: 'A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems',
   category: 'RAG',
-  theme: 'sky',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80',
+    'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -63,8 +66,6 @@ export const ragEvaluationMetricsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0c0a37',
-          backgroundImage: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80',
           notes: `### 13 Underused RAG Evaluation Metrics
 [cheerfully] Welcome everyone! [excited] Today we're diving into something crucial but often overlooked in the world of RAG systems—evaluation metrics. If you're building a Retrieval-Augmented Generation 👉 'RAG' system, you've probably wondered: [quizzically] "Is my system actually working well? How do I know if my retrieval is good enough? Is my AI making things up?"
 
@@ -178,7 +179,6 @@ export const ragEvaluationMetricsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0c0a37',
           notes: `### RAG System Overview
 [conversational] Now that we understand why evaluation matters, let's see how a RAG system actually works and where each metric fits in.
 
@@ -250,7 +250,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — Overview
 [excited] Alright, let's dive into our first metric! This is Retrieval Recall at K 👉 'recall at kay', and it's one of the most fundamental metrics you need to understand.
 
@@ -319,7 +318,6 @@ You should pay special attention to Recall at K when you're tuning your embeddin
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — How It Works
 [lecture] Now let's break down the mechanics of how we actually calculate this metric. [reassuringly] Don't worry if math isn't your strong suit—this is simpler than it looks!
 
@@ -396,7 +394,6 @@ You should pay special attention to Recall at K when you're tuning your embeddin
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — Implementation
 [conversational] Let's walk through a concrete example to really solidify your understanding of how Recall at K works in practice.
 
@@ -464,7 +461,6 @@ You run your retrieval system with K equals five, meaning you ask for the top fi
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#231f6f',
           notes: `### Retrieval Recall@K — Considerations
 [conversational] We've covered what Recall at K is and how to calculate it. Now let's talk about the bigger picture—when should you use it, and what are its limitations?
 
@@ -543,7 +539,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — Overview
 [conversational] Moving on from Recall, let's talk about its complementary twin—Retrieval Precision at K. [quizzically] While recall asks "Did we find everything?", precision asks "Is what we found actually good?"
 
@@ -615,7 +610,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — How It Works
 [lecture] Let's break down the calculation for Precision at K and understand how it differs from recall.
 
@@ -686,7 +680,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — Implementation
 [conversational] Let's walk through a practical example to see how Precision at K works in a real scenario.
 
@@ -758,7 +751,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f616f',
           notes: `### Retrieval Precision@K — Considerations
 [conversational] Now let's discuss the strategic implications of precision—when to optimize for it and what trade-offs you're making.
 
@@ -835,7 +827,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f6f28',
           notes: `### Hit Rate — Overview
 [cheerfully] Welcome to our third metric: Hit Rate! [excited] This is often called the "minimum success criterion" for retrieval systems, and you'll see why in just a moment.
 
@@ -909,7 +900,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f6f28',
           notes: `### Hit Rate — How It Works
 [conversational] Now let's break down the mechanics of how Hit Rate is actually calculated. [reassuringly] Don't worry, it's refreshingly simple compared to some other metrics!
 
@@ -969,7 +959,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f6f28',
           notes: `### Hit Rate — Implementation
 [conversational] Let's walk through a concrete example so you can see exactly how this works in practice.
 
@@ -1045,7 +1034,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f6f28',
           notes: `### Hit Rate — Considerations
 [conversational] Let's wrap up Hit Rate by talking about its real-world impact on your RAG system and the important limitations you need to keep in mind.
 
@@ -1131,7 +1119,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#646f1f',
           notes: `### Context Overlap Score — Overview
 [cheerfully] Welcome to our fourth metric, the Context Overlap Score. This one's all about making sure your retrieval system is actually grabbing everything you need.
 
@@ -1203,7 +1190,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#646f1f',
           notes: `### Context Overlap Score — How It Works
 [lecture] Now let's break down the mechanics of how Context Overlap Score actually works.
 
@@ -1272,7 +1258,6 @@ Click the diagram icon to see how facts flow from the reference answer through t
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#646f1f',
           notes: `### Context Overlap Score — Implementation
 [conversational] Let's walk through a real implementation example to see how this works in practice.
 
@@ -1353,7 +1338,6 @@ Click the diagram icon to visualize the flow. You start with the query, define e
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#646f1f',
           notes: `### Context Overlap Score — Considerations
 [conversational] Let's wrap up Context Overlap Score by examining its impact on your RAG system and understanding its limitations.
 
@@ -1436,7 +1420,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f656f',
           notes: `### Context Relevance Score Overview
 [excited] Welcome to Metric 5, Context Relevance Score. [quizzically] This is where we start using AI to judge AI—pretty meta, right?
 
@@ -1520,7 +1503,6 @@ where score_i ∈ [0,1] for each chunk`}
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f656f',
           notes: `### How Context Relevance Scoring Works
 [lecture] Let's break down exactly how this metric calculates a relevance score for your retrieved context.
 
@@ -1599,7 +1581,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f656f',
           notes: `### Context Relevance Score Implementation Example
 [conversational] Now let's see this metric in action with a real-world example. This is where the theory meets practice.
 
@@ -1682,7 +1663,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f656f',
           notes: `### Context Relevance Score Considerations
 [conversational] Let's wrap up Context Relevance Score by discussing its impact on your RAG system and the trade-offs you need to consider.
 
@@ -1760,7 +1740,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6f1f6d',
           notes: `### Hallucination Rate Overview
 [seriously] Welcome to Metric 6: Hallucination Rate. This is arguably the most critical metric for RAG systems, because it measures trustworthiness—does your system make stuff up?
 
@@ -1852,7 +1831,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6f1f6d',
           notes: `### How Hallucination Rate Is Calculated
 [lecture] Let's get into the mechanics of calculating Hallucination Rate. [seriously] This is a bit more complex than the previous metrics, because you need to parse claims and verify them.
 
@@ -1928,7 +1906,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6f1f6d',
           notes: `### Hallucination Rate Implementation Example
 [conversational] Now let's walk through a real-world example of calculating Hallucination Rate. This is where rubber meets road.
 
@@ -2016,7 +1993,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6f1f6d',
           notes: `### Hallucination Rate Considerations
 [conversational] Let's wrap up Hallucination Rate by discussing its impact on your RAG system and the important trade-offs to consider.
 
@@ -2094,7 +2070,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — Overview
 [excited] Welcome to metric number seven! [conversational] We're shifting our focus to something that's becoming increasingly important in modern RAG systems: the Grounded Answer Score.
 
@@ -2171,7 +2146,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — How It Works
 [lecture] Now let's break down the mechanics of how Grounded Answer Score actually evaluates your citations.
 
@@ -2243,7 +2217,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — Implementation
 [conversational] Let's walk through a real-world example to see how Grounded Answer Score calculation works in practice.
 
@@ -2317,7 +2290,6 @@ Now let's discuss the broader implications and limitations of this metric.`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — Considerations
 [conversational] Let's wrap up Grounded Answer Score by examining its impact on RAG systems and the limitations you need to keep in mind.
 
@@ -2395,7 +2367,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — Overview
 [excited] Welcome to metric number eight: Faithfulness Score. [seriously] This is arguably one of the most critical metrics in RAG evaluation because it directly addresses the hallucination problem.
 
@@ -2476,7 +2447,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — How It Works
 [lecture] Let's break down the mechanics of Faithfulness Score and understand how it measures factual consistency.
 
@@ -2554,7 +2524,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — Implementation
 [conversational] Let's walk through a detailed example to see how faithfulness calculation works in real-world scenarios.
 
@@ -2632,7 +2601,6 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — Considerations
 [conversational] Let's conclude our discussion of Faithfulness Score by examining its impact on RAG systems and the important limitations to keep in mind.
 
@@ -2716,7 +2684,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — Overview
 [cheerfully] Welcome to our final generation quality metric: Answer Completeness. [conversational] While faithfulness checks if answers are factually grounded, completeness asks a different question: [quizzically] does the answer address everything the user asked?
 
@@ -2797,7 +2764,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — How It Works
 [lecture] Let's break down the mechanics of Answer Completeness and understand how it measures coverage.
 
@@ -2875,7 +2841,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — Implementation
 [conversational] Let's work through a practical example to see how Answer Completeness evaluation happens in the real world.
 
@@ -2964,7 +2929,6 @@ Now let's explore the broader implications and trade-offs of this metric.`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — Considerations
 [conversational] Let's conclude our exploration of Answer Completeness by examining its impact on RAG systems and the important trade-offs to consider.
 
@@ -3055,7 +3019,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — Overview
 [cheerfully] Welcome to metric number ten! [conversational] We've covered a lot of ground, and now we're diving into the final four metrics that really polish your RAG system. Let's talk about Answer Specificity.
 
@@ -3124,7 +3087,6 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — How It Works
 [conversational] So how do we actually measure if an answer is specific enough? [excited] You've got two main approaches here, and they each have their strengths.
 
@@ -3191,7 +3153,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — Implementation
 [excited] Time for a concrete example - pun absolutely intended! [cheerfully] Let's see what low versus high specificity actually looks like in the wild.
 
@@ -3256,7 +3217,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — Considerations
 [conversational] Let's talk about the trade-offs. [cautiously] Answer Specificity is powerful, but like everything in ML, it's not a free lunch. There are important considerations and limitations to keep in mind.
 
@@ -3330,7 +3290,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6f4a1f',
           notes: `### Noise Density — Overview
 [conversational] Alright, metric eleven: Noise Density! [storytelling] This is where we talk about the garbage sneaking into your context window. Think of it as measuring how much junk food is in your LLM's diet.
 
@@ -3404,7 +3363,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6f4a1f',
           notes: `### Noise Density — How It Works
 [conversational] Let's get into the mechanics of measuring noise. [reassuringly] This is simpler than it sounds, though getting it perfectly right can be nuanced.
 
@@ -3468,7 +3426,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6f4a1f',
           notes: `### Noise Density — Implementation
 [conversational] Let's work through a real example to make this concrete. [confidently] Numbers make everything clearer!
 
@@ -3538,7 +3495,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6f4a1f',
           notes: `### Noise Density — Considerations
 [conversational] Let's wrap up Noise Density by talking about the trade-offs and gotchas. [cautiously] This metric is valuable but comes with important nuances.
 
@@ -3611,7 +3567,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — Overview
 [enthusiastically] Welcome to metric twelve: Context Compression Efficiency! [storytelling] This one is all about doing more with less - the holy grail of system optimization.
 
@@ -3692,7 +3647,6 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — How It Works
 [conversational] Let's dive into the mechanics of measuring compression efficiency. [storytelling] This is where art meets science!
 
@@ -3757,7 +3711,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — Implementation
 [enthusiastically] Let's make this concrete with real numbers that demonstrate the power of compression!
 
@@ -3835,7 +3788,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — Considerations
 [conversational] Let's talk about the full picture of compression - [pleased] the benefits are huge, but there are real trade-offs to consider!
 
@@ -3912,7 +3864,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — Overview
 [enthusiastically] And here we are - metric thirteen, our final metric! [storytelling] The Latency-Cost Tradeoff Score brings everything together into a single efficiency measure. This is the meta-metric that executives love and engineers need.
 
@@ -3991,7 +3942,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — How It Works
 [conversational] Let's break down the mathematics behind LCTS. [reassuringly] Don't worry - it's more intuitive than it looks!
 
@@ -4067,7 +4017,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — Implementation
 [enthusiastically] Time for a concrete example that shows exactly how LCTS works in practice and what the numbers tell you!
 
@@ -4149,7 +4098,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — Considerations
 [conversational] Let's wrap up our final metric - and really, the entire deck - by talking about the power and limitations of the Latency-Cost Tradeoff Score!
 
@@ -4281,7 +4229,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1f696f',
           notes: `### Summary & Next Steps
 [warmly] And that brings us to the end of our journey through these thirteen powerful RAG evaluation metrics! [confidently] Let's recap what we've learned and chart a path forward.
 

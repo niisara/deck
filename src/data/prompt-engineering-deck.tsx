@@ -9,11 +9,14 @@ export const promptEngineeringDeck: Deck = {
   description: 'A Comprehensive Guide to Advanced Prompting Patterns',
   category: 'RAG',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80',
+    'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -61,7 +64,6 @@ export const promptEngineeringDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80',
           notes: `### 18 Prompt Engineering Techniques
 [cheerfully] Welcome to this comprehensive deep-dive into **18 Prompt Engineering Techniques** — the essential patterns and strategies you need to build *reliable*, *accurate*, and *production-ready* **LLM** 👉 'L-L-M' (Large Language Model) applications.
 
@@ -152,7 +154,6 @@ export const promptEngineeringDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a3957',
           notes: `### Table of Contents
 [energetic] Here's your roadmap for today's journey through 18 powerful prompt engineering techniques! We've organized these into **four logical categories** to make it easier to understand when and how to use each one.
 
@@ -197,7 +198,6 @@ Each technique gets multiple slides covering the definition, how it works, when 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - Overview
 [confidently] Let's start our journey with the simplest and most fundamental technique — **Zero-shot Prompting**. [storytelling] Think of this as the "just ask" approach to working with language models.
 
@@ -253,7 +253,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - How It Works
 [conversational] Now let's understand the mechanics behind zero-shot prompting and why it's so powerful despite its simplicity.
 
@@ -292,7 +291,6 @@ in 3 bullets for executives:
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - Implementation
 [enthusiastically] Let's look at a concrete example to see zero-shot prompting in action and understand which models work best for it.
 
@@ -326,7 +324,6 @@ When writing your zero-shot prompts, think about *what*, *how*, and *for whom*. 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - Considerations
 [seriously] While zero-shot prompting is incredibly useful, it's important to understand its limitations so you know when to reach for more advanced techniques.
 
@@ -374,7 +371,6 @@ Finally, remember that **model capability significantly impacts zero-shot perfor
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - Overview
 [confidently] Now we're leveling up from zero-shot to **Few-shot Prompting** — one of the most practical and widely-used techniques in production systems. [storytelling] Think of this as "teaching by example."
 
@@ -435,7 +431,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - How It Works
 Let's dive into the mechanics of few-shot prompting and understand why those examples are so powerful.
 
@@ -475,7 +470,6 @@ Classify: 'It was okay, but pricey.'"`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - Implementation
 [enthusiastically] Let's look at a concrete implementation of few-shot prompting to see how examples transform model behavior.
 
@@ -509,7 +503,6 @@ The good news is that few-shot learning is **universally supported** across mode
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - Considerations
 [seriously] While few-shot prompting is incredibly powerful, it comes with important tradeoffs and considerations you need to understand.
 
@@ -561,7 +554,6 @@ Finally, remember that **bad examples teach bad patterns**. If your examples hav
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - Overview
 [confidently] Welcome to **Chain-of-Thought** or **CoT** 👉 'cot' — one of the most transformative techniques in modern prompt engineering. This is where we teach models to *think* before they answer.
 
@@ -620,7 +612,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - How It Works
 Let's understand the mechanics of Chain-of-Thought and why it's such a powerful reasoning amplifier.
 
@@ -660,7 +651,6 @@ Imagine a system that reviews purchase requests. Using CoT, it can show: "Base c
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - Implementation
 [enthusiastically] Let's examine a concrete CoT prompt to understand how to craft effective step-by-step reasoning instructions.
 
@@ -694,7 +684,6 @@ GPT-4, Claude 3.5, and Gemini 1.5 are the **gold standard** for CoT. They can ma
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - Considerations
 [seriously] While CoT is powerful, it comes with important tradeoffs that you need to understand and manage.
 
@@ -746,7 +735,6 @@ Models can be clever in ways you don't want. Sometimes they'll "fake" reasoning 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0e9135',
           notes: `### Meta Prompting - Overview
 [confidently] Let's explore **Meta Prompting** — a technique that shifts focus from *what* to *how*, defining the structure and format of outputs rather than providing content examples.
 
@@ -803,7 +791,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0e9135',
           notes: `### Meta Prompting - How It Works
 Let's understand the mechanics of meta prompting and why schema-based specifications are so powerful.
 
@@ -845,7 +832,6 @@ Populate schema only."`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0e9135',
           notes: `### Meta Prompting - Implementation
 [enthusiastically] Let's examine a concrete meta prompting example to understand how to craft effective structural specifications.
 
@@ -879,7 +865,6 @@ That final instruction — "Populate schema only" — is crucial. It tells the m
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#0e9135',
           notes: `### Meta Prompting - Considerations
 [seriously] While meta prompting is powerful for structuring outputs, it has important limitations you need to understand.
 
@@ -931,7 +916,6 @@ Meta prompting gives great **structural control but less content guidance**. You
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b0e91',
           notes: `### Self-Consistency - Overview
 [confidently] Let's explore **Self-Consistency**, a powerful technique that leverages the wisdom of crowds — except the crowd is the same AI model thinking multiple times!
 
@@ -994,7 +978,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b0e91',
           notes: `### Self-Consistency - How It Works
 Let's dive into the mechanics of self-consistency and understand how this ensemble approach dramatically improves reliability.
 
@@ -1034,7 +1017,6 @@ Self-consistency shines on math benchmarks like **GSM8K** 👉 'G-S-M eight-K', 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7b0e91',
           notes: `### Self-Consistency - Implementation
 [enthusiastically] Let's look at how to implement self-consistency in practice, including both the prompting strategy and the aggregation logic.
 
@@ -1068,7 +1050,6 @@ Start with **5-7 samples** and temperature around **0.7-0.8**. Higher temperatur
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#7b0e91',
           notes: `### Self-Consistency - Considerations
 While self-consistency improves accuracy, it comes with significant costs and important limitations to consider.
 
@@ -1117,7 +1098,6 @@ Self-consistency requires **orchestration code** to manage multiple API calls, c
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - Overview
 [confidently] Welcome to **Generate Knowledge Prompting**, a technique that primes the model's memory before asking it to answer questions. [storytelling] Think of it as warming up before a race!
 
@@ -1176,7 +1156,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - How It Works
 Let's understand the two-stage mechanism that makes Generate Knowledge prompting so effective for knowledge-intensive tasks.
 
@@ -1216,7 +1195,6 @@ Imagine a symptom checker app. Instead of directly diagnosing "headache, fever, 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - Implementation
 [enthusiastically] Let's examine how to structure Generate Knowledge prompts for maximum effectiveness in practice.
 
@@ -1250,7 +1228,6 @@ How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few an
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - Considerations
 [seriously] While Generate Knowledge is powerful, it has critical limitations around factual accuracy that you must understand.
 
@@ -1302,7 +1279,6 @@ Finally, remember that generated knowledge comes from the model's **training dat
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - Overview
 [confidently] Welcome to **Prompt Chaining**, a fundamental technique for building complex AI workflows by breaking them into manageable, sequential stages.
 
@@ -1362,7 +1338,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - How It Works
 Let's understand the mechanics of prompt chaining and how to design effective multi-stage pipelines.
 
@@ -1403,7 +1378,6 @@ Step 2: Using quotes, answer <question> with citations."`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - Implementation
 [enthusiastically] Let's examine practical implementation strategies for prompt chaining, from simple to sophisticated approaches.
 
@@ -1437,7 +1411,6 @@ Prod uction chains need **error handling at each stage**. What if Stage 2 receiv
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - Considerations
 [seriously] While prompt chaining is incredibly useful, it introduces complexity and challenges that you need to manage carefully.
 
@@ -1489,7 +1462,6 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c257d',
           notes: `### Tree of Thoughts - Overview
 [confidently] Welcome to Tree of Thoughts, or ToT 👉 pronounced "tot" like the word for a small child. [storytelling] Think of it as the AI's way of being thorough before making a decision.
 
@@ -1553,7 +1525,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c257d',
           notes: `### Tree of Thoughts - How It Works
 [conversational] Now let's peek under the hood and see how Tree of Thoughts actually operates. This is where the technique gets really interesting.
 
@@ -1596,7 +1567,6 @@ The example shown—strategic product roadmap planning—is perfect for ToT. Ima
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c257d',
           notes: `### Tree of Thoughts - Implementation
 Let's talk about actually implementing Tree of Thoughts in your applications. This is where theory meets practice.
 
@@ -1639,7 +1609,6 @@ Don't reach for Tree of Thoughts for simple problems where chain-of-thought woul
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c257d',
           notes: `### Tree of Thoughts - Considerations
 Before you rush to implement Tree of Thoughts everywhere, let's have an honest conversation about its limitations and considerations. This technique is powerful but comes with significant tradeoffs.
 
@@ -1700,7 +1669,6 @@ If you do implement ToT in production, here are success patterns: (1) start with
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a673a',
           notes: `### 9. RAG - Overview (Pronunciation: "rag" 👉 like a cleaning rag)
 
 #### What is RAG?
@@ -1763,7 +1731,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a673a',
           notes: `### 9. RAG - How It Works (The Technical Deep-Dive)
 
 #### The Two-Stage Architecture
@@ -1811,7 +1778,6 @@ Question: How do mRNA COVID vaccines work?"`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a673a',
           notes: `### 9. RAG - Implementation (Let's Build It)
 
 #### Anatomy of a RAG Prompt
@@ -1851,7 +1817,6 @@ When you move from prototype to production, consider: **Indexing strategy** — 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a673a',
           notes: `### 9. RAG - Considerations (The Gotchas)
 
 #### Garbage In, Garbage Out
@@ -1909,7 +1874,6 @@ Here's how to improve RAG systems: **1) Hybrid search** — combine vector searc
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `### ART - Automatic Reasoning & Tool-use
 
 **Pronunciation**: "ART 👉 'art'" — it's literally pronounced like the word "art", which is fitting because this technique is all about the *art* of combining reasoning with real-world actions.
@@ -1972,7 +1936,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `### How ART Works - The Thinking-Acting Cycle
 
 #### The Core Mechanism: Automatic Decomposition
@@ -2021,7 +1984,6 @@ This is **agentic AI** — the model acts like an autonomous agent that can perc
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `### Implementing ART - Practical Guidance
 
 #### The Prompt Structure
@@ -2078,7 +2040,6 @@ This is why ART is "Advanced" complexity — it's not just the prompt, it's the 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `### ART Limitations & Considerations - The Reality Check
 
 #### When Tools Fail, Plans Crumble
@@ -2156,7 +2117,6 @@ ART is *powerful* but not magic. It's best for complex, open-ended tasks where a
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `Pronunciation: APE 👉 Say it like 'ape' (the animal) or spell it out as 'A-P-E' - either works!
 
 Welcome to Automatic Prompt Engineer! Think of APE as your tireless prompt scientist who works 24/7 running experiments to find the perfect prompts. Instead of you manually tweaking prompts over and over, APE does it automatically.
@@ -2215,7 +2175,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `Let's break down the APE workflow - it's like running a scientific tournament to find the champion prompt!
 
 Step 1 - Generation Phase: You provide APE with input-output demonstrations. Think of these as "before and after" snapshots. APE then asks the LLM: "Given these examples, generate 20 different instruction prompts that could produce these outputs." The LLM brainstorms creative variations - some formal, some casual, some detailed, some concise.
@@ -2260,7 +2219,6 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `Let's look at implementing APE in practice - this is where theory meets reality!
 
 The meta-prompt structure: Notice how we're prompting the LLM to generate prompts. It's meta! We show input-output pairs and ask "What instruction would produce these results?" This is the generation phase in action. The LLM becomes a prompt designer, proposing different ways to phrase instructions.
@@ -2301,7 +2259,6 @@ Pro tip: Start small! Begin with 5-10 candidates and 50 validation examples. Onc
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a6167',
           notes: `Every powerful technique has tradeoffs - let's talk about APE's limitations honestly so you can use it wisely.
 
 Overfitting danger: This is APE's biggest gotcha! Remember the machine learning maxim: "Good performance on test data doesn't guarantee good performance in production." If your validation set has 100 examples and you test 50 candidate prompts, you might accidentally find a prompt that just happens to work well on those specific 100 examples but fails on new data. It's like studying only the practice exam questions - you ace the practice test but bomb the real thing!
@@ -2352,7 +2309,6 @@ When to use APE anyway: Despite these limitations, APE is incredibly valuable wh
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#671a2d',
           notes: `### Active-Prompt Overview
 
 Hey everyone, let's talk about **Active-Prompt** - this is where prompt engineering meets active learning in a really clever way!
@@ -2410,7 +2366,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#671a2d',
           notes: `### How Active-Prompt Works
 
 Alright, let's break down the mechanics here - this is really fascinating!
@@ -2448,7 +2403,6 @@ Picture a math tutoring system for middle schoolers. The system encounters word 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#671a2d',
           notes: `### Active-Prompt Implementation
 
 Let's get practical - how do you actually build this?
@@ -2485,7 +2439,6 @@ But [sigh] here's the payoff: once you have this infrastructure, it becomes a co
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#671a2d',
           notes: `### Active-Prompt Considerations & Limitations
 
 [conversational] Let's be real - Active-Prompt is powerful, but it's not a silver bullet. Here are the gotchas you need to know about.
@@ -2549,7 +2502,6 @@ The bottom line? Active-Prompt is like having a continuously improving expert on
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#501a67',
           notes: `### Directional Stimulus Prompting - The Guided Navigation System
 
 Welcome to **Directional Stimulus Prompting**, or DSP for short. Think of this technique as having a GPS navigator for your AI — a small, specialized guide that gives turn-by-turn directions to help a larger, more powerful model reach the exact destination you want.
@@ -2618,7 +2570,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#501a67',
           notes: `### How Directional Stimulus Prompting Actually Works
 
 Let's demystify the mechanics here. DSP is a **two-model architecture**, and understanding how these models work together is key to using this technique effectively.
@@ -2670,7 +2621,6 @@ Task: Summarize <report> for a safety board in 150 words."`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#501a67',
           notes: `### Implementing Directional Stimulus Prompting in Practice
 
 Let's get concrete about implementation. This slide shows you the structure and tools you need to actually *use* DSP in production systems.
@@ -2720,7 +2670,6 @@ Start simple. Before building a trainable policy model, try a **rule-based stimu
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#501a67',
           notes: `### The Realities and Trade-offs of Directional Stimulus Prompting
 
 Every powerful technique has its trade-offs, and DSP is no exception. Let's talk honestly about the challenges and considerations you'll face implementing this approach.
@@ -2793,7 +2742,6 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#60671a',
           notes: `Welcome to PAL - and yes, it's pronounced just like your friend, "pal" 👉 'pal'. This is one of the most practical techniques when you need precision. Here's the key insight: language models are great at understanding problems but terrible at math. PAL solves this beautifully by having the model generate Python code instead of trying to calculate directly. Think of it as having a smart assistant who knows when to hand off work to a calculator. The model reads your problem, writes the code to solve it, and then we execute that code in a proper interpreter to get an exact answer. No more hallucinated numbers! This is perfect for things like financial calculations, inventory optimization, or any scenario where "close enough" isn't good enough. The benefits are clear: you get deterministic results, you can test and reuse the generated code, and you avoid the LLM's tendency to make up numbers. It's like having the best of both worlds - natural language understanding combined with computational precision.`
         },
         {
@@ -2843,7 +2791,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#60671a',
           notes: `So how does PAL actually work? The process is surprisingly elegant. You give the model your problem in plain English, and instead of asking it to solve the problem directly, you explicitly instruct it to write Python code. The model generates this code as a string - maybe it's a function to calculate optimal coin change, or a script to solve a scheduling problem. Then, the magic happens: we take that generated code and run it through a real Python interpreter. We're using actual Python here, not the LLM pretending to execute code. This gives us exact, reliable results. Now, this is definitely an advanced technique. You need infrastructure - a sandboxed Python runtime to safely execute code. You can't just run arbitrary code without security measures. Models like GPT-4o, Claude 3.5, and Gemini 1.5 Pro are excellent at generating syntactically correct and logically sound code. For a real-world example, imagine you're running a warehouse and need to optimize inventory allocation across multiple locations with complex constraints - minimums, maximums, shipping costs, demand predictions. PAL can generate and execute dynamic programming solutions that give you exact optimal answers, not approximations. This is the kind of problem where precision matters and traditional LLM outputs would be unreliable.`
         },
         {
@@ -2868,7 +2815,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#60671a',
           notes: `Let's look at a concrete implementation example. Here's a classic dynamic programming problem - the coin change problem. You need to make 47 cents using the fewest coins, and you have denominations of 1, 4, and 6 cents. Your prompt is straightforward: "Write a Python function that computes the minimum coins for this problem." The key is being explicit - you want code, not an explanation. The model will generate something like a dynamic programming solution with memoization. Then your Python executor - maybe you're using RestrictedPython, or a sandboxed subprocess, or even a containerized environment - runs that code and returns the exact answer: 9 coins. The beauty here is separation of concerns. The LLM is doing what it does best: understanding the problem structure and translating it to code. Python is doing what it does best: executing algorithms precisely. You're not asking the LLM to simulate execution mentally, which is where things go wrong. Now, about models - you want GPT-4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro. These models have been trained extensively on code and produce syntactically correct, well-structured Python. But remember: you absolutely must have a secure runtime. Use sandboxing libraries, run in containers, or use cloud functions with resource limits. Never execute untrusted generated code directly in your production environment.`
         },
         {
@@ -2890,7 +2836,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#60671a',
           notes: `Now let's talk about the reality check - what you need to watch out for with PAL. First and foremost: security. This is critical. You're executing code that an AI generated, which means you need rock-solid sandboxing. Use proper isolation - containers, restricted Python environments, or serverless functions with tight timeouts and resource limits. Treat generated code as untrusted input, because that's what it is. Second consideration: runtime errors. The model might generate syntactically valid code that still crashes - maybe it divides by zero, or references a variable that doesn't exist, or runs into an edge case. You need error handling that catches these failures gracefully and either retries with clarification or falls back to a different approach. Third: code injection risks. If user input goes into your PAL prompts, sanitize it carefully. Someone could craft input that makes the model generate malicious code. And finally, recognize the scope limitation - PAL is amazing for computational problems, algorithmic challenges, mathematical optimization. But it's not useful for creative writing, subjective analysis, or problems that don't map cleanly to code logic. So when you're designing your system, think carefully about which problems are PAL-appropriate. Use it where precision matters and the problem has a computational solution. For everything else, stick with traditional prompting techniques. PAL is powerful, but it's a specialized tool for specific use cases.`
         }
       ]
@@ -2927,7 +2872,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a5667',
           notes: `### ReAct - Overview
 
 [confidently] Welcome to **ReAct** — which you can pronounce either as "react" like the JavaScript library, or spell it out "R-E-act" for Reasoning and Acting. Both are perfectly fine! This is one of the most powerful agentic patterns we have today.
@@ -2992,7 +2936,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a5667',
           notes: `### ReAct - How It Works
 
 [conversational] Let me walk you through the **ReAct cycle** step by step, because once you understand this loop, you'll see how incredibly powerful it is.
@@ -3042,7 +2985,6 @@ Repeat until enough info, then give Final Answer: <answer>`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a5667',
           notes: `### ReAct - Implementation
 
 Now let's talk about how to actually **implement ReAct** in your applications. The good news is that the pattern itself is pretty straightforward once you understand the cycle!
@@ -3084,7 +3026,6 @@ Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a5667',
           notes: `### ReAct - Considerations
 
 [seriously] Let's be honest about the **challenges and limitations** of ReAct, because understanding these helps you build more robust systems.
@@ -3143,7 +3084,6 @@ To succeed with ReAct: keep your tool set focused and well-documented, validate 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4c1a67',
           notes: `Welcome to Reflexion! This is one of my favorite techniques because it mirrors how we humans actually learn. Think about it - when you make a mistake, you don't immediately forget everything and start from scratch, right? You think about what went wrong, learn from it, and try again with that new knowledge. That's exactly what Reflexion does for AI agents.
 
 Here's the core idea: instead of just running a task and hoping for the best, the agent actually stops, looks at its own work, and writes out feedback to itself. It's like having an internal coach that says "hey, that didn't work because of X, Y, and Z - let's try this approach instead next time."
@@ -3201,7 +3141,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4c1a67',
           notes: `Let me walk you through how this actually works in practice, because it's a really elegant cycle once you see it in action.
 
 Step one: the agent attempts the task. Maybe it's writing a function, planning a route, or solving a puzzle - whatever the goal is, it gives it a shot.
@@ -3238,7 +3177,6 @@ The key insight is that this happens through language and memory, not model retr
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4c1a67',
           notes: `Now let's talk about how to actually implement this in your own projects. The good news is that the basic prompt structure is surprisingly simple, though you can make it as sophisticated as you need.
 
 Here's a straightforward prompt that captures the essence of Reflexion: "Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt." That's it! That simple instruction is enough to trigger the self-reflection loop.
@@ -3270,7 +3208,6 @@ One pro tip: if you're building a production system with Reflexion, set up a mem
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4c1a67',
           notes: `Now, let's be real about the limitations here, because Reflexion isn't a magic bullet and it's important to understand when it might not work as well as you'd hope.
 
 First up: feedback quality varies with model capability. This is huge. If your model isn't sophisticated enough to genuinely understand why something failed, its self-critique will be shallow or even wrong. It's like asking a novice programmer to review their own code - they might spot syntax errors but miss the architectural problems. So if you're using a weaker model, the reflection might be "it didn't work, I should try harder" instead of "my algorithm has O(n²) complexity and that's causing timeouts on large inputs."
@@ -3317,7 +3254,6 @@ So when should you use Reflexion despite these limitations? When you have a capa
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#674b1a',
           notes: `### Multimodal Chain-of-Thought (Pronunciation: CoT 👉 'cot')
 
 Hey everyone! Let's talk about **Multimodal Chain-of-Thought**, or **MCoT** for short. Now, before we dive in — quick pronunciation guide — when we say "CoT", we pronounce it like 'cot', just like the thing you sleep on. Makes it easier to say in conversation!
@@ -3380,7 +3316,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#674b1a',
           notes: `### How Multimodal CoT Works (CoT 👉 'cot')
 
 Alright, let's break down the mechanics! How does this actually work under the hood?
@@ -3423,7 +3358,6 @@ Now, this technique requires advanced multimodal models — we're talking GPT-4 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#674b1a',
           notes: `### Implementing Multimodal CoT (CoT 👉 'cot')
 
 Let's get practical! How do you actually use this in your code?
@@ -3488,7 +3422,6 @@ Make sure you're using the vision-enabled API endpoints. For example, with OpenA
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#674b1a',
           notes: `### Limitations and Considerations for Multimodal CoT (CoT 👉 'cot')
 
 Alright, let's talk about the elephant in the room — what are the gotchas? Where does Multimodal CoT struggle?
@@ -3575,7 +3508,6 @@ That said, when you *do* need to reason about visual information — charts, dia
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6731',
           notes: `### Graph Prompting Overview
 
 [confidently] Welcome to our final advanced technique: Graph Prompting! This is where things get really interesting, folks. Instead of treating information as a flat list or a simple hierarchy, we're organizing knowledge the way our brains do—as interconnected networks of concepts and relationships.
@@ -3633,7 +3565,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6731',
           notes: `### How Graph Prompting Works
 
 Alright, let's break down the mechanics. Graph Prompting is actually a multi-stage pipeline, and each stage is crucial.
@@ -3670,7 +3601,6 @@ Think about a due diligence scenario at an investment firm. You're analyzing a c
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6731',
           notes: `### Implementation Details
 
 [enthusiastically] Let's look at how you'd actually implement this. The prompt structure is deceptively simple, but there's significant infrastructure behind it.
@@ -3706,7 +3636,6 @@ The beauty is that the reasoning path is explicit and auditable. You can show th
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a6731',
           notes: `### Limitations and Considerations
 
 Now let's talk about the challenges, because graph prompting is powerful but not a silver bullet. There are real gotchas you need to watch for.
@@ -3790,7 +3719,6 @@ Now let's talk about the challenges, because graph prompting is powerful but not
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#34495E',
           notes: `### Complexity Overview - Choosing the Right Tool
 
 Alright, now that we've covered all 18 techniques, let's step back and get the big picture. This matrix is your decision-making framework—think of it as the periodic table of prompt engineering!
@@ -3875,7 +3803,6 @@ The key insight: **climb the ladder only as high as your problem requires.** Don
               </div>
             </div>
           ),
-          backgroundColor: '#145d33',
           notes: `### Best Practices and Recommendations
 
 [warmly] Let's wrap up with some hard-won wisdom from the trenches. These are the practices that separate successful prompt engineering from frustrating trial-and-error.
@@ -3952,7 +3879,6 @@ The meta-lesson: **prompt engineering is iterative.** You won't nail it on the f
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2C3E50',
           notes: `### Summary: The Prompt Engineering Ladder
 
 [warmly] We've reached the end of our journey through 18 prompt engineering techniques, and I want to leave you with one powerful mental model: the ladder.

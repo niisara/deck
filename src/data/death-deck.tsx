@@ -7,13 +7,15 @@ export const deathDeck: Deck = {
   name: 'Death',
   description: 'A confrontational meditation on mortality and physical decay',
   category: 'Inner Intelligence',
-  theme: 'black',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: '#ffffff',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1920&q=80',
+    'https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=1920&q=80',
+    'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1920&q=80',
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -34,8 +36,6 @@ export const deathDeck: Deck = {
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1a1a',
-          backgroundImage: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=80',
           notes: `[slowly] This will happen to me.
 Not in theory. Not someday. [darkly] To this body.
 
@@ -99,7 +99,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -152,7 +151,6 @@ By the people who love you most. [whisper] And you'll let them, because correcti
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -205,7 +203,6 @@ Your body will stop asking permission.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -258,7 +255,6 @@ You will catch your reflection and for a split second wonder who that old person
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -327,7 +323,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -381,7 +376,6 @@ You will tell the same story three times in one hour.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -419,7 +413,6 @@ Not someday.
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This decay will claim me.
 [darkly] Not in fantasy. Not eventually.
 To these bones and flesh.
@@ -468,7 +461,6 @@ The actual physical machinery failing. Skin tearing. Bones cracking. Heart stutt
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -519,7 +511,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -573,7 +564,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -642,7 +632,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -696,7 +685,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -750,7 +738,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -804,7 +791,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -842,7 +828,6 @@ Not someday.
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This isolation will hollow me.
 [darkly] Not as metaphor. Not as possibility.
 In lived experience.
@@ -890,7 +875,6 @@ In lived experience.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -959,7 +943,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1010,7 +993,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1062,7 +1044,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1112,7 +1093,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1165,7 +1145,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1203,7 +1182,6 @@ Not someday.
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This terror will find me.
 [darkly] Not in nightmares. Not theoretically.
 In the darkness at 3 AM.
@@ -1268,7 +1246,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1320,7 +1297,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1372,7 +1348,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1426,7 +1401,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1479,7 +1453,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1536,7 +1509,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1573,7 +1545,6 @@ Not someday.
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This pain will consume me.
 [darkly] Not hypothetically. Not far off.
 In this suffering vessel.
@@ -1622,7 +1593,6 @@ In this suffering vessel.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1675,7 +1645,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1726,7 +1695,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1782,7 +1750,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1834,7 +1801,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1886,7 +1852,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -1923,7 +1888,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This regret will haunt me.
 [darkly] Not as warning. Not as lesson.
 As lived truth.
@@ -1971,7 +1935,6 @@ As lived truth.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2022,7 +1985,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2076,7 +2038,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2129,7 +2090,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2181,7 +2141,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `This will happen to me.
 Not in theory.
 Not someday.
@@ -2218,7 +2177,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This loss of self will erase me.
 [darkly] Not gradually. Not gently.
 Piece by piece.
@@ -2284,7 +2242,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2337,7 +2294,6 @@ You were strong. Then you became weak.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2388,7 +2344,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2439,7 +2394,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2490,7 +2444,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2530,7 +2483,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a1a',
           notes: `[slowly] This ending will claim me.
 [darkly] Not as abstract. Not later.
 [firmly] Now. Always now.
@@ -2578,7 +2530,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This is happening to me.
 Not in theory.
 Not someday.
@@ -2629,7 +2580,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2687,7 +2637,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2744,7 +2693,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2796,7 +2744,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2850,7 +2797,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#34495e',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2905,7 +2851,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2c3e50',
           notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
@@ -2957,7 +2902,6 @@ Not someday.
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#000000',
           notes: `[firmly] Don't distract yourself.
 Don't rationalize.
 Don't look away.

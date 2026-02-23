@@ -8,12 +8,14 @@ export const parentChildRetrievalDeck: Deck = {
   name: '11 Parent–Child Retrieval Design Patterns',
   description: 'A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -63,7 +65,6 @@ export const parentChildRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80',
           notes: `### Parent–Child Retrieval Designs for RAG
 
 [energetic] Welcome to this comprehensive guide on parent-child retrieval patterns for RAG 👉 'rag' systems! [excited] Today we're diving into eleven powerful design patterns that can dramatically improve your retrieval-augmented generation pipelines by solving one of the most common problems in production RAG 👉 'rag' systems: providing the right amount of context at the right time.
@@ -108,7 +109,6 @@ export const parentChildRetrievalDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### What You'll Learn
 
 [conversational] Let me give you a quick roadmap of what we'll cover today so you know exactly what to expect from this presentation.
@@ -185,7 +185,6 @@ export const parentChildRetrievalDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Table of Contents
 
 [cheerfully] Here's your roadmap through all eleven patterns we'll explore today. [conversational] You can see we've organized them in a logical progression, starting with simpler foundational patterns and building up to more sophisticated approaches.
@@ -266,7 +265,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 1 - Parent–Child Chunking (Hierarchical Retrieval)
 [excited] Welcome to our first retrieval pattern! [conversational] This is the foundational approach to parent-child retrieval, and it's where most teams start when building RAG 👉 'rag' systems with hierarchical context.
 
@@ -346,7 +344,6 @@ Now let's look at the implementation details and trade-offs for this pattern.`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 1 - Implementation & Trade-offs
 [lecture] Now let's dive into the practical implementation details and the trade-offs you'll encounter when deploying this pattern in production.
 
@@ -428,7 +425,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 2 - Section-Header Anchored Retrieval
 
 [conversational] Now let's look at our second pattern, which is lightweight but remarkably effective for well-structured documents. [pleased] This is one of those patterns that gives you a lot of value for relatively little implementation complexity.
@@ -509,7 +505,6 @@ This diagram shows the flow from a raw chunk to finding its nearest header, buil
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 2 - Implementation & Trade-offs
 
 [conversational] Let's talk about how to actually implement this pattern and what trade-offs you're making when you choose it.
@@ -600,7 +595,6 @@ flowchart TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Pattern 3 - Outline-Based Tree Retrieval
 
 [conversational] Pattern three takes us into tree-based structures, and this is ideal for deeply nested documents where preserving the full path context really matters.
@@ -685,7 +679,6 @@ flowchart TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Pattern 3 - Implementation & Trade-offs
 
 [conversational] Now let's talk about actually building this tree-based system and the trade-offs you'll encounter.
@@ -781,7 +774,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 4 - Top-k Parent Expansion
 
 [conversational] When one parent level isn't enough to capture all the governing context, pattern four shows you how to expand to multiple levels in the hierarchy.
@@ -868,7 +860,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 4 - Implementation & Trade-offs
 
 [conversational] Let's discuss how to implement multi-level parent expansion and what trade-offs you're accepting with this approach.
@@ -959,7 +950,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 5 - Sibling-Aware Retrieval
 
 [conversational] For sequential content, neighboring chunks matter just as much as parent context. [excited] Pattern five addresses this by including sibling chunks around your matched result.
@@ -1043,7 +1033,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 5 - Implementation & Trade-offs
 
 [lecture] Let's look at how to implement sibling-aware retrieval and what trade-offs come with this horizontal context expansion.
@@ -1138,7 +1127,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Pattern 6 - Windowed Retrieval
 
 [playful] Pattern six is the simplest form of context expansion. You just grab more text around your match using a sliding window approach.
@@ -1222,7 +1210,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Pattern 6 - Implementation & Trade-offs
 
 [conversational] Let's discuss the implementation details and trade-offs for windowed retrieval, which is refreshingly simple compared to our previous patterns.
@@ -1313,7 +1300,6 @@ flowchart TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 7 - Semantic Hierarchy Retrieval
 
 [excited] When your document structure doesn't reflect the actual semantic structure of your content, pattern seven lets you build your own hierarchy based on meaning rather than formatting.
@@ -1397,7 +1383,6 @@ flowchart TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 7 - Implementation & Trade-offs
 
 [lecture] Let's explore how to implement semantic hierarchy retrieval and what challenges you'll face maintaining semantic structures.
@@ -1493,7 +1478,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 8 - Dynamic Context Folding
 
 [excited] Pattern eight introduces smart compression to help you fit more context into limited token budgets without losing critical information.
@@ -1581,7 +1565,6 @@ flowchart TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 8 - Implementation & Trade-offs
 
 [lecture] Let's discuss how to implement dynamic compression and the quality trade-offs involved in summarization.
@@ -1672,7 +1655,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Pattern 9 - Hybrid Parent-Child + BM25 Verification
 
 [excited] Pattern nine combines the power of semantic and lexical matching to achieve maximum precision in your retrievals.
@@ -1759,7 +1741,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Pattern 9 - Implementation & Trade-offs
 
 [lecture] Let's explore the implementation of dual-index hybrid retrieval and the infrastructure complexity it introduces.
@@ -1855,7 +1836,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 10 - Parent Re-Ranking using Cross-Encoder
 
 [excited] When bi-encoder retrieval isn't giving you the precision you need, pattern ten brings in cross-encoders for much more accurate parent selection.
@@ -1940,7 +1920,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pattern 10 - Implementation & Trade-offs
 
 [lecture] Let's explore how to implement cross-encoder re-ranking and why the computational cost is significant.
@@ -2033,7 +2012,6 @@ flowchart TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 11 - Graph / Knowledge-Node Parent Retrieval
 
 [enthusiastically] Our final pattern is also the most powerful one for modeling complex document relationships. [excited] Pattern eleven uses graph structures to represent and navigate rich interconnections.
@@ -2118,7 +2096,6 @@ flowchart TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Pattern 11 - Implementation & Trade-offs
 
 [lecture] Let's explore the implementation of graph-based retrieval and why it's the most complex but also most expressive pattern we've covered.
@@ -2179,7 +2156,6 @@ flowchart TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Key Takeaways
 
 [conversational] Let's take a step back and summarize what we've learned about parent-child retrieval patterns across this entire presentation.
@@ -2230,7 +2206,6 @@ flowchart TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Selection Guide
 
 [conversational] Here's a practical quick reference guide to help you choose the right pattern or patterns for your specific situation.
@@ -2301,7 +2276,6 @@ flowchart TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Implementation Tips
 
 [conversational] Let's wrap up with practical advice for actually deploying these patterns in production systems.

@@ -10,12 +10,14 @@ export const graphRetrievalDeck: Deck = {
   name: '13 Graph-Based Retrieval Techniques',
   description: 'A practical cheat-sheet for precision, reasoning, and reliable context',
   category: 'RAG',
-  theme: 'sky',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80',
+    'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -59,8 +61,6 @@ export const graphRetrievalDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#191335',
-          backgroundImage: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80',
           notes: `[cheerfully] Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
 
 #### What Are Graph-Based Retrieval Techniques?
@@ -179,7 +179,6 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
               </div>
             </div>
           ),
-          backgroundColor: '#191335',
           notes: `### Overview: 13 Techniques at a Glance
 
 [lecture] Let's take a bird's eye view of all thirteen techniques we'll be covering today. This roadmap will help you understand how these techniques relate to each other and when you might choose one over another.
@@ -248,7 +247,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - Overview
 
 Welcome to our first technique: **Node-Level Retrieval**. [reassuringly] This is the foundational building block of graph-based retrieval, and it's beautifully simple yet incredibly powerful when used in the right situations.
@@ -309,7 +307,6 @@ Now let's see exactly how this technique works under the hood!`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - How It Works
 
 [lecture] Let's break down the mechanics of Node-Level Retrieval step by step. Understanding the process will help you implement this technique effectively and troubleshoot when things don't work as expected.
@@ -355,7 +352,6 @@ Now let's look at the practical implementation steps!`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - Implementation
 
 [confidently] Let's get practical. How do you actually build and deploy a node-level retrieval system? We'll walk through the implementation steps and look at a real-world example.
@@ -420,7 +416,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e51',
           notes: `### 1. Node-Level Retrieval - Considerations
 
 [conversational] Every technique has strengths and weaknesses. Let's be honest about what Node-Level Retrieval does well and where it struggles. This understanding helps you choose the right technique for each situation.
@@ -491,7 +486,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - Overview
 
 Welcome to our second technique: **Edge-Weighted Retrieval**. [conversational] While node-level retrieval focuses on finding the right entities, edge-weighted retrieval adds a crucial dimension: understanding that **not all relationships are created equal**.
@@ -569,7 +563,6 @@ Node A -(weight 0.3)→ Node C
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - How It Works
 
 [lecture] Let's break down the mechanics of edge-weighted retrieval. Understanding each step will help you implement this technique effectively and troubleshoot edge cases.
@@ -624,7 +617,6 @@ Let's look at practical implementation steps!`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - Implementation
 
 [confidently] Now let's get hands-on with implementing edge-weighted retrieval. We'll walk through each step with practical guidance and examples.
@@ -698,7 +690,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e1e',
           notes: `### 2. Edge-Weighted Retrieval - Considerations
 
 [conversational] Every retrieval technique involves trade-offs. Let's discuss what edge-weighted retrieval does exceptionally well and where you need to be cautious.
@@ -780,7 +771,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - Overview
 
 [conversational] Welcome to **Neighborhood Expansion**, our third graph-based retrieval technique. [lecture] If node-level retrieval is about precision and edge-weighted retrieval adds ranking sophistication, neighborhood expansion is about **context richness**.
@@ -872,7 +862,6 @@ Return A + context from neighbors`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - How It Works
 
 [lecture] Let's explore the mechanics of neighborhood expansion. [reassuringly] Understanding the process will help you implement it effectively and optimize for your specific use cases.
@@ -938,7 +927,6 @@ Return A + context from neighbors`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - Implementation
 
 [conversational] Time to get practical. Let's walk through implementing neighborhood expansion with concrete steps, code patterns, and real-world examples.
@@ -1032,7 +1020,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b451e',
           notes: `### 3. Neighborhood Expansion - Considerations
 
 [conversational] Let's discuss the strengths and weaknesses of neighborhood expansion. [reassuringly] Understanding these trade-offs helps you decide when this technique is the right choice and when you need something more sophisticated.
@@ -1113,7 +1100,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - Overview
 
 [energetic] Welcome to **Path-Based Retrieval**, our fourth technique and the first that truly embraces **multi-hop reasoning**. [lecture] While previous techniques focused on individual nodes or immediate neighbors, path-based retrieval explores how concepts connect across multiple steps.
@@ -1205,7 +1191,6 @@ Multi-hop reasoning chain`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - How It Works
 
 [lecture] Let's dive into the mechanics of path-based retrieval. [reassuringly] This is more complex than previous techniques, but understanding the process will help you implement it effectively.
@@ -1269,7 +1254,6 @@ Multi-hop reasoning chain`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - Implementation
 
 [conversational] Time to implement path-based retrieval. We'll walk through practical steps, code patterns, and real-world examples to help you build this powerful technique.
@@ -1397,7 +1381,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#555b1e',
           notes: `### 4. Path-Based Retrieval - Considerations
 
 [seriously] Path-based retrieval is powerful but comes with significant trade-offs. [reassuringly] Let's honestly assess its strengths and weaknesses so you can make informed decisions about when to use this technique.
@@ -1490,7 +1473,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - Overview
 
 [conversational] Welcome to **Community or Cluster Retrieval**, a technique that takes us beyond individual nodes and edges to understand the **natural groupings** within your knowledge graph. [pleased] This is where graph structure reveals thematic organization.
@@ -1576,7 +1558,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - How It Works
 
 [lecture] Let's dive into the mechanics of community detection and retrieval. [confidently] This technique involves two main phases: **identifying communities** and **retrieving relevant nodes** from those communities.
@@ -1632,7 +1613,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - Implementation
 
 [conversational] Let's walk through building a community-based retrieval system. [lecture] This involves both offline preparation and online query-time processing.
@@ -1708,7 +1688,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#335b1e',
           notes: `### 5. Community / Cluster Retrieval - Considerations
 
 [conversational] Let's be honest about what community retrieval does well and where it struggles. [reassuringly] Understanding these trade-offs helps you decide when to use this technique.
@@ -1792,7 +1771,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - Overview
 
 [conversational] Welcome to **Hierarchical Graph Retrieval**, a technique designed for information organized in tree-like or multi-level structures. [pleased] This approach leverages the natural organization many knowledge bases already have.
@@ -1880,7 +1858,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - How It Works
 
 [lecture] Let's break down how hierarchical retrieval navigates multi-level structures to find information at the right granularity. [conversational] This process involves query classification, level selection, and intelligent traversal.
@@ -1943,7 +1920,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - Implementation
 
 [conversational] Let's walk through building a hierarchical retrieval system from scratch. [lecture] This involves graph construction, query processing, and intelligent traversal logic.
@@ -2025,7 +2001,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 6. Hierarchical Graph Retrieval - Considerations
 
 [conversational] Let's examine what makes hierarchical retrieval powerful and where it faces challenges. [reassuringly] Understanding these factors will help you decide if this technique fits your use case.
@@ -2112,7 +2087,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - Overview
 
 [excitedly] Welcome to **Graph + Dense Vector Hybrid Retrieval**, a powerful technique that combines two complementary approaches to information retrieval. [enthusiastically] This is where we stop choosing between methods and start leveraging the strengths of multiple techniques together.
@@ -2207,7 +2181,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - How It Works
 
 [lecture] Let's break down the mechanics of hybrid retrieval. [conversational] This involves parallel retrieval paths, score fusion, and intelligent ranking that leverages both semantic and structural signals.
@@ -2280,7 +2253,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - Implementation
 
 [conversational] Let's walk through building a production-grade hybrid retrieval system. [lecture] This involves infrastructure setup, parallel query execution, and intelligent fusion logic.
@@ -2380,7 +2352,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e3a5b',
           notes: `### 7. Graph + Dense Vector Hybrid - Considerations
 
 [conversational] Let's examine what makes hybrid retrieval powerful and where it adds complexity. [reassuringly] Understanding these trade-offs is essential for deciding if the benefits justify the additional implementation effort.
@@ -2471,7 +2442,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - Overview
 
 [excitedly] Welcome to **Graph + BM25 Hybrid Retrieval**, a technique that bridges semantic understanding with keyword precision. [conversational] This approach combines the structural awareness of graph retrieval with the lexical accuracy of traditional information retrieval.
@@ -2572,7 +2542,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - How It Works
 
 [lecture] Let's break down the mechanics of Graph + BM25 hybrid retrieval. [conversational] This involves parallel retrieval streams, keyword scoring, and intelligent fusion that balances structural and lexical signals.
@@ -2647,7 +2616,6 @@ Your **graph database** stores the structural data—nodes, edges, relationships
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - Implementation
 
 [conversational] Let's walk through building a production-ready Graph + BM25 hybrid retrieval system. [lecture] This involves setting up dual retrieval infrastructure, implementing parallel queries, and creating robust fusion logic.
@@ -2750,7 +2718,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#321e5b',
           notes: `### 8. Graph + BM25 Hybrid - Considerations
 
 [conversational] Let's examine the trade-offs of Graph + BM25 hybrid retrieval. [reassuringly] Understanding where this technique excels and where it struggles helps you decide when it's the right choice for your application.
@@ -2851,7 +2818,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - Overview
 
 [excitedly] Welcome to **Semantic Graph Traversal**, an intelligent exploration technique that uses semantic similarity as a gatekeeper for which graph edges to follow. [conversational] This approach combines the structural guidance of graph traversal with the semantic awareness of embedding-based methods.
@@ -2953,7 +2919,6 @@ A → D (sim=0.45, skip) | Stop at threshold τ=0.70`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - How It Works
 
 [lecture] Let's break down the mechanics of semantic graph traversal. [conversational] This involves embedding computation, similarity-based filtering, and intelligent exploration strategies.
@@ -3031,7 +2996,6 @@ A → D (sim=0.45, skip) | Stop at threshold τ=0.70`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - Implementation
 
 [conversational] Let's walk through implementing semantic graph traversal step-by-step. [lecture] This involves embedding infrastructure, similarity computation, and intelligent traversal logic.
@@ -3164,7 +3128,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#511e5b',
           notes: `### 9. Semantic Graph Traversal - Considerations
 
 [conversational] Let's examine the strengths and limitations of semantic graph traversal. [reassuringly] Understanding these trade-offs helps you decide when this technique is the right choice and how to mitigate its weaknesses.
@@ -3263,7 +3226,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - Overview
 
 [excitedly] Welcome to **Graph Walk-Based Ranking**, a technique that leverages random walk algorithms to identify the most important or authoritative nodes in a graph. [enthusiastically] This approach brings the power of algorithms like PageRank 👉 'page-rank'—which revolutionized web search—to knowledge graph retrieval.
@@ -3372,7 +3334,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - How It Works
 
 [lecture] Let's break down the mechanics of random walk-based ranking, focusing on Personalized PageRank 👉 'pee-pee-arr' since it's most relevant for retrieval. [conversational] Understanding the algorithm's steps and mathematical intuition will help you implement and tune it effectively.
@@ -3471,7 +3432,6 @@ r_new = α × P^T × r_old + (1 - α) × s
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - Implementation
 
 [lecture] Let's walk through implementing Personalized PageRank 👉 'pee-pee-arr' for knowledge graph retrieval. This involves graph representation, matrix operations, iterative algorithms, and optimization strategies for production systems.
@@ -3608,7 +3568,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e455b',
           notes: `### 10. Graph Walk-Based Ranking - Considerations
 
 [lecture] Let's examine the benefits and limitations of graph walk-based ranking techniques like PageRank 👉 'page-rank' and Personalized PageRank. [reassuringly] Understanding these trade-offs helps you decide when this approach is appropriate and how to mitigate its weaknesses.
@@ -3714,7 +3673,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - Overview
 
 [conversational] Welcome to **Query Graph Construction**, a sophisticated technique that transforms natural language queries into structured graph representations for precise retrieval. [confidently] Instead of treating queries as mere text or embeddings, this approach **parses the query into entities and relationships**, building a mini-graph that captures relational intent.
@@ -3834,7 +3792,6 @@ KB Match: NodeX --r1--> NodeY --r2--> NodeZ`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - How It Works
 
 [lecture] Let's break down the mechanics of Query Graph Construction step-by-step. [reassuringly] This technique involves multiple stages: parsing the query, extracting structure, building the query graph, and matching it against your knowledge base. Understanding each phase helps you implement and debug the system effectively.
@@ -3960,7 +3917,6 @@ This structured approach ensures you retrieve exactly the projects matching the 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - Implementation
 
 [conversational] Now let's get practical. Implementing Query Graph Construction involves choosing the right tools, integrating components, and optimizing for your use case. [confidently] This section walks through implementation steps, technology choices, and real-world examples.
@@ -4128,7 +4084,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#381e5b',
           notes: `### 11. Query Graph Construction - Considerations
 
 [lecture] As with any advanced technique, Query Graph Construction has trade-offs. [reassuringly] Understanding its strengths and limitations helps you decide when to apply it and how to mitigate potential challenges.
@@ -4276,7 +4231,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - Overview
 
 [conversational] Welcome to **Context Path Stitching**, a technique that transforms raw graph retrieval results into polished, narrative-style context for language models. [confidently] While graph retrieval excels at finding relevant paths and subgraphs, raw graph data—lists of nodes and edges—is not ideal input for LLMs. Context Path Stitching bridges this gap by **weaving multiple paths into coherent prose**.
@@ -4422,7 +4376,6 @@ Stitched: "A connects to B, leading to C. Meanwhile, D relates to E, resulting i
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - How It Works
 
 [lecture] Let's walk through the mechanics of Context Path Stitching step-by-step. [reassuringly] This process transforms raw graph paths into polished narrative context suitable for LLM consumption. Each phase plays a crucial role in ensuring coherence and readability.
@@ -4594,7 +4547,6 @@ Context Path Stitching is a powerful post-processing technique that transforms r
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - Implementation
 
 [conversational] Let's get hands-on with implementing Context Path Stitching. [confidently] This section covers practical steps, code patterns, technology choices, and real-world examples to help you build an effective stitching pipeline.
@@ -4974,7 +4926,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#5b1e40',
           notes: `### 12. Context Path Stitching - Considerations
 
 [lecture] Context Path Stitching is a powerful post-retrieval transformation, but like all techniques, it has trade-offs. [reassuringly] Let's explore its benefits, limitations, and practical considerations to help you decide when and how to apply it.
@@ -5145,7 +5096,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - Overview
 
 [enthusiastically] Welcome to **LLM-Guided Graph Expansion**, the most sophisticated and adaptive technique in our arsenal. [conversational] Unlike predetermined traversal strategies (fixed hop counts, predefined edge types), this approach **delegates exploration decisions to a language model**. [confidently] The LLM examines the current state of retrieval, reasons about what's relevant, and decides which edges to follow next—creating a dynamic, intelligent search through the graph.
@@ -5290,7 +5240,6 @@ Step 3: At C → LLM determines sufficient info, stops`}
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - How It Works
 
 [lecture] Let's dive into the mechanics of LLM-Guided Graph Expansion. [conversational] This is an **iterative, interactive process** where the LLM and graph query engine work together in a loop, with the LLM making strategic decisions at each step. [reassuringly] Understanding this loop and how to implement it effectively is key to leveraging this powerful technique.
@@ -5486,7 +5435,6 @@ Provide the LLM with **rules** to prevent bad decisions: "Never explore edges le
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - Implementation
 
 [conversational] Let's get hands-on with implementing LLM-Guided Graph Expansion. [confidently] This section covers practical implementation steps, code patterns, optimization strategies, and real-world deployment considerations.
@@ -5919,7 +5867,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1e5b5a',
           notes: `### 13. LLM-Guided Graph Expansion - Considerations
 
 [lecture] LLM-Guided Graph Expansion is the most sophisticated technique in our toolkit, and with that sophistication comes both remarkable benefits and significant challenges. [reassuringly] Let's explore both sides to help you decide when and how to apply this technique.
@@ -6142,7 +6089,6 @@ LLM-Guided Graph Expansion is powerful, complex, and resource-intensive. Use it 
               </div>
             </div>
           ),
-          backgroundColor: '#5b1e1e',
           notes: `### Putting It Together: Patterns and Next Steps
 
 [warmly] Congratulations! You've journeyed through 13 graph-based retrieval techniques, from simple node-level retrieval to sophisticated LLM 👉 'el-el-em'-guided exploration. [conversational] Now comes the practical question: **How do you actually use these techniques in real systems?** [confidently] This closing slide provides guidance on combining techniques, operational best practices, and concrete next steps to get started.

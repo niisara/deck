@@ -8,13 +8,15 @@ export const productionRagDeck: Deck = {
   name: '11 Production RAG Architecture Patterns',
   description: 'Proven designs for reliable, scalable Retrieval-Augmented Generation',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: '#ffffff',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -59,8 +61,6 @@ export const productionRagDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3c1651',
-          backgroundImage: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1920&q=80',
           notes: `### Title Slide - 11 Production RAG Architecture Patterns
 
 [cheerfully] Welcome everyone! [excited] Today we're diving deep into eleven production-ready RAG architecture patterns that will transform how you build retrieval-augmented generation systems. RAG, or Retrieval-Augmented Generation 👉 [rag], combines the power of large language models with external knowledge retrieval to create more accurate, factual, and context-aware AI applications.
@@ -99,7 +99,6 @@ export const productionRagDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#3c1651',
           notes: `### Agenda & Patterns Overview
 
 [conversational] Let's set the stage for what we'll cover today. When companies first experiment with RAG systems, they often start with simple prototypes that work great in demos but [cautiously] struggle in real-world production environments. The gap between prototype and production is where most RAG projects face their biggest challenges.
@@ -175,7 +174,6 @@ export const productionRagDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3c1651',
           notes: `### Cheat Sheets and Selection Guidance
 
 [energetic] Here's your roadmap to the eleven patterns we'll explore. [conversational] Think of these as building blocks—you can use them individually or combine them to create powerful custom architectures. Let me break down the four categories so you understand how they fit together.
@@ -289,7 +287,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#136b5e',
           notes: `### Pattern 1 - Basic RAG (Single Retrieve → Generate)
 
 [conversational] Let's dive into our first pattern—Basic RAG. [lecture] This is the foundation that every other pattern builds upon, so understanding it deeply is crucial. [storytelling] Think of Basic RAG as a simple question-answering system that looks up information before responding, just like you might search through a textbook before answering an exam question.
@@ -357,7 +354,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#136b5e',
           notes: `### Basic RAG - Strengths and Limitations
 
 [conversational] Every architectural pattern has its sweet spot and its challenges. [seriously] Let's be honest about where Basic RAG shines and where it struggles, so you can make informed decisions about when to use it.
@@ -471,7 +467,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#714425',
           notes: `### Pattern 2 - RAG with Re-Ranking
 
 [excited] Now we level up with Re-Ranking, which solves one of Basic RAG's biggest problems: precision. [storytelling] Think of it like a two-stage filter—first, cast a wide net to capture many potentially relevant documents, then use a more sophisticated model to identify which ones truly matter.
@@ -544,7 +539,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#714425',
           notes: `### Re-Ranking Pattern - Strengths and Limitations
 
 [conversational] Let's evaluate Re-Ranking honestly. [seriously] Like any architectural decision, it comes with tradeoffs you need to understand before implementing it in production.
@@ -657,7 +651,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#391f5f',
           notes: `### Pattern 3 - RAG with Query Rewriting
 
 [excited] Now we shift focus from improving what we retrieve to improving how we search. [lecture] Query Rewriting transforms messy, ambiguous user questions into precise search queries before retrieval even begins. [storytelling] Think of it as having a helpful librarian who clarifies what you're really looking for before searching.
@@ -732,7 +725,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#391f5f',
           notes: `### Query Rewriting - Strengths and Limitations
 
 [conversational] Query Rewriting is powerful but requires careful implementation. [seriously] Let's examine when it delivers value and when it might cause problems.
@@ -856,7 +848,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#2f600f',
           notes: `### RAG with Multi-Query Retrieval
 
 #### Introduction to Multi-Query Retrieval
@@ -953,7 +944,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#2f600f',
           notes: `### Multi-Query Retrieval: Strengths and Limitations
 
 #### Understanding the Tradeoffs
@@ -1089,7 +1079,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a2d2e',
           notes: `### RAG with HyDE (Hypothetical Document Embeddings)
 
 #### The Conceptual Breakthrough
@@ -1194,7 +1183,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a2d2e',
           notes: `### HyDE: Strengths and Limitations
 
 #### The Power of Zero-Shot Improvement
@@ -1334,7 +1322,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#3e1625',
           notes: `### RAG with Parent-Child Retrieval
 
 #### The Chunking Dilemma
@@ -1455,7 +1442,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#3e1625',
           notes: `### Parent-Child Retrieval: Strengths and Limitations
 
 #### The Power of Hierarchical Context
@@ -1611,7 +1597,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#58600f',
           notes: `### RAG with Graph-Based Retrieval (GraphRAG)
 
 #### The Relationship Revolution
@@ -1743,7 +1728,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#58600f',
           notes: `### GraphRAG: Strengths and Limitations
 
 #### The Power of Explicit Relationships
@@ -1918,7 +1902,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#2e1e1a',
           notes: `### RAG with External Tools and Agents
 
 #### Breaking Free from Static Knowledge
@@ -2062,7 +2045,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#2e1e1a',
           notes: `### External Tools/Agents: Strengths and Limitations
 
 #### The Power of Dynamic Information Access
@@ -2225,7 +2207,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#163e3e',
           notes: `### RAG + Fine-Tuned Model Hybrid
 
 #### The Best of Both Worlds
@@ -2360,7 +2341,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#163e3e',
           notes: `### RAG + Fine-Tuned Model: Strengths and Limitations
 
 #### The Compounding Benefits
@@ -2530,7 +2510,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#3e600f',
           notes: `### Pattern 10 - RAG with Multi-Step Retrieval Loops
 
 [enthusiastically] Welcome to one of the most sophisticated RAG patterns—Multi-Step Retrieval Loops! This pattern handles complex questions that can't be answered with a single retrieval round. [conversational] Think of it as teaching your RAG system to think through problems step by step, just like a human researcher would.
@@ -2606,7 +2585,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#3e600f',
           notes: `### Multi-Step Retrieval - Strengths and Limitations
 
 [conversational] Multi-Step Retrieval Loops represent the cutting edge of RAG architecture, but they come with significant tradeoffs. Let's examine when this complexity delivers sufficient value to justify the implementation overhead.
@@ -2709,7 +2687,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#2e1a2e',
           notes: `### Pattern 11 - RAG with Context Compression and Summarization
 
 [energetic] Our final pattern addresses one of RAG's most persistent challenges: the context window bottleneck. Modern LLMs 👉 [el-el-ems] can handle one hundred thousand or even two hundred thousand tokens, but that doesn't mean you should fill them all! [enthusiastically] Context Compression intelligently distills retrieved documents down to their most relevant, information-dense content.
@@ -2781,7 +2758,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#2e1a2e',
           notes: `### Context Compression - Strengths and Limitations
 
 [conversational] Context Compression represents a paradigm shift in how we think about RAG systems. Rather than accepting the tradeoff between recall and context limits, we intelligently compress information to optimize both. Let's examine the impact and costs.
@@ -2887,7 +2863,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3e1616',
           notes: `### Pattern Selection Guide and Final Recommendations
 
 [warmly] Congratulations! We've journeyed through eleven production-ready RAG architecture patterns. [conversational] Now comes the most important question: which pattern should YOU use? Let's synthesize everything into actionable guidance.

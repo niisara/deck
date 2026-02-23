@@ -7,14 +7,15 @@ export const guruPujaDeck: Deck = {
   name: 'Guru Puja',
   description: 'Isha Guru Pooja — an invocation to the lineage of masters',
   category: 'Inner Intelligence',
-  theme: 'black',
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80',
+    'https://images.unsplash.com/photo-1536152470836-b943b246224c?w=1920&q=80',
+    'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1920&q=80',
+  ],
   slides: [],
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: '#fff',
-  },
   slideGroups: [
     // ── Title Slide ──
     {
@@ -39,8 +40,6 @@ export const guruPujaDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
-          backgroundColor: '#1a1008',
           notes: `Isha Guru Pooja is a sacred invocation chanted in the Isha Yoga tradition. It is an offering of gratitude to the entire lineage of Gurus — from Narayana to Adi Shankaracharya and beyond — recognizing that the light of knowledge has been passed down through an unbroken chain of masters.`
         }
       ]
@@ -72,7 +71,6 @@ export const guruPujaDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Apavitraḥ = impure; pavitro = pure; vā = or
 Sarvāvasthāṁ = in all conditions; gato'pi = even having gone; vā = or
@@ -136,7 +134,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Nārāyaṇaṁ = Narayana (Vishnu); Padmabhavaṁ = lotus-born (Brahma); Vasiṣṭhaṁ = Vasishta
 Śaktiṁ = Shakti; ca = and; tatputra = his son; Parāśaraṁ = Parashara; ca = and
@@ -188,7 +185,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Śrī = sacred; Śaṅkarācāryam = Shankaracharya; atha = and; asya = his
 Padmapādaṁ = Padmapada (lotus-footed); ca = and; Hastāmalakaṁ = Hastamalaka; ca = and; śiṣyam = disciple
@@ -220,7 +216,6 @@ I salute Sri Shankaracharya and his disciples — Padmapada, Hastamalaka, Trotak
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Śruti = Vedas; Smṛti = remembered scriptures; Purāṇānāṁ = of the Puranas
 ālayaṁ = abode; karuṇālayam = abode of compassion
@@ -244,7 +239,6 @@ I bow to Bhagavatpada Shankara, the abode of the Vedas, Smritis, and Puranas, th
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Śaṅkaraṁ = Shankara; Śaṅkarācāryaṁ = Shankaracharya
 Keśavaṁ = Keshava (Vyasa); Bādarāyaṇam = Badarayana (Vyasa's name)
@@ -276,7 +270,6 @@ I salute again and again the two divine ones — Shankaracharya and Vyasa Badara
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Yadvāre = at whose door; nikhilā = entire; nilimpa = celestial beings; pariṣad = assembly
 siddhiṁ = perfection; vidatte = attains; aniśam = perpetually
@@ -300,7 +293,6 @@ At whose doorway the entire assembly of celestial beings perpetually attains per
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Loka = worldly; ajñāna = ignorance; payodha = cloud; pāṭana = dispelling; dhuraṁ = capable of
 Śrī = sacred; Śaṅkaraṁ = Shankara; śarmadam = bestower of bliss
@@ -358,7 +350,6 @@ graph TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Guruḥ = Guru; Brahmā = Brahma (creator); Guruḥ = Guru; Viṣṇuḥ = Vishnu (preserver)
 Guruḥ = Guru; devaḥ = Lord; Maheśvaraḥ = Maheshwara (Shiva, the great lord)
@@ -382,7 +373,6 @@ The Guru is Brahma, the Guru is Vishnu, the Guru is Lord Maheshwara. The Guru is
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Akhaṇḍa = unbroken, whole; maṇḍala = circle; ākāraṁ = form, shape
 vyāptaṁ = pervaded; yena = by whom; cara = moving; acaram = unmoving
@@ -406,7 +396,6 @@ The one whose form pervades the entire unbroken circle of creation — all that 
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Śrī = sacred; Brahmānandaṁ = bliss of Brahman; parama = supreme; sukhadaṁ = bestower of happiness
 kevalaṁ = pure, absolute; jñāna = knowledge; mūrtim = embodiment
@@ -430,7 +419,6 @@ The bliss of Brahman, the bestower of supreme happiness, the embodiment of pure 
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Ekaṁ = one; nityaṁ = eternal; vimalam = pure, stainless; acalaṁ = immovable
 sarvadhi = of all intellects; sākṣi = witness; bhūtam = being
@@ -462,7 +450,6 @@ The One, Eternal, Pure, Immovable, the Witness of all intellects, beyond all sta
               </p>
             </GSAPAnimated>
           ),
-          backgroundColor: '#1a1008',
           notes: `
 Ajñāna = ignorance; timira = darkness; andhasya = of one who is blinded
 jñāna = knowledge; añjana = collyrium (eye medicine); śalākayā = with the stick/applicator
@@ -491,7 +478,6 @@ To the one who opens the eyes blinded by the darkness of ignorance, with the col
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1008',
           notes: `This is the final offering. The entire Guru Pooja is an act of dissolving the ego at the feet of the Guru — recognizing that everything we know, everything we are, everything we can become, flows from that grace.
 
 In the Isha tradition, Guru Pooja is not worship of a person. It is an acknowledgement that the highest possibility within a human being has been demonstrated by someone — and that is worthy of the deepest reverence.`

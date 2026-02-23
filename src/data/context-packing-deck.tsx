@@ -10,13 +10,15 @@ export const contextPackingDeck: Deck = {
   name: '13 Context Packing Techniques',
   description: 'RAG and LLM-ready strategies to maximize answer quality within token limits',
   category: 'RAG',
-  theme: 'black',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: '#ffffff',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80',
+    'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -26,7 +28,6 @@ export const contextPackingDeck: Deck = {
         {
           id: 1,
           center: true,
-          backgroundImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80',
           title: '13 Context Packing Techniques',
           content: (
             <div>
@@ -62,7 +63,6 @@ export const contextPackingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 13 Context Packing Techniques
 [excited] [cheerfully] Welcome everyone! Today we're diving into **13 Context Packing Techniques** — practical strategies to help you get the *best possible answers* from your **RAG** 👉 'rag' (Retrieval-Augmented Generation) pipelines.
 #### Why does this matter?
@@ -140,7 +140,6 @@ export const contextPackingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Overview / Table of Contents
 [confidently] Here's our roadmap for the session. We've organized the 13 techniques into **four categories**:
 #### 🔴 Chunking & Windowing
@@ -240,7 +239,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b351d',
           notes: `### 1) Semantic Chunking
 [confidently] Let's start with **Semantic Chunking** — the *foundation* of good context packing.
 #### 🎯 Goal
@@ -284,7 +282,6 @@ Let's look at how to implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b351d',
           notes: `### Implementation Steps — Semantic Chunking
 [lecture] Here's how you'd actually *build* semantic chunking:
 #### Step 1: Parse document structure
@@ -331,7 +328,6 @@ Now let's weigh the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b351d',
           notes: `### Pros & Cons — Semantic Chunking
 #### ✅ Pros
 [pleased] - **Higher precision**: Each chunk contains a *complete* thought, so retrieval is more accurate
@@ -426,7 +422,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#6b521d',
           notes: `### 2) Dynamic Sliding Window
 [enthusiastically] Now let's tackle **Dynamic Sliding Window** — solving the problem of *lost context at boundaries*.
 #### 🎯 Goal
@@ -470,7 +465,6 @@ Let's see how to implement it...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b521d',
           notes: `### Implementation Steps — Dynamic Sliding Window
 [lecture] #### Step 1: Choose window size and stride
 Decide how many neighbor chunks to include (e.g., ±1 or ±2). The *stride* is how much chunks overlap during indexing.
@@ -513,7 +507,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b521d',
           notes: `### Pros & Cons — Dynamic Sliding Window
 #### ✅ Pros
 [pleased] - **Better coreference and flow**: Pronouns and references resolve correctly when surrounding context is included
@@ -605,7 +598,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#556b1d',
           notes: `### 3) Parent–Child Context Packing
 [enthusiastically] Let's explore **Parent–Child Context Packing** — adding *hierarchical context* to disambiguate details.
 #### 🎯 Goal
@@ -649,7 +641,6 @@ Let's see the implementation...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#556b1d',
           notes: `### Implementation Steps — Parent–Child Context Packing
 [lecture] #### Step 1: Build TOC tree (doc → section → paragraph)
 Parse your documents into a hierarchy — document, sections, subsections, paragraphs.
@@ -694,7 +685,6 @@ Let's discuss the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#556b1d',
           notes: `### Pros & Cons — Parent–Child Context Packing
 #### ✅ Pros
 [pleased] - **Reduces hallucinations**: The LLM has broader context, so it's less likely to make up information
@@ -787,7 +777,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### 4) Context Summarization Before Packing
 [confidently] Now we're entering **summarization territory**. [lecture] **Context Summarization Before Packing** is about fitting *long content* into *tight budgets*.
 #### 🎯 Goal
@@ -830,7 +819,6 @@ Let's implement it...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Implementation Steps — Context Summarization
 [lecture] #### Step 1: Select long candidates
 Identify chunks exceeding a length threshold (e.g., >500 tokens).
@@ -875,7 +863,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Pros & Cons — Context Summarization
 #### ✅ Pros
 [pleased] - **Higher density**: More information per token — you fit more evidence into the same budget
@@ -970,7 +957,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b4d',
           notes: `### 5) Hybrid Local + Global Summaries
 [enthusiastically] **Hybrid Local + Global Summaries** gives you the best of both worlds — *big picture* context AND *specific details*.
 #### 🎯 Goal
@@ -1014,7 +1000,6 @@ Let's implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b4d',
           notes: `### Implementation Steps — Hybrid Local + Global
 [lecture] #### Step 1: Compute document-level global summary
 Generate a concise summary of the entire document (or corpus section). This captures themes, key topics, and scope.
@@ -1058,7 +1043,6 @@ Let's discuss the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b4d',
           notes: `### Pros & Cons — Hybrid Local + Global
 #### ✅ Pros
 [pleased] - **Balanced coverage and precision**: The global summary provides context, local snippets provide evidence
@@ -1155,7 +1139,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1d5d6b',
           notes: `### 6) Relevance Weighted Packing
 [confidently] **Relevance Weighted Packing** is about *prioritization* — making sure the *best* chunks get packed first.
 #### 🎯 Goal
@@ -1198,7 +1181,6 @@ Let's implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d5d6b',
           notes: `### Implementation Steps — Relevance Weighted Packing
 [lecture] #### Step 1: Score by similarity + recency + source quality
 Combine multiple signals: vector similarity score, document freshness, and source authority/quality rating.
@@ -1243,7 +1225,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d5d6b',
           notes: `### Pros & Cons — Relevance Weighted Packing
 #### ✅ Pros
 [pleased] - **Better hit rate**: More of your context window contains *useful* information
@@ -1341,7 +1322,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1d366b',
           notes: `### 7) Passage Compression (LLM Shortening)
 **Passage Compression** �� also called *LLM Shortening* — is about using an LLM to *shrink* verbose passages while keeping the facts.
 #### 🎯 Goal
@@ -1384,7 +1364,6 @@ Let's see how to build this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d366b',
           notes: `### Implementation Steps — Passage Compression
 [lecture] #### Step 1: Define compression prompt/constraints
 Create a prompt template: "Compress the following passage into concise bullets. Preserve all dates, numbers, entity names, and causal relationships."
@@ -1429,7 +1408,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d366b',
           notes: `### Pros & Cons — Passage Compression
 #### ✅ Pros
 [pleased] - **Fit more evidence**: Dramatically increase the amount of evidence in your context window
@@ -1525,7 +1503,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1d206b',
           notes: `### 8) Answer-conditioned Retrieval / Packing
 [confidently] **Answer-conditioned Retrieval** flips the script — instead of just matching the *question*, we consider the *type of answer* we need.
 #### 🎯 Goal
@@ -1568,7 +1545,6 @@ Let's implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d206b',
           notes: `### Implementation Steps — Answer-conditioned Retrieval
 [lecture] #### Step 1: Classify query → answer type
 Build a classifier (rule-based or ML) that predicts: boolean, date, number, code, list, explanation, etc.
@@ -1612,7 +1588,6 @@ Let's see the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d206b',
           notes: `### Pros & Cons — Answer-conditioned Retrieval
 #### ✅ Pros
 [pleased] - **Efficient and accurate**: Only relevant fields are packed — no wasted tokens, higher answer precision
@@ -1709,7 +1684,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#331d6b',
           notes: `### 9) Table / Structured Context Packing
 [confidently] **Table / Structured Context Packing** is about *reformatting* your context for maximum information density.
 #### 🎯 Goal
@@ -1752,7 +1726,6 @@ Let's see how to implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#331d6b',
           notes: `### Implementation Steps — Structured Context Packing
 [lecture] #### Step 1: Extract entities/fields
 Use NER (Named Entity Recognition) or regex to identify key fields like names, dates, quantities, and categories.
@@ -1797,7 +1770,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#331d6b',
           notes: `### Pros & Cons — Structured Context Packing
 #### ✅ Pros
 [pleased] - **High density**: Pack significantly more information per token than prose
@@ -1892,7 +1864,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#691d6b',
           notes: `### 10) Semantic Deduplication
 [confidently] **Semantic Deduplication** 👉 'semantic dee-dup' — is about removing *redundant* chunks that say the same thing.
 #### 🎯 Goal
@@ -1935,7 +1906,6 @@ Let's implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#691d6b',
           notes: `### Implementation Steps — Semantic Deduplication
 [lecture] #### Step 1: Embed chunks; compute similarities
 Generate embeddings for all chunks and compute pairwise cosine similarity scores.
@@ -1980,7 +1950,6 @@ Let's see the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#691d6b',
           notes: `### Pros & Cons — Semantic Deduplication
 #### ✅ Pros
 [pleased] - **Saves tokens**: Eliminate redundant content and fit more *unique* information
@@ -2076,7 +2045,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d3b',
           notes: `### 11) Token-Budget Aware Packing
 [confidently] **Token-Budget Aware Packing** is the *meta-technique* — it guarantees everything fits within your model's context window.
 #### 🎯 Goal
@@ -2120,7 +2088,6 @@ Let's implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d3b',
           notes: `### Implementation Steps — Token-Budget Aware Packing
 [lecture] #### Step 1: Set budget and headroom
 Reserve space for the system prompt, user query, and expected answer length. Your *packing budget* is what's left.
@@ -2165,7 +2132,6 @@ Let's see the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d3b',
           notes: `### Pros & Cons — Token-Budget Aware Packing
 #### ✅ Pros
 [pleased] - **Predictable behavior**: You *know* the context will fit — no runtime surprises
@@ -2260,7 +2226,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 12) Adaptive k Retrieval (Variable Cutoff)
 [enthusiastically] **Adaptive k Retrieval** 👉 'adaptive-K' — dynamically adjusts *how many* chunks you retrieve based on query complexity.
 #### 🎯 Goal
@@ -2303,7 +2268,6 @@ Let's see how to implement this...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Implementation Steps — Adaptive k Retrieval
 [lecture] #### Step 1: Measure entropy/score distribution
 Look at the retrieval score distribution — a steep drop means the query is specific (low k). A flat distribution means the query is broad (high k).
@@ -2348,7 +2312,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Pros & Cons — Adaptive k Retrieval
 #### ✅ Pros
 [pleased] - **Efficient**: Doesn't waste tokens on unnecessary chunks for simple queries
@@ -2443,7 +2406,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1d3d6b',
           notes: `### 13) Chain-of-Context Packing (CoC)
 [enthusiastically] Our final technique — **Chain-of-Context Packing** 👉 'CoC' — is the most *sophisticated*. It *orders* context to match the LLM's reasoning flow.
 #### 🎯 Goal
@@ -2486,7 +2448,6 @@ Let's see the implementation...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d3d6b',
           notes: `### Implementation Steps — Chain-of-Context Packing
 [lecture] #### Step 1: Draft reasoning steps from the query
 Analyze the query to identify the logical steps needed to answer it. E.g., "Is this refund valid?" → check policy, check date, check exceptions.
@@ -2531,7 +2492,6 @@ Let's discuss the final trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d3d6b',
           notes: `### Pros & Cons — Chain-of-Context Packing
 #### ✅ Pros
 [pleased] - **Better chain-of-thought alignment**: The LLM's reasoning follows a clear path, producing more coherent answers
@@ -2602,7 +2562,6 @@ Let's wrap up with our summary and best practices...`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b38',
           notes: `### Summary / Best Practices
 Let's bring it all together. After 13 techniques, here are the **four key takeaways**:
 #### 🔧 Combine techniques
@@ -2652,7 +2611,6 @@ Let's close with practical implementation tips...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b38',
           notes: `### Implementation Tips & Next Steps
 [lecture] Here's your action plan for taking these techniques into production:
 #### 💡 Implementation Tips

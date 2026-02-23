@@ -10,12 +10,14 @@ export const llmCachingDeck: Deck = {
   name: '13 Caching Patterns That Save Cost in LLM Systems',
   description: 'Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers',
   category: 'RAG',
-  theme: 'black',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -48,8 +50,6 @@ export const llmCachingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
-          backgroundImage: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80',
           notes: `### 13 Caching Patterns That Save Cost in LLM Systems
 
 #### Why This Matters
@@ -160,7 +160,6 @@ export const llmCachingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Why Caching Matters in LLM Systems
 [conversational] Now let's dive into why caching is absolutely critical when you're building production LLM systems.
 
@@ -283,7 +282,6 @@ How do you know if your caching strategy is working? [confidently] Four key metr
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b561d',
           notes: `### Pattern 1: Query Embedding Cache
 [confidently] Here's our first caching pattern: **Query Embedding Cache**. [pleased] This is one of the most straightforward yet impactful patterns you can implement in your LLM system.
 
@@ -356,7 +354,6 @@ We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassu
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b561d',
           notes: `### Strengths and Limitations
 [conversational] Let's take a closer look at when Query Embedding Cache works brilliantly and when you need to be cautious.
 
@@ -467,7 +464,6 @@ We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. [reassu
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#516b1d',
           notes: `### Pattern 2: Retrieval Results Cache
 [confidently] Now let's move up one layer in the stack to **Pattern 2: Retrieval Results Cache**. [conversational] While the first pattern cached embeddings, this pattern caches the actual results from your vector search operations.
 
@@ -542,7 +538,6 @@ You also include **k**, which is the number of results requested, and any **filt
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#516b1d',
           notes: `### Strengths and Limitations
 [conversational] Let's examine the Retrieval Results Cache more closely to understand when it delivers exceptional value and where you need to be careful.
 
@@ -658,7 +653,6 @@ You also include **k**, which is the number of results requested, and any **filt
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2d6b1d',
           notes: `### Pattern 3: Prompt Template Cache
 [confidently] Here's our third caching pattern: **Prompt Template Cache**. [conversational] This pattern operates at a different layer than embeddings or retrieval results. We're caching at the prompt assembly and tokenization stage, right before sending text to the LLM.
 
@@ -752,7 +746,6 @@ You also keep templates in **application-level memory for high-access frequency 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2d6b1d',
           notes: `### Strengths and Limitations
 [conversational] Let's dive deeper into the Prompt Template Cache to understand where it delivers real value and where you need to temper your expectations.
 
@@ -882,7 +875,6 @@ You also keep templates in **application-level memory for high-access frequency 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b42',
           notes: `### Pattern 4: RAG Answer Cache
 [cheerfully] Welcome to Pattern 4, the **RAG Answer Cache** 👉 'rag answer cache'. [excited] This is where we cache at the highest level of abstraction: the complete generated answers from your LLM, including all citations and context. [conversational] While the previous patterns cached individual components like embeddings or retrieval results, this pattern caches the final output that your users actually see.
 
@@ -986,7 +978,6 @@ You **eliminate repeated expensive inference calls**, which not only saves money
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b42',
           notes: `### Strengths and Limitations
 [conversational] Let's dive deeper into when RAG Answer Cache delivers exceptional value and when you need to exercise caution.
 
@@ -1128,7 +1119,6 @@ You also need **content classification** to determine appropriate TTLs 👉 'tee
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d616b',
           notes: `### Pattern 5: Chunk-Level Cache
 [lecture] Here's our fifth caching pattern: **Chunk-Level Cache**. This is a foundational pattern that operates at the document ingestion and processing layer, caching pre-processed document fragments before they even enter your retrieval pipeline.
 
@@ -1212,7 +1202,6 @@ Let's examine these trade-offs more closely on the next slide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d616b',
           notes: `### Strengths and Limitations
 [conversational] Let's dive deeper into the Chunk-Level Cache to understand where it delivers exceptional value and where you need to be mindful of the complexities.
 
@@ -1361,7 +1350,6 @@ It's less valuable in **small corpora or highly unique content** where there's m
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5a1d6b',
           notes: `### Pattern 6: Token-Level KV Cache
 [excited] Welcome to Pattern 6, the **Token-Level KV Cache** 👉 'kay-vee cache'. This is one of the most fundamental and powerful caching patterns in modern LLM 👉 'el-el-em' inference. [lecture] Unlike the previous patterns that operated at the application level, caching queries or embeddings or retrieval results, this pattern operates deep inside the model itself, at the transformer layer level.
 
@@ -1451,7 +1439,6 @@ Let's look at the strengths and limitations on the next slide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5a1d6b',
           notes: `### Strengths and Limitations of Token-Level KV Cache
 [conversational] Now let's examine where **Token-Level KV 👉 'kay-vee' Cache** delivers exceptional performance and where you need to manage its challenges carefully.
 
@@ -1588,7 +1575,6 @@ Let's move on to the next pattern, where we'll see another model-level caching t
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#211d6b',
           notes: `### Pattern 7: Logit Cache
 [lecture] Welcome to Pattern 7: **Logit Cache**, also known as **Model Output Logit Cache**. This is a sophisticated model-level caching pattern that stores the probability distributions that come out of your language model before token sampling happens.
 
@@ -1689,7 +1675,6 @@ Let's explore the trade-offs in more detail on the next slide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#211d6b',
           notes: `### Strengths and Limitations
 [conversational] Let's carefully examine the strengths and limitations of **Logit Cache** to understand when this pattern delivers exceptional value and when you need to be cautious.
 
@@ -1840,7 +1825,6 @@ You can also layer logit cache beneath **semantic similarity cache**. The semant
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5a1d6b',
           notes: `### Pattern 8: Template Cache
 [confident] Here's our eighth caching pattern: **Template Cache**. This pattern operates at the output rendering layer, caching fully formatted templates after variable substitution. [conversational] It's particularly valuable when you have templates with limited variable combinations that get rendered repeatedly.
 
@@ -1917,7 +1901,6 @@ Let's look at the strengths and limitations in more detail on the next slide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5a1d6b',
           notes: `### Strengths and Limitations
 [conversational] Let's take a closer look at when Template Cache delivers real value and when you need to be cautious.
 
@@ -2036,7 +2019,6 @@ Fourth, this pattern is **not effective for templates with user-generated or hig
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d54',
           notes: `### Pattern 9: Tool Call Cache
 [pleased] This is our ninth caching pattern: **Tool Call Cache**. This pattern operates at the tool execution layer, caching the results of external function calls and tool invocations. [enthusiastically] When your LLM agents need to call APIs, query databases, or perform calculations, tool call caching can dramatically reduce latency and cost.
 
@@ -2110,7 +2092,6 @@ Let's dive deeper into the trade-offs on the next slide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d54',
           notes: `### Strengths and Limitations
 [conversational] Let's examine the Tool Call Cache pattern more deeply to understand when it delivers exceptional value and where you need to navigate carefully.
 
@@ -2268,7 +2249,6 @@ It's less valuable in **highly personalized, unique tool calls** where every req
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Pattern 10: Session Memory
 [warm] Welcome to Pattern 10, the **Session Memory** pattern. [storytelling] This is where we shift from caching computational artifacts like embeddings or retrieval results to caching the conversational and personalization context that makes your LLM 👉 'el-el-em' application feel continuous and personalized across multiple interactions.
 
@@ -2359,7 +2339,6 @@ You also have **privacy and compliance concerns**. Session data often contains p
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Strengths and Limitations
 [storytelling] Let's dive deeper into when Session Memory is your best friend and when you need to be cautious about its implementation.
 
@@ -2480,7 +2459,6 @@ And fourth, you need **data retention and deletion mechanisms**. You can't keep 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b5c',
           notes: `### Pattern 11: Ranked Results Cache (Post Re-Ranker)
 [confident] Let's examine **Pattern 11: Ranked Results Cache**, which addresses one of the most expensive operations in modern RAG systems: re-ranking.
 
@@ -2568,7 +2546,6 @@ Let's examine the strengths and limitations on the next slide.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b5c',
           notes: `### Strengths and Limitations of Ranked Results Cache
 [conversational] Now let's examine where the **Ranked Results Cache** delivers exceptional value and where you need to manage its challenges carefully.
 
@@ -2710,7 +2687,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#371d6b',
           notes: `### Pattern 12: Summarization Cache
 [confident] Here's Pattern 12, the **Summarization Cache**. [lecture] This pattern operates at a different granularity than we've seen so far. Instead of caching raw text or embeddings, we're caching pre-generated summaries of documents at multiple levels: document-level, section-level, and chunk-level summaries.
 
@@ -2754,7 +2730,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#371d6b',
           notes: `### Strengths and Limitations
 [pleased] The **strengths** of Summarization Cache are compelling. [excited] Summaries can be reused across multiple different queries, dramatically reducing context tokens in RAG systems. [enthusiastically] This speeds up answer generation with pre-processed insights, and reduces costs significantly.
 
@@ -2855,7 +2830,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d5b',
           notes: `### Pattern 13: Final Answer Cache with TTL
 [cheerfully] And here we are at Pattern 13, the **Final Answer Cache with TTL**! [pleased] This is the simplest and most straightforward caching pattern - exact query to final answer mapping.
 
@@ -2903,7 +2877,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d5b',
           notes: `### Strengths and Limitations
 [pleased] The **strengths** of Final Answer Cache are fantastic. [excited] This is the easiest caching pattern to implement! [enthusiastically] You get a huge latency win on frequently asked questions, it's excellent for FAQs and common queries, and it reduces overall token usage significantly.
 
@@ -2979,7 +2952,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b5c',
           notes: `### Key Takeaways
 [warmly] We've covered a lot of ground today! [inspiringly] Let's crystallize the key takeaways from these thirteen caching patterns.
 

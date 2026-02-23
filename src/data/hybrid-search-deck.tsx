@@ -8,12 +8,14 @@ export const hybridSearchDeck: Deck = {
   name: '11 Hybrid Search Patterns (Vector + BM25)',
   description: 'A practical cheat sheet for combining lexical and semantic search to build more powerful retrieval systems',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -67,8 +69,6 @@ export const hybridSearchDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#172e6b',
-          backgroundImage: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80',
           notes: `### 11 Hybrid Search Patterns
 ####  Welcome
 [cheerfully] [warmly] Hello everyone! [excited] Today we're diving into something really exciting – **hybrid search patterns**. [reassuringly] If you're new to search systems, don't worry. We'll break everything down into simple concepts.
@@ -158,7 +158,6 @@ export const hybridSearchDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#172e6b',
           notes: `### Hybrid Search: What and Why
 ####  The Foundation
 [conversational] Let's start with the basics. [storytelling] **Hybrid search** is like having two different detectives working on the same case. One detective looks for exact clues – specific words and phrases. The other detective understands the meaning and context behind things. [confidently] Together, they solve cases neither could solve alone.
@@ -242,7 +241,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5d176b',
           notes: `### Pattern 1 — Weighted Hybrid Scoring
 ####  The Simplest Hybrid Pattern
 [cheerfully] Welcome to our first pattern! [conversational] **Weighted Hybrid Scoring** is like mixing two ingredients in a recipe – you decide how much of each to add. [playfully] Think of it as combining 70% chocolate and 30% vanilla to get your perfect ice cream flavor.
@@ -319,7 +317,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#5d176b',
           notes: `### Strengths and Limitations
 ####  The Good Stuff
 [pleased] Let's talk about what makes **Weighted Hybrid Scoring** awesome. [confidently] First, it's **simple** – you literally just tune one number (alpha) to control the blend. [reassuringly] There's no complex machine learning model to train, no mysterious black box. You can explain it to your team in two minutes.
@@ -389,7 +386,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#176b62',
           notes: `### Pattern 2 — Two-Stage Retrieval (BM25 → Vector Re-Rank)
 
 #### Introduction to Two-Stage Retrieval
@@ -472,7 +468,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#176b62',
           notes: `### Strengths and Limitations of Two-Stage Retrieval
 
 #### Understanding the Trade-offs
@@ -554,7 +549,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#346b17',
           notes: `### Pattern 3 — Reverse Two-Stage (Vector → BM25 Re-Rank)
 
 #### Flipping the Script
@@ -647,7 +641,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#346b17',
           notes: `### Strengths and Limitations of Reverse Two-Stage
 
 #### Understanding the Reverse Pattern
@@ -736,7 +729,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#176b66',
           notes: `### Pattern 4 — Term-Boosted Vector Search
 
 #### Introduction to Term Boosting
@@ -829,7 +821,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#176b66',
           notes: `### Strengths and Limitations of Term-Boosted Vector Search
 
 #### The Power of Controlled Semantic Search
@@ -920,7 +911,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#17266b',
           notes: `### Pattern 5 — Metadata-Filtered Hybrid Search
 
 #### Introduction to Filtered Search
@@ -1015,7 +1005,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#17266b',
           notes: `### Strengths and Limitations of Metadata-Filtered Hybrid Search
 
 #### Security and Performance Together
@@ -1104,7 +1093,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#61176b',
           notes: `### Pattern 6 — Field-Aware Hybrid Scoring (BM25F)
 
 #### Introduction to Field-Aware Scoring
@@ -1200,7 +1188,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#61176b',
           notes: `### Strengths and Limitations of Field-Aware Hybrid Scoring
 
 #### The Power of Structural Understanding
@@ -1287,7 +1274,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b1737',
           notes: `### Pattern 7 — Hybrid Lexical + Semantic Expansion
 
 #### Introduction to Query Expansion
@@ -1393,7 +1379,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b1737',
           notes: `### Strengths and Limitations of Query Expansion
 
 #### The Recall Revolution
@@ -1475,7 +1460,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#6b5017',
           notes: `### Pattern 8 — Cross-Encoder Re-Ranking After Hybrid
 
 #### Introduction to Cross-Encoders
@@ -1570,7 +1554,6 @@ Score: 0.80 (misses negation!)"]
               </div>
             </div>
           ),
-          backgroundColor: '#6b5017',
           notes: `### Strengths and Limitations of Cross-Encoder Re-Ranking
 
 #### The Precision Champion
@@ -1657,7 +1640,6 @@ Score: 0.80 (misses negation!)"]
             </div>
 
           ),
-          backgroundColor: '#406b17',
           notes: `### Pattern 9 — Hybrid with Parent-Child Chunking
 
 #### Introduction to Hierarchical Retrieval
@@ -1762,7 +1744,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#406b17',
           notes: `### Strengths and Limitations of Parent-Child Chunking
 
 #### The Context-Precision Balance
@@ -1847,7 +1828,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#17596b',
           notes: `### Pattern 10 — Approximate + Exact Hybrid (ANN + BM25)
 
 #### Introduction to Scalable Hybrid Search
@@ -1953,7 +1933,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#17596b',
           notes: `### Strengths and Limitations of ANN + BM25 Hybrid
 
 #### Scaling to Billions
@@ -2039,7 +2018,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#32176b',
           notes: `### Pattern 11 — Hybrid with Domain Dictionaries/Ontologies
 
 #### Introduction to Knowledge-Enhanced Search
@@ -2151,7 +2129,6 @@ graph TB
               </div>
             </div>
           ),
-          backgroundColor: '#32176b',
           notes: `### Strengths and Limitations of Domain Dictionary Integration
 
 #### Expert Knowledge at Scale
@@ -2283,7 +2260,6 @@ Ontologies"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#16213e',
           notes: `### Summary and Key Takeaways
 
 #### Wrapping Up Our Journey

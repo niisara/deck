@@ -10,12 +10,14 @@ export const featureExtractionDeck: Deck = {
   name: '13 Feature Extraction Techniques',
   description: 'Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders',
   category: 'NLP',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -57,8 +59,6 @@ export const featureExtractionDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a5247',
-          backgroundImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1920&q=80',
           notes: `### 13 Feature Extraction Techniques
 [cheerfully] Welcome everyone! [excited] Today we're going to walk through **thirteen different feature extraction techniques** that are absolutely essential for working with text in NLP and machine learning.
 
@@ -167,7 +167,6 @@ export const featureExtractionDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a5247',
           notes: `### 13 Techniques — 4 Categories
 [conversational] Alright, let's get a bird's-eye view of what we're covering today. [lecture] These thirteen techniques fall into **four broad categories**, and understanding where each technique fits will help you make better choices in your projects.
 
@@ -255,7 +254,6 @@ export const featureExtractionDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a52',
           notes: `### Bag of Words (BoW) — Cheat Sheet
 [energetic] Let's kick things off with **Bag of Words**, often abbreviated as **BoW** 👉 "bow" (like taking a bow).
 
@@ -341,7 +339,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a52',
           notes: `### BoW: Strengths and Limitations
 [conversational] So we've seen what Bag of Words is — now let's be honest about where it shines and where it struggles.
 
@@ -433,7 +430,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a49',
           notes: `### TF-IDF — Cheat Sheet
 [enthusiastically] Now let's level up from basic word counts to something smarter — **TF-IDF** 👉 "tee-eff eye-dee-eff." It stands for **Term Frequency–Inverse Document Frequency**.
 
@@ -525,7 +521,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#521a49',
           notes: `### TF-IDF: Strengths and Limitations
 [conversational] Now that we understand TF-IDF, let's look at where it excels and where it hits a wall.
 
@@ -625,7 +620,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#52521a',
           notes: `### Word2Vec (CBOW) — Cheat Sheet
 [excited] Okay, now we're entering the world of **word embeddings** — and this is where things get really exciting! [enthusiastically] Let's talk about **Word2Vec** 👉 "word-too-veck", specifically the **CBOW** 👉 "see-bow" variant, which stands for **Continuous Bag of Words**.
 
@@ -706,7 +700,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#52521a',
           notes: `### Word2Vec CBOW: Strengths and Limitations
 [conversational] Let's evaluate CBOW honestly — what makes it a breakthrough, and where does it fall short?
 
@@ -805,7 +798,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a5242',
           notes: `### Word2Vec (Skip-Gram) — Cheat Sheet
 [conversational] Now let's look at the other side of the Word2Vec coin — **Skip-Gram**. [lecture] While CBOW predicts the center word from context, Skip-Gram does the exact **opposite**.
 
@@ -887,7 +879,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a5242',
           notes: `### Word2Vec Skip-Gram: Strengths and Limitations
 [conversational] Let's break down Skip-Gram's pros and cons.
 
@@ -986,7 +977,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a1a',
           notes: `### GloVe — Cheat Sheet
 [conversational] Now let's look at **GloVe** 👉 "glove" — which stands for **Global Vectors for Word Representation**. [lecture] It was created at Stanford and it takes a completely different approach from Word2Vec.
 
@@ -1068,7 +1058,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#521a1a',
           notes: `### GloVe: Strengths and Limitations
 [conversational] Let's evaluate where GloVe shines and where it has gaps.
 
@@ -1169,7 +1158,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a4c',
           notes: `### FastText — Cheat Sheet
 [enthusiastically] Here's a technique that elegantly solves one of the biggest problems we've been complaining about — **out-of-vocabulary words**. [excited] Meet **FastText**, created by Facebook's AI Research team, or **FAIR** 👉 "fair."
 
@@ -1248,7 +1236,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#521a4c',
           notes: `### FastText: Strengths and Limitations
 [conversational] Let's assess FastText's advantages and drawbacks.
 
@@ -1350,7 +1337,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e521a',
           notes: `### Doc2Vec — Cheat Sheet
 [conversational] So far, all our embedding methods have been **word-level** — they give you a vector for each word, and if you need a document vector, you have to average or sum the word vectors. [excited] **Doc2Vec** 👉 "doc-too-veck" changes that by learning vectors for entire documents directly!
 
@@ -1433,7 +1419,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1e521a',
           notes: `### Doc2Vec: Strengths and Limitations
 [conversational] How does Doc2Vec stack up? Let's take an honest look.
 
@@ -1542,7 +1527,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a51',
           notes: `### ELMo — Cheat Sheet
 [enthusiastically] Welcome to the **contextual embeddings** era! [excited] This is where NLP took a massive leap forward. Let's meet **ELMo** 👉 "EL-moh" — which stands for **Embeddings from Language Models**.
 
@@ -1628,7 +1612,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#521a51',
           notes: `### ELMo: Strengths and Limitations
 [conversational] ELMo was a pioneering model — let's see what it got right and where it falls short by today's standards.
 
@@ -1733,7 +1716,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#523e1a',
           notes: `### BERT Embeddings — Cheat Sheet
 [enthusiastically] Here it is — the model that **changed everything** in NLP. [excited] **BERT** 👉 "burt" stands for **Bidirectional Encoder Representations from Transformers**, and it was released by Google in 2018.
 
@@ -1816,7 +1798,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#523e1a',
           notes: `### BERT: Strengths and Limitations
 [conversational] BERT is incredibly powerful, but it's not perfect for everything. Let's break it down.
 
@@ -1925,7 +1906,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a3a',
           notes: `### Sentence-BERT (SBERT) — Cheat Sheet
 [conversational] Remember that problem where BERT's [CLS] token isn't great for sentence similarity? [enthusiastically] **SBERT** 👉 "ess-burt" solves this elegantly. [lecture] SBERT stands for **Sentence-BERT**, and it was created in 2019 by Nils Reimers.
 
@@ -2009,7 +1989,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#521a3a',
           notes: `### SBERT: Strengths and Limitations
 [conversational] SBERT is a huge step forward for practical sentence embeddings. Let's evaluate it.
 
@@ -2108,7 +2087,6 @@ flowchart TB
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a4352',
           notes: `### Universal Sentence Encoder (USE) — Cheat Sheet
 [conversational] Google's **Universal Sentence Encoder** — or **USE** for short — takes a different approach to sentence embeddings. [lecture] Instead of fine-tuning BERT, it was designed from the **ground up** for sentence-level encoding.
 
@@ -2188,7 +2166,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#1a4352',
           notes: `### USE: Strengths and Limitations
 [conversational] Universal Sentence Encoder is a solid, practical choice. Let's weigh its pros and cons.
 
@@ -2285,7 +2262,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#3b521a',
           notes: `### E5 Embeddings — Cheat Sheet
 [conversational] Now we're in the **modern era** of sentence encoders. [excited] **E5** 👉 "ee-five" stands for **EmbEddings from bidirEctional Encoder rEpresentations** — yes, the name is a bit of a stretch to get that E5 acronym! [lecture] It was developed by Microsoft Research.
 
@@ -2373,7 +2349,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#3b521a',
           notes: `### E5: Strengths and Limitations
 [conversational] E5 is one of the top modern embedding models. Let's break down its strengths and weaknesses.
 
@@ -2466,7 +2441,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521a2f',
           notes: `### GTE Embeddings — Cheat Sheet
 [enthusiastically] Last but definitely not least — **GTE** 👉 "jee-tee-ee" stands for **General Text Embeddings**, and it was developed by Alibaba's NLP team. [impressed] It represents the cutting edge of sentence embedding technology.
 
@@ -2554,7 +2528,6 @@ flowchart LR
               </div>
             </div>
           ),
-          backgroundColor: '#521a2f',
           notes: `### GTE: Strengths and Limitations
 [conversational] Let's evaluate GTE — our last individual technique — and see how it measures up.
 

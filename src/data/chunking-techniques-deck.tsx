@@ -9,11 +9,14 @@ export const chunkingTechniquesDeck: Deck = {
   description: 'Practical guidance for high-quality retrieval in RAG and NLP applications',
   category: 'RAG',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -64,8 +67,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2C3E50',
-          backgroundImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
           notes: `### 26 Chunking Techniques & Cheat Sheet
 [cheerfully] Welcome to this comprehensive guide on chunking techniques! [excited] Today we're diving into one of the most critical yet underappreciated topics in modern AI systems.
 
@@ -171,7 +172,6 @@ export const chunkingTechniquesDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#2C3E50',
           notes: `### What is Chunking and Why It Matters
 [conversational] Now let's define what we mean by chunking and explore why it's absolutely critical for modern AI systems.
 
@@ -331,7 +331,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2C3E50',
           notes: `### Overview of 26 Techniques
 [enthusiastically] Let's get the big picture! [excited] We have **26 chunking techniques** organized into five major categories. [conversational] Think of this as your chunking toolkit where each tool has a specific purpose.
 
@@ -398,7 +397,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Fixed-Size Chunking - Pros
 [excited] Now we dive into our first technique! [conversational] Fixed-size chunking is the bread and butter of document processing, and understanding its strengths sets the foundation for everything else.
 
@@ -446,7 +444,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Fixed-Size Chunking - Cons
 [cautiously] But what about the downsides? [seriously] Every technique has trade-offs, and fixed-size chunking has some significant ones you need to understand.
 
@@ -525,7 +522,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Fixed-Size Chunking - Configuration
 [lecture] Now let's talk about the practical side: how do you actually configure fixed-size chunking? [seriously] These numbers matter more than you might think.
 
@@ -606,7 +602,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#521e7b',
           notes: `### Fixed-Size Chunking - Use Cases & Tools
 [conversational] When should you actually use fixed-size chunking, and what tools make it easy? Let's get practical.
 
@@ -669,7 +664,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Sentence-Level Chunking - Pros
 [excited] Let's level up our chunking game! [conversational] Sentence-level chunking respects the fundamental building blocks of language, and that brings some serious advantages.
 
@@ -725,7 +719,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Sentence-Level Chunking - Cons
 [cautiously] But sentence-level chunking isn't perfect. [seriously] Let's talk about where this approach struggles.
 
@@ -806,7 +799,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Sentence-Level Chunking - Configuration
 [lecture] Let's get into the specifics of configuring sentence-level chunking for optimal results.
 
@@ -887,7 +879,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Sentence-Level Chunking - Use Cases & Tools
 [conversational] When does sentence-level chunking shine, and what tools should you reach for? Let's explore the practical applications.
 
@@ -952,7 +943,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6532',
           notes: `### Paragraph-Level Chunking - Pros
 [excited] Now we're getting into chunks with real substance! [conversational] Paragraph-level chunking strikes a sweet balance between granularity and context. Let's explore why it works so well.
 
@@ -1011,7 +1001,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6532',
           notes: `### Paragraph-Level Chunking - Cons
 [cautiously] Paragraph-level chunking has some real limitations you need to be aware of. [seriously] Let's be honest about where this approach falls short.
 
@@ -1094,7 +1083,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c6532',
           notes: `### Paragraph-Level Chunking - Configuration
 [lecture] Let's configure paragraph-level chunking for optimal results. [conversational] The settings here are more flexible than you might expect because paragraphs themselves are variable.
 
@@ -1177,7 +1165,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c6532',
           notes: `### Paragraph-Level Chunking - Use Cases & Tools
 [conversational] Where does paragraph-level chunking excel in real-world applications, and how do you implement it? Let's get practical.
 
@@ -1245,7 +1232,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c3765',
           notes: `### Recursive Character Text Splitting - Pros
 [excited] Now we're getting clever! [conversational] Recursive character text splitting is like fixed-size chunking with a brain. Let me explain why it's so popular.
 
@@ -1301,7 +1287,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c3765',
           notes: `### Recursive Character Text Splitting - Cons
 [cautiously] Even with its cleverness, recursive character splitting has limitations. [seriously] Let's be clear about what it *can't* do.
 
@@ -1391,7 +1376,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c3765',
           notes: `### Recursive Character Text Splitting - Configuration
 [lecture] Let's configure recursive character splitting for optimal performance. [conversational] The settings here are flexible but important.
 
@@ -1472,7 +1456,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c3765',
           notes: `### Recursive Character Text Splitting - Use Cases & Tools
 [conversational] When should you reach for recursive character splitting, and what makes it so popular in production systems? Let's explore.
 
@@ -1540,7 +1523,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6521',
           notes: `### Structure-Aware Chunking - Pros
 [excited] Now we're stepping up to truly intelligent chunking! [conversational] Structure-aware chunking understands that documents have hierarchy, and that changes everything.
 
@@ -1597,7 +1579,6 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6521',
           notes: `### Structure-Aware Chunking - Cons
 [cautiously] Every technique has trade-offs, and structure-aware chunking is no exception. [seriously] Let's explore where this approach can run into trouble.
 
@@ -1665,7 +1646,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6521',
           notes: `### Structure-Aware Chunking - Configuration
 [conversational] Now let's get practical and talk numbers. How do you actually configure structure-aware chunking for real-world use?
 
@@ -1736,7 +1716,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c6521',
           notes: `### Structure-Aware Chunking - Use Cases & Tools
 [conversational] Let's explore where structure-aware chunking really shines and what tools can help you implement it effectively.
 
@@ -1798,7 +1777,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c655a',
           notes: `### Content-Aware Chunking - Pros
 [pleased] Welcome to content-aware chunking, a sophisticated approach that understands *what* type of content it's dealing with, not just *where* to split. Let's explore why this technique is so powerful.
 
@@ -1854,7 +1832,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c655a',
           notes: `### Content-Aware Chunking - Cons
 [cautiously] While content-aware chunking is intelligent, that intelligence comes with practical challenges. Let's be honest about where this technique struggles.
 
@@ -1924,7 +1901,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c655a',
           notes: `### Content-Aware Chunking - Configuration
 [conversational] Let's talk numbers and practical settings. How do you configure content-aware chunking for production use?
 
@@ -1993,7 +1969,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c655a',
           notes: `### Content-Aware Chunking - Use Cases & Tools
 [conversational] Now let's see where content-aware chunking really earns its keep, and what tools can help you implement it without building everything from scratch.
 
@@ -2054,7 +2029,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c1c65',
           notes: `### Semantic Chunking (Embedding-Based) - Pros
 [excited] Now we're entering advanced territory! Semantic chunking uses embeddings to understand meaning, not just structure. This is where AI meets chunking strategy.
 
@@ -2108,7 +2082,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c1c65',
           notes: `### Semantic Chunking (Embedding-Based) - Cons
 [cautiously] With great power comes great complexity. Let's talk about the real challenges you'll face with semantic chunking.
 
@@ -2179,7 +2152,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c1c65',
           notes: `### Semantic Chunking (Embedding-Based) - Configuration
 [conversational] Let's get practical about configuring semantic chunking for production systems. The numbers matter here!
 
@@ -2246,7 +2218,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c1c65',
           notes: `### Semantic Chunking (Embedding-Based) - Use Cases & Tools
 [conversational] When should you invest in semantic chunking, and what tools make it easier? Let's explore the sweet spots and practical implementation paths.
 
@@ -2303,7 +2274,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c5d',
           notes: `### TextTiling - Pros
 [pleased] TextTiling is a classic algorithm from computational linguistics that's stood the test of time. Let's explore why this technique remains relevant decades after its invention.
 
@@ -2357,7 +2327,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c5d',
           notes: `### TextTiling - Cons
 [cautiously] TextTiling is powerful but finicky. Let's be realistic about where this classic algorithm shows its age and limitations.
 
@@ -2427,7 +2396,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c5d',
           notes: `### TextTiling - Configuration
 [conversational] Let's talk about the practical settings for TextTiling. This algorithm is unique because it's *driven by content*, not by arbitrary size limits.
 
@@ -2492,7 +2460,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c5d',
           notes: `### TextTiling - Use Cases & Tools
 [conversational] Where does TextTiling shine, and how can you actually implement it? Let's explore the practical landscape.
 
@@ -2553,7 +2520,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c653f',
           notes: `### Discourse / RST Chunking - Pros
 [excited] Now we're entering the cutting edge of linguistic analysis! Discourse and RST (Rhetorical Structure Theory) chunking represents the most sophisticated understanding of how text is organized. Let's explore why this is so powerful.
 
@@ -2607,7 +2573,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c653f',
           notes: `### Discourse / RST Chunking - Cons
 [cautiously] The sophistication of RST chunking comes with serious practical challenges. This is not an approach for the faint of heart or tight deadlines!
 
@@ -2683,7 +2648,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c653f',
           notes: `### Discourse / RST Chunking - Configuration
 [conversational] How do you actually configure RST chunking? The settings here reflect its unique linguistic foundation.
 
@@ -2750,7 +2714,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c653f',
           notes: `### Discourse / RST Chunking - Use Cases & Tools
 [conversational] When is the computational and intellectual investment in RST chunking actually worthwhile? Let's identify the high-value scenarios.
 
@@ -2805,7 +2768,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#656a1c',
           notes: `### Token-Aware Chunking - Pros
 [conversational] Let's shift gears to a more practical, engineering-focused approach. Token-aware chunking addresses a real problem: making sure your chunks actually fit in your models' context windows!
 
@@ -2859,7 +2821,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#656a1c',
           notes: `### Token-Aware Chunking - Cons
 [conversational] Now let's talk about the downsides of token-aware chunking, because like everything in engineering, there are trade-offs.
 #### The Splitting Problem
@@ -2924,7 +2885,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#656a1c',
           notes: `### Token-Aware Chunking - Configuration
 [conversational] Let's get practical and talk about the recommended settings for token-aware chunking. These are battle-tested defaults from production systems.
 #### Best Chunk Size
@@ -2988,7 +2948,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#656a1c',
           notes: `### Token-Aware Chunking - Use Cases & Tools
 [conversational] Now let's explore where token-aware chunking really shines and the tools that make it easy to implement.
 #### Use Cases
@@ -3044,7 +3003,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c5265',
           notes: `### Heading / Title Anchor Chunking - Pros
 [pleased] Moving on to technique number 11, heading-based chunking. This is one of my favorite approaches for structured documents because it respects the author's original intent.
 #### Document Navigation Alignment
@@ -3093,7 +3051,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c5265',
           notes: `### Heading / Title Anchor Chunking - Cons
 [cautiously] Of course, heading-based chunking isn't perfect. Let's talk about when it breaks down and what challenges you'll face.
 #### Clean Structure Requirement
@@ -3160,7 +3117,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c5265',
           notes: `### Heading / Title Anchor Chunking - Configuration
 [conversational] Let's dial in the practical settings for heading-based chunking so you can implement this effectively.
 #### Best Chunk Size
@@ -3242,7 +3198,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c5265',
           notes: `### Heading / Title Anchor Chunking - Use Cases & Tools
 [conversational] Now let's explore the ideal scenarios for heading-based chunking and the tooling ecosystem that supports it.
 #### Use Cases
@@ -3303,7 +3258,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#5c1c65',
           notes: `### Markdown / HTML Structure Chunking - Pros
 [pleased] Let's dive into technique 12, which takes the heading-based approach and supercharges it by considering the full structural markup of documents.
 #### Element Preservation
@@ -3352,7 +3306,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#5c1c65',
           notes: `### Markdown / HTML Structure Chunking - Cons
 [cautiously] Now let's be real about the challenges you'll face with structure-based chunking.
 #### Structure Dependency
@@ -3415,7 +3368,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5c1c65',
           notes: `### Markdown / HTML Structure Chunking - Configuration
 [conversational] Let's get into the practical configuration for structure-based chunking to help you implement this effectively.
 #### Best Chunk Size
@@ -3493,7 +3445,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#5c1c65',
           notes: `### Markdown / HTML Structure Chunking - Use Cases & Tools
 [conversational] Let's explore where structure-based chunking excels and the tools that make implementation practical.
 #### Use Cases
@@ -3550,7 +3501,6 @@ For Markdown, parsers like **marked** and **remark** convert Markdown into struc
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#65581c',
           notes: `### Table-Aware Chunking - Pros
 [enthusiastically] Moving to technique 13, table-aware chunking. This is a specialized approach that's critical when your documents contain structured data in tables.
 #### Intact Table Extraction
@@ -3599,7 +3549,6 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#65581c',
           notes: `### Table-Aware Chunking - Cons
 [cautiously] Now let's discuss the practical challenges of table-aware chunking that you need to consider.
 #### Format Variability
@@ -3663,7 +3612,6 @@ The approach **maintains the integrity of rows and columns**. Headers stay with 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#65581c',
           notes: `### Table-Aware Chunking - Configuration
 [lecture] Let's configure table-aware chunking for optimal results in production systems.
 #### Best Chunk Size
@@ -3744,7 +3692,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#65581c',
           notes: `### Table-Aware Chunking - Use Cases & Tools
 [conversational] Let's explore the ideal scenarios for table-aware chunking and the practical tools that make it feasible.
 #### Use Cases
@@ -3805,7 +3752,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c4b65',
           notes: `### Code-Aware Chunking - Pros
 [enthusiastically] Technique 14 is code-aware chunking, designed specifically for source code repositories and technical documentation containing code examples.
 #### Semantic Structure Preservation
@@ -3854,7 +3800,6 @@ Functions often depend on nearby code: imports at the top of the file, type defi
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c4b65',
           notes: `### Code-Aware Chunking - Cons
 [cautiously] Let's discuss the challenges and limitations of code-aware chunking that you'll need to navigate.
 #### Language-Specific Requirements
@@ -3920,7 +3865,6 @@ Functions often depend on nearby code: imports at the top of the file, type defi
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c4b65',
           notes: `### Code-Aware Chunking - Configuration
 [lecture] Let's configure code-aware chunking to balance completeness with embedding model constraints.
 #### Best Chunk Size
@@ -4004,7 +3948,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c4b65',
           notes: `### Code-Aware Chunking - Use Cases & Tools
 [conversational] Let's explore the scenarios where code-aware chunking is essential and the mature tooling that supports it.
 #### Use Cases
@@ -4063,7 +4006,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4f1c65',
           notes: `### Windowed Sentence Grouping - Pros
 [enthusiastically] Technique 15, windowed sentence grouping, offers an elegant middle ground between simplicity and semantic awareness.
 #### Sentence Coherence with Stride
@@ -4112,7 +4054,6 @@ The sliding window approach provides **better context than fixed-size chunks**. 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4f1c65',
           notes: `### Windowed Sentence Grouping - Cons
 [cautiously] Let's examine the practical challenges that come with windowed sentence grouping.
 #### Storage Redundancy
@@ -4176,7 +4117,6 @@ The sliding window approach provides **better context than fixed-size chunks**. 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4f1c65',
           notes: `### Windowed Sentence Grouping - Configuration
 [lecture] Let's configure windowed sentence grouping for optimal balance between context and efficiency.
 #### Best Chunk Size
@@ -4256,7 +4196,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4f1c65',
           notes: `### Windowed Sentence Grouping - Use Cases & Tools
 [conversational] Let's explore the ideal scenarios for windowed sentence grouping and the practical tools that make implementation straightforward.
 #### Use Cases
@@ -4314,7 +4253,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Adaptive Length Chunking - Pros
 [enthusiastically] Technique 16, adaptive length chunking, represents a more sophisticated approach that dynamically adjusts chunk sizes based on content characteristics.
 #### Dynamic Size Adaptation
@@ -4363,7 +4301,6 @@ This approach **optimizes for both retrieval quality and computational efficienc
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Adaptive Length Chunking - Cons
 [cautiously] Let's examine the practical challenges that make adaptive chunking more demanding to implement and maintain.
 #### Complexity Metric Challenge
@@ -4432,7 +4369,6 @@ This approach **optimizes for both retrieval quality and computational efficienc
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Adaptive Length Chunking - Configuration
 [lecture] Let's configure adaptive chunking with practical parameters that balance quality and complexity.
 #### Dynamic Chunk Sizing
@@ -4516,7 +4452,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c1c',
           notes: `### Adaptive Length Chunking - Use Cases & Tools
 [conversational] Let's explore where adaptive chunking provides the most value and the tools needed to implement it effectively.
 #### Use Cases
@@ -4573,7 +4508,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c60',
           notes: `### Summarization-Based Chunking - Pros
 [enthusiastically] Technique 17, summarization-based chunking, adds an intelligent layer by augmenting chunks with AI-generated summaries.
 #### Summary Augmentation for Recall
@@ -4622,7 +4556,6 @@ For **very long documents**, chunks can feel disconnected from the document's ma
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c60',
           notes: `### Summarization-Based Chunking - Cons
 [cautiously] Let's address the significant challenges and costs associated with summarization-based chunking.
 #### Generation Cost
@@ -4684,7 +4617,6 @@ For **very long documents**, chunks can feel disconnected from the document's ma
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c60',
           notes: `### Summarization-Based Chunking - Configuration
 [lecture] Let's configure summarization-based chunking to balance quality with the inevitable computational costs.
 #### Chunk Size with Summaries
@@ -4763,7 +4695,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#651c60',
           notes: `### Summarization-Based Chunking - Use Cases & Tools
 [conversational] Let's explore the scenarios where summarization-based chunking justifies its costs and the tools that make implementation practical.
 #### Use Cases
@@ -4820,7 +4751,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#2b651c',
           notes: `### Graph-Based Semantic Chunking - Pros
 [enthusiastically] Technique 18, graph-based semantic chunking, represents one of the most sophisticated approaches using graph theory and embeddings.
 #### Topic-Pure Chunks via Community Detection
@@ -4869,7 +4799,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#2b651c',
           notes: `### Graph-Based Semantic Chunking - Cons
 [cautiously] Let's discuss the significant implementation and computational challenges of graph-based chunking.
 #### Implementation Complexity
@@ -4935,7 +4864,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2b651c',
           notes: `### Graph-Based Semantic Chunking - Configuration
 [lecture] Let's configure graph-based chunking with practical parameters based on research and production implementations.
 #### Variable Community Sizes
@@ -5017,7 +4945,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2b651c',
           notes: `### Graph-Based Semantic Chunking - Use Cases & Tools
 [conversational] Let's explore where graph-based chunking provides maximum value and the specialized tools required for implementation.
 #### Use Cases
@@ -5072,7 +4999,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c2965',
           notes: `### Audio / ASR Time-Based Chunking - Pros
 [enthusiastically] Technique 19 shifts to audio and transcription content, using time as the chunking dimension.
 #### Timestamp Synchronization
@@ -5122,7 +5048,6 @@ graph TD
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c2965',
           notes: `### Audio / ASR Time-Based Chunking - Cons
 [cautiously] While time-based chunking aligns naturally with audio content, it introduces challenges around semantic boundaries and quality dependencies.
 #### Semantic Fragmentation
@@ -5189,7 +5114,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c2965',
           notes: `### Audio / ASR Time-Based Chunking - Configuration
 [lecture] Let's examine the practical parameters for implementing time-based audio chunking effectively.
 #### Best Chunk Size
@@ -5252,7 +5176,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1c2965',
           notes: `### Audio / ASR Time-Based Chunking - Use Cases & Tools
 [conversational] Now let's examine where time-based audio chunking excels and the tools that make implementation practical.
 #### Use Cases and Examples
@@ -5309,7 +5232,6 @@ However, it's not Advanced because the concepts are straightforward and excellen
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c34',
           notes: `### Speaker-Turn Chunking - Pros
 [enthusiastically] Technique 20, speaker-turn chunking, organizes audio transcripts by who is speaking, creating chunks that align with conversational structure.
 #### Dialog Structure Preservation
@@ -5360,7 +5282,6 @@ However, it's not Advanced because the concepts are straightforward and excellen
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c34',
           notes: `### Speaker-Turn Chunking - Cons
 [cautiously] Let's examine the practical challenges that come with speaker-turn chunking in real-world audio processing scenarios.
 #### Variable Turn Lengths
@@ -5416,7 +5337,6 @@ graph LR
               </ul>
             </div>
           ),
-          backgroundColor: '#651c34',
           notes: `### Speaker-Turn Chunking - Configuration
 [lecture] Let's explore the optimal configurations for implementing speaker-turn chunking in your audio processing pipeline.
 #### Best Chunk Size
@@ -5472,7 +5392,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Required expertise and implementation difficulty</p>
             </div>
           ),
-          backgroundColor: '#651c34',
           notes: `### Speaker-Turn Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where speaker-turn chunking shines and the tools that make it possible.
 #### Use Cases and Examples
@@ -5528,7 +5447,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#65651c',
           notes: `### QA-Focused Chunking - Pros
 [enthusiastically] Technique 21, QA-focused chunking, is purpose-built for question-answering systems, optimizing chunks specifically for retrieval accuracy in QA scenarios.
 #### Tailored Answer Spans
@@ -5578,7 +5496,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#65651c',
           notes: `### QA-Focused Chunking - Cons
 [cautiously] While QA-focused chunking excels for question-answering, it comes with significant implementation challenges and limitations.
 #### Label Generation Requirements
@@ -5635,7 +5552,6 @@ graph TD
               </ul>
             </div>
           ),
-          backgroundColor: '#65651c',
           notes: `### QA-Focused Chunking - Configuration
 [lecture] Let's explore the configuration parameters that make QA-focused chunking effective for question-answering systems.
 #### Best Chunk Size
@@ -5692,7 +5608,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires QA expertise and significant tuning</p>
             </div>
           ),
-          backgroundColor: '#65651c',
           notes: `### QA-Focused Chunking - Use Cases & Tools
 [enthusiastically] Let's explore the ideal applications for QA-focused chunking and the tools that enable it.
 #### Use Cases and Examples
@@ -5749,7 +5664,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#341c65',
           notes: `### Page-Preservation Chunking - Pros
 [pleased] Technique 22, page-preservation chunking, is beautifully simple and highly practical for PDF documents where page numbers carry meaning.
 #### Simplicity for PDFs
@@ -5799,7 +5713,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#341c65',
           notes: `### Page-Preservation Chunking - Cons
 [cautiously] While page-preservation chunking offers simplicity, it comes with significant semantic and efficiency drawbacks.
 #### Pages Aren't Semantic Units
@@ -5855,7 +5768,6 @@ graph LR
               </ul>
             </div>
           ),
-          backgroundColor: '#341c65',
           notes: `### Page-Preservation Chunking - Configuration
 [lecture] Let's examine the configuration approach for page-preservation chunking and how to handle its inherent variability.
 #### Best Chunk Size
@@ -5912,7 +5824,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Straightforward implementation with minimal tuning</p>
             </div>
           ),
-          backgroundColor: '#341c65',
           notes: `### Page-Preservation Chunking - Use Cases & Tools
 [enthusiastically] Let's explore when page-preservation chunking is the right choice and the tools that make it work.
 #### Use Cases and Examples
@@ -5967,7 +5878,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6528',
           notes: `### Caption + Context Chunking - Pros
 [enthusiastically] Technique 23, caption plus context chunking, bridges the gap between visual and textual content in documents.
 #### Figure and Table Caption Pairing
@@ -6017,7 +5927,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6528',
           notes: `### Caption + Context Chunking - Cons
 [cautiously] While caption plus context chunking excels with visual content, it faces significant technical and practical challenges.
 #### Layout Detection Requirements
@@ -6073,7 +5982,6 @@ graph TD
               </ul>
             </div>
           ),
-          backgroundColor: '#1c6528',
           notes: `### Caption + Context Chunking - Configuration
 [lecture] Let's explore how to configure caption plus context chunking for optimal visual-textual integration.
 #### Best Chunk Size
@@ -6131,7 +6039,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires document structure and layout understanding</p>
             </div>
           ),
-          backgroundColor: '#1c6528',
           notes: `### Caption + Context Chunking - Use Cases & Tools
 [enthusiastically] Let's explore the ideal applications for caption plus context chunking and the tools that enable visual-textual integration.
 #### Use Cases and Examples
@@ -6190,7 +6097,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#521c65',
           notes: `### Metadata-Aware Chunking - Pros
 [enthusiastically] Technique 24, metadata-aware chunking, enhances basic chunking by enriching chunks with contextual metadata that dramatically improves retrieval capabilities.
 #### Metadata Enrichment
@@ -6241,7 +6147,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#521c65',
           notes: `### Metadata-Aware Chunking - Cons
 [cautiously] While metadata enriches chunking significantly, it introduces operational complexity and overhead that must be carefully managed.
 #### Metadata Extraction Effort
@@ -6299,7 +6204,6 @@ graph TD
               </ul>
             </div>
           ),
-          backgroundColor: '#521c65',
           notes: `### Metadata-Aware Chunking - Configuration
 [lecture] Let's examine how to configure metadata-aware chunking as an enhancement layer on top of your base chunking strategy.
 #### Best Chunk Size
@@ -6356,7 +6260,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires schema design and metadata extraction</p>
             </div>
           ),
-          backgroundColor: '#521c65',
           notes: `### Metadata-Aware Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where metadata-aware chunking provides maximum value and the tools that support it.
 #### Use Cases and Examples
@@ -6415,7 +6318,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c2e',
           notes: `### Hybrid Chunking - Pros
 [enthusiastically] Technique 25, hybrid chunking, represents the pinnacle of flexibility by combining multiple chunking strategies to handle diverse content optimally.
 #### Best of Multiple Methods
@@ -6465,7 +6367,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#651c2e',
           notes: `### Hybrid Chunking - Cons
 [cautiously] While hybrid chunking offers maximum flexibility, it introduces significant complexity and operational challenges.
 #### Complexity and Moving Parts
@@ -6528,7 +6429,6 @@ graph TD
               </ul>
             </div>
           ),
-          backgroundColor: '#651c2e',
           notes: `### Hybrid Chunking - Configuration
 [lecture] Configuring hybrid chunking requires understanding how component strategies interact and compose to create effective chunks.
 #### Best Chunk Size
@@ -6589,7 +6489,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Intermediate–Advanced</strong> - Requires expertise in multiple chunking methods and evaluation</p>
             </div>
           ),
-          backgroundColor: '#651c2e',
           notes: `### Hybrid Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where hybrid chunking truly shines and the tools that make it practical to implement.
 #### Use Cases and Examples
@@ -6646,7 +6545,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6265',
           notes: `### Sliding Window Chunking - Pros
 [enthusiastically] Technique 26, sliding window chunking, addresses one of the most critical challenges in text chunking—maintaining context continuity across chunk boundaries.
 #### Continuity and Context Preservation
@@ -6697,7 +6595,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1c6265',
           notes: `### Sliding Window Chunking - Cons
 [cautiously] While sliding window chunking improves context, it creates practical challenges around cost, storage, and result management.
 #### Storage Redundancy
@@ -6754,7 +6651,6 @@ graph LR
               </ul>
             </div>
           ),
-          backgroundColor: '#1c6265',
           notes: `### Sliding Window Chunking - Configuration
 [lecture] Let's examine the configuration parameters that make sliding window chunking effective for context preservation.
 #### Best Chunk Size
@@ -6812,7 +6708,6 @@ graph LR
               <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Straightforward implementation with slightly more complexity than fixed-size</p>
             </div>
           ),
-          backgroundColor: '#1c6265',
           notes: `### Sliding Window Chunking - Use Cases & Tools
 [enthusiastically] Let's explore where sliding window chunking delivers the most value and the tools that implement it effectively.
 #### Use Cases and Examples
@@ -6915,7 +6810,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#104928',
           notes: `### Quick Reference: Default Sizing & Overlap
 [confidently] Let's consolidate the default configurations across all 26 chunking techniques into a practical quick reference.
 #### Default Configuration Table
@@ -6957,7 +6851,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#104928',
           notes: `### Selection Guide: Decision Flow - Part 1
 [confidently] Let's walk through a practical decision framework for choosing the right chunking strategy for your specific needs.
 #### Document Structure Decision
@@ -7005,7 +6898,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#104928',
           notes: `### Selection Guide: Decision Flow - Part 2
 [confidently] Let's continue with specialized content considerations and practical recommendations by document type.
 #### Special Content Types
@@ -7081,7 +6973,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#104928',
           notes: `### Best Practices & Key Takeaways
 [warmly] We've journeyed through 26 chunking techniques, and now let's crystallize the essential insights that will guide your implementation decisions.
 #### Key Takeaways

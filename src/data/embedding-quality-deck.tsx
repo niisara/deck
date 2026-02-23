@@ -8,12 +8,15 @@ export const embeddingQualityDeck: Deck = {
   name: '7 Tricks to Improve Embedding Quality',
   description: 'Practical cheat sheets for preprocessing and chunking',
   category: 'RAG',
-  theme: 'night',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -46,8 +49,6 @@ export const embeddingQualityDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
-          backgroundImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&q=80',
           notes: `### 7 Tricks to Improve Embedding Quality
 [cheerfully] Welcome everyone! [excited] Today we're going to explore seven powerful techniques that will dramatically improve your embedding quality without changing a single line of your model code. [pause] Think about that for a moment. You don't need to retrain anything, you don't need more compute power, and you don't need expensive new models. Just smarter preprocessing.
 
@@ -97,7 +98,6 @@ export const embeddingQualityDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
           notes: `### Overview: The 7 Techniques
 [conversational] Let me give you the roadmap for our journey today. [lecture] We have seven powerful techniques, and each one targets a specific problem you'll encounter when working with text embeddings.
 
@@ -172,7 +172,6 @@ export const embeddingQualityDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Clean and Normalize Text
 [lecture] Let's dive into our first technique: cleaning and normalizing text. [seriously] This is fundamental, and honestly, if you only implement one technique from this presentation, make it this one.
 
@@ -236,7 +235,6 @@ Then **normalize bullets and lists**. Different sources use different bullet cha
               </div>
             </div>
           ),
-          backgroundColor: '#0f3460',
           notes: `### Pros and Cons of Text Normalization
 [conversational] Let's be honest about the trade-offs here. Every preprocessing technique has upsides and downsides.
 
@@ -310,7 +308,6 @@ And you eliminate **encoding and scraping artifacts**. No more weird characters 
               </div>
             </div>
           ),
-          backgroundColor: '#1a4d2e',
           notes: `### Remove Boilerplate and Noise
 [enthusiastically] Now let's talk about technique two: removing boilerplate and noise. [pleased] This is where you'll see some of the biggest quality improvements with the least effort.
 
@@ -376,7 +373,6 @@ Then **strip repeated patterns**. If every page in your corpus has "Copyright 20
               </div>
             </div>
           ),
-          backgroundColor: '#1a4d2e',
           notes: `### Pros and Cons of Boilerplate Removal
 [conversational] Let's evaluate the trade-offs for removing boilerplate and noise.
 
@@ -449,7 +445,6 @@ You also get a **smaller index size**. If you're removing eighty percent noise f
               </div>
             </div>
           ),
-          backgroundColor: '#4a4e69',
           notes: `### Use Semantic Chunking
 [seriously] Technique three is semantic chunking, and this is absolutely critical if you're building any kind of retrieval system.
 
@@ -514,7 +509,6 @@ Third, **use similarity to refine your chunks**. Within a section, you might hav
               </div>
             </div>
           ),
-          backgroundColor: '#4a4e69',
           notes: `### Pros and Cons of Semantic Chunking
 [conversational] Let's evaluate the benefits and challenges of semantic chunking.
 
@@ -589,7 +583,6 @@ Third, **use similarity to refine your chunks**. Within a section, you might hav
               </div>
             </div>
           ),
-          backgroundColor: '#6a4c93',
           notes: `### Add Section Titles to Chunks
 [conversational] Technique four is adding section titles to chunks, and this is one of the simplest yet most effective improvements you can make.
 
@@ -658,7 +651,6 @@ Second, **build a concise chunk title**. You might not need the full breadcrumb 
               </div>
             </div>
           ),
-          backgroundColor: '#6a4c93',
           notes: `### Pros and Cons of Adding Section Titles
 [conversational] Let's examine the benefits and potential issues with adding section titles to chunks.
 
@@ -736,7 +728,6 @@ Second, **build a concise chunk title**. You might not need the full breadcrumb 
               </div>
             </div>
           ),
-          backgroundColor: '#851736',
           notes: `### Apply Light Stopword Trimming
 [cautiously] Technique five is stopword trimming, and I want to emphasize the word "light" here. [seriously] This technique is powerful but requires a careful touch.
 
@@ -804,7 +795,6 @@ flowchart TB
               </div>
             </div>
           ),
-          backgroundColor: '#851736',
           notes: `### Pros and Cons of Stopword Trimming
 [seriously] Let's evaluate the benefits and risks of stopword trimming, keeping in mind that this technique requires the most careful tuning.
 
@@ -882,7 +872,6 @@ You also get **faster indexing**. Fewer tokens means less processing time when g
               </div>
             </div>
           ),
-          backgroundColor: '#1976d2',
           notes: `### Add Keyphrase and Topic Tags as Metadata
 [enthusiastically] Technique six is adding keyphrase and topic tags as metadata, and this transforms your retrieval system from purely semantic to hybrid semantic-plus-structured.
 
@@ -949,7 +938,6 @@ Third, **attach tags to chunks**. You might extract tags for topics: "authentica
               </div>
             </div>
           ),
-          backgroundColor: '#1976d2',
           notes: `### Pros and Cons of Keyphrase Tags
 [conversational] Let's evaluate the benefits and challenges of adding keyphrase and topic tags to your chunks.
 
@@ -1027,7 +1015,6 @@ The other major challenge is **taxonomy maintenance**. Over time, your vocabular
               </div>
             </div>
           ),
-          backgroundColor: '#558b2f',
           notes: `### Convert Tables to Structured Text
 [enthusiastically] Our final technique is converting tables to structured text, and this is critical for making tabular data searchable and embeddable.
 
@@ -1096,7 +1083,6 @@ Fourth, **include summary statistics when helpful**. For tables with numeric dat
               </div>
             </div>
           ),
-          backgroundColor: '#558b2f',
           notes: `### Pros and Cons of Converting Tables
 [conversational] Let's evaluate the benefits and challenges of converting tables to structured text.
 
@@ -1168,7 +1154,6 @@ There's also **potential loss of layout cues**. Tables have visual structure—c
               </div>
             </div>
           ),
-          backgroundColor: '#1a237e',
           notes: `### Summary and Next Steps
 [energetic] We've covered a lot of ground today. Let's recap the seven techniques and talk about how to measure their impact.
 
@@ -1239,7 +1224,6 @@ There's also **potential loss of layout cues**. Tables have visual structure—c
               </div>
             </div>
           ),
-          backgroundColor: '#1a237e',
           notes: `### Implementation Playbook and Next Steps
 [confidently] Let's talk about the practical path forward. How do you actually implement these techniques, and in what order?
 
@@ -1285,7 +1269,6 @@ There's also **potential loss of layout cues**. Tables have visual structure—c
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a237e',
           notes: `### Final Insight
 [inspiringly] Let me leave you with one crucial insight that I want you to remember.
 

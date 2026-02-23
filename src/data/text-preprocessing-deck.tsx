@@ -9,11 +9,13 @@ export const textPreprocessingDeck: Deck = {
   description: 'From tokenization to language detection with practical cheat sheets',
   category: 'NLP',
   theme: 'moon',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80',
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
+    'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1920&q=80',
+    'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -23,7 +25,6 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 1,
           center: true,
-          backgroundImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80',
           title: '21 Text Preprocessing Techniques',
           content: (
             <div style={{ color: '#fff' }}>
@@ -60,7 +61,6 @@ export const textPreprocessingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#14227b',
           notes: `### 1. 21 Text Preprocessing Techniques
 [cheerfully] Welcome everyone to this comprehensive presentation on text preprocessing techniques. [excited] Today we're going to explore 21 powerful methods that transform messy, raw text into clean, structured data that machine learning models can actually understand and learn from.
 
@@ -161,7 +161,6 @@ export const textPreprocessingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#14227b',
           notes: `### 2. Table of Contents
 [lecture] Here's our roadmap for today. We have 21 techniques neatly organized into six logical categories. [conversational] This structure helps us understand how different techniques work together and when to use each one.
 
@@ -256,7 +255,6 @@ export const textPreprocessingDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#85342c',
           notes: `### 3. Tokenization - The Foundation of Text Processing
 
 [enthusiastically] Welcome to our first technique: tokenization. [lecture] If text preprocessing were a construction project, tokenization would be laying the foundation. Everything else we build depends on this crucial first step.
@@ -347,7 +345,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#85342c',
           notes: `### 4. Tokenization - Pros and Cons
 
 [lecture] Now that we understand what tokenization is, let's talk about its strengths and weaknesses. [conversational] Every preprocessing technique involves tradeoffs, and understanding these helps you make better decisions for your specific project.
@@ -467,7 +464,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#197769',
           notes: `### 5. Lowercasing - Simplifying Text Variance
 
 [lecture] Lowercasing is one of the simplest yet most powerful preprocessing techniques. It's the art of making text consistent by converting everything to lowercase letters. [conversational] Let me explain why this seemingly simple step matters so much.
@@ -561,7 +557,6 @@ graph TD
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#197769',
           notes: `### 6. Lowercasing - Pros and Cons
 
 [lecture] Let's examine the tradeoffs of lowercasing. [conversational] Like all preprocessing decisions, this one comes with clear benefits and potential drawbacks that you need to weigh for your specific use case.
@@ -696,7 +691,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#777719',
           notes: `### 7. Unicode Normalization - Taming Invisible Differences
 
 [lecture] Unicode normalization is one of those behind-the-scenes techniques that prevents mysterious bugs. [confidently] It ensures that characters that look identical are actually treated as identical by computers. Let me explain this deceptively complex topic.
@@ -796,7 +790,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#777719',
           notes: `### 8. Unicode Normalization - Pros and Cons
 
 [lecture] Unicode normalization is a powerful tool, but like all preprocessing techniques, it comes with tradeoffs. Let's examine when it helps and when you need to be careful.
@@ -926,7 +919,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#631710',
           notes: `### 9. Whitespace Normalization - Cleaning Invisible Chaos
 
 [lecture] Whitespace normalization deals with one of the most annoying but common problems in text processing: inconsistent and excessive spacing. [playfully] It's the janitorial work of text preprocessing – not glamorous, but absolutely essential.
@@ -1043,7 +1035,6 @@ graph LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#631710',
           notes: `### 10. Whitespace Normalization - Pros and Cons
 
 [lecture] Whitespace normalization is simple but powerful. Let's examine the benefits and potential pitfalls of this essential cleaning step.
@@ -1193,7 +1184,6 @@ Not              an              accident
               </div>
             </div>
           ),
-          backgroundColor: '#226310',
           notes: `### 11. Punctuation Normalization - Taming the Chaos
 
 [lecture] Punctuation normalization standardizes the wild variety of punctuation marks that appear in real-world text. [conversational] It's about making "curly" quotes, em-dashes, ellipses, and other variants behave consistently.
@@ -1289,7 +1279,6 @@ Let's look at the tradeoffs next.`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#226310',
           notes: `### 12. Punctuation Normalization - Pros and Cons
 
 [lecture] Punctuation normalization is powerful for standardization, but it comes with tradeoffs depending on your use case.
@@ -1422,7 +1411,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#105163',
           notes: `### 13. Stopword Removal
 
 [cheerfully] Welcome to our discussion on stopword removal, one of the most fundamental and widely-used text preprocessing techniques in natural language processing. [lecture] Think of stopwords as the "filler words" of language—words like "the," "is," "at," "which," and "on" that appear constantly but often don't contribute much to the core meaning of a sentence.
@@ -1526,7 +1514,6 @@ graph LR
               </div>
             </div>
           ),
-          backgroundColor: '#105163',
           notes: `### 14. Stopword Removal: Pros and Cons
 
 [lecture] Now let's dive deeper into the tradeoffs of stopword removal. [conversational] Like most preprocessing techniques, it's not universally beneficial—you need to understand when it helps and when it hurts.
@@ -1678,7 +1665,6 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
               </div>
             </div>
           ),
-          backgroundColor: '#631061',
           notes: `### 15. Light Stopword Trimming
 
 [lecture] Light stopword trimming represents a more nuanced, careful approach to stopword removal. [playfully] Think of it as "stopword removal lite"—you get some of the benefits of dimensionality reduction without the harsh downsides of aggressive removal.
@@ -1801,7 +1787,6 @@ Use TF-IDF or document frequency to identify words that appear in almost every d
               </div>
             </div>
           ),
-          backgroundColor: '#631061',
           notes: `### 16. Light Stopword Trimming: Pros and Cons
 
 [lecture] Let's examine the tradeoffs of light stopword trimming and understand when this middle-ground approach is the right choice for your NLP pipeline.
@@ -1983,7 +1968,6 @@ better→good"]
               </div>
             </div>
           ),
-          backgroundColor: '#101063',
           notes: `### 17. Stemming
 
 [lecture] Stemming is one of the oldest and most widely-used text normalization techniques in NLP. [conversational] It's all about reducing words to their root form—or at least an approximation of it—so that different inflections of the same word are treated as equivalent.
@@ -2112,7 +2096,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#101063',
           notes: `### 18. Stemming: Pros and Cons
 
 [lecture] Let's dig into the tradeoffs of stemming. [conversational] Like many preprocessing techniques, stemming is neither universally good nor universally bad—it depends entirely on your task and priorities.
@@ -2313,7 +2296,6 @@ graph TD
               </div>
             </div>
           ),
-          backgroundColor: '#10632c',
           notes: `### 19. Lemmatization
 
 [lecture] Lemmatization is the sophisticated cousin of stemming—it reduces words to their base forms, but unlike stemming, it produces actual dictionary words and respects linguistic structure. [pleased] Let's explore why lemmatization is often worth the extra computational cost.
@@ -2485,7 +2467,6 @@ lemmas = [token.lemma_ for token in doc]
               </div>
             </div>
           ),
-          backgroundColor: '#10632c',
           notes: `### 20. Lemmatization: Pros and Cons
 
 [lecture] Now let's examine the tradeoffs of lemmatization compared to stemming and other normalization approaches. [confidently] Understanding when to pay the computational cost for higher accuracy is crucial for effective NLP pipeline design.
@@ -2701,7 +2682,6 @@ Use neither when:
               </div>
             </div>
           ),
-          backgroundColor: '#631037',
           notes: `### 21. Part-of-Speech Tagging
 
 [lecture] Part-of-speech tagging, commonly abbreviated as POS tagging (pronounced "P-O-S tagging" or sometimes "pause tagging"), is a fundamental NLP task that assigns grammatical categories to words. [conversational] It's like giving each word a label describing its grammatical role in a sentence.
@@ -2905,7 +2885,6 @@ for token in doc:
               </div>
             </div>
           ),
-          backgroundColor: '#631037',
           notes: `### 22. Part-of-Speech Tagging: Pros and Cons
 
 [lecture] POS tagging is a double-edged sword—it enables sophisticated linguistic analysis but also introduces potential failure points. [cautiously] Let's examine both sides carefully.
@@ -3136,7 +3115,6 @@ I_love, love_NLP"]
               </div>
             </div>
           ),
-          backgroundColor: '#636310',
           notes: `### 23. N-gram Generation
 
 [lecture] N-gram generation is a classic technique for capturing local word order and context in text. [pleased] While it might seem simple, n-grams have powered countless successful NLP applications and remain relevant even in the deep learning era.
@@ -3331,7 +3309,6 @@ N-grams are a simple, interpretable, and effective way to capture local context 
               </div>
             </div>
           ),
-          backgroundColor: '#636310',
           notes: `### 24. N-gram Generation: Pros and Cons
 
 [lecture] N-grams have been a cornerstone of NLP for decades, but like all techniques, they come with significant tradeoffs. [confidently] Let's examine both the strengths that made them so successful and the limitations that have led to their decline in some areas.
@@ -3574,7 +3551,6 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
               </div>
             </div>
           ),
-          backgroundColor: '#63105a',
           notes: `### 25. Phrase Detection
 
 [lecture] Phrase detection, also called collocation detection or multiword expression (MWE) identification, is the process of identifying word sequences that function as single semantic units. [conversational] Instead of treating "New York" as two separate words, we recognize it as a single conceptual unit referring to a specific place.
@@ -3805,7 +3781,6 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#63105a',
           notes: `### 26. Phrase Detection - Pros and Cons
 
 #### The Benefits of Phrase Detection
@@ -3902,7 +3877,6 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
               </div>
             </div>
           ),
-          backgroundColor: '#633510',
           notes: `### 27. Spell Correction
 
 #### What Is Spell Correction?
@@ -3956,7 +3930,6 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#633510',
           notes: `### 28. Spell Correction - Pros and Cons
 
 #### The Power of Spell Correction
@@ -4056,7 +4029,6 @@ rn→m, l→I errors"]
               </div>
             </div>
           ),
-          backgroundColor: '#1a6310',
           notes: `### 29. OCR Error Correction
 
 #### Understanding OCR Errors
@@ -4102,7 +4074,6 @@ rn→m, l→I errors"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1a6310',
           notes: `### 30. OCR Error Correction - Pros and Cons
 
 #### Massive Quality Improvements
@@ -4199,7 +4170,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#611063',
           notes: `### 31. Contraction Expansion
 
 #### Why Expand Contractions?
@@ -4252,7 +4222,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#611063',
           notes: `### 32. Contraction Expansion - Pros and Cons
 
 #### The Clear Benefits
@@ -4348,7 +4317,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#631010',
           notes: `### 33. Number Normalization
 
 #### The Challenge of Numeric Diversity
@@ -4404,7 +4372,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#631010',
           notes: `### 34. Number Normalization - Pros and Cons
 
 #### The Power of Standardization
@@ -4501,7 +4468,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#106063',
           notes: `### 35. Special Character Filtering
 
 #### The Wild West of Text Data
@@ -4547,7 +4513,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#106063',
           notes: `### 36. Special Character Filtering - Pros and Cons
 
 #### The Benefits of Clean Text
@@ -4649,7 +4614,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#632e10',
           notes: `### 37. Removing Boilerplate Text
 
 #### The Boilerplate Problem
@@ -4704,7 +4668,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#632e10',
           notes: `### 38. Removing Boilerplate Text - Pros and Cons
 
 #### Dramatic Quality Improvements
@@ -4802,7 +4765,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#104163',
           notes: `### 39. Removing Duplicate Sentences
 
 #### Why Duplicates Are Dangerous
@@ -4850,7 +4812,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#104163',
           notes: `### 40. Removing Duplicate Sentences - Pros and Cons
 
 #### Massive Dataset Benefits
@@ -4941,7 +4902,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#511063',
           notes: `### 41. Sentence Boundary Segmentation
 
 #### The Deceptively Difficult Task
@@ -4997,7 +4957,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#511063',
           notes: `### 42. Sentence Boundary Segmentation - Pros and Cons
 
 #### Unlocking Sentence-Level Processing
@@ -5091,7 +5050,6 @@ Detected Correctly"]
               </div>
             </div>
           ),
-          backgroundColor: '#635f10',
           notes: `### 43. Language Detection and Filtering
 
 #### The Multilingual Reality
@@ -5148,7 +5106,6 @@ Detected Correctly"]
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#635f10',
           notes: `### 44. Language Detection and Filtering - Pros and Cons
 
 #### Building Better Systems

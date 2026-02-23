@@ -10,13 +10,14 @@ export const ragLatencyDeck: Deck = {
   name: '11 Techniques to Reduce RAG Latency',
   description: 'Practical, production-ready optimizations for faster RAG pipelines',
   category: 'RAG',
-  theme: 'black',
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: 'white',
-  },
+  theme: 'moon',
+  kenBurns: true,
+  backgroundImages: [
+    'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80',
+  ],
   slides: [],
   slideGroups: [
     {
@@ -59,8 +60,6 @@ export const ragLatencyDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundImage: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&q=80',
-          backgroundColor: '#1d5a6b',
           notes: `### 11 Techniques to Reduce RAG Latency
 [cheerfully] Welcome everyone! [excited] Today we're going to tackle one of the most critical challenges in production RAG systems — **latency** 👉 'LAY-ten-see'. If you've ever built a RAG pipeline and wondered why it takes so long to return answers, this presentation is for you.
 
@@ -171,7 +170,6 @@ export const ragLatencyDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d5a6b',
           notes: `### Overview — The 11 Techniques at a Glance
 [conversational] Here's your roadmap for today. We've organized the eleven techniques into five categories, each targeting a different part of the RAG pipeline.
 
@@ -226,7 +224,6 @@ flowchart LR
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 3. Use Smaller Embedding Models — Goal
 [energetic] Let's start with our first technique — using **smaller embedding models**. The goal here is straightforward: reduce the time it takes to convert text into numerical vectors, while keeping your retrieval quality acceptable.
 
@@ -279,7 +276,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### Use Smaller Embedding Models — When to Use
 [conversational] So when should you reach for a smaller embedding model? There are four main scenarios where this technique really shines.
 
@@ -336,7 +332,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 5. Use Smaller Embedding Models — How It Works
 Here's the mechanics of how smaller embedding models speed things up. It's actually quite intuitive once you understand what's happening under the hood.
 
@@ -384,7 +379,6 @@ You're trading a small amount of recall quality for big latency gains. In most r
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 6. Use Smaller Embedding Models — Steps
 Let's walk through the practical steps to switch to a smaller embedding model. This is a systematic process that helps you make the transition safely.
 
@@ -439,7 +433,6 @@ Let's walk through the practical steps to switch to a smaller embedding model. T
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 7. Use Smaller Embedding Models — Pros and Cons
 Let's weigh the advantages and disadvantages of using smaller embedding models. This will help you decide if this technique is right for your use case.
 
@@ -482,7 +475,6 @@ The problems: There's a **potential recall drop on nuanced queries** — very su
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d4d',
           notes: `### 8. Reduce Chunk Size — Goal
 [energetic] On to our second technique — reducing chunk size. This one might seem simple, but it's surprisingly impactful. The goal is to make your chunks smaller so that embedding, retrieval, and LLM processing all get faster.
 
@@ -536,7 +528,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d4d',
           notes: `### 9. Reduce Chunk Size — When to Use
 When should you consider reducing your chunk size? Here are the key scenarios where smaller chunks make the biggest difference.
 
@@ -593,7 +584,6 @@ Every token sent to the LLM adds to generation time. Smaller chunks mean fewer t
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d4d',
           notes: `### 10. Reduce Chunk Size — How It Works
 [conversational] Let's understand the mechanics of chunk size reduction and why it speeds things up at every stage of the pipeline.
 
@@ -640,7 +630,6 @@ Use chunk overlap — typically 10 to 20 percent — to ensure you don't cut imp
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d4d',
           notes: `### 11. Reduce Chunk Size — Steps
 Here's a practical guide to reducing your chunk size effectively. Follow these steps to find your optimal configuration.
 
@@ -697,7 +686,6 @@ Time to see the trade-offs of this approach...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d4d',
           notes: `### 12. Reduce Chunk Size — Pros and Cons
 [conversational] Let's evaluate the trade-offs of reducing chunk size. Understanding these helps you make informed decisions for your specific use case.
 
@@ -740,7 +728,6 @@ Time to see the trade-offs of this approach...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#571d6b',
           notes: `### 13. Limit Top-K Retrieval — Goal
 [energetic] Now let's look at technique number three — limiting Top-K retrieval. This is one of the simplest yet most effective optimizations you can make to your RAG pipeline.
 
@@ -794,7 +781,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#571d6b',
           notes: `### 14. Limit Top-K Retrieval — When to Use
 When should you limit your Top-K? Here are the scenarios where cutting down retrieval results makes the biggest impact.
 
@@ -852,7 +838,6 @@ Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tok
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#571d6b',
           notes: `### 15. Limit Top-K Retrieval — How It Works
 [conversational] Let's understand why reducing Top-K has such a dramatic effect on latency. It's not just about the retrieval step — it cascades through the entire pipeline.
 
@@ -900,7 +885,6 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#571d6b',
           notes: `### 16. Limit Top-K Retrieval — Steps
 [conversational] Here's how to systematically optimize your Top-K setting. It's a simple process, but doing it methodically ensures you don't sacrifice quality.
 
@@ -957,7 +941,6 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
               </div>
             </div>
           ),
-          backgroundColor: '#571d6b',
           notes: `### 17. Limit Top-K Retrieval — Pros and Cons
 [conversational] Let's weigh the benefits and risks of limiting Top-K retrieval. Spoiler alert: this technique has an excellent benefit-to-risk ratio.
 
@@ -1000,7 +983,6 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#281d6b',
           notes: `### 18. Use Approximate Nearest Neighbor Indexes — Goal
 [energetic] Technique number four takes us deeper into the retrieval layer — using **Approximate Nearest Neighbor** indexes, or ANN 👉 'ann' indexes for short. This is where things get really interesting from a computer science perspective.
 
@@ -1054,7 +1036,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#281d6b',
           notes: `### 19. Use ANN Indexes — When to Use
 When should you invest in setting up ANN indexes? Here are the scenarios where they make the biggest difference.
 
@@ -1111,7 +1092,6 @@ Most production vector databases like Pinecone 👉 'pine-cone', Weaviate 👉 '
               <p>Both methods trade exact results for approximate ones that are "good enough" for most cases, drastically improving search speed.</p>
             </div>
           ),
-          backgroundColor: '#281d6b',
           notes: `### 20. Use ANN Indexes — How It Works
 [conversational] Let's understand how ANN indexes achieve such dramatic speedups. There are two main approaches you'll encounter in production.
 
@@ -1159,7 +1139,6 @@ You might miss the absolute best match occasionally, but you'll almost always fi
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#281d6b',
           notes: `### 21. Use ANN Indexes — Steps
 [conversational] Here's how to set up ANN indexes in your vector database. The good news is most modern vector databases handle the heavy lifting for you.
 
@@ -1216,7 +1195,6 @@ You might miss the absolute best match occasionally, but you'll almost always fi
               </div>
             </div>
           ),
-          backgroundColor: '#281d6b',
           notes: `### 22. Use ANN Indexes — Pros and Cons
 [conversational] Let's evaluate when ANN indexes are worth the setup effort and when you might want to stick with exact search.
 
@@ -1259,7 +1237,6 @@ You might miss the absolute best match occasionally, but you'll almost always fi
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d416b',
           notes: `### 23. Cache Query Embeddings — Goal
 [energetic] Welcome to the caching section! Technique five is about caching query embeddings. This is one of the most underutilized optimizations in RAG pipelines, and it can eliminate a significant portion of your latency.
 
@@ -1312,7 +1289,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d416b',
           notes: `### 24. Cache Query Embeddings — When to Use
 When should you implement query embedding caching? Here are the key indicators that this technique will give you big wins.
 
@@ -1372,7 +1348,6 @@ If you're using a paid embedding API like OpenAI's, each embedding call costs mo
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d416b',
           notes: `### 25. Cache Query Embeddings — How It Works
 Let's dive into the mechanics of embedding caching. It's a classic cache pattern adapted for vector operations.
 
@@ -1422,7 +1397,6 @@ Here's how to implement it step by step...`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d416b',
           notes: `### 26. Cache Query Embeddings — Steps
 [conversational] Let's walk through the implementation process for query embedding caching. This is one of the easiest optimizations to set up.
 
@@ -1479,7 +1453,6 @@ Here's how to implement it step by step...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d416b',
           notes: `### 27. Cache Query Embeddings — Pros and Cons
 [conversational] Let's look at the advantages and disadvantages of caching query embeddings.
 
@@ -1522,7 +1495,6 @@ Here's how to implement it step by step...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b63',
           notes: `### 28. Cache Retrieval Results — Goal
 [energetic] Technique six takes caching one step further — instead of just caching the query embedding, we cache the **entire retrieval result**. This can eliminate both the embedding AND the vector search step in one shot.
 
@@ -1575,7 +1547,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b63',
           notes: `### 29. Cache Retrieval Results — When to Use
 When should you cache retrieval results? This technique is most powerful in specific scenarios.
 
@@ -1635,7 +1606,6 @@ Some vector databases charge per query or have limited throughput. Caching reduc
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b63',
           notes: `### 30. Cache Retrieval Results — How It Works
 [conversational] Let's see how retrieval result caching works and how it differs from embedding caching.
 
@@ -1687,7 +1657,6 @@ Here are the practical implementation steps...`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b63',
           notes: `### 31. Cache Retrieval Results — Steps
 [conversational] Here's how to implement retrieval result caching in your RAG pipeline. It builds on the same infrastructure as embedding caching.
 
@@ -1745,7 +1714,6 @@ Here are the practical implementation steps...`
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b63',
           notes: `### 32. Cache Retrieval Results — Pros and Cons
 [conversational] Let's weigh the benefits and challenges of caching retrieval results.
 
@@ -1788,7 +1756,6 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b29',
           notes: `### 33. Re-Ranking — Goal
 [energetic] Now we're entering the **reranking and compression** section with technique seven — optimizing your re-ranker. Wait, you might ask, didn't we say we want to reduce latency? Isn't adding a reranker ADDING a step? Great question! The trick is to re-rank only a few results, not all of them.
 
@@ -1841,7 +1808,6 @@ flowchart LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b29',
           notes: `### 34. Re-Ranking — When to Use
 When should you add a lightweight reranker to your pipeline? Here are the key scenarios.
 
@@ -1900,7 +1866,6 @@ In systems where you first do a broad retrieval and then narrow down, reranking 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b29',
           notes: `### 35. Re-Ranking — How It Works
 [conversational] Let's understand the mechanics of efficient re-ranking and why it improves both quality and speed.
 
@@ -1949,7 +1914,6 @@ Even though reranking adds a step, the improved result quality means less noise 
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b29',
           notes: `### 36. Re-Ranking — Steps
 [conversational] Here's how to add efficient reranking to your RAG pipeline without hurting latency.
 
@@ -2007,7 +1971,6 @@ Even though reranking adds a step, the improved result quality means less noise 
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b29',
           notes: `### 37. Re-Ranking — Pros and Cons
 [conversational] Let's evaluate the advantages and disadvantages of adding a lightweight reranker.
 
@@ -2050,7 +2013,6 @@ Even though reranking adds a step, the improved result quality means less noise 
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#4a6b1d',
           notes: `### 38. Context Compression — Goal
 [energetic] Technique eight is **context compression** — a powerful way to reduce the amount of text you send to the LLM. This directly speeds up generation and lowers costs.
 
@@ -2106,7 +2068,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4a6b1d',
           notes: `### 39. Context Compression — When to Use
 When should you add context compression to your pipeline? Here are the key indicators.
 
@@ -2165,7 +2126,6 @@ Let's dive into how context compression actually works...`
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4a6b1d',
           notes: `### 40. Context Compression — How It Works
 Let's explore the two main approaches to context compression and how they reduce your token count.
 
@@ -2217,7 +2177,6 @@ Aim for a 50-70% compression ratio. Going too aggressive — say 90% — risks l
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#4a6b1d',
           notes: `### 41. Context Compression — Steps
 [conversational] Here's how to implement context compression in your RAG pipeline.
 
@@ -2275,7 +2234,6 @@ Aim for a 50-70% compression ratio. Going too aggressive — say 90% — risks l
               </div>
             </div>
           ),
-          backgroundColor: '#4a6b1d',
           notes: `### 42. Context Compression — Pros and Cons
 [conversational] Let's evaluate when context compression is worth adding to your pipeline.
 
@@ -2318,7 +2276,6 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b641d',
           notes: `### 43. Parallelize Retrieval — Goal
 [energetic] We've reached the **orchestration** section with technique nine — parallelizing retrieval. This is about making your pipeline smarter by running multiple steps at the same time instead of one after another.
 
@@ -2375,7 +2332,6 @@ flowchart TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b641d',
           notes: `### 44. Parallelize Retrieval — When to Use
 When should you invest in parallelizing your retrieval pipeline? Here are the key scenarios.
 
@@ -2437,7 +2393,6 @@ Pipelines with independent preprocessing steps — like query expansion, spell c
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b641d',
           notes: `### 45. Parallelize Retrieval — How It Works
 [conversational] Let's see how parallel retrieval architectures work and where the biggest gains come from.
 
@@ -2489,7 +2444,6 @@ After parallel searches complete, you need to merge and deduplicate results. Com
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b641d',
           notes: `### 46. Parallelize Retrieval — Steps
 [conversational] Here's how to implement parallel retrieval in your RAG pipeline.
 
@@ -2547,7 +2501,6 @@ Let's look at the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b641d',
           notes: `### 47. Parallelize Retrieval — Pros and Cons
 [conversational] Let's evaluate the benefits and challenges of parallel retrieval.
 
@@ -2590,7 +2543,6 @@ Let's look at the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b471d',
           notes: `### 48. Streaming — Goal
 [energetic] Technique ten shifts our focus from actual latency to **perceived latency** — and that's streaming. This doesn't make your pipeline objectively faster, but it makes it *feel* dramatically faster to users.
 
@@ -2645,7 +2597,6 @@ graph LR
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b471d',
           notes: `### 49. Streaming — When to Use
 [cautiously] When should you implement streaming in your RAG system? The short answer: almost always. But here are the scenarios where it's especially impactful.
 
@@ -2705,7 +2656,6 @@ Voice assistants, live customer support, and interactive tutoring systems all be
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b471d',
           notes: `### 50. Streaming — How It Works
 [conversational] Let's understand the technical mechanics of LLM streaming and how to implement it.
 
@@ -2755,7 +2705,6 @@ Time-to-first-token can be further optimized by reducing pre-LLM processing time
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b471d',
           notes: `### 51. Streaming — Steps
 [conversational] Here's how to implement streaming in your RAG application.
 
@@ -2813,7 +2762,6 @@ Let's examine the trade-offs...`
               </div>
             </div>
           ),
-          backgroundColor: '#6b471d',
           notes: `### 52. Streaming — Pros and Cons
 [conversational] Let's weigh the advantages and challenges of implementing streaming.
 
@@ -2856,7 +2804,6 @@ Let's examine the trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 53. Smaller LLM — Goal
 [energetic] Our final technique is perhaps the most impactful — using a **smaller or distilled LLM** for generation. The LLM step is typically the biggest source of latency in any RAG pipeline, so optimizing it can yield dramatic improvements.
 
@@ -2917,7 +2864,6 @@ graph TB
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 54. Smaller LLM — When to Use
 When can you safely switch to a smaller LLM without hurting quality? Here are the key scenarios.
 
@@ -2978,7 +2924,6 @@ A smaller model fine-tuned on your domain data can outperform a generic large mo
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 55. Smaller LLM — How It Works
 [conversational] Let's understand the options for using smaller LLMs and the techniques that make them work well in RAG systems.
 
@@ -3025,7 +2970,6 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 56. Smaller LLM — Steps
 [conversational] Here's how to safely transition from a large LLM to a smaller one in your RAG system.
 
@@ -3083,7 +3027,6 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
               </div>
             </div>
           ),
-          backgroundColor: '#6b1d1d',
           notes: `### 57. Smaller LLM — Pros and Cons
 [conversational] Let's evaluate the final technique in our toolkit — switching to a smaller LLM.
 
@@ -3132,7 +3075,6 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
               </GSAPStaggerList>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Key Takeaways
 [warmly] Alright, let's bring it all together with the key takeaways from our eleven techniques. These are the principles you should remember even if you forget the specific details.
 
@@ -3187,7 +3129,6 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
               </div>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Quick Chooser — Which Techniques to Start With?
 [conversational] Here's your practical decision guide for choosing which techniques to implement first. Not every team needs every technique, so let's help you prioritize.
 
@@ -3232,7 +3173,6 @@ Let's now visualize the speed versus recall trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Speed vs Recall Tradeoffs
 [lecture] This slide helps you understand the fundamental tension in RAG optimization — **speed versus recall**. Every optimization exists somewhere on this spectrum.
 
@@ -3293,7 +3233,6 @@ Let's now visualize the speed versus recall trade-offs...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Quality vs Cost Tradeoffs
 [conversational] Now let\'s look at the other critical dimension — **quality versus cost**. In production, every optimization has a dollar value.
 
@@ -3352,7 +3291,6 @@ Let's wrap up with your optimization roadmap...`
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d6b1f',
           notes: `### Next Steps — Your RAG Optimization Roadmap
 [warmly] And here we are at the finish line! Let's put together your personal RAG optimization roadmap so you can take action immediately.
 
