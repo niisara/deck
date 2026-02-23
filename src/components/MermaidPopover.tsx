@@ -12,21 +12,43 @@ const MIN_ZOOM = 0.1;
 const MAX_ZOOM = 5;
 const ZOOM_STEP = 0.15;
 
-const zoomButtonStyle: React.CSSProperties = {
-  width: '36px',
-  height: '36px',
+/* ── Liquid-glass shared styles ── */
+const glassBar: React.CSSProperties = {
+  background: 'rgba(255, 255, 255, 0.08)',
+  backdropFilter: 'blur(24px) saturate(1.6)',
+  WebkitBackdropFilter: 'blur(24px) saturate(1.6)',
+  border: '1px solid rgba(255, 255, 255, 0.15)',
+  borderRadius: '16px',
+  boxShadow:
+    '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.04)',
+};
+
+const glassBtn: React.CSSProperties = {
+  width: '38px',
+  height: '38px',
   padding: 0,
-  backgroundColor: '#444',
-  color: '#fff',
-  border: '1px solid #666',
-  borderRadius: '6px',
+  background: 'rgba(255, 255, 255, 0.06)',
+  color: 'rgba(255, 255, 255, 0.9)',
+  border: '1px solid rgba(255, 255, 255, 0.12)',
+  borderRadius: '10px',
   cursor: 'pointer',
   fontSize: '18px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  transition: 'background-color 0.15s',
+  transition: 'background 0.2s, border-color 0.2s, transform 0.15s',
   userSelect: 'none',
+  backdropFilter: 'blur(8px)',
+  WebkitBackdropFilter: 'blur(8px)',
+};
+
+const glassBtnWide: React.CSSProperties = {
+  ...glassBtn,
+  width: 'auto',
+  padding: '0 14px',
+  fontSize: '13px',
+  fontWeight: 500,
+  letterSpacing: '0.3px',
 };
 
 export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
@@ -50,8 +72,12 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
     }
   }, [isOpen]);
 
+  // Track whether we should auto-fit after first render
+  const needsAutoFit = useRef(false);
+
   useEffect(() => {
     if (isOpen && diagram) {
+      needsAutoFit.current = true;
       const renderDiagram = async () => {
         try {
           mermaid.initialize({
@@ -146,8 +172,18 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
     const svg = mermaidRef.current.querySelector('svg');
     if (!svg) return;
     const containerRect = containerRef.current.getBoundingClientRect();
-    const svgW = svg.getBoundingClientRect().width / scale;
-    const svgH = svg.getBoundingClientRect().height / scale;
+    // Use intrinsic svg size (at scale=1) via viewBox or attribute dimensions
+    const vb = svg.viewBox?.baseVal;
+    let svgW: number, svgH: number;
+    if (vb && vb.width > 0 && vb.height > 0) {
+      svgW = vb.width;
+      svgH = vb.height;
+    } else {
+      // fallback: measure actual rendered size divided by current scale
+      const bbox = svg.getBoundingClientRect();
+      svgW = bbox.width / scale;
+      svgH = bbox.height / scale;
+    }
     if (svgW === 0 || svgH === 0) return;
     const fitScale = Math.min(
       (containerRect.width - 64) / svgW,
@@ -157,6 +193,18 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
     setScale(clampScale(fitScale));
     setTranslate({ x: 0, y: 0 });
   }, [scale]);
+
+  // Auto-fit diagram after first render
+  useEffect(() => {
+    if (renderedSvg && needsAutoFit.current) {
+      // Wait a frame for the SVG to be painted in the DOM
+      const raf = requestAnimationFrame(() => {
+        fitToScreen();
+        needsAutoFit.current = false;
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [renderedSvg, fitToScreen]);
 
   // Mouse wheel zoom (zooms toward pointer)
   useEffect(() => {
@@ -218,7 +266,7 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+        backgroundColor: 'rgba(0, 0, 0, 0.92)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -227,118 +275,176 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
         margin: 0,
       }}
     >
+      {/* Full-screen diagram viewport */}
+      <div
+        ref={containerRef}
+        onClick={(e) => e.stopPropagation()}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        style={{
+          width: '100vw',
+          height: '100vh',
+          overflow: 'hidden',
+          cursor: isPanning.current ? 'grabbing' : 'grab',
+          position: 'relative',
+          touchAction: 'none',
+        }}
+      >
+        <div
+          ref={mermaidRef}
+          style={{
+            transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
+            transformOrigin: 'center center',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            height: '100%',
+            padding: '32px',
+            boxSizing: 'border-box',
+            transition: isPanning.current ? 'none' : 'transform 0.1s ease-out',
+          }}
+          dangerouslySetInnerHTML={{ __html: renderedSvg }}
+        />
+      </div>
+
+      {/* ── Floating liquid-glass title ── */}
+      {title && (
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            ...glassBar,
+            position: 'absolute',
+            top: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            padding: '10px 28px',
+            pointerEvents: 'none',
+          }}
+        >
+          <span style={{ color: 'rgba(255,255,255,0.92)', fontSize: '1.15em', fontWeight: 600, whiteSpace: 'nowrap' }}>
+            {title}
+          </span>
+        </div>
+      )}
+
+      {/* ── Floating liquid-glass toolbar ── */}
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          backgroundColor: '#1e1e1e',
-          borderRadius: '8px',
-          padding: '32px',
-          width: '95vw',
-          height: '95vh',
-          overflow: 'hidden',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.7)',
-          position: 'relative',
+          ...glassBar,
+          position: 'absolute',
+          bottom: '28px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          padding: '10px 16px',
           display: 'flex',
-          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '8px',
+          userSelect: 'none',
         }}
       >
-        {/* Close button */}
+        {/* Zoom out */}
+        <button
+          onClick={zoomOut}
+          style={glassBtn}
+          title="Zoom out"
+          aria-label="Zoom out"
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
+        >
+          −
+        </button>
+
+        {/* Zoom percentage */}
+        <span style={{
+          color: 'rgba(255,255,255,0.8)',
+          fontSize: '13px',
+          minWidth: '48px',
+          textAlign: 'center',
+          fontVariantNumeric: 'tabular-nums',
+          fontWeight: 500,
+        }}>
+          {zoomPercent}%
+        </span>
+
+        {/* Zoom in */}
+        <button
+          onClick={zoomIn}
+          style={glassBtn}
+          title="Zoom in"
+          aria-label="Zoom in"
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
+        >
+          +
+        </button>
+
+        {/* Divider */}
+        <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.12)', margin: '0 4px' }} />
+
+        {/* Fit */}
+        <button
+          onClick={fitToScreen}
+          style={glassBtnWide}
+          title="Fit diagram to screen"
+          aria-label="Fit to screen"
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
+        >
+          Fit
+        </button>
+
+        {/* Reset */}
+        <button
+          onClick={resetZoom}
+          style={glassBtnWide}
+          title="Reset zoom & pan"
+          aria-label="Reset view"
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
+        >
+          1:1
+        </button>
+
+        {/* Divider */}
+        <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.12)', margin: '0 4px' }} />
+
+        {/* Close */}
         <button
           onClick={handleClose}
           style={{
-            position: 'absolute',
-            top: '16px',
-            right: '16px',
-            width: '40px',
-            height: '40px',
-            padding: 0,
-            backgroundColor: '#ff5252',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '50%',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            fontSize: '24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 10,
+            ...glassBtn,
+            background: 'rgba(255, 82, 82, 0.25)',
+            borderColor: 'rgba(255, 82, 82, 0.4)',
+            fontSize: '20px',
           }}
+          title="Close (Esc)"
           aria-label="Close"
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,82,82,0.45)'; e.currentTarget.style.borderColor = 'rgba(255,82,82,0.6)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,82,82,0.25)'; e.currentTarget.style.borderColor = 'rgba(255,82,82,0.4)'; }}
         >
           ×
         </button>
+      </div>
 
-        {/* Title row */}
-        {title && (
-          <h3 style={{ marginTop: 0, marginBottom: '16px', marginRight: '60px', color: '#fff', fontSize: '1.5em' }}>
-            {title}
-          </h3>
-        )}
-
-        {/* Zoom toolbar */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            marginBottom: '12px',
-            flexShrink: 0,
-            userSelect: 'none',
-          }}
-        >
-          <button onClick={zoomOut} style={zoomButtonStyle} title="Zoom out" aria-label="Zoom out">−</button>
-          <span style={{ color: '#ccc', fontSize: '14px', minWidth: '48px', textAlign: 'center', fontVariantNumeric: 'tabular-nums' }}>
-            {zoomPercent}%
-          </span>
-          <button onClick={zoomIn} style={zoomButtonStyle} title="Zoom in" aria-label="Zoom in">+</button>
-          <div style={{ width: '1px', height: '24px', backgroundColor: '#555', margin: '0 4px' }} />
-          <button onClick={resetZoom} style={{ ...zoomButtonStyle, width: 'auto', padding: '0 12px', fontSize: '13px' }} title="Reset zoom & pan" aria-label="Reset view">
-            Reset
-          </button>
-          <button onClick={fitToScreen} style={{ ...zoomButtonStyle, width: 'auto', padding: '0 12px', fontSize: '13px' }} title="Fit diagram to screen" aria-label="Fit to screen">
-            Fit
-          </button>
-          <span style={{ color: '#888', fontSize: '12px', marginLeft: '8px' }}>
-            Scroll to zoom · Drag to pan
-          </span>
-        </div>
-
-        {/* Diagram viewport (pan & zoom area) */}
-        <div
-          ref={containerRef}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerUp}
-          style={{
-            backgroundColor: '#2d2d2d',
-            borderRadius: '4px',
-            overflow: 'hidden',
-            flex: 1,
-            minHeight: 0,
-            cursor: isPanning.current ? 'grabbing' : 'grab',
-            position: 'relative',
-            touchAction: 'none', // prevent browser gestures so pointer events work
-          }}
-        >
-          <div
-            ref={mermaidRef}
-            style={{
-              transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
-              transformOrigin: 'center center',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%',
-              height: '100%',
-              padding: '32px',
-              boxSizing: 'border-box',
-              transition: isPanning.current ? 'none' : 'transform 0.1s ease-out',
-            }}
-            dangerouslySetInnerHTML={{ __html: renderedSvg }}
-          />
-        </div>
+      {/* ── Hint text ── */}
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          position: 'absolute',
+          bottom: '84px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          color: 'rgba(255,255,255,0.35)',
+          fontSize: '12px',
+          pointerEvents: 'none',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        Scroll to zoom · Drag to pan · Esc to close
       </div>
     </div>
   ) : null;
