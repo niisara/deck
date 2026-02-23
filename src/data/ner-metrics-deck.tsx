@@ -15,11 +15,6 @@ export const nerMetricsDeck: Deck = {
   'https://images.unsplash.com/photo-1618083544322-03b922bd4fdc?w=1920&q=80', 
   'https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?w=1920&q=80', 
   ],
-  cardStyle: {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
   slides: [],
   slideGroups: [
     {
@@ -49,8 +44,6 @@ export const nerMetricsDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#2C3E50',
-          backgroundImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80',
           notes: `### 7 Evaluation Metrics for NER Models
 [cheerfully] Welcome everyone, I'm really glad you're here today! [energetic] Let's kick things off with something super simple.
 
