@@ -9,7 +9,6 @@ export const nerTrainingDeck: Deck = {
   description: 'Cheat sheets for practical, high-accuracy NER in specialized domains',
   category: 'NLP',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80)',
     backgroundSize: 'cover',

@@ -9,7 +9,6 @@ export const nerApproachesDeck: Deck = {
   description: 'A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons',
   category: 'NLP',
   theme: 'night',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80)',
     backgroundSize: 'cover',

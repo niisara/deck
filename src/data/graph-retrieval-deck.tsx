@@ -11,7 +11,6 @@ export const graphRetrievalDeck: Deck = {
   description: 'A practical cheat-sheet for precision, reasoning, and reliable context',
   category: 'RAG',
   theme: 'sky',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80)',
     backgroundSize: 'cover',

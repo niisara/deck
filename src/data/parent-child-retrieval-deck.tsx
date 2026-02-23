@@ -9,7 +9,6 @@ export const parentChildRetrievalDeck: Deck = {
   description: 'A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness',
   category: 'RAG',
   theme: 'night',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80)',
     backgroundSize: 'cover',

@@ -9,7 +9,6 @@ export const embeddingModelsDeck: Deck = {
   description: 'Quick-reference for RAG, semantic search, clustering, and more',
   category: 'RAG',
   theme: 'night',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80)',
     backgroundSize: 'cover',

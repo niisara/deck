@@ -11,7 +11,6 @@ export const llmFinetuningTechniquesDeck: Deck = {
   description: 'Full FT vs LoRA vs QLoRA vs Adapters vs Prefix Tuning vs Prompt Tuning — when, why, and how',
   category: 'Fine Tuning',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80)',
     backgroundSize: 'cover',

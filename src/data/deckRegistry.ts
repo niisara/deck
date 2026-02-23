@@ -50,7 +50,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'A concise cheat sheet for evaluating Named Entity Recognition',
     category: 'NLP',
     theme: 'night',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -79,7 +78,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'Cheat sheets for practical, high-accuracy NER in specialized domains',
     category: 'NLP',
     theme: 'moon',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -94,7 +92,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'Quick-reference for RAG, semantic search, clustering, and more',
     category: 'RAG',
     theme: 'night',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -165,7 +162,6 @@ export const deckRegistry: DeckMeta[] = [
       'A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons',
     category: 'NLP',
     theme: 'night',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -181,7 +177,6 @@ export const deckRegistry: DeckMeta[] = [
       'A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness',
     category: 'RAG',
     theme: 'night',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -212,7 +207,6 @@ export const deckRegistry: DeckMeta[] = [
       'Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation',
     category: 'RAG',
     theme: 'night',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -227,7 +221,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'Practical, production-ready optimizations for faster RAG pipelines',
     category: 'RAG',
     theme: 'black',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -244,7 +237,6 @@ export const deckRegistry: DeckMeta[] = [
       'Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers',
     category: 'RAG',
     theme: 'black',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -259,7 +251,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'Full FT vs LoRA vs QLoRA vs Adapters vs Prefix Tuning vs Prompt Tuning',
     category: 'Fine Tuning',
     theme: 'moon',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -274,7 +265,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'RAG and LLM-ready strategies to maximize answer quality within token limits',
     category: 'RAG',
     theme: 'black',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -318,7 +308,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'A practical cheat-sheet for precision, reasoning, and reliable context',
     category: 'RAG',
     theme: 'sky',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -362,7 +351,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'A practical cheat sheet for NLP and data processing pipelines',
     category: 'NLP',
     theme: 'moon',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -377,7 +365,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'A Comprehensive Guide to Advanced Prompting Patterns',
     category: 'RAG',
     theme: 'moon',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -392,7 +379,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'Practical patterns, prompts, and examples for better retrieval',
     category: 'RAG',
     theme: 'moon',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80)',
       backgroundSize: 'cover',
@@ -435,7 +421,6 @@ export const deckRegistry: DeckMeta[] = [
     description: 'A comprehensive guide to 11 leading vector databases for similarity search and AI applications',
     category: 'RAG',
     theme: 'moon',
-    cardClassName: 'glass-morphism',
     cardStyle: {
       backgroundImage: 'url(https://images.unsplash.com/photo-1488229297570-58520851e868?w=1920&q=80)',
       backgroundSize: 'cover',

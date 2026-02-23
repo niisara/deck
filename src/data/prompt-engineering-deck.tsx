@@ -9,7 +9,6 @@ export const promptEngineeringDeck: Deck = {
   description: 'A Comprehensive Guide to Advanced Prompting Patterns',
   category: 'RAG',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80)',
     backgroundSize: 'cover',

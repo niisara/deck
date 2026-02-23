@@ -11,7 +11,6 @@ export const llmCachingDeck: Deck = {
   description: 'Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers',
   category: 'RAG',
   theme: 'black',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80)',
     backgroundSize: 'cover',

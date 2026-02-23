@@ -9,7 +9,7 @@ export const vectorDatabasesDeck: Deck = {
   description: 'A comprehensive guide to 11 leading vector databases for similarity search and AI applications',
   category: 'RAG',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
+  cardClassName: '',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1488229297570-58520851e868?w=1920&q=80)',
     backgroundSize: 'cover',

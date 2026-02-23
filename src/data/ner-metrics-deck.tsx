@@ -9,7 +9,6 @@ export const nerMetricsDeck: Deck = {
   description: 'A concise cheat sheet for evaluating Named Entity Recognition',
   category: 'NLP',
   theme: 'night',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80)',
     backgroundSize: 'cover',

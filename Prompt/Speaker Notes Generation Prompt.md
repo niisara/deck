@@ -391,7 +391,6 @@ export const yourDeck: Deck = {
   description: 'Your deck description',
   category: 'NLP',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
     backgroundSize: 'cover',
@@ -407,7 +406,6 @@ export const yourDeck: Deck = {
 ### Example with Real URL
 
 ```typescript
-cardClassName: 'glass-morphism',
 cardStyle: {
   backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
   backgroundSize: 'cover',
@@ -573,7 +571,6 @@ When creating a new deck:
    - Proper structure and styling
 4. **Add glass morphism styling** (optional):
    - If the first slide has a striking background image
-   - Add `cardClassName: 'glass-morphism'` and `cardStyle` with the background image
    - Creates a premium frosted glass effect on the homepage card
 5. **Review** to ensure:
    - Title slide has `center: true`

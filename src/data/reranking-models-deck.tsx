@@ -9,7 +9,6 @@ export const rerankingModelsDeck: Deck = {
   description: 'Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation',
   category: 'RAG',
   theme: 'night',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
     backgroundSize: 'cover',

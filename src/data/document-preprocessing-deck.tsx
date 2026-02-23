@@ -9,7 +9,6 @@ export const documentPreprocessingDeck: Deck = {
   description: 'A practical cheat sheet for NLP and data processing pipelines',
   category: 'NLP',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&q=80)',
     backgroundSize: 'cover',

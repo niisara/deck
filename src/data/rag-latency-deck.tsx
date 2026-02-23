@@ -11,7 +11,6 @@ export const ragLatencyDeck: Deck = {
   description: 'Practical, production-ready optimizations for faster RAG pipelines',
   category: 'RAG',
   theme: 'black',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1920&q=80)',
     backgroundSize: 'cover',

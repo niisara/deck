@@ -18,7 +18,6 @@ export const <camelCaseExportName>: Deck = {
   description: '<one-line description>',
   category: '<one of: NLP | RAG | Fine Tuning | Agent | Demo | Personal | Inner Intelligence | Other>',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(<UNSPLASH_URL>)',
     backgroundSize: 'cover',

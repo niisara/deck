@@ -9,7 +9,6 @@ export const queryRewritingDeck: Deck = {
   description: 'Practical patterns, prompts, and examples for better retrieval',
   category: 'RAG',
   theme: 'moon',
-  cardClassName: 'glass-morphism',
   cardStyle: {
     backgroundImage: 'url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1920&q=80)',
     backgroundSize: 'cover',
