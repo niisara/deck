@@ -107,7 +107,7 @@ flowchart LR
     style C fill:#0ea5e9,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style D fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-    style F fill:#8b5cf6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}}
+    style F fill:#8b5cf6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h4>
               </GSAPAnimated>
@@ -233,7 +233,7 @@ graph TB
     style AA fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style HA fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
 style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style Recall fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style Recall fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -295,7 +295,7 @@ flowchart TD
     style C fill:#0ea5e9,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style D fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}}
+    style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
                 <p>Retrieval Recall@K measures the proportion of all relevant documents that appear in the top-K results. It answers: "Of all relevant documents, how many did we retrieve?"</p>
@@ -389,7 +389,7 @@ style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style D4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -454,7 +454,7 @@ graph LR
 style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
@@ -538,7 +538,7 @@ graph TB
     style GL fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style CL fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
 style Precision fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -605,7 +605,7 @@ graph LR
     style E fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style F fill:#8b5cf6,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
                 <p>Retrieval Precision@K measures the proportion of retrieved documents that are actually relevant. It answers: "Of the K documents we retrieved, how many are relevant?"</p>
@@ -688,7 +688,7 @@ graph TD
     style F fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
 style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -758,7 +758,7 @@ style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.12} delay={0.3}>
@@ -840,7 +840,7 @@ graph TB
     style HIT fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style MISS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style HR fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -908,7 +908,7 @@ flowchart TD
     style E fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style F fill:#0ea5e9,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}}
+    style H fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
                 <p>Hit Rate measures the fraction of queries where at least one relevant document appears in the top-K results. It's a binary success metric: did we retrieve anything useful?</p>
@@ -978,7 +978,7 @@ graph TB
     style HR fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style INV fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -1043,7 +1043,7 @@ flowchart LR
     style E fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style G fill:#10b981,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
-    style H fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}}
+    style H fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px`}
                   />
                 </h3>
                 <GSAPStaggerList stagger={0.15} delay={0.3}>
@@ -1137,7 +1137,7 @@ graph TB
     style HA fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
 style Required fill:#0d1f33,stroke:#777777,stroke-width:2px,color:#e0e0e0
 style Facts fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style overlap fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style overlap fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -1204,7 +1204,7 @@ style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style Facts fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style Identified fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style Presence fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style Presence fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   title="Context Overlap Score Calculation"
                 /></h3>
               </GSAPAnimated>
@@ -1282,7 +1282,7 @@ sequenceDiagram
     style Q fill:#3b82f6
     style R fill:#8b5cf6
     style C fill:#3b82f6
-    style E fill:#eab308`}}
+    style E fill:#eab308`}
                     title="Context Overlap Calculation Flow"
                   />
                 </GSAPAnimated></h3>
@@ -1360,7 +1360,7 @@ graph LR
     style L fill:#ef4444,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
 style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     title="How Overlap Scores Affect RAG Quality"
                   />
                 </GSAPAnimated></h3>
@@ -1449,7 +1449,7 @@ graph TB
     style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style AVG fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style FIX fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -1528,7 +1528,7 @@ style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </p>
               </GSAPAnimated>
@@ -1606,7 +1606,7 @@ graph TB
     style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style AVG fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style ACT fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
-style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -1709,7 +1709,7 @@ style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </p>
               </GSAPAnimated>
@@ -1784,7 +1784,7 @@ graph TB
     style BAD fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style RATE fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style FIX fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71', paddingBottom: '14px' }}>Goal & Benefits</h3>
@@ -1875,7 +1875,7 @@ style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </p>
               </GSAPAnimated>
@@ -1953,7 +1953,7 @@ graph TB
     style BAD fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style FIX fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -2058,7 +2058,7 @@ style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </p>
               </GSAPAnimated>
@@ -2133,7 +2133,7 @@ graph TB
     style V3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style GAS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style OK fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style target fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2214,7 +2214,7 @@ style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2283,7 +2283,7 @@ graph TB
     style BAD fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style G fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style PASS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -2376,7 +2376,7 @@ style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2447,7 +2447,7 @@ graph TB
     style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2530,7 +2530,7 @@ style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2602,7 +2602,7 @@ graph TB
     style C2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style C3 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style F fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -2703,7 +2703,7 @@ style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2780,7 +2780,7 @@ graph TB
     style W fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -2864,7 +2864,7 @@ style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -2939,7 +2939,7 @@ graph TB
     style W fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style R fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style C fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3051,7 +3051,7 @@ style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                   />
                 </h3>
               </GSAPAnimated>
@@ -3135,7 +3135,7 @@ graph TB
     style SL fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style GS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style SS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3216,7 +3216,7 @@ style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`Option 1: LLM-judged specificity score [0-1]
@@ -3281,7 +3281,7 @@ graph TB
     style HS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style LSC fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style HSC fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3349,7 +3349,7 @@ style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
 
               </GSAPAnimated>
@@ -3428,7 +3428,7 @@ graph TB
     style ND fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style RERANK fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style FOCUS fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-style noise fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style noise fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3515,7 +3515,7 @@ style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
 
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
@@ -3580,7 +3580,7 @@ graph TB
     style NOI fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style ND fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style FIX fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
-style reranking fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style reranking fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3655,7 +3655,7 @@ style F fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style H fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
@@ -3732,7 +3732,7 @@ graph TB
     style DIFF fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style CCE fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style COST fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -3831,7 +3831,7 @@ style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style R fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`CCE = Coverage_τ / Tokens
@@ -3897,7 +3897,7 @@ graph TB
     style COV2 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style SAVE fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style RATIO fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-`}}
+`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -3983,7 +3983,7 @@ style I fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
@@ -4064,7 +4064,7 @@ graph TB
     style S fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style LCTS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style OPT fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
@@ -4159,7 +4159,7 @@ style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style O fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style Q fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
                 <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
                   {`LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]`}
@@ -4228,7 +4228,7 @@ graph TB
     style SUM fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style LCTS fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style OPT fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
-style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style threshold fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                     />
                   </div>
                   <h3>Example</h3>
@@ -4326,7 +4326,7 @@ style J fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style K fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
 style M fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}}
+style N fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`}
                 /></h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.4}>

@@ -65,7 +65,7 @@ export const temporalWorkflowDeck: Deck = {
             </div>
           ),
           notes: `### 9 Temporal Workflow Patterns for Durable Execution
-[cheerfully] Welcome everyone! Today we're going to explore **9 powerful workflow patterns** that Temporal 👉 'TEM-puh-ruhl' gives us for building **durable execution** systems.
+[cheerfully] Welcome everyone! Today we're going to explore **9 powerful workflow patterns** that Temporal gives us for building **durable execution** systems.
 #### 🎯 What's This About?
 [storytelling] Imagine you're building a system where a process absolutely *must* complete — like charging a credit card, reserving inventory, and shipping an order. What happens if your server crashes halfway through? [confidently] That's exactly the problem **durable execution** solves. Temporal makes your workflow code **survive crashes, restarts, and even deployments** without you writing any retry or state-tracking logic yourself.
 #### 👥 Who Is This For?

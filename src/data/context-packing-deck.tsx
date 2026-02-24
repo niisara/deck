@@ -180,7 +180,7 @@ These **reshape and clean** context — Answer-conditioned, Table/Structured, Se
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
                   <div style={{ position: 'relative' }}>
                     <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
-                      <MermaidPopover title="Semantic Chunking Flow" diagram={\`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
+                      <MermaidPopover title="Semantic Chunking Flow" diagram={`%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','primaryColor':'#2a2a3a','primaryTextColor':'#f0f0f0','primaryBorderColor':'rgba(255,255,255,0.4)','lineColor':'rgba(255,255,255,0.7)','secondaryColor':'#1e1e2e','tertiaryColor':'#252535','edgeLabelBackground':'rgba(0,0,0,0.6)','clusterBkg':'rgba(30,30,50,0.7)','clusterBorder':'rgba(255,255,255,0.25)'}}}%%
 flowchart LR
     A["📄 Raw Document"] --> B["🔍 Detect Boundaries"]
     B --> C["✂️ Semantic Chunks"]
@@ -188,7 +188,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -220,7 +220,7 @@ flowchart TB
     style A fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -380,7 +380,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -410,7 +410,7 @@ flowchart LR
     style C3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C3W fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style C4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style C4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -566,7 +566,7 @@ flowchart TD
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -591,7 +591,7 @@ flowchart TB
     style Doc fill:#1a3a5c,stroke:#1976d2,stroke-width:2px,color:#fff
     style Auth fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style EP fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style P fill:#1b4332,stroke:#4caf50,stroke-width:2px,color:#d1fae5\`} />
+    style P fill:#1b4332,stroke:#4caf50,stroke-width:2px,color:#d1fae5`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -749,7 +749,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -774,7 +774,7 @@ flowchart LR
     style A fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#3d2e00,color:#fde68a,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -932,7 +932,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -959,7 +959,7 @@ flowchart TB
     style Q fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style G fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style L fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1115,7 +1115,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1144,7 +1144,7 @@ flowchart TB
     style R1 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style R2 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
     style R3 fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-    style R4 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px\`} />
+    style R4 fill:#5c1a1a,color:#fecaca,stroke:#bbbbbb,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1301,7 +1301,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1334,7 +1334,7 @@ flowchart LR
     style P fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style B1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style B2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style B3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1522,7 +1522,7 @@ flowchart TB
     style D fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style Co fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style R fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1677,7 +1677,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1710,7 +1710,7 @@ flowchart LR
     style T fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style S1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1867,7 +1867,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -1896,7 +1896,7 @@ flowchart TB
     style Keep fill:#1b4332,stroke:#4caf50,stroke-width:2px,color:#d1fae5
     style D1 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style D2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style D3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -2055,7 +2055,7 @@ flowchart LR
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px
-    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style E fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -2085,7 +2085,7 @@ flowchart TB
     style C2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style Done fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style Done fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -2243,7 +2243,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -2271,7 +2271,7 @@ flowchart TB
     style Specific fill:#1a3a5c,stroke:#1976d2,stroke-width:2px,color:#e0e0e0
     style Broad fill:#3d2e00,stroke:#f57c00,stroke-width:2px,color:#fde68a
     style S fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style Br fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px\`} />
+    style Br fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -2428,7 +2428,7 @@ flowchart LR
     style A fill:#1a3a5c,color:#fff,stroke:#aaaaaa,stroke-width:1.5px
     style B fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style C fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style D fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -2458,7 +2458,7 @@ flowchart TB
     style S2 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style S3 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
     style S4 fill:#2a2a3a,color:#e0e0e0,stroke:#888888,stroke-width:1.5px
-    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px\`} />
+    style A fill:#1b4332,color:#d1fae5,stroke:#aaaaaa,stroke-width:1.5px`} />
                     </div>
                     <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
