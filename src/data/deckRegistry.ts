@@ -132,6 +132,21 @@ export const deckRegistry: DeckMeta[] = [
     load: () => import('./temporal-vs-queues-deck').then((m) => m.temporalVsQueuesDeck),
   },
   {
+    id: 'temporal-production-deployment-patterns',
+    name: '11 Temporal Production Deployment Patterns',
+    description:
+      'Worker scaling, task queue routing, versioning (Patching API), observability, multi-cluster replication, Nexus',
+    category: 'Agent',
+    theme: 'night',
+    cardStyle: {
+      backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    slideCount: 23,
+    load: () => import('./temporal-production-deployment-deck').then((m) => m.temporalProductionDeploymentDeck),
+  },
+  {
     id: 'embedding-models-deck',
     name: '9 Embedding Models Cheat Sheet',
     description: 'Quick-reference for RAG, semantic search, clustering, and more',
@@ -473,5 +488,20 @@ export const deckRegistry: DeckMeta[] = [
     },
     slideCount: 70,
     load: () => import('./vector-databases-deck').then((m) => m.vectorDatabasesDeck),
+  },
+  {
+    id: 'ai-agent-orchestration-temporal',
+    name: '9 Patterns for Orchestrating AI Agents with Temporal',
+    description:
+      'Durable tool-calling loops, human-in-the-loop, LLM retry with fallback, parallel agent fan-out, agent memory persistence',
+    category: 'Agent',
+    theme: 'night',
+    cardStyle: {
+      backgroundImage: 'url(https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    slideCount: 23,
+    load: () => import('./ai-agent-orchestration-deck').then((m) => m.aiAgentOrchestrationDeck),
   },
 ];
