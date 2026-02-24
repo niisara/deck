@@ -117,6 +117,21 @@ export const deckRegistry: DeckMeta[] = [
     load: () => import('./temporal-failure-retry-deck').then((m) => m.temporalFailureRetryDeck),
   },
   {
+    id: 'temporal-vs-queues',
+    name: '7 Temporal vs. Traditional Queue Architectures',
+    description:
+      'Temporal vs Kafka vs SQS vs Celery vs Airflow vs Step Functions vs BullMQ — when to pick which',
+    category: 'Agent',
+    theme: 'night',
+    cardStyle: {
+      backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    slideCount: 23,
+    load: () => import('./temporal-vs-queues-deck').then((m) => m.temporalVsQueuesDeck),
+  },
+  {
     id: 'embedding-models-deck',
     name: '9 Embedding Models Cheat Sheet',
     description: 'Quick-reference for RAG, semantic search, clustering, and more',
